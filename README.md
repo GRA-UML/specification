@@ -1,4 +1,4 @@
-specification
+GRA-UML specification
 ====
 
 An OMG RFP for GRA-UML, a services modeling and provisioning specification based on the “Global Reference Architecture” (https://it.ojp.gov/GRA) has been issued by the OMG. 
