@@ -1,0 +1,20 @@
+6.5.4	The SSPs generated based on models conforming to the GRA-UML profile shall conform to normative GRA specifications referenced in section 6.4.1.  These specifications are:
+•	GRA Service Specification Package, v1.0.0 (http://it.ojp.gov/docdownloader.aspx?ddid=1217)
+•	GRA Service Specification Guideline v1.0.0 (http://it.ojp.gov/docdownloader.aspx?ddid=1215)
+•	GRA Web-Services Service Interaction Profile v1.3 (http://it.ojp.gov/docdownloader.aspx?ddid=1173)
+•	GRA ebXML Messaging Service Interaction Profile v1.1 (http://it.ojp.gov/docdownloader.aspx?ddid=1168)
+
+6.5	Mandatory Requirements
+6.5.1	Submissions shall specify a GRA-UML Logical Profile.  The GRA-UML Logical Profile shall be a set of UML stereotypes and properties which support the modeling of SSPs in UML in a technology-independent way.  This profile shall support modeling of any content and structure allowed by GRA SSPs, while constraining the modeling of any content and structure disallowed by GRA SSPs, as specified in 6.5.4. The use of the GRA-UML Logical Profile shall result in UML models that are free from dependency on any physical representation (such as XML Schema).  In MDA terms, the GRA Logical Profile is a specification of the platform independent model (PIM).
+6.5.2	Submissions shall specify a GRA-UML Profile for SSPs. The GRA-UML Profile for SSPs shall be a set of UML stereotypes and properties which specify the details and metadata of a SSP specification to be produced based on logical GRA model(s). Transformations (discussed in 6.5.3) shall be designed to utilize the Profile for SSPs to parameterize the transformation from the GRA-UML Logical Profile (the PIM) to GRA-conformant SSPs (the PSM), where GRA conformance is as defined in 6.5.4. The SSP profile shall govern the inclusion in a UML model of any information necessary to properly generate GRA-conformant SSP artifacts beyond the information found in the GRA-UML Logical profile.
+6.5.3	Submissions shall specify a transformation from UML models using the GRA-UML profiles specified in 6.5.1 and 6.5.2 to the set of artifacts required in a conformant SSP, as defined by 6.5.4.  Submissions shall utilize the GRA-UML Profiles to model at least one existing GRA SSP and demonstrate the resulting transformation to an SSP.  The SSP produced must be GRA conformant, as defined in section 6.5.4, and the XML Schema set contained within the SSP must validate the same set of exchange documents as the existing SSP IEPD.  It is not required that the generated SSP be structurally identical  to the existing SSP.  
+6.5.4	The SSPs generated based on models conforming to the GRA-UML profile shall conform to normative GRA specifications referenced in section 6.4.1.  These specifications are:
+•	GRA Service Specification Package, v1.0.0 (http://it.ojp.gov/docdownloader.aspx?ddid=1217)
+•	GRA Service Specification Guideline v1.0.0 (http://it.ojp.gov/docdownloader.aspx?ddid=1215)
+•	GRA Web-Services Service Interaction Profile v1.3 (http://it.ojp.gov/docdownloader.aspx?ddid=1173)
+•	GRA ebXML Messaging Service Interaction Profile v1.1 (http://it.ojp.gov/docdownloader.aspx?ddid=1168)
+
+6.5.5	GRA Reliable Secure Web Services, Service Interaction Profile v1.2 (http://it.ojp.gov/docdownloader.aspx?ddid=1134)Specifications shall reuse constructs and/or representations from SoaML to express the SSP logical model and will extend SoaML to meet specific requirements of the GRA where required.
+6.5.6	Specifications shall reuse elements and/or representations from UML Profile for BPMN 2 Processes to express the SSP logical model and more specifically the SSP interaction model.
+6.5.7	Specifications shall define mappings between GRA, and these industry-standard specifications - OMG SoaML, OASIS SOA-Reference Model, Open Group SOA Ontology.  
+6.5.8	Specifications shall use OMG-QVT to specify the transformation of the UML logical model to all or part of a SSP.  
