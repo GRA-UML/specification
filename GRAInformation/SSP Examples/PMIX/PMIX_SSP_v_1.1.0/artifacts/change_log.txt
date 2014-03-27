@@ -1,0 +1,20 @@
+== Changelog 1.0.2 ==
+
+=== english ===
+
+==== new features ====
+
+==== bug fixes ====
+
+==== specification changes ====
+
+Date		Version	Editor						Change
+12/22/2010	0.1.0	Bob Slaski					Initial Version
+12/21/2011	1.0.1	Bob Slaski					Updated to SSG 1.0
+9/12/2012	1.0.2	Bob Slaski					Updated SSP to reflect community comments
+7/25/2013	1.1.0	Todd Seymour				Revisions to reflect consolidation of State-to-Hub and Hub-to-Hub specifications.
+
+
+
+
+

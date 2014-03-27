@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope"
+    xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing">
+    <s:Header>
+        <a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action>
+    </s:Header>
+    <s:Body>
+        <s:Fault>
+            <s:Code>
+                <s:Value>s:Sender</s:Value>
+                <s:Subcode>
+                    <s:Value>AuthorizationError</s:Value>
+                </s:Subcode>
+            </s:Code>
+            <s:Reason>
+                <s:Text xml:lang="en-US"> The Requesting Role is not authorized for the Disclosing State. </s:Text>
+            </s:Reason>
+            <s:Node>https://test.rxcheck.org:18803/2010/12/pmix/router</s:Node>
+            <s:Role>RxCheck Hub</s:Role>
+        </s:Fault>
+    </s:Body>
+</s:Envelope>

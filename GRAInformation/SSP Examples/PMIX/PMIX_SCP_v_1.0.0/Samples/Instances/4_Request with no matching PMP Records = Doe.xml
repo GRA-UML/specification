@@ -1,0 +1,39 @@
+<pmix:PMPRequest xmlns:pmix="http://xml.ijis.org/niem/2.0/" 
+xmlns:pmp="http://xml.ijis.org/niem/2.0/extension" xmlns:nc="http://niem.gov/niem/niem-core/2.0" >
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-02-10</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-02-29</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonBirthDate>
+            <nc:Date>1956-01-19</nc:Date>
+        </nc:PersonBirthDate>
+        <nc:PersonName>
+            <nc:PersonGivenName>Jane</nc:PersonGivenName>
+            <nc:PersonSurName>Doe</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonSexCode>F</nc:PersonSexCode>
+        <nc:PersonSSNIdentification>
+            <nc:IdentificationID>234-12-2340</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+                <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                        <nc:StreetFullText>88163 Cobblestone Lane</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>Baltimore</nc:LocationCityName>
+                    <nc:LocationStateUSPostalServiceCode>MD</nc:LocationStateUSPostalServiceCode>
+                    <nc:LocationPostalCode>22987</nc:LocationPostalCode>
+                </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactEntity>
+                <nc:EntityOrganization>                    
+                    <nc:OrganizationDoingBusinessAsName>ABC Corporation</nc:OrganizationDoingBusinessAsName>
+                </nc:EntityOrganization>
+            </nc:ContactEntity>
+        </pmp:PersonPrimaryContactInformation>
+        <pmp:SpeciesCode>01</pmp:SpeciesCode>
+        <pmp:PatientLocationCode>04</pmp:PatientLocationCode>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>

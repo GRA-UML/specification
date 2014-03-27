@@ -1,0 +1,3 @@
+Request.LastName==Doe&&Request.FirstName==John&&Request.DOB==1946-05-04&&Request.SSN==123-12-1230&&Request.Sex==M=>Basic Communication - Test Response
+RequestingState==XX&&DisclosingState==TT=>Unauthorized Requesting State - Fault
+RequestingState==AL&&DisclosingState==XX=>Unauthorized Disclosing State - Fault

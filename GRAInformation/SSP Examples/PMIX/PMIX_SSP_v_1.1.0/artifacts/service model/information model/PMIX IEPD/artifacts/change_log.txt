@@ -1,0 +1,17 @@
+== Changelog 0.1.0 ==
+
+=== english ===
+
+==== new features ====
+
+==== bug fixes ====
+
+==== specification changes ====
+
+Date		Version	Editor						Change
+11/06/2007	0.11						IJIS PMIX Phase III Pilot Project
+
+
+
+
+

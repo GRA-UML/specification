@@ -1,0 +1,17 @@
+Requestor,//pmix:MetaData/pmix:Requestor
+RequestorRole,//pmix:MetaData/pmix:RequestorRole
+DisclosingState,//pmix:MetaData/pmix:RoutingData/pmix:DisclosingState
+RequestID,//pmix:MetaData/pmix:RoutingData/pmix:RequestID
+RequestingState,//pmix:MetaData/pmix:RoutingData/pmix:RequestingState
+RequestData,//pmix:RequestType/pmix:RequestData
+ResponseData,//pmix:ResponseType/pmix:ResponseData
+Request.FirstName,//pmix:PMPRequest/pmp:RequestPatient/nc:PersonName/nc:PersonGivenName
+Request.LastName,//pmix:PMPRequest/pmp:RequestPatient/nc:PersonName/nc:PersonSurName
+Request.DOB,//pmix:PMPRequest/pmp:RequestPatient/nc:PersonBirthDate/nc:Date
+Request.SSN,//pmix:PMPRequest/pmp:RequestPatient/nc:PersonSSNIdentification/nc:IdentificationID
+Request.Sex,//pmix:PMPRequest/pmp:RequestPatient//nc:PersonSexCode
+Response.FirstName,//pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription[1]/pmp:Patient/nc:PersonName/nc:PersonGivenName
+Response.LastName,//pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription[1]/pmp:Patient/nc:PersonName/nc:PersonSurName
+Response.DOB,//pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription[1]/pmp:Patient/nc:PersonBirthDate/nc:Date
+Response.SSN,//pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription[1]/pmp:Patient/nc:PersonSSNIdentification/nc:IdentificationID
+Response.Sex,//pmix:PMPPrescriptionReport/pmp:RequestResponsePrescriptionReport/pmp:Prescription[1]/pmp:Patient/nc:PersonSexCode

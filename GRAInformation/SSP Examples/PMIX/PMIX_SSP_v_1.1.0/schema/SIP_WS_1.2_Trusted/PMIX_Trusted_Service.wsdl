@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.pmix.gov" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" name="pmp" targetNamespace="http://www.pmix.gov">
+	<wsp:Policy wsu:Id="WsBasicProfile_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<wsaw:UsingAddressing/>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://www.pmix.gov/Imports">
+			<xsd:import schemaLocation="../information/service/PMIX_Service.0.xsd" namespace="http://www.pmix.gov"/>
+			<xsd:import schemaLocation="../information/service/PMIX_Service.1.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="RequestType">
+		<wsdl:part name="parameters" element="tns:RequestType"/>
+	</wsdl:message>
+	<wsdl:message name="RequestType_Headers">
+		<wsdl:part name="MetaData" element="tns:MetaData"/>
+	</wsdl:message>
+	<wsdl:message name="ResponseType">
+		<wsdl:part name="parameters" element="tns:ResponseType"/>
+	</wsdl:message>
+	<wsdl:message name="ResponseType_Headers">
+		<wsdl:part name="ResponseStatus" element="tns:ResponseStatus"/>
+		<wsdl:part name="RoutingData" element="tns:RoutingData"/>
+	</wsdl:message>
+	<wsdl:message name="AcknowledgementType">
+		<wsdl:part name="parameters" element="tns:AcknowledgementType"/>
+	</wsdl:message>
+	<wsdl:message name="AcknowledgementType_Headers">
+		<wsdl:part name="Acknowledgement" element="tns:Acknowledgement"/>
+	</wsdl:message>
+	<wsdl:portType name="pmp">
+		<wsdl:operation name="ProvidePrescriptionDrugHistory">
+			<wsdl:input name="RequestType" message="tns:RequestType" wsaw:Action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory"/>
+			<wsdl:output name="ResponseType" message="tns:ResponseType" wsaw:Action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistoryResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="ReceiveDeferredPrescriptionDrugHistory">
+			<wsdl:input name="DeferredResponseType" message="tns:ResponseType" wsaw:Action="http://www.pmix.gov/pmp/ReceiveDeferredPrescriptionDrugHistory"/>
+			<wsdl:output name="AcknowledgementType" message="tns:AcknowledgementType" wsaw:Action="http://www.pmix.gov/pmp/ReceiveDeferredPrescriptionDrugHistoryResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="WsBasicProfile" type="tns:pmp">
+		<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsp:PolicyReference URI="#WsBasicProfile_policy"/>
+		<wsdl:operation name="ProvidePrescriptionDrugHistory">
+			<soap12:operation soapAction="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory" style="document"/>
+			<wsdl:input name="RequestType">
+				<soap12:header message="tns:RequestType_Headers" part="MetaData" use="literal"/>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="ResponseType">
+				<soap12:header message="tns:ResponseType_Headers" part="ResponseStatus" use="literal"/>
+				<soap12:header message="tns:ResponseType_Headers" part="RoutingData" use="literal"/>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ReceiveDeferredPrescriptionDrugHistory">
+			<soap12:operation soapAction="http://www.pmix.gov/pmp/ReceiveDeferredPrescriptionDrugHistory" style="document"/>
+			<wsdl:input name="DeferredResponseType">
+				<soap12:header message="tns:ResponseType_Headers" part="ResponseStatus" use="literal"/>
+				<soap12:header message="tns:ResponseType_Headers" part="RoutingData" use="literal"/>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="AcknowledgementType">
+				<soap12:header message="tns:AcknowledgementType_Headers" part="Acknowledgement" use="literal"/>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="pmp">
+		<wsdl:port name="WsBasicProfile" binding="tns:WsBasicProfile">
+			<soap12:address location="http://localhost:18280/pmix/services"/>
+			<wsa10:EndpointReference>
+				<wsa10:Address>http://localhost:18280/pmix/services</wsa10:Address>
+			</wsa10:EndpointReference>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

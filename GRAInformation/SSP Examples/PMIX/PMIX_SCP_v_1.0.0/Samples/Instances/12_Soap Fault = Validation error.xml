@@ -1,0 +1,15 @@
+<s:Fault>
+    <s:Code>
+        <s:Value>s:Sender</s:Value>
+        <s:Subcode>
+            <s:Value>ValidationError</s:Value>
+        </s:Subcode>
+    </s:Code>
+    <s:Reason>
+        <s:Text xml:lang="en-US">
+            The Disclosing State does not have a search profiles that validates the request message.
+        </s:Text>
+    </s:Reason>
+    <s:Node>https://test.rxcheck.org:18803/2010/12/pmix/router</s:Node>
+    <s:Role>RxCheck Hub</s:Role>
+</s:Fault>

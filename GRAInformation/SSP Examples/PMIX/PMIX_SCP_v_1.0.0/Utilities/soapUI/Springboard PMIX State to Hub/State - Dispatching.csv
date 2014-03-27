@@ -1,0 +1,10 @@
+Request.LastName==Doe&&Request.FirstName==John&&Request.DOB==1946-05-04&&Request.SSN==123-12-1230&&Request.Sex==M=>ProvidePrescriptionDrugHistory Response - 1 Hit - Doe
+Request.LastName==Doe&&Request.SSN==123-12-1230=>ProvidePrescriptionDrugHistory Response - 2 Hits - Doe No DOB
+Request.LastName==Doe&&Request.DOB==1946-05-04=>ProvidePrescriptionDrugHistory Response - 3 Hits - Doe
+Request.LastName==Doe&&Request.FirstName==Jane&&Request.DOB==1956-01-19&&Request.SSN==234-12-2340&&Request.Sex==F=>ProvidePrescriptionDrugHistory Response - NotFound
+Request.LastName==Doe&&Request.DOB==1956-01-19=>ProvidePrescriptionDrugHistory Response - 2 Hits - Doe
+Request.LastName==Murphy&&Request.FirstName==George&&Request.SSN==372-24-8382&&Request.Sex==M=>ProvidePrescriptionDrugHistory Response - 2 Hits - Murphy
+Request.LastName==Murphy&&Request.FirstName==George&&Request.DOB==1960-02-16=>ProvidePrescriptionDrugHistory Response - NotFound
+Request.LastName==Murphy&&Request.FirstName==George=>ProvidePrescriptionDrugHistory Response - 3 Hits - Murphy
+Request.LastName==Smith&&Request.FirstName==Melissa&&Request.DOB==1977-03-31&&Request.Sex==F=>ProvidePrescriptionDrugHistory Response - 2 Hits - Smith
+Request.LastName==Smith&&Request.DOB==1977-03-31&&Request.SSN==432-44-2313=>ProvidePrescriptionDrugHistory Response - NotFound

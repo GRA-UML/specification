@@ -1,0 +1,53 @@
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing">
+    <s:Header>
+        <a:Action s:mustUnderstand="1" u:Id="_3" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistoryResponse</a:Action>
+         <h:RoutingData xmlns:h="http://www.pmix.gov" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+            <h:DisclosingState>AL</h:DisclosingState>
+            <h:RequestID>1111162</h:RequestID>
+            <h:RequestingState>AL</h:RequestingState>
+        </h:RoutingData>
+        <h:ResponseStatus xmlns:h="http://www.pmix.gov">Provided</h:ResponseStatus>
+        <a:RelatesTo u:Id="_4" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">urn:uuid:0aa688dc-af46-4063-81cc-9ea37d97bc7b</a:RelatesTo>
+        <ActivityId CorrelationId="514237dd-7cf8-4038-ab52-6d4b619e6ee4" xmlns="http://schemas.microsoft.com/2004/09/ServiceModel/Diagnostics">71f94f28-d3df-47b7-a627-7837e74f0e63</ActivityId>
+        <o:Security s:mustUnderstand="1" xmlns:o="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+            <u:Timestamp u:Id="uuid-5c69e42a-5b2c-4b08-bc0a-2c3d71d11b9a-5" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+                <u:Created>2012-02-15T16:13:07.908Z</u:Created>
+                <u:Expires>2012-02-15T16:18:07.908Z</u:Expires>
+            </u:Timestamp>
+            <o:BinarySecurityToken>
+                <!-- Removed-->
+            </o:BinarySecurityToken>
+            <e:EncryptedKey Id="_0" xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+                <e:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p">
+                    <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" xmlns="http://www.w3.org/2000/09/xmldsig#"></DigestMethod>
+                </e:EncryptionMethod>
+                <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+                    <o:SecurityTokenReference>
+                        <o:KeyIdentifier ValueType="http://docs.oasis-open.org/wss/oasis-wss-soap-message-security-1.1#ThumbprintSHA1" EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">S7nuqp3KsqErQq0k2hkS9DrdtnE=</o:KeyIdentifier>
+                    </o:SecurityTokenReference>
+                </KeyInfo>
+                <e:CipherData>
+                    <e:CipherValue>VXljqtcV/lyS1YAnVdMZofYjlosb/iT36SCkuvxm1+qFis56wPMpFo ... B9Y1dv0qOX6PGwXa/VZQ=</e:CipherValue>
+                </e:CipherData>
+                <e:ReferenceList>
+                    <e:DataReference URI="#_2"></e:DataReference>
+                    <e:DataReference URI="#_5"></e:DataReference>
+                </e:ReferenceList>
+            </e:EncryptedKey>
+            <e:EncryptedData Id="_5" Type="http://www.w3.org/2001/04/xmlenc#Element" xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+                <e:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc"></e:EncryptionMethod>
+                <e:CipherData>
+                    <e:CipherValue>HOZgoh+30blyXGFJU8JcLvPFvYG2EghxCDvYyZbuQlTu0YFYRh2/V ... yqO9ZX/KdM2o0YeQhUzA==</e:CipherValue>
+                </e:CipherData>
+            </e:EncryptedData>
+        </o:Security>
+    </s:Header>
+    <s:Body u:Id="_1" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <e:EncryptedData Id="_2" Type="http://www.w3.org/2001/04/xmlenc#Content" xmlns:e="http://www.w3.org/2001/04/xmlenc#">
+            <e:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc"></e:EncryptionMethod>
+            <e:CipherData>
+                <e:CipherValue>Dc7eZIVlRW0H+baYYCYGYcB+cr9uV4qh6RQg/1fHa68vdwue2huoEkD ... 8d59ecKqA==</e:CipherValue>
+            </e:CipherData>
+        </e:EncryptedData>
+    </s:Body>
+</s:Envelope>

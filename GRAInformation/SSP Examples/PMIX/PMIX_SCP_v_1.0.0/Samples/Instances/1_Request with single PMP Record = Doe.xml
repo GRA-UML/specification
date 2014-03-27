@@ -1,0 +1,20 @@
+<pmix:PMPRequest xmlns:pmix="http://xml.ijis.org/niem/2.0/" 
+xmlns:pmp="http://xml.ijis.org/niem/2.0/extension" xmlns:nc="http://niem.gov/niem/niem-core/2.0" >
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-02-10</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-02-20</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonBirthDate>
+            <nc:Date>1946-05-04</nc:Date>
+        </nc:PersonBirthDate>
+        <nc:PersonName>
+            <nc:PersonGivenName>John</nc:PersonGivenName>
+            <nc:PersonSurName>Doe</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonSexCode>M</nc:PersonSexCode>
+        <nc:PersonSSNIdentification>
+            <nc:IdentificationID>123-12-1230</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>

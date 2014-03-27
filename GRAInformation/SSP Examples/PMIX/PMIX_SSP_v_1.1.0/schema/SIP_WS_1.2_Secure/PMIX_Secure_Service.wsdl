@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.pmix.gov" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" name="pmp" targetNamespace="http://www.pmix.gov">
+	<wsp:Policy wsu:Id="WsBasicProfile_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<sp:SymmetricBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+					<wsp:Policy>
+						<sp:ProtectionToken>
+							<wsp:Policy>
+								<sp:SecureConversationToken sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+									<wsp:Policy>
+										<sp:RequireDerivedKeys/>
+										<sp:BootstrapPolicy>
+											<wsp:Policy>
+												<sp:SignedParts>
+													<sp:Body/>
+													<sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+													<sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+													<sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+													<sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+													<sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+													<sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+													<sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+												</sp:SignedParts>
+												<sp:EncryptedParts>
+													<sp:Body/>
+												</sp:EncryptedParts>
+												<sp:SymmetricBinding>
+													<wsp:Policy>
+														<sp:ProtectionToken>
+															<wsp:Policy>
+																<mssp:SslContextToken sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient" xmlns:mssp="http://schemas.microsoft.com/ws/2005/07/securitypolicy">
+																	<wsp:Policy>
+																		<sp:RequireDerivedKeys/>
+																		<sp:MustNotSendCancel/>
+																		<sp:MustNotSendAmend/>
+																		<sp:MustNotSendRenew/>
+																	</wsp:Policy>
+																</mssp:SslContextToken>
+															</wsp:Policy>
+														</sp:ProtectionToken>
+														<sp:AlgorithmSuite>
+															<wsp:Policy>
+																<sp:Basic256/>
+															</wsp:Policy>
+														</sp:AlgorithmSuite>
+														<sp:Layout>
+															<wsp:Policy>
+																<sp:Strict/>
+															</wsp:Policy>
+														</sp:Layout>
+														<sp:IncludeTimestamp/>
+														<sp:EncryptSignature/>
+														<sp:OnlySignEntireHeadersAndBody/>
+													</wsp:Policy>
+												</sp:SymmetricBinding>
+												<sp:Wss11>
+													<wsp:Policy/>
+												</sp:Wss11>
+												<sp:Trust13>
+													<wsp:Policy>
+														<sp:MustSupportIssuedTokens/>
+														<sp:RequireClientEntropy/>
+														<sp:RequireServerEntropy/>
+													</wsp:Policy>
+												</sp:Trust13>
+											</wsp:Policy>
+										</sp:BootstrapPolicy>
+										<sp:MustNotSendAmend/>
+									</wsp:Policy>
+								</sp:SecureConversationToken>
+							</wsp:Policy>
+						</sp:ProtectionToken>
+						<sp:AlgorithmSuite>
+							<wsp:Policy>
+								<sp:Basic256/>
+							</wsp:Policy>
+						</sp:AlgorithmSuite>
+						<sp:Layout>
+							<wsp:Policy>
+								<sp:Strict/>
+							</wsp:Policy>
+						</sp:Layout>
+						<sp:IncludeTimestamp/>
+						<sp:EncryptSignature/>
+						<sp:OnlySignEntireHeadersAndBody/>
+					</wsp:Policy>
+				</sp:SymmetricBinding>
+				<sp:Wss11 xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+					<wsp:Policy/>
+				</sp:Wss11>
+				<sp:Trust13 xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+					<wsp:Policy>
+						<sp:MustSupportIssuedTokens/>
+						<sp:RequireClientEntropy/>
+						<sp:RequireServerEntropy/>
+					</wsp:Policy>
+				</sp:Trust13>
+				<wsaw:UsingAddressing/>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+	<wsp:Policy wsu:Id="WsBasicProfile_ProvidePrescriptionDrugHistory_Input_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<sp:SignedParts xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+					<sp:Body/>
+					<sp:Header Name="MetaData" Namespace="http://www.pmix.gov"/>
+					<sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+				</sp:SignedParts>
+				<sp:EncryptedParts xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+					<sp:Body/>
+					<sp:Header Name="MetaData" Namespace="http://www.pmix.gov"/>
+				</sp:EncryptedParts>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+	<wsp:Policy wsu:Id="WsBasicProfile_ProvidePrescriptionDrugHistory_output_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<sp:SignedParts xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+					<sp:Body/>
+					<sp:Header Name="ResponseStatus" Namespace="http://www.pmix.gov"/>
+					<sp:Header Name="RoutingData" Namespace="http://www.pmix.gov"/>
+					<sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+				</sp:SignedParts>
+				<sp:EncryptedParts xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+					<sp:Body/>
+					<sp:Header Name="ResponseStatus" Namespace="http://www.pmix.gov"/>
+					<sp:Header Name="RoutingData" Namespace="http://www.pmix.gov"/>
+				</sp:EncryptedParts>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+	<wsp:Policy wsu:Id="WsBasicProfile_ReceiveDeferredPrescriptionDrugHistory_Input_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<sp:SignedParts xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+					<sp:Body/>
+					<sp:Header Name="ResponseStatus" Namespace="http://www.pmix.gov"/>
+					<sp:Header Name="RoutingData" Namespace="http://www.pmix.gov"/>
+					<sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+				</sp:SignedParts>
+				<sp:EncryptedParts xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+					<sp:Body/>
+					<sp:Header Name="ResponseStatus" Namespace="http://www.pmix.gov"/>
+					<sp:Header Name="RoutingData" Namespace="http://www.pmix.gov"/>
+				</sp:EncryptedParts>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+	<wsp:Policy wsu:Id="WsBasicProfile_ReceiveDeferredPrescriptionDrugHistory_output_policy">
+		<wsp:ExactlyOne>
+			<wsp:All>
+				<sp:SignedParts xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+					<sp:Body/>
+					<sp:Header Name="Acknowledgement" Namespace="http://www.pmix.gov"/>
+					<sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+				</sp:SignedParts>
+				<sp:EncryptedParts xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+					<sp:Body/>
+					<sp:Header Name="Acknowledgement" Namespace="http://www.pmix.gov"/>
+				</sp:EncryptedParts>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://www.pmix.gov/Imports">
+			<xsd:import schemaLocation="../information/service/PMIX_Service.0.xsd" namespace="http://www.pmix.gov"/>
+			<xsd:import schemaLocation="../information/service/PMIX_Service.1.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="RequestType">
+		<wsdl:part name="parameters" element="tns:RequestType"/>
+	</wsdl:message>
+	<wsdl:message name="RequestType_Headers">
+		<wsdl:part name="MetaData" element="tns:MetaData"/>
+	</wsdl:message>
+	<wsdl:message name="ResponseType">
+		<wsdl:part name="parameters" element="tns:ResponseType"/>
+	</wsdl:message>
+	<wsdl:message name="ResponseType_Headers">
+		<wsdl:part name="ResponseStatus" element="tns:ResponseStatus"/>
+		<wsdl:part name="RoutingData" element="tns:RoutingData"/>
+	</wsdl:message>
+	<wsdl:message name="AcknowledgementType">
+		<wsdl:part name="parameters" element="tns:AcknowledgementType"/>
+	</wsdl:message>
+	<wsdl:message name="AcknowledgementType_Headers">
+		<wsdl:part name="Acknowledgement" element="tns:Acknowledgement"/>
+	</wsdl:message>
+	<wsdl:portType name="pmp">
+		<wsdl:operation name="ProvidePrescriptionDrugHistory">
+			<wsdl:input name="RequestType" message="tns:RequestType" wsaw:Action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory"/>
+			<wsdl:output name="ResponseType" message="tns:ResponseType" wsaw:Action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistoryResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="ReceiveDeferredPrescriptionDrugHistory">
+			<wsdl:input name="DeferredResponseType" message="tns:ResponseType" wsaw:Action="http://www.pmix.gov/pmp/ReceiveDeferredPrescriptionDrugHistory"/>
+			<wsdl:output name="AcknowledgementType" message="tns:AcknowledgementType" wsaw:Action="http://www.pmix.gov/pmp/ReceiveDeferredPrescriptionDrugHistoryResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="WsBasicProfile" type="tns:pmp">
+		<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsp:PolicyReference URI="#WsBasicProfile_policy"/>
+		<wsdl:operation name="ProvidePrescriptionDrugHistory">
+			<soap12:operation soapAction="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory" style="document"/>
+			<wsdl:input name="RequestType">
+				<wsp:PolicyReference URI="#WsBasicProfile_ProvidePrescriptionDrugHistory_Input_policy"/>
+				<soap12:header message="tns:RequestType_Headers" part="MetaData" use="literal"/>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="ResponseType">
+				<wsp:PolicyReference URI="#WsBasicProfile_ProvidePrescriptionDrugHistory_output_policy"/>
+				<soap12:header message="tns:ResponseType_Headers" part="ResponseStatus" use="literal"/>
+				<soap12:header message="tns:ResponseType_Headers" part="RoutingData" use="literal"/>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ReceiveDeferredPrescriptionDrugHistory">
+			<soap12:operation soapAction="http://www.pmix.gov/pmp/ReceiveDeferredPrescriptionDrugHistory" style="document"/>
+			<wsdl:input name="DeferredResponseType">
+				<wsp:PolicyReference URI="#WsBasicProfile_ReceiveDeferredPrescriptionDrugHistory_Input_policy"/>
+				<soap12:header message="tns:ResponseType_Headers" part="ResponseStatus" use="literal"/>
+				<soap12:header message="tns:ResponseType_Headers" part="RoutingData" use="literal"/>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="AcknowledgementType">
+				<wsp:PolicyReference URI="#WsBasicProfile_ReceiveDeferredPrescriptionDrugHistory_output_policy"/>
+				<soap12:header message="tns:AcknowledgementType_Headers" part="Acknowledgement" use="literal"/>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="pmp">
+		<wsdl:port name="WsBasicProfile" binding="tns:WsBasicProfile">
+			<soap12:address location="http://localhost:18280/pmix/services"/>
+			<wsa10:EndpointReference>
+				<wsa10:Address>http://localhost:18280/pmix/services</wsa10:Address>
+				<Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+					<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+						<X509Data>
+							<X509Certificate>MIIEsDCCApigAwIBAgIQEr+ErVJoEpBDOPe2U8SU6TANBgkqhkiG9w0BAQUFADAUMRIwEAYDVQQDEwlsb2NhbGhvc3QwHhcNMTEwNTE3MDQwMDAwWhcNMjEwNTI0MDQwMDAwWjAUMRIwEAYDVQQDEwlsb2NhbGhvc3QwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDif0Z07K70nEZoxd1bHnpdSmbuWexJeuvGH5R7MXyR2crjJoTHLhjXCgTltw6zLuDMxqfocRSff6WfgKqxHgDeCpQxK2lUH2+uKeCcvR6BqG5q54QF8CtYjsgeKGOOkNpVvr117HFLKKX4iinxmlOiJ5kavyV00R3G3h29deVlaZ73y0YHUtZ5OHmz4HBFLQpHy7V7Y1t2mbbn+2Y9Sphvrd2hV6t5nkEnLOVyQeIPnxl6qcA86tjszU9vStmrn56LkPDixoKU6S7HztPI4Wi6PeDVAOZ8LoDRkzukvldxB71gRNmE/c6W331vLvR5l8CwTod2orjF3U8uX0TrPEAzphVz/j93G3PxnZQH9CdVr9Q31TP1mUryn67073LpDg7DqdxwYqZ/pMenRW2flO1OOZ+TuzVEU3asCf8eTbM0/D6ogfda2E13uaJ7yjqoX7mcqkWwKcLIN9RNGRg0Kye0rgrbznwuWZAvG4hl4ULPy0XdxDcObbkVfyXlueBVUXd/MrV/zBkJHYby9jUo1Fc7XXOwvWGQxC7D86RrObgTtddWLCMF+R0MuIVx28c4r4a0l3SeajhBb+RRbawTMa/MINfpwtCuKLNArEgMYH0DRtZfrtMlv/u9rUk/cmZYTiqXVNP3gd22zv/M/poKALObivPKtbIVtlPQHXEsLn8tuQIDAQABMA0GCSqGSIb3DQEBBQUAA4ICAQBczbjNUha0Qyg8U7LdOvT0eEL9EuaG5xyYU6hSjKhNaDtjE1BKx2QdaVwE0WsriKbiS94baz81RYy0kv3gC0/1ZlgBx5Vu4HKFlidyeJ0ijVhJh9K9c8EWMvo8oXOV8eOLSZpSTE4ukyWCHU5C/nxsTGgWv5CSLaStJd2ezsTvNskDS3kaS4Y3Lv8QiFYO3oFpuqWxdC67F+sRfjM5OhAaXqf3HgbGUxSv0XNbNZv9RBcHW5yo0R+WCukkgPSQgohZqeuXxD6Yb5Z+b37aWhOLGjAg29Z2NJZGbBdgzwPO1Qxovn9ceG3VcIGaOlAmckNGeYajPSApzg142X8CGb+PmaCqZuGZEntq7TAbV2DUazd2XdfLKXQugYYTajIYMyqQFP4hZvuBxvOw9b3kAbb8hwq5rKWBpQHy24pIupmCXRPQwgAKpstdNCTijGZZkLdRP+kSbuJeErbgyMZGRdwx2p9Im0Tg+/i861gYBoiZOzm7ob2BX+VG6038U0832j7vLYyG08NIu2jfxcRwwuNC1Zubqjka/Rz0Y34jrcUsZtV+JSzUExIAbcdfsMJpjcpiajJKOodV1GrpLuDfHbj9dcG3wvjRyGb2VY4TCXoKHLSmPdIx/bqSo/maG0Slj2fDLVJdMTamvxsuihoYAmI+OYjAEF1kg06u1duOBMxSTw==</X509Certificate>
+						</X509Data>
+					</KeyInfo>
+				</Identity>
+			</wsa10:EndpointReference>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

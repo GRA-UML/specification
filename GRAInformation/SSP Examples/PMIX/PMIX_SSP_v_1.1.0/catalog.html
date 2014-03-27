@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rddl="http://www.rddl.org/"
+      xml:lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Prescription Drug Monitoring Information Exchange Catalog</title>
+      <link href="http://www.rddl.org/xrd.css" type="text/css" rel="stylesheet" />
+   </head>
+   <body>
+      <h1>Prescription Drug Monitoring Information Exchange <br/> Service Specification Package</h1>
+      <h3>Summary</h3>
+      <p>The PMIX service provides an individual’s prescription drug history from participating states given specific search criteria.</p>
+      <h3>Description</h3>
+      <p>The PMIX service provides state PMP systems with the capability to retrieve interstate prescription drug history to assist in the identification of potential abuse and diversion. The service can provide the requested drug history as a direct response to a request containing person identifiers. In some cases, a delayed response will be provided. This will require the hosting of an associated service for delivery of the deferred response.  </p>
+      <h2></h2>
+      <table>
+         <tbody>
+            <tr>
+               <th align="left" valign="top">URI: TBD</th>
+               <td></td>
+            </tr>
+            <tr>
+               <th align="left" valign="top">Creation Date: 12/22/2010</th>
+               <td></td>
+            </tr>
+            <tr>
+               <th align="left" valign="top">Status: In Design</th>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <h2>Catalog Files</h2>
+      <div class="resource">
+         <ul>
+            <li><a href="catalog.html"
+                  rddl:purpose="http://niem.gov/niem/resources/purposes#catalog">Catalog</a></li>
+            <li><a href="metadata.xml"
+                  rddl:purpose="http://niem.gov/niem/resources/purposes#metadata">Metadata</a></li>
+         </ul>
+      </div>
+      <h2>Service Description Documentation</h2>
+      <div class="resource">
+         <ul>
+            <li><a href="artifacts/PMIX_SDD_v_1.1.0.docx"
+                  rddl:purpose="http://niem.gov/niem/resources/purposes#master-documentation">Prescription Drug Monitoring Information Exchange Service Description Document</a></li>
+         </ul>
+      </div>
+      <h2>Service Interface Documentation</h2>
+
+      <div class="resource">
+         <ul>
+
+            <li><a href="artifacts/PMIX_SIDD_WS_Trusted_v_1.1.0.docx"
+                  rddl:purpose="http://niem.gov/niem/resources/purposes#master-documentation">Prescription Drug Monitoring Information Exchange Trusted Interface Description Document</a></li>
+            <li><a href="artifacts/PMIX_SIDD_WS_Secure_v_1.1.0.docx"
+                  rddl:purpose="http://niem.gov/niem/resources/purposes#master-documentation">Prescription Drug Monitoring Information Exchange Secure Interface Description Document</a></li>
+		
+
+         </ul>
+      </div>
+
+      <h2>Schema and Sample Files</h2>
+      <h3>Web Service</h3>
+      <div class="resource">
+         <ul>
+    	    <li><a href="schema/SIP_WS_1.2_Trusted/PMIX_Trusted_Service.wsdl" rddl:purpose="http://niem.gov/niem/resources/purposes#exchange-schema">PMIX Trusted Service</a></li>
+            <li><a href="sample/SIP_WS_1.2_Trusted/PMIX_SOAP_Provide_Request_Trusted.xml" rddl:purpose="http://niem.gov/niem/resources/purposes#soap-sample">PMIX Trusted Service ProvidePrescriptionDrugHistory Request SOAP Sample</a></li>
+            <li><a href="sample/SIP_WS_1.2_Trusted/PMIX_SOAP_Fault_Authorization.xml" rddl:purpose="http://niem.gov/niem/resources/purposes#soap-sample">PMIX Service Authorization Fault SOAP Sample</a></li>
+            <li><a href="sample/SIP_WS_1.2_Trusted/PMIX_SOAP_Fault_InvalidSecurity.xml" rddl:purpose="http://niem.gov/niem/resources/purposes#soap-sample">PMIX Service Invalid Security SOAP Sample</a></li>
+            <li><a href="sample/SIP_WS_1.2_Trusted/PMIX_SOAP_Fault_Validation.xml" rddl:purpose="http://niem.gov/niem/resources/purposes#soap-sample">PMIX Service Fault Validation SOAP Sample</a></li>
+
+            <li><a href="schema/SIP_WS_1.2_Secure/PMIX_Secure_Service.wsdl" rddl:purpose="http://niem.gov/niem/resources/purposes#exchange-schema">PMIX Secure Service</a></li>
+            <li><a href="sample/SIP_WS_1.2_Secure/PMIX_SOAP_Provide_Request_Secure.xml" rddl:purpose="http://niem.gov/niem/resources/purposes#soap-sample">PMIX Secure Service ProvidePrescriptionDrugHistory Request SOAP Sample</a></li>
+            <li><a href="sample/SIP_WS_1.2_Secure/PMIX_SOAP_Provide_Response_Secure.xml" rddl:purpose="http://niem.gov/niem/resources/purposes#soap-sample">PMIX Secure Service ProvidePrescriptionDrugHistory Response SOAP Sample</a></li>
+            <li><a href="sample/SIP_WS_1.2_Secure/PMIX_SOAP_Fault_Authorization.xml" rddl:purpose="http://niem.gov/niem/resources/purposes#soap-sample">PMIX Service Authorization Fault SOAP Sample</a></li>
+            <li><a href="sample/SIP_WS_1.2_Secure/PMIX_SOAP_Fault_InvalidSecurity.xml" rddl:purpose="http://niem.gov/niem/resources/purposes#soap-sample">PMIX Service Invalid Security SOAP Sample</a></li>
+            <li><a href="sample/SIP_WS_1.2_Secure/PMIX_SOAP_Fault_Validation.xml" rddl:purpose="http://niem.gov/niem/resources/purposes#soap-sample">PMIX Service Fault Validation SOAP Sample</a></li>
+		</ul>
+      </div>
+      <h3>Information</h3>
+		<div class="resource">
+         <ul>
+            <li><a href="artifacts/service model/information model/PMIX IEPD/catalog.html">PMIX IEPD Catalog</a></li>
+            <li><a href="artifacts/service model/information model/PMIX IEPD/sample/">Information Samples</a></li>
+         </ul>
+      </div>
+      <h2>Organization and Point of Contact</h2>
+      <table>
+         <tbody>
+            <tr>
+               <th align="left" valign="top">Organization Name: </th>
+               <td>IJIS</td>
+            </tr>
+            <tr>
+               <th align="left" valign="top">Point of Contact Name: </th>
+               <td>Scott Serich</td>
+            </tr>
+            <tr>
+               <th align="left" valign="top">Phone: </th>
+               <td>(703) 726-1913</td>
+            </tr>
+            <tr>
+               <th align="left" valign="top">Website: </th>
+               <td><a href="http://www.ijis.org/">http://www.ijis.org/</a></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

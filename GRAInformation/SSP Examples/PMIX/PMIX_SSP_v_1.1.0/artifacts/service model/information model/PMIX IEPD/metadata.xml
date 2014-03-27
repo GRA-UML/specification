@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Metadata>
+    <URI>http://it.ojp.gov/GlobalJRA/PMIXIEPD/0.1.0</URI>
+    <Name>Prescription Monitoring Program Information Exchange Service IEPD</Name>
+    <Summary>The purpose of the PMP Information Exchange (PMIX) Exchange Hub Pilot Information Exchange Package Documentation (IEPD) is to provide state Prescription Monitoring Programs (PMPs) with instructions and guidelines on how to exchange National Information Exchange Model (NIEM) based dispensed monitored substance information requests and responses through the PMIX Hub server (“Hub”). </Summary>
+    <Description>The PMIX service provides state PMP systems with the capability to retrieve interstate prescription drug history to assist in the identification of potential abuse and diversion. The service can provide the requested drug history as a direct response to a request containing person identifiers. In some cases, a delayed response will be provided. This will require the hosting of an associated service for delivery of the deferred response. </Description>
+    <Version>0.1.0</Version>
+    <URL/>
+    <CreationDate>11/06/2007</CreationDate>
+    <LastRevisionDate>11/06/2007</LastRevisionDate>
+    <NextRevisionDate/>
+    <NIEMVersion>2.0</NIEMVersion>
+    <Security>Public</Security>
+    <Maturity>2</Maturity>
+    <Status/>
+    <Schedule/>
+    <Lineage/>
+    <Relationships/>
+    <Keywords/>
+    <Domain>Public Health, Criminal Justice, Substance Monitoring, Listed Chemical Monitoring</Domain>
+    <ExchangePartners/>
+    <Process/>
+    <TriggeringEvent/>
+    <Conditions/>
+    <Endorsements/>
+    <Sponsors>Bureau of Justice Assistance (BJA), Office of Justice Programs, U.S. Department of Justice (managed on behalf of BJA by SEARCH, NCSC, and the IJIS Institute)</Sponsors>
+    <Purpose>The purpose of this service is to support the establishment and operation of automated PMIX capabilities between states. </Purpose>
+    <MessageExchangePatterns>request/response</MessageExchangePatterns>
+    <CommunicationsEnvironment/>
+    <ExchangePartnerCategories/>
+    <AuthoritativeSource>
+        <Category/>
+        <Organization>
+            <Name>Integrated Justice Information Systems</Name>
+            <Address1></Address1>
+            <Address2/>
+            <City>Washington, DC</City>
+            <State></State>
+            <Zip></Zip>
+            <Country>USA</Country>
+            <URL></URL>
+        </Organization>
+        <PointOfContact>
+            <Name>Scott Serich</Name>
+            <Address1></Address1>
+            <Address2/>
+            <City></City>
+            <State></State>
+            <Zip></Zip>
+            <Country>USA</Country>
+            <Phone>(703) 726-1913</Phone>
+            <Fax></Fax>
+            <Email>scott.serich@ijis.org</Email>
+        </PointOfContact>
+    </AuthoritativeSource>
+</Metadata>

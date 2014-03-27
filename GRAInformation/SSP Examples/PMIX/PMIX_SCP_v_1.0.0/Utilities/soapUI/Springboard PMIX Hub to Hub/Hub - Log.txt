@@ -1,0 +1,31 @@
+Request ID = 12345, Requestor = Dr.ABC, Requestor Role = Pharmacist, Disclosing State = TT, Requesting State = AL
+1. Field = Request.LastName, XMLValue = Doe, RuleValue = Doe => Match
+1. Field = Request.FirstName, XMLValue = John, RuleValue = John => Match
+1. Field = Request.DOB, XMLValue = 1946-05-04, RuleValue = 1946-05-04 => Match
+1. Field = Request.SSN, XMLValue = 123-12-1230, RuleValue = 123-12-1230 => Match
+1. Field = Request.Sex, XMLValue = M, RuleValue = M => Match
+Response = Basic Communication - Test Response
+----------------------
+Request ID = 12345, Requestor = Dr.ABC, Requestor Role = Unauthorized, Disclosing State = TT, Requesting State = AL
+The Requesting Role is not authorized for the Disclosing State.
+Response = Unauthorized Role - Fault
+----------------------
+Request ID = 12345, Requestor = Dr.ABC, Requestor Role = Pharmacist, Disclosing State = TT, Requesting State = XX
+1. Field = Request.LastName, XMLValue = Doe, RuleValue = Doe => Match
+1. Field = Request.FirstName, XMLValue = Jane, RuleValue = John => NO Match
+2. Field = RequestingState, XMLValue = XX, RuleValue = XX => Match
+2. Field = DisclosingState, XMLValue = TT, RuleValue = TT => Match
+Response = Unauthorized Requesting State - Fault
+----------------------
+Request ID = 12345, Requestor = Dr.ABC, Requestor Role = Pharmacist, Disclosing State = XX, Requesting State = AL
+1. Field = Request.LastName, XMLValue = Doe, RuleValue = Doe => Match
+1. Field = Request.FirstName, XMLValue = Jane, RuleValue = John => NO Match
+2. Field = RequestingState, XMLValue = AL, RuleValue = XX => NO Match
+3. Field = RequestingState, XMLValue = AL, RuleValue = AL => Match
+3. Field = DisclosingState, XMLValue = XX, RuleValue = XX => Match
+Response = Unauthorized Disclosing State - Fault
+----------------------
+Request ID = 12345, Requestor = Dr.ABC, Requestor Role = Pharmacist, Disclosing State = TT, Requesting State = XX
+Last Name not provided
+Response = Missing Last Name - Fault
+----------------------

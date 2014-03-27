@@ -1,0 +1,18 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope" xmlns:SOAP-ENC="http://www.w3.org/2003/05/soap-encoding" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<SOAP-ENV:Header>
+		<m:MetaData xmlns:m="http://www.pmix.gov">
+			<m:Requestor>String</m:Requestor>
+			<m:RequestorRole>Examiner</m:RequestorRole>
+			<m:RoutingData>
+				<m:DisclosingState>String</m:DisclosingState>
+				<m:RequestID>String</m:RequestID>
+				<m:RequestingState>String</m:RequestingState>
+			</m:RoutingData>
+		</m:MetaData>
+	</SOAP-ENV:Header>
+	<SOAP-ENV:Body>
+		<m:RequestType xmlns:m="http://www.pmix.gov">
+			<m:RequestData>String</m:RequestData>
+		</m:RequestType>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

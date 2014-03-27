@@ -1,0 +1,36 @@
+<pmix:PMPRequest xmlns:pmix="http://xml.ijis.org/niem/2.0/" 
+xmlns:pmp="http://xml.ijis.org/niem/2.0/extension" xmlns:nc="http://niem.gov/niem/niem-core/2.0" >
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-02-01</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-04-30</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonBirthDate>
+            <nc:Date>1977-03-31</nc:Date>
+        </nc:PersonBirthDate>
+        <nc:PersonName>
+            <nc:PersonGivenName>Melissa</nc:PersonGivenName>
+            <nc:PersonSurName>Smith</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonSexCode>F</nc:PersonSexCode>
+        <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+                <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                        <nc:StreetFullText>124 Smith Towers, Madison Drive</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>College Park</nc:LocationCityName>
+                    <nc:LocationStateUSPostalServiceCode>MD</nc:LocationStateUSPostalServiceCode>
+                    <nc:LocationPostalCode>24332</nc:LocationPostalCode>
+                </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactEntity>
+                <nc:EntityOrganization>
+                    <nc:OrganizationDoingBusinessAsName>MediSolutions, Inc.</nc:OrganizationDoingBusinessAsName>
+                </nc:EntityOrganization>
+            </nc:ContactEntity>
+        </pmp:PersonPrimaryContactInformation>
+        <pmp:SpeciesCode>01</pmp:SpeciesCode>
+        <pmp:PatientLocationCode>01</pmp:PatientLocationCode>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>

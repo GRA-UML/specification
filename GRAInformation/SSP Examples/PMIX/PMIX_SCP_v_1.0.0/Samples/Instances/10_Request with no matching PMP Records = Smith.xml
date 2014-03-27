@@ -1,0 +1,39 @@
+<pmix:PMPRequest xmlns:pmix="http://xml.ijis.org/niem/2.0/" 
+xmlns:pmp="http://xml.ijis.org/niem/2.0/extension" xmlns:nc="http://niem.gov/niem/niem-core/2.0" >
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-01-01</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-01-30</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonBirthDate>
+            <nc:Date>1977-03-31</nc:Date>
+        </nc:PersonBirthDate>
+        <nc:PersonName>
+            <nc:PersonSurName>Smith</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonSSNIdentification>
+            <nc:IdentificationID>432-44-2313</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+                <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                        <nc:StreetFullText>21C Terrace Suites, Clive Street</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>Falls Church</nc:LocationCityName>
+                    <nc:LocationStateUSPostalServiceCode>VA</nc:LocationStateUSPostalServiceCode>
+                </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactEntity>
+                <nc:EntityOrganization>
+                    <nc:OrganizationDoingBusinessAsName>HealthCare Pharma</nc:OrganizationDoingBusinessAsName>
+                </nc:EntityOrganization>
+            </nc:ContactEntity>
+        </pmp:PersonPrimaryContactInformation>
+        <pmp:PersonTribalIdentifier>
+            <nc:IdentificationID>263821</nc:IdentificationID>
+        </pmp:PersonTribalIdentifier>
+        <pmp:SpeciesCode>01</pmp:SpeciesCode>
+        <pmp:PatientLocationCode>01</pmp:PatientLocationCode>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>

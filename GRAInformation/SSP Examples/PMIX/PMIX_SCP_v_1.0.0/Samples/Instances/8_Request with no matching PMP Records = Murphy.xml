@@ -1,0 +1,35 @@
+<pmix:PMPRequest xmlns:pmix="http://xml.ijis.org/niem/2.0/" 
+xmlns:pmp="http://xml.ijis.org/niem/2.0/extension" xmlns:nc="http://niem.gov/niem/niem-core/2.0" >
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-01-01</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-01-30</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonBirthDate>
+            <nc:Date>1960-02-16</nc:Date>
+        </nc:PersonBirthDate>
+        <nc:PersonName>
+            <nc:PersonGivenName>George</nc:PersonGivenName>
+            <nc:PersonSurName>Murphy</nc:PersonSurName>
+        </nc:PersonName>
+        <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+                <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                        <nc:StreetFullText>412 Wilson Lane</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>Bethesda</nc:LocationCityName>
+                    <nc:LocationStateUSPostalServiceCode>MD</nc:LocationStateUSPostalServiceCode>
+                    <nc:LocationPostalCode>23342</nc:LocationPostalCode>
+                </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactEntity>
+                <nc:EntityOrganization>
+                    <nc:OrganizationDoingBusinessAsName>United Pharma</nc:OrganizationDoingBusinessAsName>
+                </nc:EntityOrganization>
+            </nc:ContactEntity>
+        </pmp:PersonPrimaryContactInformation>
+        <pmp:SpeciesCode>01</pmp:SpeciesCode>
+        <pmp:PatientLocationCode>02</pmp:PatientLocationCode>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.pmix.gov" targetNamespace="http://www.pmix.gov" elementFormDefault="qualified">
+	<xs:element name="RequestType">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RequestData" type="xs:string" nillable="true" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="MetaDataType">
+		<xs:sequence>
+			<xs:element name="Requestor" type="xs:string" nillable="true" minOccurs="0"/>
+			<xs:element name="RequestorRole" type="tns:RoleType" minOccurs="0"/>
+			<xs:element name="RoutingData" type="tns:RoutingDataType" nillable="true"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="MetaDataType" type="tns:MetaDataType" nillable="true"/>
+	<xs:simpleType name="RoleType">
+		<xs:restriction base="xs:string">
+			<!--xs:enumeration value="Examiner"/>
+			<xs:enumeration value="Judge"/>
+			<xs:enumeration value="Law Enforcement"/>
+			<xs:enumeration value="Medicaid"/>
+			<xs:enumeration value="Patient"/>
+			<xs:enumeration value="Pharmacist"/>
+			<xs:enumeration value="Practitioner"/>
+			<xs:enumeration value="Prescriber"/>
+			<xs:enumeration value="Regulator"/>
+			<xs:enumeration value="Researcher"/-->
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="RoleType" type="tns:RoleType" nillable="true"/>
+	<xs:complexType name="RoutingDataType">
+		<xs:sequence>
+			<xs:element name="DisclosingState" type="xs:string" nillable="true"/>
+			<xs:element name="RequestID" type="xs:string" nillable="true"/>
+			<xs:element name="RequestingState" type="xs:string" nillable="true"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="RoutingDataType" type="tns:RoutingDataType" nillable="true"/>
+	<xs:element name="MetaData" type="tns:MetaDataType" nillable="true"/>
+	<xs:element name="ResponseType">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResponseData" type="xs:string" nillable="true" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="ResponseStatusType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Deferred"/>
+			<xs:enumeration value="NotFound"/>
+			<xs:enumeration value="Provided"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ResponseStatusType" type="tns:ResponseStatusType" nillable="true"/>
+	<xs:element name="ResponseStatus" type="tns:ResponseStatusType"/>
+	<xs:element name="RoutingData" type="tns:RoutingDataType" nillable="true"/>
+	<xs:element name="AcknowledgementType">
+		<xs:complexType>
+			<xs:sequence/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Acknowledgement" type="xs:boolean"/>
+</xs:schema>

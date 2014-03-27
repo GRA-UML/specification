@@ -1,0 +1,2040 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="Springboard: PMIX Hub-to-Hub" resourceRoot="" soapui-version="4.5.1.1-SNAPSHOT" abortOnError="false" runType="SEQUENTIAL" activeEnvironment="Default" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="Count Empty Values">true</con:setting><con:setting id="Excluded elements">&lt;xml-fragment/></con:setting><con:setting id="Multi values">&lt;xml-fragment/></con:setting></con:settings><con:interface xsi:type="con:WsdlInterface" wsaVersion="200508" name="WsBasicProfile" type="wsdl" bindingName="{http://www.pmix.gov}WsBasicProfile" soapVersion="1_2" anonymous="optional" definition="T:/Data/Source/pmix/Documentation/PMIX_SSP_v_1.0.2/schema/SIP_WS_1.2/PMIX_Trusted_Service.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/T:/Data/Source/pmix/Documentation/PMIX_SSP_v_1.0.2/schema/SIP_WS_1.2/PMIX_Trusted_Service.wsdl"><con:part><con:url>file:/T:/Data/Source/pmix/Documentation/PMIX_SSP_v_1.0.2/schema/SIP_WS_1.2/PMIX_Trusted_Service.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="pmp" targetNamespace="http://www.pmix.gov" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.pmix.gov" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsp:Policy wsu:Id="WsBasicProfile_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.pmix.gov/Imports">
+      <xsd:import schemaLocation="../information/service/PMIX_Service.0.xsd" namespace="http://www.pmix.gov"/>
+      <xsd:import schemaLocation="../information/service/PMIX_Service.1.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="RequestType">
+    <wsdl:part name="parameters" element="tns:RequestType"/>
+  </wsdl:message>
+  <wsdl:message name="RequestType_Headers">
+    <wsdl:part name="MetaData" element="tns:MetaData"/>
+  </wsdl:message>
+  <wsdl:message name="ResponseType">
+    <wsdl:part name="parameters" element="tns:ResponseType"/>
+  </wsdl:message>
+  <wsdl:message name="ResponseType_Headers">
+    <wsdl:part name="ResponseStatus" element="tns:ResponseStatus"/>
+    <wsdl:part name="RoutingData" element="tns:RoutingData"/>
+  </wsdl:message>
+  <wsdl:message name="AcknowledgementType">
+    <wsdl:part name="parameters" element="tns:AcknowledgementType"/>
+  </wsdl:message>
+  <wsdl:message name="AcknowledgementType_Headers">
+    <wsdl:part name="Acknowledgement" element="tns:Acknowledgement"/>
+  </wsdl:message>
+  <wsdl:portType name="pmp">
+    <wsdl:operation name="ProvidePrescriptionDrugHistory">
+      <wsdl:input name="RequestType" message="tns:RequestType" wsaw:Action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory"/>
+      <wsdl:output name="ResponseType" message="tns:ResponseType" wsaw:Action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistoryResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveDeferredPrescriptionDrugHistory">
+      <wsdl:input name="DeferredResponseType" message="tns:ResponseType" wsaw:Action="http://www.pmix.gov/pmp/ReceiveDeferredPrescriptionDrugHistory"/>
+      <wsdl:output name="AcknowledgementType" message="tns:AcknowledgementType" wsaw:Action="http://www.pmix.gov/pmp/ReceiveDeferredPrescriptionDrugHistoryResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsBasicProfile" type="tns:pmp">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:PolicyReference URI="#WsBasicProfile_policy"/>
+    <wsdl:operation name="ProvidePrescriptionDrugHistory">
+      <soap12:operation soapAction="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory" style="document"/>
+      <wsdl:input name="RequestType">
+        <soap12:header message="tns:RequestType_Headers" part="MetaData" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ResponseType">
+        <soap12:header message="tns:ResponseType_Headers" part="ResponseStatus" use="literal"/>
+        <soap12:header message="tns:ResponseType_Headers" part="RoutingData" use="literal"/>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <!--<wsdl:operation name="ReceiveDeferredPrescriptionDrugHistory">
+			<soap12:operation
+				soapAction="http://www.pmix.gov/pmp/ReceiveDeferredPrescriptionDrugHistory"
+				style="document"/>
+			<wsdl:input name="DeferredResponseType">
+				<soap12:header message="tns:ResponseType_Headers" part="ResponseStatus"
+					use="literal"/>
+				<soap12:header message="tns:ResponseType_Headers" part="RoutingData" use="literal"/>
+				<soap12:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="AcknowledgementType">
+				<soap12:header message="tns:AcknowledgementType_Headers" part="Acknowledgement"
+					use="literal"/>
+				<soap12:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>-->
+  </wsdl:binding>
+  <wsdl:service name="pmp">
+    <wsdl:port name="WsBasicProfile" binding="tns:WsBasicProfile">
+      <soap12:address location="http://localhost:18280/pmix/services"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:18280/pmix/services</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\T:\Data\Source\pmix\Documentation\PMIX_SSP_v_1.0.2\schema\information\service\PMIX_Service.0.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.pmix.gov" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.pmix.gov">
+  <xs:element name="RequestType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="RequestData" type="xs:string" nillable="true" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="MetaDataType">
+    <xs:sequence>
+      <xs:element name="Requestor" type="xs:string" nillable="true" minOccurs="0"/>
+      <xs:element name="RequestorRole" type="tns:RoleType" minOccurs="0"/>
+      <xs:element name="RoutingData" type="tns:RoutingDataType" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MetaDataType" type="tns:MetaDataType" nillable="true"/>
+  <xs:simpleType name="RoleType">
+    <xs:restriction base="xs:string">
+      <!--xs:enumeration value="Examiner"/>
+			<xs:enumeration value="Judge"/>
+			<xs:enumeration value="Law Enforcement"/>
+			<xs:enumeration value="Medicaid"/>
+			<xs:enumeration value="Patient"/>
+			<xs:enumeration value="Pharmacist"/>
+			<xs:enumeration value="Practitioner"/>
+			<xs:enumeration value="Prescriber"/>
+			<xs:enumeration value="Regulator"/>
+			<xs:enumeration value="Researcher"/-->
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RoleType" type="tns:RoleType" nillable="true"/>
+  <xs:complexType name="RoutingDataType">
+    <xs:sequence>
+      <xs:element name="DisclosingState" type="xs:string" nillable="true"/>
+      <xs:element name="RequestID" type="xs:string" nillable="true"/>
+      <xs:element name="RequestingState" type="xs:string" nillable="true"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RoutingDataType" type="tns:RoutingDataType" nillable="true"/>
+  <xs:element name="MetaData" type="tns:MetaDataType" nillable="true"/>
+  <xs:element name="ResponseType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ResponseData" type="xs:string" nillable="true" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="ResponseStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Deferred"/>
+      <xs:enumeration value="NotFound"/>
+      <xs:enumeration value="Provided"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ResponseStatusType" type="tns:ResponseStatusType" nillable="true"/>
+  <xs:element name="ResponseStatus" type="tns:ResponseStatusType"/>
+  <xs:element name="RoutingData" type="tns:RoutingDataType" nillable="true"/>
+  <xs:element name="AcknowledgementType">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Acknowledgement" type="xs:boolean"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\T:\Data\Source\pmix\Documentation\PMIX_SSP_v_1.0.2\schema\information\service\PMIX_Service.1.xsd</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:18901/conformance/test</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory" name="ProvidePrescriptionDrugHistory" bindingOperationName="ProvidePrescriptionDrugHistory" type="Request-Response" outputName="ResponseType" inputName="RequestType" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="ProvidePrescriptionDrugHistory - 1 Hit - John Doe" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:18901/conformance/test</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pmix="http://www.pmix.gov">
+    <soap:Header>
+        <pmix:MetaData>
+            <pmix:Requestor>Dr.ABC</pmix:Requestor>
+            <pmix:RequestorRole>Pharmacist</pmix:RequestorRole>
+            <pmix:RoutingData>
+                <pmix:DisclosingState>TT</pmix:DisclosingState>
+                <pmix:RequestID>12345</pmix:RequestID>
+                <pmix:RequestingState>AL</pmix:RequestingState>
+            </pmix:RoutingData>
+        </pmix:MetaData>
+    </soap:Header>
+    <soap:Body>
+        <pmix:RequestType>
+            <pmix:RequestData><![CDATA[
+                
+<pmix:PMPRequest xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+    xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+    xmlns:pmix="http://xml.ijis.org/niem/2.0/">
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-02-10</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-02-20</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonBirthDate>
+            <nc:Date>1946-05-04</nc:Date>
+        </nc:PersonBirthDate>
+        <nc:PersonName>
+            <nc:PersonGivenName>John</nc:PersonGivenName>
+            <nc:PersonSurName>Doe</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonSexCode>M</nc:PersonSexCode>
+        <nc:PersonSSNIdentification>
+            <nc:IdentificationID>123-12-1230</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+                <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                        <nc:StreetFullText>35 Pike Street</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>Alexandria</nc:LocationCityName>
+                    <nc:LocationStateUSPostalServiceCode>VA</nc:LocationStateUSPostalServiceCode>
+                    <nc:LocationPostalCode>20977</nc:LocationPostalCode>
+                </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactEntity>
+                <nc:EntityOrganization>
+                    <nc:OrganizationDoingBusinessAsName>ABC Corporation</nc:OrganizationDoingBusinessAsName>
+                </nc:EntityOrganization>
+            </nc:ContactEntity>
+        </pmp:PersonPrimaryContactInformation>
+        <pmp:PersonTribalIdentifier>
+            <nc:IdentificationID>263821</nc:IdentificationID>
+        </pmp:PersonTribalIdentifier>
+        <pmp:SpeciesCode>01</pmp:SpeciesCode>
+        <pmp:PatientLocationCode>01</pmp:PatientLocationCode>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>
+            ]]]]>><![CDATA[</pmix:RequestData>
+        </pmix:RequestType>
+    </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory" to="urn://tt/"/><con:wsrmConfig version="1.2"/></con:call><con:call name="ProvidePrescriptionDrugHistory - 2 Hits - Doe No DOB" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:18901/conformance/test</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pmix="http://www.pmix.gov">
+    <soap:Header>
+        <pmix:MetaData>
+            <pmix:Requestor>Dr.ABC</pmix:Requestor>
+            <pmix:RequestorRole>Pharmacist</pmix:RequestorRole>
+            <pmix:RoutingData>
+                <pmix:DisclosingState>TT</pmix:DisclosingState>
+                <pmix:RequestID>12345</pmix:RequestID>
+                <pmix:RequestingState>AL</pmix:RequestingState>
+            </pmix:RoutingData>
+        </pmix:MetaData>
+    </soap:Header>
+    <soap:Body>
+        <pmix:RequestType>
+            <pmix:RequestData><![CDATA[
+                
+<pmix:PMPRequest xmlns:s="http://niem.gov/niem/structures/2.0"
+    xmlns:fbi="http://niem.gov/niem/fbi/2.0"
+    xmlns:i="http://niem.gov/niem/appinfo/2.0"
+    xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+    xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0"
+    xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+    xmlns:pmix="http://xml.ijis.org/niem/2.0/"
+    xmlns:ns1="http://niem.gov/niem/domains/jxdm/4.0"
+    xmlns:can="http://niem.gov/niem/post-canada/2.0"
+    xmlns:usps="http://niem.gov/niem/usps_states/2.0"
+    xmlns:intel="http://niem.gov/niem/domains/intelligence/2.0"
+    xmlns:pmpcd="http://xml.ijis.org/pmpcode"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-02-10</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-02-29</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonName>
+            <nc:PersonSurName>Doe</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonSSNIdentification>
+            <nc:IdentificationID>123-12-1230</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+                <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                        <nc:StreetFullText>24 SkyLine Suites, Dupont Circle</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>Washington DC</nc:LocationCityName>
+                    <nc:LocationStateUSPostalServiceCode>DC</nc:LocationStateUSPostalServiceCode>
+                    <nc:LocationPostalCode>20098</nc:LocationPostalCode>
+                </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactEntity>
+                <nc:EntityOrganization>
+                    <nc:OrganizationDoingBusinessAsName>XYZ Corporation</nc:OrganizationDoingBusinessAsName>
+                </nc:EntityOrganization>
+            </nc:ContactEntity>
+        </pmp:PersonPrimaryContactInformation>
+        <pmp:SpeciesCode>01</pmp:SpeciesCode>
+        <pmp:PatientLocationCode>01</pmp:PatientLocationCode>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>
+            ]]]]>><![CDATA[</pmix:RequestData>
+        </pmix:RequestType>
+    </soap:Body>
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory"/><con:wsrmConfig version="1.2"/></con:call><con:call name="ProvidePrescriptionDrugHistory - 3 Hits - Doe" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:18901/conformance/test</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pmix="http://www.pmix.gov">
+    <soap:Header>
+        <pmix:MetaData>
+            <pmix:Requestor>Dr.ABC</pmix:Requestor>
+            <pmix:RequestorRole>Pharmacist</pmix:RequestorRole>
+            <pmix:RoutingData>
+                <pmix:DisclosingState>TT</pmix:DisclosingState>
+                <pmix:RequestID>12345</pmix:RequestID>
+                <pmix:RequestingState>AL</pmix:RequestingState>
+            </pmix:RoutingData>
+        </pmix:MetaData>
+    </soap:Header>
+    <soap:Body>
+        <pmix:RequestType>
+            <pmix:RequestData><![CDATA[
+                
+<pmix:PMPRequest xmlns:s="http://niem.gov/niem/structures/2.0"
+    xmlns:fbi="http://niem.gov/niem/fbi/2.0"
+    xmlns:i="http://niem.gov/niem/appinfo/2.0"
+    xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+    xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0"
+    xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+    xmlns:pmix="http://xml.ijis.org/niem/2.0/"
+    xmlns:ns1="http://niem.gov/niem/domains/jxdm/4.0"
+    xmlns:can="http://niem.gov/niem/post-canada/2.0"
+    xmlns:usps="http://niem.gov/niem/usps_states/2.0"
+    xmlns:intel="http://niem.gov/niem/domains/intelligence/2.0"
+    xmlns:pmpcd="http://xml.ijis.org/pmpcode"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-02-10</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-03-30</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonBirthDate>
+            <nc:Date>1946-05-04</nc:Date>
+        </nc:PersonBirthDate>
+        <nc:PersonName>
+            <nc:PersonSurName>Doe</nc:PersonSurName>
+        </nc:PersonName>
+        <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+                <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                        <nc:StreetFullText>2114 Brook Drive</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>Herndon</nc:LocationCityName>
+                    <nc:LocationStateUSPostalServiceCode>VA</nc:LocationStateUSPostalServiceCode>
+                    <nc:LocationPostalCode>20312</nc:LocationPostalCode>
+                </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactEntity>
+                <nc:EntityOrganization>                    
+                    <nc:OrganizationDoingBusinessAsName>AHS Corporation</nc:OrganizationDoingBusinessAsName>
+                </nc:EntityOrganization>
+            </nc:ContactEntity>
+        </pmp:PersonPrimaryContactInformation>
+        <pmp:SpeciesCode>01</pmp:SpeciesCode>
+        <pmp:PatientLocationCode>03</pmp:PatientLocationCode>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>
+            ]]]]>><![CDATA[</pmix:RequestData>
+        </pmix:RequestType>
+    </soap:Body>
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory"/><con:wsrmConfig version="1.2"/></con:call><con:call name="ProvidePrescriptionDrugHistory - No Hits - Jane Doe" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:18901/conformance/test</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pmix="http://www.pmix.gov">
+    <soap:Header>
+        <pmix:MetaData>
+            <pmix:Requestor>Dr.ABC</pmix:Requestor>
+            <pmix:RequestorRole>Pharmacist</pmix:RequestorRole>
+            <pmix:RoutingData>
+                <pmix:DisclosingState>TT</pmix:DisclosingState>
+                <pmix:RequestID>12345</pmix:RequestID>
+                <pmix:RequestingState>AL</pmix:RequestingState>
+            </pmix:RoutingData>
+        </pmix:MetaData>
+    </soap:Header>
+    <soap:Body>
+        <pmix:RequestType>
+            <pmix:RequestData><![CDATA[
+                
+<pmix:PMPRequest xmlns:s="http://niem.gov/niem/structures/2.0"
+    xmlns:fbi="http://niem.gov/niem/fbi/2.0"
+    xmlns:i="http://niem.gov/niem/appinfo/2.0"
+    xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+    xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0"
+    xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+    xmlns:pmix="http://xml.ijis.org/niem/2.0/"
+    xmlns:ns1="http://niem.gov/niem/domains/jxdm/4.0"
+    xmlns:can="http://niem.gov/niem/post-canada/2.0"
+    xmlns:usps="http://niem.gov/niem/usps_states/2.0"
+    xmlns:intel="http://niem.gov/niem/domains/intelligence/2.0"
+    xmlns:pmpcd="http://xml.ijis.org/pmpcode"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-02-10</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-02-29</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonBirthDate>
+            <nc:Date>1956-01-19</nc:Date>
+        </nc:PersonBirthDate>
+        <nc:PersonName>
+            <nc:PersonGivenName>Jane</nc:PersonGivenName>
+            <nc:PersonSurName>Doe</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonSexCode>F</nc:PersonSexCode>
+        <nc:PersonSSNIdentification>
+            <nc:IdentificationID>234-12-2340</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+                <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                        <nc:StreetFullText>88163 Cobblestone Lane</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>Baltimore</nc:LocationCityName>
+                    <nc:LocationStateUSPostalServiceCode>MD</nc:LocationStateUSPostalServiceCode>
+                    <nc:LocationPostalCode>22987</nc:LocationPostalCode>
+                </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactEntity>
+                <nc:EntityOrganization>                    
+                    <nc:OrganizationDoingBusinessAsName>ABC Corporation</nc:OrganizationDoingBusinessAsName>
+                </nc:EntityOrganization>
+            </nc:ContactEntity>
+        </pmp:PersonPrimaryContactInformation>
+        <pmp:SpeciesCode>01</pmp:SpeciesCode>
+        <pmp:PatientLocationCode>04</pmp:PatientLocationCode>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>
+            ]]]]>><![CDATA[</pmix:RequestData>
+        </pmix:RequestType>
+    </soap:Body>
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory"/><con:wsrmConfig version="1.2"/></con:call><con:call name="ProvidePrescriptionDrugHistory - 2 Hits - Doe" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:18901/conformance/test</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pmix="http://www.pmix.gov">
+    <soap:Header>
+        <pmix:MetaData>
+            <pmix:Requestor>Dr.ABC</pmix:Requestor>
+            <pmix:RequestorRole>Pharmacist</pmix:RequestorRole>
+            <pmix:RoutingData>
+                <pmix:DisclosingState>TT</pmix:DisclosingState>
+                <pmix:RequestID>12345</pmix:RequestID>
+                <pmix:RequestingState>AL</pmix:RequestingState>
+            </pmix:RoutingData>
+        </pmix:MetaData>
+    </soap:Header>
+    <soap:Body>
+        <pmix:RequestType>
+            <pmix:RequestData><![CDATA[
+                
+<pmix:PMPRequest xmlns:s="http://niem.gov/niem/structures/2.0"
+    xmlns:fbi="http://niem.gov/niem/fbi/2.0"
+    xmlns:i="http://niem.gov/niem/appinfo/2.0"
+    xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+    xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0"
+    xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+    xmlns:pmix="http://xml.ijis.org/niem/2.0/"
+    xmlns:ns1="http://niem.gov/niem/domains/jxdm/4.0"
+    xmlns:can="http://niem.gov/niem/post-canada/2.0"
+    xmlns:usps="http://niem.gov/niem/usps_states/2.0"
+    xmlns:intel="http://niem.gov/niem/domains/intelligence/2.0"
+    xmlns:pmpcd="http://xml.ijis.org/pmpcode"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-04-01</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-04-30</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonBirthDate>
+            <nc:Date>1956-01-19</nc:Date>
+        </nc:PersonBirthDate>
+        <nc:PersonName>
+            <nc:PersonSurName>Doe</nc:PersonSurName>
+        </nc:PersonName>
+        <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+                <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                        <nc:StreetFullText>4C, Randolph Apartments, Craig Avenue</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>Leesburg</nc:LocationCityName>
+                    <nc:LocationStateUSPostalServiceCode>VA</nc:LocationStateUSPostalServiceCode>
+                    <nc:LocationPostalCode>20988</nc:LocationPostalCode>
+                </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactEntity>
+                <nc:EntityOrganization>                    
+                    <nc:OrganizationDoingBusinessAsName>CareFirst Pharma</nc:OrganizationDoingBusinessAsName>
+                </nc:EntityOrganization>
+            </nc:ContactEntity>
+        </pmp:PersonPrimaryContactInformation>
+        <pmp:SpeciesCode>01</pmp:SpeciesCode>
+        <pmp:PatientLocationCode>04</pmp:PatientLocationCode>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>
+            ]]]]>><![CDATA[</pmix:RequestData>
+        </pmix:RequestType>
+    </soap:Body>
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory"/><con:wsrmConfig version="1.2"/></con:call><con:call name="ProvidePrescriptionDrugHistory - 2 Hits - Murphy" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:18901/conformance/test</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pmix="http://www.pmix.gov">
+    <soap:Header>
+        <pmix:MetaData>
+            <pmix:Requestor>Dr.ABC</pmix:Requestor>
+            <pmix:RequestorRole>Pharmacist</pmix:RequestorRole>
+            <pmix:RoutingData>
+                <pmix:DisclosingState>TT</pmix:DisclosingState>
+                <pmix:RequestID>12345</pmix:RequestID>
+                <pmix:RequestingState>AL</pmix:RequestingState>
+            </pmix:RoutingData>
+        </pmix:MetaData>
+    </soap:Header>
+    <soap:Body>
+        <pmix:RequestType>
+            <pmix:RequestData><![CDATA[
+                
+<pmix:PMPRequest xmlns:s="http://niem.gov/niem/structures/2.0"
+    xmlns:fbi="http://niem.gov/niem/fbi/2.0"
+    xmlns:i="http://niem.gov/niem/appinfo/2.0"
+    xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+    xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0"
+    xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+    xmlns:pmix="http://xml.ijis.org/niem/2.0/"
+    xmlns:ns1="http://niem.gov/niem/domains/jxdm/4.0"
+    xmlns:can="http://niem.gov/niem/post-canada/2.0"
+    xmlns:usps="http://niem.gov/niem/usps_states/2.0"
+    xmlns:intel="http://niem.gov/niem/domains/intelligence/2.0"
+    xmlns:pmpcd="http://xml.ijis.org/pmpcode"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-01-01</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-01-30</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonName>            
+            <nc:PersonGivenName>George</nc:PersonGivenName>
+            <nc:PersonSurName>Murphy</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonSexCode>M</nc:PersonSexCode>
+        <nc:PersonSSNIdentification>
+            <nc:IdentificationID>372-24-8382</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+                <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                        <nc:StreetFullText>233 Riverside View, Edison Drive</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>Silver Spring</nc:LocationCityName>
+                    <nc:LocationStateUSPostalServiceCode>MD</nc:LocationStateUSPostalServiceCode>
+                    <nc:LocationPostalCode>23214</nc:LocationPostalCode>
+                </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactEntity>
+                <nc:EntityOrganization>
+                    <nc:OrganizationDoingBusinessAsName>PatientCare, Inc.</nc:OrganizationDoingBusinessAsName>
+                </nc:EntityOrganization>
+            </nc:ContactEntity>
+        </pmp:PersonPrimaryContactInformation>
+        <pmp:SpeciesCode>01</pmp:SpeciesCode>
+        <pmp:PatientLocationCode>01</pmp:PatientLocationCode>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>
+            ]]]]>><![CDATA[</pmix:RequestData>
+        </pmix:RequestType>
+    </soap:Body>
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory"/><con:wsrmConfig version="1.2"/></con:call><con:call name="ProvidePrescriptionDrugHistory - 3 Hits - Murphy" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:18901/conformance/test</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pmix="http://www.pmix.gov">
+    <soap:Header>
+        <pmix:MetaData>
+            <pmix:Requestor>Dr.ABC</pmix:Requestor>
+            <pmix:RequestorRole>Pharmacist</pmix:RequestorRole>
+            <pmix:RoutingData>
+                <pmix:DisclosingState>TT</pmix:DisclosingState>
+                <pmix:RequestID>12345</pmix:RequestID>
+                <pmix:RequestingState>AL</pmix:RequestingState>
+            </pmix:RoutingData>
+        </pmix:MetaData>
+    </soap:Header>
+    <soap:Body>
+        <pmix:RequestType>
+            <pmix:RequestData><![CDATA[
+                
+<pmix:PMPRequest xmlns:s="http://niem.gov/niem/structures/2.0"
+    xmlns:fbi="http://niem.gov/niem/fbi/2.0"
+    xmlns:i="http://niem.gov/niem/appinfo/2.0"
+    xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+    xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0"
+    xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+    xmlns:pmix="http://xml.ijis.org/niem/2.0/"
+    xmlns:ns1="http://niem.gov/niem/domains/jxdm/4.0"
+    xmlns:can="http://niem.gov/niem/post-canada/2.0"
+    xmlns:usps="http://niem.gov/niem/usps_states/2.0"
+    xmlns:intel="http://niem.gov/niem/domains/intelligence/2.0"
+    xmlns:pmpcd="http://xml.ijis.org/pmpcode"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-01-01</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-01-30</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonName>
+            <nc:PersonGivenName>George</nc:PersonGivenName>
+            <nc:PersonSurName>Murphy</nc:PersonSurName>
+        </nc:PersonName>
+        <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+                <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                        <nc:StreetFullText>617, Crystal Enclave</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>Falls Church</nc:LocationCityName>
+                    <nc:LocationStateUSPostalServiceCode>VA</nc:LocationStateUSPostalServiceCode>
+                    <nc:LocationPostalCode>20444</nc:LocationPostalCode>
+                </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactEntity>
+                <nc:EntityOrganization>
+                    <nc:OrganizationDoingBusinessAsName>PatientFirst Pharma</nc:OrganizationDoingBusinessAsName>
+                </nc:EntityOrganization>
+            </nc:ContactEntity>
+        </pmp:PersonPrimaryContactInformation>
+        <pmp:SpeciesCode>01</pmp:SpeciesCode>
+        <pmp:PatientLocationCode>04</pmp:PatientLocationCode>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>
+            ]]]]>><![CDATA[</pmix:RequestData>
+        </pmix:RequestType>
+    </soap:Body>
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory"/><con:wsrmConfig version="1.2"/></con:call><con:call name="ProvidePrescriptionDrugHistory - No Hits - Murphy" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:18901/conformance/test</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pmix="http://www.pmix.gov">
+    <soap:Header>
+        <pmix:MetaData>
+            <pmix:Requestor>Dr.ABC</pmix:Requestor>
+            <pmix:RequestorRole>Pharmacist</pmix:RequestorRole>
+            <pmix:RoutingData>
+                <pmix:DisclosingState>TT</pmix:DisclosingState>
+                <pmix:RequestID>12345</pmix:RequestID>
+                <pmix:RequestingState>AL</pmix:RequestingState>
+            </pmix:RoutingData>
+        </pmix:MetaData>
+    </soap:Header>
+    <soap:Body>
+        <pmix:RequestType>
+            <pmix:RequestData><![CDATA[
+                
+<pmix:PMPRequest xmlns:s="http://niem.gov/niem/structures/2.0"
+    xmlns:fbi="http://niem.gov/niem/fbi/2.0"
+    xmlns:i="http://niem.gov/niem/appinfo/2.0"
+    xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+    xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0"
+    xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+    xmlns:pmix="http://xml.ijis.org/niem/2.0/"
+    xmlns:ns1="http://niem.gov/niem/domains/jxdm/4.0"
+    xmlns:can="http://niem.gov/niem/post-canada/2.0"
+    xmlns:usps="http://niem.gov/niem/usps_states/2.0"
+    xmlns:intel="http://niem.gov/niem/domains/intelligence/2.0"
+    xmlns:pmpcd="http://xml.ijis.org/pmpcode"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-01-01</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-01-30</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonBirthDate>
+            <nc:Date>1960-02-16</nc:Date>
+        </nc:PersonBirthDate>
+        <nc:PersonName>
+            <nc:PersonGivenName>George</nc:PersonGivenName>
+            <nc:PersonSurName>Murphy</nc:PersonSurName>
+        </nc:PersonName>
+        <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+                <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                        <nc:StreetFullText>412 Wilson Lane</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>Bethesda</nc:LocationCityName>
+                    <nc:LocationStateUSPostalServiceCode>MD</nc:LocationStateUSPostalServiceCode>
+                    <nc:LocationPostalCode>23342</nc:LocationPostalCode>
+                </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactEntity>
+                <nc:EntityOrganization>
+                    <nc:OrganizationDoingBusinessAsName>United Pharma</nc:OrganizationDoingBusinessAsName>
+                </nc:EntityOrganization>
+            </nc:ContactEntity>
+        </pmp:PersonPrimaryContactInformation>
+        <pmp:SpeciesCode>01</pmp:SpeciesCode>
+        <pmp:PatientLocationCode>02</pmp:PatientLocationCode>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>
+            ]]]]>><![CDATA[</pmix:RequestData>
+        </pmix:RequestType>
+    </soap:Body>
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory"/><con:wsrmConfig version="1.2"/></con:call><con:call name="ProvidePrescriptionDrugHistory - 2 Hits - Smith" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:18901/conformance/test</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pmix="http://www.pmix.gov">
+    <soap:Header>
+        <pmix:MetaData>
+            <pmix:Requestor>Dr.ABC</pmix:Requestor>
+            <pmix:RequestorRole>Pharmacist</pmix:RequestorRole>
+            <pmix:RoutingData>
+                <pmix:DisclosingState>TT</pmix:DisclosingState>
+                <pmix:RequestID>12345</pmix:RequestID>
+                <pmix:RequestingState>AL</pmix:RequestingState>
+            </pmix:RoutingData>
+        </pmix:MetaData>
+    </soap:Header>
+    <soap:Body>
+        <pmix:RequestType>
+            <pmix:RequestData><![CDATA[
+                
+<pmix:PMPRequest xmlns:s="http://niem.gov/niem/structures/2.0"
+    xmlns:fbi="http://niem.gov/niem/fbi/2.0"
+    xmlns:i="http://niem.gov/niem/appinfo/2.0"
+    xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+    xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0"
+    xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+    xmlns:pmix="http://xml.ijis.org/niem/2.0/"
+    xmlns:ns1="http://niem.gov/niem/domains/jxdm/4.0"
+    xmlns:can="http://niem.gov/niem/post-canada/2.0"
+    xmlns:usps="http://niem.gov/niem/usps_states/2.0"
+    xmlns:intel="http://niem.gov/niem/domains/intelligence/2.0"
+    xmlns:pmpcd="http://xml.ijis.org/pmpcode"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-02-01</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-04-30</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonBirthDate>
+            <nc:Date>1977-03-31</nc:Date>
+        </nc:PersonBirthDate>
+        <nc:PersonName>
+            <nc:PersonGivenName>Melissa</nc:PersonGivenName>
+            <nc:PersonSurName>Smith</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonSexCode>F</nc:PersonSexCode>
+        <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+                <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                        <nc:StreetFullText>124 Smith Towers, Madison Drive</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>College Park</nc:LocationCityName>
+                    <nc:LocationStateUSPostalServiceCode>MD</nc:LocationStateUSPostalServiceCode>
+                    <nc:LocationPostalCode>24332</nc:LocationPostalCode>
+                </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactEntity>
+                <nc:EntityOrganization>
+                    <nc:OrganizationDoingBusinessAsName>MediSolutions, Inc.</nc:OrganizationDoingBusinessAsName>
+                </nc:EntityOrganization>
+            </nc:ContactEntity>
+        </pmp:PersonPrimaryContactInformation>
+        <pmp:SpeciesCode>01</pmp:SpeciesCode>
+        <pmp:PatientLocationCode>01</pmp:PatientLocationCode>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>
+            ]]]]>><![CDATA[</pmix:RequestData>
+        </pmix:RequestType>
+    </soap:Body>
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory"/><con:wsrmConfig version="1.2"/></con:call><con:call name="ProvidePrescriptionDrugHistory - No Hits - Smith" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:18901/conformance/test</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pmix="http://www.pmix.gov">
+    <soap:Header>
+        <pmix:MetaData>
+            <pmix:Requestor>Dr.ABC</pmix:Requestor>
+            <pmix:RequestorRole>Pharmacist</pmix:RequestorRole>
+            <pmix:RoutingData>
+                <pmix:DisclosingState>TT</pmix:DisclosingState>
+                <pmix:RequestID>12345</pmix:RequestID>
+                <pmix:RequestingState>AL</pmix:RequestingState>
+            </pmix:RoutingData>
+        </pmix:MetaData>
+    </soap:Header>
+    <soap:Body>
+        <pmix:RequestType>
+            <pmix:RequestData><![CDATA[
+                
+<pmix:PMPRequest xmlns:s="http://niem.gov/niem/structures/2.0"
+    xmlns:fbi="http://niem.gov/niem/fbi/2.0"
+    xmlns:i="http://niem.gov/niem/appinfo/2.0"
+    xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+    xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0"
+    xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+    xmlns:pmix="http://xml.ijis.org/niem/2.0/"
+    xmlns:ns1="http://niem.gov/niem/domains/jxdm/4.0"
+    xmlns:can="http://niem.gov/niem/post-canada/2.0"
+    xmlns:usps="http://niem.gov/niem/usps_states/2.0"
+    xmlns:intel="http://niem.gov/niem/domains/intelligence/2.0"
+    xmlns:pmpcd="http://xml.ijis.org/pmpcode"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-01-01</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-01-30</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonBirthDate>
+            <nc:Date>1977-03-31</nc:Date>
+        </nc:PersonBirthDate>
+        <nc:PersonName>
+            <nc:PersonSurName>Smith</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonSSNIdentification>
+            <nc:IdentificationID>432-44-2313</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+                <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                        <nc:StreetFullText>21C Terrace Suites, Clive Street</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>Falls Church</nc:LocationCityName>
+                    <nc:LocationStateUSPostalServiceCode>VA</nc:LocationStateUSPostalServiceCode>
+                </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactEntity>
+                <nc:EntityOrganization>
+                    <nc:OrganizationDoingBusinessAsName>HealthCare Pharma</nc:OrganizationDoingBusinessAsName>
+                </nc:EntityOrganization>
+            </nc:ContactEntity>
+        </pmp:PersonPrimaryContactInformation>
+        <pmp:PersonTribalIdentifier>
+            <nc:IdentificationID>263821</nc:IdentificationID>
+        </pmp:PersonTribalIdentifier>
+        <pmp:SpeciesCode>01</pmp:SpeciesCode>
+        <pmp:PatientLocationCode>01</pmp:PatientLocationCode>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>
+            ]]]]>><![CDATA[</pmix:RequestData>
+        </pmix:RequestType>
+    </soap:Body>
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory"/><con:wsrmConfig version="1.2"/></con:call><con:call name="ProvidePrescriptionDrugHistory - Fault - Not Authorized" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:18901/conformance/test</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pmix="http://www.pmix.gov">
+    <soap:Header>
+        <pmix:MetaData>
+            <pmix:Requestor>Dr.ABC</pmix:Requestor>
+            <pmix:RequestorRole>Pharmacist</pmix:RequestorRole>
+            <pmix:RoutingData>
+                <pmix:DisclosingState>XX</pmix:DisclosingState>
+                <pmix:RequestID>12345</pmix:RequestID>
+                <pmix:RequestingState>AL</pmix:RequestingState>
+            </pmix:RoutingData>
+        </pmix:MetaData>
+    </soap:Header>
+    <soap:Body>
+        <pmix:RequestType>
+            <pmix:RequestData><![CDATA[
+                
+<pmix:PMPRequest xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+    xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+    xmlns:pmix="http://xml.ijis.org/niem/2.0/">
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-02-10</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-02-20</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonBirthDate>
+            <nc:Date>1946-05-04</nc:Date>
+        </nc:PersonBirthDate>
+        <nc:PersonName>
+            <nc:PersonGivenName>John</nc:PersonGivenName>
+            <nc:PersonSurName>Doe</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonSexCode>M</nc:PersonSexCode>
+        <nc:PersonSSNIdentification>
+            <nc:IdentificationID>123-12-1230</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+                <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                        <nc:StreetFullText>35 Pike Street</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>Alexandria</nc:LocationCityName>
+                    <nc:LocationStateUSPostalServiceCode>VA</nc:LocationStateUSPostalServiceCode>
+                    <nc:LocationPostalCode>20977</nc:LocationPostalCode>
+                </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactEntity>
+                <nc:EntityOrganization>
+                    <nc:OrganizationDoingBusinessAsName>ABC Corporation</nc:OrganizationDoingBusinessAsName>
+                </nc:EntityOrganization>
+            </nc:ContactEntity>
+        </pmp:PersonPrimaryContactInformation>
+        <pmp:PersonTribalIdentifier>
+            <nc:IdentificationID>263821</nc:IdentificationID>
+        </pmp:PersonTribalIdentifier>
+        <pmp:SpeciesCode>01</pmp:SpeciesCode>
+        <pmp:PatientLocationCode>01</pmp:PatientLocationCode>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>
+            ]]]]>><![CDATA[</pmix:RequestData>
+        </pmix:RequestType>
+    </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory"/><con:wsrmConfig version="1.2"/></con:call><con:call name="ProvidePrescriptionDrugHistory - Fault - No Last Name" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:18901/conformance/test</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pmix="http://www.pmix.gov">
+    <soap:Header>
+        <pmix:MetaData>
+            <pmix:Requestor>Dr.ABC</pmix:Requestor>
+            <pmix:RequestorRole>Pharmacist</pmix:RequestorRole>
+            <pmix:RoutingData>
+                <pmix:DisclosingState>TT</pmix:DisclosingState>
+                <pmix:RequestID>12345</pmix:RequestID>
+                <pmix:RequestingState>AL</pmix:RequestingState>
+            </pmix:RoutingData>
+        </pmix:MetaData>
+    </soap:Header>
+    <soap:Body>
+        <pmix:RequestType>
+            <pmix:RequestData><![CDATA[
+                
+<pmix:PMPRequest xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+    xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+    xmlns:pmix="http://xml.ijis.org/niem/2.0/">
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-02-10</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-02-20</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonBirthDate>
+            <nc:Date>1946-05-04</nc:Date>
+        </nc:PersonBirthDate>
+        <nc:PersonName>
+            <nc:PersonGivenName>John</nc:PersonGivenName>
+        </nc:PersonName>
+        <nc:PersonSexCode>M</nc:PersonSexCode>
+        <nc:PersonSSNIdentification>
+            <nc:IdentificationID>123-12-1230</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+                <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                        <nc:StreetFullText>35 Pike Street</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>Alexandria</nc:LocationCityName>
+                    <nc:LocationStateUSPostalServiceCode>VA</nc:LocationStateUSPostalServiceCode>
+                    <nc:LocationPostalCode>20977</nc:LocationPostalCode>
+                </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactEntity>
+                <nc:EntityOrganization>
+                    <nc:OrganizationDoingBusinessAsName>ABC Corporation</nc:OrganizationDoingBusinessAsName>
+                </nc:EntityOrganization>
+            </nc:ContactEntity>
+        </pmp:PersonPrimaryContactInformation>
+        <pmp:PersonTribalIdentifier>
+            <nc:IdentificationID>263821</nc:IdentificationID>
+        </pmp:PersonTribalIdentifier>
+        <pmp:SpeciesCode>01</pmp:SpeciesCode>
+        <pmp:PatientLocationCode>01</pmp:PatientLocationCode>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>
+            ]]]]>><![CDATA[</pmix:RequestData>
+        </pmix:RequestType>
+    </soap:Body>
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="HUB Conformance Target Tests" id="16638379-3f21-4130-a1a8-ff6ced9dda8d"><con:settings><con:setting id="IncludeOverview">true</con:setting><con:setting id="IncludeResults">true</con:setting><con:setting id="FlowLayout">false</con:setting><con:setting id="ErrorDetails">true</con:setting><con:setting id="IncludeCoverage">true</con:setting><con:setting id="GeneratableJUnitReport@Style">Single Page (Print)</con:setting><con:setting id="GeneratableJUnitReport@Folder">C:\Temp</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="T0301 - Service Interaction Test" searchProperties="true" id="cbd837b5-6f57-4123-84d7-c23c4758b1ed"><con:settings><con:setting id="FlowLayout">false</con:setting><con:setting id="GeneratableJUnitReport@Folder">T:\Data\Temp</con:setting></con:settings><con:testStep type="request" name="Basic Communication - Test Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WsBasicProfile</con:interface><con:operation>ProvidePrescriptionDrugHistory</con:operation><con:request name="Basic Communication - Test Request" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="true" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:18901/conformance/test</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pmix="http://www.pmix.gov">
+    <soap:Header>
+        <pmix:MetaData>
+            <pmix:Requestor>Dr.ABC</pmix:Requestor>
+            <pmix:RequestorRole>Pharmacist</pmix:RequestorRole>
+            <pmix:RoutingData>
+                <pmix:DisclosingState>TT</pmix:DisclosingState>
+                <pmix:RequestID>12345</pmix:RequestID>
+                <pmix:RequestingState>AL</pmix:RequestingState>
+            </pmix:RoutingData>
+        </pmix:MetaData>
+    </soap:Header>
+    <soap:Body>
+        <pmix:RequestType>
+            <pmix:RequestData><![CDATA[
+                
+<pmix:PMPRequest  
+    xmlns:nc="http://niem.gov/niem/niem-core/2.0" 
+    xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+    xmlns:pmix="http://xml.ijis.org/niem/2.0/" >
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-02-10</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-02-20</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonBirthDate>
+            <nc:Date>1946-05-04</nc:Date>
+        </nc:PersonBirthDate>
+        <nc:PersonName>
+            <nc:PersonGivenName>John</nc:PersonGivenName>
+            <nc:PersonSurName>Doe</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonSexCode>M</nc:PersonSexCode>
+        <nc:PersonSSNIdentification>
+            <nc:IdentificationID>123-12-1230</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+                <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                        <nc:StreetFullText>35 Pike Street</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>Alexandria</nc:LocationCityName>
+                    <nc:LocationStateUSPostalServiceCode>VA</nc:LocationStateUSPostalServiceCode>
+                    <nc:LocationPostalCode>20977</nc:LocationPostalCode>
+                </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactEntity>
+                <nc:EntityOrganization>
+                    <nc:OrganizationDoingBusinessAsName>ABC Corporation</nc:OrganizationDoingBusinessAsName>
+                </nc:EntityOrganization>
+            </nc:ContactEntity>
+        </pmp:PersonPrimaryContactInformation>
+        <pmp:PersonTribalIdentifier>
+            <nc:IdentificationID>263821</nc:IdentificationID>
+        </pmp:PersonTribalIdentifier>
+        <pmp:SpeciesCode>01</pmp:SpeciesCode>
+        <pmp:PatientLocationCode>01</pmp:PatientLocationCode>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>
+            ]]]]>><![CDATA[</pmix:RequestData>
+        </pmix:RequestType>
+    </soap:Body>
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="WS-A Response Assertion" name="WS-Addressing Response"><con:configuration><asertWsaAction>true</asertWsaAction><asertWsaTo>false</asertWsaTo><asertWsaRelatesTo>false</asertWsaRelatesTo><assertReplyToRefParams>false</assertReplyToRefParams><assertFaultToRefParams>false</assertFaultToRefParams></con:configuration></con:assertion><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="Schema Compliance" name="Schema Compliance"><con:configuration><definition/></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory" to="urn://tt/"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:testCase failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="T0302 - Authorization Test" searchProperties="true" id="a98964c4-1024-44c6-a9b4-6ebe179222bc" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="request" name="Unauthorized Role - Test Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WsBasicProfile</con:interface><con:operation>ProvidePrescriptionDrugHistory</con:operation><con:request name="Unauthorized Role - Test Request" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="true" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:18901/conformance/test</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pmix="http://www.pmix.gov">
+    <soap:Header>
+        <pmix:MetaData>
+            <pmix:Requestor>Dr.ABC</pmix:Requestor>
+            <pmix:RequestorRole>Unauthorized</pmix:RequestorRole>
+            <pmix:RoutingData>
+                <pmix:DisclosingState>TT</pmix:DisclosingState>
+                <pmix:RequestID>12345</pmix:RequestID>
+                <pmix:RequestingState>AL</pmix:RequestingState>
+            </pmix:RoutingData>
+        </pmix:MetaData>
+    </soap:Header>
+    <soap:Body>
+        <pmix:RequestType>
+            <pmix:RequestData><![CDATA[
+                
+<pmix:PMPRequest xmlns:s="http://niem.gov/niem/structures/2.0"
+    xmlns:fbi="http://niem.gov/niem/fbi/2.0"
+    xmlns:i="http://niem.gov/niem/appinfo/2.0"
+    xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+    xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0"
+    xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+    xmlns:pmix="http://xml.ijis.org/niem/2.0/"
+    xmlns:ns1="http://niem.gov/niem/domains/jxdm/4.0"
+    xmlns:can="http://niem.gov/niem/post-canada/2.0"
+    xmlns:usps="http://niem.gov/niem/usps_states/2.0"
+    xmlns:intel="http://niem.gov/niem/domains/intelligence/2.0"
+    xmlns:pmpcd="http://xml.ijis.org/pmpcode"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-02-10</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-02-29</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonBirthDate>
+            <nc:Date>1956-01-19</nc:Date>
+        </nc:PersonBirthDate>
+        <nc:PersonName>
+            <nc:PersonGivenName>Jane</nc:PersonGivenName>
+            <nc:PersonSurName>Doe</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonSexCode>F</nc:PersonSexCode>
+        <nc:PersonSSNIdentification>
+            <nc:IdentificationID>234-12-2340</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+                <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                        <nc:StreetFullText>88163 Cobblestone Lane</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>Baltimore</nc:LocationCityName>
+                    <nc:LocationStateUSPostalServiceCode>MD</nc:LocationStateUSPostalServiceCode>
+                    <nc:LocationPostalCode>22987</nc:LocationPostalCode>
+                </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactEntity>
+                <nc:EntityOrganization>                    
+                    <nc:OrganizationDoingBusinessAsName>ABC Corporation</nc:OrganizationDoingBusinessAsName>
+                </nc:EntityOrganization>
+            </nc:ContactEntity>
+        </pmp:PersonPrimaryContactInformation>
+        <pmp:SpeciesCode>01</pmp:SpeciesCode>
+        <pmp:PatientLocationCode>04</pmp:PatientLocationCode>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>
+            ]]]]>><![CDATA[</pmix:RequestData>
+        </pmix:RequestType>
+    </soap:Body>
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="Not SOAP Fault Assertion" name="SOAP Fault"/><con:assertion type="Schema Compliance" name="Schema Compliance"><con:configuration/></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory" to="urn://tt/"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Unauthorized Requesting State - Test Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WsBasicProfile</con:interface><con:operation>ProvidePrescriptionDrugHistory</con:operation><con:request name="Unauthorized Requesting State - Test Request" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="true" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:18901/conformance/test</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pmix="http://www.pmix.gov">
+    <soap:Header>
+        <pmix:MetaData>
+            <pmix:Requestor>Dr.ABC</pmix:Requestor>
+            <pmix:RequestorRole>Pharmacist</pmix:RequestorRole>
+            <pmix:RoutingData>
+                <pmix:DisclosingState>TT</pmix:DisclosingState>
+                <pmix:RequestID>12345</pmix:RequestID>
+                <pmix:RequestingState>XX</pmix:RequestingState>
+            </pmix:RoutingData>
+        </pmix:MetaData>
+    </soap:Header>
+    <soap:Body>
+        <pmix:RequestType>
+            <pmix:RequestData><![CDATA[
+                
+<pmix:PMPRequest xmlns:s="http://niem.gov/niem/structures/2.0"
+    xmlns:fbi="http://niem.gov/niem/fbi/2.0"
+    xmlns:i="http://niem.gov/niem/appinfo/2.0"
+    xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+    xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0"
+    xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+    xmlns:pmix="http://xml.ijis.org/niem/2.0/"
+    xmlns:ns1="http://niem.gov/niem/domains/jxdm/4.0"
+    xmlns:can="http://niem.gov/niem/post-canada/2.0"
+    xmlns:usps="http://niem.gov/niem/usps_states/2.0"
+    xmlns:intel="http://niem.gov/niem/domains/intelligence/2.0"
+    xmlns:pmpcd="http://xml.ijis.org/pmpcode"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-02-10</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-02-29</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonBirthDate>
+            <nc:Date>1956-01-19</nc:Date>
+        </nc:PersonBirthDate>
+        <nc:PersonName>
+            <nc:PersonGivenName>Jane</nc:PersonGivenName>
+            <nc:PersonSurName>Doe</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonSexCode>F</nc:PersonSexCode>
+        <nc:PersonSSNIdentification>
+            <nc:IdentificationID>234-12-2340</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+                <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                        <nc:StreetFullText>88163 Cobblestone Lane</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>Baltimore</nc:LocationCityName>
+                    <nc:LocationStateUSPostalServiceCode>MD</nc:LocationStateUSPostalServiceCode>
+                    <nc:LocationPostalCode>22987</nc:LocationPostalCode>
+                </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactEntity>
+                <nc:EntityOrganization>                    
+                    <nc:OrganizationDoingBusinessAsName>ABC Corporation</nc:OrganizationDoingBusinessAsName>
+                </nc:EntityOrganization>
+            </nc:ContactEntity>
+        </pmp:PersonPrimaryContactInformation>
+        <pmp:SpeciesCode>01</pmp:SpeciesCode>
+        <pmp:PatientLocationCode>04</pmp:PatientLocationCode>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>
+            ]]]]>><![CDATA[</pmix:RequestData>
+        </pmix:RequestType>
+    </soap:Body>
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="Not SOAP Fault Assertion" name="SOAP Fault"/><con:assertion type="Schema Compliance" name="Schema Compliance"><con:configuration/></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory" to="urn://tt/"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Unauthorized Disclosing State - Test Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WsBasicProfile</con:interface><con:operation>ProvidePrescriptionDrugHistory</con:operation><con:request name="Unauthorized Disclosing State - Test Request" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="true" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:18901/conformance/test</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pmix="http://www.pmix.gov">
+    <soap:Header>
+        <pmix:MetaData>
+            <pmix:Requestor>Dr.ABC</pmix:Requestor>
+            <pmix:RequestorRole>Pharmacist</pmix:RequestorRole>
+            <pmix:RoutingData>
+                <pmix:DisclosingState>XX</pmix:DisclosingState>
+                <pmix:RequestID>12345</pmix:RequestID>
+                <pmix:RequestingState>AL</pmix:RequestingState>
+            </pmix:RoutingData>
+        </pmix:MetaData>
+    </soap:Header>
+    <soap:Body>
+        <pmix:RequestType>
+            <pmix:RequestData><![CDATA[
+                
+<pmix:PMPRequest xmlns:s="http://niem.gov/niem/structures/2.0"
+    xmlns:fbi="http://niem.gov/niem/fbi/2.0"
+    xmlns:i="http://niem.gov/niem/appinfo/2.0"
+    xmlns:nc="http://niem.gov/niem/niem-core/2.0"
+    xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0"
+    xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+    xmlns:pmix="http://xml.ijis.org/niem/2.0/"
+    xmlns:ns1="http://niem.gov/niem/domains/jxdm/4.0"
+    xmlns:can="http://niem.gov/niem/post-canada/2.0"
+    xmlns:usps="http://niem.gov/niem/usps_states/2.0"
+    xmlns:intel="http://niem.gov/niem/domains/intelligence/2.0"
+    xmlns:pmpcd="http://xml.ijis.org/pmpcode"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-02-10</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-02-29</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonBirthDate>
+            <nc:Date>1956-01-19</nc:Date>
+        </nc:PersonBirthDate>
+        <nc:PersonName>
+            <nc:PersonGivenName>Jane</nc:PersonGivenName>
+            <nc:PersonSurName>Doe</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonSexCode>F</nc:PersonSexCode>
+        <nc:PersonSSNIdentification>
+            <nc:IdentificationID>234-12-2340</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+                <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                        <nc:StreetFullText>88163 Cobblestone Lane</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>Baltimore</nc:LocationCityName>
+                    <nc:LocationStateUSPostalServiceCode>MD</nc:LocationStateUSPostalServiceCode>
+                    <nc:LocationPostalCode>22987</nc:LocationPostalCode>
+                </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactEntity>
+                <nc:EntityOrganization>                    
+                    <nc:OrganizationDoingBusinessAsName>ABC Corporation</nc:OrganizationDoingBusinessAsName>
+                </nc:EntityOrganization>
+            </nc:ContactEntity>
+        </pmp:PersonPrimaryContactInformation>
+        <pmp:SpeciesCode>01</pmp:SpeciesCode>
+        <pmp:PatientLocationCode>04</pmp:PatientLocationCode>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>
+            ]]]]>><![CDATA[</pmix:RequestData>
+        </pmix:RequestType>
+    </soap:Body>
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="Not SOAP Fault Assertion" name="SOAP Fault"/><con:assertion type="Schema Compliance" name="Schema Compliance"><con:configuration/></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistory" to="urn://tt/"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:mockService port="18901" path="/conformance/test" host="localhost" name="PMIX MockService" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:mockOperation name="ProvidePrescriptionDrugHistory" interface="WsBasicProfile" operation="ProvidePrescriptionDrugHistory"><con:settings/><con:dispatchPath>def isMatch = false;
+def responseToDispatch = ''
+def errorMessage = ''
+
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+def path = groovyUtils.projectPath + '\\'
+
+def logFilePath = path +  'Hub - Log.txt'
+def logFile = new File( logFilePath )
+
+def parsingFilePath = path  +   'Hub - Parsing.csv'
+def parsingFile = new File( parsingFilePath )
+
+def dispatchingFilePath =  path + 'Hub - Dispatching.csv'
+def dispatchingFile = new File( dispatchingFilePath )
+
+def soapRequestHolder = new com.eviware.soapui.support.XmlHolder(mockRequest.requestContent)
+if(soapRequestHolder == null) 
+{
+	errorMessage = 'Invalid Request'
+	responseToDispatch = "" 
+	requestContext.error = errorMessage
+	logFile.append(errorMessage + '\n')
+	logFile.append('Response = ' + responseToDispatch + '\n')
+	logFile.append('----------------------\n')
+	return responseToDispatch
+}
+
+// Parsing Data
+def parsingmap = [:]
+def parsingBufferReader = new BufferedReader( new FileReader(parsingFile));
+def eachLine = "";
+while( (eachLine = parsingBufferReader.readLine()) != null)
+{
+	def allColumns = eachLine.split(',')
+	parsingmap[allColumns[0]] = allColumns[1] 
+}
+
+def requestor = soapRequestHolder[parsingmap['Requestor']]
+def requestorRole = soapRequestHolder[parsingmap['RequestorRole']]
+def requestorSOR = soapRequestHolder[parsingmap['DisclosingState']]
+def requestID = soapRequestHolder[parsingmap['RequestID']]
+def requestSOI = soapRequestHolder[parsingmap['RequestingState']]
+
+logFile.append( 'Request ID = ' + requestID + ', Requestor = ' + requestor + ', Requestor Role = ' + requestorRole + ', Disclosing State = ' + requestorSOR + ', Requesting State = ' + requestSOI + '\n')
+
+if(requestorRole =='Unauthorized')
+{
+	responseToDispatch = "Unauthorized Role - Fault" 
+	logFile.append('The Requesting Role is not authorized for the Disclosing State.\n')
+	logFile.append('Response = ' + responseToDispatch + '\n')
+	logFile.append('----------------------\n')
+	return  responseToDispatch
+}
+
+// Body Data
+def requestDataPath = parsingmap['RequestData']
+def requestXML = soapRequestHolder[requestDataPath]
+if(requestXML == null)
+{
+	errorMessage = 'Invalid Request: No RequestData!'
+	responseToDispatch = "" 
+	requestContext.error = errorMessage
+	logFile.append(errorMessage + '\n')
+	logFile.append('Response = ' + responseToDispatch + '\n')
+	logFile.append('----------------------\n')
+	return responseToDispatch
+}
+
+def bodyHolder = new com.eviware.soapui.support.XmlHolder(requestXML)
+if(bodyHolder == null)
+{
+	errorMessage = 'Invalid Request'
+	responseToDispatch = "" 
+	requestContext.error = errorMessage
+	logFile.append(errorMessage + '\n' + requestXML + '\n')
+	logFile.append('Response = ' + responseToDispatch + '\n')
+	logFile.append('----------------------\n')
+	return responseToDispatch
+}
+
+if(bodyHolder.containsKey(parsingmap['Request.LastName']) == false)
+{
+	errorMessage = 'Last Name not provided'
+	responseToDispatch = "Missing Last Name - Fault" 
+	requestContext.error = errorMessage
+	logFile.append(errorMessage + '\n')
+	logFile.append('Response = ' + responseToDispatch + '\n')
+	logFile.append('----------------------\n')
+	return responseToDispatch
+}
+
+// Dispatching Data
+def dipatchingBufferReader = new BufferedReader( new FileReader(dispatchingFile))
+def eachdispatchLine = ""
+def lineCount = 0
+while( (eachdispatchLine = dipatchingBufferReader.readLine()) != null)
+{
+	lineCount = lineCount + 1
+	def rulesAndresponse = eachdispatchLine.split('=>')
+	def rules = rulesAndresponse[0]
+	def response = rulesAndresponse[1]
+
+	def allRules = rules.split('&amp;&amp;')
+	for(i = 0; i &lt; allRules.size(); i++)
+	{
+		def ruleParts = allRules[i].split('==')
+		def ruleLeftPart = ruleParts[0]
+		def ruleRightPart = ruleParts[1]
+		
+		if(parsingmap.containsKey(ruleLeftPart))
+		{
+			def xpath = parsingmap[ruleLeftPart]	
+			def currentValue = bodyHolder[xpath]
+			def toMatchValue = ruleRightPart
+			
+			if(xpath.contains('//pmix:MetaData'))
+			{
+				currentValue = soapRequestHolder[xpath]
+			}
+
+			logFile.append(lineCount + '. Field = ' + ruleLeftPart + ', XMLValue = ' + currentValue + ', RuleValue = ' + toMatchValue )
+			
+			if(toMatchValue == currentValue)
+			{
+				logFile.append(' => Match\n' )
+				isMatch = true;	
+			}
+			else
+			{
+				logFile.append(' => NO Match\n' )
+				isMatch = false;
+				break;
+			}
+		}
+	}
+	
+	if(isMatch == true)
+	{
+		responseToDispatch = response
+		break;
+	}
+}
+
+logFile.append('Response = ' + responseToDispatch + '\n')
+logFile.append('----------------------\n')
+
+
+requestContext.disclosingState = requestorSOR
+requestContext.requestID = requestID
+requestContext.requestState = requestSOI
+
+return responseToDispatch</con:dispatchPath><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:defaultResponse>ProvidePrescriptionDrugHistory Response - Fault</con:defaultResponse><con:response name="Basic Communication - Test Response" encoding="UTF-8" useWsAddressing="true"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pmix="http://www.pmix.gov">
+    <soap:Header>
+        <pmix:RoutingData>
+            <pmix:DisclosingState>${disclosingState}</pmix:DisclosingState>
+            <pmix:RequestID>${requestID}</pmix:RequestID>
+            <pmix:RequestingState>${requestState}</pmix:RequestingState>
+        </pmix:RoutingData>
+        <pmix:ResponseStatus>Found</pmix:ResponseStatus>
+    </soap:Header>
+    <soap:Body>
+        <pmix:ResponseType>
+            <pmix:ResponseData>
+                <![CDATA[
+<pmix:PMPPrescriptionReport xmlns:s="http://niem.gov/niem/structures/2.0"
+    xmlns:usps="http://niem.gov/niem/usps_states/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0"
+    xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0"
+    xmlns:intel="http://niem.gov/niem/domains/intelligence/2.0"
+    xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:pmp="http://xml.ijis.org/niem/2.0/extension"
+    xmlns:pmix="http://xml.ijis.org/niem/2.0/" xmlns:can="http://niem.gov/niem/post-canada/2.0"
+    xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:pmpcd="http://xml.ijis.org/pmpcode"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <pmp:RequestResponsePrescriptionReport>   
+        <pmp:ReportExecutionDate>2012-01-27</pmp:ReportExecutionDate>
+        <pmp:ReportExecutionTime>03:50:00.000</pmp:ReportExecutionTime> 
+        <pmp:Prescription>
+            <pmp:Dispenser>
+                <nc:OrganizationDoingBusinessAsName>ABC Corporation</nc:OrganizationDoingBusinessAsName>
+                <nc:OrganizationLocation>
+                    <nc:LocationAddress>
+                        <nc:StructuredAddress>                            
+                            <nc:LocationStreet>
+                                <nc:StreetFullText>549 Walnut Street</nc:StreetFullText>
+                            </nc:LocationStreet>
+                            <nc:LocationCityName>Alexandria</nc:LocationCityName>
+                            <nc:LocationStateUSPostalServiceCode>VA</nc:LocationStateUSPostalServiceCode>
+                            <nc:LocationPostalCode>20747</nc:LocationPostalCode>
+                        </nc:StructuredAddress>
+                    </nc:LocationAddress>
+                </nc:OrganizationLocation>
+                <nc:OrganizationName>ABC Corporation</nc:OrganizationName>
+                <nc:OrganizationPrimaryContactInformation>
+                    <nc:ContactTelephoneNumber>
+                        <nc:FullTelephoneNumber>
+                            <nc:TelephoneNumberFullID>125-436-7890</nc:TelephoneNumberFullID>
+                        </nc:FullTelephoneNumber>
+                    </nc:ContactTelephoneNumber>
+                    <nc:ContactEntity>
+                        <nc:EntityPerson>
+                            <nc:PersonBirthDate>
+                                <nc:Date>1965-04-21</nc:Date>
+                            </nc:PersonBirthDate>
+                            <nc:PersonName>
+                                <nc:PersonGivenName>Steve</nc:PersonGivenName>
+                                <nc:PersonSurName>Smith</nc:PersonSurName>
+                            </nc:PersonName>
+                            <nc:PersonSexCode>M</nc:PersonSexCode>
+                            <nc:PersonSSNIdentification>
+                                <nc:IdentificationID>777-99-8888</nc:IdentificationID>
+                            </nc:PersonSSNIdentification>
+                        </nc:EntityPerson>
+                    </nc:ContactEntity>
+                </nc:OrganizationPrimaryContactInformation>
+                <pmp:NPIIdentifier>
+                    <nc:IdentificationID>23456</nc:IdentificationID>
+                </pmp:NPIIdentifier>
+                <pmp:ContactNameText>Jane Foster</pmp:ContactNameText>
+                <pmp:ChainSiteIDText>Site#124</pmp:ChainSiteIDText>
+            </pmp:Dispenser>
+            <pmp:PrescriptionNumberText>Prescription#A3245</pmp:PrescriptionNumberText>
+            <pmp:DrugRefillNumberCount>50</pmp:DrugRefillNumberCount>
+            <pmp:PrescriptionFilledDate>
+                <nc:Date>2012-02-13</nc:Date>
+            </pmp:PrescriptionFilledDate>
+            <pmp:Patient>
+                <nc:PersonBirthDate>
+                    <nc:Date>1946-05-04</nc:Date>
+                </nc:PersonBirthDate>
+                <nc:PersonName>
+                    <nc:PersonGivenName>John</nc:PersonGivenName>
+                    <nc:PersonSurName>Doe</nc:PersonSurName>
+                </nc:PersonName>
+                <nc:PersonSexCode>M</nc:PersonSexCode>
+                <nc:PersonSSNIdentification>
+                    <nc:IdentificationID>123-12-1230</nc:IdentificationID>
+                </nc:PersonSSNIdentification>
+            </pmp:Patient>
+            <pmp:Prescriber>
+                <nc:PersonBirthDate>
+                    <nc:Date>1977-09-09</nc:Date>
+                </nc:PersonBirthDate>
+                <nc:PersonName>
+                    <nc:PersonGivenName>Douglas</nc:PersonGivenName>
+                    <nc:PersonSurName>Adams</nc:PersonSurName>
+                </nc:PersonName>
+                <nc:PersonSexCode>M</nc:PersonSexCode>
+                <nc:PersonSSNIdentification>
+                    <nc:IdentificationID>111-22-3333</nc:IdentificationID>
+                </nc:PersonSSNIdentification>
+                <pmp:PersonPrimaryContactInformation>
+                    <nc:ContactMailingAddress>
+                        <nc:StructuredAddress>
+                            <nc:LocationStreet>
+                                <nc:StreetFullText>23 Chrysler Street</nc:StreetFullText>
+                            </nc:LocationStreet>
+                            <nc:LocationCityName>Fairfax</nc:LocationCityName>
+                            <nc:LocationStateUSPostalServiceCode>VA</nc:LocationStateUSPostalServiceCode>
+                            <nc:LocationPostalCode>23451</nc:LocationPostalCode>
+                        </nc:StructuredAddress>
+                    </nc:ContactMailingAddress>
+                    <nc:ContactEntity>
+                        <nc:EntityOrganization>
+                            <nc:OrganizationDoingBusinessAsName>NOVA HealthCare</nc:OrganizationDoingBusinessAsName>
+                            <nc:OrganizationLocation>
+                                <nc:LocationAddress>
+                                    <nc:StructuredAddress>
+                                        <nc:LocationStreet>
+                                            <nc:StreetFullText>243 AL Building</nc:StreetFullText>
+                                        </nc:LocationStreet>
+                                        <nc:LocationCityName>Alexandria</nc:LocationCityName>
+                                        <nc:LocationStateUSPostalServiceCode>VA</nc:LocationStateUSPostalServiceCode>
+                                        <nc:LocationPostalCode>23444</nc:LocationPostalCode>
+                                    </nc:StructuredAddress>
+                                </nc:LocationAddress>
+                            </nc:OrganizationLocation>
+                        </nc:EntityOrganization>
+                    </nc:ContactEntity>
+                </pmp:PersonPrimaryContactInformation>
+                <pmp:NPIIdentifier>
+                    <nc:IdentificationID>98765</nc:IdentificationID>
+                </pmp:NPIIdentifier>
+            </pmp:Prescriber>
+            <pmp:PrescriptionWrittenDate>
+                <nc:Date>2012-03-22</nc:Date>
+            </pmp:PrescriptionWrittenDate>
+            <pmp:PrescriptionDrug>
+                <pmp:DrugNDCProductIdentifier>
+                    <nc:IdentificationID>65432</nc:IdentificationID>
+                </pmp:DrugNDCProductIdentifier>
+                <pmp:DrugProductNameText>Ibuprofen</pmp:DrugProductNameText>
+                <pmp:DrugStrengthText>10%</pmp:DrugStrengthText>
+                <pmp:DrugUnitOfMeasureText>ml</pmp:DrugUnitOfMeasureText>
+                <pmp:DEAClassScheduleText>Schedule I</pmp:DEAClassScheduleText>
+                <pmp:CompoundDrugIngredient>
+                    <pmp:CompoundDrugIngredientSequenceNumber>3454542</pmp:CompoundDrugIngredientSequenceNumber>
+                    <pmp:CompoundDrugIngredientHRIProductIdentifier> </pmp:CompoundDrugIngredientHRIProductIdentifier>
+                    <pmp:CompoundDrugIngredientProductNameText>Propanoic Acid</pmp:CompoundDrugIngredientProductNameText>
+                    <pmp:CompoundDrugIngredientStrengthText>0.05%</pmp:CompoundDrugIngredientStrengthText>
+                    <pmp:CompoundDrugIngredientDEAClassScheduleText>Schedule II</pmp:CompoundDrugIngredientDEAClassScheduleText>
+                    <pmp:IngredientQuantity>10</pmp:IngredientQuantity>
+                    <pmp:CompoundDrugIngredientDrugDosageUnitsCode>01</pmp:CompoundDrugIngredientDrugDosageUnitsCode>
+                </pmp:CompoundDrugIngredient>
+            </pmp:PrescriptionDrug>
+            <pmp:RefillsAuthorizedCount>3</pmp:RefillsAuthorizedCount>
+            <pmp:DispensedQuantity>10</pmp:DispensedQuantity>
+            <pmp:DaysSupplyCount>5</pmp:DaysSupplyCount>
+            <pmp:DrugDosageUnitsCode>02</pmp:DrugDosageUnitsCode>
+            <pmp:MethodOfPaymentCode>01</pmp:MethodOfPaymentCode>
+            <pmp:TransmissionFormOfRxOriginCode>04</pmp:TransmissionFormOfRxOriginCode>
+            <pmp:PartialFillIndicator>false</pmp:PartialFillIndicator>
+            <pmp:Pharmacist>
+                <nc:PersonBirthDate>
+                    <nc:Date>1980-09-25</nc:Date>
+                </nc:PersonBirthDate>
+                <nc:PersonName>
+                    <nc:PersonGivenName>Cynthia</nc:PersonGivenName>
+                    <nc:PersonSurName>Sykes</nc:PersonSurName>
+                </nc:PersonName>
+                <nc:PersonSexCode>F</nc:PersonSexCode>
+                <nc:PersonSSNIdentification>
+                    <nc:IdentificationID>222-33-4444</nc:IdentificationID>
+                </nc:PersonSSNIdentification>
+                <pmp:PersonPrimaryContactInformation>
+                    <nc:ContactTelephoneNumber>
+                        <nc:FullTelephoneNumber>
+                            <nc:TelephoneNumberFullID>324-987-9900</nc:TelephoneNumberFullID>
+                        </nc:FullTelephoneNumber>
+                    </nc:ContactTelephoneNumber>
+                    <nc:ContactEntity>
+                        <nc:EntityPerson>
+                            <nc:PersonBirthDate>
+                                <nc:Date>1975-02-16</nc:Date>
+                            </nc:PersonBirthDate>
+                            <nc:PersonName>
+                                <nc:PersonGivenName>Clarissa</nc:PersonGivenName>
+                                <nc:PersonSurName>Jenkins</nc:PersonSurName>
+                            </nc:PersonName>
+                            <nc:PersonSexCode>F</nc:PersonSexCode>
+                            <nc:PersonSSNIdentification>
+                                <nc:IdentificationID>444-99-1412</nc:IdentificationID>
+                            </nc:PersonSSNIdentification>
+                        </nc:EntityPerson>
+                    </nc:ContactEntity>
+                </pmp:PersonPrimaryContactInformation>
+                <pmp:StateLicenseIdentifier>
+                    <nc:IdentificationID>65478</nc:IdentificationID>
+                </pmp:StateLicenseIdentifier>
+            </pmp:Pharmacist>
+            <pmp:StateIssuedRxSerialNumberIdentifier>
+                <nc:IdentificationID>76589</nc:IdentificationID>
+            </pmp:StateIssuedRxSerialNumberIdentifier>
+        </pmp:Prescription>
+    </pmp:RequestResponsePrescriptionReport>
+</pmix:PMPPrescriptionReport>]]]]>><![CDATA[
+            </pmix:ResponseData>
+        </pmix:ResponseType>
+    </soap:Body>
+</soap:Envelope>
+]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistoryResponse"/></con:response><con:response name="Unauthorized Role - Fault" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:s="http://www.w3.org/2003/05/soap-envelope"
+ xmlns:a="http://www.w3.org/2005/08/addressing">
+    <s:Header>
+        <a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action>
+    </s:Header>
+    <s:Body>
+        <s:Fault>
+            <s:Code>
+                <s:Value>s:Sender</s:Value>
+                <s:Subcode>
+                    <s:Value>AuthorizationError</s:Value>
+                </s:Subcode>
+            </s:Code>
+            <s:Reason>
+                <s:Text xml:lang="en-US">
+			The Requesting Role is not authorized for the Disclosing State.
+			</s:Text>
+            </s:Reason>
+            <s:Node>https://test.rxcheck.org:18803/2010/12/pmix/router</s:Node>
+            <s:Role>RxCheck Hub</s:Role>
+        </s:Fault>
+    </s:Body>
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistoryResponse"/></con:response><con:response name="Missing Last Name - Fault" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[  <s:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:s="http://www.w3.org/2003/05/soap-envelope"
+ xmlns:a="http://www.w3.org/2005/08/addressing">
+    <s:Header>
+        <a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action>
+    </s:Header>
+    <s:Body>
+        <s:Fault>
+            <s:Code>
+                <s:Value>s:Sender</s:Value>
+                <s:Subcode>
+                    <s:Value>ValidationError</s:Value>
+                </s:Subcode>
+            </s:Code>
+            <s:Reason>
+                <s:Text xml:lang="en-US">
+The Disclosing State does not have a search profiles that validates the request message.
+		</s:Text>
+            </s:Reason>
+            <s:Node>https://test.rxcheck.org:18803/2010/12/pmix/router</s:Node>
+            <s:Role>RxCheck Hub</s:Role>
+        </s:Fault>
+    </s:Body>
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistoryResponse"/></con:response><con:response name="Unauthorized Requesting State - Fault" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:s="http://www.w3.org/2003/05/soap-envelope"
+ xmlns:a="http://www.w3.org/2005/08/addressing">
+    <s:Header>
+        <a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action>
+    </s:Header>
+    <s:Body>
+        <s:Fault>
+            <s:Code>
+                <s:Value>s:Sender</s:Value>
+                <s:Subcode>
+                    <s:Value>AuthorizationError</s:Value>
+                </s:Subcode>
+            </s:Code>
+            <s:Reason>
+                <s:Text xml:lang="en-US">
+			The Requesting State is not authorized to send to the Disclosing State.
+			</s:Text>
+            </s:Reason>
+            <s:Node>https://test.rxcheck.org:18803/2010/12/pmix/router</s:Node>
+            <s:Role>RxCheck Hub</s:Role>
+        </s:Fault>
+    </s:Body>
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistoryResponse"/></con:response><con:response name="Unauthorized Disclosing State - Fault" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<s:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:s="http://www.w3.org/2003/05/soap-envelope"
+ xmlns:a="http://www.w3.org/2005/08/addressing">
+    <s:Header>
+        <a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action>
+    </s:Header>
+    <s:Body>
+        <s:Fault>
+            <s:Code>
+                <s:Value>s:Sender</s:Value>
+                <s:Subcode>
+                    <s:Value>AuthorizationError</s:Value>
+                </s:Subcode>
+            </s:Code>
+            <s:Reason>
+                <s:Text xml:lang="en-US">
+			The Disclosing Role is not authorized to receive from the Requesting State.
+			</s:Text>
+            </s:Reason>
+            <s:Node>https://test.rxcheck.org:18803/2010/12/pmix/router</s:Node>
+            <s:Role>RxCheck Hub</s:Role>
+        </s:Fault>
+    </s:Body>
+</s:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.pmix.gov/pmp/ProvidePrescriptionDrugHistoryResponse"/></con:response><con:dispatchConfig xsi:type="con:MockOperationQueryMatchDispatch" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:mockOperation><con:properties/></con:mockService><con:endpointStrategy xsi:type="con:DefaultEndpointStrategy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:endpoint mode="OVERRIDE">http://vSrv01:18805/2010/12/pmix/services</con:endpoint></con:endpointStrategy><con:requirements/><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:reporting><con:reportTemplates><con:name>PMIX TestSuite Report</con:name><con:reportType>TESTSUITE</con:reportType><con:reportLevel>MAINREPORT</con:reportLevel><con:data><![CDATA[<jasperReport xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TestSuiteReport" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="30" bottomMargin="30" isSummaryNewPage="true" xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <property name="ireport.encoding" value="UTF-8"/>
+   <template>"../../styles.jrtx"</template>
+   <parameter name="IncludeOverview" class="java.lang.Boolean">
+      <property name="interactive" value="true"/>
+      <property name="label" value="Include TestSuite Overview"/>
+      <parameterDescription>Includes TestSuite Overview information in report</parameterDescription>
+      <defaultValueExpression>true</defaultValueExpression>
+   </parameter>
+   <parameter name="IncludeResults" class="java.lang.Boolean">
+      <property name="interactive" value="true"/>
+      <property name="label" value="Include Latest Results"/>
+      <property name="depends" value="TestSuiteTestCaseResults"/>
+      <parameterDescription>Includes Latest TestSuite Results in report</parameterDescription>
+      <defaultValueExpression>true</defaultValueExpression>
+   </parameter>
+   <parameter name="FlowLayout" class="java.lang.Boolean">
+      <property name="interactive" value="true"/>
+      <property name="label" value="Flow Layout"/>
+      <parameterDescription>Choose flow layout for report</parameterDescription>
+      <defaultValueExpression>false</defaultValueExpression>
+   </parameter>
+   <parameter name="ErrorDetails" class="java.lang.Boolean">
+      <property name="interactive" value="true"/>
+      <property name="label" value="Detailed Error Information"/>
+      <property name="depends" value="TestSuiteFailedTestSteps"/>
+      <parameterDescription>Adds details for failed test items to report</parameterDescription>
+      <defaultValueExpression>true</defaultValueExpression>
+   </parameter>
+   <parameter name="IncludeCoverage" class="java.lang.Boolean">
+      <property name="interactive" value="true"/>
+      <property name="label" value="Include TestSuite Coverage"/>
+      <property name="depends" value="TestSuiteCoverage"/>
+      <parameterDescription>Includes Coverage information in report</parameterDescription>
+      <defaultValueExpression>true</defaultValueExpression>
+   </parameter>
+   <parameter name="HeaderLogo" class="java.lang.String" isForPrompting="false">
+      <defaultValueExpression>"../../ijis.gif"</defaultValueExpression>
+   </parameter>
+   <pageHeader>
+      <band height="51">
+         <image scaleImage="Clip" hAlign="Right" onErrorType="Blank">
+            <reportElement x="0" y="-18" width="535" height="69"/>
+            <imageExpression class="java.lang.String">$P{HeaderLogo}</imageExpression>
+         </image>
+      </band>
+   </pageHeader>
+   <columnHeader>
+      <band height="75">
+         <printWhenExpression>$V{PAGE_NUMBER} == 1</printWhenExpression>
+         <textField isStretchWithOverflow="true">
+            <reportElement style="MainHeader" x="0" y="35" width="535" height="40"/>
+            <textElement/>
+            <textFieldExpression class="java.lang.String">""</textFieldExpression>
+         </textField>
+         <staticText>
+            <reportElement style="MainHeader" x="0" y="0" width="535" height="35"/>
+            <textElement/>
+            <text>Springboard PMIX</text>
+         </staticText>
+      </band>
+   </columnHeader>
+   <detail>
+      <band height="233">
+         <subreport isUsingCache="true">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="535" height="30" isRemoveLineWhenBlank="true">
+               <printWhenExpression>$P{IncludeOverview}</printWhenExpression>
+            </reportElement>
+            <subreportParameter name="Type">
+               <subreportParameterExpression>"TestSuite"</subreportParameterExpression>
+            </subreportParameter>
+            <dataSourceExpression>$P{ReportMetrics}</dataSourceExpression>
+            <subreportExpression class="java.lang.String">"subreport:MetricsReport"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="true">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="31" width="536" height="30" isRemoveLineWhenBlank="true">
+               <printWhenExpression>$P{IncludeOverview}</printWhenExpression>
+            </reportElement>
+            <subreportParameter name="IncludeOverview">
+               <subreportParameterExpression>$P{IncludeOverview}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="Type">
+               <subreportParameterExpression>"TestSuite"</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="IncludeResults">
+               <subreportParameterExpression>$P{IncludeResults}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="FlowLayout">
+               <subreportParameterExpression>$P{FlowLayout}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="ErrorDetails">
+               <subreportParameterExpression>$P{ErrorDetails}</subreportParameterExpression>
+            </subreportParameter>
+         </subreport>
+         <break>
+            <reportElement positionType="Float" x="0" y="62" width="534" height="1">
+               <printWhenExpression>$P{IncludeOverview} &amp;&amp; !$P{FlowLayout} &amp;&amp; $P{TestSuiteTestCases}.hasData()</printWhenExpression>
+            </reportElement>
+         </break>
+         <subreport>
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="63" width="535" height="30" isRemoveLineWhenBlank="true">
+               <printWhenExpression>$P{IncludeOverview}</printWhenExpression>
+            </reportElement>
+            <subreportParameter name="IncludeOverview">
+               <subreportParameterExpression>$P{IncludeOverview}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="Type">
+               <subreportParameterExpression>"TestCase"</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="IncludeResults">
+               <subreportParameterExpression>$P{IncludeResults}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="FlowLayout">
+               <subreportParameterExpression>$P{FlowLayout}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="ErrorDetails">
+               <subreportParameterExpression>$P{ErrorDetails}</subreportParameterExpression>
+            </subreportParameter>
+            <dataSourceExpression>$P{TestSuiteTestCases}</dataSourceExpression>
+            <subreportExpression class="java.lang.String">"subreport:ModelItemListReport"</subreportExpression>
+         </subreport>
+         <break>
+            <reportElement positionType="Float" x="0" y="95" width="535" height="1" isPrintInFirstWholeBand="true">
+               <printWhenExpression>!$P{FlowLayout} &amp;&amp; $P{IncludeResults}  &amp;&amp; $P{TestSuiteMetrics}.hasData()</printWhenExpression>
+            </reportElement>
+         </break>
+         <subreport isUsingCache="true">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="1" y="98" width="535" height="30" isRemoveLineWhenBlank="true">
+               <printWhenExpression>$P{IncludeResults}</printWhenExpression>
+            </reportElement>
+            <subreportParameter name="IncludeOverview">
+               <subreportParameterExpression>$P{IncludeOverview}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="Type">
+               <subreportParameterExpression>"Result"</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="IncludeResults">
+               <subreportParameterExpression>$P{IncludeResults}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="FlowLayout">
+               <subreportParameterExpression>$P{FlowLayout}</subreportParameterExpression>
+            </subreportParameter>
+            <dataSourceExpression>$P{TestSuiteMetrics}</dataSourceExpression>
+            <subreportExpression class="java.lang.String">"subreport:MetricsReport"</subreportExpression>
+         </subreport>
+         <break>
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="129" width="535" height="1" isRemoveLineWhenBlank="true">
+               <printWhenExpression>!$P{FlowLayout} &amp;&amp; $P{IncludeResults} &amp;&amp; $P{TestSuiteTestCaseResults}.hasData()</printWhenExpression>
+            </reportElement>
+         </break>
+         <subreport isUsingCache="false">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="1" y="129" width="535" height="33" isRemoveLineWhenBlank="true">
+               <printWhenExpression>$P{IncludeResults} &amp;&amp; $P{TestSuiteTestCaseResults}.hasData()</printWhenExpression>
+            </reportElement>
+            <subreportParameter name="IncludeOverview">
+               <subreportParameterExpression>$P{IncludeOverview}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="IncludeResults">
+               <subreportParameterExpression>$P{IncludeResults}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="FlowLayout">
+               <subreportParameterExpression>$P{FlowLayout}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="ErrorDetails">
+               <subreportParameterExpression>$P{ErrorDetails}</subreportParameterExpression>
+            </subreportParameter>
+            <dataSourceExpression>$P{TestSuiteTestCaseResults}</dataSourceExpression>
+            <subreportExpression class="java.lang.String">"subreport:TestCaseResultsOverviewReport"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="false">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="1" y="163" width="535" height="32" isRemoveLineWhenBlank="true">
+               <printWhenExpression>$P{IncludeResults} &amp;&amp; $P{TestSuiteTestCaseResults}.hasData()</printWhenExpression>
+            </reportElement>
+            <subreportParameter name="IncludeOverview">
+               <subreportParameterExpression>$P{IncludeOverview}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="IncludeResults">
+               <subreportParameterExpression>$P{IncludeResults}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="FlowLayout">
+               <subreportParameterExpression>$P{FlowLayout}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="ErrorDetails">
+               <subreportParameterExpression>$P{ErrorDetails}</subreportParameterExpression>
+            </subreportParameter>
+            <dataSourceExpression>$P{TestSuiteTestCaseResults}.cloneDataSource()</dataSourceExpression>
+            <subreportExpression class="java.lang.String">"subreport:PMIX_TestCaseResults"</subreportExpression>
+         </subreport>
+         <subreport isUsingCache="false">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="1" y="200" width="535" height="30" isRemoveLineWhenBlank="true">
+               <printWhenExpression>$P{IncludeCoverage}</printWhenExpression>
+            </reportElement>
+            <subreportParameter name="IncludeOverview">
+               <subreportParameterExpression>$P{IncludeOverview}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="TestSuiteCoverage">
+               <subreportParameterExpression>$P{TestSuiteCoverage}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="IncludeResults">
+               <subreportParameterExpression>$P{IncludeResults}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="FlowLayout">
+               <subreportParameterExpression>$P{FlowLayout}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="ErrorDetails">
+               <subreportParameterExpression>$P{ErrorDetails}</subreportParameterExpression>
+            </subreportParameter>
+            <dataSourceExpression>$P{TestSuiteCoverage}</dataSourceExpression>
+            <subreportExpression class="java.lang.String">"subreport:TestSuiteCoverageChart"</subreportExpression>
+         </subreport>
+      </band>
+   </detail>
+   <pageFooter>
+      <band height="20">
+         <textField>
+            <reportElement x="0" y="0" width="535" height="20" forecolor="#999999"/>
+            <textElement textAlignment="Center" verticalAlignment="Middle"/>
+            <textFieldExpression class="java.lang.String">"SpringBoard PMIX"</textFieldExpression>
+         </textField>
+      </band>
+   </pageFooter>
+   <lastPageFooter>
+      <band height="29">
+         <textField>
+            <reportElement x="0" y="0" width="535" height="20" forecolor="#999999"/>
+            <textElement textAlignment="Center" verticalAlignment="Middle"/>
+            <textFieldExpression class="java.lang.String">"SpringBoard PMIX"</textFieldExpression>
+         </textField>
+      </band>
+   </lastPageFooter>
+</jasperReport>]]></con:data><con:scope>PROJECT</con:scope></con:reportTemplates><con:reportTemplates>
+  <con:name>PMIX_TestCaseResults</con:name>
+  <con:reportType>COMMON</con:reportType>
+  <con:reportLevel>SUBREPORT</con:reportLevel>
+  <con:nameInReport>TestCaseResultsReport</con:nameInReport>
+  <con:data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><![CDATA[<jasperReport xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TestCaseResultsReport" language="groovy" pageWidth="535" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <template>"../../styles.jrtx"</template>
+   <style name="statusStyle" isDefault="false">
+      <conditionalStyle>
+         <conditionExpression>Boolean.valueOf($F{status}.equals( "UNKNOWN" ))</conditionExpression>
+         <style isDefault="false" style="statusStyle" mode="Opaque" backcolor="#FFFF00"/>
+      </conditionalStyle>
+      <conditionalStyle>
+         <conditionExpression>Boolean.valueOf($F{status}.equals( "FINISHED" ))</conditionExpression>
+         <style isDefault="false" style="statusStyle" mode="Opaque" backcolor="#66FF00"/>
+      </conditionalStyle>
+      <conditionalStyle>
+         <conditionExpression>Boolean.valueOf($F{status}.equals( "FAILED" ))</conditionExpression>
+         <style isDefault="false" style="statusStyle" mode="Opaque" forecolor="#FFFF00" backcolor="#FF3333" isBold="true"/>
+      </conditionalStyle>
+   </style>
+   <parameter name="FlowLayout" class="java.lang.Boolean"/>
+   <parameter name="ErrorDetails" class="java.lang.Boolean"/>
+   <field name="startTime" class="java.lang.String"/>
+   <field name="timeTaken" class="java.lang.String"/>
+   <field name="status" class="java.lang.String"/>
+   <field name="testCaseName" class="java.lang.String"/>
+   <field name="reason" class="java.lang.String"/>
+   <field name="testStepResults" class="net.sf.jasperreports.engine.JRDataSource"/>
+   <field name="testProperties" class="net.sf.jasperreports.engine.JRDataSource"/>
+   <field name="failedTestSteps" class="net.sf.jasperreports.engine.JRDataSource"/>
+   <detail>
+      <band height="201">
+         <break>
+            <reportElement x="0" y="1" width="100" height="1">
+               <printWhenExpression>!$P{FlowLayout}</printWhenExpression>
+            </reportElement>
+         </break>
+         <textField>
+            <reportElement style="SmallHeader" mode="Opaque" x="0" y="2" width="535" height="32" forecolor="#000000" backcolor="#FFFFFF"/>
+            <box leftPadding="0"/>
+            <textElement/>
+            <textFieldExpression class="java.lang.String">$F{testCaseName} + " Summary"</textFieldExpression>
+         </textField>
+         <textField>
+            <reportElement style="statusStyle" x="0" y="65" width="71" height="15"/>
+            <box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1"/>
+            <textElement verticalAlignment="Top"/>
+            <textFieldExpression class="java.lang.String">$F{status}</textFieldExpression>
+         </textField>
+         <textField>
+            <reportElement mode="Transparent" x="81" y="66" width="109" height="18" backcolor="#FFFFFF"/>
+            <box leftPadding="2"/>
+            <textElement verticalAlignment="Top"/>
+            <textFieldExpression class="java.lang.String">$F{startTime}</textFieldExpression>
+         </textField>
+         <textField>
+            <reportElement mode="Transparent" x="190" y="67" width="87" height="14" backcolor="#FFFFFF"/>
+            <textElement verticalAlignment="Top"/>
+            <textFieldExpression class="java.lang.String">$F{timeTaken}.concat( " ms" )</textFieldExpression>
+         </textField>
+         <textField isStretchWithOverflow="true" isBlankWhenNull="true">
+            <reportElement mode="Transparent" x="277" y="67" width="258" height="14" backcolor="#FFFFFF"/>
+            <textElement verticalAlignment="Top"/>
+            <textFieldExpression class="java.lang.String">$F{reason}</textFieldExpression>
+         </textField>
+         <subreport isUsingCache="false">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="119" width="535" height="40" isRemoveLineWhenBlank="true"/>
+            <subreportParameter name="FlowLayout">
+               <subreportParameterExpression>$P{FlowLayout}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="testCaseName">
+               <subreportParameterExpression>$F{testCaseName}</subreportParameterExpression>
+            </subreportParameter>
+            <dataSourceExpression>$F{testStepResults}</dataSourceExpression>
+            <subreportExpression class="java.lang.String">"subreport:TestStepResultsReport"</subreportExpression>
+         </subreport>
+         <staticText>
+            <reportElement style="ColumnHeader" x="0" y="40" width="81" height="20"/>
+            <textElement/>
+            <text>Status</text>
+         </staticText>
+         <staticText>
+            <reportElement style="ColumnHeader" x="81" y="40" width="109" height="20"/>
+            <textElement/>
+            <text>Start Time</text>
+         </staticText>
+         <staticText>
+            <reportElement style="ColumnHeader" x="190" y="40" width="87" height="20"/>
+            <textElement/>
+            <text>Time Taken</text>
+         </staticText>
+         <staticText>
+            <reportElement style="ColumnHeader" x="277" y="40" width="258" height="20"/>
+            <textElement/>
+            <text>Reason</text>
+         </staticText>
+         <subreport isUsingCache="false">
+            <reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="161" width="534" height="40">
+               <printWhenExpression>$P{ErrorDetails}</printWhenExpression>
+            </reportElement>
+            <subreportParameter name="FlowLayout">
+               <subreportParameterExpression>$P{FlowLayout}</subreportParameterExpression>
+            </subreportParameter>
+            <subreportParameter name="ErrorDetails">
+               <subreportParameterExpression>$P{ErrorDetails}</subreportParameterExpression>
+            </subreportParameter>
+            <dataSourceExpression>$F{failedTestSteps}</dataSourceExpression>
+            <subreportExpression class="java.lang.String">"subreport:FailedTestSteps"</subreportExpression>
+         </subreport>
+      </band>
+   </detail>
+</jasperReport>]]></con:data>
+  <con:description>NO DESC</con:description>
+  <con:scope>PROJECT</con:scope>
+<con:dataSource>Test Cases</con:dataSource></con:reportTemplates><con:xmlTemplates/><con:parameters/></con:reporting><con:sensitiveInformation/></con:soapui-project>

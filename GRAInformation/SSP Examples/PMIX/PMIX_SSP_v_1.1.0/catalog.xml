@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+  <!--  Catalog Files Section  -->
+  <catalog href="catalog.html">Catalog</catalog>
+  <metadata href="metadata.xml">Metadata</metadata>
+
+  <!--  Service Description Files Section  -->
+  <service-description href="artifacts/PMIX_SDD_v_1.1.0.docx">Service Description Document</service-description>
+
+  <!--  Service Interface Files Section  -->
+  <service-interface-description href="artifacts/PMIX_SIDD_WS_Trusted_v_1.1.0.docx">Trusted Service Interface Description Document</service-interface-description>
+    <service-interface-description href="artifacts/PMIX_SIDD_WS_Secure_v_1.1.0.docx">Secure Service Interface Description Document</service-interface-description>
+  
+  <!--  Schema and Samples Files Section - Web Services  --> 
+  <wsdl-schema href="schema/SIP_WS_1.2_Trusted/PMIX_Trusted_Service.wsdl">PMIX Trusted Service</wsdl-schema>
+  
+  <soap-sample href="sample/SIP_WS_1.2_Trusted/PMIX_SOAP_Provide_Request_Trusted.xml">PMIX Trusted Service Request SOAP Sample</soap-sample>
+  <soap-sample href="sample/SIP_WS_1.2_Trusted/PMIX_SOAP_Fault_Authorization.xml">PMIX Trusted Service Authorization Fault SOAP Sample</soap-sample>
+  <soap-sample href="sample/SIP_WS_1.2_Trusted/PMIX_SOAP_Fault_InvalidSecurity.xml">PMIX Trusted Service Invalid Security Fault SOAP Sample</soap-sample>
+  <soap-sample href="sample/SIP_WS_1.2_Trusted/PMIX_SOAP_Fault_Validation.xml">PMIX Trusted Service Validation Fault SOAP Sample</soap-sample>
+
+	
+  <wsdl-schema href="schema/SIP_WS_1.2_Secure/PMIX_Secure_Service.wsdl">PMIX Secure Service</wsdl-schema> 
+  
+  <soap-sample href="sample/SIP_WS_1.2_Secure/PMIX_SOAP_Provide_Request_Secure.xml">PMIX Secure Service Request SOAP Sample</soap-sample>
+  <soap-sample href="sample/SIP_WS_1.2_Secure/PMIX_SOAP_Provide_Response_Secure.xml">PMIX Secure Service Response SOAP Sample</soap-sample>
+  <soap-sample href="sample/SIP_WS_1.2_Secure/PMIX_SOAP_Fault_Authorization.xml">PMIX Secure Service Authorization Fault SOAP Sample</soap-sample>
+  <soap-sample href="sample/SIP_WS_1.2_Secure/PMIX_SOAP_Fault_InvalidSecurity.xml">PMIX Secure Service Invalid Security Fault SOAP Sample</soap-sample>
+  <soap-sample href="sample/SIP_WS_1.2_Secure/PMIX_SOAP_Fault_Validation.xml">PMIX Secure Service Validation Fault SOAP Sample</soap-sample>
+  
+
+  <!--  Schema and Sample Files Section - Information Model  -->
+  <iepd-catalog href="artifacts/service model/information model/PMIX IEPD/catalog.html">PMIX IEPD Catalog</iepd-catalog>
+
+  <!--  Other Documents Section  -->
+</catalog>

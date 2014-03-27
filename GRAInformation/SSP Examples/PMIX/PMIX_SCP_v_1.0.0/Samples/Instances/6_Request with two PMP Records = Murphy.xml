@@ -1,0 +1,36 @@
+<pmix:PMPRequest xmlns:pmix="http://xml.ijis.org/niem/2.0/" 
+xmlns:pmp="http://xml.ijis.org/niem/2.0/extension" xmlns:nc="http://niem.gov/niem/niem-core/2.0" >
+    <pmp:RequestPrescriptionDateRange>
+        <pmp:RequestPrescriptionDateRangeBegin>2012-01-01</pmp:RequestPrescriptionDateRangeBegin>
+        <pmp:RequestPrescriptionDateRangeEnd>2012-01-30</pmp:RequestPrescriptionDateRangeEnd>
+    </pmp:RequestPrescriptionDateRange>
+    <pmp:RequestPatient>
+        <nc:PersonName>            
+            <nc:PersonGivenName>George</nc:PersonGivenName>
+            <nc:PersonSurName>Murphy</nc:PersonSurName>
+        </nc:PersonName>
+        <nc:PersonSexCode>M</nc:PersonSexCode>
+        <nc:PersonSSNIdentification>
+            <nc:IdentificationID>372-24-8382</nc:IdentificationID>
+        </nc:PersonSSNIdentification>
+        <pmp:PersonPrimaryContactInformation>
+            <nc:ContactMailingAddress>
+                <nc:StructuredAddress>
+                    <nc:LocationStreet>
+                        <nc:StreetFullText>233 Riverside View, Edison Drive</nc:StreetFullText>
+                    </nc:LocationStreet>
+                    <nc:LocationCityName>Silver Spring</nc:LocationCityName>
+                    <nc:LocationStateUSPostalServiceCode>MD</nc:LocationStateUSPostalServiceCode>
+                    <nc:LocationPostalCode>23214</nc:LocationPostalCode>
+                </nc:StructuredAddress>
+            </nc:ContactMailingAddress>
+            <nc:ContactEntity>
+                <nc:EntityOrganization>
+                    <nc:OrganizationDoingBusinessAsName>PatientCare, Inc.</nc:OrganizationDoingBusinessAsName>
+                </nc:EntityOrganization>
+            </nc:ContactEntity>
+        </pmp:PersonPrimaryContactInformation>
+        <pmp:SpeciesCode>01</pmp:SpeciesCode>
+        <pmp:PatientLocationCode>01</pmp:PatientLocationCode>
+    </pmp:RequestPatient>
+</pmix:PMPRequest>
