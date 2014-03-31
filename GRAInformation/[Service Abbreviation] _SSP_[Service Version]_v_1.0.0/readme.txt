@@ -1,0 +1,1 @@
+This folder contains a service specification package template. Instructions on how to use this service specification package template can be found in the Service Specification Guideline Document available at http://www.it.ojp.gov/gra.
