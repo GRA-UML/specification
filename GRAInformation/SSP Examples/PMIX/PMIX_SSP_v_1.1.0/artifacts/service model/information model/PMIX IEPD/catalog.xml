@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Catalog xmlns="http://reference.niem.gov/niem/resource/mpd/catalog/1.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ca="http://reference.niem.gov/niem/resource/mpd/catalog/1.0/"
+    ca:mpdURI="http://xml.ijis.org/niem/2.0/" ca:mpdClassCode="iepd" ca:mpdName="PMIX"
+    ca:mpdVersionID="1.0.0"
+    xsi:schemaLocation="http://reference.niem.gov/niem/resource/mpd/catalog/1.0/ 
+        http://reference.niem.gov/niem/resource/mpd/catalog/1.0/mpd-catalog-1.0.xsd">
+
+    <ca:File ca:id="s1"
+        ca:relativePathName=".artifacts\service model\information model\PMIX IEPD\catalog.html"
+        ca:natureURI="[n:html]" ca:purposeURI="[p:catalog]"/>
+    <ca:File ca:id="s2"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\metadata.doc"
+        ca:natureURI="[n:doc]" ca:purposeURI="[p:metadata]"/>
+    <ca:File ca:id="s3"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\metadata.xml"
+        ca:natureURI="[n:xml]" ca:purposeURI="[p:metadata]"/>
+    <ca:File ca:id="s4"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\20111219 PMIX v1.0.1 NIEM Conformance Report.xls"
+        ca:natureURI="[n:xls]" ca:purposeURI="[p:metadata]"/>
+    <ca:File ca:id="s5"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\change_log.txt"
+        ca:natureURI="[n:txt]" ca:purposeURI="[p:changelog]"/>
+    <ca:File ca:id="s6"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\ijis_pmix_piii_emm_iepd_report_v1_20071202.doc"
+        ca:natureURI="[n:doc]" ca:purposeURI="[p:sample]"/>
+    <ca:File ca:id="s7"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\Mapping_Form.xls"
+        ca:natureURI="[n:xls]" ca:purposeURI="[p:mapping]"/>
+    <ca:File ca:id="s8"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\Objects_and_Elements.xls"
+        ca:natureURI="[n:xls]" ca:purposeURI="[p:mapping]"/>
+    <ca:File ca:id="s9"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\PMIX UML Diagram.png"
+        ca:natureURI="[n:png]" ca:purposeURI="[p:model]"/>
+    <ca:File ca:id="s10"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\PMIX_IEPD_Master_Documentation_v_0.1.0.docx"
+        ca:natureURI="[n:docx]" ca:purposeURI="[p:document]"/>
+    <ca:File ca:id="s11"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\pmp_exchange_phase_iii.zargo"
+        ca:natureURI="[n:zargo]" ca:purposeURI="[p:model]"/>
+    <ca:File ca:id="s12"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\Types_and_Properties.xls"
+        ca:natureURI="[n:xls]" ca:purposeURI="[p:mapping]"/>
+    <ca:File ca:id="s13"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\Exchange_ Models\identification.gif"
+        ca:natureURI="[n:gif]" ca:purposeURI="[p:model]"/>
+    <ca:File ca:id="s14"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\Exchange_ Models\organization.gif"
+        ca:natureURI="[n:gif]" ca:purposeURI="[p:model]"/>
+    <ca:File ca:id="s15"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\Exchange_ Models\participant.gif"
+        ca:natureURI="[n:gif]" ca:purposeURI="[p:model]"/>
+    <ca:File ca:id="s16"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\Exchange_ Models\payment_method.gif"
+        ca:natureURI="[n:gif]" ca:purposeURI="[p:model]"/>
+    <ca:File ca:id="s17"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\Exchange_ Models\person.gif"
+        ca:natureURI="[n:gif]" ca:purposeURI="[p:model]"/>
+    <ca:File ca:id="s18"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\Exchange_ Models\pmp_alert.gif"
+        ca:natureURI="[n:gif]" ca:purposeURI="[p:model]"/>
+    <ca:File ca:id="s19"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\Exchange_ Models\pmp_exchange.gif"
+        ca:natureURI="[n:gif]" ca:purposeURI="[p:model]"/>
+    <ca:File ca:id="s20"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\Exchange_ Models\pmp_organization.gif"
+        ca:natureURI="[n:gif]" ca:purposeURI="[p:model]"/>
+    <ca:File ca:id="s21"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\Exchange_ Models\prescription.gif"
+        ca:natureURI="[n:gif]" ca:purposeURI="[p:model]"/>
+    <ca:File ca:id="s22"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\Exchange_ Models\prescription_drug.gif"
+        ca:natureURI="[n:gif]" ca:purposeURI="[p:model]"/>
+    <ca:File ca:id="s23"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\Exchange_ Models\prescription_drug.png"
+        ca:natureURI="[n:png]" ca:purposeURI="[p:model]"/>
+    <ca:File ca:id="s24"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\Exchange_ Models\prescription_plan.gif"
+        ca:natureURI="[n:gif]" ca:purposeURI="[p:model]"/>
+    <ca:File ca:id="s25"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\sample\PMIX_AcknowledgementSample.xml"
+        ca:natureURI="[n:xml]" ca:purposeURI="[p:sample]"/>
+    <ca:File ca:id="s26"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\sample\PMIX_BasicRequestSample.xml"
+        ca:natureURI="[n:xml]" ca:purposeURI="[p:sample]"/>
+    <ca:File ca:id="s27"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\sample\PMIX_BasicResponseSample.xml"
+        ca:natureURI="[n:xml]" ca:purposeURI="[p:sample]"/>
+    <ca:File ca:id="s28"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\sample\PMIX_MetaDataSample.xml"
+        ca:natureURI="[n:xml]" ca:purposeURI="[p:sample]"/>
+    <ca:File ca:id="s29"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\sample\PMIX_NIEM_2.0_ComprehensiveRequestSample.xml"
+        ca:natureURI="[n:xml]" ca:purposeURI="[p:sample]"/>
+    <ca:File ca:id="s30"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\sample\PMIX_NIEM_2.0_PMP_PrescriptionReportPharmacyReportingSample.xml"
+        ca:natureURI="[n:xml]" ca:purposeURI="[p:sample]"/>
+    <ca:File ca:id="s31"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\sample\PMIX_NIEM_2.0_PMP_PrescriptionReportPMPExchangeSample.xml"
+        ca:natureURI="[n:xml]" ca:purposeURI="[p:sample]"/>
+    <ca:File ca:id="s32"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\sample\PMIX_ResponseStatusSample.xml"
+        ca:natureURI="[n:xml]" ca:purposeURI="[p:sample]"/>
+    <ca:File ca:id="s33"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\code set\PMIX_Code_Set.xsd"
+        ca:natureURI="[n:xsd]" ca:purposeURI="[p:subset-schema]"/>
+    <ca:File ca:id="s34"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\exchange\PMIX_NIEM_2.0_PMP_Prescription_Report.xsd"
+        ca:natureURI="[n:xsd]" ca:purposeURI="[p:subset-schema]"/>
+    <ca:File ca:id="s35"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\exchange\PMIX_NIEM_2.0_Request_Schema.xsd"
+        ca:natureURI="[n:xsd]" ca:purposeURI="[p:subset-schema]"/>
+    <ca:File ca:id="s36"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\extension\PMP_NIEM_2.0_Domain_Extension_Schema.xsd"
+        ca:natureURI="[n:xsd]" ca:purposeURI="[p:subset-schema]"/>
+    <ca:File ca:id="s37"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\appinfo\2.0\appinfo.xsd"
+        ca:natureURI="[n:xsd]" ca:purposeURI="[p:subset-schema]"/>
+    <ca:File ca:id="s38"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\domains\intelligence\2.0\intelligence.xsd"
+        ca:natureURI="[n:xsd]" ca:purposeURI="[p:subset-schema]"/>
+    <ca:File ca:id="s39"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\domains\jxdm\4.0\jxdm.xsd"
+        ca:natureURI="[n:xsd]" ca:purposeURI="[p:subset-schema]"/>
+    <ca:File ca:id="s40"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\domains\screening\2.0\screening.xsd"
+        ca:natureURI="[n:xsd]" ca:purposeURI="[p:subset-schema]"/>
+    <ca:File ca:id="s41"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\fbi\2.0\fbi.xsd"
+        ca:natureURI="[n:xsd]" ca:purposeURI="[p:subset-schema]"/>
+    <ca:File ca:id="s42"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\iso_4217\2.0\iso_4217.xsd"
+        ca:natureURI="[n:xsd]" ca:purposeURI="[p:subset-schema]"/>
+    <ca:File ca:id="s43"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\niem-core\2.0\niem-core.xsd"
+        ca:natureURI="[n:xsd]" ca:purposeURI="[p:subset-schema]"/>
+    <ca:File ca:id="s44"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\post-canada\2.0\post-canada.xsd"
+        ca:natureURI="[n:xsd]" ca:purposeURI="[p:subset-schema]"/>
+    <ca:File ca:id="s45"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\proxy\xsd\2.0\xsd.xsd"
+        ca:natureURI="[n:xsd]" ca:purposeURI="[p:subset-schema]"/>
+    <ca:File ca:id="s46"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\structures\2.0\structures.xsd"
+        ca:natureURI="[n:xsd]" ca:purposeURI="[p:subset-schema]"/>
+    <ca:File ca:id="s47"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\usps_states\2.0\usps_states.xsd"
+        ca:natureURI="[n:xsd]" ca:purposeURI="[p:subset-schema]"/>
+    <ca:File ca:id="s48"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\wantlist\wantlist.xml"
+        ca:natureURI="[n:xml]" ca:purposeURI="[p:wantlist]"/>
+
+    <ca:Folder ca:id="f0"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts"/>
+    <ca:Folder ca:id="f1"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\sample"/>
+    <ca:Folder ca:id="f2"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema"/>
+    <ca:Folder ca:id="f3"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\wantlist"/>
+    <ca:Folder ca:id="f4"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\artifacts\Exchange_ Models"/>
+    <ca:Folder ca:id="f5"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\code set"/>
+    <ca:Folder ca:id="f6"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\exchange"/>
+    <ca:Folder ca:id="f7"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\extension"/>
+    <ca:Folder ca:id="f8"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset"/>
+    <ca:Folder ca:id="f9"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem"/>
+    <ca:Folder ca:id="f10"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\appinfo"/>
+    <ca:Folder ca:id="f11"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\domains"/>
+    <ca:Folder ca:id="f12"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\fbi"/>
+    <ca:Folder ca:id="f13"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\iso_4217"/>
+    <ca:Folder ca:id="f14"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\niem-core"/>
+    <ca:Folder ca:id="f15"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\post-canada"/>
+    <ca:Folder ca:id="f16"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\proxy"/>
+    <ca:Folder ca:id="f17"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\structures"/>
+    <ca:Folder ca:id="f18"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\usps_states"/>
+    <ca:Folder ca:id="f19"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\appinfo\2.0"/>
+    <ca:Folder ca:id="f20"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\domains\intelligence"/>
+    <ca:Folder ca:id="f21"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\domains\jxdm"/>
+    <ca:Folder ca:id="f22"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\domains\screening"/>
+    <ca:Folder ca:id="f23"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\domains\intelligence\2.0"/>
+    <ca:Folder ca:id="f24"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\domains\jxdm\4.0"/>
+    <ca:Folder ca:id="f25"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\domains\screening\2.0"/>
+    <ca:Folder ca:id="f26"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\fbi\2.0"/>
+    <ca:Folder ca:id="f27"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\iso_4217\2.0"/>
+    <ca:Folder ca:id="f28"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\niem-core\2.0"/>
+    <ca:Folder ca:id="f29"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\post-canada\2.0"/>
+    <ca:Folder ca:id="f30"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\proxy\xsd"/>
+    <ca:Folder ca:id="f31"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\proxy\xsd\2.0"/>
+    <ca:Folder ca:id="f32"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\structures\2.0"/>
+    <ca:Folder ca:id="f33"
+        ca:relativePathName=".\artifacts\service model\information model\PMIX IEPD\schema\subset\niem\usps_states\2.0"/>
+
+    <Metadata>
+        <SecurityMarkingText>sbu</SecurityMarkingText>
+        <CreationDate>2014-04-10</CreationDate>
+        <KeywordText>PMIX</KeywordText>
+        <DomainText>Law Enforcement</DomainText>
+
+        <AuthoritativeSource>
+            <ca:ASName>Integrated Justice Information Systems</ca:ASName>
+            <ca:ASAddressText>44983 Knoll Square
+                Ashburn, VA 20147, 
+                USA</ca:ASAddressText>
+            <ca:ASWebSiteURL>http://http://www.ijis.org/</ca:ASWebSiteURL>
+            <POC>
+                <POCName>Donald Gabbin</POCName>
+                <POCEmail>Donald.Gabbin@ijis.org</POCEmail>
+                <POCTelephone>703.726.3647</POCTelephone>
+            </POC>
+        </AuthoritativeSource>
+    </Metadata>
+</Catalog>

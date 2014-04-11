@@ -1,117 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<globaljra:ServiceMetadata xsi:schemaLocation="http://it.ojp.gov/gsp/services/1.0.0 Metadata.xsd" xmlns:globaljra="http://it.ojp.gov/gsp/services/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<globaljra:ServiceIdentification>
-		<globaljra:ServiceFullNameText>Prescription Drug Monitoring Information Exchange</globaljra:ServiceFullNameText>
-		<globaljra:ServiceID></globaljra:ServiceID>
-		<globaljra:ServiceURI></globaljra:ServiceURI>
-		<globaljra:ServiceNameAbbreviationText>PMIX</globaljra:ServiceNameAbbreviationText>
-	</globaljra:ServiceIdentification>
-	<globaljra:ServiceDescription>
-		<globaljra:ServicePurposeText>The purpose of this service is to support the establishment and operation of automated PMIX capabilities between states. </globaljra:ServicePurposeText>
-		<globaljra:ServiceScopeDescriptionText>
+<gra:ServiceMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://it.ojp.gov/gsp/services/1.0.0 metadata.xsd"
+ xmlns:gra="http://it.ojp.gov/gsp/services/1.0.0">
+	<gra:ServiceIdentification>
+		<gra:ServiceFullNameText>Prescription Drug Monitoring Information Exchange</gra:ServiceFullNameText>
+		<gra:ServiceID/>
+		<gra:ServiceURI/>
+		<gra:ServiceNameAbbreviationText>PMIX</gra:ServiceNameAbbreviationText>
+	</gra:ServiceIdentification>
+	<gra:ServiceDescription>
+		<gra:ServicePurposeText>The purpose of this service is to support the establishment and operation of automated PMIX capabilities between states. </gra:ServicePurposeText>
+		<gra:ServiceScopeDescriptionText>
 			The scope includes electronic system-to-system exchange of dispensed prescription drug history information between states.
 			Prescribers will receive a prescription drug history, if any is available, in order to identify potential abuse or diversion in making their prescribing decisions. Multiple requests can be issued to provide prescription drug history from as many states as needed.
 			All PMIX transactions will be logged to allow for any necessary accounting.
-		</globaljra:ServiceScopeDescriptionText>
-		<globaljra:ServiceDescriptionSummaryText>
+		</gra:ServiceScopeDescriptionText>
+		<gra:ServiceDescriptionSummaryText>
 			The PMIX service provides an individual’s prescription drug history from participating states given specific search criteria.
-		</globaljra:ServiceDescriptionSummaryText>
-		<globaljra:ServiceDescriptionText>
+		</gra:ServiceDescriptionSummaryText>
+		<gra:ServiceDescriptionText>
 			The PMIX service provides state PMP systems with the capability to retrieve interstate prescription drug history to assist in the identification of potential abuse and diversion. The service can provide the requested drug history as a direct response to a request containing person identifiers. 
-		</globaljra:ServiceDescriptionText>
-		<globaljra:ServiceDescriptionKeywordText>String</globaljra:ServiceDescriptionKeywordText>
-		<globaljra:ServiceCapabilities>
-			<globaljra:CapabilityDescriptionText>Provide Prescription Drug History</globaljra:CapabilityDescriptionText>
-		</globaljra:ServiceCapabilities>
-		<globaljra:ServiceRealWorldEffects>
-			<globaljra:RealWorldEffectDescriptionText>Prescribers will receive a prescription drug history, if any is available, in order to identify potential abuse or diversion in making their prescribing decisions. Multiple requests can be issued to provide prescription drug history from as many states as needed. All PMIX transactions will be logged to allow for any necessary accounting.</globaljra:RealWorldEffectDescriptionText>
-		</globaljra:ServiceRealWorldEffects>
-		<globaljra:SecurityClassificationText>SBU</globaljra:SecurityClassificationText>
-		<globaljra:ServiceDependencies/>
-		<globaljra:IEPDReferences>
-			<globaljra:IEPDReference>
-				<globaljra:IEPDName>PMIX</globaljra:IEPDName>
-				<globaljra:IEPDURL></globaljra:IEPDURL>
-			</globaljra:IEPDReference>
-		</globaljra:IEPDReferences>
-	</globaljra:ServiceDescription>
-	<globaljra:VersionInformation>
-		<globaljra:MajorVersion>1</globaljra:MajorVersion>
-		<globaljra:MinorVersion>0</globaljra:MinorVersion>
-		<globaljra:RevisionVersion>2</globaljra:RevisionVersion>
-		<globaljra:CreationDate>2010-12-22</globaljra:CreationDate>
-		<globaljra:LifecycleStatus>In Design</globaljra:LifecycleStatus>
-		<globaljra:AlertsAndNotifications></globaljra:AlertsAndNotifications>
-	</globaljra:VersionInformation>
-    <globaljra:RelatedOrganizationInformation>
-        <globaljra:Organization>
-            <globaljra:OrganizationName>Integrated Justice Information Systems</globaljra:OrganizationName>
-	    <globaljra:OrganizationAcronym>IJIS</globaljra:OrganizationAcronym>
-	    <globaljra:OrganizationFullAddressText></globaljra:OrganizationFullAddressText>
-	    <globaljra:OrganizationWebSiteURL></globaljra:OrganizationWebSiteURL>
-	    <globaljra:OrganizationRoleDescriptionText>Sponsor</globaljra:OrganizationRoleDescriptionText>
-	    <globaljra:OrganizationRoleDetailedDescriptionText>Sponsor</globaljra:OrganizationRoleDetailedDescriptionText>
-	</globaljra:Organization>
-    </globaljra:RelatedOrganizationInformation>
-	<globaljra:BusinessContext>
-		<globaljra:DomainDescription>
-			<globaljra:DomainNameText>Health</globaljra:DomainNameText>
-		</globaljra:DomainDescription>
-		<globaljra:Classifications>
-			<globaljra:Classification></globaljra:Classification>
-		</globaljra:Classifications>
-		<globaljra:ExchangePartnerTypes>
-			<globaljra:ExchangePartnerTypeDescriptionText></globaljra:ExchangePartnerTypeDescriptionText>
-		</globaljra:ExchangePartnerTypes>
-		<globaljra:Endorsements>
-			<globaljra:Endorser></globaljra:Endorser>
-		</globaljra:Endorsements>
-		<globaljra:Sponsors>
-			<globaljra:Sponsor></globaljra:Sponsor>
-		</globaljra:Sponsors>
-	</globaljra:BusinessContext>
-	<globaljra:ServiceInterface>
-		<globaljra:URIDetails>
-			<globaljra:URIDetail>
-				<globaljra:URIAddress>https://rxcheck.org/2010/12/pmix/router</globaljra:URIAddress>
-				<globaljra:URIDescription>The PMIX Central RxCheck.org Interface URI Address</globaljra:URIDescription>
-			</globaljra:URIDetail>
-		</globaljra:URIDetails>
-		<globaljra:ServiceActions>
-			<globaljra:ServiceAction>
-				<globaljra:ActionName>ProvidePrescriptionDrugHistory</globaljra:ActionName>
-				<globaljra:ActionPurpose>This action is used to by participating PMP systems to provide prescription drug history. </globaljra:ActionPurpose>
-				<globaljra:MessageExchangePattern>Request-Response</globaljra:MessageExchangePattern>
-			</globaljra:ServiceAction>
-		</globaljra:ServiceActions>
-		<globaljra:ServiceInteractionProfiles>
-			<globaljra:ServiceInteractionProfile>
-				<globaljra:SIPName>Reliable Secure Web Services</globaljra:SIPName>
-				<globaljra:SIPVersion>1.2</globaljra:SIPVersion>
-			</globaljra:ServiceInteractionProfile>
-		</globaljra:ServiceInteractionProfiles>
-		<globaljra:SecurityImplementedIndicator>true</globaljra:SecurityImplementedIndicator>
-		<globaljra:SecurityDescriptionText></globaljra:SecurityDescriptionText>
-	</globaljra:ServiceInterface>
-	<globaljra:ServiceLevelAgreements>
-		<globaljra:ServicePolicyAndContracts>
-			<globaljra:ApplicablePoliciesIndicator>true</globaljra:ApplicablePoliciesIndicator>
-			<globaljra:ApplicablePolicies>
-				<globaljra:PolicyText></globaljra:PolicyText>
-			</globaljra:ApplicablePolicies>
-			<globaljra:ApplicableContractsIndicator>false</globaljra:ApplicableContractsIndicator>
-			<globaljra:ApplicableAgreementsIndicator>false</globaljra:ApplicableAgreementsIndicator>
-			<globaljra:ApplicableUmbrellaAgreementsIndicator>false</globaljra:ApplicableUmbrellaAgreementsIndicator>
-		</globaljra:ServicePolicyAndContracts>
-		<globaljra:PerformanceMetrics>
-			<globaljra:PerformanceResponseDuration>P0Y0M0DT24H0M0S</globaljra:PerformanceResponseDuration>
-			<globaljra:ServiceAverageThroughput></globaljra:ServiceAverageThroughput>
-			<globaljra:ServiceMaximumThroughput></globaljra:ServiceMaximumThroughput>
-			<globaljra:ServiceAvailability></globaljra:ServiceAvailability>
-		</globaljra:PerformanceMetrics>
-		<globaljra:ServiceUsageDetails>
-			<globaljra:ApprovalRequired>false</globaljra:ApprovalRequired>
-			<globaljra:LicensingRequired>false</globaljra:LicensingRequired>
-		</globaljra:ServiceUsageDetails>
-	</globaljra:ServiceLevelAgreements>
-</globaljra:ServiceMetadata>
+		</gra:ServiceDescriptionText>
+		<gra:ServiceDescriptionKeywordText>String</gra:ServiceDescriptionKeywordText>
+		<gra:ServiceCapabilities>
+			<gra:CapabilityDescriptionText>Provide Prescription Drug History</gra:CapabilityDescriptionText>
+		</gra:ServiceCapabilities>
+		<gra:ServiceRealWorldEffects>
+			<gra:RealWorldEffectDescriptionText>Prescribers will receive a prescription drug history, if any is available, in order to identify potential abuse or diversion in making their prescribing decisions. Multiple requests can be issued to provide prescription drug history from as many states as needed. All PMIX transactions will be logged to allow for any necessary accounting.</gra:RealWorldEffectDescriptionText>
+		</gra:ServiceRealWorldEffects>
+		<gra:SecurityClassificationText>SBU</gra:SecurityClassificationText>
+		<gra:ServiceDependencies/>
+		<gra:IEPDReferences>
+			<gra:IEPDReference>
+				<gra:IEPDName>PMIX</gra:IEPDName>
+				<gra:IEPDURL/>
+			</gra:IEPDReference>
+		</gra:IEPDReferences>
+	</gra:ServiceDescription>
+	<gra:VersionInformation>
+		<gra:MajorVersion>1</gra:MajorVersion>
+		<gra:MinorVersion>0</gra:MinorVersion>
+		<gra:RevisionVersion>2</gra:RevisionVersion>
+		<gra:CreationDate>2010-12-22</gra:CreationDate>
+		<gra:LifecycleStatus>In Design</gra:LifecycleStatus>
+		<gra:AlertsAndNotifications/>
+	</gra:VersionInformation>
+	<gra:RelatedOrganizationInformation>
+		<gra:Organization>
+			<gra:OrganizationName>Integrated Justice Information Systems</gra:OrganizationName>
+			<gra:OrganizationAcronym>IJIS</gra:OrganizationAcronym>
+			<gra:OrganizationFullAddressText/>
+			<gra:OrganizationWebSiteURL/>
+			<gra:OrganizationRoleDescriptionText>Sponsor</gra:OrganizationRoleDescriptionText>
+			<gra:OrganizationRoleDetailedDescriptionText>Sponsor</gra:OrganizationRoleDetailedDescriptionText>
+		</gra:Organization>
+	</gra:RelatedOrganizationInformation>
+	<gra:BusinessContext>
+		<gra:DomainDescription>
+			<gra:DomainNameText>Health</gra:DomainNameText>
+		</gra:DomainDescription>
+		<gra:Classifications>
+			<gra:Classification/>
+		</gra:Classifications>
+		<gra:ExchangePartnerTypes>
+			<gra:ExchangePartnerTypeDescriptionText/>
+		</gra:ExchangePartnerTypes>
+		<gra:Endorsements>
+			<gra:Endorser/>
+		</gra:Endorsements>
+		<gra:Sponsors>
+			<gra:Sponsor/>
+		</gra:Sponsors>
+	</gra:BusinessContext>
+	<gra:ServiceInterface>
+		<gra:URIDetails>
+			<gra:URIDetail>
+				<gra:URIAddress>https://rxcheck.org/2010/12/pmix/router</gra:URIAddress>
+				<gra:URIDescription>The PMIX Central RxCheck.org Interface URI Address</gra:URIDescription>
+			</gra:URIDetail>
+		</gra:URIDetails>
+		<gra:ServiceActions>
+			<gra:ServiceAction>
+				<gra:ActionName>ProvidePrescriptionDrugHistory</gra:ActionName>
+				<gra:ActionPurpose>This action is used to by participating PMP systems to provide prescription drug history. </gra:ActionPurpose>
+				<gra:MessageExchangePattern>Request-Response</gra:MessageExchangePattern>
+			</gra:ServiceAction>
+		</gra:ServiceActions>
+		<gra:ServiceInteractionProfiles>
+			<gra:ServiceInteractionProfile>
+				<gra:SIPName>Reliable Secure Web Services</gra:SIPName>
+				<gra:SIPVersion>1.2</gra:SIPVersion>
+			</gra:ServiceInteractionProfile>
+		</gra:ServiceInteractionProfiles>
+		<gra:SecurityImplementedIndicator>true</gra:SecurityImplementedIndicator>
+		<gra:SecurityDescriptionText/>
+	</gra:ServiceInterface>
+	<gra:ServiceLevelAgreements>
+		<gra:ServicePolicyAndContracts>
+			<gra:ApplicablePoliciesIndicator>true</gra:ApplicablePoliciesIndicator>
+			<gra:ApplicablePolicies>
+				<gra:PolicyText/>
+			</gra:ApplicablePolicies>
+			<gra:ApplicableContractsIndicator>false</gra:ApplicableContractsIndicator>
+			<gra:ApplicableAgreementsIndicator>false</gra:ApplicableAgreementsIndicator>
+			<gra:ApplicableUmbrellaAgreementsIndicator>false</gra:ApplicableUmbrellaAgreementsIndicator>
+		</gra:ServicePolicyAndContracts>
+		<gra:PerformanceMetrics>
+			<gra:ServiceResponseTime>P0Y0M0DT24H0M0S</gra:ServiceResponseTime>
+			<gra:ServiceAverageThroughput/>
+			<gra:ServiceMaximumThroughput/>
+			<gra:ServiceAvailability/>
+		</gra:PerformanceMetrics>
+		<gra:ServiceUsageDetails>
+			<gra:ApprovalRequiredIndicator>false</gra:ApprovalRequiredIndicator>
+			<gra:LicensingRequiredIndicator>false</gra:LicensingRequiredIndicator>
+		</gra:ServiceUsageDetails>
+	</gra:ServiceLevelAgreements>
+</gra:ServiceMetadata>
