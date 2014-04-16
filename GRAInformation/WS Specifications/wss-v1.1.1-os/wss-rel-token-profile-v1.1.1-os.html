@@ -1,0 +1,4509 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<title>Web Services Security Rights Expression Language (REL) Token Profile
+Version 1.1.1</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"MS Gothic";
+	panose-1:2 11 6 9 7 2 5 8 2 4;}
+@font-face
+	{font-family:"MS Gothic";
+	panose-1:2 11 6 9 7 2 5 8 2 4;}
+@font-face
+	{font-family:"Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:StarSymbol;}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"\@Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:"\@MS Gothic";
+	panose-1:2 11 6 9 7 2 5 8 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.3in;
+	text-indent:-.3in;
+	page-break-before:always;
+	page-break-after:avoid;
+	border:none;
+	padding:0in;
+	font-size:18.0pt;
+	font-family:"Arial","sans-serif";
+	color:#3B006F;
+	font-weight:bold;}
+h2
+	{mso-style-name:"Heading 2\,H2";
+	mso-style-link:"Heading 2 Char\,H2 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.4in;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	color:#3B006F;
+	font-weight:bold;}
+h3
+	{mso-style-name:"Heading 3\,H3";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Arial","sans-serif";
+	color:#3B006F;
+	font-weight:bold;}
+h4
+	{mso-style-name:"Heading 4\,H4";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.6in;
+	text-indent:-.6in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Arial","sans-serif";
+	color:#3B006F;
+	font-weight:bold;}
+h5
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.7in;
+	text-indent:-.7in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Arial","sans-serif";
+	color:#3B006F;
+	font-weight:bold;}
+h6
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.8in;
+	text-indent:-.8in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	color:#3B006F;
+	font-weight:bold;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.9in;
+	text-indent:-.9in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	color:#3B006F;
+	font-weight:bold;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	text-indent:-1.0in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	color:#3B006F;
+	font-weight:bold;
+	font-style:italic;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.1in;
+	text-indent:-1.1in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Arial","sans-serif";
+	color:#3B006F;
+	font-weight:bold;
+	font-style:italic;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:12.0pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:24.0pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	font-size:9.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:48.0pt;
+	font-size:9.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:60.0pt;
+	font-size:9.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:1.0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{mso-style-link:"Comment Text Char";
+	margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:9.0pt;
+	font-family:"Arial","sans-serif";
+	font-style:italic;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:24.0pt;
+	font-family:"Arial","sans-serif";
+	color:#3B006F;
+	font-weight:bold;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:18.0pt;
+	font-family:"Arial","sans-serif";
+	color:#3B006F;
+	font-weight:bold;}
+p.MsoNoteHeading, li.MsoNoteHeading, div.MsoNoteHeading
+	{margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+a:link, span.MsoHyperlink
+	{color:#0000EE;
+	text-decoration:none;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial Unicode MS","sans-serif";}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Arial Unicode MS","sans-serif";}
+tt
+	{font-family:"Arial Unicode MS","sans-serif";}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{mso-style-link:"Comment Subject Char";
+	margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:0in;
+	text-autospace:ideograph-other;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+p.Titlepageinfo, li.Titlepageinfo, div.Titlepageinfo
+	{mso-style-name:"Title page info";
+	margin:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	color:#3B006F;
+	font-weight:bold;}
+p.Titlepageinfodescription, li.Titlepageinfodescription, div.Titlepageinfodescription
+	{mso-style-name:"Title page info description";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:.5in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.TitlepageinfodescriptionCxSpFirst, li.TitlepageinfodescriptionCxSpFirst, div.TitlepageinfodescriptionCxSpFirst
+	{mso-style-name:"Title page info descriptionCxSpFirst";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.TitlepageinfodescriptionCxSpMiddle, li.TitlepageinfodescriptionCxSpMiddle, div.TitlepageinfodescriptionCxSpMiddle
+	{mso-style-name:"Title page info descriptionCxSpMiddle";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.TitlepageinfodescriptionCxSpLast, li.TitlepageinfodescriptionCxSpLast, div.TitlepageinfodescriptionCxSpLast
+	{mso-style-name:"Title page info descriptionCxSpLast";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:.5in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.Contributor, li.Contributor, div.Contributor
+	{mso-style-name:Contributor;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:.5in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.ContributorCxSpFirst, li.ContributorCxSpFirst, div.ContributorCxSpFirst
+	{mso-style-name:ContributorCxSpFirst;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.ContributorCxSpMiddle, li.ContributorCxSpMiddle, div.ContributorCxSpMiddle
+	{mso-style-name:ContributorCxSpMiddle;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.ContributorCxSpLast, li.ContributorCxSpLast, div.ContributorCxSpLast
+	{mso-style-name:ContributorCxSpLast;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:.5in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.Legalnotice, li.Legalnotice, div.Legalnotice
+	{mso-style-name:"Legal notice";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.LegalnoticeCxSpFirst, li.LegalnoticeCxSpFirst, div.LegalnoticeCxSpFirst
+	{mso-style-name:"Legal noticeCxSpFirst";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.LegalnoticeCxSpMiddle, li.LegalnoticeCxSpMiddle, div.LegalnoticeCxSpMiddle
+	{mso-style-name:"Legal noticeCxSpMiddle";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.LegalnoticeCxSpLast, li.LegalnoticeCxSpLast, div.LegalnoticeCxSpLast
+	{mso-style-name:"Legal noticeCxSpLast";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+span.Datatype
+	{mso-style-name:Datatype;
+	font-family:"Courier New";}
+p.Code, li.Code, div.Code
+	{mso-style-name:"Code\,c";
+	margin-top:0in;
+	margin-right:.3in;
+	margin-bottom:0in;
+	margin-left:.3in;
+	margin-bottom:.0001pt;
+	background:#D9D9D9;
+	border:none;
+	padding:0in;
+	font-size:9.0pt;
+	font-family:"Courier New";}
+p.AppendixHeading2, li.AppendixHeading2, div.AppendixHeading2
+	{mso-style-name:AppendixHeading2;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.4in;
+	text-indent:-.4in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	color:#3B006F;
+	font-weight:bold;}
+span.Element
+	{mso-style-name:Element;
+	font-family:"Courier New";}
+span.Attribute
+	{mso-style-name:Attribute;
+	font-family:"Courier New";}
+span.Keyword
+	{mso-style-name:Keyword;
+	font-family:"Courier New";}
+p.Note, li.Note, div.Note
+	{mso-style-name:Note;
+	margin-top:6.0pt;
+	margin-right:.5in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.Definitionterm, li.Definitionterm, div.Definitionterm
+	{mso-style-name:"Definition term";
+	margin-top:4.0pt;
+	margin-right:2.0in;
+	margin-bottom:4.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;}
+p.Definition, li.Definition, div.Definition
+	{mso-style-name:Definition;
+	margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.Ref, li.Ref, div.Ref
+	{mso-style-name:Ref;
+	margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:2.0pt;
+	margin-left:1.5in;
+	text-indent:-1.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	color:black;}
+p.AppendixHeading1, li.AppendixHeading1, div.AppendixHeading1
+	{mso-style-name:AppendixHeading1;
+	margin-right:0in;
+	margin-left:.3in;
+	text-indent:-.3in;
+	page-break-before:always;
+	page-break-after:avoid;
+	border:none;
+	padding:0in;
+	font-size:18.0pt;
+	font-family:"Arial","sans-serif";
+	color:#3B006F;
+	font-weight:bold;}
+span.Refterm
+	{mso-style-name:"Ref term";
+	font-weight:bold;}
+p.Example, li.Example, div.Example
+	{mso-style-name:Example;
+	margin-top:0in;
+	margin-right:.3in;
+	margin-bottom:0in;
+	margin-left:.3in;
+	margin-bottom:.0001pt;
+	background:#E6E6E6;
+	font-size:9.0pt;
+	font-family:"Courier New";}
+span.CODEtemp
+	{mso-style-name:"CODE temp";
+	font-family:"Courier New";}
+p.Codesmall, li.Codesmall, div.Codesmall
+	{mso-style-name:"Code small";
+	margin-top:0in;
+	margin-right:.3in;
+	margin-bottom:0in;
+	margin-left:.3in;
+	margin-bottom:.0001pt;
+	background:#E6E6E6;
+	border:none;
+	padding:0in;
+	font-size:8.0pt;
+	font-family:"Courier New";}
+p.Examplesmall, li.Examplesmall, div.Examplesmall
+	{mso-style-name:"Example small";
+	margin-top:0in;
+	margin-right:.3in;
+	margin-bottom:0in;
+	margin-left:.3in;
+	margin-bottom:.0001pt;
+	background:#E6E6E6;
+	font-size:8.0pt;
+	font-family:"Courier New";}
+span.Variable
+	{mso-style-name:Variable;
+	font-style:italic;}
+p.Heading1WP, li.Heading1WP, div.Heading1WP
+	{mso-style-name:"Heading 1 WP";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.3in;
+	text-indent:-.3in;
+	page-break-after:avoid;
+	border:none;
+	padding:0in;
+	font-size:18.0pt;
+	font-family:"Arial","sans-serif";
+	color:#3B006F;
+	font-weight:bold;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;
+	font-family:"Arial","sans-serif";}
+p.RelatedWork, li.RelatedWork, div.RelatedWork
+	{mso-style-name:"Related Work";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.RelatedWorkCxSpFirst, li.RelatedWorkCxSpFirst, div.RelatedWorkCxSpFirst
+	{mso-style-name:"Related WorkCxSpFirst";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.RelatedWorkCxSpMiddle, li.RelatedWorkCxSpMiddle, div.RelatedWorkCxSpMiddle
+	{mso-style-name:"Related WorkCxSpMiddle";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.RelatedWorkCxSpLast, li.RelatedWorkCxSpLast, div.RelatedWorkCxSpLast
+	{mso-style-name:"Related WorkCxSpLast";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:1.0in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.Abstract, li.Abstract, div.Abstract
+	{mso-style-name:Abstract;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:.5in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.Notices, li.Notices, div.Notices
+	{mso-style-name:Notices;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	page-break-before:always;
+	border:none;
+	padding:0in;
+	font-size:18.0pt;
+	font-family:"Arial","sans-serif";
+	color:#3B006F;
+	font-weight:bold;}
+p.TextBody, li.TextBody, div.TextBody
+	{mso-style-name:"Text Body";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.AppendixHeading3, li.AppendixHeading3, div.AppendixHeading3
+	{mso-style-name:AppendixHeading3;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Arial","sans-serif";
+	color:#3B006F;
+	font-weight:bold;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma","sans-serif";}
+p.Standard, li.Standard, div.Standard
+	{mso-style-name:Standard;
+	margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:0in;
+	text-autospace:ideograph-other;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+span.Internetlink
+	{mso-style-name:"Internet link";
+	color:blue;
+	text-decoration:none;}
+span.CodeEmbedded
+	{mso-style-name:"Code Embedded\,ce";
+	font-family:"Courier New";}
+p.WW-ListNumber, li.WW-ListNumber, div.WW-ListNumber
+	{mso-style-name:"WW-List Number";
+	margin-top:4.0pt;
+	margin-right:0in;
+	margin-bottom:4.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	text-autospace:ideograph-other;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+span.CommentTextChar
+	{mso-style-name:"Comment Text Char";
+	mso-style-link:"Comment Text";
+	font-family:"Arial","sans-serif";}
+span.CommentSubjectChar
+	{mso-style-name:"Comment Subject Char";
+	mso-style-link:"Comment Subject";
+	font-family:"Arial","sans-serif";
+	font-weight:bold;}
+p.WW-Text, li.WW-Text, div.WW-Text
+	{mso-style-name:WW-Text;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	text-autospace:ideograph-other;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:black;}
+p.Footnote, li.Footnote, div.Footnote
+	{mso-style-name:Footnote;
+	margin-top:4.3pt;
+	margin-right:0in;
+	margin-bottom:5.75pt;
+	margin-left:0in;
+	text-autospace:ideograph-other;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+span.FootnoteSymbol
+	{mso-style-name:"Footnote Symbol";
+	position:relative;
+	top:0pt;
+	vertical-align:super;}
+span.Bold
+	{mso-style-name:"Bold\,b";
+	font-weight:bold;}
+p.ColorfulShading-Accent11, li.ColorfulShading-Accent11, div.ColorfulShading-Accent11
+	{mso-style-name:"Colorful Shading - Accent 11";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char\,H2 Char";
+	mso-style-link:"Heading 2\,H2";
+	font-family:"Arial","sans-serif";
+	color:#3B006F;
+	font-weight:bold;}
+p.Text, li.Text, div.Text
+	{mso-style-name:"Text\,t";
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:10.0pt;
+	font-family:"Verdana","sans-serif";
+	color:black;}
+span.LabelEmbedded
+	{mso-style-name:"Label Embedded\,le";
+	font-family:"Verdana","sans-serif";
+	font-weight:bold;
+	text-decoration:none none;}
+span.ExampleChar
+	{mso-style-name:"Example Char";
+	font-family:"Courier New";}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Arial","sans-serif";
+	color:#3B006F;
+	font-weight:bold;}
+p.TOCHeading1, li.TOCHeading1, div.TOCHeading1
+	{mso-style-name:"TOC Heading1";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria","serif";
+	color:#365F91;
+	font-weight:bold;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in .5in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+@page WordSection2
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in .5in 1.0in;}
+div.WordSection2
+	{page:WordSection2;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link="#0000EE" vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoHeader><img width=203 height=54
+src="wss-rel-token-profile-v1.1.1-os_files/image002.jpg"></p>
+
+<div style='border:none;border-top:solid gray 1.0pt;padding:1.0pt 0in 0in 0in'>
+
+<p class=MsoTitle><a name="OLE_LINK2"></a><a name="OLE_LINK1"><span
+style='font-size:22.0pt'>Web Services Security Rights Expression Language (REL)
+Token Profile Version 1.1.1</span></a></p>
+
+<p class=MsoTitle><span style='font-size:18.0pt'>OASIS Standard</span></p>
+
+<p class=MsoSubtitle>18 May 2012</p>
+
+</div>
+
+<p class=Titlepageinfo><span style='font-size:12.0pt'>Specification URIs</span></p>
+
+<p class=Titlepageinfo>This version:</p>
+
+<p class=TitlepageinfodescriptionCxSpFirst><a
+href="http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-rel-token-profile-v1.1.1-os.doc">http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-rel-token-profile-v1.1.1-os.doc</a>
+(Authoritative)</p>
+
+<p class=TitlepageinfodescriptionCxSpMiddle><a
+href="http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-rel-token-profile-v1.1.1-os.html">http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-rel-token-profile-v1.1.1-os.html</a></p>
+
+<p class=TitlepageinfodescriptionCxSpLast><a
+href="http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-rel-token-profile-v1.1.1-os.pdf">http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-rel-token-profile-v1.1.1-os.pdf</a></p>
+
+<p class=Titlepageinfo>Previous version:</p>
+
+<p class=TitlepageinfodescriptionCxSpFirst><a
+href="http://docs.oasis-open.org/wss-m/wss/v1.1.1/csd01/wss-rel-token-profile-v1.1.1-csd01.doc">http://docs.oasis-open.org/wss-m/wss/v1.1.1/csd01/wss-rel-token-profile-v1.1.1-csd01.doc</a>
+(Authoritative)</p>
+
+<p class=TitlepageinfodescriptionCxSpMiddle><a
+href="http://docs.oasis-open.org/wss-m/wss/v1.1.1/csd01/wss-rel-token-profile-v1.1.1-csd01.html">http://docs.oasis-open.org/wss-m/wss/v1.1.1/csd01/wss-rel-token-profile-v1.1.1-csd01.html</a></p>
+
+<p class=TitlepageinfodescriptionCxSpLast><a
+href="http://docs.oasis-open.org/wss-m/wss/v1.1.1/csd01/wss-rel-token-profile-v1.1.1-csd01.pdf">http://docs.oasis-open.org/wss-m/wss/v1.1.1/csd01/wss-rel-token-profile-v1.1.1-csd01.pdf</a></p>
+
+<p class=Titlepageinfo>Latest version:</p>
+
+<p class=TitlepageinfodescriptionCxSpFirst><a
+href="http://docs.oasis-open.org/wss-m/wss/v1.1.1/wss-rel-token-profile-v1.1.1.doc">http://docs.oasis-open.org/wss-m/wss/v1.1.1/wss-rel-token-profile-v1.1.1.doc</a>
+(Authoritative)</p>
+
+<p class=TitlepageinfodescriptionCxSpMiddle><a
+href="http://docs.oasis-open.org/wss-m/wss/v1.1.1/wss-rel-token-profile-v1.1.1.html">http://docs.oasis-open.org/wss-m/wss/v1.1.1/wss-rel-token-profile-v1.1.1.html</a></p>
+
+<p class=TitlepageinfodescriptionCxSpLast><a
+href="http://docs.oasis-open.org/wss-m/wss/v1.1.1/wss-rel-token-profile-v1.1.1.pdf">http://docs.oasis-open.org/wss-m/wss/v1.1.1/wss-rel-token-profile-v1.1.1.pdf</a></p>
+
+<p class=Titlepageinfo>Technical Committee:</p>
+
+<p class=Titlepageinfodescription><a
+href="http://www.oasis-open.org/committees/wss-m/">OASIS Web Services Security
+Maintenance (WSS-M) TC</a></p>
+
+<p class=Titlepageinfo>Chair:</p>
+
+<p class=Contributor>David Turner (<a href="mailto:david.turner@microsoft.com">david.turner@microsoft.com</a>),
+<a href="http://www.microsoft.com/">Microsoft</a></p>
+
+<p class=Titlepageinfo>Editors:</p>
+
+<p class=ContributorCxSpFirst>Ronald Monzillo (<a
+href="mailto:ronald.monzillo@sun.com">ronald.monzillo@sun.com</a>), <a
+href="http://www.sun.com/">Sun Microsystems</a></p>
+
+<p class=ContributorCxSpMiddle>Chris Kaler (<a
+href="mailto:ckaler@microsoft.com">ckaler@microsoft.com</a>), <a
+href="http://www.microsoft.com/">Microsoft</a></p>
+
+<p class=ContributorCxSpMiddle>Anthony Nadalin (<a
+href="mailto:droldsecure@us.ibm.com">droldsecure@us.ibm.com</a>), <a
+href="http://www.ibm.com/">IBM</a></p>
+
+<p class=ContributorCxSpMiddle>Phillip Hallam-Baker (<a
+href="mailto:pbaker@verisign.com">pbaker@verisign.com</a>), <a
+href="http://www.verisign.com/">Verisign</a></p>
+
+<p class=ContributorCxSpMiddle>Carlo Milono (<a href="mailto:cmilono@tibco.com">cmilono@tibco.com</a>),
+<a href="http://www.tibco.com/">Tibco</a></p>
+
+<p class=ContributorCxSpLast>Thomas DeMartini (<a
+href="mailto:Thomas.DeMartini@ContentGuard.com">Thomas.DeMartini@ContentGuard.com</a>),
+<a href="http://www.contentguard.com/">ContentGuard, Inc.</a></p>
+
+<p class=Titlepageinfo>Additional artifacts:</p>
+
+<p class=RelatedWorkCxSpFirst style='margin-left:.5in;text-indent:0in'>This
+prose specification is one component of a multi-part Work Product which
+includes:</p>
+
+<p class=RelatedWorkCxSpMiddle style='margin-left:.75in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i>Web Services Security Kerberos Token Profile Version 1.1.1</i><span
+class=MsoHyperlink>. <a
+href="http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-KerberosTokenProfile-v1.1.1-os.html">http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-KerberosTokenProfile-v1.1.1-os.html</a>.</span></p>
+
+<p class=RelatedWorkCxSpMiddle style='margin-left:.75in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i>Web Services Security Rights Expression Language (REL) Token
+Profile Version 1.1.1</i><span class=MsoHyperlink>. <a
+href="http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-rel-token-profile-v1.1.1-os.html">http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-rel-token-profile-v1.1.1-os.html</a>.</span><span
+class=MsoHyperlink><span style='color:windowtext'> (this document)</span></span></p>
+
+<p class=RelatedWorkCxSpMiddle style='margin-left:.75in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i>Web Services Security SAML Token Profile Version 1.1.1</i><span
+class=MsoHyperlink>. <a
+href="http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-SAMLTokenProfile-v1.1.1-os.html">http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-SAMLTokenProfile-v1.1.1-os.html</a>.</span></p>
+
+<p class=RelatedWorkCxSpMiddle style='margin-left:.75in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i>Web Services Security: SOAP Message Security Version 1.1.1</i><span
+class=MsoHyperlink>. <a
+href="http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-SOAPMessageSecurity-v1.1.1-os.html">http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-SOAPMessageSecurity-v1.1.1-os.html</a>.</span></p>
+
+<p class=RelatedWorkCxSpMiddle style='margin-left:.75in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i>Web Services Security SOAP Message with Attachments (SwA)
+Profile Version 1.1.1</i><span class=MsoHyperlink>. <a
+href="http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-SwAProfile-v1.1.1-os.html">http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-SwAProfile-v1.1.1-os.html</a>.</span></p>
+
+<p class=RelatedWorkCxSpMiddle style='margin-left:.75in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i>Web Services Security Username Token Profile Version 1.1.1</i><span
+class=MsoHyperlink>. <a
+href="http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-UsernameTokenProfile-v1.1.1-os.html">http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-UsernameTokenProfile-v1.1.1-os.html</a>.</span></p>
+
+<p class=RelatedWorkCxSpMiddle style='margin-left:.75in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i>Web Services Security X.509 Certificate Token Profile Version
+1.1.1</i><span class=MsoHyperlink>. <a
+href="http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-x509TokenProfile-v1.1.1-os.html">http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-x509TokenProfile-v1.1.1-os.html</a>.</span></p>
+
+<p class=RelatedWorkCxSpLast style='margin-left:.75in'><span style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>XML schemas: <a
+href="http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/xsd/">http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/xsd/</a></p>
+
+<p class=Titlepageinfo>Related work:</p>
+
+<p class=Titlepageinfodescription>This specification supersedes:</p>
+
+<p class=RelatedWork style='margin-left:.75in'><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i>Web Services Security Rights Expression Language (REL) Token
+Profile 1.1</i>. 01 February 2006. OASIS Standard.<br>
+<a
+href="http://docs.oasis-open.org/wss/v1.1/oasis-wss-rel-token-profile-1.1.pdf">http://docs.oasis-open.org/wss/v1.1/oasis-wss-rel-token-profile-1.1.pdf</a></p>
+
+<p class=Titlepageinfo>Abstract:</p>
+
+<p class=Titlepageinfodescription>This document describes how to use ISO/IEC
+21000-5 Rights Expressions with the Web Services Security (WSS) specification.</p>
+
+<p class=Abstract><span class=MsoHyperlink><span style='color:windowtext'>This
+document integrates specific error corrections or editorial changes to the
+preceding specification, within the scope of the Web Services Security and this
+TC.</span></span></p>
+
+<p class=Abstract><span class=MsoHyperlink><span style='color:windowtext'>This
+document introduces a third digit in the numbering convention where the third
+digit represents a consolidation of error corrections, bug fixes or editorial
+formatting changes (e.g., 1.1.1); it does not add any new features beyond those
+of the base specifications (e.g., 1.1).</span></span></p>
+
+<p class=Titlepageinfo>Status:</p>
+
+<p class=Abstract>This document was last revised or approved by the membership
+of OASIS on the above date. The level of approval is also listed above. Check
+the “Latest version” location noted above for possible later revisions of this
+document.</p>
+
+<p class=Abstract>Technical Committee members should send comments on this
+specification to the Technical Committee’s email list. Others should send
+comments to the Technical Committee by using the “<a
+href="http://www.oasis-open.org/committees/comments/index.php?wg_abbrev=wss-m">Send
+A Comment</a>” button on the Technical Committee’s web page at <a
+href="http://www.oasis-open.org/committees/wss-m/">http://www.oasis-open.org/committees/wss-m/</a><span
+class=MsoHyperlink><span style='color:windowtext'>.</span></span></p>
+
+<p class=Abstract>For information on whether any patents have been disclosed
+that may be essential to implementing this specification, and any offers of
+patent licensing terms, please refer to the Intellectual Property Rights
+section of the Technical Committee web page (<a
+href="http://www.oasis-open.org/committees/wss-m/ipr.php">http://www.oasis-open.org/committees/wss-m/ipr.php</a>).</p>
+
+<p class=Titlepageinfo>Citation format:</p>
+
+<p class=Abstract>When referencing this specification the following citation
+format should be used:</p>
+
+<p class=Abstract><span class=Refterm>[WSS-REL-Token-Profile-V1.1.1]</span></p>
+
+<p class=Titlepageinfodescription><i>Web Services Security Rights Expression
+Language (REL) Token Profile Version 1.1.1</i>. 18 May 2012. OASIS Standard. <a
+href="http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-rel-token-profile-v1.1.1-os.html">http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-rel-token-profile-v1.1.1-os.html</a>.</p>
+
+<div style='border:none;border-top:solid gray 1.0pt;padding:1.0pt 0in 0in 0in'>
+
+<p class=Notices>Notices</p>
+
+</div>
+
+<p class=MsoNormal>Copyright © OASIS Open 2012. All Rights Reserved.</p>
+
+<p class=MsoNormal>All capitalized terms in the following text have the
+meanings assigned to them in the OASIS Intellectual Property Rights Policy (the
+&quot;OASIS IPR Policy&quot;). The full <a
+href="http://www.oasis-open.org/policies-guidelines/ipr">Policy</a> may be found
+at the OASIS website.</p>
+
+<p class=MsoNormal>This document and translations of it may be copied and
+furnished to others, and derivative works that comment on or otherwise explain
+it or assist in its implementation may be prepared, copied, published, and
+distributed, in whole or in part, without restriction of any kind, provided
+that the above copyright notice and this section are included on all such
+copies and derivative works. However, this document itself may not be modified
+in any way, including by removing the copyright notice or references to OASIS,
+except as needed for the purpose of developing any document or deliverable
+produced by an OASIS Technical Committee (in which case the rules applicable to
+copyrights, as set forth in the OASIS IPR Policy, must be followed) or as
+required to translate it into languages other than English.</p>
+
+<p class=MsoNormal>The limited permissions granted above are perpetual and will
+not be revoked by OASIS or its successors or assigns.</p>
+
+<p class=MsoNormal>This document and the information contained herein is
+provided on an &quot;AS IS&quot; basis and OASIS DISCLAIMS ALL WARRANTIES,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF
+THE INFORMATION HEREIN WILL NOT INFRINGE ANY OWNERSHIP RIGHTS OR ANY IMPLIED
+WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.</p>
+
+<p class=MsoNormal>OASIS requests that any OASIS Party or any other party that
+believes it has patent claims that would necessarily be infringed by
+implementations of this OASIS Committee Specification or OASIS Standard, to
+notify OASIS TC Administrator and provide an indication of its willingness to
+grant patent licenses to such patent claims in a manner consistent with the IPR
+Mode of the OASIS Technical Committee that produced this specification.</p>
+
+<p class=MsoNormal>OASIS invites any party to contact the OASIS TC
+Administrator if it is aware of a claim of ownership of any patent claims that
+would necessarily be infringed by implementations of this specification by a
+patent holder that is not willing to provide a license to such patent claims in
+a manner consistent with the IPR Mode of the OASIS Technical Committee that
+produced this specification. OASIS may include such claims on its website, but
+disclaims any obligation to do so.</p>
+
+<p class=MsoNormal>OASIS takes no position regarding the validity or scope of
+any intellectual property or other rights that might be claimed to pertain to
+the implementation or use of the technology described in this document or the
+extent to which any license under such rights might or might not be available;
+neither does it represent that it has made any effort to identify any such
+rights. Information on OASIS' procedures with respect to rights in any document
+or deliverable produced by an OASIS Technical Committee can be found on the
+OASIS website. Copies of claims of rights made available for publication and
+any assurances of licenses to be made available, or the result of an attempt
+made to obtain a general license or permission for the use of such proprietary
+rights by implementers or users of this OASIS Committee Specification or OASIS
+Standard, can be obtained from the OASIS TC Administrator. OASIS makes no
+representation that any information or list of intellectual property rights
+will at any time be complete, or that any claims in such list are, in fact,
+Essential Claims.</p>
+
+<p class=MsoNormal>The name &quot;OASIS&quot; is a trademark of <a
+href="http://www.oasis-open.org/">OASIS</a>, the owner and developer of this
+specification, and should be used only to refer to the organization and its
+official outputs. OASIS welcomes reference to, and implementation and use of,
+specifications, while reserving the right to enforce its marks against
+misleading uses. Please see <span class=MsoHyperlink><a
+href="http://www.oasis-open.org/policies-guidelines/trademark">http://www.oasis-open.org/policies-guidelines/trademark</a></span>
+for above guidance.</p>
+
+<div style='border:none;border-top:solid gray 1.0pt;padding:1.0pt 0in 0in 0in'>
+
+<p class=Notices>Table of Contents</p>
+
+</div>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc307391105">1<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext'>        </span>Introduction
+(Informative)<span style='color:windowtext;display:none'> </span><span style='color:windowtext;display:none'>5</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc307391106">2<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext'>        </span>Notations
+and Terminology (Normative)<span style='color:windowtext;display:none'> </span><span style='color:windowtext;display:none'>6</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc307391107">2.1
+Notational Conventions<span style='color:windowtext;display:none'>. </span><span style='color:windowtext;display:none'>6</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc307391108">2.2
+Namespaces<span style='color:windowtext;display:none'>. </span><span style='color:windowtext;display:none'>6</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc307391109">2.3
+Terminology<span style='color:windowtext;display:none'>. </span><span style='color:windowtext;display:none'>6</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc307391110">3<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext'>        </span>Usage
+(Normative)<span style='color:windowtext;display:none'> </span><span style='color:windowtext;display:none'>7</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc307391111">3.1 Token
+Types<span style='color:windowtext;display:none'>. </span><span style='color:windowtext;display:none'>7</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc307391112">3.2
+Processing Model<span style='color:windowtext;display:none'> </span><span style='color:windowtext;display:none'>7</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc307391113">3.3
+Attaching Security Tokens<span style='color:windowtext;display:none'>. </span><span style='color:windowtext;display:none'>7</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc307391114">3.4
+Identifying and Referencing Security Tokens<span style='color:windowtext;
+display:none'>. </span><span
+style='color:windowtext;display:none'>7</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc307391115">3.5
+Authentication<span style='color:windowtext;display:none'>. </span><span style='color:windowtext;display:none'>10</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc307391116">3.5.1
+&lt;r:keyHolder&gt; Principal<span style='color:windowtext;display:none'> </span><span style='color:windowtext;display:none'>10</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc307391117">3.6
+Confidentiality<span style='color:windowtext;display:none'>. </span><span style='color:windowtext;display:none'>12</span></a></span></p>
+
+<p class=MsoToc3><span class=MsoHyperlink><a href="#_Toc307391118">3.6.1
+&lt;r:keyHolder&gt; Principal<span style='color:windowtext;display:none'> </span><span style='color:windowtext;display:none'>12</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc307391119">3.7 Error
+Codes<span style='color:windowtext;display:none'>. </span><span style='color:windowtext;display:none'>14</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc307391120">4<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext'>        </span>Types
+of Licenses (Informative)<span style='color:windowtext;display:none'> </span><span style='color:windowtext;display:none'>15</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc307391121">4.1
+Attribute Licenses<span style='color:windowtext;display:none'>. </span><span style='color:windowtext;display:none'>15</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc307391122">4.2 Sender
+Authorization<span style='color:windowtext;display:none'>. </span><span style='color:windowtext;display:none'>15</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc307391123">4.3 Issuer
+Authorization<span style='color:windowtext;display:none'>. </span><span style='color:windowtext;display:none'>16</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc307391124">5<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext'>        </span>Threat
+Model and Countermeasures (Informative)<span style='color:windowtext;
+display:none'> </span><span
+style='color:windowtext;display:none'>18</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc307391125">5.1
+Eavesdropping<span style='color:windowtext;display:none'>. </span><span style='color:windowtext;display:none'>18</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc307391126">5.2 Replay<span
+style='color:windowtext;display:none'>. </span><span
+style='color:windowtext;display:none'>18</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc307391127">5.3 Message
+Insertion<span style='color:windowtext;display:none'>. </span><span style='color:windowtext;display:none'>18</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc307391128">5.4 Message
+Deletion<span style='color:windowtext;display:none'>. </span><span style='color:windowtext;display:none'>18</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc307391129">5.5 Message
+Modification<span style='color:windowtext;display:none'>. </span><span style='color:windowtext;display:none'>19</span></a></span></p>
+
+<p class=MsoToc2><span class=MsoHyperlink><a href="#_Toc307391130">5.6
+Man-in-the-Middle<span style='color:windowtext;display:none'>. </span><span style='color:windowtext;display:none'>19</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc307391131">6<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext'>        </span>References<span
+style='color:windowtext;display:none'>. </span><span
+style='color:windowtext;display:none'>20</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc307391132">7<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext'>        </span>Conformance<span
+style='color:windowtext;display:none'>. </span><span
+style='color:windowtext;display:none'>21</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc307391133">A.<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext'>      </span>Acknowledgements<span
+style='color:windowtext;display:none'>. </span><span
+style='color:windowtext;display:none'>22</span></a></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><a href="#_Toc307391134">B.<span
+style='font-size:11.0pt;font-family:"Calibri","sans-serif";color:windowtext'>      </span>Revision
+History<span style='color:windowtext;display:none'>. </span><span style='color:windowtext;display:none'>26</span></a></span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoToc1><a name=keywords></a><a name=digitalsignature></a>&nbsp;</p>
+
+</div>
+
+<span style='font-size:10.0pt;font-family:"Arial","sans-serif"'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<div class=WordSection2>
+
+<div style='border:none;border-top:solid gray 1.0pt;padding:6.0pt 0in 0in 0in'>
+
+<h1><a name="_Toc307391105"></a><a name="_Toc300324230"></a><a
+name="_Toc85472892"><span lang=X-NONE>1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=X-NONE>Introduction</span></a><span lang=X-NONE>
+(Informative)</span></h1>
+
+</div>
+
+<p class=MsoNormal>The Web Services Security: SOAP Message Security
+[WS-Security] specification proposes a standard set of SOAP extensions that can
+be used when building secure Web services to implement message level integrity
+and confidentiality.  This specification describes the use of ISO/IEC 21000-5
+Rights Expressions with respect to the WS-Security specification.</p>
+
+<div style='border:none;border-top:solid gray 1.0pt;padding:6.0pt 0in 0in 0in'>
+
+<h1><a name="_Toc307391106"></a><a name="_Toc300324231"><span lang=X-NONE>2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=X-NONE>Notations and Terminology (Normative)</span></a></h1>
+
+</div>
+
+<h2><a name="_Toc307391107"></a><a name="_Toc300324232"></a><a
+name="_Toc6028911"></a><a name="_Toc20126528"></a><a name="_Toc127703206"><span
+lang=X-NONE>2.1 </span><span lang=X-NONE>Notational Conventions</span></a></h2>
+
+<p class=MsoNormal>The keywords &quot;MUST&quot;, &quot;MUST NOT&quot;,
+&quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;,
+&quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;,
+&quot;MAY&quot;, and &quot;OPTIONAL&quot; in this document are to be interpreted
+as described in [KEYWORDS].</p>
+
+<p class=MsoNormal>Namespace URIs (of the general form &quot;some-URI&quot;)
+represent some application-dependent or context-dependent URI as defined in
+[URI]. </p>
+
+<p class=MsoNormal>This specification is designed to work with the general SOAP
+message structure and message processing model, and should be applicable to any
+version of SOAP. The current SOAP 1.2 namespace URI is used herein to provide
+detailed examples, but there is no intention to limit the applicability of this
+specification to a single version of SOAP.</p>
+
+<h2><a name="_Toc307391108"></a><a name="_Toc300324233"></a><a
+name="_Toc6028912"></a><a name="_Toc20126529"></a><a name="_Toc127703207"><span
+lang=X-NONE>2.2 </span><span lang=X-NONE>Namespaces</span></a></h2>
+
+<p class=MsoNormal>The following namespaces are used in this document:</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="69%"
+ style='width:69.44%;margin-left:30.75pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width="13%" valign=top style='width:13.4%;border:solid black 1.0pt;
+  background:black;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal><span style='color:white'>Prefix</span></p>
+  </td>
+  <td width="86%" valign=top style='width:86.6%;border:solid black 1.0pt;
+  border-left:none;background:black;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal><span style='color:white'>Namespace</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="13%" valign=top style='width:13.4%;border:solid black 1.0pt;
+  border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal>S</p>
+  </td>
+  <td width="86%" valign=top style='width:86.6%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal><a href="http://www.w3.org/2003/05/soap-envelope">http://www.w3.org/2003/05/soap-envelope</a></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="13%" valign=top style='width:13.4%;border:solid black 1.0pt;
+  border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal>ds</p>
+  </td>
+  <td width="86%" valign=top style='width:86.6%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal><a href="http://www.w3.org/2000/09/xmldsig">http://www.w3.org/2000/09/xmldsig#</a>
+  </p>
+  </td>
+ </tr>
+ <tr>
+  <td width="13%" valign=top style='width:13.4%;border:solid black 1.0pt;
+  border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal>xenc</p>
+  </td>
+  <td width="86%" valign=top style='width:86.6%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal><a href="http://www.w3.org/2001/04/xmlenc">http://www.w3.org/2001/04/xmlenc#</a>
+  </p>
+  </td>
+ </tr>
+ <tr>
+  <td width="13%" valign=top style='width:13.4%;border:solid black 1.0pt;
+  border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal>wsse</p>
+  </td>
+  <td width="86%" valign=top style='width:86.6%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal><a
+  href="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd</a></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="13%" valign=top style='width:13.4%;border:solid black 1.0pt;
+  border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal>wsse11</p>
+  </td>
+  <td width="86%" valign=top style='width:86.6%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal><a
+  href="http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd">http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.xsd</a></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="13%" valign=top style='width:13.4%;border:solid black 1.0pt;
+  border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal>wsu</p>
+  </td>
+  <td width="86%" valign=top style='width:86.6%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal><a
+  href="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd</a></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="13%" valign=top style='width:13.4%;border:solid black 1.0pt;
+  border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=Text><span style='color:windowtext'>r</span></p>
+  </td>
+  <td width="86%" valign=top style='width:86.6%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal>urn:mpeg:mpeg21:2003:01-REL-R-NS</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="13%" valign=top style='width:13.4%;border:solid black 1.0pt;
+  border-top:none;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=Text><span style='color:windowtext'>sx</span></p>
+  </td>
+  <td width="86%" valign=top style='width:86.6%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal>urn:mpeg:mpeg21:2003:01-REL-SX-NS</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoCaption><a name="_Toc6028913"></a><a name="_Toc20126530">Table </a>1 Namespace Prefixes</p>
+
+<h2><a name="_Toc307391109"></a><a name="_Toc300324234"></a><a
+name="_Toc127703208"><span lang=X-NONE>2.3 </span><span lang=X-NONE>Terminology</span></a></h2>
+
+<p class=MsoNormal>This specification employs the terminology defined in the
+Web Services Security: SOAP Message Security [WS-Security] Specification.</p>
+
+<p class=MsoNormal>Defined below are the basic definitions for additional
+terminology used in this specification.</p>
+
+<p class=MsoNormal><b>License</b> – ISO/IEC 21000-5 Rights Expression</p>
+
+<div style='border:none;border-top:solid gray 1.0pt;padding:6.0pt 0in 0in 0in'>
+
+<h1><a name="_Toc307391110"></a><a name="_Toc300324235"></a><a
+name="_Toc127703209"></a><a name="_Toc20126531"><span lang=X-NONE>3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=X-NONE>Usage</span></a><span lang=X-NONE> (Normative)</span></h1>
+
+</div>
+
+<p class=Text><span style='color:windowtext'>This section describes the syntax
+and processing rules for the use of licenses with the Web Services Security:
+Soap Message Security specification [WS-Security].</span></p>
+
+<h2><a name="_Toc307391111"></a><a name="_Toc300324236"></a><a
+name="_Toc127703210"><span class=LabelEmbedded><span lang=X-NONE
+style='font-family:"Arial","sans-serif"'>3.1 </span></span><span
+class=LabelEmbedded><span lang=X-NONE style='font-family:"Arial","sans-serif"'>Token
+Types</span></span></a></h2>
+
+<p class=MsoNormal>When a URI value is used to indicate a license according to
+this profile, its value MUST be http://docs.oasis-open.org/wss/oasis-wss-rel-token-profile-1.0.pdf#license.</p>
+
+<p class=MsoNormal>Note: This URI is for both the ValueType and TokenType
+attributes.  It is also for use by any elements or attributes that require a
+token type URI and are defined in another specification taking advantage of REL
+Tokens.</p>
+
+<h2><a name="_Toc307391112"></a><a name="_Toc300324237"></a><a
+name="_Toc20126532"></a><a name="_Toc127703211"><span lang=X-NONE>3.2 </span><span
+lang=X-NONE>Processing Model</span></a></h2>
+
+<p class=MsoNormal>The processing model for WS-Security with licenses is no
+different from that of WS-Security with other token formats as described in Web
+Services Security: SOAP Message Security [WS-Security].</p>
+
+<p class=MsoNormal>At the token level, a processor of licenses MUST conform to
+the required validation and processing rules defined in ISO/IEC 21000-5 [REL].</p>
+
+<h2><a name="_Toc307391113"></a><a name="_Toc300324238"></a><a
+name="_Toc20126533"></a><a name="_Toc127703212"><span lang=X-NONE>3.3 </span><span
+lang=X-NONE>Attaching Security Tokens</span></a></h2>
+
+<p class=Text><span style='color:windowtext'>Licenses are attached to SOAP
+messages using WS-Security by placing the license element inside the </span><span
+class=CodeEmbedded><span style='color:windowtext'>&lt;wsse:Security&gt;</span></span><span
+style='color:windowtext'> header.  The following example illustrates a SOAP
+message with a license.</span></p>
+
+<div style='border-top:solid windowtext 1.0pt;border-left:none;border-bottom:
+solid windowtext 1.0pt;border-right:none;padding:3.0pt 0in 3.0pt 0in;
+background:#D9D9D9;margin-left:.3in;margin-right:.3in'>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&lt;S:Envelope
+xmlns:S=&quot;...&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   
+&lt;S:Header&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;wsse:Security xmlns:wsse=&quot;...&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+&lt;r:license xmlns:r=&quot;...&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>               
+...</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+&lt;/r:license&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+...</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;/wsse:Security&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   
+&lt;/S:Header&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   
+&lt;S:Body&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+...</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   
+&lt;/S:Body&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&lt;/S:Envelope&gt;</p>
+
+</div>
+
+<h2><a name="_Toc307391114"></a><a name="_Toc300324239"></a><a
+name="_Toc20126534"></a><a name="_Toc127703213"><span lang=X-NONE>3.4 </span><span
+lang=X-NONE>Identifying and Referencing Security Tokens</span></a></h2>
+
+<p class=MsoNormal><a name="_Toc20126535">The Web Services Security: SOAP
+Message Security [WS-Security] specification defines the <i>wsu:Id </i>attribute
+as the common mechanism for identifying security tokens (the specification
+describes the reasons for this). Licenses have an additional identification
+mechanism available: their licenseId attribute, the value of which is a URI. 
+The following example shows a license that uses both mechanisms:</a></p>
+
+<div style='border-top:solid windowtext 1.0pt;border-left:none;border-bottom:
+solid windowtext 1.0pt;border-right:none;padding:3.0pt 0in 3.0pt 0in;
+background:#D9D9D9;margin-left:.3in;margin-right:.3in'>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&lt;r:license
+xmlns:r=&quot;...&quot; xmlns:wsu=&quot;...&quot;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+licenseId=&quot;urn:foo:SecurityToken:ef375268&quot;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+wsu:Id=&quot;SecurityToken-ef375268&quot;&gt; </p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>  ...</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&lt;/r:license&gt;</p>
+
+</div>
+
+<p class=MsoNormal>Licenses can be referenced either according to their
+location or their licenseId.  Location references are dependent on location and
+can be either local or remote.  LicenseId references are not dependent on
+location.</p>
+
+<p class=MsoNormal>Local location references are RECOMMENDED when they can be
+used.  Remote location references are OPTIONAL for cases where it is not
+feasible to transmit licenses with the SOAP message.  LicenseId references are
+OPTIONAL for cases where location is unknown or cannot be indicated.</p>
+
+<p class=MsoNormal>WS-Security specifies that tokens are referenced using the
+&lt;wsse:SecurityTokenReference&gt; element.</p>
+
+<p class=MsoNormal>Implementations compliant with this profile SHOULD set the
+/wsse:SecurityTokenReference/wsse:Reference/@ValueType attribute to http://docs.oasis-open.org/wss/oasis-wss-rel-token-profile-1.0.pdf#license when using
+wsse:SecurityTokenReference to refer to a license by licenseId. This is
+OPTIONAL when referring to a license by location.</p>
+
+<p class=MsoNormal>The following table demonstrates the use of the
+&lt;wsse:SecurityTokenReference&gt; element to refer to licenses.</p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=79 rowspan=2 style='width:59.4pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>By Location</p>
+  </td>
+  <td width=72 style='width:.75in;border:solid windowtext 1.0pt;border-left:
+  none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Local</p>
+  </td>
+  <td width=439 valign=top style='width:329.4pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <div style='border-top:solid windowtext 1.0pt;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:none;padding:3.0pt 0in 3.0pt 0in;
+  background:#D9D9D9;margin-left:.3in;margin-right:.3in'>
+  <p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&lt;wsse:SecurityTokenReference&gt;</p>
+  <p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+  &lt;wsse:Reference</p>
+  <p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   
+  URI=&quot;#SecurityToken-ef375268&quot;</p>
+  <p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+  /&gt;</p>
+  <p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&lt;/wsse:SecurityTokenReference&gt;</p>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td width=72 style='width:.75in;border-top:none;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Remote</p>
+  </td>
+  <td width=439 valign=top style='width:329.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <div style='border-top:solid windowtext 1.0pt;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:none;padding:3.0pt 0in 3.0pt 0in;
+  background:#D9D9D9;margin-left:.3in;margin-right:.3in'>
+  <p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&lt;wsse:SecurityTokenReference&gt;</p>
+  <p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+  &lt;wsse:Reference</p>
+  <p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   
+  URI=&quot;http://www.foo.com/ef375268.xml&quot;</p>
+  <p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+  /&gt;</p>
+  <p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&lt;/wsse:SecurityTokenReference&gt;</p>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td width=151 colspan=2 style='width:113.4pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;border:solid windowtext 1.0pt !msorm;
+  border-top:none !msorm;padding:0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=MsoNormal>By licenseId</p>
+  </td>
+  <td width=439 valign=top style='width:329.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;border-top:none !msorm;border-left:none !msorm;
+  border-bottom:solid windowtext 1.0pt !msorm;border-right:solid windowtext 1.0pt !msorm;
+  padding:0in 5.4pt 0in 5.4pt !msorm'>
+  <div style='border-top:solid windowtext 1.0pt;border-left:none;border-bottom:
+  solid windowtext 1.0pt;border-right:none;padding:3.0pt 0in 3.0pt 0in;
+  background:#D9D9D9;margin-left:.3in;margin-right:.3in'>
+  <p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&lt;wsse:SecurityTokenReference&gt;</p>
+  <p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+  &lt;wsse:Reference</p>
+  <p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   
+  URI=&quot;urn:foo:SecurityToken:ef375268&quot;</p>
+  <p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   
+  ValueType=&quot;http://docs.oasis-open.org/wss/oasis-wss-rel-token-profile-1.0.pdf#license&quot;</p>
+  <p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+  /&gt;</p>
+  <p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&lt;/wsse:SecurityTokenReference&gt;</p>
+  </div>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoCaption><a name="_Ref30243205"></a><a name="_Ref30243220">Table </a>2. &lt;wsse:SecurityTokenReference&gt;</p>
+
+<p class=MsoNormal>The following example demonstrates how a
+&lt;wsse:SecurityTokenReference&gt; can be used to indicate that the message
+parts specified inside the &lt;ds:SignedInfo&gt; element were signed using a
+key from the license referenced by licenseId in the &lt;ds:KeyInfo&gt; element.</p>
+
+<div style='border-top:solid windowtext 1.0pt;border-left:none;border-bottom:
+solid windowtext 1.0pt;border-right:none;padding:3.0pt 0in 3.0pt 0in;
+background:#D9D9D9;margin-left:.3in;margin-right:.3in'>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&lt;S:Envelope
+xmlns:S=&quot;...&quot; xmlns:ds=&quot;...&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+&lt;S:Header&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   
+&lt;wsse:Security xmlns:wsse=&quot;...&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;r:license xmlns:r=&quot;...&quot;
+licenseId=&quot;urn:foo:SecurityToken:ef375268&quot; xmlns:wsu=&quot;...&quot;
+wsu:Id=&quot;SecurityToken-ef375268&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+...</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;/r:license&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+...</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;ds:Signature&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;ds:SignedInfo&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>         
+...</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;/ds:SignedInfo&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>        &lt;ds:SignatureValue&gt;...&lt;/ds:SignatureValue&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;ds:KeyInfo&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>         
+&lt;wsse:SecurityTokenReference&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+&lt;wsse:Reference</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>             
+URI=&quot;#SecurityToken-ef375268&quot;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+/&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>         
+&lt;/wsse:SecurityTokenReference&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;/ds:KeyInfo&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;/ds:Signature&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   
+&lt;/wsse:Security&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+&lt;/S:Header&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+&lt;S:Body&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   
+...</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+&lt;/S:Body&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&lt;/S:Envelope&gt;</p>
+
+</div>
+
+<p class=MsoNormal>The following example shows a signature over a local license
+using a location reference to that license. The example demonstrates how the
+integrity of an (unsigned) license can be preserved by signing it in the
+&lt;wsse:Security&gt; header.</p>
+
+<div style='border-top:solid windowtext 1.0pt;border-left:none;border-bottom:
+solid windowtext 1.0pt;border-right:none;padding:3.0pt 0in 3.0pt 0in;
+background:#D9D9D9;margin-left:.3in;margin-right:.3in'>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&lt;S:Envelope
+xmlns:S=&quot;...&quot; xmlns:wsu=&quot;...&quot; &gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+&lt;S:Header&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   
+&lt;wsse:Security xmlns:wsse=&quot;...&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;r:license xmlns:r=&quot;...&quot;
+wsu:Id=&quot;SecurityToken-ef375268&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+...</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;/r:license&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+...</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;wsse:SecurityTokenReference wsu:Id=&quot;Str1&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;wsse:Reference</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>         
+URI=&quot;#SecurityToken-ef375268&quot;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+/&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;/wsse:SecurityTokenReference&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+...</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;ds:Signature&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;ds:SignedInfo&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>         
+...</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>         
+&lt;ds:Reference URI=&quot;#Str1&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+&lt;ds:Transforms&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>             
+&lt;ds:Transform</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>               
+Algorithm=&quot;http://schemas.xmlsoap.org/2003/06/STR-Transform&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>               
+&lt;ds:CanonicalizationMethod</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>                 
+Algorithm=&quot;http://www.w3.org/TR/2001/REC-xml-c14n-20010315&quot;/&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>             
+&lt;/ds:Transform&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+&lt;/ds:Transforms&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+&lt;ds:DigestMethod</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>             
+Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#sha1&quot;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+/&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+&lt;ds:DigestValue&gt;...&lt;/ds:DigestValue&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>         
+&lt;/ds:Reference&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;/ds:SignedInfo&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;ds:SignatureValue&gt;...&lt;/ds:SignatureValue&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;ds:KeyInfo&gt;...&lt;/ds:KeyInfo&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;/ds:Signature&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   
+&lt;/wsse:Security&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+&lt;/S:Header&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+&lt;S:Body&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   
+...</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+&lt;/S:Body&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&lt;/S:Envelope&gt;</p>
+
+</div>
+
+<p class=MsoNormal>Note: since licenses allow the use of the wsu:Id attribute,
+it is usually not necessary to use the STR-Transform because the license can be
+referred to directly in the ds:SignedInfo as shown in the following example:</p>
+
+<div style='border-top:solid windowtext 1.0pt;border-left:none;border-bottom:
+solid windowtext 1.0pt;border-right:none;padding:3.0pt 0in 3.0pt 0in;
+background:#D9D9D9;margin-left:.3in;margin-right:.3in'>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&lt;S:Envelope
+xmlns:S=&quot;...&quot; xmlns:ds=&quot;...&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+&lt;S:Header&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   
+&lt;wsse:Security xmlns:wsse=&quot;...&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;r:license xmlns:r=&quot;...&quot; xmlns:wsu=&quot;...&quot;
+wsu:Id=&quot;SecurityToken-ef375268&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+...</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;/r:license&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+...</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;ds:Signature&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;ds:SignedInfo&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>         
+...</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>         
+&lt;ds:Reference URI=&quot;#SecurityToken-ef375268&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+<span lang=DE>&lt;ds:DigestMethod</span></p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'><span
+lang=DE>             
+Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#sha1&quot;</span></p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'><span
+lang=DE>            </span>/&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+&lt;ds:DigestValue&gt;...&lt;/ds:DigestValue&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>         
+&lt;/ds:Reference&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;/ds:SignedInfo&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;ds:SignatureValue&gt;...&lt;/ds:SignatureValue&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;ds:KeyInfo&gt;...&lt;/ds:KeyInfo&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;/ds:Signature&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   
+&lt;/wsse:Security&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+&lt;/S:Header&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+&lt;S:Body&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   
+...</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+&lt;/S:Body&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&lt;/S:Envelope&gt;</p>
+
+</div>
+
+<h2><a name="_Toc307391115"></a><a name="_Toc300324240"></a><a
+name="_Toc127703214"><span lang=X-NONE>3.5 </span><span lang=X-NONE>Authentication</span></a></h2>
+
+<p class=MsoNormal>The Web Services Security: SOAP Message Security
+[WS-Security] specification does not dictate how claim confirmation must be
+performed. As well, the REL allows for multiple types of confirmation. This
+profile of WS-Security REQUIRES that message senders and receivers support
+claim confirmation for &lt;r:keyHolder&gt; principals.  It is RECOMMENDED that
+an XML Signature be used to establish the relationship between the message
+sender and the claims. This is especially RECOMMENDED whenever the SOAP message
+exchange is conducted over an unprotected transport.</p>
+
+<p class=MsoNormal>The following table enumerates the mandatory principals to
+be supported by claim confirmation and summarizes their associated processing
+models. It should be noted that this table is not all-encompassing, and it is
+envisioned that future specifications may expand this table over time.</p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=295 style='width:221.4pt;border:solid windowtext 1.0pt;padding:
+  .1in 5.75pt .1in 5.75pt'>
+  <p class=MsoNormal>Principal</p>
+  </td>
+  <td width=295 style='width:221.4pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:.1in 5.75pt .1in 5.75pt'>
+  <p class=MsoNormal>RECOMMENDED Processing Rules</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 style='width:221.4pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:.1in 5.75pt .1in 5.75pt'>
+  <p class=MsoNormal>&lt;r:keyHolder&gt;</p>
+  </td>
+  <td width=295 style='width:221.4pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.1in 5.75pt .1in 5.75pt'>
+  <p class=MsoNormal>The message sender adds (to the security header) an XML
+  Signature that can be verified with the key information specified in the
+  &lt;r:keyHolder&gt; of the referenced license.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoCaption>Table 3. Processing Rules for Claim Confirmation</p>
+
+<p class=MsoNormal>Note that the high-level processing model described in the
+following sections does not differentiate between message author and message
+sender as would be necessary to guard against replay attacks. The high-level
+processing model also does not take into account requirements for
+authentication of receiver by sender or for message or token confidentiality.
+These concerns must be addressed by means other than those described in the
+high-level processing model.  If confidentiality of the token in the message is
+important, then use the approach defined by [WS-Security] to encrypt the token.</p>
+
+<h3><a name="_Toc307391116"></a><a name="_Toc300324241"></a><a
+name="_Toc127703215"><span lang=X-NONE>3.5.1 </span><span lang=X-NONE>&lt;r:keyHolder&gt;
+Principal</span></a></h3>
+
+<p class=MsoNormal>The following sections describe the &lt;r:keyHolder&gt;
+method of establishing the correspondence between a SOAP message sender and the
+claims within a license.</p>
+
+<h4><span lang=X-NONE>Sender</span></h4>
+
+<p class=MsoNormal>The message sender MUST include within the
+&lt;wsse:Security&gt; header element a &lt;r:license&gt; containing at least
+one &lt;r:grant&gt; to an &lt;r:keyHolder&gt; identifying the key to be used to
+confirm the claims.  If the message sender includes an &lt;r:license&gt;
+containing more than one &lt;r:grant&gt; to an &lt;r:keyHolder&gt;, then all of
+those &lt;r:keyHolder&gt; elements MUST be equal.</p>
+
+<p class=MsoNormal>In order for the receiver to perform claim confirmation, the
+sender MUST demonstrate knowledge of the confirmation key. The sender MAY
+accomplish this by using the confirmation key to sign content from within the
+message and by including the resulting &lt;ds:Signature&gt; element in the
+&lt;wsse:Security&gt; header element. &lt;ds:Signature&gt; elements produced
+for this purpose MUST conform to the canonicalization and token inclusion rules
+defined in the core WS-Security specification and this profile specification.</p>
+
+<p class=MsoNormal>Licenses that contain at least one &lt;r:grant&gt; to an
+&lt;r:keyHolder&gt; SHOULD contain an &lt;r:issuer&gt; with a
+&lt;ds:Signature&gt; element that identifies the license issuer to the relying
+party and protects the integrity of the confirmation key established by the
+license issuer.</p>
+
+<h4><span lang=X-NONE>Receiver</span></h4>
+
+<p class=MsoNormal>If the receiver determines that the sender has demonstrated
+knowledge of a confirmation key as specified in an &lt;r:keyHolder&gt;, then
+the claims (found in the licenses) pertaining to that &lt;r:keyHolder&gt; MAY
+be attributed to the sender.  If one of these claims is an identity and if the
+conditions of that claim are satisfied, then any elements of the message whose
+integrity is protected by the confirmation key MAY be considered to have been
+authored by that identity.</p>
+
+<h4><span lang=X-NONE>Example</span></h4>
+
+<p class=MsoNormal>The following example illustrates how a license security
+token having an &lt;r:keyHolder&gt; principal can be used with a
+&lt;ds:Signature&gt; to establish that John Doe is requesting a stock report on
+FOO.</p>
+
+<div style='border-top:solid windowtext 1.0pt;border-left:none;border-bottom:
+solid windowtext 1.0pt;border-right:none;padding:3.0pt 0in 3.0pt 0in;
+background:#D9D9D9;margin-left:.3in;margin-right:.3in'>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&lt;S:Envelope
+xmlns:S=&quot;...&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&nbsp;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+&lt;S:Header&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   
+&lt;wsse:Security xmlns:wsse=&quot;...&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&nbsp;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;r:license xmlns:r=&quot;...&quot;
+licenseId=&quot;urn:foo:SecurityToken:ef375268&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;r:grant&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>         
+&lt;r:keyHolder&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+&lt;r:info&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>             
+&lt;ds:KeyValue&gt;...&lt;/ds:KeyValue&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+&lt;/r:info&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>         
+&lt;/r:keyHolder&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>         
+&lt;r:possessProperty/&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>         
+&lt;sx:commonName xmlns:sx=&quot;...&quot;&gt;John Doe&lt;/sx:commonName&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;/r:grant&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;r:issuer&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+  &lt;ds:Signature&gt;...&lt;/ds:Signature&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;/r:issuer&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;/r:license&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&nbsp;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;ds:Signature&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;ds:SignedInfo&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>         
+...</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>         
+&lt;ds:Reference URI=&quot;#MsgBody&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+<span lang=DE>&lt;ds:DigestMethod</span></p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'><span
+lang=DE>              Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#sha1&quot;</span></p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'><span
+lang=DE>            </span>/&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+&lt;ds:DigestValue&gt;...&lt;/ds:DigestValue&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>         
+&lt;/ds:Reference&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;/ds:SignedInfo&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;ds:SignatureValue&gt;...&lt;/ds:SignatureValue&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;ds:KeyInfo&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>         
+&lt;wsse:SecurityTokenReference&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+&lt;wsse:Reference</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>             
+URI=&quot;urn:foo:SecurityToken:ef375268&quot;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>             
+ValueType=&quot;http://docs.oasis-open.org/wss/oasis-wss-rel-token-profile-1.0.pdf#license&quot;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+/&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>         
+&lt;/wsse:SecurityTokenReference&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;/ds:KeyInfo&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;/ds:Signature&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&nbsp;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   
+&lt;/wsse:Security&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+&lt;/S:Header&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&nbsp;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+&lt;S:Body wsu:Id=&quot;MsgBody&quot; xmlns:wsu=&quot;...&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   
+&lt;ReportRequest&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;TickerSymbol&gt;FOO&lt;/TickerSymbol&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   
+&lt;/ReportRequest&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+&lt;/S:Body&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&nbsp;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&lt;/S:Envelope&gt;</p>
+
+</div>
+
+<h2><a name="_Toc307391117"></a><a name="_Toc300324242"></a><a
+name="_Toc127703216"><span lang=X-NONE>3.6 </span><span lang=X-NONE>Confidentiality</span></a></h2>
+
+<p class=MsoNormal>This section details how licenses may be used to protect the
+confidentiality of a SOAP message within WS-Security.  The Web Services
+Security: SOAP Message Security [WS-Security] specification does not dictate
+how confidentiality must be performed. As well, the REL allows for multiple
+types of confidentiality. This profile of WS-Security REQUIRES that message
+senders and receivers support confidentiality for &lt;r:keyHolder&gt;
+principals.  It is RECOMMENDED that XML Encryption be used to ensure confidentiality.
+This is especially RECOMMENDED whenever the SOAP message exchange is conducted
+over an unprotected transport.</p>
+
+<p class=MsoNormal>The following table enumerates the mandatory principals to
+be supported for confidentiality and summarizes their associated processing
+models. It should be noted that this table is not all-encompassing, and it is
+envisioned that future specifications may expand this table over time.</p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=295 style='width:221.4pt;border:solid windowtext 1.0pt;padding:
+  .1in 5.75pt .1in 5.75pt'>
+  <p class=MsoNormal>Principal</p>
+  </td>
+  <td width=295 style='width:221.4pt;border:solid windowtext 1.0pt;border-left:
+  none;padding:.1in 5.75pt .1in 5.75pt'>
+  <p class=MsoNormal>RECOMMENDED Processing Rules</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=295 style='width:221.4pt;border:solid windowtext 1.0pt;border-top:
+  none;padding:.1in 5.75pt .1in 5.75pt'>
+  <p class=MsoNormal>&lt;r:keyHolder&gt;</p>
+  </td>
+  <td width=295 style='width:221.4pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.1in 5.75pt .1in 5.75pt'>
+  <p class=MsoNormal>The message sender adds (to the security header) either 1)
+  an &lt;xenc:ReferenceList&gt; that points to one or more
+  &lt;xenc:EncryptedData&gt; elements that can be decrypted with a key which
+  can be determined from information specified in the &lt;r:keyHolder&gt; of
+  the referenced license or 2) an &lt;xenc:EncryptedKey&gt; that can be
+  decrypted with a key determined from information specified in the
+  &lt;r:keyHolder&gt; of the referenced license.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoCaption>Table 4. Processing Rules for Confidentiality</p>
+
+<p class=MsoNormal>Note that this section deals only with Confidentiality. 
+Details of authentication of the sender by the receiver must be addressed by
+means other than those described in this section (see the previous section).</p>
+
+<h3><a name="_Toc307391118"></a><a name="_Toc300324243"></a><a
+name="_Toc127703217"><span lang=X-NONE>3.6.1 </span><span lang=X-NONE>&lt;r:keyHolder&gt;
+Principal</span></a></h3>
+
+<p class=MsoNormal>The following sections describe the &lt;r:keyHolder&gt;
+method of establishing confidentiality using a license.</p>
+
+<h4><span lang=X-NONE>Sender</span></h4>
+
+<p class=MsoNormal>The message sender MUST include within the
+&lt;wsse:Security&gt; header element a &lt;r:license&gt; containing at least
+one &lt;r:grant&gt; to an &lt;r:keyHolder&gt; identifying the key used to
+encrypt some data or key.  If the message sender includes an &lt;r:license&gt;
+containing more than one &lt;r:grant&gt; to an &lt;r:keyHolder&gt;, then all of
+those &lt;r:keyHolder&gt; elements MUST be equal.</p>
+
+<p class=MsoNormal>In order for the receiver to know when to decrypt the data
+or key, the sender MUST indicate the encryption in the message. The sender MAY
+accomplish this by placing an &lt;xenc:EncryptedData&gt; or
+&lt;xenc:EncryptedKey&gt; in the appropriate place in the message and by
+including the resulting &lt;xenc:ReferenceList&gt; or &lt;xenc:EncryptedKey&gt;
+element in the &lt;wsse:Security&gt; header element. &lt;xenc:ReferenceList&gt;
+or &lt;xenc:EncryptedKey&gt; elements produced for this purpose MUST conform to
+the rules defined in the core WS-Security specification and this profile
+specification.</p>
+
+<h4><span lang=X-NONE>Receiver</span></h4>
+
+<p class=MsoNormal>If the receiver determines that he has knowledge of a
+decryption key as specified in an &lt;r:keyHolder&gt;, then he MAY decrypt the
+associated data or key.  In the case of decrypting a key, he may then
+recursively decrypt any data or key that that key can decrypt.</p>
+
+<h4><span lang=X-NONE>Example</span></h4>
+
+<p class=MsoNormal>The following example illustrates how a license containing a
+&lt;r:keyHolder&gt; principal can be used with XML encryption schema elements
+to protect the confidentiality of a message using a separate encryption key
+given in the &lt;xenc:EncryptedKey&gt; in the security header.</p>
+
+<p class=MsoNormal>In this example, the r:license element provides information
+about the recipient's RSA public key (i.e., KeyValue in keyHolder) used to
+encrypt the symmetric key carried in the EncryptedKey element. The recipient
+uses this information to determine the correct private key to use in decrypting
+the symmetric key. The symmetric key is then used to decrypt the EncryptedData
+child of the Body element.</p>
+
+<p class=MsoNormal><span style='background:white'>&nbsp;</span></p>
+
+<div style='border-top:solid windowtext 1.0pt;border-left:none;border-bottom:
+solid windowtext 1.0pt;border-right:none;padding:3.0pt 0in 3.0pt 0in;
+background:#D9D9D9;margin-left:.3in;margin-right:.3in'>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&lt;S:Envelope
+xmlns:S=&quot;...&quot; xmlns:ds=&quot;...&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+&lt;S:Header&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>  
+&lt;wsse:Security xmlns:wsse=&quot;...&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;r:license xmlns:r=&quot;...&quot;
+licenseId=&quot;urn:foo:SecurityToken:ef375268&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>          &lt;r:grant&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+&lt;r:keyHolder&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>                &lt;r:info&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>                 
+&lt;ds:KeyValue&gt;...&lt;/ds:KeyValue&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>                
+&lt;/r:info&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+&lt;/r:keyHolder&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+&lt;r:possessProperty/&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+&lt;sx:commonName xmlns:sx=&quot;...”&gt;SOME COMPANY&lt;/sx:commonName&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>          &lt;/r:grant&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>          &lt;r:issuer&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>               
+&lt;ds:Signature&gt;...&lt;/ds:Signature&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>          &lt;/r:issuer&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;/r:license&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;xenc:EncryptedKey
+xmlns:xenc=&quot;http://www.w3.org/2001/04/xmlenc#&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;xenc:EncryptionMethod          </p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>           
+Algorithm=&quot;http://www.w3.org/2001/04/xmlenc#rsa-1_5&quot;/&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;KeyInfo xmlns=&quot;http://www.w3.org/2000/09/xmldsig#&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>         
+&lt;wsse:SecurityTokenReference&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>                &lt;wsse:Reference
+URI=&quot;urn:foo:SecurityToken:ef375268&quot;/&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>          &lt;/wsse:SecurityTokenReference&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;/KeyInfo&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;xenc:CipherData&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>          &lt;xenc:CipherValue&gt;dNYS...fQ=&lt;/xenc:CipherValue&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;/xenc:CipherData&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;xenc:ReferenceList&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>          &lt;xenc:DataReference
+URI=&quot;#enc&quot;/&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+&lt;/xenc:ReferenceList&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;/xenc:EncryptedKey&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   &lt;/wsse:Security&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'> 
+&lt;/S:Header&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   &lt;S:Body
+wsu:Id=&quot;body&quot;  </p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>       
+xmlns:wsu=&quot;http://schemas.xmlsoap.org/ws/2003/06/utility&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;xenc:EncryptedData Id=&quot;enc&quot;   </p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>          
+Type=&quot;http://www.w3.org/2001/04/xmlenc#Content&quot; </p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>          
+xmlns:xenc=&quot;http://www.w3.org/2001/04/xmlenc#&quot;&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>        
+&lt;xenc:EncryptionMethod  </p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>          
+Algorithm=&quot;http://www.w3.org/2001/04/xmlenc#tripledes-cbc&quot;/&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>        
+&lt;xenc:CipherData&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>            
+&lt;xenc:CipherValue&gt;d2s...GQ=&lt;/xenc:CipherValue&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>        
+&lt;/xenc:CipherData&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>     
+&lt;/xenc:EncryptedData&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>   &lt;/S:Body&gt;</p>
+
+<p class=Code style='margin:0in;margin-bottom:.0001pt;background:#D9D9D9'>&lt;/S:Envelope&gt;</p>
+
+</div>
+
+<h2><a name="_Toc307391119"></a><a name="_Toc300324244"></a><a
+name="_Toc127703218"><span lang=X-NONE>3.7 </span><span lang=X-NONE>Error Codes</span></a></h2>
+
+<p class=Text><span style='color:windowtext'>It is RECOMMENDED that the error
+codes defined in the Web Services Security: SOAP Message Security [WS-Security]
+specification are used.  However, implementations MAY use custom errors,
+defined in private namespaces if they desire.  Care should be taken not to
+introduce security vulnerabilities in the errors returned.</span></p>
+
+<div style='border:none;border-top:solid gray 1.0pt;padding:6.0pt 0in 0in 0in'>
+
+<h1><a name="_Toc307391120"></a><a name="_Toc300324245"></a><a
+name="_Toc127703219"><span lang=X-NONE>4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=X-NONE>Types of Licenses (Informative)</span></a></h1>
+
+</div>
+
+<h2><a name="_Toc307391121"></a><a name="_Toc300324246"></a><a
+name="_Toc127703220"><span lang=X-NONE>4.1 </span><span lang=X-NONE>Attribute
+Licenses</span></a></h2>
+
+<p class=MsoNormal>In addition to key information, licenses can carry
+information about attributes of those keys.  Examples of such information on a
+client are e-mail address or common name.  A service's key, on the other hand,
+might be associated with a DNS name and common name.</p>
+
+<p class=MsoNormal>The following is an example client attribute license.</p>
+
+<p class=Examplesmall style='text-indent:.2in'>   <span lang=FR>&lt;r:license
+xmlns:r=&quot;...&quot; xmlns:ds=&quot;...&quot; </span>licenseId=&quot;urn:foo:SecurityToken:ef375268&quot;&gt;</p>
+
+<p class=Examplesmall style='text-indent:.2in'>          &lt;r:inventory&gt;</p>
+
+<p class=Examplesmall style='text-indent:.2in'>            &lt;r:keyHolder
+licensePartId=&quot;client&quot;&gt;</p>
+
+<p class=Examplesmall style='text-indent:.2in'>               &lt;r:info&gt;</p>
+
+<p class=Examplesmall style='text-indent:.2in'>                 &lt;ds:KeyValue&gt;FDFEWEFF…&lt;/ds:KeyValue&gt;</p>
+
+<p class=Examplesmall style='text-indent:.2in'>               <span lang=PT-BR>&lt;/r:info&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=PT-BR>           
+&lt;/r:keyHolder&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'>          &lt;/r:inventory&gt;</p>
+
+<p class=Examplesmall style='text-indent:.2in'>          <span lang=PT-BR>&lt;r:grant&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=PT-BR>           
+&lt;r:keyHolder licensePartIdRef=&quot;client&quot;/&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=PT-BR>           
+&lt;r:possessProperty/&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=PT-BR>            </span>&lt;sx:commonName&gt;John
+Doe&lt;/sx:commonName&gt;</p>
+
+<p class=Examplesmall style='text-indent:.2in'>          <span lang=PT-BR>&lt;/r:grant&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=PT-BR>         
+&lt;r:grant&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=PT-BR>           
+&lt;r:keyHolder licensePartIdRef=&quot;client&quot;/&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=PT-BR>           
+&lt;r:possessProperty/&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=PT-BR>           
+&lt;sx:emailName&gt;jd@foo.com&lt;/sx:emailName&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=PT-BR>          </span><span
+lang=FR>&lt;/r:grant&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=FR>          
+&lt;r:issuer&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=FR>              &lt;ds:Signature&gt;...&lt;/ds:Signature&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=FR>           </span>&lt;/r:issuer&gt;</p>
+
+<p class=Examplesmall style='text-indent:.2in'>   &lt;/r:license&gt;</p>
+
+<p class=MsoNormal>The following is an example service attribute license.</p>
+
+<p class=Examplesmall style='text-indent:.2in'>   &lt;r:license
+xmlns:r=&quot;...&quot; xmlns:ds=&quot;...&quot; licenseId=&quot;urn:foo:SecurityToken:ef375268&quot;&gt;</p>
+
+<p class=Examplesmall style='text-indent:.2in'>          &lt;r:inventory&gt;</p>
+
+<p class=Examplesmall style='text-indent:.2in'>            &lt;r:keyHolder
+licensePartId=&quot;service&quot;&gt;</p>
+
+<p class=Examplesmall style='text-indent:.2in'>               &lt;r:info&gt;</p>
+
+<p class=Examplesmall style='text-indent:.2in'>                
+&lt;ds:KeyValue&gt;FDFEWEFF…&lt;/ds:KeyValue&gt;</p>
+
+<p class=Examplesmall style='text-indent:.2in'>               <span lang=PT-BR>&lt;/r:info&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=PT-BR>           
+&lt;/r:keyHolder&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=PT-BR>         
+&lt;/r:inventory&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=PT-BR>         
+&lt;r:grant&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=PT-BR>            </span>&lt;r:keyHolder
+licensePartIdRef=&quot;service&quot;/&gt;</p>
+
+<p class=Examplesmall style='text-indent:.2in'>           
+&lt;r:possessProperty/&gt;</p>
+
+<p class=Examplesmall style='text-indent:.2in'>           
+&lt;sx:commonName&gt;MyService Company&lt;/sx:commonName&gt;</p>
+
+<p class=Examplesmall style='text-indent:.2in'>          <span lang=PT-BR>&lt;/r:grant&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=PT-BR>         
+&lt;r:grant&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=PT-BR>           
+&lt;r:keyHolder licensePartIdRef=&quot;service&quot;/&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=PT-BR>           
+&lt;r:possessProperty/&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=PT-BR>           
+&lt;sx:dnsName&gt;www.myservice.com&lt;/sx:dnsName&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=PT-BR>          </span><span
+lang=FR>&lt;/r:grant&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=FR>          
+&lt;r:issuer&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=FR>             
+&lt;ds:Signature&gt;...&lt;/ds:Signature&gt;</span></p>
+
+<p class=Examplesmall style='text-indent:.2in'><span lang=FR>           </span>&lt;/r:issuer&gt;</p>
+
+<p class=Examplesmall style='text-indent:.2in'>   &lt;/r:license&gt;</p>
+
+<p class=MsoNormal>Additional examples of and processing rules for the use of
+attribute licenses can be found in the above sections on Authentication and
+Confidentiality.</p>
+
+<h2><a name="_Toc307391122"></a><a name="_Toc300324247"></a><a
+name="_Toc127703221"><span lang=X-NONE>4.2 </span><span lang=X-NONE>Sender
+Authorization</span></a></h2>
+
+<p class=MsoNormal>Licenses may be used by a sender as proof of authorization
+to perform a certain action on a particular resource. This WS-Security
+specification does not describe how authorization must be performed. In the
+context of web services, a sender can send to a receiver an authorization
+license in the security header as proof of authorization to call the sender.
+Typically, this authorization license is signed by a trusted authority and conforms
+to the syntax pattern specified below.</p>
+
+<p class=Examplesmall style='text-indent:.2in'>&lt;r:license
+xmlns:r=&quot;...&quot; licenseId=&quot;urn:foo:SecurityToken:ef375268&quot;&gt;</p>
+
+<p class=Examplesmall>          &lt;r:grant&gt;</p>
+
+<p class=Examplesmall>            &lt;r:keyHolder&gt;</p>
+
+<p class=Examplesmall>               &lt;r:info&gt;</p>
+
+<p class=Examplesmall>                
+&lt;ds:KeyValue&gt;FDFEWEFF…&lt;/ds:KeyValue&gt;</p>
+
+<p class=Examplesmall>               &lt;/r:info&gt;</p>
+
+<p class=Examplesmall>            &lt;/r:keyHolder&gt;</p>
+
+<p class=Examplesmall>            &lt;sx:rightUri definition=’...’/&gt;</p>
+
+<p class=Examplesmall>            &lt;x:someResource/&gt;</p>
+
+<p class=Examplesmall>            &lt;x:someCondition/&gt;</p>
+
+<p class=Examplesmall>           &lt;/r:grant&gt;</p>
+
+<p class=Examplesmall>           &lt;r:issuer&gt;</p>
+
+<p class=Examplesmall>             
+&lt;ds:Signature&gt;...&lt;/ds:Signature&gt;</p>
+
+<p class=Examplesmall>           &lt;/r:issuer&gt;</p>
+
+<p class=Examplesmall>   &lt;/r:license&gt;</p>
+
+<p class=MsoNormal>The above license contains an authorization grant
+authorizing the keyholder (sender’s public key), the right to exercise the
+right identified in the &lt;sx:rightUri&gt; element. The resource in the
+license typically corresponds to the semantics of the URI given in the
+definition attribute of the &lt;sx:rightUri&gt; element. The entire license
+along with the &lt;ds:Signature&gt; element in the &lt;r:issuer&gt; certifies
+the fact that the principal (&lt;keyholder&gt;) is granted the authorization to
+exercise the right in the &lt;sx:rightUri&gt; element over the specified
+resource. The integrity of the license is usually protected with a digital
+signature contained within the &lt;ds:Signature&gt;. </p>
+
+<h2><a name="_Toc307391123"></a><a name="_Toc300324248"></a><a
+name="_Toc127703222"><span lang=X-NONE>4.3 </span><span lang=X-NONE>Issuer
+Authorization</span></a></h2>
+
+<p class=MsoNormal>To enunciate that a particular issuer is allowed to issue
+particular types of licenses, one can use the kind of license described here.
+Issuer authorization licenses can accompany other licenses in the security
+header such as those used for authentication, sender authorization, or other
+issuer authorizations. These issuer authorization licenses might help complete
+the authorization proof that is required for authorizing or authenticating a
+particular sender.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The following license is an example issuer authorization
+license for authorizing an issuer to issue a simple attribute license.</p>
+
+<p class=Examplesmall style='text-indent:.2in'>&lt;r:license
+xmlns:r=&quot;...&quot; licenseId=&quot;urn:foo:SecurityToken:ef375268&quot;&gt;</p>
+
+<p class=Examplesmall>          <span lang=SV>&lt;r:grant&gt;</span></p>
+
+<p class=Examplesmall><span lang=SV>             &lt;r:forAll varName=’K’/&gt;</span></p>
+
+<p class=Examplesmall><span lang=SV>             &lt;r:forAll varName=’P’/&gt;</span></p>
+
+<p class=Examplesmall><span lang=PT-BR>            &lt;r:keyHolder&gt;</span></p>
+
+<p class=Examplesmall><span lang=PT-BR>               </span><span lang=SV>&lt;r:info&gt;</span></p>
+
+<p class=Examplesmall><span lang=SV>                 &lt;ds:KeyValue&gt;FDFEWEFF…&lt;/ds:KeyValue&gt;</span></p>
+
+<p class=Examplesmall><span lang=SV>               </span>&lt;/r:info&gt;</p>
+
+<p class=Examplesmall>            &lt;/r:keyHolder&gt;</p>
+
+<p class=Examplesmall>            &lt;r:issue/&gt;</p>
+
+<p class=Examplesmall>            <span lang=PT-BR>&lt;r:grant&gt;</span></p>
+
+<p class=Examplesmall><span lang=PT-BR>              &lt;r:keyHolder
+varRef=’K’/&gt;</span></p>
+
+<p class=Examplesmall><span lang=PT-BR>              &lt;r:possessProperty/&gt;</span></p>
+
+<p class=Examplesmall><span lang=PT-BR>              &lt;r:propertyAbstract
+varRef=’P’/&gt; </span></p>
+
+<p class=Examplesmall><span lang=PT-BR>            &lt;/r:grant&gt;</span></p>
+
+<p class=Examplesmall>           &lt;/r:grant&gt;</p>
+
+<p class=Examplesmall>           <span lang=PT-BR>&lt;r:issuer&gt;</span></p>
+
+<p class=Examplesmall><span lang=PT-BR>             
+&lt;ds:Signature&gt;...&lt;/ds:Signature&gt;</span></p>
+
+<p class=Examplesmall><span lang=PT-BR>           &lt;/r:issuer&gt;</span></p>
+
+<p class=Examplesmall><span lang=PT-BR>   </span>&lt;/r:license&gt;</p>
+
+<p class=MsoNormal>The following license is an example issuer authorization
+license for authorizing an issuer to issue sender authorization licenses. </p>
+
+<p class=Examplesmall style='text-indent:.2in'>&lt;r:license
+xmlns:r=&quot;...&quot; licenseId=&quot;urn:foo:SecurityToken:ef375268&quot;&gt;</p>
+
+<p class=Examplesmall>          <span lang=SV>&lt;r:grant&gt;</span></p>
+
+<p class=Examplesmall><span lang=SV>             &lt;r:forAll varName=’K’/&gt;</span></p>
+
+<p class=Examplesmall><span lang=SV>             &lt;r:forAll varName=’R’/&gt;</span></p>
+
+<p class=Examplesmall><span lang=PT-BR>            &lt;r:keyHolder&gt;</span></p>
+
+<p class=Examplesmall><span lang=PT-BR>               </span><span lang=SV>&lt;r:info&gt;</span></p>
+
+<p class=Examplesmall><span lang=SV>                 &lt;ds:KeyValue&gt;FDFEWEFF…&lt;/ds:KeyValue&gt;</span></p>
+
+<p class=Examplesmall><span lang=SV>               </span>&lt;/r:info&gt;</p>
+
+<p class=Examplesmall>            &lt;/r:keyHolder&gt;</p>
+
+<p class=Examplesmall>            &lt;r:issue/&gt;</p>
+
+<p class=Examplesmall>            &lt;r:grant&gt;</p>
+
+<p class=Examplesmall>              &lt;r:keyHolder varRef=’K’/&gt;</p>
+
+<p class=Examplesmall>              &lt;sx:rightUri definition=’...’/&gt;</p>
+
+<p class=Examplesmall>              &lt;r:resource varRef=’R’/&gt; </p>
+
+<p class=Examplesmall>            &lt;/r:grant&gt;</p>
+
+<p class=Examplesmall>           &lt;/r:grant&gt;</p>
+
+<p class=Examplesmall>           &lt;r:issuer&gt;</p>
+
+<p class=Examplesmall>             
+&lt;ds:Signature&gt;...&lt;/ds:Signature&gt;</p>
+
+<p class=Examplesmall>           &lt;/r:issuer&gt;</p>
+
+<p class=Examplesmall>   &lt;/r:license&gt;</p>
+
+<p class=MsoNormal>The following license is an example issuer authorization
+license for authorizing an issuer to issue (to other issuers) issuer
+authorization licenses allowing those other issuers to issue simple attribute
+licenses, such as those that can be used for authentication or confidentiality.</p>
+
+<p class=Examplesmall style='text-indent:.2in'>&lt;r:license
+xmlns:r=&quot;...&quot; licenseId=&quot;urn:foo:SecurityToken:ef375268&quot;&gt;</p>
+
+<p class=Examplesmall><span lang=PT-BR>      </span><span lang=SV>&lt;r:grant&gt;</span></p>
+
+<p class=Examplesmall><span lang=SV>         &lt;r:forAll varName=’I’/&gt;</span></p>
+
+<p class=Examplesmall><span lang=SV>         </span>&lt;r:keyHolder&gt;</p>
+
+<p class=Examplesmall>            &lt;r:info&gt;</p>
+
+<p class=Examplesmall>              
+&lt;ds:KeyValue&gt;FDFEWEFF…&lt;/ds:KeyValue&gt;</p>
+
+<p class=Examplesmall>            <span lang=PT-BR>&lt;/r:info&gt;</span></p>
+
+<p class=Examplesmall><span lang=PT-BR>         &lt;/r:keyHolder&gt;</span></p>
+
+<p class=Examplesmall><span lang=PT-BR>         &lt;r:issue/&gt;</span></p>
+
+<p class=Examplesmall><span lang=PT-BR>         </span><span lang=SV>&lt;r:grant&gt;</span></p>
+
+<p class=Examplesmall><span lang=SV>            &lt;r:forAll varName=’K’/&gt;</span></p>
+
+<p class=Examplesmall><span lang=SV>            &lt;r:forAll varName=’P’/&gt;</span></p>
+
+<p class=Examplesmall><span lang=PT-BR>            &lt;r:keyHolder varRef=</span><span
+lang=SV>’I’/</span><span lang=PT-BR>&gt;</span></p>
+
+<p class=Examplesmall><span lang=PT-BR>            </span>&lt;r:issue/&gt;</p>
+
+<p class=Examplesmall>            <span lang=PT-BR>&lt;r:grant&gt;</span></p>
+
+<p class=Examplesmall><span lang=PT-BR>              &lt;r:keyHolder
+varRef=’K’/&gt;</span></p>
+
+<p class=Examplesmall><span lang=PT-BR>              &lt;r:possessProperty/&gt;</span></p>
+
+<p class=Examplesmall><span lang=PT-BR>              &lt;r:propertyAbstract
+varRef=’P’/&gt; </span></p>
+
+<p class=Examplesmall><span lang=PT-BR>            &lt;/r:grant&gt;</span></p>
+
+<p class=Examplesmall>         &lt;/r:grant&gt;</p>
+
+<p class=Examplesmall>      &lt;/r:grant&gt;</p>
+
+<p class=Examplesmall>      <span lang=FR>&lt;r:issuer&gt;</span></p>
+
+<p class=Examplesmall><span lang=FR>        
+&lt;ds:Signature&gt;...&lt;/ds:Signature&gt;</span></p>
+
+<p class=Examplesmall><span lang=FR>      &lt;/r:issuer&gt;</span></p>
+
+<p class=Examplesmall><span lang=FR>   &lt;/r:license&gt;</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:none;border-top:solid gray 1.0pt;padding:6.0pt 0in 0in 0in'>
+
+<h1><a name="_Toc307391124"></a><a name="_Toc300324249"></a><a
+name="_Toc127703223"></a><a name="_Toc20126537"><span lang=X-NONE>5<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=X-NONE>Threat Model and Countermeasures</span></a><span lang=X-NONE>
+(Informative)</span></h1>
+
+</div>
+
+<p class=MsoNormal>This section addresses the potential threats that a SOAP
+message may encounter and the countermeasures that may be taken to thwart such
+threats. A SOAP message containing licenses may face threats in various
+contexts. This includes the cases where the message is in transit, being routed
+through a number of intermediaries, or during the period when the message is in
+storage. </p>
+
+<p class=MsoNormal>The use of licenses with WS-Security introduces no new
+threats beyond those identified for the REL or WS-Security with other types of
+security tokens. Message alteration and eavesdropping can be addressed by using
+the integrity and confidentiality mechanisms described in WS-Security. Replay
+attacks can be addressed by using of message timestamps and caching, as well as
+other application-specific tracking mechanisms. For licenses, ownership is
+verified by the use of keys; man-in-the-middle attacks are generally mitigated.
+It is strongly RECOMMENDED that all relevant and immutable message data be
+signed. It should be noted that transport-level security MAY be used to protect
+the message and the security token. In order to trust licenses, they SHOULD be
+signed natively and/or using the mechanisms outlined in WS-Security. This
+allows readers of the licenses to be certain that the licenses have not been
+forged or altered in any way. It is strongly RECOMMENDED that the
+&lt;r:license&gt; elements be signed (either within the token, as part of the
+message, or both).</p>
+
+<p class=MsoNormal>The following few sections elaborate on the afore-mentioned
+threats and suggest countermeasures.</p>
+
+<h2><a name="_Toc307391125"></a><a name="_Toc300324250"></a><a
+name="_Toc127703224"><span lang=X-NONE>5.1 </span><span lang=X-NONE>Eavesdropping</span></a></h2>
+
+<p class=MsoNormal>Eavesdropping is a threat to the confidentiality of the
+message, and is common to all types of network protocols. The routing of SOAP
+messages through intermediaries increases the potential incidences of
+eavesdropping. Additional opportunities for eavesdropping exist when SOAP
+messages are persisted.</p>
+
+<p class=MsoNormal>To provide maximum protection from eavesdropping, licenses,
+license references, and sensitive message content SHOULD be encrypted such that
+only the intended audiences can view their content.  This removes threats of
+eavesdropping in transit, but does not remove risks associated with storage or
+poor handling by the receiver.</p>
+
+<p class=MsoNormal>Transport-layer security MAY be used to protect the message
+from eavesdropping while in transport, but message content must be encrypted
+above the transport if it is to be protected from eavesdropping by
+intermediaries.</p>
+
+<h2><a name="_Toc307391126"></a><a name="_Toc300324251"></a><a
+name="_Toc127703225"><span lang=X-NONE>5.2 </span><span lang=X-NONE>Replay</span></a></h2>
+
+<p class=MsoNormal>The reliance on authority protected (e.g. signed) licenses
+to &lt;r:keyHolder&gt; principals precludes all but the key holder from binding
+the licenses to a SOAP message. Although this mechanism effectively restricts
+message authorship to the holder of the confirmation key, it does not preclude
+the capture and resubmission of the message by other parties.</p>
+
+<p class=MsoNormal>Replay attacks can be addressed by using message timestamps
+and caching, as well as other application-specific tracking mechanisms.</p>
+
+<h2><a name="_Toc307391127"></a><a name="_Toc300324252"></a><a
+name="_Toc127703226"><span lang=X-NONE>5.3 </span><span lang=X-NONE>Message
+Insertion</span></a></h2>
+
+<p class=MsoNormal>This profile of WS-Security is not vulnerable to message
+insertion attacks. Higher-level protocols built on top of SOAP and WS-Security
+should avoid introducing message insertion threats and provide proper
+countermeasures for any they do introduce.</p>
+
+<h2><a name="_Toc307391128"></a><a name="_Toc300324253"></a><a
+name="_Toc127703227"><span lang=X-NONE>5.4 </span><span lang=X-NONE>Message
+Deletion</span></a></h2>
+
+<p class=MsoNormal>This profile of WS-Security is not vulnerable to message
+deletion attacks other than denial of service. Higher-level protocols built on
+top of SOAP and WS-Security should avoid introducing message deletion threats
+and provide proper countermeasures for any they do introduce.</p>
+
+<h2><a name="_Toc307391129"></a><a name="_Toc300324254"></a><a
+name="_Toc127703228"><span lang=X-NONE>5.5 </span><span lang=X-NONE>Message
+Modification</span></a></h2>
+
+<p class=MsoNormal>Message Modification poses a threat to the integrity of a
+message. The threat of message modification can be thwarted by signing the
+relevant and immutable content by the key holder. The receivers SHOULD only
+trust the integrity of those segments of the message that are signed by the key
+holder. </p>
+
+<p class=MsoNormal>To ensure that message receivers can have confidence that
+received licenses have not been forged or altered since their issuance,
+licenses appearing in &lt;wsse:Security&gt; header elements SHOULD be integrity
+protected (e.g. signed) by their issuing authority. It is strongly RECOMMENDED
+that a message sender sign any &lt;r:license&gt; elements that it is confirming
+and that are not signed by their issuing authority.</p>
+
+<p class=MsoNormal>Transport-layer security MAY be used to protect the message
+and contained licenses and/or license references from modification while in
+transport, but signatures are required to extend such protection through
+intermediaries.</p>
+
+<h2><a name="_Toc307391130"></a><a name="_Toc300324255"></a><a
+name="_Toc127703229"><span lang=X-NONE>5.6 </span><span lang=X-NONE>Man-in-the-Middle</span></a></h2>
+
+<p class=MsoNormal>This profile of WS-Security is not vulnerable to
+man-in-the-middle attacks. Higher-level protocols built on top of SOAP and
+WS-Security should avoid introducing Man-in-the-Middle threats and provide
+proper countermeasures for any they do introduce.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:none;border-top:solid gray 1.0pt;padding:6.0pt 0in 0in 0in'>
+
+<h1><a name="_Toc307391131"></a><a name="_Toc300324256"><span lang=X-NONE>6<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=X-NONE>References</span></a></h1>
+
+</div>
+
+<p class=Ref><a name=SHA11><span class=Bold><span style='color:windowtext'>[KEYWORDS]
+        </span></span></a><span style='color:windowtext'>S. Bradner, &quot;Key
+words for use in RFCs to Indicate Requirement Levels,&quot; RFC 2119, Harvard
+University, March 1997, http://www.ietf.org/rfc/rfc2119.txt</span></p>
+
+<p class=Ref><b><span style='color:windowtext'>[REL]</span></b><span
+style='color:windowtext'>                      ISO/IEC 21000-5:2004,
+&quot;Information technology -- Multimedia framework (MPEG-21) -- Part 5:
+Rights Expression Language,&quot;
+http://www.iso.org/iso/en/CatalogueDetailPage.CatalogueDetail?CSNUMBER=36095&amp;ICS1=35&amp;ICS2=40&amp;ICS3=</span></p>
+
+<p class=Ref><a name=SHA1></a><span class=Bold><span style='color:windowtext'>[SOAP]
+                  </span></span><span style='color:windowtext'>D. Box, D
+Ehnebuske, G. Kakivaya, A. Layman, N. Mendelsohn, H. Frystyk Nielsen, S Thatte,
+D. Winer. Simple Object Access Protocol (SOAP) 1.1, W3C Note 08 May 2000,
+http://www.w3.org/TR/SOAP/<br>
+<br>
+</span><span style='color:windowtext'>W3C Recommendation, &quot;SOAP Version
+1.2 Part 1: Messaging Framework&quot;, 23 June 2003</span></p>
+
+<p class=Ref><a name=soap-sec></a><a name=uri></a><span class=Bold><span
+style='color:windowtext'>[URI]                       </span></span><span
+style='color:windowtext'>T. Berners-Lee, R. Fielding, L. Masinter,
+&quot;Uniform Resource Identifiers (URI): Generic Syntax,&quot; RFC 2396,
+MIT/LCS, U.C. Irvine, Xerox Corporation, August 1998,
+http://www.ietf.org/rfc/rfc2396.txt<br>
+<br>
+</span><span style='color:windowtext'>T. Berners-Lee, R. Fielding, L. Masinter,
+&quot;Uniform Resource Identifiers (URI): Generic Syntax,&quot; RFC 3986,
+MIT/LCS, Day Software, Adobe Systems, January 2005, </span><span
+style='color:windowtext'>http://www.ietf.org/rfc/rfc3986.txt</span><span
+style='color:windowtext'>.</span></p>
+
+<p class=Ref><a name=wssec></a><a name=xml-c14n></a><span class=Bold><span
+style='color:windowtext'>[WS-Security]</span></span><span class=Bold><span
+style='color:windowtext'>         </span></span><i>Web Services Security: SOAP
+Message Security Version 1.1.1</i>. 18 May 2012. OASIS Standard. <span
+class=MsoHyperlink><a
+href="http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-SOAPMessageSecurity-v1.1.1-os.html">http://docs.oasis-open.org/wss-m/wss/v1.1.1/os/wss-SOAPMessageSecurity-v1.1.1-os.html</a></span>.<span
+style='color:windowtext'><br>
+<br>
+OASIS Standard, &quot;Web Services Security: Soap Message Security 1.1
+(WS-Security 2004),&quot; November 2005, http://docs.oasis-open.org/wss/ oasis-wss-soap-message-security-1.1.pdf</span></p>
+
+<p class=Ref><a name=xml-ns></a><span class=Bold><span style='color:windowtext'>[XML-ns]
+               </span></span><span style='color:windowtext'>T. Bray, D.
+Hollander, A. Layman. Namespaces in XML. W3C Recommendation. January 1999,
+http://www.w3.org/TR/1999/REC-xml-names-19990114</span></p>
+
+<p class=Ref><a name=xml-schema1></a><a name=xml-signature></a><span
+class=Bold><span style='color:windowtext'>[XML Signature]     </span></span><span
+style='color:windowtext'>D. Eastlake, J. R., D. Solo, M. Bartel, J. Boyer , B.
+Fox , E. Simon. XML-Signature Syntax and Processing, W3C Recommendation, 12
+February 2002.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:none;border-top:solid gray 1.0pt;padding:6.0pt 0in 0in 0in'>
+
+<h1><a name="_Toc307391132"></a><a name="_Toc300324257"><span lang=X-NONE>7<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=X-NONE>Conformance</span></a><span lang=X-NONE> </span></h1>
+
+</div>
+
+<p class=MsoNormal>An implementation conforms to this specification if it meets
+the requirements in Sections 2.1, 2.2 and 3.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:none;border-top:solid gray 1.0pt;padding:6.0pt 0in 0in 0in'>
+
+<p class=AppendixHeading1><a name="_Toc307391133"></a><a name="_Toc300324258"></a><a
+name="_Toc85472897"><span lang=X-NONE>A.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span lang=X-NONE>Acknowledgements</span></a></p>
+
+</div>
+
+<p class=MsoNormal>The following individuals have participated in the creation
+of this specification and are gratefully acknowledged:</p>
+
+<p class=Titlepageinfo>Participants:</p>
+
+<p class=Titlepageinfo>Current Contributors:</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:.5in;border-collapse:collapse'>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Tom</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Rutt</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Fujitsu Limited</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Jacques</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Durand</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Fujitsu Limited</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Calvin</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Powers</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>IBM</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Kelvin</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Lawrence</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>IBM</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Michael </p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>McIntosh</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Individual</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Thomas</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Hardjono</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>M.I.T.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>David</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Turner </p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft Corporation</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Anthony</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Nadalin</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft Corporation</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Monica</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Martin</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft Corporation</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Marc</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Goodner</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft Corporation</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Peter</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Davis</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Neustar</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Hal</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Lockhart</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Oracle Corporation</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Rich</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Levinson</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Oracle Corporation</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Anil</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Saldhana</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Red Hat</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Martin</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Raepple</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>SAP AG</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Federico</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Rossini</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Telecom Italia S.p.a.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Carlo</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Milono</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>TIBCO Software Inc.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Don</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Adams</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>TIBCO Software Inc.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Jerry</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Smith</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt 0in 5.4pt 0in 5.4pt !msorm'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>US Department of Defense
+  (DoD)</p>
+  </td>
+ </tr>
+</table>
+
+<p class=Titlepageinfo>Previous Contributors:</p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='margin-left:.5in;border-collapse:collapse'>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Michael</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Hu</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Actional</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Maneesh</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Sahu</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Actional</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Duane</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Nickull</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Adobe Systems</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Gene</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Thurston</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>AmberPoint</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Frank</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Siebenlist</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Argonne National
+  Laboratory</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Peter</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Dapkus</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>BEA</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Hal</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Lockhart</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>BEA Systems</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Denis</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Pilipchuk</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>BEA Systems</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Corinna</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Witt</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>BEA Systems</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Steve</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Anderson </p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>BMC Software</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Rich</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Levinson</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Computer Associates</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Thomas</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>DeMartini</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>ContentGuard</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Guillermo</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Lao</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>ContentGuard</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>TJ</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Pannu</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>ContentGuard</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Xin</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Wang</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>ContentGuard</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Merlin</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Hughes</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Cybertrust</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Dale</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Moberg</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Cyclone Commerce</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Shawn</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Sharp</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Cyclone Commerce</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Rich</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Salz</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Datapower</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Ganesh</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Vaideeswaran</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Documentum</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Sam</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Wei</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>EMC</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>John</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Hughes</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Entegrity</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Tim</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Moses</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Entrust</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Carolina </p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Canales-Valenzuela</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Ericsson</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Davanum</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Srinivas</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>formerly of Computer
+  Associates</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Mark</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Hayes</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>formerly of VeriSign</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Dana S.</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Kaufman</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Forum Systems</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Toshihiro</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Nishimura</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Fujitsu</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Tom</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Rutt</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Fujitsu</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Kefeng</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Chen</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>GeoTrust</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Irving </p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Reid</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Hewlett-Packard</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Kojiro</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Nakayama</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Hitachi </p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Yutaka</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Kudo</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Hitachi </p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Jason</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Rouault</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>HP</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Paula</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Austel</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>IBM</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Derek</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Fu</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>IBM</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Maryann</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Hondo</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>IBM</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Kelvin</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Lawrence </p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>IBM</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Michael</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>McIntosh</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>IBM</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Anthony</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Nadalin</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>IBM</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Nataraj</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Nagaratnam</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>IBM</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Bruce</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Rich</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>IBM</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Ron</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Williams</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>IBM</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Bob</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Blakley</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>IBM</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Joel</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Farrell</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>IBM</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Satoshi</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Hada</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>IBM</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Hiroshi</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Maruyama</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>IBM</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>David</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Melgar</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>IBM</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Kent </p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Tamura</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>IBM</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Wayne </p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Vicknair</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>IBM</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Don</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Flinn</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Individual</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Phil</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Griffin </p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Individual</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Bob</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Morgan</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Individual/Internet2</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Kate</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Cherry</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Lockheed Martin</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Paul</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Cotton</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Vijay</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Gajjala</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Martin</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Gudgin</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Chris</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Kaler</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Bob</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Atkinson</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Keith</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Ballinger</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Allen</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Brown</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Giovanni</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Della-Libera</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Alan</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Geller</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Johannes</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Klein</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Scott</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Konersmann</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Chris</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Kurt</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Brian</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>LaMacchia</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Paul</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Leach</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>John</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Manferdelli</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>John</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Shewchuk</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Dan</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Simon</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Hervey</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Wilson </p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Microsoft</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Jeff</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Hodges</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Neustar/Sun</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Frederick </p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Hirsch</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Nokia</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Senthil</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Sengodan</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Nokia</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Abbie</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Barbir</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Nortel</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Lloyd</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Burch</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Novell</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Ed</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Reed</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Novell</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Charles</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Knouse</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Oblix</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Vamsi</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Motukuru</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Oracle</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Vipin</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Samar </p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Oracle</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Jerry</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Schwarz</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Oracle</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Prateek</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Mishra</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Principal Identity</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Eric</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Gravengaard</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Reactivity</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Stuart</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>King</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Reed Elsevier</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Ben</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Hammond </p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>RSA Security</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Rob</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Philpott</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>RSA Security</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Andrew</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Nash</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>RSA Security</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Peter</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Rostin</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>RSA Security</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Martijn</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>de Boer</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>SAP</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Blake</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Dournaee</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Sarvega</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Sundeep</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Peechu</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Sarvega</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Pete</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Wenzel</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>SeeBeyond</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Jonathan</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Tourzan</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Sony</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Yassir</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Elley</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Sun</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Manveen</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Kaur</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Sun Microsystems</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Ronald</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Monzillo</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Sun Microsystems</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Jan</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Alexander</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Systinet</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Michael</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Nguyen</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>The IDA of Singapore</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Don</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Adams </p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>TIBCO</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Symon</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Chang</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>TIBCO Software</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>John</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Weiland</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>US Navy</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Hans</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Granqvist</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>VeriSign</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Phillip</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Hallam-Baker</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>VeriSign</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Hemma</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Prafullchandra</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>VeriSign</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpFirst style='margin-left:0in'>Morten</p>
+  </td>
+  <td width=144 valign=top style='width:1.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpMiddle style='margin-left:0in'>Jorgensen</p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=ContributorCxSpLast style='margin-left:0in'>Vordel</p>
+  </td>
+ </tr>
+</table>
+
+<p class=Contributor>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:none;border-top:solid gray 1.0pt;padding:6.0pt 0in 0in 0in'>
+
+<p class=AppendixHeading1><a name="_Toc307391134"></a><a name="_Toc300324259"></a><a
+name="_Toc85472898"><span lang=X-NONE>B.<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span lang=X-NONE>Revision History</span></a></p>
+
+</div>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=135 valign=top style='width:101.4pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b>Revision</b></p>
+  </td>
+  <td width=111 valign=top style='width:83.1pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b>Date</b></p>
+  </td>
+  <td width=140 valign=top style='width:104.9pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b>Editor</b></p>
+  </td>
+  <td width=253 valign=top style='width:189.4pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b>Changes Made</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=135 valign=top style='width:101.4pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>WD01</p>
+  </td>
+  <td width=111 valign=top style='width:83.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>17-January-2011</p>
+  </td>
+  <td width=140 valign=top style='width:104.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Carlo Milono</p>
+  </td>
+  <td width=253 valign=top style='width:189.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Corrected/added hyperlinks where missing; added Status
+  section</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=135 valign=top style='width:101.4pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>WD02</p>
+  </td>
+  <td width=111 valign=top style='width:83.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>8-February-2011</p>
+  </td>
+  <td width=140 valign=top style='width:104.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Carlo Milono</p>
+  </td>
+  <td width=253 valign=top style='width:189.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Added Related Work to reflect v1.1.1 of the specs; changed
+  References for SOAP Message Security to reflect v1.1.1; Changed WD# to 2;
+  Added Date; Moved Current Members to Previous and added new Current Members;
+  saved document under wd02; entered the Revision History</p>
+  <p class=MsoNormal>Merged Old Current Contributors with Old Previous, created
+  a New Current Contributors.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=135 valign=top style='width:101.4pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>CSD01</p>
+  </td>
+  <td width=111 valign=top style='width:83.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>2-May-2011</p>
+  </td>
+  <td width=140 valign=top style='width:104.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>TC Admin</p>
+  </td>
+  <td width=253 valign=top style='width:189.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Generated from WD02</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=135 valign=top style='width:101.4pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>CSD02-draft</p>
+  </td>
+  <td width=111 valign=top style='width:83.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>16-May-11</p>
+  </td>
+  <td width=140 valign=top style='width:104.9pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>David Turner</p>
+  </td>
+  <td width=253 valign=top style='width:189.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Added conformance statement and corrected a few formatting
+  issues.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoToc1>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
