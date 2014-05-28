@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?>
+<mpdcat:Catalog xmlns:mpdcat="http://reference.niem.gov/niem/resource/mpd/catalog/1.0/" mpdcat:descriptionText="This model produces the XSD for GRA annotations" mpdcat:mpdName="GRAAnnotation" mpdcat:mpdURI="http://ijis.org/GRAAnnotation" mpdcat:mpdVersionID="1.0">
+  <mpdcat:FileSet mpdcat:files="7" mpdcat:id="fs_3" mpdcat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/nature#file-set" mpdcat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#exchange-schema-set"/>
+  <mpdcat:FileSet mpdcat:files="2 8" mpdcat:id="fs_5" mpdcat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/nature#file-set" mpdcat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#extension-schema-set"/>
+  <mpdcat:File mpdcat:descriptionText="Serves the purpose of specifying business rules applied to this IEPD." mpdcat:id="1" mpdcat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/nature#xmi" mpdcat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#business-rules" mpdcat:relativePathName="./business-rules/myRuleSuite"/>
+  <mpdcat:File mpdcat:descriptionText="A Documented Component" mpdcat:id="2" mpdcat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/nature#xsd" mpdcat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#extension-schema" mpdcat:relativePathName="./XMLschemas/extension/Extension Model.xsd"/>
+  <mpdcat:File mpdcat:id="4" mpdcat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/nature#xsd" mpdcat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#org.eclipse.emf.ecore.impl.DynamicEObjectImpl@3a64f3a (eClass: org.eclipse.emf.ecore.impl.EClassImpl@4acfe4aa (name: OclInvalid_Class) (instanceClassName: null) (abstract: false, interface: false))" mpdcat:relativePathName="./GRAUML/GRA_WSDL.xsd"/>
+  <mpdcat:File mpdcat:descriptionText="Serves the purpose of a change log." mpdcat:id="6" mpdcat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/nature#xml" mpdcat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#changelog" mpdcat:relativePathName="./changelog.xml"/>
+  <mpdcat:File mpdcat:id="7" mpdcat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/nature#xsd" mpdcat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#exchange-schema" mpdcat:relativePathName="./XMLschemas/exchange/ExchangeModel.xsd"/>
+  <mpdcat:File mpdcat:id="8" mpdcat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/nature#xsd" mpdcat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#extension-schema" mpdcat:relativePathName="./GRAUML/GRAAnnotationModel.xsd"/>
+  <mpdcat:File mpdcat:descriptionText="Serves the purpose of an XML Document Instance use for Exchange." mpdcat:id="9" mpdcat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/nature#xml" mpdcat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#sample-instance" mpdcat:relativePathName="./XMLsamples/MyExchange.xml"/>
+  <mpdcat:File mpdcat:descriptionText="Serves the purpose of a formal representation (e.g., UML) of business data requirements that indicates data semantics, structure, and relationships." mpdcat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/nature#zip" mpdcat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#data-model" mpdcat:relativePathName="./library/uml/GRAAnnotationIEPD.mdzip"/>
+  <mpdcat:File mpdcat:descriptionText="Serves the purpose of a primary source of documentation; a readme file; a first documentation source to consult and one that may reference other supplemental documentation." mpdcat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/nature#doc" mpdcat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#master-document" mpdcat:relativePathName="./master-document.odt"/>
+  <mpdcat:File mpdcat:descriptionText="Serves the purpose of identifying, locating, and describing all artifacts in a model package description." mpdcat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/nature#catalog" mpdcat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#catalog" mpdcat:relativePathName="./catalog.mpdcat"/>
+  <mpdcat:File mpdcat:descriptionText="Serves the purpose of an XML instance document that represents a NIEM schema subset and is an input to or output from the NIEM Schema Subset Generation Tool." mpdcat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/nature#wantlist" mpdcat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#wantlist" mpdcat:relativePathName="./XMLschemas/subset/niem/wantlist.wlxml"/>
+  <mpdcat:File mpdcat:descriptionText="Serves the purpose of formatting information for viewing on a computer monitor." mpdcat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/nature#xslt" mpdcat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#transformation" mpdcat:relativePathName="./XMLsamples/xsl/XMLviewer-gif.xsl"/>
+  <mpdcat:Metadata>
+    <mpdcat:SecurityMarkingText>Unclassified/public</mpdcat:SecurityMarkingText>
+    <mpdcat:KeywordText>GRA</mpdcat:KeywordText>
+    <mpdcat:DomainText>GRAAnnotation</mpdcat:DomainText>
+    <mpdcat:PurposeText>This model defines the metamodel for GRA which is used to annotate artifacts.</mpdcat:PurposeText>
+    <mpdcat:AuthoritativeSource>
+      <mpdcat:ASName>GRAAnnotationIEPD</mpdcat:ASName>
+      <mpdcat:POC>
+        <mpdcat:POCName>PointOfContact</mpdcat:POCName>
+        <mpdcat:POCEmail>poc@niem.org</mpdcat:POCEmail>
+        <mpdcat:POCTelephone>(888)888-8888</mpdcat:POCTelephone>
+      </mpdcat:POC>
+    </mpdcat:AuthoritativeSource>
+  </mpdcat:Metadata>
+</mpdcat:Catalog>

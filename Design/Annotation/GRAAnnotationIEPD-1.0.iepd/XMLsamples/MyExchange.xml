@@ -1,0 +1,4 @@
+<Q:GRAAnnotationExchange  xmlns:Q_="http://default.com/my/extension" xmlns:Q="http://default.com/my/exchange" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://default.com/my/exchange ./../XMLschemas/exchange/ExchangeModel.xsd
+" >
+</Q:GRAAnnotationExchange>	

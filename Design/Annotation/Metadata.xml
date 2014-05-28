@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gra:ServiceMetadata xsi:schemaLocation="http://it.ojp.gov/gsp/services/1.0.0 Metadata.xsd" xmlns:gra="http://it.ojp.gov/gsp/services/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<gra:ServiceIdentification>
+		<gra:ServiceFullNameText>Corrections Information Sharing Service</gra:ServiceFullNameText>
+		<gra:ServiceID></gra:ServiceID>
+		<gra:ServiceURI></gra:ServiceURI>
+		<gra:ServiceNameAbbreviationText>CIS</gra:ServiceNameAbbreviationText>
+	</gra:ServiceIdentification>
+	<gra:ServiceDescription>
+		<gra:ServicePurposeText>This service takes a holistic look at the information sharing requirement and needs for release and re-entry from the perspective of corrections, other justice partners and community based service providers.  The release and re-entry processes vary according to the respective business operations, processes and policies observed by the participating stakeholders including corrections, law enforcement, courts and community service providers.</gra:ServicePurposeText>
+		<gra:ServiceScopeDescriptionText>The IJIS Institute invited key practitioners from corrections, law enforcement, courts and national leaders in corrections and re-entry community of interest to help articulate the requirements for information sharing.  This group helped develop an overall Corrections Process Narrative (available as a separate document), and identified a number of exchanges that are critical for effective information sharing leading to an effective re-entry experience for an individual.  These exchanges were then further refined/prioritized to identify the top 10 exchanges that needed to be addressed as a group.  These exchanges are detailed in the Corrections SDD document</gra:ServiceScopeDescriptionText>
+		<gra:ServiceDescriptionSummaryText>Service for accessing information about a corrections subject with respect to release.</gra:ServiceDescriptionSummaryText>
+		<gra:ServiceDescriptionText>Service for accessing information about a corrections subject with respect to release and re-entry.</gra:ServiceDescriptionText>
+		<gra:ServiceDescriptionKeywordText>Corrections, CIS, Release, re-entry</gra:ServiceDescriptionKeywordText>
+		<gra:ServiceCapabilities>
+			<gra:CapabilityDescriptionText>Service for Inquiries about an individual to obtain demographic, release and risk information.</gra:CapabilityDescriptionText>
+			<gra:CapabilityDescriptionText>Service for Share Notifications about the individual with a broad array of stakeholders based as the individual proceeds through the corrections process.</gra:CapabilityDescriptionText>
+			<gra:CapabilityDescriptionText>Service for Treatment Information about the individual with community based providers so they are able to provide adequate treatment while the individual is released.</gra:CapabilityDescriptionText>
+			<gra:CapabilityDescriptionText>Criminal History information.</gra:CapabilityDescriptionText>
+			<gra:CapabilityDescriptionText>Service for Risk Assessment information so that the community based service providers better understand the risks associated with an individual.</gra:CapabilityDescriptionText>
+			<gra:CapabilityDescriptionText>Service for Treatment Status to be shared between the community based service providers and the supervisory authorities.</gra:CapabilityDescriptionText>
+			<gra:CapabilityDescriptionText>Service for Housing Information to that the individual is housed appropriately based on their specific housing needs and risk profiles
+.</gra:CapabilityDescriptionText>
+			<gra:CapabilityDescriptionText>Service for Medicaid Entitlements so that he individual has appropriate coverage, and help minimize costs for the correctional facilities.</gra:CapabilityDescriptionText>
+			<gra:CapabilityDescriptionText>Service for accessing information about a corrections subject with respect to release.</gra:CapabilityDescriptionText>
+		</gra:ServiceCapabilities>
+		<gra:ServiceRealWorldEffects>
+			<gra:RealWorldEffectDescriptionText>Corrections, law enforcement agencies, courts, and community service providers have much to gain by sharing information at the appropriate time and in a secure manner for the purpose of improving services for an individual. Enhancing the short and long term safety and security of staff, officers and the community being served by sharing information will provide better opportunities for more successful outcomes.  The lack of effective, standards based information sharing capability between corrections, law enforcement, and community support service and treatment providers inhibits the overall effort to effectively address the needs of these individuals in receiving appropriate services and treatment.  Failure to share information related to an individual can create a danger for victims, impact public safety and officer safety, and affect the community at large by having a direct impact on the occurrence of recidivism.</gra:RealWorldEffectDescriptionText>
+		</gra:ServiceRealWorldEffects>
+		<gra:SecurityClassificationText>SBU</gra:SecurityClassificationText>
+		<gra:ServiceDependencies/>
+		<gra:IEPDReferences>
+			<gra:IEPDReference>
+				<gra:IEPDName>CorrectionsIEPD</gra:IEPDName>
+				<gra:IEPDURL></gra:IEPDURL>
+			</gra:IEPDReference>
+		</gra:IEPDReferences>
+	</gra:ServiceDescription>
+	<gra:VersionInformation>
+		<gra:MajorVersion>1</gra:MajorVersion>
+		<gra:MinorVersion>0</gra:MinorVersion>
+		<gra:RevisionVersion>0</gra:RevisionVersion>
+		<gra:CreationDate>2014-04-10</gra:CreationDate>
+		<gra:LifecycleStatus>Operational/Prototype</gra:LifecycleStatus>
+	</gra:VersionInformation>
+    <gra:RelatedOrganizationInformation>
+        <gra:Organization>
+            <gra:OrganizationName>Office of Justice Programs</gra:OrganizationName>
+	    <gra:OrganizationAcronym>OJP</gra:OrganizationAcronym>
+	    <gra:OrganizationFullAddressText>810 Seventh Street NW, Washington, DC 20531</gra:OrganizationFullAddressText>
+	    <gra:OrganizationWebSiteURL>http://www.ojp.usdoj.gov/smart/</gra:OrganizationWebSiteURL>
+	    <gra:OrganizationRoleDescriptionText>Owner</gra:OrganizationRoleDescriptionText>
+	    <gra:OrganizationRoleDetailedDescriptionText>Owner</gra:OrganizationRoleDetailedDescriptionText>
+	    <gra:OrganizationPointOfContact>
+						<gra:ContactPersonName>TBD</gra:ContactPersonName>
+						<gra:ContactPersonEmailID>TBD</gra:ContactPersonEmailID>
+						<gra:ContactPersonPhoneNumberID>TBD</gra:ContactPersonPhoneNumberID>
+						<gra:ContactPersonAddress>TBD</gra:ContactPersonAddress>
+		</gra:OrganizationPointOfContact>
+	</gra:Organization>
+    </gra:RelatedOrganizationInformation>
+	<gra:BusinessContext>
+		<gra:DomainDescription>
+			<gra:DomainNameText>Law Enforcement, Corrections</gra:DomainNameText>
+		</gra:DomainDescription>
+		<gra:Classifications>
+			<gra:Classification></gra:Classification>
+		</gra:Classifications>
+		<gra:ExchangePartnerTypes>
+			<gra:ExchangePartnerTypeDescriptionText>Law Enforcement, Public Safety, Prosecution, Corrections, Probation, Parole</gra:ExchangePartnerTypeDescriptionText>
+		</gra:ExchangePartnerTypes>
+		<gra:Endorsements>
+			<gra:Endorser></gra:Endorser>
+		</gra:Endorsements>
+		<gra:Sponsors>
+			<gra:Sponsor>Office of Justice Programs, U.S. Department of Justice</gra:Sponsor>
+		</gra:Sponsors>
+	</gra:BusinessContext>
+	<gra:ServiceInterface>
+		<gra:URIDetails>
+			<gra:URIDetail>
+				<gra:URIAddress>http://it.ojp.gov/gist/200/Corrections/</gra:URIAddress>
+				<gra:URIDescription>Corrections Service Interface</gra:URIDescription>
+			</gra:URIDetail>
+		</gra:URIDetails>
+		<gra:ServiceActions>
+			<gra:ServiceAction>
+				<gra:ActionName>SubjectQuery</gra:ActionName>
+				<gra:ActionPurpose>Get information on a subject as defined by the service agreement</gra:ActionPurpose>
+				<gra:MessageExchangePattern>REQUEST-REPLY</gra:MessageExchangePattern>
+			</gra:ServiceAction>
+			<gra:ServiceAction>
+				<gra:ActionName>EntityQuery</gra:ActionName>
+				<gra:ActionPurpose>Get information about an entity connected to a subject, usualy used to get more information about the entity</gra:ActionPurpose>
+				<gra:MessageExchangePattern>REQUEST-REPLY</gra:MessageExchangePattern>
+			</gra:ServiceAction>
+		</gra:ServiceActions>
+		<gra:ServiceInteractionProfiles>
+			<gra:ServiceInteractionProfile>
+				<gra:SIPName>WS-SIP</gra:SIPName>
+				<gra:SIPVersion>1.3</gra:SIPVersion>
+			</gra:ServiceInteractionProfile>
+		</gra:ServiceInteractionProfiles>
+		<gra:SecurityImplementedIndicator>false</gra:SecurityImplementedIndicator>
+		<gra:SecurityDescriptionText>GFIPM</gra:SecurityDescriptionText>
+	</gra:ServiceInterface>
+	<gra:ServiceLevelAgreements>
+		<gra:ServicePolicyAndContracts>
+			<gra:ApplicablePoliciesIndicator>true</gra:ApplicablePoliciesIndicator>
+			<gra:ApplicablePolicies>
+				<gra:PolicyText>CJIS Security Policy</gra:PolicyText>
+			</gra:ApplicablePolicies>
+			<gra:ApplicableContractsIndicator>false</gra:ApplicableContractsIndicator>
+			<gra:ApplicableAgreementsIndicator>false</gra:ApplicableAgreementsIndicator>
+			<gra:ApplicableUmbrellaAgreementsIndicator>false</gra:ApplicableUmbrellaAgreementsIndicator>
+		</gra:ServicePolicyAndContracts>
+		<gra:PerformanceMetrics>
+			<gra:ServiceResponseTime>P1Y2M3DT10H30M</gra:ServiceResponseTime>
+			<gra:ServiceAverageThroughput></gra:ServiceAverageThroughput>
+			<gra:ServiceMaximumThroughput></gra:ServiceMaximumThroughput>
+			<gra:ServiceAvailability></gra:ServiceAvailability>
+		</gra:PerformanceMetrics>
+		<gra:ServiceUsageDetails>
+			<gra:ApprovalRequiredIndicator>false</gra:ApprovalRequiredIndicator>
+			<gra:LicensingRequiredIndicator>false</gra:LicensingRequiredIndicator>
+		</gra:ServiceUsageDetails>
+	</gra:ServiceLevelAgreements>
+</gra:ServiceMetadata>
