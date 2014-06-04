@@ -106,9 +106,9 @@
         <xsd:sequence>
           <xsd:element maxOccurs="1" minOccurs="0" ref="SANWSDL:MessageLocationCode"/>
         </xsd:sequence>
-        <xsd:attribute ref="SANWSDL:mimeType" use="optional"/>
-        <xsd:attribute ref="SANWSDL:encoding" use="optional"/>
         <xsd:attribute ref="SANWSDL:soapAction" use="optional"/>
+        <xsd:attribute ref="SANWSDL:encoding" use="optional"/>
+        <xsd:attribute ref="SANWSDL:mimeType" use="optional"/>
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -151,14 +151,14 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
-  <xsd:complexType abstract="false" mixed="false" name="WSDLServiceProviderType">
+  <xsd:complexType abstract="false" mixed="false" name="WSDLServiceType">
     <xsd:annotation>
       <xsd:appinfo>
-        <i:Base i:name="ServiceProviderType" i:namespace="http://ijis.org/GRA/Annotations"/>
+        <i:Base i:name="ServiceType" i:namespace="http://ijis.org/GRA/Annotations"/>
       </xsd:appinfo>
     </xsd:annotation>
     <xsd:complexContent>
-      <xsd:extension base="SAN:ServiceProviderType">
+      <xsd:extension base="SAN:ServiceType">
         <xsd:sequence/>
       </xsd:extension>
     </xsd:complexContent>

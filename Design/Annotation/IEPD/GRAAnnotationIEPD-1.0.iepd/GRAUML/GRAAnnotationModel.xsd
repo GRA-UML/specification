@@ -16,7 +16,7 @@
   </xsd:attribute>
   <xsd:attribute name="flag" type="xsd:string">
     <xsd:annotation>
-      <xsd:documentation source=""/>
+      <xsd:documentation source="">Flag provides an arbitrary extension mechanism where by any business or technology choice may be notated on the containing element. The intent is that the phase-2 transform will then respect these flags and produce the desired result. Unkown flags are ignored.</xsd:documentation>
     </xsd:annotation>
   </xsd:attribute>
   <xsd:attribute name="isAsyncronous" type="xsd:boolean">
@@ -30,6 +30,11 @@
     </xsd:annotation>
   </xsd:attribute>
   <xsd:attribute name="other_requirement" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation source=""/>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="value" type="xsd:anySimpleType">
     <xsd:annotation>
       <xsd:documentation source=""/>
     </xsd:annotation>
@@ -452,7 +457,7 @@
       <xsd:appinfo>
         <i:ReferenceTarget i:name="ParticipantType" i:namespace="http://ijis.org/GRA/Annotations"/>
       </xsd:appinfo>
-      <xsd:documentation source=""/>
+      <xsd:documentation source="">A Documented Component</xsd:documentation>
     </xsd:annotation>
   </xsd:element>
   <xsd:element abstract="false" name="Person" nillable="false" type="SAN:PersonType">
@@ -476,14 +481,19 @@
   <xsd:element abstract="false" name="ProviderReference" nillable="false" type="s:ReferenceType">
     <xsd:annotation>
       <xsd:appinfo>
-        <i:ReferenceTarget i:name="ParticipantType" i:namespace="http://ijis.org/GRA/Annotations"/>
+        <i:ReferenceTarget i:name="ServiceType" i:namespace="http://ijis.org/GRA/Annotations"/>
       </xsd:appinfo>
-      <xsd:documentation source="">A Documented Component</xsd:documentation>
+      <xsd:documentation source=""/>
     </xsd:annotation>
   </xsd:element>
   <xsd:element abstract="false" name="RealWorldEffect" nillable="false" type="SAN:UseCaseType">
     <xsd:annotation>
       <xsd:documentation source="">A Documented Component</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="RealWorldEffectDescriptionText" nillable="false" type="niem-xsd:string">
+    <xsd:annotation>
+      <xsd:documentation source=""/>
     </xsd:annotation>
   </xsd:element>
   <xsd:element abstract="false" name="RelatedOrganization" nillable="false" type="SAN:OrganizationType">
@@ -683,7 +693,7 @@
       <xsd:appinfo>
         <i:ReferenceTarget i:name="string" i:namespace="http://niem.gov/niem/proxy/xsd/2.0"/>
       </xsd:appinfo>
-      <xsd:documentation source=""/>
+      <xsd:documentation source="">Template is the name of an XSLT template that will be called to process the containing element thus overriding the default mapping.</xsd:documentation>
     </xsd:annotation>
   </xsd:element>
   <xsd:element abstract="false" name="TransactionSupportReference" nillable="false" type="s:ReferenceType">
@@ -696,7 +706,7 @@
   </xsd:element>
   <xsd:element abstract="false" name="TransformationURI" nillable="false" type="niem-xsd:anyURI">
     <xsd:annotation>
-      <xsd:documentation source="">A Documented Component</xsd:documentation>
+      <xsd:documentation source="">URI of an XSLT that transforms the skeleton SSP into a final one as the "phase-2" transform. </xsd:documentation>
     </xsd:annotation>
   </xsd:element>
   <xsd:element abstract="false" name="Type" nillable="false" type="SAN:ModelReferenceType">
@@ -759,15 +769,17 @@
   <xsd:complexType abstract="false" mixed="false" name="AmountType">
     <xsd:annotation>
       <xsd:appinfo>
-        <i:Base i:name="decimal" i:namespace="http://niem.gov/niem/proxy/xsd/2.0"/>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
       </xsd:appinfo>
       <xsd:documentation source="">A data type for an amount of money.</xsd:documentation>
     </xsd:annotation>
-    <xsd:simpleContent>
-      <xsd:extension base="niem-xsd:decimal">
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence/>
+        <xsd:attribute ref="SAN:value" use="required"/>
         <xsd:attribute ref="SAN:currencyText" use="optional"/>
       </xsd:extension>
-    </xsd:simpleContent>
+    </xsd:complexContent>
   </xsd:complexType>
   <xsd:complexType abstract="false" mixed="false" name="DescriptionType">
     <xsd:annotation>
@@ -834,18 +846,6 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
-  <xsd:complexType abstract="false" mixed="false" name="GRAServiceSpecificationType">
-    <xsd:annotation>
-      <xsd:appinfo>
-        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
-      </xsd:appinfo>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="s:ComplexObjectType">
-        <xsd:sequence/>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
   <xsd:complexType abstract="false" mixed="false" name="IEPDReferenceType">
     <xsd:annotation>
       <xsd:appinfo>
@@ -856,8 +856,8 @@
     <xsd:complexContent>
       <xsd:extension base="s:ComplexObjectType">
         <xsd:sequence>
-          <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:IEPDName"/>
-          <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:IEPDURL"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="SAN:IEPDName"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="SAN:IEPDURL"/>
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
@@ -898,8 +898,8 @@
     <xsd:complexContent>
       <xsd:extension base="SAN:GRAServiceAnnotationBaseType">
         <xsd:sequence>
-          <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:Operation"/>
-          <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:Message_default"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:Operation"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:Message_default"/>
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
@@ -947,7 +947,7 @@
           <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:Documentation"/>
           <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:ElementID"/>
           <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:DiagramLink"/>
-          <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:ModelReference"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="SAN:ModelReference"/>
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
@@ -978,7 +978,7 @@
     <xsd:complexContent>
       <xsd:extension base="SAN:GRAServiceAnnotationBaseType">
         <xsd:sequence>
-          <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:Message"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:Message"/>
           <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:MessageExchangePatternReference"/>
         </xsd:sequence>
         <xsd:attribute ref="SAN:isAsyncronous" use="optional"/>
@@ -1031,21 +1031,9 @@
         <xsd:sequence>
           <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:ContactPersonName"/>
           <xsd:element maxOccurs="1" minOccurs="0" ref="SAN:ContactPersonEmailID"/>
-          <xsd:element maxOccurs="1" minOccurs="0" ref="SAN:ContactPersonPhoneNumberID"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:ContactPersonPhoneNumberID"/>
           <xsd:element maxOccurs="1" minOccurs="0" ref="SAN:ContactPersonAddress"/>
         </xsd:sequence>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  <xsd:complexType abstract="false" mixed="false" name="PersonType">
-    <xsd:annotation>
-      <xsd:appinfo>
-        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
-      </xsd:appinfo>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="s:ComplexObjectType">
-        <xsd:sequence/>
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -1058,9 +1046,9 @@
     <xsd:complexContent>
       <xsd:extension base="SAN:GRAServiceAnnotationBaseType">
         <xsd:sequence>
-          <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:Interface"/>
-          <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:Operation_default"/>
-          <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:Message_default"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:Interface"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:Operation_default"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:Message_default"/>
           <xsd:element maxOccurs="1" minOccurs="0" ref="SAN:AddressURIReference"/>
         </xsd:sequence>
       </xsd:extension>
@@ -1117,7 +1105,7 @@
           <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:ServiceDescriptionKeywordText"/>
           <xsd:element maxOccurs="unbounded" minOccurs="1" ref="SAN:ServiceCapabilities"/>
           <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:ServiceDependencyReference"/>
-          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="SAN:IEPDReference"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:IEPDReference"/>
           <xsd:element maxOccurs="1" minOccurs="0" ref="SAN:ServiceSecurityClassification"/>
           <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:Version"/>
           <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:ServiceLevelAgreement"/>
@@ -1135,18 +1123,6 @@
   <xsd:complexType abstract="false" mixed="false" name="ServiceIdentificationType">
     <xsd:annotation>
       <xsd:appinfo>
-        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
-      </xsd:appinfo>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="s:ComplexObjectType">
-        <xsd:sequence/>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  <xsd:complexType abstract="false" mixed="false" name="ServiceIdentificationType">
-    <xsd:annotation>
-      <xsd:appinfo>
         <i:Base i:name="GRAServiceAnnotationBaseType" i:namespace="http://ijis.org/GRA/Annotations"/>
       </xsd:appinfo>
       <xsd:documentation source="">A data type for A data structure representing the means of uniquely identifying a service.</xsd:documentation>
@@ -1154,10 +1130,10 @@
     <xsd:complexContent>
       <xsd:extension base="SAN:GRAServiceAnnotationBaseType">
         <xsd:sequence>
-          <xsd:element maxOccurs="1" minOccurs="0" ref="SAN:ServiceFullNameText"/>
-          <xsd:element maxOccurs="1" minOccurs="0" ref="SAN:ServiceID"/>
-          <xsd:element maxOccurs="1" minOccurs="0" ref="SAN:ServiceURI"/>
-          <xsd:element maxOccurs="1" minOccurs="0" ref="SAN:ServiceNameAbbreviationText"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:ServiceFullNameText"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:ServiceID"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:ServiceURI"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:ServiceNameAbbreviationText"/>
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
@@ -1188,7 +1164,7 @@
     <xsd:complexContent>
       <xsd:extension base="SAN:GRAServiceAnnotationBaseType">
         <xsd:sequence>
-          <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:ParticipantReference"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:ParticipantReference"/>
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
@@ -1205,13 +1181,13 @@
         <xsd:sequence>
           <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:SecurityImplementedIndicator"/>
           <xsd:element maxOccurs="1" minOccurs="0" ref="SAN:SecurityDescriptionText"/>
-          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:ServiceURI"/>
-          <xsd:element maxOccurs="1" minOccurs="0" ref="SAN:ServiceInteractionProfile"/>
-          <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:Port_defaultReference"/>
-          <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:Interface_defaultReference"/>
-          <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:Operation_defaultReference"/>
-          <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:Message_defaultReference"/>
-          <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:ParticipantReference"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:ServiceURI"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:ServiceInteractionProfile"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:Port_defaultReference"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:Interface_defaultReference"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:Operation_defaultReference"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:Message_defaultReference"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="SAN:ProviderReference"/>
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
@@ -1230,7 +1206,7 @@
           <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:ApplicableContractsIndicator"/>
           <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:ApplicableAgreementsIndicator"/>
           <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:ApplicableUmbrellaAgreementsIndicator"/>
-          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:ApplicablePolicies"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="SAN:ApplicablePolicies"/>
           <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:UmbrellaAgreement"/>
           <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:Agreement"/>
           <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:ApplicableContract"/>
@@ -1248,7 +1224,7 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
-  <xsd:complexType abstract="false" mixed="false" name="ServiceProviderType">
+  <xsd:complexType abstract="false" mixed="false" name="ServiceType">
     <xsd:annotation>
       <xsd:appinfo>
         <i:Base i:name="ParticipantType" i:namespace="http://ijis.org/GRA/Annotations"/>
@@ -1258,10 +1234,10 @@
     <xsd:complexContent>
       <xsd:extension base="SAN:ParticipantType">
         <xsd:sequence>
-          <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:Interface_default"/>
-          <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:Message_default"/>
-          <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:Operation_default"/>
-          <xsd:element maxOccurs="1" minOccurs="1" ref="SAN:Port"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:Interface_default"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:Message_default"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:Operation_default"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SAN:Port"/>
         </xsd:sequence>
       </xsd:extension>
     </xsd:complexContent>
