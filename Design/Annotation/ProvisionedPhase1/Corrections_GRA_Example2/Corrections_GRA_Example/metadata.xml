@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gra:ServiceMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gra="http://it.ojp.gov/gsp/services/1.0.0" xsi:schemaLocation="http://it.ojp.gov/gsp/services/1.0.0 Metadata.xsd">
+  <gra:ServiceIdentification>
+    <gra:ServiceFullNameText>SORNA Inter-Jurisdiction Relocation Service</gra:ServiceFullNameText>
+    <gra:ServiceID>String</gra:ServiceID>
+    <gra:ServiceURI>http://it.ojp.gov/gsp/services/1.0.0</gra:ServiceURI>
+    <gra:ServiceNameAbbreviationText>COR</gra:ServiceNameAbbreviationText>
+  </gra:ServiceIdentification>
+  <gra:ServiceDescription>
+    <gra:ServicePurposeText>When a registered sex offender relocates from one SORNA jurisdiction to another SORNA jurisdiction, SIRS will enable the sharing of information that assists the jurisdictions with identifying, monitoring, and enforcing the offender&#x2019;s registration requirements associated with the relocation process.</gra:ServicePurposeText>
+    <gra:ServiceScopeDescriptionText>&#x2022; The sex offender&#x2019;s initial intent to relocate, along with information about the offender (Relocation Package).
+
+&#x2022; The receiving jurisdiction&#x2019;s acknowledgement of its receipt of the sending jurisdiction&#x2019;s Relocation Package, together with a message describing the receiving jurisdiction&#x2019;s registration requirements (Relocation Confirmation Notification).
+
+&#x2022; The sex offender&#x2019;s compliance with the new jurisdiction&#x2019;s registration requirements (Relocation Compliance Notification).
+
+&#x2022; The sex offender&#x2019;s failure to contact the new jurisdiction (Did Not Report Notification).
+
+&#x2022; The sending jurisdiction&#x2019;s resolution of a relocation notice (Relocation Cancelled Notification).
+
+&#x2022; The sending jurisdiction&#x2019;s request for assistance from the USMS National Sex Offender Targeting Center (Relocation Package).
+
+The following capabilities fall outside the scope of SIRS:
+
+&#x2022; Mechanisms for a sex offender to register with a SORNA jurisdiction.
+
+&#x2022; Disclosure of sex offenders&#x2019; information to the public.
+
+&#x2022; Exchanges of information between a SORNA jurisdiction&#x2019;s registering agency and local law enforcement agencies.
+
+&#x2022; Creation of new criminal charges against a sex offender for failure to comply with registration requirements.
+
+&#x2022; Maintenance of data in criminal history repositories.</gra:ServiceScopeDescriptionText>
+    <gra:ServiceDescriptionSummaryText>Service for accessing information about a corrections subject with respect to release.</gra:ServiceDescriptionSummaryText>
+    <gra:ServiceDescriptionKeywordText>Corrections, CIS, Release, re-entry</gra:ServiceDescriptionKeywordText>
+    <gra:ServiceCapabilities>
+      <gra:CapabilityDescriptionText>String</gra:CapabilityDescriptionText>
+    </gra:ServiceCapabilities>
+    <gra:ServiceRealWorldEffects>
+      <gra:RealWorldEffectDescriptionText>Service for Treatment Information about the individual with community based providers so they are able to provide adequate treatment while the individual is released.</gra:RealWorldEffectDescriptionText>
+      <gra:RealWorldEffectDescriptionText>Service for Inquiries about an individual to obtain demographic, release and risk information.</gra:RealWorldEffectDescriptionText>
+      <gra:RealWorldEffectDescriptionText>Service for accessing information about a corrections subject with respect to release.</gra:RealWorldEffectDescriptionText>
+      <gra:RealWorldEffectDescriptionText>Service for Share Notifications about the individual with a broad array of stakeholders based as the individual proceeds through the corrections process.</gra:RealWorldEffectDescriptionText>
+      <gra:RealWorldEffectDescriptionText>Service for Medicaid Entitlements so that he individual has appropriate coverage, and help minimize costs for the correctional facilities.</gra:RealWorldEffectDescriptionText>
+      <gra:RealWorldEffectDescriptionText>Service for Housing Information so that the individual is housed appropriately based on their specific housing needs and risk profiles</gra:RealWorldEffectDescriptionText>
+      <gra:RealWorldEffectDescriptionText>Service for Treatment Status to be shared between the community based service providers and the supervisory authorities.</gra:RealWorldEffectDescriptionText>
+      <gra:RealWorldEffectDescriptionText>Service for Risk Assessment information so that the community based service providers better understand the risks associated with an individual.</gra:RealWorldEffectDescriptionText>
+      <gra:RealWorldEffectDescriptionText>Service to obtain Criminal History information.</gra:RealWorldEffectDescriptionText>
+    </gra:ServiceRealWorldEffects>
+    <gra:ServiceDependencies>
+      <gra:ServiceDependency>
+        <gra:ServiceFullNameText>String</gra:ServiceFullNameText>
+        <gra:ServiceID>String</gra:ServiceID>
+        <gra:ServiceURI>http://it.ojp.gov/gsp/services/1.0.0/ServiceName</gra:ServiceURI>
+        <gra:ServiceNameAbbreviationText>String</gra:ServiceNameAbbreviationText>
+      </gra:ServiceDependency>
+    </gra:ServiceDependencies>
+    <gra:IEPDReferences>
+      <gra:IEPDReference>
+        <gra:IEPDName>Corrections</gra:IEPDName>
+        <gra:IEPDURL>http://it.ojp.gov/gist/200/Corrections/</gra:IEPDURL>
+      </gra:IEPDReference>
+    </gra:IEPDReferences>
+  </gra:ServiceDescription>
+  <gra:VersionInformation>
+    <gra:MajorVersion>1</gra:MajorVersion>
+    <gra:MinorVersion>0</gra:MinorVersion>
+    <gra:RevisionVersion>0</gra:RevisionVersion>
+    <gra:CreationDate>2014-05-26</gra:CreationDate>
+    <gra:LastRevisionDate>2014-05-26</gra:LastRevisionDate>
+    <gra:LifecycleStatus>Operational/Prototype</gra:LifecycleStatus>
+  </gra:VersionInformation>
+  <gra:RelatedOrganizationInformation>
+    <gra:Organization>
+      <gra:OrganizationName>Integrated Justice Information Systems</gra:OrganizationName>
+      <gra:OrganizationAcronym>OJP</gra:OrganizationAcronym>
+      <gra:OrganizationFullAddressText>810 Seventh Street NW, Washington, DC 20531</gra:OrganizationFullAddressText>
+      <gra:OrganizationWebSiteURL>http://www.ojp.usdoj.gov/smart/</gra:OrganizationWebSiteURL>
+      <gra:OrganizationRoleDescriptionText>Owner</gra:OrganizationRoleDescriptionText>
+      <gra:OrganizationRoleDetailedDescriptionText>Sponsor/owner of specification</gra:OrganizationRoleDetailedDescriptionText>
+      <gra:OrganizationPointOfContact>
+        <gra:ContactPersonName>TBD</gra:ContactPersonName>
+        <gra:ContactPersonPhoneNumberID>202-514-4689</gra:ContactPersonPhoneNumberID>
+      </gra:OrganizationPointOfContact>
+    </gra:Organization>
+  </gra:RelatedOrganizationInformation>
+  <gra:BusinessContext>
+    <gra:DomainDescription>
+      <gra:DomainNameText>Law Enforcement, Public Safety, Prosecution, Corrections, Probation, Parole,USMS</gra:DomainNameText>
+    </gra:DomainDescription>
+    <gra:Classifications>
+      <gra:Classification>S</gra:Classification>
+    </gra:Classifications>
+    <gra:ExchangePartnerTypes>
+      <gra:ExchangePartnerTypeDescriptionText>Law Enforcement, Public Safety, Prosecution, Corrections, Probation, Parole,USMS</gra:ExchangePartnerTypeDescriptionText>
+    </gra:ExchangePartnerTypes>
+    <gra:Endorsements>
+      <gra:Endorser>String</gra:Endorser>
+    </gra:Endorsements>
+    <gra:Sponsors>
+      <gra:Sponsor>Office of Justice Programs, U.S. Department of Justice</gra:Sponsor>
+    </gra:Sponsors>
+  </gra:BusinessContext>
+  <gra:ServiceInterface>
+    <gra:URIDetails>
+      <gra:URIDetail>
+        <gra:URIAddress>http://it.ojp.gov/gist/200/Corrections/</gra:URIAddress>
+      </gra:URIDetail>
+    </gra:URIDetails>
+    <gra:ServiceActions>
+      <gra:ServiceAction>
+        <gra:ActionName>GetMetadata</gra:ActionName>
+        <gra:MessageExchangePattern>Enquiery</gra:MessageExchangePattern>
+      </gra:ServiceAction>
+    </gra:ServiceActions>
+    <gra:ServiceActions>
+      <gra:ServiceAction>
+        <gra:ActionName>SubjectQuery</gra:ActionName>
+        <gra:ActionPurpose>An operation to get all or part of a subjects case file</gra:ActionPurpose>
+        <gra:MessageExchangePattern>Enquiery</gra:MessageExchangePattern>
+      </gra:ServiceAction>
+      <gra:ServiceAction>
+        <gra:ActionName>EntityQuery</gra:ActionName>
+        <gra:ActionPurpose>An operation to get all or part of information about an entity related to a subject case file. This is used to get more information about a related entity.</gra:ActionPurpose>
+        <gra:MessageExchangePattern>Enquiery</gra:MessageExchangePattern>
+      </gra:ServiceAction>
+    </gra:ServiceActions>
+    <gra:ServiceActions>
+      <gra:ServiceAction>
+        <gra:ActionName>CancelSubscription</gra:ActionName>
+        <gra:MessageExchangePattern>Enquiery</gra:MessageExchangePattern>
+      </gra:ServiceAction>
+      <gra:ServiceAction>
+        <gra:ActionName>SubscribeToSubject</gra:ActionName>
+        <gra:MessageExchangePattern>Enquiery</gra:MessageExchangePattern>
+      </gra:ServiceAction>
+    </gra:ServiceActions>
+    <gra:ServiceActions>
+      <gra:ServiceAction>
+        <gra:ActionName>SubjectUpdate</gra:ActionName>
+        <gra:MessageExchangePattern>Enquiery</gra:MessageExchangePattern>
+      </gra:ServiceAction>
+    </gra:ServiceActions>
+    <gra:ServiceInteractionProfiles>
+      <gra:ServiceInteractionProfile>
+        <gra:SIPName>WS-SIP</gra:SIPName>
+        <gra:SIPVersion>1.3</gra:SIPVersion>
+      </gra:ServiceInteractionProfile>
+    </gra:ServiceInteractionProfiles>
+    <gra:SecurityImplementedIndicator>true</gra:SecurityImplementedIndicator>
+    <gra:SecurityDescriptionText>GFIPM</gra:SecurityDescriptionText>
+  </gra:ServiceInterface>
+  <gra:ServiceInterface>
+    <gra:URIDetails>
+      <gra:URIDetail>
+        <gra:URIAddress>http://it.ojp.gov/gist/200/Corrections/</gra:URIAddress>
+      </gra:URIDetail>
+    </gra:URIDetails>
+    <gra:ServiceActions>
+      <gra:ServiceAction>
+        <gra:ActionName>Notify</gra:ActionName>
+        <gra:MessageExchangePattern>Enquiery</gra:MessageExchangePattern>
+      </gra:ServiceAction>
+    </gra:ServiceActions>
+    <gra:ServiceInteractionProfiles>
+      <gra:ServiceInteractionProfile>
+        <gra:SIPName>WS-SIP</gra:SIPName>
+        <gra:SIPVersion>1.3</gra:SIPVersion>
+      </gra:ServiceInteractionProfile>
+    </gra:ServiceInteractionProfiles>
+    <gra:SecurityImplementedIndicator>true</gra:SecurityImplementedIndicator>
+    <gra:SecurityDescriptionText>GFIPM</gra:SecurityDescriptionText>
+  </gra:ServiceInterface>
+  <gra:ServiceLevelAgreements>
+    <gra:ServicePolicyAndContracts>
+      <gra:ApplicablePoliciesIndicator>true</gra:ApplicablePoliciesIndicator>
+      <gra:ApplicablePolicies>
+        <gra:PolicyText>CJIS Security Policy</gra:PolicyText>
+      </gra:ApplicablePolicies>
+      <gra:ApplicableContractsIndicator>true</gra:ApplicableContractsIndicator>
+      <gra:ApplicableContracts>
+        <gra:Contract>
+          <gra:AgreementDescriptionText>String</gra:AgreementDescriptionText>
+          <gra:AgreementURI>http://it.ojp.gov/gsp/agreement/1.0.0</gra:AgreementURI>
+        </gra:Contract>
+      </gra:ApplicableContracts>
+      <gra:ApplicableAgreementsIndicator>true</gra:ApplicableAgreementsIndicator>
+      <gra:ApplicableAgreements>
+        <gra:Agreement>
+          <gra:AgreementDescriptionText>String</gra:AgreementDescriptionText>
+          <gra:AgreementURI>http://it.ojp.gov/gsp/agreement/1.0.0</gra:AgreementURI>
+        </gra:Agreement>
+      </gra:ApplicableAgreements>
+      <gra:ApplicableUmbrellaAgreementsIndicator>true</gra:ApplicableUmbrellaAgreementsIndicator>
+      <gra:ApplicableUmbrellaAgreements>
+        <gra:UmbrellaAgreement>
+          <gra:AgreementDescriptionText>String</gra:AgreementDescriptionText>
+          <gra:AgreementURI>http://it.ojp.gov/gsp/agreement/1.0.0</gra:AgreementURI>
+        </gra:UmbrellaAgreement>
+      </gra:ApplicableUmbrellaAgreements>
+    </gra:ServicePolicyAndContracts>
+    <gra:PerformanceMetrics>
+      <gra:ServiceResponseTime>P1Y2M3DT10H30M</gra:ServiceResponseTime>
+    </gra:PerformanceMetrics>
+    <gra:ServiceUsageDetails>
+      <gra:ApprovalRequiredIndicator>false</gra:ApprovalRequiredIndicator>
+      <gra:LicensingRequiredIndicator>false</gra:LicensingRequiredIndicator>
+      <gra:LicensingAgreement>
+        <gra:AgreementDescriptionText>String</gra:AgreementDescriptionText>
+        <gra:AgreementURI>http://it.ojp.gov/gsp/agreement/1.0.0</gra:AgreementURI>
+      </gra:LicensingAgreement>
+      <gra:ServiceCost>
+        <gra:UsageCostAmount gra:currencyText="USD">0.0</gra:UsageCostAmount>
+        <gra:UsageUnitCostAmount gra:currencyText="USD">0.0</gra:UsageUnitCostAmount>
+        <gra:CreationCostAmount gra:currencyText="USD">0.0</gra:CreationCostAmount>
+      </gra:ServiceCost>
+    </gra:ServiceUsageDetails>
+  </gra:ServiceLevelAgreements>
+</gra:ServiceMetadata>
