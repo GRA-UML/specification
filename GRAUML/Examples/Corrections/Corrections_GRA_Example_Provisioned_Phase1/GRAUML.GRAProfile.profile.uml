@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Profile xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_17_0_5_1_7b3022e_1401062448547_646492_3790" name="GRAProfile" URI="" metamodelReference="_17_0_5_1_7b3022e_1401062448547_708619_3791">
-  <eAnnotations xmi:id="_NGiTYe1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-    <contents xmi:type="ecore:EPackage" xmi:id="_NGiTYu1CEeONXpKqgZhDUQ" name="GRAProfile" nsURI="http:///schemas/GRAProfile/_MvvkAO1CEeONXpKqgZhDUQ/0" nsPrefix="GRAProfile">
-      <eClassifiers xmi:type="ecore:EClass" xmi:id="_NGiTY-1CEeONXpKqgZhDUQ" name="Provider">
-        <eAnnotations xmi:id="_NGiTZO1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_17_0_5_1_7b3022e_1401062467171_20084_3825"/>
-        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NGiTZe1CEeONXpKqgZhDUQ" name="base_Association" ordered="false" lowerBound="1">
+  <eAnnotations xmi:id="_e2bVMfInEeOlycdlZEEkaQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_e2bVMvInEeOlycdlZEEkaQ" name="GRAProfile" nsURI="http:///schemas/GRAProfile/_e1AY4PInEeOlycdlZEEkaQ/0" nsPrefix="GRAProfile">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_e2bVM_InEeOlycdlZEEkaQ" name="Provider">
+        <eAnnotations xmi:id="_e2bVNPInEeOlycdlZEEkaQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_17_0_5_1_7b3022e_1401062467171_20084_3825"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_e2bVNfInEeOlycdlZEEkaQ" name="base_Association" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Association"/>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xmi:type="ecore:EClass" xmi:id="_NGiTZ-1CEeONXpKqgZhDUQ" name="Consumer">
-        <eAnnotations xmi:id="_NGiTaO1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_17_0_5_1_7b3022e_1401062517330_223032_3855"/>
-        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NGiTae1CEeONXpKqgZhDUQ" name="base_Association" ordered="false" lowerBound="1">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_e2bVN_InEeOlycdlZEEkaQ" name="Consumer">
+        <eAnnotations xmi:id="_e2bVOPInEeOlycdlZEEkaQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_17_0_5_1_7b3022e_1401062517330_223032_3855"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_e2bVOfInEeOlycdlZEEkaQ" name="base_Association" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Association"/>
         </eStructuralFeatures>
       </eClassifiers>

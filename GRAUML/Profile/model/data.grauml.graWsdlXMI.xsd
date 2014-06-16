@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:data.grauml.graAnnotationModel="http://ijis.org/GRA/Annotations" xmlns:data.grauml.graWsdl="http:/ijis.org/GRA/WSDLAnnotations" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http:/ijis.org/GRA/WSDLAnnotations">
+  <xsd:import namespace="http://ijis.org/GRA/Annotations" schemaLocation="data.grauml.graAnnotationModelXMI.xsd"/>
+  <xsd:simpleType name="BindingType">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="soap"/>
+      <xsd:enumeration value="soap12"/>
+      <xsd:enumeration value="httpGet"/>
+      <xsd:enumeration value="httpPut"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="OperationKind">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="doc"/>
+      <xsd:enumeration value="rpc"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="MessageLocation">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="body"/>
+      <xsd:enumeration value="header"/>
+      <xsd:enumeration value="url"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="WsdlServiceInterface">
+    <xsd:complexContent>
+      <xsd:extension base="data.grauml.graAnnotationModel:ServiceInterfaceSpecification"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="WsdlServiceInterface" type="data.grauml.graWsdl:WsdlServiceInterface"/>
+  <xsd:complexType name="WsdlService">
+    <xsd:complexContent>
+      <xsd:extension base="data.grauml.graAnnotationModel:Service"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="WsdlService" type="data.grauml.graWsdl:WsdlService"/>
+  <xsd:complexType name="WsdlPort">
+    <xsd:complexContent>
+      <xsd:extension base="data.grauml.graAnnotationModel:Port">
+        <xsd:attribute name="certificate" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>A Documented Component&#13;
+A Documented Component</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="WsdlPort" type="data.grauml.graWsdl:WsdlPort"/>
+  <xsd:complexType name="WsdlInterface">
+    <xsd:complexContent>
+      <xsd:extension base="data.grauml.graAnnotationModel:Interface">
+        <xsd:attribute name="bindingCode" type="data.grauml.graWsdl:BindingType">
+          <xsd:annotation>
+            <xsd:documentation>A Documented Component&#13;
+A Documented Component</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="WsdlInterface" type="data.grauml.graWsdl:WsdlInterface"/>
+  <xsd:complexType name="WsdlOperation">
+    <xsd:complexContent>
+      <xsd:extension base="data.grauml.graAnnotationModel:Operation">
+        <xsd:attribute name="operationKindCode" type="data.grauml.graWsdl:OperationKind">
+          <xsd:annotation>
+            <xsd:documentation>A Documented Component&#13;
+A Documented Component</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="WsdlOperation" type="data.grauml.graWsdl:WsdlOperation"/>
+  <xsd:complexType name="WsdlMessage">
+    <xsd:complexContent>
+      <xsd:extension base="data.grauml.graAnnotationModel:Message">
+        <xsd:attribute name="messageLocationCode" type="data.grauml.graWsdl:MessageLocation">
+          <xsd:annotation>
+            <xsd:documentation>A Documented Component&#13;
+A Documented Component</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="encoding" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>A Documented Component&#13;
+A Documented Component</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="mimeType" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>A Documented Component&#13;
+A Documented Component</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="soapAction" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>A Documented Component&#13;
+A Documented Component</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="WsdlMessage" type="data.grauml.graWsdl:WsdlMessage"/>
+</xsd:schema>

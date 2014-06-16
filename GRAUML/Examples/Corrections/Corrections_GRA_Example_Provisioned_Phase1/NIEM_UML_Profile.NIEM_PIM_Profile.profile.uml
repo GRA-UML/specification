@@ -1,100 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Profile xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile" name="NIEM_PIM_Profile" URI="http://www.omg.org/spec/NIEM-UML/20120501/NIEM_PIM_Profile" metamodelReference="NIEM_UML_Profile-NIEM_PIM_Profile-packageImport-2">
-  <eAnnotations xmi:id="_NGi7iu1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-    <contents xmi:type="ecore:EPackage" xmi:id="_NGi7i-1CEeONXpKqgZhDUQ" name="NIEM_PIM_Profile" nsURI="http://www.omg.org/spec/NIEM-UML/20120501/NIEM_PIM_Profile" nsPrefix="NIEM_PIM_Profile">
-      <eAnnotations xmi:id="_NGi7jO1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/4.0.0/UML">
+  <eAnnotations xmi:id="_U4PQ0fOzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_U4PQ0vOzEeOVk_72_69jDA" name="NIEM_PIM_Profile" nsURI="http://www.omg.org/spec/NIEM-UML/20120501/NIEM_PIM_Profile" nsPrefix="NIEM_PIM_Profile">
+      <eAnnotations xmi:id="_U4PQ0_OzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/4.0.0/UML">
         <references xmi:type="uml:Profile" href="NIEM_UML_Profile.NIEM_Common_Profile.profile.uml#NIEM_UML_Profile-NIEM_Common_Profile"/>
       </eAnnotations>
-      <eClassifiers xmi:type="ecore:EClass" xmi:id="_NGi7je1CEeONXpKqgZhDUQ" name="Augments">
-        <eAnnotations xmi:id="_NGi7ju1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-NIEM_PIM_Profile-Augments"/>
-        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NGi7j-1CEeONXpKqgZhDUQ" name="base_Generalization" ordered="false" lowerBound="1">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_U4PQ1POzEeOVk_72_69jDA" name="Augments">
+        <eAnnotations xmi:id="_U4PQ1fOzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-NIEM_PIM_Profile-Augments"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_U4PQ1vOzEeOVk_72_69jDA" name="base_Generalization" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Generalization"/>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xmi:type="ecore:EClass" xmi:id="_NGi7ke1CEeONXpKqgZhDUQ" name="InformationModel" eSuperTypes="_NGi7mu1CEeONXpKqgZhDUQ">
-        <eAnnotations xmi:id="_NGi7ku1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-NIEM_PIM_Profile-InformationModel"/>
-        <eAnnotations xmi:id="_NGi7k-1CEeONXpKqgZhDUQ" source="duplicates">
-          <contents xmi:type="ecore:EReference" xmi:id="_NGi7lO1CEeONXpKqgZhDUQ" name="base_Package" ordered="false" lowerBound="1">
-            <eAnnotations xmi:id="_NGi7le1CEeONXpKqgZhDUQ" source="redefines" references="_NGi7nu1CEeONXpKqgZhDUQ"/>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_U4PQ2POzEeOVk_72_69jDA" name="InformationModel" eSuperTypes="_U4PQ4fOzEeOVk_72_69jDA">
+        <eAnnotations xmi:id="_U4PQ2fOzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-NIEM_PIM_Profile-InformationModel"/>
+        <eAnnotations xmi:id="_U4PQ2vOzEeOVk_72_69jDA" source="duplicates">
+          <contents xmi:type="ecore:EReference" xmi:id="_U4PQ2_OzEeOVk_72_69jDA" name="base_Package" ordered="false" lowerBound="1">
+            <eAnnotations xmi:id="_U4PQ3POzEeOVk_72_69jDA" source="redefines" references="_U4PQ5fOzEeOVk_72_69jDA"/>
             <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
           </contents>
         </eAnnotations>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NGi7l-1CEeONXpKqgZhDUQ" name="defaultPurpose" ordered="false" eType="_NGi7qO1CEeONXpKqgZhDUQ" defaultValueLiteral="extension"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4PQ3vOzEeOVk_72_69jDA" name="defaultPurpose" ordered="false" eType="_U4PQ7_OzEeOVk_72_69jDA" defaultValueLiteral="extension"/>
       </eClassifiers>
-      <eClassifiers xmi:type="ecore:EClass" xmi:id="_NGi7mu1CEeONXpKqgZhDUQ" name="NIEM_Common_Profile_Namespace">
-        <eAnnotations xmi:id="_NGi7m-1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_U4PQ4fOzEeOVk_72_69jDA" name="NIEM_Common_Profile_Namespace">
+        <eAnnotations xmi:id="_U4PQ4vOzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML">
           <references xmi:type="uml:Stereotype" href="NIEM_UML_Profile.NIEM_Common_Profile.profile.uml#NIEM_UML_Profile-NIEM_Common_Profile-Namespace"/>
         </eAnnotations>
-        <eAnnotations xmi:id="_NGi7nO1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/emf/2002/GenModel">
-          <details xmi:id="_NGi7ne1CEeONXpKqgZhDUQ" key="documentation" value="not(self.version.oclIsUndefined()) -- Constraint also resolved by the requirement&#xA;              that tag &quot;version&quot; is required.&#xD;&#xA;self.version&lt;>''&#xD;&#xA;self.base_Package.profiledBy('NIEM_PSM_Profile') implies&#xA;              self.base_Package.ownedType ->select(t|t.oclIsKindOf(Class) and&#xA;              not(t.stereotypedBy('PropertyHolder')))&#xA;              ->forAll(type|type.stereotypedBy('NIEMType')) -- PIM Profile Classes default to&#xA;              &lt;&lt;ObjectType>> if not otherwise specified &#xD;&#xA;self.base_Package.profiledBy('NIEM_PSM_Profile') implies&#xA;              self.base_Package.ownedType ->select(t|not(t.stereotypedBy('PropertyHolder'))&#xA;              ->forAll(schemaComponent|schemaComponent.name.firstToUpper()=schemaComponent.name)&#xA;            &#xD;&#xA;not(self.targetNamespace.oclIsUndefined()) and&#xA;              (self.targetNamespace&lt;>'') -- also partially satisfied by multiplicity&#xA;              constraint on targetNamespace &#xD;&#xA;self.profiledBy('NIEM_PSM_Profile') implies self.base_Package.ownedType&#xA;              ->select(t|t.oclIsKindOf(DataType))&#xA;              ->forAll(simpleType|simpleType.name.matches('.*SimpleType')) &#xD;&#xA;self.base_Class.profiledBy('NIEM_PSM_Profile') implies&#xA;              self.base_Package.ownedType->select(t|t.oclIsKindOf(Enumeration))&#xA;              ->forAll(otherType|otherType.ownedComment ->exists(documentation|&#xA;              documentation.stereotypedBy('Documentation') and ( documentation.body.startsWith('A&#xA;              data type for a ') or documentation.body.startsWith('A data type for an ') ) ) )&#xA;            &#xD;&#xA;self.base_Package.profiledBy('NIEM_PSM_Profile') implies&#xA;              self.base_Package.ownedType ->select(t|t.oclIsKindOf(Enumeration))&#xA;              ->forAll(enumerationDerivedType|enumerationDerivedType.name.matches('.*Code.*'))&#xD;&#xA;self.targetNamespace.isAbsoluteURI()&#xD;&#xA;self.base_Package.profiledBy('NIEM_PSM_Profile') implies&#xA;              self.base_Package.ownedType ->select(t|&#xA;              t.clientDependency->select(d|d.stereotypedBy('XSDSimpleContent')).supplier->exists(s|s.oclIsKindOf(Enumeration))&#xA;              or ( t.oclIsKindOf(Classifier) and&#xA;              t.oclAsType(Classifier).allParents().clientDependency->select(d|d.stereotypedBy('XSDSimpleContent')).supplier->exists(s|s.oclIsKindOf(Enumeration))&#xA;              ) )&#xA;              ->forAll(enumerationDerivedType|enumerationDerivedType.name.matches('.*Code.*'))&#xA;            &#xD;&#xA;self.base_Package.profiledBy('NIEM_PSM_Profile') implies&#xA;              self.base_Package.ownedComment->exists(documentation|documentation.stereotypedBy('Documentation'))&#xA;            &#xD;&#xA;self.base_Package.profiledBy('NIEM_PSM_Profile') implies&#xA;              self.base_Package.ownedType ->select(t|not(t.stereotypedBy('PropertyHolder'))&#xA;              ->forAll(schemaComponent|schemaComponent.name.match('[\\w|\\-]*')) &#xD;&#xA;self.base_Package.profiledBy('NIEM_PSM_Profile') implies&#xA;              self.base_Package.ownedComment->exists(documentation|documentation.stereotypedBy('Documentation'))&#xA;            "/>
+        <eAnnotations xmi:id="_U4PQ4_OzEeOVk_72_69jDA" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:id="_U4PQ5POzEeOVk_72_69jDA" key="documentation" value="not(self.version.oclIsUndefined()) -- Constraint also resolved by the requirement&#xA;              that tag &quot;version&quot; is required.&#xD;&#xA;self.version&lt;>''&#xD;&#xA;self.base_Package.profiledBy('NIEM_PSM_Profile') implies&#xA;              self.base_Package.ownedType ->select(t|t.oclIsKindOf(Class) and&#xA;              not(t.stereotypedBy('PropertyHolder')))&#xA;              ->forAll(type|type.stereotypedBy('NIEMType')) -- PIM Profile Classes default to&#xA;              &lt;&lt;ObjectType>> if not otherwise specified &#xD;&#xA;self.base_Package.profiledBy('NIEM_PSM_Profile') implies&#xA;              self.base_Package.ownedType ->select(t|not(t.stereotypedBy('PropertyHolder'))&#xA;              ->forAll(schemaComponent|schemaComponent.name.firstToUpper()=schemaComponent.name)&#xA;            &#xD;&#xA;not(self.targetNamespace.oclIsUndefined()) and&#xA;              (self.targetNamespace&lt;>'') -- also partially satisfied by multiplicity&#xA;              constraint on targetNamespace &#xD;&#xA;self.profiledBy('NIEM_PSM_Profile') implies self.base_Package.ownedType&#xA;              ->select(t|t.oclIsKindOf(DataType))&#xA;              ->forAll(simpleType|simpleType.name.matches('.*SimpleType')) &#xD;&#xA;self.base_Class.profiledBy('NIEM_PSM_Profile') implies&#xA;              self.base_Package.ownedType->select(t|t.oclIsKindOf(Enumeration))&#xA;              ->forAll(otherType|otherType.ownedComment ->exists(documentation|&#xA;              documentation.stereotypedBy('Documentation') and ( documentation.body.startsWith('A&#xA;              data type for a ') or documentation.body.startsWith('A data type for an ') ) ) )&#xA;            &#xD;&#xA;self.base_Package.profiledBy('NIEM_PSM_Profile') implies&#xA;              self.base_Package.ownedType ->select(t|t.oclIsKindOf(Enumeration))&#xA;              ->forAll(enumerationDerivedType|enumerationDerivedType.name.matches('.*Code.*'))&#xD;&#xA;self.targetNamespace.isAbsoluteURI()&#xD;&#xA;self.base_Package.profiledBy('NIEM_PSM_Profile') implies&#xA;              self.base_Package.ownedType ->select(t|&#xA;              t.clientDependency->select(d|d.stereotypedBy('XSDSimpleContent')).supplier->exists(s|s.oclIsKindOf(Enumeration))&#xA;              or ( t.oclIsKindOf(Classifier) and&#xA;              t.oclAsType(Classifier).allParents().clientDependency->select(d|d.stereotypedBy('XSDSimpleContent')).supplier->exists(s|s.oclIsKindOf(Enumeration))&#xA;              ) )&#xA;              ->forAll(enumerationDerivedType|enumerationDerivedType.name.matches('.*Code.*'))&#xA;            &#xD;&#xA;self.base_Package.profiledBy('NIEM_PSM_Profile') implies&#xA;              self.base_Package.ownedComment->exists(documentation|documentation.stereotypedBy('Documentation'))&#xA;            &#xD;&#xA;self.base_Package.profiledBy('NIEM_PSM_Profile') implies&#xA;              self.base_Package.ownedType ->select(t|not(t.stereotypedBy('PropertyHolder'))&#xA;              ->forAll(schemaComponent|schemaComponent.name.match('[\\w|\\-]*')) &#xD;&#xA;self.base_Package.profiledBy('NIEM_PSM_Profile') implies&#xA;              self.base_Package.ownedComment->exists(documentation|documentation.stereotypedBy('Documentation'))&#xA;            "/>
         </eAnnotations>
-        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NGi7nu1CEeONXpKqgZhDUQ" name="base_Package" ordered="false" lowerBound="1">
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_U4PQ5fOzEeOVk_72_69jDA" name="base_Package" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NGi7oO1CEeONXpKqgZhDUQ" name="targetNamespace" ordered="false" lowerBound="1" defaultValueLiteral="http://domain.gov/myDomain/">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4PQ5_OzEeOVk_72_69jDA" name="targetNamespace" ordered="false" lowerBound="1" defaultValueLiteral="http://domain.gov/myDomain/">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NGi7ou1CEeONXpKqgZhDUQ" name="isConformant" ordered="false" lowerBound="1" defaultValueLiteral="true">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4PQ6fOzEeOVk_72_69jDA" name="isConformant" ordered="false" lowerBound="1" defaultValueLiteral="true">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//Boolean"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NGi7pO1CEeONXpKqgZhDUQ" name="version" ordered="false" lowerBound="1" defaultValueLiteral="&quot;1&quot;">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4PQ6_OzEeOVk_72_69jDA" name="version" ordered="false" lowerBound="1" defaultValueLiteral="&quot;1&quot;">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NGi7pu1CEeONXpKqgZhDUQ" name="defaultPrefix" ordered="false">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4PQ7fOzEeOVk_72_69jDA" name="defaultPrefix" ordered="false">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xmi:type="ecore:EEnum" xmi:id="_NGi7qO1CEeONXpKqgZhDUQ" name="DefaultPurposeCode">
-        <eAnnotations xmi:id="_NGi7qe1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-NIEM_PIM_Profile-DefaultPurposeCode"/>
-        <eLiterals xmi:id="_NGi7qu1CEeONXpKqgZhDUQ" name="subset"/>
-        <eLiterals xmi:id="_NGi7q-1CEeONXpKqgZhDUQ" name="constraint" value="1"/>
-        <eLiterals xmi:id="_NGi7rO1CEeONXpKqgZhDUQ" name="exchange" value="2"/>
-        <eLiterals xmi:id="_NGi7re1CEeONXpKqgZhDUQ" name="extension" value="3"/>
-        <eLiterals xmi:id="_NGi7ru1CEeONXpKqgZhDUQ" name="incremental" value="4"/>
-        <eLiterals xmi:id="_NGi7r-1CEeONXpKqgZhDUQ" name="reference" value="5"/>
-        <eLiterals xmi:id="_NGi7sO1CEeONXpKqgZhDUQ" name="replacement" value="6"/>
+      <eClassifiers xmi:type="ecore:EEnum" xmi:id="_U4PQ7_OzEeOVk_72_69jDA" name="DefaultPurposeCode">
+        <eAnnotations xmi:id="_U4PQ8POzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-NIEM_PIM_Profile-DefaultPurposeCode"/>
+        <eLiterals xmi:id="_U4PQ8fOzEeOVk_72_69jDA" name="subset"/>
+        <eLiterals xmi:id="_U4PQ8vOzEeOVk_72_69jDA" name="constraint" value="1"/>
+        <eLiterals xmi:id="_U4PQ8_OzEeOVk_72_69jDA" name="exchange" value="2"/>
+        <eLiterals xmi:id="_U4PQ9POzEeOVk_72_69jDA" name="extension" value="3"/>
+        <eLiterals xmi:id="_U4PQ9fOzEeOVk_72_69jDA" name="incremental" value="4"/>
+        <eLiterals xmi:id="_U4PQ9vOzEeOVk_72_69jDA" name="reference" value="5"/>
+        <eLiterals xmi:id="_U4PQ9_OzEeOVk_72_69jDA" name="replacement" value="6"/>
       </eClassifiers>
-      <eClassifiers xmi:type="ecore:EClass" xmi:id="_NGi7se1CEeONXpKqgZhDUQ" name="ReferenceName">
-        <eAnnotations xmi:id="_NGi7su1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-NIEM_PIM_Profile-ReferenceName"/>
-        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NGi7s-1CEeONXpKqgZhDUQ" name="base_Element" ordered="false" lowerBound="1">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_U4PQ-POzEeOVk_72_69jDA" name="ReferenceName">
+        <eAnnotations xmi:id="_U4PQ-fOzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-NIEM_PIM_Profile-ReferenceName"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_U4PQ-vOzEeOVk_72_69jDA" name="base_Element" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NGi7te1CEeONXpKqgZhDUQ" name="NIEMName" ordered="false" lowerBound="1">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4PQ_POzEeOVk_72_69jDA" name="NIEMName" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xmi:type="ecore:EClass" xmi:id="_NGi7t-1CEeONXpKqgZhDUQ" name="RoleOf">
-        <eAnnotations xmi:id="_NGi7uO1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-NIEM_PIM_Profile-RoleOf"/>
-        <eAnnotations xmi:id="_NGi7ue1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/emf/2002/GenModel">
-          <details xmi:id="_NGi7uu1CEeONXpKqgZhDUQ" key="documentation" value="This constraint is enforced by the PIM/PSM transformation. The Transformation&#xA;              ensures that the &quot;RoleOf&quot; property term becomes part of the target PSM property name.&#xD;&#xA;This constraint is implemented by the PIM/PSM transformation. Identifying a&#xA;              &lt;Property> as a &lt;&lt;RoleOf>> corresponds to&#xA;              the NIEM naming convention used to identify the roleOf...reference and furthermore&#xA;              establishes the owning &lt;Classifier> as a NIEM Role."/>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_U4P34POzEeOVk_72_69jDA" name="RoleOf">
+        <eAnnotations xmi:id="_U4P34fOzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-NIEM_PIM_Profile-RoleOf"/>
+        <eAnnotations xmi:id="_U4P34vOzEeOVk_72_69jDA" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:id="_U4P34_OzEeOVk_72_69jDA" key="documentation" value="This constraint is enforced by the PIM/PSM transformation. The Transformation&#xA;              ensures that the &quot;RoleOf&quot; property term becomes part of the target PSM property name.&#xD;&#xA;This constraint is implemented by the PIM/PSM transformation. Identifying a&#xA;              &lt;Property> as a &lt;&lt;RoleOf>> corresponds to&#xA;              the NIEM naming convention used to identify the roleOf...reference and furthermore&#xA;              establishes the owning &lt;Classifier> as a NIEM Role."/>
         </eAnnotations>
-        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NGi7u-1CEeONXpKqgZhDUQ" name="base_Property" ordered="false" lowerBound="1">
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_U4P35POzEeOVk_72_69jDA" name="base_Property" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xmi:type="ecore:EClass" xmi:id="_NGi7ve1CEeONXpKqgZhDUQ" name="RolePlayedBy">
-        <eAnnotations xmi:id="_NGi7vu1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-NIEM_PIM_Profile-RolePlayedBy"/>
-        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NGi7v-1CEeONXpKqgZhDUQ" name="base_Generalization" ordered="false" lowerBound="1">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_U4P35vOzEeOVk_72_69jDA" name="RolePlayedBy">
+        <eAnnotations xmi:id="_U4P35_OzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-NIEM_PIM_Profile-RolePlayedBy"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_U4P36POzEeOVk_72_69jDA" name="base_Generalization" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Generalization"/>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xmi:type="ecore:EClass" xmi:id="_NGi7we1CEeONXpKqgZhDUQ" name="Subsets" eSuperTypes="_NGi7yO1CEeONXpKqgZhDUQ">
-        <eAnnotations xmi:id="_NGi7wu1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-NIEM_PIM_Profile-Subsets"/>
-        <eAnnotations xmi:id="_NGi7w-1CEeONXpKqgZhDUQ" source="duplicates">
-          <contents xmi:type="ecore:EReference" xmi:id="_NGi7xO1CEeONXpKqgZhDUQ" name="base_Realization" ordered="false" lowerBound="1">
-            <eAnnotations xmi:id="_NGi7xe1CEeONXpKqgZhDUQ" source="redefines" references="_NGi7zO1CEeONXpKqgZhDUQ"/>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_U4P36vOzEeOVk_72_69jDA" name="Subsets" eSuperTypes="_U4P38fOzEeOVk_72_69jDA">
+        <eAnnotations xmi:id="_U4P36_OzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-NIEM_PIM_Profile-Subsets"/>
+        <eAnnotations xmi:id="_U4P37POzEeOVk_72_69jDA" source="duplicates">
+          <contents xmi:type="ecore:EReference" xmi:id="_U4P37fOzEeOVk_72_69jDA" name="base_Realization" ordered="false" lowerBound="1">
+            <eAnnotations xmi:id="_U4P37vOzEeOVk_72_69jDA" source="redefines" references="_U4P39fOzEeOVk_72_69jDA"/>
             <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Realization"/>
           </contents>
         </eAnnotations>
       </eClassifiers>
-      <eClassifiers xmi:type="ecore:EClass" xmi:id="_NGi7yO1CEeONXpKqgZhDUQ" name="NIEM_Common_Profile_References">
-        <eAnnotations xmi:id="_NGi7ye1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_U4P38fOzEeOVk_72_69jDA" name="NIEM_Common_Profile_References">
+        <eAnnotations xmi:id="_U4P38vOzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML">
           <references xmi:type="uml:Stereotype" href="NIEM_UML_Profile.NIEM_Common_Profile.profile.uml#NIEM_UML_Profile-NIEM_Common_Profile-References"/>
         </eAnnotations>
-        <eAnnotations xmi:id="_NGi7yu1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/emf/2002/GenModel">
-          <details xmi:id="_NGi7y-1CEeONXpKqgZhDUQ" key="documentation" value="( self.base_Realization.client->size()=1) and (&#xA;              self.base_Realization.supplier->size()=1) and&#xA;              self.base_Realization.client->forAll(client|client.oclIsKindOf(Classifier)) and&#xA;              self.base_Realization.supplier->forAll(supplier|supplier.oclIsKindOf(Classifier)&#xA;              and not(supplier.stereotypedBy('PropertyHolder')) ) ) implies ( (&#xA;              self.base_Realization.client.oclAsType(Classifier).attribute&#xA;              ->forAll(clientAttribute|&#xA;              self.base_Realization.supplier.oclAsType(Classifier).attribute&#xA;              ->forAll(supplierAttribute| (clientAttribute.name=supplierAttribute.name)&#xA;              implies ( (clientAttribute.lower>=supplierAttribute.lower) and (&#xA;              (supplierAttribute.upper=-1) or&#xA;              (clientAttribute.upper&lt;=supplierAttribute.upper) ) and (&#xA;              (clientAttribute.upper=-1) or (clientAttribute.lower&lt;=clientAttribute.upper) )&#xA;              ) ) ) ) and( self.base_Realization.supplier.oclAsType(Classifier).attribute&#xA;              ->select(a|a.lower>0) ->forAll(supplierAttribute|&#xA;              self.base_Realization.client.oclAsType(Classifier).attribute->exists(clientAttribute|clientAttribute.name=supplierName)&#xA;              ) ) )"/>
+        <eAnnotations xmi:id="_U4P38_OzEeOVk_72_69jDA" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:id="_U4P39POzEeOVk_72_69jDA" key="documentation" value="( self.base_Realization.client->size()=1) and (&#xA;              self.base_Realization.supplier->size()=1) and&#xA;              self.base_Realization.client->forAll(client|client.oclIsKindOf(Classifier)) and&#xA;              self.base_Realization.supplier->forAll(supplier|supplier.oclIsKindOf(Classifier)&#xA;              and not(supplier.stereotypedBy('PropertyHolder')) ) ) implies ( (&#xA;              self.base_Realization.client.oclAsType(Classifier).attribute&#xA;              ->forAll(clientAttribute|&#xA;              self.base_Realization.supplier.oclAsType(Classifier).attribute&#xA;              ->forAll(supplierAttribute| (clientAttribute.name=supplierAttribute.name)&#xA;              implies ( (clientAttribute.lower>=supplierAttribute.lower) and (&#xA;              (supplierAttribute.upper=-1) or&#xA;              (clientAttribute.upper&lt;=supplierAttribute.upper) ) and (&#xA;              (clientAttribute.upper=-1) or (clientAttribute.lower&lt;=clientAttribute.upper) )&#xA;              ) ) ) ) and( self.base_Realization.supplier.oclAsType(Classifier).attribute&#xA;              ->select(a|a.lower>0) ->forAll(supplierAttribute|&#xA;              self.base_Realization.client.oclAsType(Classifier).attribute->exists(clientAttribute|clientAttribute.name=supplierName)&#xA;              ) ) )"/>
         </eAnnotations>
-        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NGi7zO1CEeONXpKqgZhDUQ" name="base_Realization" ordered="false" lowerBound="1">
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_U4P39fOzEeOVk_72_69jDA" name="base_Realization" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Realization"/>
         </eStructuralFeatures>
       </eClassifiers>

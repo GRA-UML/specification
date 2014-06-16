@@ -1,269 +1,269 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Profile xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="NIEM_UML_Profile-Model_Package_Description_Profile" name="Model_Package_Description_Profile" URI="http://www.omg.org/spec/NIEM-UML/20120501/Model_Package_Description_Profile" metamodelReference="NIEM_UML_Profile-Model_Package_Description_Profile-packageImport">
-  <eAnnotations xmi:id="_NJ5xcu1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-    <contents xmi:type="ecore:EPackage" xmi:id="_NJ5xc-1CEeONXpKqgZhDUQ" name="Model_Package_Description_Profile" nsURI="http://www.omg.org/spec/NIEM-UML/20120501/Model_Package_Description_Profile" nsPrefix="Model_Package_Description_Profile">
-      <eClassifiers xmi:type="ecore:EClass" xmi:id="_NJ5xdO1CEeONXpKqgZhDUQ" name="POCType">
-        <eAnnotations xmi:id="_NJ5xde1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-POCType"/>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5xdu1CEeONXpKqgZhDUQ" name="POCTelephone" ordered="false" lowerBound="1" upperBound="-1">
+  <eAnnotations xmi:id="_U4SUsfOzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_U4SUsvOzEeOVk_72_69jDA" name="Model_Package_Description_Profile" nsURI="http://www.omg.org/spec/NIEM-UML/20120501/Model_Package_Description_Profile" nsPrefix="Model_Package_Description_Profile">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_U4SUs_OzEeOVk_72_69jDA" name="POCType">
+        <eAnnotations xmi:id="_U4SUtPOzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-POCType"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4SUtfOzEeOVk_72_69jDA" name="POCTelephone" ordered="false" lowerBound="1" upperBound="-1">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5xeO1CEeONXpKqgZhDUQ" name="POCName" ordered="false" lowerBound="1">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4SUt_OzEeOVk_72_69jDA" name="POCName" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5xeu1CEeONXpKqgZhDUQ" name="POCEmail" ordered="false" lowerBound="1" upperBound="-1">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4SUufOzEeOVk_72_69jDA" name="POCEmail" ordered="false" lowerBound="1" upperBound="-1">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xmi:type="ecore:EClass" xmi:id="_NJ5xfO1CEeONXpKqgZhDUQ" name="ModelPackageDescriptionFile">
-        <eAnnotations xmi:id="_NJ5xfe1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-ModelPackageDescriptionFile"/>
-        <eAnnotations xmi:id="_NJ5xfu1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/emf/2002/GenModel">
-          <details xmi:id="_NJ5xf-1CEeONXpKqgZhDUQ" key="documentation" value="Constraint realized by PSM-XSD transformations.&#xD;&#xA;( self.base_ElementImport.profiledBy('NIEM_PSM_Profile') and (&#xA;              self.purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#subset-schema')&#xA;              ) implies self.base_ElementImport.importedElement.oclAsType(Package).packagedElement&#xA;              ->forEach(subsetElement|&#xA;              subsetElement.clientDependency->exists(d|d.stereotypedBy('References')) and&#xA;              subsetElement.clientDependency->select(d|d.stereotypedBy('References')).supplier&#xA;              ->forEach(referenceElement| (subsetElement.name=referenceElement.name) and&#xA;              (subsetElement.metaClass()=referenceElement.metaClass()) and(&#xA;              subsetElement.oclIsKindOf(Namespace) implies&#xA;              subsetElement.oclAstype(Namespace).ownedMember ->forEach(subsetMember|&#xA;              referenceElement.oclAstype(Namespace).ownedMember ->exists(referenceMember|&#xA;              (subsetMember.name=referenceMember.name) and&#xA;              (subsetMember.metaClass()=referenceMember.metaClass()) ) ) ) ) ) &#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;This constraint is realized by not defining an xsd:anyType as part of the type&#xA;              system.&#xD;&#xA;Definitional.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint resolved by resolution to MPD [Rule 3-4]&#xD;&#xA;Constraint on xsd:import is realized by the PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint satisfied by other documentedComponent rules which exclude subset&#xA;              schemas.&#xD;&#xA;Constraint resolved by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint resolved by resolution to MPD [Rule 3-1]&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-MPD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;self.purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#subset-schema'&#xA;              implies self.base_ElementImport.importedElement.oclAsType(Package).packagedElement&#xA;              ->exists(element| element.clientDependency&#xA;              ->select(d|d.stereotypedBy('References')).supplier.getNearestPackage()&#xA;              ->select(r|r.stereotypedBy('Namespace')).getStereotypeApplication('Namespace').targetNamespace=&#xA;              element.owner.getStereotypeApplication('Namespace').targetNamespace ) ) &#xD;&#xA;( self.base_ElementImport.profiledBy('NIEM_PSM_Profile') and ( (&#xA;              self.purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#reference-schema')&#xA;              or (&#xA;              self.purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#extension-schema')&#xA;              ) ) implies self.base_ElementImport.importedElement.oclAsType(Package).packagedElement&#xA;              ->select(c|c.oclIsKindOf(DataType)).oclAsType(DataType)&#xA;              ->forAll(simpleType |&#xA;              simpleType.ownedComment->exists(documentation|documentation.stereotypedBy('Documentation')))&#xD;&#xA;This constraint is superceded by MPD [Rule 6-4]. Implementation of MPD [Rule 6-4]&#xA;              resolves this constraint. &#xD;&#xA;( self.base_ElementImport.profiledBy('NIEM_PSM_Profile') and ( (&#xA;              self.purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#reference-schema')&#xA;              or (&#xA;              self.purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#extension-schema')&#xA;              ) ) implies self.base_ElementImport.importedElement.oclAsType(Package).packagedElement&#xA;              ->select(c|c.oclIsKindOf(Class) and&#xA;              not(c.stereotypedBy('PropertyHolder'))).oclAsType(Class) ->forAll(complexType |&#xA;              complexType.ownedComment->exists(documentation|documentation.stereotypedBy('Documentation'))) &#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;This constraint is realized by PSM-XSD transformations.&#xD;&#xA;Constraint schemas are not modeled with the NIEM Profile. This constraint is not&#xA;              applied.&#xD;&#xA;Constraint realized by PSM-MPD transformations.&#xD;&#xA;This constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constrained realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformation.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-MPD transformations, based on required documentation&#xA;              for modeled external schema.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Deprecated indicator not currently in NIEM Profiles, no constraint specified.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;This constraint is realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;self.base_ElementImport.profiledBy('NIEM_PSM_Profile') implies ( (&#xA;              (self.natureURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#reference-schema')&#xA;              or&#xA;              (self.natureURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#extension-schema')&#xA;              ) implies self.importedElement.getStereotypeApplication('Namespace').isConformant ) &#xD;&#xA;Non-computable constraint.&#xD;&#xA;The only Attribute Group allowed in NIEM is the&#xA;              structures:SimpleObjectAttributeGroup. The constraint is realized by PSM-XSD&#xA;              transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint resolved by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint resolved by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;This constraint is realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;UML well-formedness rules and semantics realize the constraint for referential&#xA;              integrity. &#xD;&#xA;Constraint is resolved by PSM-XSD transformations. Constraint also addressed by&#xA;              UML Property order and naming constraints.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;( self.base_ElementImport.profiledBy('NIEM_PSM_Profile') and ( (&#xA;              self.purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#reference-schema')&#xA;              or (&#xA;              self.purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#extension-schema')&#xA;              ) ) implies self.base_ElementImport.importedElement.oclAsType(Package).packagedElement&#xA;              ->select(c|c.oclIsKindOf(Classifier)).oclAsType(Classifier).attribute&#xA;              ->select(p|p.stereotypeApplication('XSDProperty').kind=XSDPropertyKindCode::element)&#xA;              ->forAll(attribute |&#xA;              attribute.ownedComment->exists(documentation|documentation.stereotypedBy('Documentation'))) &#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Since imports are derived (and not modeled), the namespace for an import is the&#xA;              same as the targetNamespace modeled for the referenced schema, and the implementation&#xA;              of NDR [Rule 6-36] resolves this constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Definitional.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-MPD transformations, based on isConformant tag for&#xA;              referenced (external) schema.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint is realized by PSM-XSD transformations.&#xD;&#xA;( self.base_ElementImport.profiledBy('NIEM_PSM_Profile') and ( (&#xA;              self.purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#reference-schema')&#xA;              or (&#xA;              self.purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#extension-schema')&#xA;              ) ) implies self.base_ElementImport.importedElement.oclAsType(Package).packagedElement&#xA;              ->select(c|c.oclIsKindOf(Enumeration)).oclAsType(Enumeration).ownedLiteral&#xA;              ->forAll(literal |&#xA;              literal.ownedComment->exists(documentation|documentation.stereotypedBy('Documentation'))) &#xD;&#xA;A Reference is modeled as a non-aggregate Property. A given property (from a&#xA;              referenced PropertyHolder) may be redefined to be an aggregate (i.e., containment)&#xA;              Property. The naming and type constraints are realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Definitional.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint resolved by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-MPD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;(Constraint not enforced by this model).&#xD;&#xA;Constraint resolved by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Not computable.&#xD;&#xA;Constraint is realized by PSM-XSD transformations."/>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_U4SUu_OzEeOVk_72_69jDA" name="ModelPackageDescriptionFile">
+        <eAnnotations xmi:id="_U4SUvPOzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-ModelPackageDescriptionFile"/>
+        <eAnnotations xmi:id="_U4SUvfOzEeOVk_72_69jDA" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:id="_U4SUvvOzEeOVk_72_69jDA" key="documentation" value="Constraint realized by PSM-XSD transformations.&#xD;&#xA;( self.base_ElementImport.profiledBy('NIEM_PSM_Profile') and (&#xA;              self.purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#subset-schema')&#xA;              ) implies self.base_ElementImport.importedElement.oclAsType(Package).packagedElement&#xA;              ->forEach(subsetElement|&#xA;              subsetElement.clientDependency->exists(d|d.stereotypedBy('References')) and&#xA;              subsetElement.clientDependency->select(d|d.stereotypedBy('References')).supplier&#xA;              ->forEach(referenceElement| (subsetElement.name=referenceElement.name) and&#xA;              (subsetElement.metaClass()=referenceElement.metaClass()) and(&#xA;              subsetElement.oclIsKindOf(Namespace) implies&#xA;              subsetElement.oclAstype(Namespace).ownedMember ->forEach(subsetMember|&#xA;              referenceElement.oclAstype(Namespace).ownedMember ->exists(referenceMember|&#xA;              (subsetMember.name=referenceMember.name) and&#xA;              (subsetMember.metaClass()=referenceMember.metaClass()) ) ) ) ) ) &#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;This constraint is realized by not defining an xsd:anyType as part of the type&#xA;              system.&#xD;&#xA;Definitional.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint resolved by resolution to MPD [Rule 3-4]&#xD;&#xA;Constraint on xsd:import is realized by the PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint satisfied by other documentedComponent rules which exclude subset&#xA;              schemas.&#xD;&#xA;Constraint resolved by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint resolved by resolution to MPD [Rule 3-1]&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-MPD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;self.purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#subset-schema'&#xA;              implies self.base_ElementImport.importedElement.oclAsType(Package).packagedElement&#xA;              ->exists(element| element.clientDependency&#xA;              ->select(d|d.stereotypedBy('References')).supplier.getNearestPackage()&#xA;              ->select(r|r.stereotypedBy('Namespace')).getStereotypeApplication('Namespace').targetNamespace=&#xA;              element.owner.getStereotypeApplication('Namespace').targetNamespace ) ) &#xD;&#xA;( self.base_ElementImport.profiledBy('NIEM_PSM_Profile') and ( (&#xA;              self.purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#reference-schema')&#xA;              or (&#xA;              self.purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#extension-schema')&#xA;              ) ) implies self.base_ElementImport.importedElement.oclAsType(Package).packagedElement&#xA;              ->select(c|c.oclIsKindOf(DataType)).oclAsType(DataType)&#xA;              ->forAll(simpleType |&#xA;              simpleType.ownedComment->exists(documentation|documentation.stereotypedBy('Documentation')))&#xD;&#xA;This constraint is superceded by MPD [Rule 6-4]. Implementation of MPD [Rule 6-4]&#xA;              resolves this constraint. &#xD;&#xA;( self.base_ElementImport.profiledBy('NIEM_PSM_Profile') and ( (&#xA;              self.purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#reference-schema')&#xA;              or (&#xA;              self.purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#extension-schema')&#xA;              ) ) implies self.base_ElementImport.importedElement.oclAsType(Package).packagedElement&#xA;              ->select(c|c.oclIsKindOf(Class) and&#xA;              not(c.stereotypedBy('PropertyHolder'))).oclAsType(Class) ->forAll(complexType |&#xA;              complexType.ownedComment->exists(documentation|documentation.stereotypedBy('Documentation'))) &#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;This constraint is realized by PSM-XSD transformations.&#xD;&#xA;Constraint schemas are not modeled with the NIEM Profile. This constraint is not&#xA;              applied.&#xD;&#xA;Constraint realized by PSM-MPD transformations.&#xD;&#xA;This constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constrained realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformation.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-MPD transformations, based on required documentation&#xA;              for modeled external schema.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Deprecated indicator not currently in NIEM Profiles, no constraint specified.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;This constraint is realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;self.base_ElementImport.profiledBy('NIEM_PSM_Profile') implies ( (&#xA;              (self.natureURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#reference-schema')&#xA;              or&#xA;              (self.natureURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#extension-schema')&#xA;              ) implies self.importedElement.getStereotypeApplication('Namespace').isConformant ) &#xD;&#xA;Non-computable constraint.&#xD;&#xA;The only Attribute Group allowed in NIEM is the&#xA;              structures:SimpleObjectAttributeGroup. The constraint is realized by PSM-XSD&#xA;              transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint resolved by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint resolved by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;This constraint is realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;UML well-formedness rules and semantics realize the constraint for referential&#xA;              integrity. &#xD;&#xA;Constraint is resolved by PSM-XSD transformations. Constraint also addressed by&#xA;              UML Property order and naming constraints.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;( self.base_ElementImport.profiledBy('NIEM_PSM_Profile') and ( (&#xA;              self.purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#reference-schema')&#xA;              or (&#xA;              self.purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#extension-schema')&#xA;              ) ) implies self.base_ElementImport.importedElement.oclAsType(Package).packagedElement&#xA;              ->select(c|c.oclIsKindOf(Classifier)).oclAsType(Classifier).attribute&#xA;              ->select(p|p.stereotypeApplication('XSDProperty').kind=XSDPropertyKindCode::element)&#xA;              ->forAll(attribute |&#xA;              attribute.ownedComment->exists(documentation|documentation.stereotypedBy('Documentation'))) &#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Since imports are derived (and not modeled), the namespace for an import is the&#xA;              same as the targetNamespace modeled for the referenced schema, and the implementation&#xA;              of NDR [Rule 6-36] resolves this constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Definitional.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-MPD transformations, based on isConformant tag for&#xA;              referenced (external) schema.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint is realized by PSM-XSD transformations.&#xD;&#xA;( self.base_ElementImport.profiledBy('NIEM_PSM_Profile') and ( (&#xA;              self.purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#reference-schema')&#xA;              or (&#xA;              self.purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#extension-schema')&#xA;              ) ) implies self.base_ElementImport.importedElement.oclAsType(Package).packagedElement&#xA;              ->select(c|c.oclIsKindOf(Enumeration)).oclAsType(Enumeration).ownedLiteral&#xA;              ->forAll(literal |&#xA;              literal.ownedComment->exists(documentation|documentation.stereotypedBy('Documentation'))) &#xD;&#xA;A Reference is modeled as a non-aggregate Property. A given property (from a&#xA;              referenced PropertyHolder) may be redefined to be an aggregate (i.e., containment)&#xA;              Property. The naming and type constraints are realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Definitional.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint resolved by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-MPD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;(Constraint not enforced by this model).&#xD;&#xA;Constraint resolved by PSM-XSD transformations.&#xD;&#xA;Non-computable constraint.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Constraint realized by PSM-XSD transformations.&#xD;&#xA;Not computable.&#xD;&#xA;Constraint is realized by PSM-XSD transformations."/>
         </eAnnotations>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5xgO1CEeONXpKqgZhDUQ" name="externalURI" ordered="false">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4SUv_OzEeOVk_72_69jDA" name="externalURI" ordered="false">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5xgu1CEeONXpKqgZhDUQ" name="relativePathName" ordered="false" lowerBound="1">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4SUwfOzEeOVk_72_69jDA" name="relativePathName" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5xhO1CEeONXpKqgZhDUQ" name="natureCode" ordered="false" lowerBound="1" eType="_NJ5xjO1CEeONXpKqgZhDUQ" defaultValueLiteral="xsd"/>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5xhu1CEeONXpKqgZhDUQ" name="purposeCode" ordered="false" lowerBound="1" eType="_NJ5xsu1CEeONXpKqgZhDUQ" defaultValueLiteral="extension_schema"/>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5xiO1CEeONXpKqgZhDUQ" name="descriptionText" ordered="false">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4SUw_OzEeOVk_72_69jDA" name="natureCode" ordered="false" lowerBound="1" eType="_U4SUy_OzEeOVk_72_69jDA" defaultValueLiteral="xsd"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4SUxfOzEeOVk_72_69jDA" name="purposeCode" ordered="false" lowerBound="1" eType="_U4S7O_OzEeOVk_72_69jDA" defaultValueLiteral="extension_schema"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4SUx_OzEeOVk_72_69jDA" name="descriptionText" ordered="false">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NJ5xiu1CEeONXpKqgZhDUQ" name="base_Usage" ordered="false" lowerBound="1">
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_U4SUyfOzEeOVk_72_69jDA" name="base_Usage" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Usage"/>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xmi:type="ecore:EEnum" xmi:id="_NJ5xjO1CEeONXpKqgZhDUQ" name="NatureCode">
-        <eAnnotations xmi:id="_NJ5xje1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-NatureCode"/>
-        <eLiterals xmi:id="_NJ5xju1CEeONXpKqgZhDUQ" name="mpd"/>
-        <eLiterals xmi:id="_NJ5xj-1CEeONXpKqgZhDUQ" name="domain_update" value="1"/>
-        <eLiterals xmi:id="_NJ5xkO1CEeONXpKqgZhDUQ" name="iepd" value="2"/>
-        <eLiterals xmi:id="_NJ5xke1CEeONXpKqgZhDUQ" name="release" value="3"/>
-        <eLiterals xmi:id="_NJ5xku1CEeONXpKqgZhDUQ" name="binary" value="4"/>
-        <eLiterals xmi:id="_NJ5xk-1CEeONXpKqgZhDUQ" name="doc" value="5"/>
-        <eLiterals xmi:id="_NJ5xlO1CEeONXpKqgZhDUQ" name="image" value="6"/>
-        <eLiterals xmi:id="_NJ5xle1CEeONXpKqgZhDUQ" name="gif" value="7"/>
-        <eLiterals xmi:id="_NJ5xlu1CEeONXpKqgZhDUQ" name="jpg" value="8"/>
-        <eLiterals xmi:id="_NJ5xl-1CEeONXpKqgZhDUQ" name="png" value="9"/>
-        <eLiterals xmi:id="_NJ5xmO1CEeONXpKqgZhDUQ" name="mdb" value="10"/>
-        <eLiterals xmi:id="_NJ5xme1CEeONXpKqgZhDUQ" name="pdf" value="11"/>
-        <eLiterals xmi:id="_NJ5xmu1CEeONXpKqgZhDUQ" name="ppt" value="12"/>
-        <eLiterals xmi:id="_NJ5xm-1CEeONXpKqgZhDUQ" name="svg" value="13"/>
-        <eLiterals xmi:id="_NJ5xnO1CEeONXpKqgZhDUQ" name="vsd" value="14"/>
-        <eLiterals xmi:id="_NJ5xne1CEeONXpKqgZhDUQ" name="xls" value="15"/>
-        <eLiterals xmi:id="_NJ5xnu1CEeONXpKqgZhDUQ" name="zip" value="16"/>
-        <eLiterals xmi:id="_NJ5xn-1CEeONXpKqgZhDUQ" name="character" value="17"/>
-        <eLiterals xmi:id="_NJ5xoO1CEeONXpKqgZhDUQ" name="csv" value="18"/>
-        <eLiterals xmi:id="_NJ5xoe1CEeONXpKqgZhDUQ" name="html" value="19"/>
-        <eLiterals xmi:id="_NJ5xou1CEeONXpKqgZhDUQ" name="text" value="20"/>
-        <eLiterals xmi:id="_NJ5xo-1CEeONXpKqgZhDUQ" name="xml" value="21"/>
-        <eLiterals xmi:id="_NJ5xpO1CEeONXpKqgZhDUQ" name="catalog" value="22"/>
-        <eLiterals xmi:id="_NJ5xpe1CEeONXpKqgZhDUQ" name="changelog" value="23"/>
-        <eLiterals xmi:id="_NJ5xpu1CEeONXpKqgZhDUQ" name="owl" value="24"/>
-        <eLiterals xmi:id="_NJ5xp-1CEeONXpKqgZhDUQ" name="rdf" value="25"/>
-        <eLiterals xmi:id="_NJ5xqO1CEeONXpKqgZhDUQ" name="schematron" value="26"/>
-        <eLiterals xmi:id="_NJ5xqe1CEeONXpKqgZhDUQ" name="wantlist" value="27"/>
-        <eLiterals xmi:id="_NJ5xqu1CEeONXpKqgZhDUQ" name="wsdl" value="28"/>
-        <eLiterals xmi:id="_NJ5xq-1CEeONXpKqgZhDUQ" name="xhtml" value="29"/>
-        <eLiterals xmi:id="_NJ5xrO1CEeONXpKqgZhDUQ" name="xmi" value="30"/>
-        <eLiterals xmi:id="_NJ5xre1CEeONXpKqgZhDUQ" name="xsd" value="31"/>
-        <eLiterals xmi:id="_NJ5xru1CEeONXpKqgZhDUQ" name="xslt" value="32"/>
-        <eLiterals xmi:id="_NJ5xr-1CEeONXpKqgZhDUQ" name="file_set" value="33"/>
-        <eLiterals xmi:id="_NJ5xsO1CEeONXpKqgZhDUQ" name="core_update" value="34"/>
-        <eLiterals xmi:id="_NJ5xse1CEeONXpKqgZhDUQ" name="eiem" value="35"/>
+      <eClassifiers xmi:type="ecore:EEnum" xmi:id="_U4SUy_OzEeOVk_72_69jDA" name="NatureCode">
+        <eAnnotations xmi:id="_U4SUzPOzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-NatureCode"/>
+        <eLiterals xmi:id="_U4SUzfOzEeOVk_72_69jDA" name="mpd"/>
+        <eLiterals xmi:id="_U4SUzvOzEeOVk_72_69jDA" name="domain_update" value="1"/>
+        <eLiterals xmi:id="_U4SUz_OzEeOVk_72_69jDA" name="iepd" value="2"/>
+        <eLiterals xmi:id="_U4SU0POzEeOVk_72_69jDA" name="release" value="3"/>
+        <eLiterals xmi:id="_U4SU0fOzEeOVk_72_69jDA" name="binary" value="4"/>
+        <eLiterals xmi:id="_U4SU0vOzEeOVk_72_69jDA" name="doc" value="5"/>
+        <eLiterals xmi:id="_U4SU0_OzEeOVk_72_69jDA" name="image" value="6"/>
+        <eLiterals xmi:id="_U4SU1POzEeOVk_72_69jDA" name="gif" value="7"/>
+        <eLiterals xmi:id="_U4SU1fOzEeOVk_72_69jDA" name="jpg" value="8"/>
+        <eLiterals xmi:id="_U4SU1vOzEeOVk_72_69jDA" name="png" value="9"/>
+        <eLiterals xmi:id="_U4SU1_OzEeOVk_72_69jDA" name="mdb" value="10"/>
+        <eLiterals xmi:id="_U4SU2POzEeOVk_72_69jDA" name="pdf" value="11"/>
+        <eLiterals xmi:id="_U4SU2fOzEeOVk_72_69jDA" name="ppt" value="12"/>
+        <eLiterals xmi:id="_U4SU2vOzEeOVk_72_69jDA" name="svg" value="13"/>
+        <eLiterals xmi:id="_U4SU2_OzEeOVk_72_69jDA" name="vsd" value="14"/>
+        <eLiterals xmi:id="_U4SU3POzEeOVk_72_69jDA" name="xls" value="15"/>
+        <eLiterals xmi:id="_U4SU3fOzEeOVk_72_69jDA" name="zip" value="16"/>
+        <eLiterals xmi:id="_U4SU3vOzEeOVk_72_69jDA" name="character" value="17"/>
+        <eLiterals xmi:id="_U4SU3_OzEeOVk_72_69jDA" name="csv" value="18"/>
+        <eLiterals xmi:id="_U4SU4POzEeOVk_72_69jDA" name="html" value="19"/>
+        <eLiterals xmi:id="_U4SU4fOzEeOVk_72_69jDA" name="text" value="20"/>
+        <eLiterals xmi:id="_U4SU4vOzEeOVk_72_69jDA" name="xml" value="21"/>
+        <eLiterals xmi:id="_U4SU4_OzEeOVk_72_69jDA" name="catalog" value="22"/>
+        <eLiterals xmi:id="_U4SU5POzEeOVk_72_69jDA" name="changelog" value="23"/>
+        <eLiterals xmi:id="_U4SU5fOzEeOVk_72_69jDA" name="owl" value="24"/>
+        <eLiterals xmi:id="_U4S7MPOzEeOVk_72_69jDA" name="rdf" value="25"/>
+        <eLiterals xmi:id="_U4S7MfOzEeOVk_72_69jDA" name="schematron" value="26"/>
+        <eLiterals xmi:id="_U4S7MvOzEeOVk_72_69jDA" name="wantlist" value="27"/>
+        <eLiterals xmi:id="_U4S7M_OzEeOVk_72_69jDA" name="wsdl" value="28"/>
+        <eLiterals xmi:id="_U4S7NPOzEeOVk_72_69jDA" name="xhtml" value="29"/>
+        <eLiterals xmi:id="_U4S7NfOzEeOVk_72_69jDA" name="xmi" value="30"/>
+        <eLiterals xmi:id="_U4S7NvOzEeOVk_72_69jDA" name="xsd" value="31"/>
+        <eLiterals xmi:id="_U4S7N_OzEeOVk_72_69jDA" name="xslt" value="32"/>
+        <eLiterals xmi:id="_U4S7OPOzEeOVk_72_69jDA" name="file_set" value="33"/>
+        <eLiterals xmi:id="_U4S7OfOzEeOVk_72_69jDA" name="core_update" value="34"/>
+        <eLiterals xmi:id="_U4S7OvOzEeOVk_72_69jDA" name="eiem" value="35"/>
       </eClassifiers>
-      <eClassifiers xmi:type="ecore:EEnum" xmi:id="_NJ5xsu1CEeONXpKqgZhDUQ" name="PurposeCode">
-        <eAnnotations xmi:id="_NJ5xs-1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-PurposeCode"/>
-        <eLiterals xmi:id="_NJ5xtO1CEeONXpKqgZhDUQ" name="extension_schema_set"/>
-        <eLiterals xmi:id="_NJ5xte1CEeONXpKqgZhDUQ" name="reference_schema_set" value="1"/>
-        <eLiterals xmi:id="_NJ5xtu1CEeONXpKqgZhDUQ" name="subset_schema_set" value="2"/>
-        <eLiterals xmi:id="_NJ5xt-1CEeONXpKqgZhDUQ" name="file" value="3"/>
-        <eLiterals xmi:id="_NJ5xuO1CEeONXpKqgZhDUQ" name="business_rules" value="4"/>
-        <eLiterals xmi:id="_NJ5xue1CEeONXpKqgZhDUQ" name="catalog" value="5"/>
-        <eLiterals xmi:id="_NJ5xuu1CEeONXpKqgZhDUQ" name="documentation" value="6"/>
-        <eLiterals xmi:id="_NJ5xu-1CEeONXpKqgZhDUQ" name="administrative" value="7"/>
-        <eLiterals xmi:id="_NJ5xvO1CEeONXpKqgZhDUQ" name="endorsement" value="8"/>
-        <eLiterals xmi:id="_NJ5xve1CEeONXpKqgZhDUQ" name="memorandum" value="9"/>
-        <eLiterals xmi:id="_NJ5xvu1CEeONXpKqgZhDUQ" name="report" value="10"/>
-        <eLiterals xmi:id="_NJ5xv-1CEeONXpKqgZhDUQ" name="conformance_report" value="11"/>
-        <eLiterals xmi:id="_NJ5xwO1CEeONXpKqgZhDUQ" name="quality_assurance_report" value="12"/>
-        <eLiterals xmi:id="_NJ5xwe1CEeONXpKqgZhDUQ" name="test_report" value="13"/>
-        <eLiterals xmi:id="_NJ5xwu1CEeONXpKqgZhDUQ" name="technical_reference" value="14"/>
-        <eLiterals xmi:id="_NJ5xw-1CEeONXpKqgZhDUQ" name="non-normative_reference" value="15"/>
-        <eLiterals xmi:id="_NJ5xxO1CEeONXpKqgZhDUQ" name="normative_reference" value="16"/>
-        <eLiterals xmi:id="_NJ5xxe1CEeONXpKqgZhDUQ" name="metadata_extended" value="17"/>
-        <eLiterals xmi:id="_NJ5xxu1CEeONXpKqgZhDUQ" name="sample_instance" value="18"/>
-        <eLiterals xmi:id="_NJ5xx-1CEeONXpKqgZhDUQ" name="schema" value="19"/>
-        <eLiterals xmi:id="_NJ5xyO1CEeONXpKqgZhDUQ" name="constraint_schema" value="20"/>
-        <eLiterals xmi:id="_NJ5xye1CEeONXpKqgZhDUQ" name="exchange_schema" value="21"/>
-        <eLiterals xmi:id="_NJ5xyu1CEeONXpKqgZhDUQ" name="extension_schema" value="22"/>
-        <eLiterals xmi:id="_NJ5xy-1CEeONXpKqgZhDUQ" name="incremental_schema" value="23"/>
-        <eLiterals xmi:id="_NJ5xzO1CEeONXpKqgZhDUQ" name="reference_schema" value="24"/>
-        <eLiterals xmi:id="_NJ5xze1CEeONXpKqgZhDUQ" name="replacement_schema" value="25"/>
-        <eLiterals xmi:id="_NJ5xzu1CEeONXpKqgZhDUQ" name="subset_schema" value="26"/>
-        <eLiterals xmi:id="_NJ5xz-1CEeONXpKqgZhDUQ" name="tool_specific_file" value="27"/>
-        <eLiterals xmi:id="_NJ5x0O1CEeONXpKqgZhDUQ" name="wantlist" value="28"/>
-        <eLiterals xmi:id="_NJ5x0e1CEeONXpKqgZhDUQ" name="file_set" value="29"/>
-        <eLiterals xmi:id="_NJ5x0u1CEeONXpKqgZhDUQ" name="schema_set" value="30"/>
-        <eLiterals xmi:id="_NJ5x0-1CEeONXpKqgZhDUQ" name="constraint_schema_set" value="31"/>
-        <eLiterals xmi:id="_NJ5x1O1CEeONXpKqgZhDUQ" name="exchange_schema_set" value="32"/>
-        <eLiterals xmi:id="_NJ5x1e1CEeONXpKqgZhDUQ" name="changelog" value="33"/>
-        <eLiterals xmi:id="_NJ5x1u1CEeONXpKqgZhDUQ" name="web_service" value="34"/>
-        <eLiterals xmi:id="_NJ5x1-1CEeONXpKqgZhDUQ" name="data_dictionary" value="35"/>
-        <eLiterals xmi:id="_NJ5x2O1CEeONXpKqgZhDUQ" name="data_model" value="36"/>
-        <eLiterals xmi:id="_NJ5x2e1CEeONXpKqgZhDUQ" name="display" value="37"/>
-        <eLiterals xmi:id="_NJ5x2u1CEeONXpKqgZhDUQ" name="mapping" value="38"/>
-        <eLiterals xmi:id="_NJ5x2-1CEeONXpKqgZhDUQ" name="master_document" value="39"/>
-        <eLiterals xmi:id="_NJ5x3O1CEeONXpKqgZhDUQ" name="ontology" value="40"/>
-        <eLiterals xmi:id="_NJ5x3e1CEeONXpKqgZhDUQ" name="transformation" value="41"/>
+      <eClassifiers xmi:type="ecore:EEnum" xmi:id="_U4S7O_OzEeOVk_72_69jDA" name="PurposeCode">
+        <eAnnotations xmi:id="_U4S7PPOzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-PurposeCode"/>
+        <eLiterals xmi:id="_U4S7PfOzEeOVk_72_69jDA" name="extension_schema_set"/>
+        <eLiterals xmi:id="_U4S7PvOzEeOVk_72_69jDA" name="reference_schema_set" value="1"/>
+        <eLiterals xmi:id="_U4S7P_OzEeOVk_72_69jDA" name="subset_schema_set" value="2"/>
+        <eLiterals xmi:id="_U4S7QPOzEeOVk_72_69jDA" name="file" value="3"/>
+        <eLiterals xmi:id="_U4S7QfOzEeOVk_72_69jDA" name="business_rules" value="4"/>
+        <eLiterals xmi:id="_U4S7QvOzEeOVk_72_69jDA" name="catalog" value="5"/>
+        <eLiterals xmi:id="_U4S7Q_OzEeOVk_72_69jDA" name="documentation" value="6"/>
+        <eLiterals xmi:id="_U4S7RPOzEeOVk_72_69jDA" name="administrative" value="7"/>
+        <eLiterals xmi:id="_U4S7RfOzEeOVk_72_69jDA" name="endorsement" value="8"/>
+        <eLiterals xmi:id="_U4S7RvOzEeOVk_72_69jDA" name="memorandum" value="9"/>
+        <eLiterals xmi:id="_U4S7R_OzEeOVk_72_69jDA" name="report" value="10"/>
+        <eLiterals xmi:id="_U4S7SPOzEeOVk_72_69jDA" name="conformance_report" value="11"/>
+        <eLiterals xmi:id="_U4S7SfOzEeOVk_72_69jDA" name="quality_assurance_report" value="12"/>
+        <eLiterals xmi:id="_U4S7SvOzEeOVk_72_69jDA" name="test_report" value="13"/>
+        <eLiterals xmi:id="_U4S7S_OzEeOVk_72_69jDA" name="technical_reference" value="14"/>
+        <eLiterals xmi:id="_U4S7TPOzEeOVk_72_69jDA" name="non-normative_reference" value="15"/>
+        <eLiterals xmi:id="_U4S7TfOzEeOVk_72_69jDA" name="normative_reference" value="16"/>
+        <eLiterals xmi:id="_U4S7TvOzEeOVk_72_69jDA" name="metadata_extended" value="17"/>
+        <eLiterals xmi:id="_U4S7T_OzEeOVk_72_69jDA" name="sample_instance" value="18"/>
+        <eLiterals xmi:id="_U4S7UPOzEeOVk_72_69jDA" name="schema" value="19"/>
+        <eLiterals xmi:id="_U4S7UfOzEeOVk_72_69jDA" name="constraint_schema" value="20"/>
+        <eLiterals xmi:id="_U4S7UvOzEeOVk_72_69jDA" name="exchange_schema" value="21"/>
+        <eLiterals xmi:id="_U4S7U_OzEeOVk_72_69jDA" name="extension_schema" value="22"/>
+        <eLiterals xmi:id="_U4S7VPOzEeOVk_72_69jDA" name="incremental_schema" value="23"/>
+        <eLiterals xmi:id="_U4S7VfOzEeOVk_72_69jDA" name="reference_schema" value="24"/>
+        <eLiterals xmi:id="_U4S7VvOzEeOVk_72_69jDA" name="replacement_schema" value="25"/>
+        <eLiterals xmi:id="_U4S7V_OzEeOVk_72_69jDA" name="subset_schema" value="26"/>
+        <eLiterals xmi:id="_U4S7WPOzEeOVk_72_69jDA" name="tool_specific_file" value="27"/>
+        <eLiterals xmi:id="_U4S7WfOzEeOVk_72_69jDA" name="wantlist" value="28"/>
+        <eLiterals xmi:id="_U4S7WvOzEeOVk_72_69jDA" name="file_set" value="29"/>
+        <eLiterals xmi:id="_U4S7W_OzEeOVk_72_69jDA" name="schema_set" value="30"/>
+        <eLiterals xmi:id="_U4S7XPOzEeOVk_72_69jDA" name="constraint_schema_set" value="31"/>
+        <eLiterals xmi:id="_U4S7XfOzEeOVk_72_69jDA" name="exchange_schema_set" value="32"/>
+        <eLiterals xmi:id="_U4S7XvOzEeOVk_72_69jDA" name="changelog" value="33"/>
+        <eLiterals xmi:id="_U4S7X_OzEeOVk_72_69jDA" name="web_service" value="34"/>
+        <eLiterals xmi:id="_U4S7YPOzEeOVk_72_69jDA" name="data_dictionary" value="35"/>
+        <eLiterals xmi:id="_U4S7YfOzEeOVk_72_69jDA" name="data_model" value="36"/>
+        <eLiterals xmi:id="_U4S7YvOzEeOVk_72_69jDA" name="display" value="37"/>
+        <eLiterals xmi:id="_U4S7Y_OzEeOVk_72_69jDA" name="mapping" value="38"/>
+        <eLiterals xmi:id="_U4S7ZPOzEeOVk_72_69jDA" name="master_document" value="39"/>
+        <eLiterals xmi:id="_U4S7ZfOzEeOVk_72_69jDA" name="ontology" value="40"/>
+        <eLiterals xmi:id="_U4S7ZvOzEeOVk_72_69jDA" name="transformation" value="41"/>
       </eClassifiers>
-      <eClassifiers xmi:type="ecore:EEnum" xmi:id="_NJ5x3u1CEeONXpKqgZhDUQ" name="RelationshipCode">
-        <eAnnotations xmi:id="_NJ5x3-1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-RelationshipCode"/>
-        <eLiterals xmi:id="_NJ5x4O1CEeONXpKqgZhDUQ" name="updates"/>
-        <eLiterals xmi:id="_NJ5x4e1CEeONXpKqgZhDUQ" name="conforms_to" value="1"/>
-        <eLiterals xmi:id="_NJ5x4u1CEeONXpKqgZhDUQ" name="version_of" value="2"/>
-        <eLiterals xmi:id="_NJ5x4-1CEeONXpKqgZhDUQ" name="specializes" value="3"/>
-        <eLiterals xmi:id="_NJ5x5O1CEeONXpKqgZhDUQ" name="generalizes" value="4"/>
-        <eLiterals xmi:id="_NJ5x5e1CEeONXpKqgZhDUQ" name="supersedes" value="5"/>
-        <eLiterals xmi:id="_NJ5x5u1CEeONXpKqgZhDUQ" name="deprecates" value="6"/>
-        <eLiterals xmi:id="_NJ5x5-1CEeONXpKqgZhDUQ" name="adapts" value="7"/>
+      <eClassifiers xmi:type="ecore:EEnum" xmi:id="_U4S7Z_OzEeOVk_72_69jDA" name="RelationshipCode">
+        <eAnnotations xmi:id="_U4S7aPOzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-RelationshipCode"/>
+        <eLiterals xmi:id="_U4S7afOzEeOVk_72_69jDA" name="updates"/>
+        <eLiterals xmi:id="_U4S7avOzEeOVk_72_69jDA" name="conforms_to" value="1"/>
+        <eLiterals xmi:id="_U4S7a_OzEeOVk_72_69jDA" name="version_of" value="2"/>
+        <eLiterals xmi:id="_U4S7bPOzEeOVk_72_69jDA" name="specializes" value="3"/>
+        <eLiterals xmi:id="_U4S7bfOzEeOVk_72_69jDA" name="generalizes" value="4"/>
+        <eLiterals xmi:id="_U4S7bvOzEeOVk_72_69jDA" name="supersedes" value="5"/>
+        <eLiterals xmi:id="_U4S7b_OzEeOVk_72_69jDA" name="deprecates" value="6"/>
+        <eLiterals xmi:id="_U4S7cPOzEeOVk_72_69jDA" name="adapts" value="7"/>
       </eClassifiers>
-      <eClassifiers xmi:type="ecore:EClass" xmi:id="_NJ5x6O1CEeONXpKqgZhDUQ" name="ModelPackageDescriptionRelationship">
-        <eAnnotations xmi:id="_NJ5x6e1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-ModelPackageDescriptionRelationship"/>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5x6u1CEeONXpKqgZhDUQ" name="descriptionText" ordered="false">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_U4S7cfOzEeOVk_72_69jDA" name="ModelPackageDescriptionRelationship">
+        <eAnnotations xmi:id="_U4S7cvOzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-ModelPackageDescriptionRelationship"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7c_OzEeOVk_72_69jDA" name="descriptionText" ordered="false">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NJ5x7O1CEeONXpKqgZhDUQ" name="base_Dependency" ordered="false" lowerBound="1">
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_U4S7dfOzEeOVk_72_69jDA" name="base_Dependency" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Dependency"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5x7u1CEeONXpKqgZhDUQ" name="relationshipCode" ordered="false" lowerBound="1" eType="_NJ5x3u1CEeONXpKqgZhDUQ" defaultValueLiteral="conforms_to"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7d_OzEeOVk_72_69jDA" name="relationshipCode" ordered="false" lowerBound="1" eType="_U4S7Z_OzEeOVk_72_69jDA" defaultValueLiteral="conforms_to"/>
       </eClassifiers>
-      <eClassifiers xmi:type="ecore:EClass" xmi:id="_NJ5x8O1CEeONXpKqgZhDUQ" name="ModelPackageDescription">
-        <eAnnotations xmi:id="_NJ5x8e1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-ModelPackageDescription"/>
-        <eAnnotations xmi:id="_NJ5x8u1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/emf/2002/GenModel">
-          <details xmi:id="_NJ5x8-1CEeONXpKqgZhDUQ" key="documentation" value="derive: self.mpdBaseURI.repr().concat(self.mpdVersionID.repr()).oclAsType(AnyURI) &#xD;&#xA;self.mpdBaseURI.repr().startsWith('http:/') &#xD;&#xA;Constraints on master document are resolved during PSM-MPD transformation.&#xD;&#xA;Constraint is resolved via PSM-MPD transformations which produce the catalog as&#xA;              specified by the MPD. &#xD;&#xA;Constraints on changelogs are resolved by PSM-MPD transformations.&#xD;&#xA;Packaging constraints are resolved by PSM-MPD transformations.&#xD;&#xA;Constraints on URIs are partially satisfied by specific URI Constraints expressed&#xA;              elsewhere in the NDR and MPD. For URI references embedded elsewhere in the model, it&#xA;              would be difficult to express the constraint in OCL. This constraint must be manually&#xA;              resolved by the modeler. &#xD;&#xA;Packaging constraints are resolved by PSM-MPD transformations.&#xD;&#xA;Constraints on changelogs are resolved by PSM-MPD transformations.&#xD;&#xA;Constraints on changelog are resolved during PSM-MPD transformations.&#xD;&#xA;( self.base_Component.profiledBy('NIEM_PSM_Profile') and&#xA;              (self.mpdClassCode=ModelPackageDescriptionClassCode::iepd) ) implies&#xA;              self.base_Component.elementImport ->exists(elementImport|&#xA;              elementImport.stereotypedBy('ModelPackageDescriptionFile') and (&#xA;              elementImport.getStereotypeApplication('ModelPackageDescriptionFile').purposeURI=&#xA;              'http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#exchange-schema' )&#xA;              and elementImport.importElement.oclAsType(Package).packagedElement&#xA;              ->exists(e|e.stereotypedBy('PropertyHolder') and&#xA;              e.oclAsType(Class).ownedAttribute->notEmpty()) ) &#xD;&#xA;Constraints on master document are resolved by PSM-MPD transformations.&#xD;&#xA;Packaging constraints are resolved by PSM-MPD transformations.&#xD;&#xA;self.mpdVersionID.match('[0-9]+(\\.[0-9]+)*((alpha|beta|rc|rev)[0-9]+)?') &#xD;&#xA;Constraints on packaging are resolved during PSM-MPD transformation.&#xD;&#xA;( self.base_Component.profiledBy('NIEM_PSM_Profile') and (&#xA;              (self.mpdClassCode=ModelPackageDescriptionClassCode::iepd) or&#xA;              (self.mpdClassCode=ModelPackageDescriptionClassCode::eiem) ) ) implies&#xA;              self.base_Component.elementImport&#xA;              ->select(elementImport|elementImport.stereotypedBy('ModelPackageDescriptionFile')).getStereotypeApplication('ModelPackageDescriptionFile').purposeURI&#xA;              ->exists(purposeURI|&#xA;              (purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#subset-schema')&#xA;              or&#xA;              (purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#reference-schema')&#xA;              ) &#xD;&#xA;Explicit URI references are not modelled for well known artifacts such as schemas.&#xA;              Serialization of MPD artifacts such as schemas are via PSM-MPD transformations which&#xA;              construct URI references according to this MPD rule.&#xD;&#xA;Constraints for catalog construction are resolved in PSM-MPD transformations.&#xD;&#xA;This constraint is resolved by PSM-MPD transformations.&#xD;&#xA;This constraint is realized by PSM-MPD transformations.&#xD;&#xA;Constraints on artifact URIs are resolved during PSM-MPD transformations.&#xD;&#xA;Packaging constraints are resolved by PSM-MPD transformations.&#xD;&#xA;This constraint is resolved by a combination of applying all specified NDR-based&#xA;              constraints and transformations to target artifacts.&#xD;&#xA;Packaging constraints are resolved by transformations.&#xD;&#xA;not(self.mpdVersionID.oclIsUndefined()) and (self.mpdVersionID&lt;>'')&#xA;              -- This constraint also satisfied by tag mpdVersionID, which is required to have a&#xA;              value.&#xD;&#xA;Packaging constraints are resolved by PSM-MPD transformations.&#xD;&#xA;All catalog constraints are resolved in PSM-MPD transformation.&#xD;&#xA;Constraints on changelogs are resolved during PSM-MPD transformation.&#xD;&#xA;Satisfaction of this constraint requires comparative analysis between versions;&#xA;              can not be expressed easily in OCL.&#xD;&#xA;An EIEM is an MPD with a packageCode of EIEM. An EIEM is typically bundled as a&#xA;              reusable model library which can be referenced from IEPDs. This relationship between&#xA;              EIEM and IEPD is used by PSM-MPD transformations to construct the catalog entries in&#xA;              resolution of this constraint.&#xD;&#xA;Constraints for catalog construction are resolved in PSM-MPD transformation. &#xD;&#xA;Packaging constraints are resolved by PSM-MPD transformations.&#xD;&#xA;The schemaLocation constraints are resolved during PSM-MPD transformation."/>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_U4S7efOzEeOVk_72_69jDA" name="ModelPackageDescription">
+        <eAnnotations xmi:id="_U4S7evOzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-ModelPackageDescription"/>
+        <eAnnotations xmi:id="_U4S7e_OzEeOVk_72_69jDA" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:id="_U4S7fPOzEeOVk_72_69jDA" key="documentation" value="derive: self.mpdBaseURI.repr().concat(self.mpdVersionID.repr()).oclAsType(AnyURI) &#xD;&#xA;self.mpdBaseURI.repr().startsWith('http:/') &#xD;&#xA;Constraints on master document are resolved during PSM-MPD transformation.&#xD;&#xA;Constraint is resolved via PSM-MPD transformations which produce the catalog as&#xA;              specified by the MPD. &#xD;&#xA;Constraints on changelogs are resolved by PSM-MPD transformations.&#xD;&#xA;Packaging constraints are resolved by PSM-MPD transformations.&#xD;&#xA;Constraints on URIs are partially satisfied by specific URI Constraints expressed&#xA;              elsewhere in the NDR and MPD. For URI references embedded elsewhere in the model, it&#xA;              would be difficult to express the constraint in OCL. This constraint must be manually&#xA;              resolved by the modeler. &#xD;&#xA;Packaging constraints are resolved by PSM-MPD transformations.&#xD;&#xA;Constraints on changelogs are resolved by PSM-MPD transformations.&#xD;&#xA;Constraints on changelog are resolved during PSM-MPD transformations.&#xD;&#xA;( self.base_Component.profiledBy('NIEM_PSM_Profile') and&#xA;              (self.mpdClassCode=ModelPackageDescriptionClassCode::iepd) ) implies&#xA;              self.base_Component.elementImport ->exists(elementImport|&#xA;              elementImport.stereotypedBy('ModelPackageDescriptionFile') and (&#xA;              elementImport.getStereotypeApplication('ModelPackageDescriptionFile').purposeURI=&#xA;              'http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#exchange-schema' )&#xA;              and elementImport.importElement.oclAsType(Package).packagedElement&#xA;              ->exists(e|e.stereotypedBy('PropertyHolder') and&#xA;              e.oclAsType(Class).ownedAttribute->notEmpty()) ) &#xD;&#xA;Constraints on master document are resolved by PSM-MPD transformations.&#xD;&#xA;Packaging constraints are resolved by PSM-MPD transformations.&#xD;&#xA;self.mpdVersionID.match('[0-9]+(\\.[0-9]+)*((alpha|beta|rc|rev)[0-9]+)?') &#xD;&#xA;Constraints on packaging are resolved during PSM-MPD transformation.&#xD;&#xA;( self.base_Component.profiledBy('NIEM_PSM_Profile') and (&#xA;              (self.mpdClassCode=ModelPackageDescriptionClassCode::iepd) or&#xA;              (self.mpdClassCode=ModelPackageDescriptionClassCode::eiem) ) ) implies&#xA;              self.base_Component.elementImport&#xA;              ->select(elementImport|elementImport.stereotypedBy('ModelPackageDescriptionFile')).getStereotypeApplication('ModelPackageDescriptionFile').purposeURI&#xA;              ->exists(purposeURI|&#xA;              (purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#subset-schema')&#xA;              or&#xA;              (purposeURI='http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#reference-schema')&#xA;              ) &#xD;&#xA;Explicit URI references are not modelled for well known artifacts such as schemas.&#xA;              Serialization of MPD artifacts such as schemas are via PSM-MPD transformations which&#xA;              construct URI references according to this MPD rule.&#xD;&#xA;Constraints for catalog construction are resolved in PSM-MPD transformations.&#xD;&#xA;This constraint is resolved by PSM-MPD transformations.&#xD;&#xA;This constraint is realized by PSM-MPD transformations.&#xD;&#xA;Constraints on artifact URIs are resolved during PSM-MPD transformations.&#xD;&#xA;Packaging constraints are resolved by PSM-MPD transformations.&#xD;&#xA;This constraint is resolved by a combination of applying all specified NDR-based&#xA;              constraints and transformations to target artifacts.&#xD;&#xA;Packaging constraints are resolved by transformations.&#xD;&#xA;not(self.mpdVersionID.oclIsUndefined()) and (self.mpdVersionID&lt;>'')&#xA;              -- This constraint also satisfied by tag mpdVersionID, which is required to have a&#xA;              value.&#xD;&#xA;Packaging constraints are resolved by PSM-MPD transformations.&#xD;&#xA;All catalog constraints are resolved in PSM-MPD transformation.&#xD;&#xA;Constraints on changelogs are resolved during PSM-MPD transformation.&#xD;&#xA;Satisfaction of this constraint requires comparative analysis between versions;&#xA;              can not be expressed easily in OCL.&#xD;&#xA;An EIEM is an MPD with a packageCode of EIEM. An EIEM is typically bundled as a&#xA;              reusable model library which can be referenced from IEPDs. This relationship between&#xA;              EIEM and IEPD is used by PSM-MPD transformations to construct the catalog entries in&#xA;              resolution of this constraint.&#xD;&#xA;Constraints for catalog construction are resolved in PSM-MPD transformation. &#xD;&#xA;Packaging constraints are resolved by PSM-MPD transformations.&#xD;&#xA;The schemaLocation constraints are resolved during PSM-MPD transformation."/>
         </eAnnotations>
-        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NJ5x9O1CEeONXpKqgZhDUQ" name="base_Component" ordered="false" lowerBound="1">
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_U4S7ffOzEeOVk_72_69jDA" name="base_Component" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Component"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5x9u1CEeONXpKqgZhDUQ" name="mpdVersionID" ordered="false" lowerBound="1" defaultValueLiteral="1.0">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7f_OzEeOVk_72_69jDA" name="mpdVersionID" ordered="false" lowerBound="1" defaultValueLiteral="1.0">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5x-O1CEeONXpKqgZhDUQ" name="mpdBaseURI" ordered="false" lowerBound="1" defaultValueLiteral="http://iepd.org/myIEPD/">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7gfOzEeOVk_72_69jDA" name="mpdBaseURI" ordered="false" lowerBound="1" defaultValueLiteral="http://iepd.org/myIEPD/">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5x-u1CEeONXpKqgZhDUQ" name="mpdClassCode" ordered="false" lowerBound="1" eType="_NJ5yGu1CEeONXpKqgZhDUQ" defaultValueLiteral="iepd"/>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5x_O1CEeONXpKqgZhDUQ" name="descriptionText" ordered="false" defaultValueLiteral="An exchange to notify partner agencies to perform contingency operations.">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7g_OzEeOVk_72_69jDA" name="mpdClassCode" ordered="false" lowerBound="1" eType="_U4S7o_OzEeOVk_72_69jDA" defaultValueLiteral="iepd"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7hfOzEeOVk_72_69jDA" name="descriptionText" ordered="false" defaultValueLiteral="An exchange to notify partner agencies to perform contingency operations.">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5x_u1CEeONXpKqgZhDUQ" name="SecurityMarkingText" ordered="false" lowerBound="1">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7h_OzEeOVk_72_69jDA" name="SecurityMarkingText" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yAO1CEeONXpKqgZhDUQ" name="CreationDate" ordered="false" lowerBound="1">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7ifOzEeOVk_72_69jDA" name="CreationDate" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yAu1CEeONXpKqgZhDUQ" name="LastRevsionDate" ordered="false">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7i_OzEeOVk_72_69jDA" name="LastRevsionDate" ordered="false">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yBO1CEeONXpKqgZhDUQ" name="NextRevisionDate" ordered="false">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7jfOzEeOVk_72_69jDA" name="NextRevisionDate" ordered="false">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yBu1CEeONXpKqgZhDUQ" name="StatusText" ordered="false">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7j_OzEeOVk_72_69jDA" name="StatusText" ordered="false">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yCO1CEeONXpKqgZhDUQ" name="KeywordText" ordered="false" lowerBound="1" upperBound="-1">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7kfOzEeOVk_72_69jDA" name="KeywordText" ordered="false" lowerBound="1" upperBound="-1">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yCu1CEeONXpKqgZhDUQ" name="DomainText" ordered="false" lowerBound="1" upperBound="-1">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7k_OzEeOVk_72_69jDA" name="DomainText" ordered="false" lowerBound="1" upperBound="-1">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yDO1CEeONXpKqgZhDUQ" name="PurposeText" ordered="false" upperBound="-1">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7lfOzEeOVk_72_69jDA" name="PurposeText" ordered="false" upperBound="-1">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yDu1CEeONXpKqgZhDUQ" name="ExchangePatternText" ordered="false" upperBound="-1">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7l_OzEeOVk_72_69jDA" name="ExchangePatternText" ordered="false" upperBound="-1">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yEO1CEeONXpKqgZhDUQ" name="ExchangePartnerName" ordered="false" upperBound="-1">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7mfOzEeOVk_72_69jDA" name="ExchangePartnerName" ordered="false" upperBound="-1">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yEu1CEeONXpKqgZhDUQ" name="ASName" ordered="false" lowerBound="1">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7m_OzEeOVk_72_69jDA" name="ASName" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yFO1CEeONXpKqgZhDUQ" name="ASAddressText" ordered="false">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7nfOzEeOVk_72_69jDA" name="ASAddressText" ordered="false">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yFu1CEeONXpKqgZhDUQ" name="ASWebSiteURL" ordered="false">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7n_OzEeOVk_72_69jDA" name="ASWebSiteURL" ordered="false">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NJ5yGO1CEeONXpKqgZhDUQ" name="POC" ordered="false" lowerBound="1" upperBound="-1" eType="_NJ5xdO1CEeONXpKqgZhDUQ" containment="true"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_U4S7ofOzEeOVk_72_69jDA" name="POC" ordered="false" lowerBound="1" upperBound="-1" eType="_U4SUs_OzEeOVk_72_69jDA" containment="true"/>
       </eClassifiers>
-      <eClassifiers xmi:type="ecore:EEnum" xmi:id="_NJ5yGu1CEeONXpKqgZhDUQ" name="ModelPackageDescriptionClassCode">
-        <eAnnotations xmi:id="_NJ5yG-1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-ModelPackageDescriptionClassCode"/>
-        <eLiterals xmi:id="_NJ5yHO1CEeONXpKqgZhDUQ" name="eiem"/>
-        <eLiterals xmi:id="_NJ5yHe1CEeONXpKqgZhDUQ" name="iepd" value="1"/>
-        <eLiterals xmi:id="_NJ5yHu1CEeONXpKqgZhDUQ" name="core_update" value="2"/>
-        <eLiterals xmi:id="_NJ5yH-1CEeONXpKqgZhDUQ" name="release" value="3"/>
-        <eLiterals xmi:id="_NJ5yIO1CEeONXpKqgZhDUQ" name="domain_update" value="4"/>
+      <eClassifiers xmi:type="ecore:EEnum" xmi:id="_U4S7o_OzEeOVk_72_69jDA" name="ModelPackageDescriptionClassCode">
+        <eAnnotations xmi:id="_U4S7pPOzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-ModelPackageDescriptionClassCode"/>
+        <eLiterals xmi:id="_U4S7pfOzEeOVk_72_69jDA" name="eiem"/>
+        <eLiterals xmi:id="_U4S7pvOzEeOVk_72_69jDA" name="iepd" value="1"/>
+        <eLiterals xmi:id="_U4S7p_OzEeOVk_72_69jDA" name="core_update" value="2"/>
+        <eLiterals xmi:id="_U4S7qPOzEeOVk_72_69jDA" name="release" value="3"/>
+        <eLiterals xmi:id="_U4S7qfOzEeOVk_72_69jDA" name="domain_update" value="4"/>
       </eClassifiers>
-      <eClassifiers xmi:type="ecore:EClass" xmi:id="_NJ5yIe1CEeONXpKqgZhDUQ" name="ModelPackageDescriptionFileSet">
-        <eAnnotations xmi:id="_NJ5yIu1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-ModelPackageDescriptionFileSet"/>
-        <eAnnotations xmi:id="_NJ5yI-1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/emf/2002/GenModel">
-          <details xmi:id="_NJ5yJO1CEeONXpKqgZhDUQ" key="documentation" value="self.base_Package.namespace.stereotypedBy('ModelPackageDescription')"/>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_U4S7qvOzEeOVk_72_69jDA" name="ModelPackageDescriptionFileSet">
+        <eAnnotations xmi:id="_U4S7q_OzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-ModelPackageDescriptionFileSet"/>
+        <eAnnotations xmi:id="_U4S7rPOzEeOVk_72_69jDA" source="http://www.eclipse.org/emf/2002/GenModel">
+          <details xmi:id="_U4S7rfOzEeOVk_72_69jDA" key="documentation" value="self.base_Package.namespace.stereotypedBy('ModelPackageDescription')"/>
         </eAnnotations>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yJe1CEeONXpKqgZhDUQ" name="externalURI" ordered="false">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7rvOzEeOVk_72_69jDA" name="externalURI" ordered="false">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yJ-1CEeONXpKqgZhDUQ" name="natureCode" ordered="false" lowerBound="1" eType="_NJ5xjO1CEeONXpKqgZhDUQ" defaultValueLiteral="file_set"/>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yKe1CEeONXpKqgZhDUQ" name="purposeCode" ordered="false" lowerBound="1" eType="_NJ5xsu1CEeONXpKqgZhDUQ" defaultValueLiteral="extension_schema_set"/>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yK-1CEeONXpKqgZhDUQ" name="descriptionText" ordered="false">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7sPOzEeOVk_72_69jDA" name="natureCode" ordered="false" lowerBound="1" eType="_U4SUy_OzEeOVk_72_69jDA" defaultValueLiteral="file_set"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7svOzEeOVk_72_69jDA" name="purposeCode" ordered="false" lowerBound="1" eType="_U4S7O_OzEeOVk_72_69jDA" defaultValueLiteral="extension_schema_set"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7tPOzEeOVk_72_69jDA" name="descriptionText" ordered="false">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NJ5yLe1CEeONXpKqgZhDUQ" name="base_Component" ordered="false" lowerBound="1">
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_U4S7tvOzEeOVk_72_69jDA" name="base_Component" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Component"/>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xmi:type="ecore:EClass" xmi:id="_NJ5yL-1CEeONXpKqgZhDUQ" name="ChangeLogType">
-        <eAnnotations xmi:id="_NJ5yMO1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-ChangeLogType"/>
-        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NJ5yMe1CEeONXpKqgZhDUQ" name="base_Package" ordered="false" lowerBound="1">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_U4S7uPOzEeOVk_72_69jDA" name="ChangeLogType">
+        <eAnnotations xmi:id="_U4S7ufOzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-ChangeLogType"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_U4S7uvOzEeOVk_72_69jDA" name="base_Package" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yM-1CEeONXpKqgZhDUQ" name="ChangeLogSummaryText" ordered="false">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7vPOzEeOVk_72_69jDA" name="ChangeLogSummaryText" ordered="false">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yNe1CEeONXpKqgZhDUQ" name="ChangeLogSubmitterName" ordered="false">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7vvOzEeOVk_72_69jDA" name="ChangeLogSubmitterName" ordered="false">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yN-1CEeONXpKqgZhDUQ" name="ChangeLogApplicationInstructionsText" ordered="false">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7wPOzEeOVk_72_69jDA" name="ChangeLogApplicationInstructionsText" ordered="false">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xmi:type="ecore:EClass" xmi:id="_NJ5yOe1CEeONXpKqgZhDUQ" name="ChangeInformationType">
-        <eAnnotations xmi:id="_NJ5yOu1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-ChangeInformationType"/>
-        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NJ5yO-1CEeONXpKqgZhDUQ" name="base_Package" ordered="false" lowerBound="1">
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_U4S7wvOzEeOVk_72_69jDA" name="ChangeInformationType">
+        <eAnnotations xmi:id="_U4S7w_OzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-ChangeInformationType"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_U4S7xPOzEeOVk_72_69jDA" name="base_Package" ordered="false" lowerBound="1">
           <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yPe1CEeONXpKqgZhDUQ" name="ChangeSummaryText" ordered="false">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7xvOzEeOVk_72_69jDA" name="ChangeSummaryText" ordered="false">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yP-1CEeONXpKqgZhDUQ" name="ChangeReasonText" ordered="false">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7yPOzEeOVk_72_69jDA" name="ChangeReasonText" ordered="false">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yQe1CEeONXpKqgZhDUQ" name="ChangeFullDescriptionText" ordered="false">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7yvOzEeOVk_72_69jDA" name="ChangeFullDescriptionText" ordered="false">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//String"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yQ-1CEeONXpKqgZhDUQ" name="ChangeNCCTIssueNumber" ordered="false" upperBound="-1">
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7zPOzEeOVk_72_69jDA" name="ChangeNCCTIssueNumber" ordered="false" upperBound="-1">
           <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/4.0.0/Types#//Integer"/>
         </eStructuralFeatures>
-        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NJ5yRe1CEeONXpKqgZhDUQ" name="ChangeCode" ordered="false" upperBound="-1" eType="_NJ5yR-1CEeONXpKqgZhDUQ"/>
+        <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_U4S7zvOzEeOVk_72_69jDA" name="ChangeCode" ordered="false" upperBound="-1" eType="_U4S70POzEeOVk_72_69jDA"/>
       </eClassifiers>
-      <eClassifiers xmi:type="ecore:EEnum" xmi:id="_NJ5yR-1CEeONXpKqgZhDUQ" name="ChangeCodeSimpleType">
-        <eAnnotations xmi:id="_NJ5ySO1CEeONXpKqgZhDUQ" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-ChangeCodeSimpleType"/>
-        <eLiterals xmi:id="_NJ5ySe1CEeONXpKqgZhDUQ" name="new_requirement"/>
-        <eLiterals xmi:id="_NJ5ySu1CEeONXpKqgZhDUQ" name="bug_fix" value="1"/>
-        <eLiterals xmi:id="_NJ5yS-1CEeONXpKqgZhDUQ" name="refactoring" value="2"/>
-        <eLiterals xmi:id="_NJ5yTO1CEeONXpKqgZhDUQ" name="harmonization" value="3"/>
-        <eLiterals xmi:id="_NJ5yTe1CEeONXpKqgZhDUQ" name="general_improvement" value="4"/>
+      <eClassifiers xmi:type="ecore:EEnum" xmi:id="_U4S70POzEeOVk_72_69jDA" name="ChangeCodeSimpleType">
+        <eAnnotations xmi:id="_U4S70fOzEeOVk_72_69jDA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="NIEM_UML_Profile-Model_Package_Description_Profile-ChangeCodeSimpleType"/>
+        <eLiterals xmi:id="_U4S70vOzEeOVk_72_69jDA" name="new_requirement"/>
+        <eLiterals xmi:id="_U4S70_OzEeOVk_72_69jDA" name="bug_fix" value="1"/>
+        <eLiterals xmi:id="_U4S71POzEeOVk_72_69jDA" name="refactoring" value="2"/>
+        <eLiterals xmi:id="_U4S71fOzEeOVk_72_69jDA" name="harmonization" value="3"/>
+        <eLiterals xmi:id="_U4S71vOzEeOVk_72_69jDA" name="general_improvement" value="4"/>
       </eClassifiers>
     </contents>
   </eAnnotations>

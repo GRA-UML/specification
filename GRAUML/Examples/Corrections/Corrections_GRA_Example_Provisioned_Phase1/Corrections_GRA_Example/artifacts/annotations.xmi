@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="ASCII"?>
+<data.grauml.graAnnotationModel:ServiceDescription xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:data.grauml.graAnnotationModel="http://ijis.org/GRA/Annotations" xmlns:data.grauml.graWsdl="http:/ijis.org/GRA/WSDLAnnotations" xmlns:emof="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_0" name="Corrections Information Sharing Service" documentation="Corrections, law enforcement agencies, courts, and community service providers have much to gain by sharing information at the appropriate time and in a secure manner for the purpose of improving services for an individual. Enhancing the short and long term safety and security of staff, officers and the community being served by sharing information will provide better opportunities for more successful outcomes.  The lack of effective, standards based information sharing capability between corrections, law enforcement, and community support service and treatment providers inhibits the overall effort to effectively address the needs of these individuals in receiving appropriate services and treatment.  Failure to share information related to an individual can create a danger for victims, impact public safety and officer safety, and affect the community at large by having a direct impact on the occurrence of recidivism." classification="S" sponsors="Office of Justice Programs, U.S. Department of Justice" serviceDescriptionSummaryText="Service for accessing information about a corrections subject with respect to release." domainDescription="Law Enforcement, Public Safety, Prosecution, Corrections, Probation, Parole,USMS" transformationUri="http://it.ojp.gov/gsp/BaseSSPTransform">
+  <requirement xmi:id="_0.@requirement" identityAndAttributeAssertionTransmission="true" serviceAuthentication="true" transactionSupport="true" logging="true"/>
+  <modelReference xmi:id="_0.@modelReference.0" name="Data::CorrectionsServices::Law enforcement and corrections community" elementId="_17_0_5_1_7b3022e_1400873613242_243024_40877">
+    <documentation>Law Enforcement, Public Safety, Prosecution, Corrections, Probation, Parole,USMS</documentation>
+    <model xmi:id="_0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+  </modelReference>
+  <serviceId>String</serviceId>
+  <serviceUri>http://it.ojp.gov/gsp/services/1.0.0</serviceUri>
+  <serviceNameAbbreviationText>COR</serviceNameAbbreviationText>
+  <servicePurpose xmi:id="_0.@servicePurpose" description="This service takes a holistic look at the information sharing requirement and needs for release and re-entry from the perspective of corrections, other justice partners and community based service providers.  The release and re-entry processes vary according to the respective business operations, processes and policies observed by the participating stakeholders including corrections, law enforcement, courts and community service providers."/>
+  <serviceScopeDescription xmi:id="_0.@serviceScopeDescription" description="The IJIS Institute invited key practitioners from corrections, law enforcement, courts and national leaders in corrections and re-entry community of interest to help articulate the requirements for information sharing.  This group helped develop an overall Corrections Process Narrative (available as a separate document), and identified a number of exchanges that are critical for effective information sharing leading to an effective re-entry experience for an individual.  These exchanges were then further refined/prioritized to identify the top 10 exchanges that needed to be addressed as a group.  These exchanges are detailed in the Corrections SDD document"/>
+  <serviceDescriptionKeywordText>Corrections, CIS, Release, re-entry</serviceDescriptionKeywordText>
+  <serviceCapabilities xmi:id="_0.@serviceCapabilities.0" capabilityDescriptionText="Corrections, law enforcement agencies, courts, and community service providers have much to gain by sharing information at the appropriate time and in a secure manner for the purpose of improving services for an individual. Enhancing the short and long term safety and security of staff, officers and the community being served by sharing information will provide better opportunities for more successful outcomes.  The lack of effective, standards based information sharing capability between corrections, law enforcement, and community support service and treatment providers inhibits the overall effort to effectively address the needs of these individuals in receiving appropriate services and treatment.  Failure to share information related to an individual can create a danger for victims, impact public safety and officer safety, and affect the community at large by having a direct impact on the occurrence of recidivism."/>
+  <serviceDependency xmi:id="_0.@serviceDependency.0" name="ServiceIdentification">
+    <serviceId>String</serviceId>
+    <serviceUri>http://it.ojp.gov/gsp/services/1.0.0/ServiceName</serviceUri>
+    <serviceNameAbbreviationText>String</serviceNameAbbreviationText>
+  </serviceDependency>
+  <iepdReference xmi:id="_0.@iepdReference.0">
+    <iepdName>Corrections</iepdName>
+    <iepdurl>http://it.ojp.gov/gist/200/Corrections/</iepdurl>
+  </iepdReference>
+  <serviceSecurityClassification xmi:id="_0.@serviceSecurityClassification" securityClassificationText="SBU"/>
+  <serviceLevelAgreement xmi:id="_0.@serviceLevelAgreement.0" applicablePoliciesIndicator="true" applicableContractsIndicator="true" applicableAgreementsIndicator="true" applicableUmbrellaAgreementsIndicator="true" applicablePolicies="CJIS Security Policy" serviceResponseTime="P1Y2M3DT10H30M">
+    <umbrellaAgreement xmi:id="_0.@serviceLevelAgreement.0.@umbrellaAgreement.0"/>
+    <agreement xmi:id="_0.@serviceLevelAgreement.0.@agreement.0"/>
+    <applicableContract xmi:id="_0.@serviceLevelAgreement.0.@applicableContract.0"/>
+    <licensingAgreement xmi:id="_0.@serviceLevelAgreement.0.@licensingAgreement"/>
+    <usageCostAmount xmi:id="_0.@serviceLevelAgreement.0.@usageCostAmount"/>
+    <usageUnitCostAmount xmi:id="_0.@serviceLevelAgreement.0.@usageUnitCostAmount"/>
+    <creationCostAmount xmi:id="_0.@serviceLevelAgreement.0.@creationCostAmount"/>
+  </serviceLevelAgreement>
+  <relatedOrganization xmi:id="_0.@relatedOrganization.0" name="Office of Justice Programs" organizationAcronym="OJP" organizationFullAddressText="810 Seventh Street NW, Washington, DC 20531" organizationWebSiteUrl="http://www.ojp.usdoj.gov/smart/" organizationRoleDescriptionText="Owner" organizationRoleDetailedDescriptionText="Sponsor/owner of specification">
+    <organizationPointOfContact xmi:id="_0.@relatedOrganization.0.@organizationPointOfContact" name="TBD" contactPersonPhoneNumberId="202-514-4689"/>
+  </relatedOrganization>
+  <serviceInterface xsi:type="data.grauml.graWsdl:WsdlServiceInterface" xmi:id="_0.@serviceInterface.0" name="Corrections CaseFileProvider WS-SIP" template="MDSSecureSIP" securityDescriptionText="GFIPM">
+    <provider xsi:type="data.grauml.graWsdl:WsdlService" xmi:id="_0.@serviceInterface.0.@provider.0" name="CaseFIleProvider" organizationRoleDescriptionText="Sponsor">
+      <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@modelReference.0" name="Data::CorrectionsServices::CorrectionsComponents::CaseFileProvider" elementId="_17_0_2_1_2aa0151_1396612036651_267876_47408">
+        <model xmi:id="_0.@serviceInterface.0.@provider.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+      </modelReference>
+      <interfaceDefault xsi:type="data.grauml.graWsdl:WsdlInterface" xmi:id="_0.@serviceInterface.0.@provider.0.@interfaceDefault.0" name="MetadataInterface" bindingCode="httpGet">
+        <operation xsi:type="data.grauml.graWsdl:WsdlOperation" xmi:id="_0.@serviceInterface.0.@provider.0.@interfaceDefault.0.@operation.0" name="GetMetadata" actionName="GetMetadata"/>
+      </interfaceDefault>
+      <port xsi:type="data.grauml.graWsdl:WsdlPort" xmi:id="_0.@serviceInterface.0.@provider.0.@port.0" name="">
+        <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.0.@modelReference.0" name="Data::CorrectionsServices::CorrectionsComponents::CaseFileProvider::MetadataPort" elementId="_17_0_2_4_7b3022e_1396991785360_845213_53577">
+          <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+        </modelReference>
+        <interface xsi:type="data.grauml.graWsdl:WsdlInterface" xmi:id="_0.@serviceInterface.0.@provider.0.@port.0.@interface.0" name="MetadataInterface" bindingCode="httpGet">
+          <requirement xmi:id="_0.@serviceInterface.0.@provider.0.@port.0.@interface.0.@requirement" identityAndAttributeAssertionTransmission="true"/>
+          <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.0.@interface.0.@modelReference.0" name="Data::CorrectionsServices::CorrectionsInterfaces::MetadataInterface" elementId="_17_0_2_4_7b3022e_1396991697726_960187_53557">
+            <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.0.@interface.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+          </modelReference>
+          <operation xsi:type="data.grauml.graWsdl:WsdlOperation" xmi:id="_0.@serviceInterface.0.@provider.0.@port.0.@interface.0.@operation.0" name="GetMetadata" actionName="GetMetadata">
+            <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.0.@interface.0.@operation.0.@modelReference.0" name="Data::CorrectionsServices::CorrectionsInterfaces::MetadataInterface::GetMetadata" elementId="_17_0_2_3_7b3022e_1396132673679_638111_52454">
+              <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.0.@interface.0.@operation.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+            </modelReference>
+            <message xmi:id="_0.@serviceInterface.0.@provider.0.@port.0.@interface.0.@operation.0.@message.0" name="">
+              <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.0.@interface.0.@operation.0.@message.0.@modelReference.0" elementId="_17_0_2_3_7b3022e_1396132673680_430210_52455">
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.0.@interface.0.@operation.0.@message.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </modelReference>
+              <type xmi:id="_0.@serviceInterface.0.@provider.0.@port.0.@interface.0.@operation.0.@message.0.@type" name="Data::CorrectionsInformation::XMLschemas::exchange::MetadataMessageModel::RepositoryMetadataMessage" elementId="_17_0_2_3_7b3022e_1396132318779_258796_52411">
+                <documentation>A data type representing category and exchange agreement metadata. The IDs of the elements in this metadata are referenced from messages</documentation>
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.0.@interface.0.@operation.0.@message.0.@type.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </type>
+            </message>
+          </operation>
+        </interface>
+      </port>
+      <port xmi:id="_0.@serviceInterface.0.@provider.0.@port.1" name="SubjectUpdatePoint">
+        <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.1.@modelReference.0" name="Data::CorrectionsServices::CorrectionsComponents::CaseFileProvider::SubjectUpdatePoint" elementId="_17_0_2_3_7b3022e_1396129631628_111119_51972">
+          <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.1.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+        </modelReference>
+        <interface xmi:id="_0.@serviceInterface.0.@provider.0.@port.1.@interface.0" name="SubjectUpdateInterface">
+          <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.1.@interface.0.@modelReference.0" name="Data::CorrectionsServices::CorrectionsInterfaces::SubjectUpdateInterface" elementId="_17_0_2_3_7b3022e_1396127449483_22246_51498">
+            <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.1.@interface.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+          </modelReference>
+          <operation xmi:id="_0.@serviceInterface.0.@provider.0.@port.1.@interface.0.@operation.0" name="SubjectUpdate" actionName="SubjectUpdate">
+            <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.1.@interface.0.@operation.0.@modelReference.0" name="Data::CorrectionsServices::CorrectionsInterfaces::SubjectUpdateInterface::SubjectUpdate" elementId="_17_0_2_3_7b3022e_1396127464291_862235_51516">
+              <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.1.@interface.0.@operation.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+            </modelReference>
+            <message xmi:id="_0.@serviceInterface.0.@provider.0.@port.1.@interface.0.@operation.0.@message.0" name="">
+              <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.1.@interface.0.@operation.0.@message.0.@modelReference.0" elementId="_17_0_2_3_7b3022e_1396127618815_158531_51554">
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.1.@interface.0.@operation.0.@message.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </modelReference>
+              <type xmi:id="_0.@serviceInterface.0.@provider.0.@port.1.@interface.0.@operation.0.@message.0.@type" name="Data::CorrectionsInformation::XMLschemas::exchange::MessageBase::OperationResult" elementId="_17_0_2_3_7b3022e_1396127497155_917667_51519">
+                <documentation>A data type representing the result of an operation</documentation>
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.1.@interface.0.@operation.0.@message.0.@type.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </type>
+            </message>
+            <message xmi:id="_0.@serviceInterface.0.@provider.0.@port.1.@interface.0.@operation.0.@message.1" name="subject_information">
+              <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.1.@interface.0.@operation.0.@message.1.@modelReference.0" name="Data::CorrectionsServices::CorrectionsInterfaces::SubjectUpdateInterface::SubjectUpdate::subject_information" elementId="_17_0_2_3_7b3022e_1396127625042_895001_51555">
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.1.@interface.0.@operation.0.@message.1.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </modelReference>
+              <type xmi:id="_0.@serviceInterface.0.@provider.0.@port.1.@interface.0.@operation.0.@message.1.@type" name="Data::CorrectionsInformation::XMLschemas::exchange::SubjectMessageModel::SubjectInformationMessage" elementId="_17_0_2_3_7b3022e_1394743304173_370469_51784">
+                <documentation>A data type representing information about one or more subjects</documentation>
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.1.@interface.0.@operation.0.@message.1.@type.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </type>
+            </message>
+          </operation>
+        </interface>
+      </port>
+      <port xmi:id="_0.@serviceInterface.0.@provider.0.@port.2" name="SubscriptionPoint">
+        <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@modelReference.0" name="Data::CorrectionsServices::CorrectionsComponents::CaseFileProvider::SubscriptionPoint" elementId="_17_0_2_3_7b3022e_1396132056243_525792_52381">
+          <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+        </modelReference>
+        <interface xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0" name="SubjectSubscriptionInterface">
+          <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@modelReference.0" name="Data::CorrectionsServices::CorrectionsInterfaces::SubjectSubscriptionInterface" elementId="_17_0_2_3_7b3022e_1396132014452_421471_52362">
+            <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+          </modelReference>
+          <operation xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.0" name="CancelSubscription" actionName="CancelSubscription">
+            <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.0.@modelReference.0" name="Data::CorrectionsServices::CorrectionsInterfaces::SubjectSubscriptionInterface::CancelSubscription" elementId="_17_0_2_3_7b3022e_1396131759683_70771_52349">
+              <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+            </modelReference>
+            <message xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.0.@message.0" name="">
+              <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.0.@message.0.@modelReference.0" elementId="_17_0_2_3_7b3022e_1396131778562_312149_52352">
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.0.@message.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </modelReference>
+              <type xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.0.@message.0.@type" name="Data::CorrectionsInformation::XMLschemas::exchange::MessageBase::OperationResult" elementId="_17_0_2_3_7b3022e_1396127497155_917667_51519">
+                <documentation>A data type representing the result of an operation</documentation>
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.0.@message.0.@type.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </type>
+            </message>
+            <message xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.0.@message.1" name="SubscriptionIDText">
+              <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.0.@message.1.@modelReference.0" name="Data::CorrectionsServices::CorrectionsInterfaces::SubjectSubscriptionInterface::CancelSubscription::SubscriptionIDText" elementId="_17_0_2_3_7b3022e_1396131792274_220854_52355">
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.0.@message.1.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </modelReference>
+              <type xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.0.@message.1.@type" name="Data::XMLPrimitiveTypes::string" elementId="XMLPrimitiveTypes-string">
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.0.@message.1.@type.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </type>
+            </message>
+          </operation>
+          <operation xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.1" name="SubscribeToSubject" actionName="SubscribeToSubject">
+            <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.1.@modelReference.0" name="Data::CorrectionsServices::CorrectionsInterfaces::SubjectSubscriptionInterface::SubscribeToSubject" elementId="_17_0_2_3_7b3022e_1396127714935_618661_51557">
+              <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.1.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+            </modelReference>
+            <message xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.1.@message.0" name="subscription">
+              <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.1.@message.0.@modelReference.0" name="Data::CorrectionsServices::CorrectionsInterfaces::SubjectSubscriptionInterface::SubscribeToSubject::subscription" elementId="_17_0_2_3_7b3022e_1396127714936_473899_51559">
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.1.@message.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </modelReference>
+              <type xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.1.@message.0.@type" name="Data::CorrectionsInformation::XMLschemas::exchange::SubjectMessageModel::SubscriptionMessage" elementId="_17_0_2_3_7b3022e_1396127867419_650116_51828">
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.1.@message.0.@type.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </type>
+            </message>
+            <message xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.1.@message.1" name="">
+              <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.1.@message.1.@modelReference.0" elementId="_17_0_2_3_7b3022e_1396127714936_115469_51560">
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.1.@message.1.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </modelReference>
+              <type xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.1.@message.1.@type" name="Data::CorrectionsInformation::XMLschemas::exchange::MessageBase::OperationResult" elementId="_17_0_2_3_7b3022e_1396127497155_917667_51519">
+                <documentation>A data type representing the result of an operation</documentation>
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.2.@interface.0.@operation.1.@message.1.@type.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </type>
+            </message>
+          </operation>
+        </interface>
+      </port>
+      <port xmi:id="_0.@serviceInterface.0.@provider.0.@port.3" name="SubjectQueryPoint">
+        <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@modelReference.0" name="Data::CorrectionsServices::CorrectionsComponents::CaseFileProvider::SubjectQueryPoint" elementId="_17_0_2_3_7b3022e_1396129597540_579299_51960">
+          <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+        </modelReference>
+        <interface xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0" name="SubjectQueryInterface">
+          <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@modelReference.0" name="Data::CorrectionsServices::CorrectionsInterfaces::SubjectQueryInterface" elementId="_17_0_2_3_7b3022e_1396127019627_659785_51463">
+            <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+          </modelReference>
+          <operation xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.0" name="SubjectQuery" documentation="An operation to get all or part of a subjects case file" actionName="SubjectQuery" actionPurpose="An operation to get all or part of a subjects case file">
+            <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.0.@modelReference.0" name="Data::CorrectionsServices::CorrectionsInterfaces::SubjectQueryInterface::SubjectQuery" elementId="_17_0_2_3_7b3022e_1396127044931_758890_51481">
+              <documentation>An operation to get all or part of a subjects case file</documentation>
+              <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+            </modelReference>
+            <message xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.0.@message.0" name="subject_identification">
+              <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.0.@message.0.@modelReference.0" name="Data::CorrectionsServices::CorrectionsInterfaces::SubjectQueryInterface::SubjectQuery::subject_identification" elementId="_17_0_2_3_7b3022e_1396127129235_318296_51487">
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.0.@message.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </modelReference>
+              <type xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.0.@message.0.@type" name="Data::CorrectionsInformation::XMLschemas::exchange::SubjectMessageModel::SubjectQueryMessage" elementId="_17_0_2_3_7b3022e_1395090748116_487045_44317">
+                <documentation>A data type representing a query about an individual</documentation>
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.0.@message.0.@type.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </type>
+            </message>
+            <message xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.0.@message.1" name="SubjectQuery return">
+              <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.0.@message.1.@modelReference.0" name="Data::CorrectionsServices::CorrectionsInterfaces::SubjectQueryInterface::SubjectQuery::SubjectQuery return" elementId="_17_0_2_3_7b3022e_1396127350673_998256_51496">
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.0.@message.1.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </modelReference>
+              <type xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.0.@message.1.@type" name="Data::CorrectionsInformation::XMLschemas::exchange::SubjectMessageModel::SubjectInformationMessage" elementId="_17_0_2_3_7b3022e_1394743304173_370469_51784">
+                <documentation>A data type representing information about one or more subjects</documentation>
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.0.@message.1.@type.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </type>
+            </message>
+          </operation>
+          <operation xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.1" name="EntityQuery" documentation="An operation to get all or part of information about an entity related to a subject case file. This is used to get more information about a related entity." actionName="EntityQuery" actionPurpose="An operation to get all or part of information about an entity related to a subject case file. This is used to get more information about a related entity.">
+            <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.1.@modelReference.0" name="Data::CorrectionsServices::CorrectionsInterfaces::SubjectQueryInterface::EntityQuery" elementId="_17_0_2_3_7b3022e_1396131390638_650488_52324">
+              <documentation>An operation to get all or part of information about an entity related to a subject case file. This is used to get more information about a related entity.</documentation>
+              <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.1.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+            </modelReference>
+            <message xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.1.@message.0" name="entity_identification">
+              <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.1.@message.0.@modelReference.0" name="Data::CorrectionsServices::CorrectionsInterfaces::SubjectQueryInterface::EntityQuery::entity_identification" elementId="_17_0_2_3_7b3022e_1396131390639_6944_52326">
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.1.@message.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </modelReference>
+              <type xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.1.@message.0.@type" name="Data::CorrectionsInformation::XMLschemas::exchange::SubjectMessageModel::EntityQueryMessage" elementId="_17_0_2_3_7b3022e_1396130919802_983923_52255">
+                <documentation>A data type for a message to get information about any entity in a data resource</documentation>
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.1.@message.0.@type.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </type>
+            </message>
+            <message xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.1.@message.1" name="">
+              <modelReference xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.1.@message.1.@modelReference.0" elementId="_17_0_2_3_7b3022e_1396131453246_660208_52340">
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.1.@message.1.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </modelReference>
+              <type xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.1.@message.1.@type" name="Data::CorrectionsInformation::XMLschemas::exchange::SubjectMessageModel::SubjectInformationMessage" elementId="_17_0_2_3_7b3022e_1394743304173_370469_51784">
+                <documentation>A data type representing information about one or more subjects</documentation>
+                <model xmi:id="_0.@serviceInterface.0.@provider.0.@port.3.@interface.0.@operation.1.@message.1.@type.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </type>
+            </message>
+          </operation>
+        </interface>
+      </port>
+    </provider>
+  </serviceInterface>
+  <serviceInterface xsi:type="data.grauml.graWsdl:WsdlServiceInterface" xmi:id="_0.@serviceInterface.1" name="Corrections CaseFileSubscriber WS-SIP" template="MDSSecureSIP" securityDescriptionText="GFIPM">
+    <serviceInteractionProfile xmi:id="_0.@serviceInterface.1.@serviceInteractionProfile" sipName="WS-SIP" sipVersion="1.3"/>
+    <provider xsi:type="data.grauml.graWsdl:WsdlService" xmi:id="_0.@serviceInterface.1.@provider.0" name="CaseFileSubscriber" organizationRoleDescriptionText="Sponsor">
+      <modelReference xmi:id="_0.@serviceInterface.1.@provider.0.@modelReference.0" name="Data::CorrectionsServices::CorrectionsComponents::CaseFileSubscriber" elementId="_17_0_2_1_2aa0151_1396612044713_115664_47475">
+        <documentation>Law Enforcement, Public Safety, Prosecution, Corrections, Probation, Parole,USMS</documentation>
+        <model xmi:id="_0.@serviceInterface.1.@provider.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+      </modelReference>
+      <port xmi:id="_0.@serviceInterface.1.@provider.0.@port.0" name="Subscriber">
+        <modelReference xmi:id="_0.@serviceInterface.1.@provider.0.@port.0.@modelReference.0" name="Data::CorrectionsServices::CorrectionsComponents::CaseFileSubscriber::Subscriber" elementId="_17_0_2_3_7b3022e_1396132772516_341533_52508">
+          <model xmi:id="_0.@serviceInterface.1.@provider.0.@port.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+        </modelReference>
+        <interface xmi:id="_0.@serviceInterface.1.@provider.0.@port.0.@interface.0" name="NotificationInterface">
+          <modelReference xmi:id="_0.@serviceInterface.1.@provider.0.@port.0.@interface.0.@modelReference.0" name="Data::CorrectionsServices::CorrectionsInterfaces::NotificationInterface" elementId="_17_0_2_4_7b3022e_1397069260971_284675_56757">
+            <model xmi:id="_0.@serviceInterface.1.@provider.0.@port.0.@interface.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+          </modelReference>
+          <operation xmi:id="_0.@serviceInterface.1.@provider.0.@port.0.@interface.0.@operation.0" name="Notify" actionName="Notify">
+            <modelReference xmi:id="_0.@serviceInterface.1.@provider.0.@port.0.@interface.0.@operation.0.@modelReference.0" name="Data::CorrectionsServices::CorrectionsInterfaces::NotificationInterface::Notify" elementId="_17_0_2_4_7b3022e_1396996865890_286145_53605">
+              <model xmi:id="_0.@serviceInterface.1.@provider.0.@port.0.@interface.0.@operation.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+            </modelReference>
+            <message xmi:id="_0.@serviceInterface.1.@provider.0.@port.0.@interface.0.@operation.0.@message.0" name="SubjectNotification">
+              <modelReference xmi:id="_0.@serviceInterface.1.@provider.0.@port.0.@interface.0.@operation.0.@message.0.@modelReference.0" name="Data::CorrectionsServices::CorrectionsInterfaces::NotificationInterface::Notify::SubjectNotification" elementId="_17_0_2_4_7b3022e_1396996884560_359842_53607">
+                <model xmi:id="_0.@serviceInterface.1.@provider.0.@port.0.@interface.0.@operation.0.@message.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </modelReference>
+              <type xmi:id="_0.@serviceInterface.1.@provider.0.@port.0.@interface.0.@operation.0.@message.0.@type" name="Data::CorrectionsInformation::XMLschemas::exchange::SubjectMessageModel::SubjectInformationMessage" elementId="_17_0_2_3_7b3022e_1394743304173_370469_51784">
+                <documentation>A data type representing information about one or more subjects</documentation>
+                <model xmi:id="_0.@serviceInterface.1.@provider.0.@port.0.@interface.0.@operation.0.@message.0.@type.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+              </type>
+            </message>
+          </operation>
+        </interface>
+      </port>
+    </provider>
+  </serviceInterface>
+  <endorsements>String</endorsements>
+  <realWorldEffect xmi:id="_0.@realWorldEffect" name="Corrections Use Cases">
+    <modelReference xmi:id="_0.@realWorldEffect.@modelReference.0" name="Data::CorrectionsServices::Corrections Use Cases" elementId="_17_0_2_3_7b3022e_1384814865779_419101_32155">
+      <model xmi:id="_0.@realWorldEffect.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+    </modelReference>
+    <provider xmi:id="_0.@realWorldEffect.@provider.0" name="Corrections Case File Provider">
+      <modelReference xmi:id="_0.@realWorldEffect.@provider.0.@modelReference.0" name="Data::CorrectionsServices::Corrections Use Cases::Corrections Case File Provider" elementId="_17_0_2_3_7b3022e_1384818052822_16023_32568">
+        <model xmi:id="_0.@realWorldEffect.@provider.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+      </modelReference>
+    </provider>
+    <provider xmi:id="_0.@realWorldEffect.@provider.1" name="Supervision Authority">
+      <modelReference xmi:id="_0.@realWorldEffect.@provider.1.@modelReference.0" name="Data::CorrectionsServices::Corrections Use Cases::Supervision Authority" elementId="_17_0_2_3_7b3022e_1384972825743_7903_32034">
+        <model xmi:id="_0.@realWorldEffect.@provider.1.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+      </modelReference>
+    </provider>
+    <consumer xmi:id="_0.@realWorldEffect.@consumer.0" name="Health Care Provider">
+      <modelReference xmi:id="_0.@realWorldEffect.@consumer.0.@modelReference.0" name="Data::CorrectionsServices::Corrections Use Cases::Health Care Provider" elementId="_17_0_2_3_7b3022e_1384814998871_878713_32178">
+        <model xmi:id="_0.@realWorldEffect.@consumer.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+      </modelReference>
+    </consumer>
+    <consumer xmi:id="_0.@realWorldEffect.@consumer.1" name="Housing Provider">
+      <modelReference xmi:id="_0.@realWorldEffect.@consumer.1.@modelReference.0" name="Data::CorrectionsServices::Corrections Use Cases::Housing Provider" elementId="_17_0_5_1_7b3022e_1401138310534_197355_41559">
+        <model xmi:id="_0.@realWorldEffect.@consumer.1.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+      </modelReference>
+    </consumer>
+    <realWorldEffectDescriptionText>Service to obtain Criminal History information.</realWorldEffectDescriptionText>
+    <realWorldEffectDescriptionText>Service for Inquiries about an individual to obtain demographic, release and risk information.</realWorldEffectDescriptionText>
+    <realWorldEffectDescriptionText>Service for Housing Information so that the individual is housed appropriately based on their specific housing needs and risk profiles</realWorldEffectDescriptionText>
+    <realWorldEffectDescriptionText>Service for Treatment Status to be shared between the community based service providers and the supervisory authorities.</realWorldEffectDescriptionText>
+    <realWorldEffectDescriptionText>Service for Risk Assessment information so that the community based service providers better understand the risks associated with an individual.</realWorldEffectDescriptionText>
+    <realWorldEffectDescriptionText>Service for Medicaid Entitlements so that he individual has appropriate coverage, and help minimize costs for the correctional facilities.</realWorldEffectDescriptionText>
+    <realWorldEffectDescriptionText>Service for Treatment Information about the individual with community based providers so they are able to provide adequate treatment while the individual is released.</realWorldEffectDescriptionText>
+    <realWorldEffectDescriptionText>Service for accessing information about a corrections subject with respect to release.</realWorldEffectDescriptionText>
+    <realWorldEffectDescriptionText>Service for Share Notifications about the individual with a broad array of stakeholders based as the individual proceeds through the corrections process.</realWorldEffectDescriptionText>
+  </realWorldEffect>
+  <serviceInteraction xmi:id="_0.@serviceInteraction" name="ServiceInteraction">
+    <modelReference xmi:id="_0.@serviceInteraction.@modelReference.0" name="Data::CorrectionsServices::Corrections SSP::ServiceInteraction" elementId="_18_0beta_2aa0151_1401379376901_245059_70749">
+      <model xmi:id="_0.@serviceInteraction.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+    </modelReference>
+    <participant xmi:id="_0.@serviceInteraction.@participant.0" name="CaseFileProvider">
+      <modelReference xmi:id="_0.@serviceInteraction.@participant.0.@modelReference.0" name="Data::CorrectionsServices::CorrectionsComponents::CaseFileProvider" elementId="_17_0_2_1_2aa0151_1396612036651_267876_47408">
+        <model xmi:id="_0.@serviceInteraction.@participant.0.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+      </modelReference>
+    </participant>
+    <participant xmi:id="_0.@serviceInteraction.@participant.1" name="Service Provider">
+      <modelReference xmi:id="_0.@serviceInteraction.@participant.1.@modelReference.0" name="Data::CorrectionsServices::Corrections Use Cases::Service Provider" elementId="_17_0_2_3_7b3022e_1384815917262_498789_32749">
+        <model xmi:id="_0.@serviceInteraction.@participant.1.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+      </modelReference>
+    </participant>
+    <participant xmi:id="_0.@serviceInteraction.@participant.2" name="Corrections Community Actor">
+      <modelReference xmi:id="_0.@serviceInteraction.@participant.2.@modelReference.0" name="Data::CorrectionsServices::Corrections Use Cases::Corrections Community Actor" elementId="_17_0_2_3_7b3022e_1384815016914_625350_32196">
+        <model xmi:id="_0.@serviceInteraction.@participant.2.@modelReference.0.@model" modelUri="platform:/resource/org.ijis.gra.uml.examples/src/main/resources/org.ijis.gra.uml.examples/Corrections_GRA_Example3/Corrections_GRA_Example.uml" label="Corrections_GRA_Example"/>
+      </modelReference>
+    </participant>
+  </serviceInteraction>
+</data.grauml.graAnnotationModel:ServiceDescription>
