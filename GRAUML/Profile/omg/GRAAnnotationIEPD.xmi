@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:uml="http://www.omg.org/spec/UML/20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:Model_Package_Description_Profile="http://www.omg.org/spec/NIEM-UML/20120501/Model_Package_Description_Profile" xmlns:NIEM_Common_Profile="http://www.omg.org/spec/NIEM-UML/20120501/NIEM_Common_Profile" xmlns:StandardProfileL3="http://www.omg.org/spec/UML/20110701/StandardProfileL3" xmlns:NIEM_PIM_Profile="http://www.omg.org/spec/NIEM-UML/20120501/NIEM_PIM_Profile" xmlns:NIEM_PSM_Profile="http://www.omg.org/spec/NIEM-UML/20120501/NIEM_PSM_Profile" xmlns:StandardProfileL2="http://www.omg.org/spec/UML/20110701/StandardProfileL2">
+   <xmi:Documentation>
+      <xmi:exporter>MagicDraw Clean XMI Exporter</xmi:exporter>
+      <xmi:exporterVersion>17.0.4</xmi:exporterVersion>
+   </xmi:Documentation>
+   <uml:Model xmi:type="uml:Model" xmi:id="_Data" name="Data">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_Data-ownedComment" body="Author:Cory-c.&#xA;Created:5/25/14 7:17 PM.&#xA;Title:.&#xA;Comment:.&#xA;">
+         <annotatedElement xmi:idref="_Data"/>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Package" xmi:id="_Data-niem" name="niem">
+         <packagedElement xmi:type="uml:Package" xmi:id="_Data-niem-domains" name="domains"/>
+         <packagedElement xmi:type="uml:Package" xmi:id="_Data-niem-external" name="external"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Model" xmi:id="_Data-GRAAnnotationIEPD" name="GRAAnnotationIEPD">
+         <packagedElement xmi:type="uml:Package" xmi:id="_Data-GRAAnnotationIEPD-MPD_Model" name="MPD Model">
+            <packagedElement xmi:type="uml:Component" xmi:id="_Data-GRAAnnotationIEPD-MPD_Model-GRAAnnotationIEPD" name="GRAAnnotationIEPD">
+               <elementImport xmi:type="uml:ElementImport" xmi:id="_Data-GRAAnnotationIEPD-MPD_Model-GRAAnnotationIEPD-elementImport" importedElement="_Data-GRAAnnotationIEPD-XMLschemas-exchange-ExchangeModel"/>
+               <packagedElement xmi:type="uml:Usage" xmi:id="_Data-GRAAnnotationIEPD-MPD_Model-GRAAnnotationIEPD-packagedElement-1">
+                  <client xmi:idref="_Data-GRAAnnotationIEPD-MPD_Model-GRAAnnotationIEPD"/>
+                  <supplier xmi:idref="_Data-GRAAnnotationIEPD-changelog"/>
+               </packagedElement>
+               <packagedElement xmi:type="uml:Usage" xmi:id="_Data-GRAAnnotationIEPD-MPD_Model-GRAAnnotationIEPD-packagedElement-2">
+                  <client xmi:idref="_Data-GRAAnnotationIEPD-MPD_Model-GRAAnnotationIEPD"/>
+                  <supplier xmi:idref="_Data-GRAAnnotationIEPD-XMLsamples-MyExchange"/>
+               </packagedElement>
+               <packagedElement xmi:type="uml:Usage" xmi:id="_Data-GRAAnnotationIEPD-MPD_Model-GRAAnnotationIEPD-packagedElement-3">
+                  <client xmi:idref="_Data-GRAAnnotationIEPD-MPD_Model-GRAAnnotationIEPD"/>
+                  <supplier xmi:idref="_Data-GRAAnnotationIEPD-business-rules-myRuleSuite"/>
+               </packagedElement>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Usage" xmi:id="_Data-GRAAnnotationIEPD-MPD_Model-packagedElement-2">
+               <client xmi:idref="_Data-GRAAnnotationIEPD-MPD_Model"/>
+               <supplier xmi:idref="_Data-GRAAnnotationIEPD-XMLschemas-exchange-ExchangeModel"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-GRAAnnotationIEPD-MPD_Model-poc" name="poc">
+               <classifier href="NIEM-UML-Profile.xmi#NIEM_UML_Profile-Model_Package_Description_Profile-POCType"/>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-GRAAnnotationIEPD-MPD_Model-poc-slot-1">
+                  <definingFeature href="NIEM-UML-Profile.xmi#NIEM_UML_Profile-Model_Package_Description_Profile-POCType-POCTelephone"/>
+                  <value xmi:type="uml:LiteralString" xmi:id="_Data-GRAAnnotationIEPD-MPD_Model-poc-slot-1-value" name="POCTelephone" value="(888)888-8888">
+                     <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+                  </value>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-GRAAnnotationIEPD-MPD_Model-poc-slot-2">
+                  <definingFeature href="NIEM-UML-Profile.xmi#NIEM_UML_Profile-Model_Package_Description_Profile-POCType-POCName"/>
+                  <value xmi:type="uml:LiteralString" xmi:id="_Data-GRAAnnotationIEPD-MPD_Model-poc-slot-2-value" name="POCName" value="PointOfContact">
+                     <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+                  </value>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-GRAAnnotationIEPD-MPD_Model-poc-slot-3">
+                  <definingFeature href="NIEM-UML-Profile.xmi#NIEM_UML_Profile-Model_Package_Description_Profile-POCType-POCEmail"/>
+                  <value xmi:type="uml:LiteralString" xmi:id="_Data-GRAAnnotationIEPD-MPD_Model-poc-slot-3-value" name="POCEmail" value="poc@niem.org">
+                     <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+                  </value>
+               </slot>
+            </packagedElement>
+         </packagedElement>
+         <packagedElement xmi:type="uml:Package" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas" name="XMLschemas">
+            <packagedElement xmi:type="uml:Package" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-constraint" name="constraint"/>
+            <packagedElement xmi:type="uml:Package" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-exchange" name="exchange">
+               <packagedElement xmi:type="uml:Package" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-exchange-ExchangeModel" name="ExchangeModel">
+                  <ownedComment xmi:type="uml:Comment" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-exchange-ExchangeModel-ownedComment" body="A Documented Component"/>
+                  <packagedElement xmi:type="uml:Usage" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-exchange-ExchangeModel-packagedElement-1">
+                     <client xmi:idref="_Data-GRAAnnotationIEPD-XMLschemas-exchange-ExchangeModel"/>
+                     <supplier xmi:idref="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model"/>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Class" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-exchange-ExchangeModel-ExchangeTopLevelElementPropertyHolder" name="ExchangeTopLevelElementPropertyHolder">
+                     <ownedAttribute xmi:type="uml:Property" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-exchange-ExchangeModel-ExchangeTopLevelElementPropertyHolder-GRAAnnotationExchange" name="GRAAnnotationExchange" visibility="public" aggregation="shared" type="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation">
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-exchange-ExchangeModel-ExchangeTopLevelElementPropertyHolder-GRAAnnotationExchange-ownedComment-1" body="A Documented Component"/>
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-exchange-ExchangeModel-ExchangeTopLevelElementPropertyHolder-GRAAnnotationExchange-ownedComment-2" body="A Documented Component"/>
+                        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-exchange-ExchangeModel-ExchangeTopLevelElementPropertyHolder-GRAAnnotationExchange-lowerValue"/>
+                        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-exchange-ExchangeModel-ExchangeTopLevelElementPropertyHolder-GRAAnnotationExchange-upperValue" value="*"/>
+                     </ownedAttribute>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Usage" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-exchange-ExchangeModel-packagedElement-3">
+                     <client xmi:idref="_Data-GRAAnnotationIEPD-XMLschemas-exchange-ExchangeModel"/>
+                     <supplier href="GRAAnnotationModel.xmi#_Data-GRAUML-GRAAnnotationModel"/>
+                  </packagedElement>
+               </packagedElement>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Package" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension" name="extension">
+               <packagedElement xmi:type="uml:Package" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model" name="Extension Model">
+                  <ownedComment xmi:type="uml:Comment" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-ownedComment" body="A Documented Component"/>
+                  <packagedElement xmi:type="uml:Usage" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-packagedElement-1">
+                     <client xmi:idref="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model"/>
+                     <supplier xmi:idref="_Data-GRAAnnotationIEPD-XMLschemas-subset-niem-niem-core-2.0-niem-core"/>
+                  </packagedElement>
+                  <packagedElement xmi:type="uml:Class" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation" name="GRAAnnotation">
+                     <ownedComment xmi:type="uml:Comment" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-ownedComment" body="The Type referenced by the top level exchange element.">
+                        <annotatedElement xmi:idref="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation"/>
+                     </ownedComment>
+                     <ownedAttribute xmi:type="uml:Property" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-ServiceIdentification" name="ServiceIdentification" visibility="public" aggregation="shared">
+                        <type href="GRAAnnotationModel.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceIdentification"/>
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-ServiceIdentification-ownedComment-1" body="A Documented Component">
+                           <annotatedElement xmi:idref="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-ServiceIdentification"/>
+                        </ownedComment>
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-ServiceIdentification-ownedComment-2" body="A Documented Component">
+                           <annotatedElement xmi:idref="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-ServiceIdentification"/>
+                        </ownedComment>
+                        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-ServiceIdentification-lowerValue"/>
+                        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-ServiceIdentification-upperValue" value="*"/>
+                     </ownedAttribute>
+                     <ownedAttribute xmi:type="uml:Property" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-ServiceDescription" name="ServiceDescription" aggregation="shared">
+                        <type href="GRAAnnotationModel.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription"/>
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-ServiceDescription-ownedComment-1" body="A Documented Component">
+                           <annotatedElement xmi:idref="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-ServiceDescription"/>
+                        </ownedComment>
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-ServiceDescription-ownedComment-2" body="A Documented Component">
+                           <annotatedElement xmi:idref="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-ServiceDescription"/>
+                        </ownedComment>
+                     </ownedAttribute>
+                     <ownedAttribute xmi:type="uml:Property" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-Participant" name="Participant" visibility="public" aggregation="shared">
+                        <type href="GRAAnnotationModel.xmi#_Data-GRAUML-GRAAnnotationModel-Participant"/>
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-Participant-ownedComment-1" body="A Documented Component">
+                           <annotatedElement xmi:idref="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-Participant"/>
+                        </ownedComment>
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-Participant-ownedComment-2" body="A Documented Component">
+                           <annotatedElement xmi:idref="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-Participant"/>
+                        </ownedComment>
+                        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-Participant-lowerValue"/>
+                        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-Participant-upperValue" value="*"/>
+                     </ownedAttribute>
+                     <ownedAttribute xmi:type="uml:Property" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-Person" name="Person" visibility="public" aggregation="shared">
+                        <type href="GRAAnnotationModel.xmi#_Data-GRAUML-GRAAnnotationModel-Person"/>
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-Person-ownedComment-1" body="A Documented Component">
+                           <annotatedElement xmi:idref="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-Person"/>
+                        </ownedComment>
+                        <ownedComment xmi:type="uml:Comment" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-Person-ownedComment-2" body="A Documented Component">
+                           <annotatedElement xmi:idref="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-Person"/>
+                        </ownedComment>
+                        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-Person-lowerValue"/>
+                        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation-Person-upperValue" value="*"/>
+                     </ownedAttribute>
+                  </packagedElement>
+               </packagedElement>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Package" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-subset" name="subset">
+               <packagedElement xmi:type="uml:Package" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-subset-niem" name="niem">
+                  <packagedElement xmi:type="uml:Package" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-subset-niem-niem-core" name="niem-core">
+                     <packagedElement xmi:type="uml:Package" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-subset-niem-niem-core-2.0" name="2.0">
+                        <packagedElement xmi:type="uml:Package" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-subset-niem-niem-core-2.0-niem-core" name="niem-core">
+                           <ownedComment xmi:type="uml:Comment" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-subset-niem-niem-core-2.0-niem-core-ownedComment" body="NIEM Core includes both Universal (U) and Common (C) components.  The identities for U and C components in Core are maintained with metadata."/>
+                           <packagedElement xmi:type="uml:Realization" xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-subset-niem-niem-core-2.0-niem-core-packagedElement">
+                              <client xmi:idref="_Data-GRAAnnotationIEPD-XMLschemas-subset-niem-niem-core-2.0-niem-core"/>
+                              <supplier href="NIEM-Reference-core.xmi#_niem-niem-core-2.0-niem-core"/>
+                           </packagedElement>
+                        </packagedElement>
+                     </packagedElement>
+                  </packagedElement>
+               </packagedElement>
+            </packagedElement>
+         </packagedElement>
+         <packagedElement xmi:type="uml:Package" xmi:id="_Data-GRAAnnotationIEPD-XMLsamples" name="XMLsamples">
+            <packagedElement xmi:type="uml:Package" xmi:id="_Data-GRAAnnotationIEPD-XMLsamples-MyExchange" name="MyExchange">
+               <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-GRAAnnotationIEPD-XMLsamples-MyExchange-MyExchange" name="MyExchange">
+                  <classifier xmi:idref="_Data-GRAAnnotationIEPD-XMLschemas-exchange-ExchangeModel-ExchangeTopLevelElementPropertyHolder"/>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-GRAAnnotationIEPD-XMLsamples-MyExchange-MyExchange-slot" definingFeature="_Data-GRAAnnotationIEPD-XMLschemas-exchange-ExchangeModel-ExchangeTopLevelElementPropertyHolder-GRAAnnotationExchange">
+                     <value xmi:type="uml:InstanceValue" xmi:id="_Data-GRAAnnotationIEPD-XMLsamples-MyExchange-MyExchange-slot-value" name="MyExchange" instance="_Data-GRAAnnotationIEPD-XMLsamples-MyExchange-MyExchange.MyExchange"/>
+                  </slot>
+               </packagedElement>
+               <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-GRAAnnotationIEPD-XMLsamples-MyExchange-MyExchange.MyExchange" name="MyExchange.MyExchange">
+                  <classifier xmi:idref="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-GRAAnnotation"/>
+               </packagedElement>
+            </packagedElement>
+         </packagedElement>
+         <packagedElement xmi:type="uml:Package" xmi:id="_Data-GRAAnnotationIEPD-changelog" name="changelog">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Data-GRAAnnotationIEPD-changelog-ownedComment" body="changelog for initial version of MPD.">
+               <annotatedElement xmi:idref="_Data-GRAAnnotationIEPD-changelog"/>
+            </ownedComment>
+         </packagedElement>
+         <packagedElement xmi:type="uml:Package" xmi:id="_Data-GRAAnnotationIEPD-business-rules" name="business-rules">
+            <packagedElement xmi:type="uml:Package" xmi:id="_Data-GRAAnnotationIEPD-business-rules-myRuleSuite" name="myRuleSuite">
+               <packageImport xmi:type="uml:PackageImport" xmi:id="_Data-GRAAnnotationIEPD-business-rules-myRuleSuite-packageImport" importedPackage="_Data-GRAAnnotationIEPD"/>
+            </packagedElement>
+         </packagedElement>
+         <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Data-GRAAnnotationIEPD-profileApplication-1">
+            <appliedProfile href="NIEM-UML-Profile.xmi#NIEM_UML_Profile-NIEM_Common_Profile"/>
+         </profileApplication>
+         <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Data-GRAAnnotationIEPD-profileApplication-2">
+            <appliedProfile href="NIEM-UML-Profile.xmi#NIEM_UML_Profile-NIEM_PIM_Profile"/>
+         </profileApplication>
+         <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Data-GRAAnnotationIEPD-profileApplication-3">
+            <appliedProfile href="NIEM-UML-Profile.xmi#NIEM_UML_Profile-NIEM_PSM_Profile"/>
+         </profileApplication>
+         <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Data-GRAAnnotationIEPD-profileApplication-4">
+            <appliedProfile href="NIEM-UML-Profile.xmi#NIEM_UML_Profile-Model_Package_Description_Profile"/>
+         </profileApplication>
+      </packagedElement>
+   </uml:Model>
+   <NIEM_PIM_Profile:InformationModel xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model-appliedStereotypeInstance" base_Package="_Data-GRAAnnotationIEPD-XMLschemas-extension-Extension_Model" isConformant="true" targetNamespace="http://default.com/my/extension" version="&#34;1&#34;" defaultPurpose="extension"/>
+   <NIEM_Common_Profile:PropertyHolder xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-exchange-ExchangeModel-ExchangeTopLevelElementPropertyHolder-appliedStereotypeInstance" base_Class="_Data-GRAAnnotationIEPD-XMLschemas-exchange-ExchangeModel-ExchangeTopLevelElementPropertyHolder"/>
+   <Model_Package_Description_Profile:ModelPackageDescriptionFile xmi:id="_Data-GRAAnnotationIEPD-MPD_Model-GRAAnnotationIEPD-packagedElement-3-appliedStereotypeInstance" base_Usage="_Data-GRAAnnotationIEPD-MPD_Model-GRAAnnotationIEPD-packagedElement-3" relativePathName="" natureCode="xmi" purposeCode="business_rules" descriptionText="Serves the purpose of specifying business rules applied to this IEPD."/>
+   <Model_Package_Description_Profile:ModelPackageDescriptionFile xmi:id="_Data-GRAAnnotationIEPD-MPD_Model-GRAAnnotationIEPD-packagedElement-1-appliedStereotypeInstance" base_Usage="_Data-GRAAnnotationIEPD-MPD_Model-GRAAnnotationIEPD-packagedElement-1" relativePathName="" natureCode="xml" purposeCode="changelog" descriptionText="Serves the purpose of a change log."/>
+   <NIEM_Common_Profile:References xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-subset-niem-niem-core-2.0-niem-core-packagedElement-appliedStereotypeInstance" base_Realization="_Data-GRAAnnotationIEPD-XMLschemas-subset-niem-niem-core-2.0-niem-core-packagedElement"/>
+   <Model_Package_Description_Profile:ModelPackageDescriptionFile xmi:id="_Data-GRAAnnotationIEPD-MPD_Model-GRAAnnotationIEPD-packagedElement-2-appliedStereotypeInstance" base_Usage="_Data-GRAAnnotationIEPD-MPD_Model-GRAAnnotationIEPD-packagedElement-2" relativePathName="" natureCode="xml" purposeCode="sample_instance" descriptionText="Serves the purpose of an XML Document Instance use for Exchange."/>
+   <NIEM_PIM_Profile:InformationModel xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-exchange-ExchangeModel-appliedStereotypeInstance" base_Package="_Data-GRAAnnotationIEPD-XMLschemas-exchange-ExchangeModel" isConformant="true" targetNamespace="http://default.com/my/exchange" version="&#34;1&#34;" defaultPurpose="exchange"/>
+   <NIEM_PIM_Profile:InformationModel xmi:id="_Data-GRAAnnotationIEPD-XMLschemas-subset-niem-niem-core-2.0-niem-core-appliedStereotypeInstance" base_Package="_Data-GRAAnnotationIEPD-XMLschemas-subset-niem-niem-core-2.0-niem-core" isConformant="true" targetNamespace="http://niem.gov/niem/niem-core/2.0" version="1" defaultPurpose="subset"/>
+   <Model_Package_Description_Profile:ModelPackageDescription xmi:id="_Data-GRAAnnotationIEPD-MPD_Model-GRAAnnotationIEPD-appliedStereotypeInstance" base_Component="_Data-GRAAnnotationIEPD-MPD_Model-GRAAnnotationIEPD" mpdVersionID="1.0" mpdBaseURI="http://ijis.org/GRAAnnotation" SecurityMarkingText="Unclassified/public" descriptionText="This model produces the XSD for GRA annotations" mpdClassCode="iepd" POC="_Data-GRAAnnotationIEPD-MPD_Model-poc" CreationDate="2014-05-25" ASName="GRAAnnotationIEPD">
+      <PurposeText>This model defines the metamodel for GRA which is used to annotate artifacts.</PurposeText>
+      <DomainText>GRAAnnotation</DomainText>
+      <KeywordText>GRA</KeywordText>
+   </Model_Package_Description_Profile:ModelPackageDescription>
+</xmi:XMI>
