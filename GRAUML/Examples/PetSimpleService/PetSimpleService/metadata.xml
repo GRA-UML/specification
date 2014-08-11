@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gra:ServiceMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gra="http://it.ojp.gov/gsp/services/1.0.0" xsi:schemaLocation="http://it.ojp.gov/gsp/services/1.0.0 Metadata.xsd">
+  <gra:ServiceIdentification>
+    <gra:ServiceFullNameText>Pet Adoption  Community</gra:ServiceFullNameText>
+    <gra:ServiceID>http://petadoption.com/GRA/Template</gra:ServiceID>
+    <gra:ServiceURI>http://petadoption.com/GRA/Template</gra:ServiceURI>
+    <gra:ServiceNameAbbreviationText>PET</gra:ServiceNameAbbreviationText>
+  </gra:ServiceIdentification>
+  <gra:ServiceDescription>
+    <gra:ServiceDescriptionSummaryText>This service provides pet adoption information</gra:ServiceDescriptionSummaryText>
+    <gra:ServiceDescriptionKeywordText>pet adoption</gra:ServiceDescriptionKeywordText>
+    <gra:ServiceCapabilities/>
+    <gra:ServiceRealWorldEffects>
+      <gra:RealWorldEffectDescriptionText>Provide information on a particular pet adoption based on the ID of the adopting individual.</gra:RealWorldEffectDescriptionText>
+    </gra:ServiceRealWorldEffects>
+    <gra:SecurityClassificationText>None</gra:SecurityClassificationText>
+    <gra:ServiceDependencies/>
+    <gra:IEPDReferences>
+      <gra:IEPDReference>
+        <gra:IEPDName>mpd</gra:IEPDName>
+        <gra:IEPDURL>http://PetAdoption.com/mpd</gra:IEPDURL>
+      </gra:IEPDReference>
+    </gra:IEPDReferences>
+  </gra:ServiceDescription>
+  <gra:VersionInformation>
+    <gra:MajorVersion>1</gra:MajorVersion>
+    <gra:MinorVersion>0</gra:MinorVersion>
+    <gra:RevisionVersion>0</gra:RevisionVersion>
+  </gra:VersionInformation>
+  <gra:RelatedOrganizationInformation>
+    <gra:Organization>
+      <gra:OrganizationAcronym>ADOPT</gra:OrganizationAcronym>
+      <gra:OrganizationPointOfContact>
+        <gra:ContactPersonPhoneNumberID>Private</gra:ContactPersonPhoneNumberID>
+      </gra:OrganizationPointOfContact>
+    </gra:Organization>
+  </gra:RelatedOrganizationInformation>
+  <gra:BusinessContext>
+    <gra:DomainDescription/>
+    <gra:Classifications>
+      <gra:Classification>Pet adoptions</gra:Classification>
+    </gra:Classifications>
+    <gra:ExchangePartnerTypes/>
+    <gra:Endorsements>
+      <gra:Endorser>Society of pet adoption agencies</gra:Endorser>
+    </gra:Endorsements>
+    <gra:Sponsors/>
+  </gra:BusinessContext>
+  <gra:ServiceLevelAgreements>
+    <gra:ServicePolicyAndContracts>
+      <gra:ApplicablePolicies/>
+      <gra:ApplicableContracts/>
+      <gra:ApplicableAgreements/>
+      <gra:ApplicableUmbrellaAgreements/>
+    </gra:ServicePolicyAndContracts>
+    <gra:PerformanceMetrics/>
+    <gra:ServiceUsageDetails>
+      <gra:LicensingAgreement/>
+      <gra:ServiceCost>
+        <gra:UsageCostAmount/>
+        <gra:UsageUnitCostAmount/>
+        <gra:CreationCostAmount/>
+      </gra:ServiceCost>
+    </gra:ServiceUsageDetails>
+  </gra:ServiceLevelAgreements>
+</gra:ServiceMetadata>

@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:ucr="http://niem.gov/niem/ucr/2.0" xmlns:ut_offender="http://niem.gov/niem/ut_offender-tracking-misc/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://niem.gov/niem/domains/jxdm/4.1" version="1">
+  <xsd:import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="../../../../../XMLschemas/Content/subset/niem/2.0/niem-core.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/ucr/2.0" schemaLocation="../../../../../XMLschemas/Content/subset/niem/2.0/ucr.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/fbi/2.0" schemaLocation="../../../../../XMLschemas/Content/subset/niem/2.0/fbi.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/ut_offender-tracking-misc/2.0" schemaLocation="../../../../../XMLschemas/Content/subset/niem/2.0/ut_offender-tracking-misc.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.0" schemaLocation="../../../../../XMLschemas/appinfo/2.0/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.1" schemaLocation="../../../../../XMLschemas/appinfo/2.1/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="../../../../../XMLschemas/structures/2.0/structures.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="../../../../../XMLschemas/proxy/xsd/2.0/xsd.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Justice</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:complexType abstract="false" mixed="false" name="SeverityLevelType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a sentencing guideline severity level assigned to a charge by a judge or supervising agency.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:SeverityLevelDescriptionText"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:SeverityLevelIdentification"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="SeverityLevelDescriptionText" nillable="true" type="nc:TextType">
+    <xsd:annotation>
+      <xsd:documentation>A narrative account of a severity level assigned to a charge.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SeverityLevelIdentification" nillable="true" type="nc:IdentificationType">
+    <xsd:annotation>
+      <xsd:documentation>A unique identifier of a Severity Level.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="ArrestType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for the apprehension of a subject by a peace official.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="ActivityType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:ActivityType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:ArrestAgency"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:ArrestAgencyRecordIdentification"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:ArrestArraignmentDate"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:ArrestCharge"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:ArrestOfficial"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:ArrestCategoryCode"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="ArrestAgency" nillable="true" type="nc:OrganizationType">
+    <xsd:annotation>
+      <xsd:documentation>An agency which employs the arresting official.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="ArrestAgencyRecordIdentification" nillable="true" type="nc:IdentificationType">
+    <xsd:annotation>
+      <xsd:documentation>A records management system number of the originating case agency for an arrest.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="ArrestArraignmentDate" nillable="true" type="nc:DateType">
+    <xsd:annotation>
+      <xsd:documentation>A date a subject is due to appear in court after an arrest to answer the charges filed.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="ArrestCharge" nillable="true" type="j:ChargeType">
+    <xsd:annotation>
+      <xsd:documentation>A formal allegation of a violation of a statute and/or ordinance in association with an arrest.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="ChargeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a formal allegation that a specific person has committed a specific offense.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:ChargeDescriptionText"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:ChargeFelonyIndicator"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:ChargeIdentification"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:ChargeSeverityLevel"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:ChargeStatus"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:ChargeUCRCode"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="ChargeDescriptionText" nillable="true" type="nc:TextType">
+    <xsd:annotation>
+      <xsd:documentation>A plain language description of a charge.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="ChargeFelonyIndicator" nillable="true" type="niem-xsd:boolean">
+    <xsd:annotation>
+      <xsd:documentation>True if a charge refers to a felony offense; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="ChargeIdentification" nillable="true" type="nc:IdentificationType">
+    <xsd:annotation>
+      <xsd:documentation>A unique identifying number assigned to a particular charge by an arresting agency, prosecuting attorney, or a court for case management purposes. </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="ChargeSeverityLevel" nillable="true" type="j:SeverityLevelType">
+    <xsd:annotation>
+      <xsd:documentation>A severity level of a charge.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="ChargeStatus" nillable="true" type="nc:StatusType">
+    <xsd:annotation>
+      <xsd:documentation>A state of a charge.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="ChargeUCRCode" nillable="true" type="ucr:OffenseCodeType">
+    <xsd:annotation>
+      <xsd:documentation>An offense within the Uniform Crime Report (UCR) system.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="ArrestOfficial" nillable="true" type="j:EnforcementOfficialType">
+    <xsd:annotation>
+      <xsd:documentation>A peace official who makes an arrest.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="EnforcementOfficialType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a person involved in the enforcement of law.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="nc:RoleOfPersonReference"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:EnforcementOfficialAssignmentCategory"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:EnforcementOfficialBadgeIdentification"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="true" name="EnforcementOfficialAssignmentCategory" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A data concept for a A kind of assignment of an enforcement official.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="EnforcementOfficialBadgeIdentification" nillable="true" type="nc:IdentificationType">
+    <xsd:annotation>
+      <xsd:documentation>An identifier used to refer to an enforcement official.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="ArrestCategoryCode" nillable="true" type="fbi:ArrestCategoryCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A kind of arrest that occurred.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="OffenseLocationAssociationType">
+    <xsd:annotation>
+      <xsd:documentation>A relationship between an offense and a location at which the offense occurred.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AssociationType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:AssociationType">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="SentencingGuidelineType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a sentencing guideline used for determining a sanction.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:SentencingGuidelineMonthsMaximumText"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:SentencingGuidelineMonthsMinimumText"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:SentencingGuidelineRecommendationMonthsText"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="SentencingGuidelineMonthsMaximumText" nillable="true" type="nc:TextType">
+    <xsd:annotation>
+      <xsd:documentation>A maximum sentence, in months, called for by sentencing guidelines.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SentencingGuidelineMonthsMinimumText" nillable="true" type="nc:TextType">
+    <xsd:annotation>
+      <xsd:documentation>A minimum sentence in months, outlined by sentencing guidelines, which can be imposed by a judge without indicating a reason for departure.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SentencingGuidelineRecommendationMonthsText" nillable="true" type="nc:TextType">
+    <xsd:annotation>
+      <xsd:documentation>A recommended sentence, in months, called for by sentencing guidelines.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="OffenseIncidentAssociationType">
+    <xsd:annotation>
+      <xsd:documentation>A relationship between an offense and the incident during which the offense is to have been committed.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AssociationType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:AssociationType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="j:OffenseReference"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="nc:IncidentReference"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="OffenseReference" nillable="true" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:documentation>An act or a course of action which may constitute a violation of a criminal statute, ordinance or rule that occurred during an incident.</xsd:documentation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="OffenseType" i:namespace="http://niem.gov/niem/domains/jxdm/4.1"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="OffenseType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for an alleged violation of a statute, ordinance, or rule.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="ActivityType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:ActivityType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:OffenseName"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:OffenseNCICCode"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:OffenseNDExCode"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:OffenseCategoryCode"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:OffenseLevel"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="OffenseName" nillable="true" substitutionGroup="j:OffenseDesignation" type="nc:TextType">
+    <xsd:annotation>
+      <xsd:documentation>An offense designation.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="OffenseDesignation" i:namespace="http://niem.gov/niem/domains/jxdm/4.1"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="true" name="OffenseDesignation" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A data concept for a A distinguishing designation of an offense.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="OffenseNCICCode" nillable="true" substitutionGroup="j:OffenseDesignation" type="fbi:OFFCodeType">
+    <xsd:annotation>
+      <xsd:documentation>An offense designation as specified by FBI's National Crime Information Center (NCIC) system.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="OffenseDesignation" i:namespace="http://niem.gov/niem/domains/jxdm/4.1"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="OffenseNDExCode" nillable="true" substitutionGroup="j:OffenseDesignation" type="niem-xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>An offense designation as specified by FBI's National Data Exchange (N-DEx) program.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="OffenseDesignation" i:namespace="http://niem.gov/niem/domains/jxdm/4.1"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="OffenseCategoryCode" nillable="true" substitutionGroup="j:OffenseCategory" type="fbi:CriminalActivityCategoryCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A kind of offense.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="OffenseCategory" i:namespace="http://niem.gov/niem/domains/jxdm/4.1"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="true" name="OffenseCategory" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A data concept for a A kind of offense.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="true" name="OffenseLevel" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A data concept for a A level of an offense, such as a felony or misdemeanor.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="VisitationType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a record of a person visiting another person under restricted access.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="ActivityType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:ActivityType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:VisitationPurposeText"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:VisitationRestrictedAccessPerson"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:VisitationVisitor"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:VisitationVisitorRelationshipText"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="VisitationPurposeText" nillable="true" type="nc:TextType">
+    <xsd:annotation>
+      <xsd:documentation>A purpose or reason for a visit.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="VisitationRestrictedAccessPerson" nillable="true" type="nc:PersonType">
+    <xsd:annotation>
+      <xsd:documentation>A person under restricted access who receives a visit.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="VisitationVisitor" nillable="true" type="nc:PersonType">
+    <xsd:annotation>
+      <xsd:documentation>A person who visits a person under restricted access.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="VisitationVisitorRelationshipText" nillable="true" type="nc:TextType">
+    <xsd:annotation>
+      <xsd:documentation>A relationship of a visitor to a restricted access person.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="ActivitySubjectAssociationType">
+    <xsd:annotation>
+      <xsd:documentation>A relationship A data type for an association between an activity and a subject.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AssociationType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:AssociationType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="nc:ActivityReference"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="j:SubjectReference"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="SubjectReference" nillable="true" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:documentation>A person who is involved or suspected of being involved in an incident or criminal activity.</xsd:documentation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="SubjectType" i:namespace="http://niem.gov/niem/domains/jxdm/4.1"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="SubjectType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a person who is involved or suspected of being involved in an incident or criminal activity.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="nc:RoleOfPersonReference"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:SubjectInvolvementCriminalOrganization"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:SubjectStatus"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:SubjectSupervision"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="SubjectInvolvementCriminalOrganization" nillable="true" type="j:CriminalOrganizationType">
+    <xsd:annotation>
+      <xsd:documentation>A criminal organization with which a subject is known or suspected of being involved.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="CriminalOrganizationType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for an organization that is formed to or intentionally conducts illegal activities.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="nc:RoleOfOrganizationReference"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:CriminalOrganizationCautionText"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:CriminalOrganizationNCICIdentification"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="CriminalOrganizationCautionText" nillable="true" type="nc:TextType">
+    <xsd:annotation>
+      <xsd:documentation>A caution or warning associated with a criminal organization.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="CriminalOrganizationNCICIdentification" nillable="true" type="nc:IdentificationType">
+    <xsd:annotation>
+      <xsd:documentation>An identifier assigned to a criminal organization.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SubjectStatus" nillable="true" type="nc:StatusType">
+    <xsd:annotation>
+      <xsd:documentation>A general status of a subject.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SubjectSupervision" nillable="true" type="nc:SupervisionType">
+    <xsd:annotation>
+      <xsd:documentation>An incarceration, detention, or other form of supervision a subject is currently undergoing.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="CorrectionalFacilityType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a correctional facility.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="FacilityType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:FacilityType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:FacilityCapacityQuantity"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:FacilityCapacityDescriptionText"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:FacilityCurrentCaseLoadQuantity"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:FacilityJuvenileIndicator"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:FacilitySecurityLevelText"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:FacilityMemberCategoryText"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="FacilityCapacityQuantity" nillable="true" type="niem-xsd:nonNegativeInteger">
+    <xsd:annotation>
+      <xsd:documentation>A number of people a facility can manage at a time.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="FacilityCapacityDescriptionText" nillable="true" type="nc:TextType">
+    <xsd:annotation>
+      <xsd:documentation>A description of the number of people a facility can manage at a time.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="FacilityCurrentCaseLoadQuantity" nillable="true" type="niem-xsd:nonNegativeInteger">
+    <xsd:annotation>
+      <xsd:documentation>A number of people a facility is currently managing.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="FacilityJuvenileIndicator" nillable="true" type="niem-xsd:boolean">
+    <xsd:annotation>
+      <xsd:documentation>True if a facility has the ability to accept people under the legal age of an adult; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="FacilitySecurityLevelText" nillable="true" type="nc:TextType">
+    <xsd:annotation>
+      <xsd:documentation>A level of security at which a facility operates.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="FacilityMemberCategoryText" nillable="true" type="nc:TextType">
+    <xsd:annotation>
+      <xsd:documentation>A kind of occupant a facility manages.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="OffenseSubjectAssociationType">
+    <xsd:annotation>
+      <xsd:documentation>A relationship between an offense that was committed and the subject alleged to have committed that offense.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AssociationType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:AssociationType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="j:OffenseReference"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="j:SubjectReference"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="TreatmentType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for an activity associated with treatment of a person for mental or physical condition</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="ActivityType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:ActivityType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:PrescribedMedicationReasonText"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:TreatmentDiagnosisText"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:TreatmentProvider"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="PrescribedMedicationReasonText" nillable="true" type="nc:TextType">
+    <xsd:annotation>
+      <xsd:documentation>Reason provided for an Person's prescribed medication</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="TreatmentDiagnosisText" nillable="true" type="nc:TextType">
+    <xsd:annotation>
+      <xsd:documentation>A  determining or analysis of the manner in which to treat the cause or nature of a problem</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="TreatmentProvider" nillable="true" type="nc:EntityType">
+    <xsd:annotation>
+      <xsd:documentation>A entity who provides a service to an Person to remedy a physical or mental problem</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="OffenseDispositionAssociationType">
+    <xsd:annotation>
+      <xsd:documentation>A relationship between an offense and the outcome of an activity that was triggered by the offense being committed in the first place.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AssociationType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:AssociationType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="j:OffenseReference"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="j:DispositionReference"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="DispositionReference" nillable="true" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:documentation>A result or outcome that is the product of handling, processing, or finalizing something.</xsd:documentation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="DispositionType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="OffenseVictimAssociationType">
+    <xsd:annotation>
+      <xsd:documentation>A relationship between an offense that was committed and an entity that was adversely affected by that offense.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AssociationType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:AssociationType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="j:OffenseReference"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="j:VictimReference"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="VictimReference" nillable="true" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:documentation>A Details about a person, organization, or other entity who suffers injury, loss, or death as a result of an incident.</xsd:documentation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="VictimType" i:namespace="http://niem.gov/niem/domains/jxdm/4.1"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="VictimType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a person who suffers injury, loss, or death as a result of an incident.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="nc:RoleOfPersonReference"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="nc:RoleOfOrganizationReference"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:VictimIdentification"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:VictimAffectedProperty"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="VictimIdentification" nillable="true" type="nc:IdentificationType">
+    <xsd:annotation>
+      <xsd:documentation>A number or string identifying a victim.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="VictimAffectedProperty" nillable="true" substitutionGroup="j:VictimEntity" type="nc:PropertyType">
+    <xsd:annotation>
+      <xsd:documentation>A Details about a victims property that was stolen or damaged.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="VictimEntity" i:namespace="http://niem.gov/niem/domains/jxdm/4.1"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="true" name="VictimEntity" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A data concept for a Details about an entity who suffers injury, loss, or death as a result of an incident.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="OffenseItemAssociationType">
+    <xsd:annotation>
+      <xsd:documentation>A relationship of a general nature between an offense that was committed and an article or thing.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AssociationType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:AssociationType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="j:OffenseReference"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="nc:ItemReference"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="SupervisionType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for an applied augmentation for type nc:SupervisionType</xsd:documentation>
+      <xsd:appinfo>
+        <i2:AugmentedTypeIndicator>true</i2:AugmentedTypeIndicator>
+        <i:Base i:name="SupervisionType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:SupervisionType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="j:SupervisionAugmentation"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="SupervisionAugmentation" nillable="true" substitutionGroup="s:Augmentation" type="j:SupervisionAugmentationType">
+    <xsd:annotation>
+      <xsd:documentation>Additional information about a supervision.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="SupervisionAugmentationType">
+    <xsd:annotation>
+      <xsd:documentation>A data type that supplements A data type for additional information about a supervision.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AugmentationType" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:AugmentationType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:SupervisionReleaseDate"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="j:SupervisionPersonReference"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:SupervisionViolationText"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:SupervisionLevelCode"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="SupervisionReleaseDate" nillable="true" type="nc:DateType">
+    <xsd:annotation>
+      <xsd:documentation>A date set at which a person under supervision is eligible for release</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SupervisionPersonReference" nillable="true" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:documentation>A person who is being supervised</xsd:documentation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="PersonType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SupervisionViolationText" nillable="true" type="nc:TextType">
+    <xsd:annotation>
+      <xsd:documentation>A violation of a condition or rule of a person while under supervision.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SupervisionLevelCode" nillable="true" substitutionGroup="j:SupervisionLevel" type="ut_offender:SupervisionLevelCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A level of supervision required by a person.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="SupervisionLevel" i:namespace="http://niem.gov/niem/domains/jxdm/4.1"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="true" name="SupervisionLevel" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A data concept for a A level of supervision required by a person.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="OffenseArrestAssociationType">
+    <xsd:annotation>
+      <xsd:documentation>A relationship between an offense and the arrest of a subject alleged to have committed the offense.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AssociationType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:AssociationType">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="SanctionType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a sanction or penalty ordered for a subject as a result of a disposition of a charge.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="ActivityType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:ActivityType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:SanctionIssuingAgency"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:SanctionJurisdictionalAgency"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:SanctionProgress"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="j:SanctionSetDate"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:SanctionSetObligation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:SanctionStayedObligation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:SanctionSuspendedObligation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="j:SentencingGuideline"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="SanctionIssuingAgency" nillable="true" type="nc:OrganizationType">
+    <xsd:annotation>
+      <xsd:documentation>A court that sets a sanction.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SanctionJurisdictionalAgency" nillable="true" type="nc:OrganizationType">
+    <xsd:annotation>
+      <xsd:documentation>A court that has jurisdiction over a sanction.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SanctionProgress" nillable="true" type="nc:ProgressType">
+    <xsd:annotation>
+      <xsd:documentation>A tracking of changes in a subject's progress toward fulfillment of the terms of a sanction.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SanctionSetDate" nillable="true" type="nc:DateType">
+    <xsd:annotation>
+      <xsd:documentation>A date a sanction was set or ordered.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SanctionSetObligation" nillable="true" type="nc:ObligationType">
+    <xsd:annotation>
+      <xsd:documentation>An amount of money or time requirement of a sanction that has been set.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SanctionStayedObligation" nillable="true" type="nc:ObligationType">
+    <xsd:annotation>
+      <xsd:documentation>An amount of money or time requirement of a sanction that is temporarily suspended.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SanctionSuspendedObligation" nillable="true" type="nc:ObligationType">
+    <xsd:annotation>
+      <xsd:documentation>An amount of money or time requirement of a sanction that is no longer required to be paid.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SentencingGuideline" nillable="true" type="j:SentencingGuidelineType">
+    <xsd:annotation>
+      <xsd:documentation>A sentencing guideline.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="EnforcementOfficialAssignmentCategoryCode" nillable="true" substitutionGroup="j:EnforcementOfficialAssignmentCategory" type="fbi:LEOKAOfficerAssignmentCategoryCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A kind of assignment of an enforcement official.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="EnforcementOfficialAssignmentCategory" i:namespace="http://niem.gov/niem/domains/jxdm/4.1"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="VictimPerson" nillable="true" substitutionGroup="j:VictimEntity" type="nc:PersonType">
+    <xsd:annotation>
+      <xsd:documentation>A Details about an entity who suffers injury, loss, or death as a result of an incident.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="VictimEntity" i:namespace="http://niem.gov/niem/domains/jxdm/4.1"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="VictimOrganization" nillable="true" substitutionGroup="j:VictimEntity" type="nc:OrganizationType">
+    <xsd:annotation>
+      <xsd:documentation>A Details about an entity who suffers injury, loss, or death as a result of an incident.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="VictimEntity" i:namespace="http://niem.gov/niem/domains/jxdm/4.1"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="OffenseLevelText" nillable="true" substitutionGroup="j:OffenseLevel" type="nc:TextType">
+    <xsd:annotation>
+      <xsd:documentation>A level of an offense, such as a felony or misdemeanor.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="OffenseLevel" i:namespace="http://niem.gov/niem/domains/jxdm/4.1"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

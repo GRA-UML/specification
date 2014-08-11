@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:ucr="http://niem.gov/niem/ucr/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://niem.gov/niem/ucr/2.0" version="1">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+    <xsd:documentation source="">Crime reporting codes from Uniform Crime Reporting.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.0" schemaLocation="../../../../../XMLschemas/subset/niem/appinfo/2.0/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.1" schemaLocation="../../../../../XMLschemas/subset/niem/appinfo/2.1/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="../../../../../XMLschemas/subset/niem/proxy/xsd/2.0/xsd.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="../../../../../XMLschemas/subset/niem/structures/2.0/structures.xsd"/>
+  <xsd:simpleType name="OffenseCodeSimpleType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for Uniform Crime Reporting (UCR) offense codes.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="240">
+        <xsd:annotation>
+          <xsd:documentation source="">Motor Vehicle Theft</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="36A">
+        <xsd:annotation>
+          <xsd:documentation source="">Sex Offenses, Nonforcible-Incest</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="26E">
+        <xsd:annotation>
+          <xsd:documentation source="">Fraud Offenses-Wire Fraud</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="510">
+        <xsd:annotation>
+          <xsd:documentation source="">Bribery</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="11C">
+        <xsd:annotation>
+          <xsd:documentation source="">Sex Offenses, Forcible-Sexual Assault with an Object</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="90H">
+        <xsd:annotation>
+          <xsd:documentation source="">Peeping Tom</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="220">
+        <xsd:annotation>
+          <xsd:documentation source="">Burglary/Breaking &amp; Entering</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="23F">
+        <xsd:annotation>
+          <xsd:documentation source="">Larceny/Theft Offenses-Theft from Motor Vehicle</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="13A">
+        <xsd:annotation>
+          <xsd:documentation source="">Assault-Aggravated Assault</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="23C">
+        <xsd:annotation>
+          <xsd:documentation source="">Larceny/Theft Offenses-Shoplifting</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="26B">
+        <xsd:annotation>
+          <xsd:documentation source="">Fraud Offenses-Credit Card/Automatic Teller Machine Fraud</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="200">
+        <xsd:annotation>
+          <xsd:documentation source="">Arson</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="100">
+        <xsd:annotation>
+          <xsd:documentation source="">Kidnapping/Abduction</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="290">
+        <xsd:annotation>
+          <xsd:documentation source="">Destruction/Damage/Vandalism of Property</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="09C">
+        <xsd:annotation>
+          <xsd:documentation source="">Homicide Offenses-Justifiable Homicide</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="23G">
+        <xsd:annotation>
+          <xsd:documentation source="">Larceny/Theft Offenses-Theft of Motor Vehicle Parts or Accessories</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="90G">
+        <xsd:annotation>
+          <xsd:documentation source="">Liquor Law Violations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="23D">
+        <xsd:annotation>
+          <xsd:documentation source="">Larceny/Theft Offenses-Theft from Building</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="39D">
+        <xsd:annotation>
+          <xsd:documentation source="">Gambling Offenses-Sports Tampering</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="90D">
+        <xsd:annotation>
+          <xsd:documentation source="">Driving Under the Influence</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="250">
+        <xsd:annotation>
+          <xsd:documentation source="">Counterfeiting/Forgery</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="90B">
+        <xsd:annotation>
+          <xsd:documentation source="">Curfew/Loitering/Vagrancy Violations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="90Z">
+        <xsd:annotation>
+          <xsd:documentation source="">All Other Offenses</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="26C">
+        <xsd:annotation>
+          <xsd:documentation source="">Fraud Offenses-Impersonation</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="23A">
+        <xsd:annotation>
+          <xsd:documentation source="">Larceny/Theft Offenses-Pocket-Picking</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="09A">
+        <xsd:annotation>
+          <xsd:documentation source="">Homicide Offenses-Murder and Nonnegligent Manslaughter</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="23E">
+        <xsd:annotation>
+          <xsd:documentation source="">Larceny/Theft Offenses-From Coin-Operated Machine or Device</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="90J">
+        <xsd:annotation>
+          <xsd:documentation source="">Trespass of Real Property</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="270">
+        <xsd:annotation>
+          <xsd:documentation source="">Embezzlement</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="35A">
+        <xsd:annotation>
+          <xsd:documentation source="">Drug/Narcotic Offenses-Drug/Narcotic Violations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="520">
+        <xsd:annotation>
+          <xsd:documentation source="">Weapon Law Violations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="36B">
+        <xsd:annotation>
+          <xsd:documentation source="">Sex Offenses, Nonforcible-Statutory Rape</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="39B">
+        <xsd:annotation>
+          <xsd:documentation source="">Gambling Offenses-Operating/Promoting/Assisting Gambling</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="23B">
+        <xsd:annotation>
+          <xsd:documentation source="">Larceny/Theft Offenses-Purse-Snatching</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="40A">
+        <xsd:annotation>
+          <xsd:documentation source="">Prostitution Offenses-Prostitution</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="13C">
+        <xsd:annotation>
+          <xsd:documentation source="">Assault-Intimidation</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="90C">
+        <xsd:annotation>
+          <xsd:documentation source="">Disorderly Conduct</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="210">
+        <xsd:annotation>
+          <xsd:documentation source="">Extortion/Blackmail</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="11B">
+        <xsd:annotation>
+          <xsd:documentation source="">Sex Offenses, Forcible-Forcible Sodomy</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="40B">
+        <xsd:annotation>
+          <xsd:documentation source="">Prostitution Offenses-Assisting or Promoting Prostitution</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="35B">
+        <xsd:annotation>
+          <xsd:documentation source="">Drug/Narcotic Offenses-Drug Equipment Violations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="90I">
+        <xsd:annotation>
+          <xsd:documentation source="">Runaway</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="280">
+        <xsd:annotation>
+          <xsd:documentation source="">Stolen Property Offenses</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="13B">
+        <xsd:annotation>
+          <xsd:documentation source="">Assault-Simple Assault</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="26A">
+        <xsd:annotation>
+          <xsd:documentation source="">Fraud Offenses-False Pretenses/Swindle/Confidence Game</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="23H">
+        <xsd:annotation>
+          <xsd:documentation source="">Larceny/Theft Offenses-All Other Larceny</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="90F">
+        <xsd:annotation>
+          <xsd:documentation source="">Family Offenses, Nonviolent</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="26D">
+        <xsd:annotation>
+          <xsd:documentation source="">Fraud Offenses-Welfare Fraud</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="90E">
+        <xsd:annotation>
+          <xsd:documentation source="">Drunkenness</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="09B">
+        <xsd:annotation>
+          <xsd:documentation source="">Homicide Offenses-Negligent Manslaughter</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="39A">
+        <xsd:annotation>
+          <xsd:documentation source="">Gambling Offenses-Betting/Wagering</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="370">
+        <xsd:annotation>
+          <xsd:documentation source="">Pornography/Obscene Material</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="90A">
+        <xsd:annotation>
+          <xsd:documentation source="">Bad Checks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="120">
+        <xsd:annotation>
+          <xsd:documentation source="">Robbery</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="11D">
+        <xsd:annotation>
+          <xsd:documentation source="">Sex Offenses, Forcible-Forcible Fondling</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="11A">
+        <xsd:annotation>
+          <xsd:documentation source="">Sex Offenses, Forcible-Forcible Rape</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="39C">
+        <xsd:annotation>
+          <xsd:documentation source="">Gambling Offenses-Gambling Equipment Violations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType abstract="false" mixed="false" name="OffenseCodeType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for Uniform Crime Reporting (UCR) offense codes.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="ucr:OffenseCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:schema>

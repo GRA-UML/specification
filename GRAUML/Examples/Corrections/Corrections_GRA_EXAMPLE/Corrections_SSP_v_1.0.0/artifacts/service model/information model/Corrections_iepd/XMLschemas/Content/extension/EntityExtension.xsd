@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:ENTITY="http://it.ojp.gov/gist/200/Corrections/entities" xmlns:MetaR="http://it.ojp.gov/gist/201/Metadata/MetadataReference" xmlns:Q1="http://domain.gov/myDomain/" xmlns:SERVICE="http://it.ojp.gov/gist/200/Corrections/service" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://it.ojp.gov/gist/200/Corrections/entities" version="&quot;1&quot;">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+    <xsd:documentation source="">A schema for entity identification and linking.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:import namespace="http://domain.gov/myDomain/" schemaLocation="../../.././XMLschemas/Content/extension/EntityIdentification.xsd"/>
+  <xsd:import namespace="http://it.ojp.gov/gist/200/Corrections/service" schemaLocation="../../.././XMLschemas/Content/extension/SubjectServicesAndAssessments.xsd"/>
+  <xsd:import namespace="http://it.ojp.gov/gist/201/Metadata/MetadataReference" schemaLocation="../../.././XMLschemas/Metadata/MetadataReference.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.0" schemaLocation="../../../XMLschemas/subset/niem/appinfo/2.0/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.1" schemaLocation="../../../XMLschemas/subset/niem/appinfo/2.1/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/domains/jxdm/4.1" schemaLocation="../../.././XMLschemas/Content/subset/niem/2.0/jxdm.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/fbi/2.0" schemaLocation="../../.././XMLschemas/Content/subset/niem/2.0/fbi.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="../../.././XMLschemas/Content/subset/niem/2.0/niem-core.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="../../../XMLschemas/subset/niem/proxy/xsd/2.0/xsd.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="../../../XMLschemas/subset/niem/structures/2.0/structures.xsd"/>
+  <xsd:element abstract="false" name="CategoryIDReference" nillable="false" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="CategoryURIType" i:namespace="http://it.ojp.gov/gist/201/Metadata/MetadataReference"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">An identifier for a Category of the status</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="EntityIdentification" nillable="false" type="Q1:EntityIdentityType">
+    <xsd:annotation>
+      <xsd:documentation source="">An entities identification. Information required to identify an entity and find additional information about that entity.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="EntityIdentificationn" nillable="false" type="Q1:EntityIdentityType">
+    <xsd:annotation>
+      <xsd:documentation source="">An identity of a record about an entity. Information required to identify an entity and find additional information about that entity.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="FacilityType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="FacilityType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for a building, place, or structure that provides a particular service.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:FacilityType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="ENTITY:EntityIdentificationn"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="IncidentType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="IncidentType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for an occurrence or an event that may require a response.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:IncidentType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="ENTITY:EntityIdentification"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="OffenseType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="OffenseType" i:namespace="http://niem.gov/niem/domains/jxdm/4.1"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for an alleged violation of a statute, ordinance, or rul</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="j:OffenseType">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="OrganizationMinimalType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="OrganizationType" i:namespace="http://it.ojp.gov/gist/200/Corrections/entities"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for an organization with minimal properties</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:restriction base="ENTITY:OrganizationType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="nc:OrganizationAbbreviationText"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="nc:OrganizationName"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="ENTITY:EntityIdentification"/>
+        </xsd:sequence>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="OrganizationType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="OrganizationType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for a body of people organized for a particular purpose.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:OrganizationType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="ENTITY:EntityIdentification"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="PersonMinimalType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="PersonType" i:namespace="http://it.ojp.gov/gist/200/Corrections/service"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for a person's information where minimal information is required, such as to locate a record by identifiers.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:restriction base="SERVICE:PersonType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="nc:PersonBirthDate"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="nc:PersonBirthLocation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="nc:PersonName"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="nc:PersonSexCode"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="SERVICE:EntityIdentification"/>
+        </xsd:sequence>
+      </xsd:restriction>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="ProgramType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="ProgramType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for a set of projects, activities, or services intended to meet a need.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:ProgramType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ENTITY:EntityIdentification"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="StatusType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="StatusType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for a state of something or someone (Extended from NIEM core)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:StatusType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ENTITY:CategoryIDReference"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

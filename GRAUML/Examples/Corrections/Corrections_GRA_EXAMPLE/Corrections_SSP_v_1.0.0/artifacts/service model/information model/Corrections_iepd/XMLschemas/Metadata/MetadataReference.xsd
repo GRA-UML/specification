@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:MetaR="http://it.ojp.gov/gist/201/Metadata/MetadataReference" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://it.ojp.gov/gist/201/Metadata/MetadataReference" version="&quot;1&quot;">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+    <xsd:documentation source="">Types required to use message metadata (categories and exchange agreements) based on their URI, without including the metadata schema.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.0" schemaLocation="../../XMLschemas/subset/niem/appinfo/2.0/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.1" schemaLocation="../../XMLschemas/subset/niem/appinfo/2.1/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="../../XMLschemas/subset/niem/proxy/xsd/2.0/xsd.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="../../XMLschemas/subset/niem/structures/2.0/structures.xsd"/>
+  <xsd:element abstract="false" name="ExchangeAgreementID" nillable="false" type="MetaR:ExchangeAgreementURIType">
+    <xsd:annotation>
+      <xsd:documentation source="">An identifier for an exchange agreement that is the basis for a message exchange. This identity shall be reflected in the repositories metadata.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="FindingIndicator" nillable="false" type="niem-xsd:boolean">
+    <xsd:annotation>
+      <xsd:documentation source="">True if the finding is true; False otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="LinkText" nillable="false" type="niem-xsd:string">
+    <xsd:annotation>
+      <xsd:documentation source="">Text describing link to a record - normally the entity name and the source of the information in an informal way. e.g. John Doe [Virginia state corrections]</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="LinkURI" nillable="false" type="MetaR:EntityURIType">
+    <xsd:annotation>
+      <xsd:documentation source="">URL used to access data for a record</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="MetadataRepositoryID" nillable="false" type="MetaR:MetadataRepositoryURIType">
+    <xsd:annotation>
+      <xsd:documentation source="">An identifier for repository that supplied the metadata containing the exchange agreement. This URI shall respond to a "GetMetadata" message.  If blank, the exchange agreement URI must dereference to the supplier's repository.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="MetadataUsedDateTime" nillable="false" type="niem-xsd:dateTime">
+    <xsd:annotation>
+      <xsd:documentation source="">A date representing the last update of the metadata which was used for this message. Null indicates a timeless resource that will not change.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="ScoreBasisURIReference" nillable="false" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="CategoryURIType" i:namespace="http://it.ojp.gov/gist/201/Metadata/MetadataReference"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A basis of a score, how it is to be interpreted represented as the URI identity of that score's basis.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="ScoreText" nillable="true" type="niem-xsd:string">
+    <xsd:annotation>
+      <xsd:documentation source="">An evaluation score description </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="ScoreValue" nillable="false" type="niem-xsd:decimal">
+    <xsd:annotation>
+      <xsd:documentation source="">A value of a score</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="CategoryURIType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="anyURI" i:namespace="http://niem.gov/niem/proxy/xsd/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for a reference to a category where the information about the category is contained in metadata. This URI should not change even if hosed in other repositories. This URI should be directly dereferencable, i.e. you should be able to get the metadata by following this link.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="niem-xsd:anyURI"/>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="DetailLevelCodeSimpleType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for the level of detail required in a case report</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="Identification">
+        <xsd:annotation>
+          <xsd:documentation source="">Identification properties only (e.g. identifiers and name)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Summary">
+        <xsd:annotation>
+          <xsd:documentation source="">High-level summary </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Normal">
+        <xsd:annotation>
+          <xsd:documentation source="">Normal level of detail, a typical "report"</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Detail">
+        <xsd:annotation>
+          <xsd:documentation source="">A detailed record, most attributes and summary for related</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ExtendedDetail">
+        <xsd:annotation>
+          <xsd:documentation source="">All attributes and associations - normal detail for related elements</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType abstract="false" mixed="false" name="EntityURIType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="anyURI" i:namespace="http://niem.gov/niem/proxy/xsd/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for a URI for an entity record in a data resource. This URI is specific to the particular record about an entity, the same entity may have other URIs for other records in other repositories.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="niem-xsd:anyURI"/>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" mixed="false" name="ExchangeAgreedMessageType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data concept for a A data type for a the base of all corrections messages which must include valid ExchangeAgreementReference metadata.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="ExchangeAgreementReferenceMetadataType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="MetadataType" i:namespace="http://niem.gov/niem/structures/2.0"/>
+        <i:AppliesTo i:name="ExchangeAgreedMessageType" i:namespace="http://it.ojp.gov/gist/201/Metadata/MetadataReference"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for metadata about messages and their supporting the exchange agreement</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:MetadataType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="MetaR:ExchangeAgreementID"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="MetaR:MetadataRepositoryID"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="MetaR:MetadataUsedDateTime"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="ExchangeAgreementURIType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="anyURI" i:namespace="http://niem.gov/niem/proxy/xsd/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for a URI and primary identity for an exchange agreement. This URI should not change even if hosed in other repositories. The URI should reference an ExchangeAgreement identified in the metadata record.
+This URI should be directly dereferencable, i.e. you should be able to get the metadata by following this link.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="niem-xsd:anyURI"/>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="InformationRecordLinkType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for a linkable address from which to obtain information on any kind of entity (entity can be anything identifiable). This link may include a reference to the source of the link.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="MetaR:LinkURI"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="MetaR:LinkText"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="MetadataRepositoryURIType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="anyURI" i:namespace="http://niem.gov/niem/proxy/xsd/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for a URI for a metadata repository</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="niem-xsd:anyURI"/>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="ScoreType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for an assessment, test or indicator score. A score has a score text, a finding indicator and a numerical score as defined by a score basis.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="MetaR:ScoreBasisURIReference"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="MetaR:ScoreText"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="MetaR:ScoreValue"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="MetaR:FindingIndicator"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="XSDElementIDType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="anyURI" i:namespace="http://niem.gov/niem/proxy/xsd/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for a URI for an element in an XSD</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="niem-xsd:anyURI"/>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:schema>

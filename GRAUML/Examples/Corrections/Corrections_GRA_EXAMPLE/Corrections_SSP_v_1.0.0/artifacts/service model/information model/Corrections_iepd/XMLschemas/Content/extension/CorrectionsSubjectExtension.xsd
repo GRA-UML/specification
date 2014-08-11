@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:HOUSE="http://it.ojp.gov/gist/200/Corrections/housing" xmlns:MetaR="http://it.ojp.gov/gist/201/Metadata/MetadataReference" xmlns:Q1="http://niem.gov/niem/domains/jxdm/4.1" xmlns:Q2="http://domain.gov/myDomain/" xmlns:Q3="http://niem.gov/niem/niem-core/2.0" xmlns:Q4="http://it.ojp.gov/gist/200/Corrections/service" xmlns:Q5="http://it.ojp.gov/gist/201/Metadata/MetadataReference" xmlns:Q6="http://it.ojp.gov/gist/200/Corrections/treatments" xmlns:Q7="http://it.ojp.gov/gist/200/Corrections/housing" xmlns:SERVICE="http://it.ojp.gov/gist/200/Corrections/service" xmlns:SUBJ="http://it.ojp.gov/gist/200/Corrections/subject" xmlns:TREAT="http://it.ojp.gov/gist/200/Corrections/treatments" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://it.ojp.gov/gist/200/Corrections/subject" version="&quot;1&quot;">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+    <xsd:documentation source="">A schema for corrections subjects</xsd:documentation>
+  </xsd:annotation>
+  <xsd:import namespace="http://domain.gov/myDomain/" schemaLocation="../../.././XMLschemas/Content/extension/EntityIdentification.xsd"/>
+  <xsd:import namespace="http://it.ojp.gov/gist/200/Corrections/housing" schemaLocation="../../.././XMLschemas/Content/extension/HousingExtension.xsd"/>
+  <xsd:import namespace="http://it.ojp.gov/gist/200/Corrections/service" schemaLocation="../../.././XMLschemas/Content/extension/SubjectServicesAndAssessments.xsd"/>
+  <xsd:import namespace="http://it.ojp.gov/gist/200/Corrections/treatments" schemaLocation="../../.././XMLschemas/Content/extension/TreatmentAndPerscriptionExtension.xsd"/>
+  <xsd:import namespace="http://it.ojp.gov/gist/201/Metadata/MetadataReference" schemaLocation="../../.././XMLschemas/Metadata/MetadataReference.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.0" schemaLocation="../../../XMLschemas/subset/niem/appinfo/2.0/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.1" schemaLocation="../../../XMLschemas/subset/niem/appinfo/2.1/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/domains/jxdm/4.1" schemaLocation="../../.././XMLschemas/Content/subset/niem/2.0/jxdm.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="../../.././XMLschemas/Content/subset/niem/2.0/niem-core.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="../../../XMLschemas/subset/niem/proxy/xsd/2.0/xsd.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="../../../XMLschemas/subset/niem/structures/2.0/structures.xsd"/>
+  <xsd:element abstract="false" name="AccomplishmentDate" nillable="false" type="nc:DateType">
+    <xsd:annotation>
+      <xsd:documentation source="">A date accomplished</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="AccomplishmentDescriptionText" nillable="false" type="nc:TextType">
+    <xsd:annotation>
+      <xsd:documentation source="">A description of the accomplishment</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="Accomplishments" nillable="false" type="SUBJ:AccomplishmentType">
+    <xsd:annotation>
+      <xsd:documentation source="">A set of Goals subject has accomplished.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="Arrest" nillable="false" type="j:ArrestType">
+    <xsd:annotation>
+      <xsd:documentation source="">A set of Arrests of subject</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="AssociatesReference" nillable="false" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="PersonType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source=""/>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="AssociationDescriptionText" nillable="false" type="nc:TextType">
+    <xsd:annotation>
+      <xsd:documentation source="">A description of subjects association with associates.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="AssociationName" nillable="false" type="niem-xsd:string">
+    <xsd:annotation>
+      <xsd:documentation source="">A kind of subjects association with associates.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="BeginDate" nillable="false" type="nc:DateType">
+    <xsd:annotation>
+      <xsd:documentation source="">A date of incarceration</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="Biometric" nillable="false" type="nc:BiometricType">
+    <xsd:annotation>
+      <xsd:documentation source="">A set of Biometrics of a subject (not appropriate for person in general)</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="CategoryURI" nillable="false" type="MetaR:CategoryURIType">
+    <xsd:annotation>
+      <xsd:documentation source="">A URI of the category of this indicator</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="CorrectionalFacilityReference" nillable="false" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="CorrectionalFacilityType" i:namespace="http://niem.gov/niem/domains/jxdm/4.1"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A subjects stay at a correction facility for their incarceration</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="EndDate" nillable="false" type="nc:DateType">
+    <xsd:annotation>
+      <xsd:documentation source="">A date incarceration ended</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="EntityIdentification" nillable="false" type="Q2:EntityIdentityType">
+    <xsd:annotation>
+      <xsd:documentation source="">An Identification of a subject and links to more information about that subject</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="HousingAssociation" nillable="false" type="HOUSE:HousingAssociationType">
+    <xsd:annotation>
+      <xsd:documentation source="">A relationship to a subjects housing</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="IncarceratedReference" nillable="false" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="SubjectType" i:namespace="http://it.ojp.gov/gist/200/Corrections/subject"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">An incarcerated subject</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="Incarceration" nillable="false" type="SUBJ:IncarcerationType">
+    <xsd:annotation>
+      <xsd:documentation source="">A set of Incarceration(s) of a subject</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="IncarcerationOffenseReference" nillable="false" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="OffenseType" i:namespace="http://niem.gov/niem/domains/jxdm/4.1"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A set of Offense(s) that contributed to an incarceration</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="IncidentReference" nillable="false" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="IncidentType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A set of Incidents related to a subject</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="Indicator" nillable="false" type="SUBJ:IndicatorType">
+    <xsd:annotation>
+      <xsd:documentation source="">Indicators of risk associated with a subject</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="IndicatorContactReference" nillable="false" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="PersonType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A contact for more information about an indicator</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="IndicatorDescription" nillable="false" type="nc:TextType">
+    <xsd:annotation>
+      <xsd:documentation source="">A description of an indicator</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="InsuranceHeld" nillable="false" type="nc:InsuranceType">
+    <xsd:annotation>
+      <xsd:documentation source="">A subjects insurance</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="Obligation" nillable="false" type="nc:ObligationType">
+    <xsd:annotation>
+      <xsd:documentation source="">A set of Obligation(s) of a subject</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="Perscriptions" nillable="false" type="TREAT:PerscriptionType">
+    <xsd:annotation>
+      <xsd:documentation source="">A set of Prescription(s) for a subject</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="Property" nillable="false" type="nc:PropertyType">
+    <xsd:annotation>
+      <xsd:documentation source="">A property of a subject, including held property.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="Release" nillable="false" type="nc:ReleaseType">
+    <xsd:annotation>
+      <xsd:documentation source="">A set of Details of discharge from incarceration</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="RiskLevelCode" nillable="false" type="SERVICE:LevelCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation source="">A Risk indicated</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="Sanction" nillable="false" type="j:SanctionType">
+    <xsd:annotation>
+      <xsd:documentation source="">A set of Sanctions for a subject</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="ServiceProvidedReference" nillable="false" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="ServiceType" i:namespace="http://it.ojp.gov/gist/200/Corrections/service"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A Services for a subject</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SourceAssessmentReference" nillable="false" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="AssessmentType" i:namespace="http://it.ojp.gov/gist/200/Corrections/service"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A assessment that produced an indicator</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="StartDate" nillable="false" type="nc:DateType">
+    <xsd:annotation>
+      <xsd:documentation source="">A date the subjects association with associates started.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SubjectReference" nillable="false" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="SubjectType" i:namespace="http://niem.gov/niem/domains/jxdm/4.1"/>
+      </xsd:appinfo>
+      <xsd:documentation source=""/>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SupervisionStatusCode" nillable="false" type="SUBJ:SupervisionStatusCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation source="">A Status of supervision ** Review for redundancy with SupervisionType</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="Visitation" nillable="false" type="j:VisitationType">
+    <xsd:annotation>
+      <xsd:documentation source="">A Visitation(s) of a subject</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="AccomplishmentType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for accomplishments of a subject {From face-face Needs review}</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="SUBJ:AccomplishmentDescriptionText"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="SUBJ:AccomplishmentDate"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="IncarcerationType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for current and past incarcerations of a subject</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="SUBJ:IncarceratedReference"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="SUBJ:Release"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SUBJ:IncarcerationOffenseReference"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="SUBJ:CorrectionalFacilityReference"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="SUBJ:BeginDate"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="SUBJ:EndDate"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="IndicatorType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for an indicator of a subjects status, condition or behavior</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="SUBJ:IndicatorDescription"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="SUBJ:RiskLevelCode"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="SUBJ:SourceAssessmentReference"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="SUBJ:IndicatorContactReference"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SUBJ:CategoryURI"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="SubjectAssociatesAssociationType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="Association" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for a relationship to a subjects associates</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="SUBJ:AssociatesReference"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="SUBJ:SubjectReference"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="SUBJ:AssociationName"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="SUBJ:AssociationDescriptionText"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="SUBJ:StartDate"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="SUBJ:EndDate"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="SubjectPlanningAssociationType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="Association" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for a relationship to the planning of an activity</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="SubjectType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="SubjectType" i:namespace="http://niem.gov/niem/domains/jxdm/4.1"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for subjects, subjects are the foundation of correction information sharing. Subjects may be inmates, convicted or waiting for trial. Subjects may have sentences, multiple incarcerations and be categorized.
+Subjects receive services provided by service providers (a role of an organization). Kinds of services include treatments, education and assessments.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="j:SubjectType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="SUBJ:EntityIdentification"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SUBJ:Incarceration"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SUBJ:ServiceProvidedReference"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SUBJ:Accomplishments"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SUBJ:Indicator"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SUBJ:IncidentReference"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SUBJ:InsuranceHeld"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SUBJ:Perscriptions"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SUBJ:Obligation"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SUBJ:Sanction"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="SUBJ:HousingAssociation"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="SUBJ:SupervisionStatusCode"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SUBJ:Property"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SUBJ:Arrest"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SUBJ:Visitation"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="SUBJ:Biometric"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="SupervisionStatusCodeSimpleType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+      <xsd:documentation source="">A data type for Offender supervision status</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="Unsupervised">
+        <xsd:annotation>
+          <xsd:documentation source="">Subject is unsupervised</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Supervised_Compliant">
+        <xsd:annotation>
+          <xsd:documentation source="">Compliant supervision</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Supervised_Violation">
+        <xsd:annotation>
+          <xsd:documentation source="">In violation of supervision</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>
