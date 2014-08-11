@@ -1,0 +1,22 @@
+<wsp:Policy wsu:Id="wss-wsa-arg-se_policy"
+	xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+	<wsp:ExactlyOne>
+		<wsp:All>
+			<sp:SignedParts>
+					<sp:Body/>
+					<sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					<sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+				</sp:SignedParts>
+				<sp:EncryptedParts>
+					<sp:Body/>
+				</sp:EncryptedParts>
+			</wsp:All>
+		</wsp:ExactlyOne>
+	</wsp:Policy>

@@ -1,0 +1,55 @@
+<wsp:Policy wsu:Id="wss_policy"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+	xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+	<wsp:ExactlyOne>
+		<wsp:All>
+			<sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+				<wsp:Policy>
+					<sp:TransportToken>
+						<wsp:Policy>
+							<sp:HttpsToken/>
+						</wsp:Policy>
+					</sp:TransportToken>
+					<sp:AlgorithmSuite>
+						<wsp:Policy>
+							<sp:Basic256/>
+						</wsp:Policy>
+					</sp:AlgorithmSuite>
+					<sp:Layout>
+						<wsp:Policy>
+							<sp:Strict/>
+						</wsp:Policy>
+					</sp:Layout>
+					<sp:IncludeTimestamp/>
+				</wsp:Policy>
+			</sp:TransportBinding>
+			<sp:EndorsingSupportingTokens xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+				<wsp:Policy>
+					<sp:X509Token sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+						<wsp:Policy>
+							<sp:RequireThumbprintReference/>
+							<sp:WssX509V3Token10/>
+						</wsp:Policy>
+					</sp:X509Token>
+					<sp:SignedParts/>
+					<sp:EncryptedParts/>
+				</wsp:Policy>
+			</sp:EndorsingSupportingTokens>
+			<sp:Wss11 xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+				<wsp:Policy>
+					<sp:MustSupportRefThumbprint/>
+				</wsp:Policy>
+			</sp:Wss11>
+			<sp:Trust13 xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+				<wsp:Policy>
+					<sp:MustSupportIssuedTokens/>
+					<sp:RequireClientEntropy/>
+					<sp:RequireServerEntropy/>
+				</wsp:Policy>
+			</sp:Trust13>
+			<wsaw:UsingAddressing/>
+		</wsp:All>
+	</wsp:ExactlyOne>
+</wsp:Policy>

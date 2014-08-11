@@ -1,0 +1,27 @@
+<wsp:Policy wsu:Id="wsrm_policy"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+    xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+    xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+      xsi:schemaLocation="http://schemas.xmlsoap.org/ws/2004/09/policy http://schemas.xmlsoap.org/ws/2004/09/policy/ws-policy.xsd">
+    <wsp:ExactlyOne>
+        <wsp:All>
+            <wsrmp:RMAssertion xmlns:wsrmp="http://docs.oasis-open.org/ws-rx/wsrmp/200702">
+                <wsp:Policy>
+                    <wsrmp:DeliveryAssurance>
+                        <wsp:Policy>
+                            <wsrmp:ExactlyOnce/>
+                            <wsrmp:InOrder/>
+                        </wsp:Policy>
+                    </wsrmp:DeliveryAssurance>
+                </wsp:Policy>
+                <netrmp:InactivityTimeout
+                    xmlns:netrmp="http://schemas.microsoft.com/ws-rx/wsrmp/200702"
+                    Milliseconds="600000"/>
+                <netrmp:AcknowledgementInterval
+                    xmlns:netrmp="http://schemas.microsoft.com/ws-rx/wsrmp/200702"
+                    Milliseconds="200"/>
+            </wsrmp:RMAssertion>
+        </wsp:All>
+    </wsp:ExactlyOne>
+</wsp:Policy>
