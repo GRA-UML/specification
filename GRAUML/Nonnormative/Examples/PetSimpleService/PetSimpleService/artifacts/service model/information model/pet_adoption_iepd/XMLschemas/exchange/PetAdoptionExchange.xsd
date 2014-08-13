@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:NC="http://niem.gov/niem/niem-core/2.0" xmlns:PetExchange="http://www.modeldriven.org/niem/examples/PetAdoptionExchange" xmlns:PetExtension="http://www.modeldriven.org/niem/examples/PetAdoptionExtension" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://www.modeldriven.org/niem/examples/PetAdoptionExchange" version="&quot;1&quot;">
+  <xsd:import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="../../XMLschemas/subset/niem/niem-core/2.0/PetAdoptionNIEMCoreSubset.xsd"/>
+  <xsd:import namespace="http://www.modeldriven.org/niem/examples/PetAdoptionExtension" schemaLocation="../../XMLschemas/extension/PetAdoptionExtension.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.0" schemaLocation="../../XMLschemas/appinfo/2.0/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="../../XMLschemas/proxy/xsd/2.0/xsd.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.1" schemaLocation="../../XMLschemas/appinfo/2.1/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="../../XMLschemas/structures/2.0/structures.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>A Documented Component</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:element abstract="false" name="Identification" nillable="false">
+    <xsd:annotation>
+      <xsd:documentation>A Documented Component</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="PetAdoptionExchange" nillable="false">
+    <xsd:annotation>
+      <xsd:documentation>A Documented Component</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="Exception" nillable="false">
+    <xsd:annotation>
+      <xsd:documentation>A Documented Component</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="PersonNameTextText" nillable="false">
+    <xsd:annotation>
+      <xsd:documentation>A Documented Component</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

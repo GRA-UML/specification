@@ -1,0 +1,1116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1">
+<emof:Package xmlns:emof="http://schema.omg.org/spec/MOF/2.0/emof.xml" xmi:id="_Data" name="Data">
+<nestedPackage xmi:id="_Data-GRAUML" name="GRAUML">
+<nestedPackage xmi:id="_Data-GRAUML-GRAAnnotationModel" name="GRAAnnotationModel" URI="http://ijis.org/GRA/Annotations">
+<ownedType xmi:type="emof:Enumeration" xmi:id="_Data-GRAUML-GRAAnnotationModel-ExchangePattern" name="ExchangePattern">
+<ownedLiteral xmi:id="_Data-GRAUML-GRAAnnotationModel-ExchangePattern-Enquiery" name="enquiry"/>
+<ownedLiteral xmi:id="_Data-GRAUML-GRAAnnotationModel-ExchangePattern-Subscription" name="subscription"/>
+<ownedLiteral xmi:id="_Data-GRAUML-GRAAnnotationModel-ExchangePattern-Notification" name="notification"/>
+<ownedLiteral xmi:id="_Data-GRAUML-GRAAnnotationModel-ExchangePattern-Update" name="update"/>
+<ownedLiteral xmi:id="_Data-GRAUML-GRAAnnotationModel-ExchangePattern-Message" name="message"/>
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404241263406_111085_5228" body="Represents a GRA Exchange Pattern.&#10;This type should define the message exchange patterns leveraged by the service actions.&#10;The GRA recognizes the following message exchange patterns:&#10;The FIRE-AND-FORGET pattern calls for the sender of a message (which could be the service consumer or service) to send the message and not expect a reply message back from the recipient. This pattern is useful for one-way transmission of information, such as notification that an event has occurred.&#10;The REQUEST-REPLY pattern calls for the sender of a message to send the message and expect a reply from the recipient.&#10;These two patterns are considered “primitive” patterns, in that they are the fundamental building blocks of more complex information exchange scenarios. For instance, the complex PUBLISH-SUBSCRIBE pattern involves an initial request-reply exchange in which the subscriber subscribes to a service, followed by the service using the fire-and-forget pattern to notify subscribers of an event.&#10;Within the service interface description, the behavioral model should describe message exchanges in terms of these two primitive exchange patterns. Each action can specify a different message exchange pattern.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ExchangePattern"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements" name="InteractionRequirements">
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-ServiceConsumerAuthentication" name="ServiceConsumerAuthentication" lower="0">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404237359726_459833_5178" body="Does the service have service consumer authentications?">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-ServiceConsumerAuthentication"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-ServiceConsumerAuthorization" name="ServiceConsumerAuthorization" lower="0">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404237376214_917178_5179" body="Does the service have service consumer authorizations?">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-ServiceConsumerAuthorization"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-IdentityAndAttributeAssertionTransmission" name="IdentityAndAttributeAssertionTransmission" lower="0">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404237411572_327078_5180" body="Does the service have identity and attribute assertion transmissions?">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-IdentityAndAttributeAssertionTransmission"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-ServiceAuthentication" name="ServiceAuthentication" lower="0">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404237434348_145232_5181" body="Does the service have service authentications?">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-ServiceAuthentication"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-MessageNonrepudiation" name="MessageNonrepudiation" lower="0">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404237455295_66757_5182" body="Does the service have message non-repudiation?">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-MessageNonrepudiation"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-MessageIntegrity" name="MessageIntegrity" lower="0">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404237478107_849249_5183" body="Does the service have message integrity?">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-MessageIntegrity"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-MessageConfidentiality" name="MessageConfidentiality" lower="0">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404237492348_227844_5184" body="Does the service have message confidentiality?">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-MessageConfidentiality"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-MessageAddressing" name="MessageAddressing" lower="0">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404237503445_616009_5185" body="Does the service have message addressing?">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-MessageAddressing"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-Reliability" name="Reliability" lower="0">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404237517374_677339_5186" body="Does the service have reliability?">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-Reliability"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-TransactionSupport" name="TransactionSupport" lower="0">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404237537283_339008_5187" body="Does the service have transaction support?">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-TransactionSupport"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-ServiceMetadataAvailability" name="ServiceMetadataAvailability" lower="0">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404237558503_396634_5188" body="Does the service have metadata availability?">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-ServiceMetadataAvailability"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-InterfaceDescriptionRequirements" name="InterfaceDescriptionRequirements" lower="0">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404237577318_533155_5189" body="Does the service have interface description requirements?">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-InterfaceDescriptionRequirements"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-Logging" name="Logging" lower="0">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404237596111_340914_5190" body="Does the service have logging?">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-Logging"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_17_0_5_1_2aa0151_1404223639366_935501_4209" name="ServiceResponsiveness" lower="0" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404237631110_279702_5191" body="Does the service have service responsiveness?">
+<annotatedElement xmi:idref="_17_0_5_1_2aa0151_1404223639366_935501_4209"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-other_requirement" name="OtherRequirement" lower="0" upper="*">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404226354200_82526_4505" body="This property lists any other requirements which have to be met and on which the service depends to deliver its capabilities.&#10;Additional artifacts related to specific subsections of this section's content can be provided under the artifacts folder of the service package. It is suggested there be a large number of artifacts related to this section.  These artifacts are included as documents or folders under the various artifacts subfolder of the artifacts folder.&#10;  &#10;[Service Abbreviation] SSP [Service Version]\artifacts\various artifacts\*&#10;&#10;If such artifacts are provided,  they should be referenced in this section. A description of the artifact and a link to it should be provided as part of the reference.&#10;">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-other_requirement"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404237310227_611889_5177" body="The Service Interaction Requirements.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase" name="GRAServiceAnnotationBase" isAbstract="true">
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-Name" name="Name" lower="0">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-Name-ownedComment-1" body="The element name is derived from the UML Instance name and will default to the realized element name if not otherwise set.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-Name"/>
+</ownedComment>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-Name-ownedComment-2" body="A Documented Component">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-Name"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-Documentation" name="Documentation" lower="0">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-Documentation-ownedComment-1" body="The documentation derived from a realized element or, if not provided, the element's documentation.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-Documentation"/>
+</ownedComment>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-Documentation-ownedComment-2" body="A Documented Component">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-Documentation"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-Template" name="Template" lower="0">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-Template-ownedComment" body="Template is the name of an XSLT template that will be called to process the containing element thus overriding the default mapping.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-Template"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-requirement" name="Requirement" type="_Data-GRAUML-GRAAnnotationModel-InteractionRequirements" lower="0" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404237249084_135146_5176" body="The service interaction requirements.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-requirement"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-ModelReference" name="ModelReference" type="_Data-GRAUML-GRAAnnotationModel-ModelReference" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-ModelReference-ownedComment-1" body="Reference to model elements specifying this element. Notated as a realization in the UML model.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-ModelReference"/>
+</ownedComment>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-ModelReference-ownedComment-2" body="A Documented Component">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-ModelReference"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-flag" name="Flag" lower="0" upper="*">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-flag-ownedComment" body="Flag provides an arbitrary extension mechanism where by any business or technology choice may be notated on the containing element. The intent is that the phase-2 transform will then respect these flags and produce the desired result. Unkown flags are ignored.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-flag"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-ownedComment" body="Documentation is derived from the UML instance element owned documentation and is set by default by the documentation of the realized element, if any.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-Participant" name="Participant">
+<superClass xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase"/>
+<ownedAttribute xmi:id="_17_0_5_1_3ba019e_1405004870375_399701_4514" name="ParticipatingOrganization" type="_Data-GRAUML-GRAAnnotationModel-Organization" lower="0"/>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Participant-ownedComment" body="Realizes Actor">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Participant"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-Interface" name="Interface">
+<superClass xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase"/>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Interface-operation" name="Operation" type="_Data-GRAUML-GRAAnnotationModel-Operation" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404237939433_496913_5195" body="An operation which is contained by the interface.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Interface-operation"/>
+</ownedComment>
+</ownedAttribute>
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404237910938_522698_5194" body="Represents an abstract service interface.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Interface"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-Service" name="Service">
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Service-port" name="Port" type="_Data-GRAUML-GRAAnnotationModel-Port" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404239626100_733994_5219" body="The port specification for the ports owned by the service component realizing this Service. ">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Service-port"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_17_0_5_1_3ba019e_1404761463919_869337_4178" name="ServiceProvider" type="_Data-GRAUML-GRAAnnotationModel-Participant" lower="0"/>
+<ownedAttribute xmi:id="_17_0_5_1_2aa0151_1404221970758_468169_4187" name="SampleData" type="_17_0_5_1_2aa0151_1404221831894_901900_4154" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404238707811_854792_5206" body="Sample Data associated with Service Testing.">
+<annotatedElement xmi:idref="_17_0_5_1_2aa0151_1404221970758_468169_4187"/>
+</ownedComment>
+</ownedAttribute>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Service-ownedComment" body="Realizes component">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Service"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-Operation" name="Operation">
+<superClass xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase"/>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Operation-message" name="Parameter" type="_Data-GRAUML-GRAAnnotationModel-Message" isOrdered="true" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404238446649_514375_5198" body="The parameter of an operation">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Operation-message"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Operation-MessageExchangePattern" name="MessageExchangePattern" type="_Data-GRAUML-GRAAnnotationModel-ExchangePattern" lower="0">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404238470805_874038_5199" body="Represents the GRA message exchange pattern associated with the operation.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Operation-MessageExchangePattern"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Operation-isAsyncronous" name="IsAsynchronous" lower="0">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Operation-isAsyncronous-ownedComment-1" body="Indicates whether or not the operation is asynchronous.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Operation-isAsyncronous"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Operation-ActionName" name="ActionName" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Operation-ActionName-ownedComment" body="A service action performed within this service interface.&#10;[Derived from] Operation name">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Operation-ActionName"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Operation-ActionPurpose" name="ActionPurpose" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Operation-ActionPurpose-ownedComment" body="A description of the Service Action purpose performed by this service interface.&#10;[Derived from] Operation description">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Operation-ActionPurpose"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_17_0_5_1_2aa0151_1404227379743_937454_4530" name="ActionProvenance" lower="0" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404227490177_94330_4534" body="Define any specific for this action provenance information.  Reference should be made to the information model.&#10;Used to populate Action Model section of SDD document.">
+<annotatedElement xmi:idref="_17_0_5_1_2aa0151_1404227379743_937454_4530"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Operation-ownedComment" body="A data structure representing a services action information&#10;[Realizes] Operation or signal reception">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Operation"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-Message" name="Parameter">
+<superClass xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase"/>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Message-use" name="Use" type="_Data-GRAUML-GRAAnnotationModel-MessageUse" lower="0">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Message-use-ownedComment-1" body="THe &quot;direction&quot; of the message">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Message-use"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Message-type" name="Message" type="_17_0_5_1_3ba019e_1404935460714_177740_4121" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Message-type-ownedComment" body="The information transfered in an operation ">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Message-type"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_17_0_5_1_2aa0151_1404228094778_514657_4540" name="DataProvenance" lower="0">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404228432446_91040_4554" body="&#10;Provenance is defined as the agency, office, or person of origin of records, i.e., the entity that created, received, or accumulated and used the records in the conduct of their business activities.  Any applicable provenance information or restrictions should be provided in this property.&#10;&#10;Additional artifacts related to this section's content can be provided in the service model folders of the service package.&#10;  &#10;[Service Abbreviation] SSP [Service Version]\artifacts\service model\information model&#10;&#10;If such artifacts are provided,  they should be referenced in this section. A description of the artifact and a link to it should be provided as part of the reference.&#10;&#10;This property used to populate the Data Provenance section of the SDD document.&#10;">
+<annotatedElement xmi:idref="_17_0_5_1_2aa0151_1404228094778_514657_4540"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Message-ownedComment" body="[Derived from operation parameter].&#10;Represents the information content of parameters defined in the operations.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Message"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-Port" name="Port">
+<superClass xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase"/>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Port-interface" name="Interface" type="_Data-GRAUML-GRAAnnotationModel-Interface" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404238897695_232808_5208" body="Interface realized by the Port.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Port-interface"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Port-AddressURI" name="AddressURI" lower="0">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404239211311_415303_5211" body="The &lt;soap:address&gt; location of a &lt;wsdl:port&gt;. Derived by default in phase-2 from ServiceInterfaceURI+&quot;/&quot;+&quot;Name&quot;">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Port-AddressURI"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404238868787_176346_5207" body="Represents a service port, realizes a UML Port on the Service Component.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Port"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-ModelReference" name="ModelReference">
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ModelReference-Name" name="Name" lower="0">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ModelReference-Name-ownedComment-1" body="The name of the element">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ModelReference-Name"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ModelReference-Documentation" name="Documentation" lower="0">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ModelReference-Documentation-ownedComment-1" body="The documentation of the element">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ModelReference-Documentation"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ModelReference-ElementID" name="ElementID" lower="0">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ModelReference-ElementID-ownedComment-1" body="The id of the referenced model element.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ModelReference-ElementID"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ModelReference-DiagramLink" name="DiagramLink" lower="0" upper="*">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ModelReference-DiagramLink-ownedComment-1" body="URI of a diagram associated with the model element.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ModelReference-DiagramLink"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ModelReference-Model" name="Model" type="_Data-GRAUML-GRAAnnotationModel-Model" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ModelReference-Model-ownedComment" body="The model resource containing the model reference.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ModelReference-Model"/>
+</ownedComment>
+</ownedAttribute>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ModelReference-ownedComment" body="Model references are generated based on a realization or QVT logic.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ModelReference"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceInteraction" name="ServiceInteraction">
+<superClass xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase"/>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceInteraction-participant" name="Participant" type="_Data-GRAUML-GRAAnnotationModel-Participant" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceInteraction-participant-ownedComment" body="Realizes Actor">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceInteraction-participant"/>
+</ownedComment>
+</ownedAttribute>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceInteraction-ownedComment" body="Exchanges between parties as an interaction diagram">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceInteraction"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-UseCase" name="UseCase">
+<superClass xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase"/>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-UseCase-provider" name="Provider" type="_Data-GRAUML-GRAAnnotationModel-Participant" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-UseCase-provider-ownedComment-1" body="A Documented Component">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-UseCase-provider"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-UseCase-consumer" name="Consumer" type="_Data-GRAUML-GRAAnnotationModel-Participant" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-UseCase-consumer-ownedComment" body="A Documented Component">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-UseCase-consumer"/>
+</ownedComment>
+</ownedAttribute>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-UseCase-ownedComment" body="[Derived from] Use case or package with use cases. In the case of a package, each contained use case shall produce a use case element in Phase-1.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-UseCase"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Enumeration" xmi:id="_Data-GRAUML-GRAAnnotationModel-MessageUse" name="ParameterUse">
+<ownedLiteral xmi:id="_Data-GRAUML-GRAAnnotationModel-MessageUse-in" name="in">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404241701800_164220_5230" body="Specifies that the corresponding operation parameter has an in direction.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-MessageUse-in"/>
+</ownedComment>
+</ownedLiteral>
+<ownedLiteral xmi:id="_Data-GRAUML-GRAAnnotationModel-MessageUse-out" name="out">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404241713798_459850_5231" body="Specifies that the corresponding operation parameter has an out direction.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-MessageUse-out"/>
+</ownedComment>
+</ownedLiteral>
+<ownedLiteral xmi:id="_Data-GRAUML-GRAAnnotationModel-MessageUse-inout" name="inout">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404241727072_858732_5232" body="Specifies that the corresponding operation parameter has an in and out direction.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-MessageUse-inout"/>
+</ownedComment>
+</ownedLiteral>
+<ownedLiteral xmi:id="_Data-GRAUML-GRAAnnotationModel-MessageUse-exception" name="exception">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404241809524_831629_5233" body="Specifies that the usage for the message is as a fault, or exception, on the operation.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-MessageUse-exception"/>
+</ownedComment>
+</ownedLiteral>
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404241632857_381783_5229" body="Defines the direction of a message associated with the parameters and exceptions of an operation.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-MessageUse"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-Agreement" name="Agreement">
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Agreement-AgreementDescriptionText" name="Documentation" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Agreement-AgreementDescriptionText-ownedComment" body="A free text description of an agreement, formal or informal, associated with a service, application or thing, tangible or otherwise.&#10;[Derived from] Element Documentation">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Agreement-AgreementDescriptionText"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Agreement-AgreementURI" name="AgreementURI" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Agreement-AgreementURI-ownedComment" body="A locator referencing an agreement, formal or informal, associated with a service, application or thing, tangible or otherwise.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Agreement-AgreementURI"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_17_0_5_1_2aa0151_1404212683124_534816_4119" name="AutomatedAgreementIndicator" lower="0" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404236556864_932200_5170" body="Indicates whether the policy or contract represented by the Agreement has an automated implementation.">
+<annotatedElement xmi:idref="_17_0_5_1_2aa0151_1404212683124_534816_4119"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Agreement-ownedComment" body="A data structure representing an agreement, formal or informal, associated with a service, application or thing, tangible or otherwise.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Agreement"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-IEPDReference" name="IEPDReference">
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-IEPDReference-IEPDName" name="Name" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-IEPDReference-IEPDName-ownedComment" body="A human readable identification of the IEPD">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-IEPDReference-IEPDName"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-IEPDReference-IEPDURL" name="IEPDURL" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-IEPDReference-IEPDURL-ownedComment" body="A URL where the IEPD is posted and available.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-IEPDReference-IEPDURL"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-IEPDReference-ownedComment" body="A data structure describing the name and location of an IEPD. This entire structure is derived from &lt;uses&gt;d IEPDs.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-IEPDReference"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-Person" name="Person">
+<superClass xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase"/>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Person-ContactPersonEmailID" name="ContactPersonEmailID" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Person-ContactPersonEmailID-ownedComment" body="An Email of a person.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Person-ContactPersonEmailID"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Person-ContactPersonPhoneNumberID" name="ContactPersonPhoneNumberID" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Person-ContactPersonPhoneNumberID-ownedComment" body="A phone number of the person designated as the point of contact for the organization.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Person-ContactPersonPhoneNumberID"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Person-ContactPersonAddress" name="ContactPersonAddress" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Person-ContactPersonAddress-ownedComment" body="A physical address of a person in full text form.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Person-ContactPersonAddress"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Person-ownedComment" body="A data structure describing a persons name and the means to contact that person.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Person"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-SecurityClassification" name="SecurityClassification">
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-SecurityClassification-SecurityClassificationText" name="Name" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-SecurityClassification-SecurityClassificationText-ownedComment" body="Any applicable classification of the security level of the information exchanged by the service, such as SBU, Secret, etc. If there is no strict classification this field can contain a brief statement regarding the security of the data.&#10;[Derived from] Security Classification Name">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-SecurityClassification-SecurityClassificationText"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404239384964_964666_5215" body="Any applicable classification of the security level of the information exchanged by the service, such as SBU, Secret, etc. If there is no strict classification this field can contain a brief statement regarding the security of the data.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-SecurityClassification"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceCapability" name="ServiceCapability">
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceCapability-CapabilityDescriptionText" name="Documentation" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceCapability-CapabilityDescriptionText-ownedComment" body="A free text format description of the capability provided by a service.&#10;[Derived from] Element Documentation">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceCapability-CapabilityDescriptionText"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceCapability-ownedComment" body="A free text format description of the capability provided by a service.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceCapability"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription" name="ServiceDescription">
+<superClass xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceIdentification"/>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceDescription" name="ServiceDescription" type="_Data-GRAUML-GRAAnnotationModel-Description" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceDescription-ownedComment" body="A human readable narrative description of this service—may contain as much detail as you think useful to those with a potential interest in this service and its business usage/application.&#10;[Derived from] Element Documentation">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceDescription"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ExchangePartner" name="ExchangePartner" type="_Data-GRAUML-GRAAnnotationModel-Participant" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ExchangePartner-ownedComment" body="A collection of the types/categories of organizations that would commonly use a service.&#10;[Derived from] Role in collaboration">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ExchangePartner"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-Classification" name="Classification" isOrdered="true" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-Classification-ownedComment" body="A collection of classifications defining the relationship between a service and an applicable enterprise architecture and business reference model.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-Classification"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-Sponsors" name="Sponsor" isOrdered="true" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-Sponsors-ownedComment" body="A collection of professional or governmental organization(s) or person that sponsored, contributed, or participated in the development of a service.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-Sponsors"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServicePurpose" name="ServicePurpose" type="_Data-GRAUML-GRAAnnotationModel-Description" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServicePurpose-ownedComment" body="A purpose which the service intends or resolves, to perform or accomplish.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServicePurpose"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceScopeDescription" name="ServiceScopeDescription" type="_Data-GRAUML-GRAAnnotationModel-Description" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceScopeDescription-ownedComment" body="A definition of the scope of a service.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceScopeDescription"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceDescriptionSummaryText" name="ServiceDescriptionSummaryText" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceDescriptionSummaryText-ownedComment" body="A brief summary of this service for short display purposes.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceDescriptionSummaryText"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceDescriptionKeywordText" name="ServiceDescriptionKeywordText" isOrdered="true" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceDescriptionKeywordText-ownedComment" body="A search term that would not otherwise be in other metadata attributes (e.g., Child Support Warrant, Domestic Relations Warrant, Domestics).">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceDescriptionKeywordText"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceCapabilities" name="ServiceCapability" type="_Data-GRAUML-GRAAnnotationModel-ServiceCapability" isOrdered="true" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceCapabilities-ownedComment" body="An enumeration of the capabilities provided by a service. The capabilities will be described in a free text format.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceCapabilities"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceDependency" name="ServiceDependency" type="_Data-GRAUML-GRAAnnotationModel-ServiceIdentification" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceDependency-ownedComment" body="A specific service upon which a service directly depends to deliver its real world effects.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceDependency"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-IEPDReference" name="IEPDReference" type="_Data-GRAUML-GRAAnnotationModel-IEPDReference" upper="*" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-IEPDReference-ownedComment" body="A set or reference information identifying an Information Exchange Package Document which the service uses in its data model&#10;[Derived from] &lt;Uses&gt; relation to IEPD">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-IEPDReference"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceSecurityClassification" name="ServiceSecurityClassification" type="_Data-GRAUML-GRAAnnotationModel-SecurityClassification" lower="0" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404239781581_875797_5220" body="Any applicable classification of the security level of the information exchanged by the service, such as SBU, Secret, etc. If there is no strict classification this field can contain a brief statement regarding the security of the data.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceSecurityClassification"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceLevelAgreement" name="ServiceLevelAgreement" type="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement" isOrdered="true" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceLevelAgreement-ownedComment" body="A collection of policies, agreements, licensing and any other goverenace or performance documentation specifying constraints and any other details regarding the realization of a service.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceLevelAgreement"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-RelatedOrganization" name="RelatedOrganization" type="_Data-GRAUML-GRAAnnotationModel-Organization" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-RelatedOrganization-ownedComment" body="A collection of organizations that are somehow related to the service.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-RelatedOrganization"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceInterface" name="ServiceInterface" type="_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceInterface-ownedComment" body="A set of details relating to the interface of a service.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceInterface"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-DomainDescription" name="DomainDescription" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-DomainDescription-ownedComment" body="A primary domain or line of business (LoB) that a service covers.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-DomainDescription"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-Endorsements" name="Endorsements" isOrdered="true" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-Endorsements-ownedComment" body="A collection of names and acronyms of professional or governmental organizations or people that endorse this service as an official business exchange.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-Endorsements"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-RealWorldEffect" name="RealWorldEffect" type="_Data-GRAUML-GRAAnnotationModel-UseCase" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-RealWorldEffect-ownedComment" body="A collection of the Real World Effects Provided by the Service.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-RealWorldEffect"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceInteraction" name="ServiceInteraction" type="_Data-GRAUML-GRAAnnotationModel-ServiceInteraction" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceInteraction-ownedComment" body="A Documented Component">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceInteraction"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-TransformationURI" name="TransformationURI" lower="0">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-TransformationURI-ownedComment-1" body="URI of an XSLT that transforms the skeleton SSP into a final one as the &quot;phase-2&quot; transform. ">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-TransformationURI"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-MajorVersion" name="MajorVersion" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-MajorVersion-ownedComment" body="A value identifying the primary version number. Defaults to 1.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-MajorVersion"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Integer" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-MinorVersion" name="MinorVersion" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-MinorVersion-ownedComment" body="A value designating a minor version number. Defaults to 0.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-MinorVersion"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Integer" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-RevisionVersion" name="RevisionVersion" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-RevisionVersion-ownedComment" body="A value designating a minor version revision number.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-RevisionVersion"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Integer" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-CreationDate" name="CreationDate" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-CreationDate-ownedComment" body="A date designation when a service was first created. Do NOT to be confuse with the date a service is submitted to a registry. The format is YYYY-MM. Set by default to today by Phase-2.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-CreationDate"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ActivationDate" name="ActivationDate" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ActivationDate-ownedComment" body="A date when a service was or will be first available in production. Do NOT confuse with the date you submitted this service to a registry. The format is YYYY-MM.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ActivationDate"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-LastRevisionDate" name="LastRevisionDate" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-LastRevisionDate-ownedComment" body="A date with the year and month specifying when this service information was last revised. Do NOT confuse with the date the service itself was last revised with generating new service documentation. The format is YYYY-MM. Set by default by Phase-2.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-LastRevisionDate"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-NextRevisionDate" name="NextRevisionDate" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-NextRevisionDate-ownedComment" body="A year and month (YYYY-MM) a service is expected to be revised.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-NextRevisionDate"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ExpirationDate" name="ExpirationDate" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ExpirationDate-ownedComment" body="A year and month (YYYY-MM) this service is expected to be no longer available (if applicable).">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ExpirationDate"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-LifecycleStatus" name="LifecycleStatus" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-LifecycleStatus-ownedComment" body="A word indicating the current stage of the service within the development lifecycle.  Valid values are; In Design, In Development, Release Candidate, Operational/Production, Deprecated">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-LifecycleStatus"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-AlertsAndNotifications" name="AlertAndNotificationURI" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-AlertsAndNotifications-ownedComment" body="A URL to sign up for alerts and notifications for a specific service">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-AlertsAndNotifications"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_17_0_5_1_2aa0151_1404226700313_68236_4515" name="AdditionalInformation" type="_Data-GRAUML-GRAAnnotationModel-Description" isOrdered="true" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404226863877_177101_4529" body="This property contains any additional information pertinent to the service which should be included in this document but does not belong in the document sections above.  This could be information about future capabilities the service could provide, information regarding specific conditions which govern the use of the service, information regarding specific domain capabilities the service fulfills, etc.  If required, subsections can be created to further structure the information provided in this section.&#10;&#10;Additional artifacts related to this section's content can be provided in the artifacts folder of the service package.&#10;  &#10;[Service Abbreviation] SSP [Service Version]\artifacts&#10;&#10;If such artifacts are provided,  they should be referenced in this section.  A description of the artifact and a link to it should be provided as part of the reference.&#10;&#10;This property used to populate the Additional Information section of the SDD document.&#10;">
+<annotatedElement xmi:idref="_17_0_5_1_2aa0151_1404226700313_68236_4515"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_17_0_5_1_2aa0151_1404233025744_904436_4888" name="ServiceDescriptionURI" lower="0" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404233105726_294083_4892" body="URI of the Service Description Document, relative to the SSP Catalog.">
+<annotatedElement xmi:idref="_17_0_5_1_2aa0151_1404233025744_904436_4888"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_17_0_5_1_2aa0151_1404224298302_595324_4478" name="ExecutionContext" type="_Data-GRAUML-GRAAnnotationModel-Description" lower="0" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404237860894_815484_5193" body="Service descriptions should include all information pertinent to the production or consumption of the service, including expected infrastructure functions and other dependencies.  No information directly pertaining to implementation platform or technology should be included in the service description.  Conversely, platform capabilities which are technology-independent should be included.  For example, stating in the service description that services that are encrypted are being provided by the infrastructure is preferred compared to stating that the Public Key Infrastructure (PKI) infrastructure is expected.  It is expected that the services defined using this document will minimize the dependence on specific technical infrastructure to provide the greatest flexibility and interoperability for service providers and service consumers. &#10;&#10;It is also important to note that the information in this property will be applicable to more than one service, and these required capabilities will be provisioned as part of the infrastructure layer of the architecture.  For instance, if information is to be exchanged securely within the execution context, enabling this functionality at the infrastructure level and not per a specific SSP or SIP is the strongly preferred direction for enabling the GRA. In other words, these commonly used technical functions would be most effectively achieved by an infrastructure solution which supports the GRA.&#10;">
+<annotatedElement xmi:idref="_17_0_5_1_2aa0151_1404224298302_595324_4478"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_17_0_5_1_2aa0151_1404225906953_3937_4495" name="Security" type="_Data-GRAUML-GRAAnnotationModel-Description" lower="0" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404226019802_704914_4499" body="While service descriptions are technology-agnostic and do not detail the physical model of a service, certain security requirements are applicable to the service and need to be carried through all its implementations.  This property outlines those requirements.&#10;The value is used to populate the Security section of the SDD document.">
+<annotatedElement xmi:idref="_17_0_5_1_2aa0151_1404225906953_3937_4495"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_17_0_5_1_2aa0151_1404226147303_976848_4500" name="Privacy" type="_Data-GRAUML-GRAAnnotationModel-Description" lower="0" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404226211581_830468_4504" body="While service descriptions are technology-agnostic and do not detail the physical model of a service, certain privacy requirements are applicable to the service and need to be carried through all its implementations.  This property outlines those requirements.&#10;Value is used to populate the Privacy section of the SDD Document.">
+<annotatedElement xmi:idref="_17_0_5_1_2aa0151_1404226147303_976848_4500"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_17_0_5_1_2aa0151_1404223891983_651969_4213" name="ServiceAssumption" type="_Data-GRAUML-GRAAnnotationModel-Description" lower="0" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404237754904_183212_5192" body="This property lists all assumptions on which the service depends to deliver its real-world effects.">
+<annotatedElement xmi:idref="_17_0_5_1_2aa0151_1404223891983_651969_4213"/>
+</ownedComment>
+</ownedAttribute>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ownedComment" body="A data structure representing the details describing a service.&#10;[Realizes] Collaboration&#10;[Uses] IEPD">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceDescription"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceIdentification" name="ServiceIdentification">
+<superClass xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase"/>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceIdentification-ServiceID" name="ServiceID" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceIdentification-ServiceID-ownedComment" body="An identification of the service in a service registry and/or repository.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceIdentification-ServiceID"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceIdentification-ServiceURI" name="ServiceURI" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceIdentification-ServiceURI-ownedComment" body="A fully qualified locator of the service interface potentially including version and environment.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceIdentification-ServiceURI"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceIdentification-ServiceNameAbbreviationText" name="ServiceNameAbbreviationText" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceIdentification-ServiceNameAbbreviationText-ownedComment" body="A human readable abbreviation of the Service Name.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceIdentification-ServiceNameAbbreviationText"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceIdentification-ownedComment" body="A data structure representing the means of uniquely identifying a service.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceIdentification"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceInteractionProfile" name="ServiceInteractionProfile">
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceInteractionProfile-SIPName" name="SIPName" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceInteractionProfile-SIPName-ownedComment" body="A name of the Service Interaction Profile Implemented.&#10;[Derived from] SIP Name">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceInteractionProfile-SIPName"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceInteractionProfile-SIPVersion" name="SIPVersion" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceInteractionProfile-SIPVersion-ownedComment" body="A version of the Service Interaction Profile Implemented">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceInteractionProfile-SIPVersion"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceInteractionProfile-ownedComment" body="A data structure containing information about the Service Interaction Profile Implemented">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceInteractionProfile"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification" name="ServiceInterfaceSpecification">
+<superClass xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase"/>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-SecurityImplementedIndicator" name="SecurityImplementedIndicator" isComposite="true" default="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-SecurityImplementedIndicator-ownedComment" body="True when security has been implemented to access this service.False otherwise.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-SecurityImplementedIndicator"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-SecurityDescriptionText" name="SecurityDescriptionText" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-SecurityDescriptionText-ownedComment" body="A text description that identifies the security which was implemented to protect this service interface (GFIPM, Trusted Broker, etc)">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-SecurityDescriptionText"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-ServiceInteractionProfile" name="ServiceInteractionProfile" type="_Data-GRAUML-GRAAnnotationModel-ServiceInteractionProfile" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-ServiceInteractionProfile-ownedComment" body="A set of information about the Service Interaction Profile Implemented.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-ServiceInteractionProfile"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-provider" name="Provider" type="_Data-GRAUML-GRAAnnotationModel-Service" upper="*" isComposite="true"/>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-URIAddress" name="URIAddress" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-URIAddress-ownedComment" body="URI of the (WSDL) service interface potentially including version and environment.&#10;[derived from] Element name.&#10;The URI is relative to the SSP Catalog.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-URIAddress"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_17_0_5_1_2aa0151_1404222910198_927523_4205" name="MessageDefinitionMechanism" type="_Data-GRAUML-GRAAnnotationModel-Description" isOrdered="true" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404241025306_943025_5226" body="This property includes information about the message definition mechanism utilized by the service actions.&#10;&#10;Per the GRA, message definition mechanisms are closely related to the interface description requirements.  Unlike interface description requirements, message definition mechanisms establish a standard way of defining the structure and contents of a message.&#10;&#10;Additional artifacts related to this section's content can be provided in the artifacts folder of the service package.&#10;  &#10;[Service Abbreviation] SSP [Service Version]\artifacts&#10;&#10;If such artifacts are provided,  they should be referenced in this section. A description of the artifact and a link to it should be provided as part of the reference.&#10;">
+<annotatedElement xmi:idref="_17_0_5_1_2aa0151_1404222910198_927523_4205"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_17_0_5_1_2aa0151_1404231161209_294112_4557" name="ServiceInterfaceDescriptionURI" lower="0" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404231300244_183843_4561" body="URI of the Service Interface Description document, potentially including version and environment.&#10;[derived from] Element name.&#10;The URI is relative to the SSP Catalog.">
+<annotatedElement xmi:idref="_17_0_5_1_2aa0151_1404231161209_294112_4557"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_17_0_5_1_2aa0151_1404231405216_26854_4562" name="TargetNamespace" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404231461737_471341_4566" body="Target namespace of the (WSDL) Service Interface.">
+<annotatedElement xmi:idref="_17_0_5_1_2aa0151_1404231405216_26854_4562"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_17_0_5_1_2aa0151_1404231534968_279911_4858" name="Prefix" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404231605917_969818_4862" body="Prefix to be used for target namespace of (WSDL) Service Specification.">
+<annotatedElement xmi:idref="_17_0_5_1_2aa0151_1404231534968_279911_4858"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_17_0_5_1_3ba019e_1404758222944_978896_4141" name="ServiceTesting" type="_Data-GRAUML-GRAAnnotationModel-Description" lower="0"/>
+<ownedAttribute xmi:id="_17_0_5_1_3ba019e_1404936284229_796431_4184" name="SchemaReference" type="_17_0_5_1_3ba019e_1404936092044_559482_4154" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_3ba019e_1405008175774_481281_4239" body="Schema used&#10;** Question - do we need to allow entry of schema not in model?">
+<annotatedElement xmi:idref="_17_0_5_1_3ba019e_1404936284229_796431_4184"/>
+</ownedComment>
+</ownedAttribute>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-ownedComment" body="A data type representing details relating to the interface of a service.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement" name="ServiceLevelAgreement">
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ApplicablePoliciesIndicator" name="ApplicablePoliciesIndicator" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ApplicablePoliciesIndicator-ownedComment" body="True when there are any applicable policies governing the use, administration, or implementation of a service; False otherwise.&#10;">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ApplicablePoliciesIndicator"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ApplicableContractsIndicator" name="ApplicableContractsIndicator" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ApplicableContractsIndicator-ownedComment" body="True when there are any applicable contracts relating to the use, administration, or implementation of a service; False otherwise.&#10;[Defaults to true if ApplicableContracts non empty, otherwise false]">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ApplicableContractsIndicator"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ApplicableAgreementsIndicator" name="ApplicableAgreementsIndicator" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ApplicableAgreementsIndicator-ownedComment" body="True when there are any applicable agreements or Memoranda Of Understanding (MOUs) relating to the use, administration, or implementation of a service; False otherwise.&#10;[Defaults to true if Agreement non empty, otherwise false]">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ApplicableAgreementsIndicator"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ApplicableUmbrellaAgreementsIndicator" name="ApplicableUmbrellaAgreementsIndicator" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ApplicableUmbrellaAgreementsIndicator-ownedComment" body="True when there are any applicable umbrella agreements relating to the use, administration, or implementation of a service; False otherwise.&#10;[Defaults to true if Umbrella Agreement non empty, otherwise false]">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ApplicableUmbrellaAgreementsIndicator"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ApplicablePolicies" name=" ApplicablePolicy" type="_Data-GRAUML-GRAAnnotationModel-Description" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ApplicablePolicies-ownedComment" body="A collection of all policies that in some way constrain, govern, or control the usage of a service, application, process. etc.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ApplicablePolicies"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-UmbrellaAgreement" name="UmbrellaAgreement" type="_Data-GRAUML-GRAAnnotationModel-Agreement" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-UmbrellaAgreement-ownedComment" body="An umbrella agreement that in some way constrain, govern, or control the usage of a service, application, process. etc.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-UmbrellaAgreement"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-Agreement" name="Agreement" type="_Data-GRAUML-GRAAnnotationModel-Agreement" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-Agreement-ownedComment" body="A description or reference to an applicable Agreement or MOU governing the use, administration, or implementation of a service.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-Agreement"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ApplicableContract" name="ApplicableContract" type="_Data-GRAUML-GRAAnnotationModel-Agreement" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ApplicableContract-ownedComment" body="A formal contract associated with a service, application, process, tranaction, or thing, tangible or otherwise.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ApplicableContract"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ApprovalRequiredIndicator" name="ApprovalRequiredIndicator" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ApprovalRequiredIndicator-ownedComment" body="True when a permission must first be obtained prior to using a service or performing some action in a business process; False otherwise.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ApprovalRequiredIndicator"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-LicensingRequiredIndicator" name="LicensingRequiredIndicator" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-LicensingRequiredIndicator-ownedComment" body="True when a license is required to use a service or application; False otherwise.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-LicensingRequiredIndicator"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#Boolean" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-LicensingAgreement" name="LicensingAgreement" type="_Data-GRAUML-GRAAnnotationModel-Agreement" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-LicensingAgreement-ownedComment" body="A type of licensing for a service or application. Descriptive values could be In House, No License,  Open Source, Purchase License, etc.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-LicensingAgreement"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ServiceResponseTime" name="ServiceResponseTime" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ServiceResponseTime-ownedComment" body="A description of the average response time for a service.  The response time is calculated as the time input is provided to the service until the service completes its process or provides output for the consumer.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ServiceResponseTime"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ServiceAverageThroughput" name="ServiceAverageThroughput" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ServiceAverageThroughput-ownedComment" body="A description of how often a service is expected to be, or actually used, averaged over a period of time.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ServiceAverageThroughput"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ServiceMaximumThroughput" name="ServiceMaximumThroughput" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ServiceMaximumThroughput-ownedComment" body="A description of the limit of how often a service is able to be accessed or used at, over a period of time during peak capacity.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ServiceMaximumThroughput"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ServiceAvailability" name="ServiceAvailability" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ServiceAvailability-ownedComment" body="A description or measurement of the expected availbility that a service is usable.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ServiceAvailability"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-UsageCostAmount" name="UsageCostAmount" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-UsageCostAmount-ownedComment" body="A total cost to use something, such as a service, etc. Currency text may preceded or follow amount.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-UsageCostAmount"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-UsageUnitCostAmount" name="UsageUnitCostAmount" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-UsageUnitCostAmount-ownedComment" body="A cost associated with a service(e.g. transaction, unlimited transactions, minutes of use). Currency text may preceded or follow amount.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-UsageUnitCostAmount"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-CreationCostAmount" name="CreationCostAmount" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-CreationCostAmount-ownedComment" body="A cost create a thing, such as an application or service  This includes the full cost to design, manage, develop, test, implement and maintain. Currency text may preceded or follow amount.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-CreationCostAmount"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ownedComment" body="A collection of policies, agreements, licensing and any other goverenace or performance documentation specifying constraints and any other details regarding the realization of a service.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-Description" name="Description">
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Description-Description" name="Documentation" lower="0">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Description-Description-ownedComment-1" body="http:///org/eclipse/emf/mapping/xsd2ecore/XSD2Ecore">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Description-Description"/>
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1405610815762_568028_19548" body="element"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Description-ExternalDocumentation" name="ExternalDocumentation" lower="0">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Description-ExternalDocumentation-ownedComment-1" body="Relative URL of an artifact which documents the description.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Description-ExternalDocumentation"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Description-ownedComment" body="Documentation for any element contained in element documentation">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Description"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-Model" name="Model">
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Model-ModelURI" name="ModelURI" lower="0">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Model-ModelURI-ownedComment-1" body="URI for the model resource.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Model-ModelURI"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Model-label" name="Label" lower="0">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Model-label-ownedComment-1" body="The name of the model.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Model-label"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404238225104_555184_5197" body="A representation of the model resource associated with a ModelReference.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Model"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_17_0_5_1_2aa0151_1404221831894_901900_4154" name="SampleData">
+<ownedAttribute xmi:id="_17_0_5_1_2aa0151_1404221861449_510678_4174" name="Input" isOrdered="true" isUnique="false" lower="0" upper="*" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404239315694_671141_5213" body="The value of an input parameter for an service operation test. Input must be in the same order as parameters.">
+<annotatedElement xmi:idref="_17_0_5_1_2aa0151_1404221861449_510678_4174"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_17_0_5_1_2aa0151_1404221904077_903970_4178" name="ExpectedOutput" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404239339493_903242_5214" body="The expected output of a service operation test.">
+<annotatedElement xmi:idref="_17_0_5_1_2aa0151_1404221904077_903970_4178"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404239272679_956751_5212" body="Represents the information associated with a service test: the input and expected output associated with an operation under test.">
+<annotatedElement xmi:idref="_17_0_5_1_2aa0151_1404221831894_901900_4154"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_17_0_5_1_3ba019e_1404935460714_177740_4121" name="Message">
+<superClass xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase"/>
+<ownedAttribute xmi:id="_17_0_5_1_2aa0151_1404232142033_10_4868" name="Prefix" lower="0" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404232195326_503254_4872" body="Prefix used to reference Schema Namespace.">
+<annotatedElement xmi:idref="_17_0_5_1_2aa0151_1404232142033_10_4868"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedComment xmi:id="_17_0_5_1_3ba019e_1405002952028_946964_4190" body="Represents the data of an operation parameter or a signal&#10;[Derived from a classifier]&#10;">
+<annotatedElement xmi:idref="_17_0_5_1_3ba019e_1404935460714_177740_4121"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_17_0_5_1_3ba019e_1404936092044_559482_4154" name="SchemaReference">
+<ownedAttribute xmi:id="_17_0_5_1_2aa0151_1404232057864_897582_4863" name="Namespace" lower="0" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404232138171_722691_4867" body="Namespace of schema.">
+<annotatedElement xmi:idref="_17_0_5_1_2aa0151_1404232057864_897582_4863"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_17_0_5_1_3ba019e_1404936245081_372698_4174" name="Prefix" lower="0" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_3ba019e_1404936245084_257776_4176" body="Prefix used to reference Schema Namespace.">
+<annotatedElement xmi:idref="_17_0_5_1_3ba019e_1404936245081_372698_4174"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_17_0_5_1_2aa0151_1404232302040_890434_4873" name="SchemaLocation" lower="0" isComposite="true">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404232391421_475250_4877" body="URI of Schema, relative to SPP Catalog">
+<annotatedElement xmi:idref="_17_0_5_1_2aa0151_1404232302040_890434_4873"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedComment xmi:id="_17_0_5_1_3ba019e_1405008142897_680966_4238" body="Elements describing a schema used by this service interface">
+<annotatedElement xmi:idref="_17_0_5_1_3ba019e_1404936092044_559482_4154"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRAAnnotationModel-Organization" name="Organization">
+<superClass xmi:idref="_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase"/>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationAcronym" name="OrganizationAcronym" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationAcronym-ownedComment" body="An acronym for the agency.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationAcronym"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationFullAddressText" name="OrganizationFullAddressText" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationFullAddressText-ownedComment" body="A physical address of an agency in full text form.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationFullAddressText"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationWebSiteURL" name="OrganizationWebSiteURL" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationWebSiteURL-ownedComment" body="An internet address of the agency's web site.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationWebSiteURL"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationRoleDescriptionText" name="OrganizationRoleDescriptionText" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationRoleDescriptionText-ownedComment" body="An organizations role defined in free form text. Examples could be creator, provider, owner, maintainer, authorities source, etc.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationRoleDescriptionText"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationRoleDetailedDescriptionText" name="OrganizationRoleDetailedDescriptionText" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationRoleDetailedDescriptionText-ownedComment" body="A very detailed textual explanation of the role and responsibilities of an organization.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationRoleDetailedDescriptionText"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationPointOfContact" name="OrganizationPointOfContact" type="_Data-GRAUML-GRAAnnotationModel-Person" lower="0" isComposite="true">
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationPointOfContact-ownedComment" body="A person designated as the point of contact for an organization.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationPointOfContact"/>
+</ownedComment>
+</ownedAttribute>
+<ownedComment xmi:id="_Data-GRAUML-GRAAnnotationModel-Organization-ownedComment" body="A data structure describing a body of people grouped together for a common purpose.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRAAnnotationModel-Organization"/>
+</ownedComment>
+</ownedType>
+</nestedPackage>
+<nestedPackage xmi:id="_Data-GRAUML-GRA_WSDL" name="GRA_WSDL" URI="http:/ijis.org/GRA/WSDLAnnotations">
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRA_WSDL-WSDLServiceInterface" name="WSDLServiceInterface">
+<superClass xmi:idref="_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification"/>
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404236442957_549941_5169" body="Represents a &lt;wsdl:definitions&gt;.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRA_WSDL-WSDLServiceInterface"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRA_WSDL-WSDLService" name="WSDLService">
+<superClass xmi:idref="_Data-GRAUML-GRAAnnotationModel-Service"/>
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404236425678_843208_5168" body="Represents a &lt;wsdl:service&gt;.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRA_WSDL-WSDLService"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRA_WSDL-WSDLPort" name="WSDLPort">
+<superClass xmi:idref="_Data-GRAUML-GRAAnnotationModel-Port"/>
+<ownedAttribute xmi:id="_Data-GRAUML-GRA_WSDL-WSDLPort-certificate" name="Certificate" lower="0">
+<ownedComment xmi:id="_Data-GRAUML-GRA_WSDL-WSDLPort-certificate-ownedComment-1" body="Data for a certificate in support of security">
+<annotatedElement xmi:idref="_Data-GRAUML-GRA_WSDL-WSDLPort-certificate"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404236291765_774253_5167" body="Represents a &lt;wsdl:port&gt; and &lt;wsdl:binding&gt;.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRA_WSDL-WSDLPort"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRA_WSDL-WSDLInterface" name="WSDLInterface">
+<superClass xmi:idref="_Data-GRAUML-GRAAnnotationModel-Interface"/>
+<ownedAttribute xmi:id="_Data-GRAUML-GRA_WSDL-WSDLInterface-BindingCode" name="BindingCode" type="_Data-GRAUML-GRA_WSDL-BindingType" lower="0">
+<ownedComment xmi:id="_Data-GRAUML-GRA_WSDL-WSDLInterface-BindingCode-ownedComment-1" body="Specifies technology implementation for a &lt;wsdl:binding&gt;.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRA_WSDL-WSDLInterface-BindingCode"/>
+</ownedComment>
+</ownedAttribute>
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404233928667_558910_5156" body="Represents a &lt;wsdl:portType&gt;. ">
+<annotatedElement xmi:idref="_Data-GRAUML-GRA_WSDL-WSDLInterface"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRA_WSDL-WSDLOperation" name="WSDLOperation">
+<superClass xmi:idref="_Data-GRAUML-GRAAnnotationModel-Operation"/>
+<ownedAttribute xmi:id="_Data-GRAUML-GRA_WSDL-WSDLOperation-OperationKindCode" name="OperationKindCode" type="_Data-GRAUML-GRA_WSDL-OperationKind" lower="0">
+<ownedComment xmi:id="_Data-GRAUML-GRA_WSDL-WSDLOperation-OperationKindCode-ownedComment-1" body="Represents the style of a &lt;soap:operation&gt; within a &lt;wsdl:binding&gt;&lt;wsdl:operation&gt; which has a &lt;soap:binding&gt;.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRA_WSDL-WSDLOperation-OperationKindCode"/>
+</ownedComment>
+</ownedAttribute>
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404236009465_550245_5164" body="Represents a &lt;wsdl:Operation&gt; within a &lt;wsdl:binding&gt; or &lt;wsdl:portType&gt;.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRA_WSDL-WSDLOperation"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_Data-GRAUML-GRA_WSDL-WSDLMessage" name="WSDLMessage">
+<superClass xmi:idref="_17_0_5_1_3ba019e_1404935460714_177740_4121"/>
+<ownedAttribute xmi:id="_Data-GRAUML-GRA_WSDL-WSDLMessage-MessageLocationCode" name="MessageLocationCode" type="_Data-GRAUML-GRA_WSDL-MessageLocation" lower="0">
+<ownedComment xmi:id="_Data-GRAUML-GRA_WSDL-WSDLMessage-MessageLocationCode-ownedComment-1" body="When used in conjunction with a soap binding, indicates the location of the part within the message.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRA_WSDL-WSDLMessage-MessageLocationCode"/>
+</ownedComment>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRA_WSDL-WSDLMessage-encoding" name="Encoding" lower="0">
+<ownedComment xmi:id="_Data-GRAUML-GRA_WSDL-WSDLMessage-encoding-ownedComment-1" body="Represents the encoding style of a wsdl binding operation parameter.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRA_WSDL-WSDLMessage-encoding"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedAttribute xmi:id="_Data-GRAUML-GRA_WSDL-WSDLMessage-soapAction" name="SoapAction" lower="0">
+<ownedComment xmi:id="_Data-GRAUML-GRA_WSDL-WSDLMessage-soapAction-ownedComment-1" body="Represents the content of a soapAction within a binding operation having a &lt;soap:binding&gt;.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRA_WSDL-WSDLMessage-soapAction"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404234462807_945610_5161" body="Represents a &lt;wsdl:message&gt;, it contained &lt;part&gt;, and its usage from a &lt;wsdl:input&gt;, &lt;wsdl:output&gt;, or a &lt;wsdl:fault&gt; within a &lt;wsdl:portType&gt; &lt;wsdl:operation&gt; .">
+<annotatedElement xmi:idref="_Data-GRAUML-GRA_WSDL-WSDLMessage"/>
+</ownedComment>
+</ownedType>
+<ownedType xmi:type="emof:Enumeration" xmi:id="_Data-GRAUML-GRA_WSDL-OperationKind" name="OperationKind">
+<ownedLiteral xmi:id="_Data-GRAUML-GRA_WSDL-OperationKind-doc" name="doc">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404236174821_93796_5165" body="Represents a soap:operation style of &quot;document&quot;.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRA_WSDL-OperationKind-doc"/>
+</ownedComment>
+</ownedLiteral>
+<ownedLiteral xmi:id="_Data-GRAUML-GRA_WSDL-OperationKind-rpc" name="rpc">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404236190524_779958_5166" body="Represents a soap:operation style of &quot;rpc&quot;.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRA_WSDL-OperationKind-rpc"/>
+</ownedComment>
+</ownedLiteral>
+</ownedType>
+<ownedType xmi:type="emof:Enumeration" xmi:id="_Data-GRAUML-GRA_WSDL-MessageLocation" name="MessageLocation">
+<ownedLiteral xmi:id="_Data-GRAUML-GRA_WSDL-MessageLocation-body" name="body">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404235327068_766305_5162" body="For a soap binding, indicates that the part is in the body of the message.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRA_WSDL-MessageLocation-body"/>
+</ownedComment>
+</ownedLiteral>
+<ownedLiteral xmi:id="_Data-GRAUML-GRA_WSDL-MessageLocation-header" name="header">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404235340734_416342_5163" body="For a soap binding, indicates that the part is in the header of the message.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRA_WSDL-MessageLocation-header"/>
+</ownedComment>
+</ownedLiteral>
+<ownedLiteral xmi:id="_Data-GRAUML-GRA_WSDL-MessageLocation-url" name="url"/>
+</ownedType>
+<ownedType xmi:type="emof:Enumeration" xmi:id="_Data-GRAUML-GRA_WSDL-BindingType" name="BindingType">
+<ownedLiteral xmi:id="_Data-GRAUML-GRA_WSDL-BindingType-soap" name="soap">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404234242789_81568_5157" body="Represents a soap binding.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRA_WSDL-BindingType-soap"/>
+</ownedComment>
+</ownedLiteral>
+<ownedLiteral xmi:id="_Data-GRAUML-GRA_WSDL-BindingType-soap12" name="soap12">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404234260506_429498_5158" body="Represents a wsdl soap 1.2 binding.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRA_WSDL-BindingType-soap12"/>
+</ownedComment>
+</ownedLiteral>
+<ownedLiteral xmi:id="_Data-GRAUML-GRA_WSDL-BindingType-http_get" name="http_get">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404234280284_732013_5159" body="Represents a wsdl http get binding.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRA_WSDL-BindingType-http_get"/>
+</ownedComment>
+</ownedLiteral>
+<ownedLiteral xmi:id="_Data-GRAUML-GRA_WSDL-BindingType-http_put" name="http_put">
+<ownedComment xmi:id="_17_0_5_1_2aa0151_1404234389492_141626_5160" body="Represents a wsdl http post binding.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRA_WSDL-BindingType-http_put"/>
+</ownedComment>
+</ownedLiteral>
+</ownedType>
+<ownedType xmi:type="emof:Class" xmi:id="_17_0_5_1_3ba019e_1405003302023_613840_4352" name="WSDLParameter">
+<superClass xmi:idref="_Data-GRAUML-GRAAnnotationModel-Message"/>
+<ownedAttribute xmi:id="_Data-GRAUML-GRA_WSDL-WSDLMessage-mimeType" name="MimeType" lower="0">
+<ownedComment xmi:id="_Data-GRAUML-GRA_WSDL-WSDLMessage-mimeType-ownedComment-1" body="Represents the &lt;mime:content&gt; type within a &lt;wsdl:binding&gt; &lt;wsdl:operation&gt; parameter.">
+<annotatedElement xmi:idref="_Data-GRAUML-GRA_WSDL-WSDLMessage-mimeType"/>
+</ownedComment>
+<type href="http://schema.omg.org/spec/MOF/2.0/emof.xml#String" xmi:type="emof:PrimitiveType"/>
+</ownedAttribute>
+</ownedType>
+</nestedPackage>
+</nestedPackage>
+</emof:Package>
+<emof:Tag xmlns:emof="http://schema.omg.org/spec/MOF/2.0/emof.xml" xmi:id="_17_0_4_2aa0151_1405614022840_809186_5411_ecoreExportPath" name="ecoreExportPath" element="_Data-GRAUML" value=":Data:"/>
+<emof:Tag xmlns:emof="http://schema.omg.org/spec/MOF/2.0/emof.xml" xmi:id="_17_0_5_1_2aa0151_1405610815762_904382_19549_key" name="key" element="_17_0_5_1_2aa0151_1405610815762_568028_19548" value="representation"/>
+</xmi:XMI>

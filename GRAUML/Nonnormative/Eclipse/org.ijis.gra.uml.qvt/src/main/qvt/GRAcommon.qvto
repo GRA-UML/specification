@@ -1,0 +1,202 @@
+// due to excessive QVT compilation time, combine globals, platformbinding, and common query/helper to this single module
+//import GRAplatformBinding;
+import NIEMplatformBinding;// NIEM 2.1 UML QVT
+import org.ijis.gra.GraQvt;// Blackbox
+modeltype UML uses 'http://www.omg.org/spec/UML/20110701';
+
+modeltype XSD  uses 'http://www.eclipse.org/xsd/2002/XSD';
+modeltype CAT  uses 'http://reference.niem.gov/niem/resource/mpd/catalog/1.0/';// NIEM 2.1 Catalog meta model
+modeltype METADATA  uses 'http://it.ojp.gov/gsp/services/1.0.0';// GRA SSP metadata meta model
+
+transformation GRAcommon;
+	main() {}	
+
+/*
+	In the context of a top-level Model,
+	find and initialize globals for all NIEM Profiles plus the XML Type Library
+*/
+helper UML::Model::initializeSppProfileGlobals() {
+	var allSourceProfiles:Sequence(UML::Profile)=self.getGRAProfiles();
+	
+    allSourceProfiles
+        ->select(p|p.name=graProfileName)->asSequence()->first().initGraProfileStereotypes();
+    allSourceProfiles
+        ->select(p|p.name=graAnnotationsProfileName)->asSequence()->first().initGraProfileStereotypes();
+    return;
+}
+
+/*
+	In the context of a GRA_Profile, initialize the global variables for its stereotypes. 
+*/
+helper UML::Profile::initGraProfileStereotypes(){
+	graProfile:=self;
+	return;
+}
+//////////////////////////////////////////////////////////////////////////////////////////was GRAsoaml
+property baseNamespace:String='http://my.org/';
+query UML::NamedElement::getTargetNamespacePath():String{
+	var catalog:UML::Package:=self.getNearestPackage().getNearesProfileApplication(structureProfile);
+	var relativePath:String='';
+	if(catalog.oclIsUndefined())then{
+		relativePath:=self.qualifiedName;
+	}else{
+		relativePath:=self.qualifiedName.substringAfter(catalog.qualifiedName+'::');
+	}endif;
+	relativePath:=relativePath.replace('::','/');
+	if(relativePath='')then {relativePath:='./';}endif;
+	return relativePath;
+	}
+query UML::Package::getNearesProfileApplication(profile:UML::Profile):UML::Package {
+	// it seems that sometimes all profiles are applied at top level, as in a magicdraw export to eclipse;
+	// so changing the test here to exclude top level
+
+	if(self.owner.oclIsUndefined()) then{
+		return null;
+	}endif;
+	if(self.isProfileApplied(profile))then{
+	   return self;
+	}endif;
+	return self.owner.getNearestPackage().getNearesProfileApplication(profile);
+}
+	
+query UML::Namespace::getLocation(extension:String):String=self.getTargetNamespacePath()+extension;
+query UML::NamedElement::getTargetNamespace():String{return baseNamespace+self.getTargetNamespacePath();}
+query UML::Namespace::getRelativeLocation(referencingPackage:UML::Namespace,extension:String):String=
+	referencingPackage.namespace.getRelativeToRoot()+self.getLocation(extension);
+query UML::Namespace::getRelativeSchemaLocation(referencingPackage:UML::Namespace):String=
+	self.getRelativeLocation(referencingPackage,'.xsd');
+query UML::Namespace::getRelativeWsdlLocation(referencingPackage:UML::Namespace):String=
+	self.getRelativeLocation(referencingPackage,'.wsdl');
+query UML::Namespace::getRelativeToRoot():String{
+	if(self.namespace.oclIsUndefined())then {return "";}else{}endif;
+	if(self.oclIsKindOf(UML::Package) and self.oclAsType(UML::Package).isProfileApplied(structureProfile))then {return "";}else{}endif;
+	return self.namespace.getRelativeToRoot()+'../';
+}
+query UML::NamedElement::getName():String{
+	if((self.name="")and self.oclIsKindOf(UML::Property))then{
+		return self.oclAsType(UML::Property).type.name.toNCName();
+	}else{
+		if((self.name="")and self.oclIsKindOf(UML::Parameter))then{
+			return self.oclAsType(UML::Parameter).type.name.toNCName();
+		}else{
+		}endif;
+	}endif;
+	return self.name.toNCName();
+}	
+query UML::Classifier::allFeatures():Set(UML::Feature){
+	var allParents:Set(UML::Classifier)=Set{};
+	allParents+=self;
+	allParents+=self.getAllParents();
+	return allParents.feature->asSet();
+}	
+query UML::Classifier::getAllUsedInterfaces():Set(UML::Interface){
+	var allUsedInterfaces:Set(UML::Interface)=Set{};
+		var allParents:Set(UML::Classifier)=Set{};
+		allParents+=self;
+		allParents+=self.getAllParents();
+		allUsedInterfaces:= allParents->select(p|p.oclIsKindOf(UML::Component)).oclAsType(UML::Component).required->asSet();
+		allUsedInterfaces+= allParents->select(p|p.oclIsKindOf(UML::Classifier)).oclAsType(UML::Classifier).clientDependency
+			->select(u|u.oclIsKindOf(UML::Usage)).oclAsType(UML::Usage).supplier
+			->select(p|p.oclIsKindOf(UML::Interface)).oclAsType(UML::Interface)
+			->asSet();
+		return allUsedInterfaces;
+}	
+	
+query UML::Classifier::getAllParents():Set(UML::Classifier){
+	var allParents:Set(UML::Classifier)=Set{};
+	return self.getAllParentsRecursive(allParents);
+}	
+query UML::Classifier::getAllParentsRecursive(inout allParents:Set(UML::Classifier)):Set(UML::Classifier){
+	if(allParents->includes(self))then {return allParents}endif;
+	var parents:Set(UML::Classifier)=allParents;
+	parents+=self;
+	return self.general.getAllParentsRecursive(parents)->asSet();
+}	
+query UML::NamedElement::getWsdlPartLocation(part:String):String='schema/SIP/'+self.name+part+'.wsdl';
+query UML::NamedElement::getWsdlLocation():String=self.getWsdlPartLocation('');
+query UML::Classifier::getRealizedInterfaces():Set(UML::Interface){
+	if(self.oclIsKindOf(UML::Interface))then{return Set{self.oclAsType(UML::Interface)};}else{}endif;
+	return self.oclAsType(UML::Class).getAllImplementedInterfaces();
+}
+query UML::BehavioredClassifier::getAllImplementedInterfaces():Set(UML::Interface){
+	return self.interfaceRealization.contract->asSet();
+}
+query UML::BehavioralFeature::getInputParameter():UML::NamedElement{log('getInputParameter illegal call');return null;}
+query UML::Reception::getInputParameter():UML::NamedElement=self.signal;
+query UML::Operation::getInputParameter():UML::NamedElement{
+	self.ownedParameter
+		->select(p|(p.direction=UML::ParameterDirectionKind::_in)or(p.direction=UML::ParameterDirectionKind::_inout))
+		->forEach(parameter){return parameter;};
+	return null;
+}
+query UML::BehavioralFeature::getOutputParameter():UML::NamedElement{log('getOutputParameter illegal call');return null;}
+query UML::Reception::getOutputParameter():UML::NamedElement=null;
+query UML::Operation::getOutputParameter():UML::NamedElement{
+	var inputParameter:UML::NamedElement=self.getInputParameter();
+	self.ownedParameter
+		->select(p|
+			(p<>inputParameter)and(
+			(p.direction=UML::ParameterDirectionKind::_out)
+			or(p.direction=UML::ParameterDirectionKind::_return)
+			or(p.direction=UML::ParameterDirectionKind::_inout)
+			))
+		->forEach(parameter){return parameter;};
+	return null;
+}
+query UML::NamedElement::getUmlType():UML::Classifier{
+	if(self.oclIsKindOf(UML::Parameter))then{return self.oclAsType(UML::Parameter).type.oclAsType(UML::Classifier);}else{}endif;
+	return self.oclAsType(UML::Classifier);
+}
+query UML::Classifier::allBehavioralFeatures():Sequence(UML::BehavioralFeature)=
+	self.allFeatures()->select(f|f.oclIsKindOf(UML::BehavioralFeature)).oclAsType(UML::BehavioralFeature)->asSequence();
+query UML::NamedElement::isUniqueInputName(owningInterface:UML::Interface):Boolean{
+	var myName:String=self.getName();
+	return owningInterface.allBehavioralFeatures()
+		->select(f|
+			(not(f.getInputParameter().oclIsUndefined())and(f.getInputParameter()<>self) and (f.getInputParameter().getName()=myName))
+			or(not(f.getOutputParameter().oclIsUndefined())and(f.getOutputParameter()<>self) and (f.getOutputParameter().getName()=myName))
+		)
+		->isEmpty();
+}
+query UML::NamedElement::uniqueInputNameSuffix(owningInterface:UML::Interface):String{
+	if(self.isUniqueInputName(owningInterface))then {return "";}else{}endif;
+	if(self.oclIsKindOf(UML::Parameter))then{
+		var parameter:UML::Parameter=self.oclAsType(UML::Parameter);
+		var operation:UML::Operation=parameter.operation;
+		return owningInterface.allBehavioralFeatures()->indexOf(operation).repr();
+	}else{}endif;
+	return "_UNIQUE";
+}
+query UML::NamedElement::locationURI():String=self.getTargetNamespacePath();
+
+query UML::Classifier::transportURI():String='http://schemas.xmlsoap.org/soap/http';
+query UML::NamedElement::style():String="document";
+query UML::BehavioralFeature::use():String="literal";
+query UML::BehavioralFeature::soapActionURI():String=self.getTargetNamespace();
+query UML::BehavioralFeature::allBehavioralFeatureTypes():Set(UML::Classifier){
+		var input:UML::NamedElement:=self.getInputParameter();
+		var output:UML::NamedElement:=self.getOutputParameter();
+		var inputs:Set(UML::Classifier):=if(input.oclIsUndefined())then Set{} else Set{input.getUmlType()} endif;
+		var outputs:Set(UML::Classifier):=if(output.oclIsUndefined())then Set{} else Set{output.getUmlType()} endif;
+		return inputs->union(outputs)->union(self.raisedException.oclAsType(UML::Classifier))->asSet();
+}
+query UML::BehavioralFeature::allBehavioralFeaturePackages():Set(UML::Package)=
+	self.allBehavioralFeatureTypes().attribute.usesTopLevelProperty().getNearestPackage()->asSet();
+query UML::Interface::allInterfaceSchemaPackages():Set(UML::Package)=self.allBehavioralFeatures().allBehavioralFeaturePackages()->asSet();
+query 	UML::Property::usesTopLevelProperty():UML::Property=
+	self.clientDependency->select(d|d.oclIsKindOf(UML::Usage))
+	.supplier->select(s|s.oclIsKindOf(UML::Property))
+	.oclAsType(UML::Property)->asSequence()->first();
+///////////////////////////was GRAplatformBinding
+
+
+
+	////////////////////////////Namespaces
+	property WSDL_NAMESPACE:String='http://schemas.xmlsoap.org/wsdl/';
+	property WSU_NAMESPACE:String='http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd';
+	property SP_NAMESPACE:String='http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702';
+////////////////////////GRA profile
+property graProfileName:String='GRA'; // GRA
+property graAnnotationsProfileName:String='GRAProfile'; // GRA
+property graProfile:UML::Profile=null; // GRA_Profile
+	

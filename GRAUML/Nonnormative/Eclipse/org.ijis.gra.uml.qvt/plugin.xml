@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
+   <extension point="org.eclipse.m2m.qvt.oml.runtime.qvtTransformation">
+   <!--
+      <transformation file="src/main/qvt/NIEMglobals.qvto" id="org.ijis.gra.uml.qvt.NIEMglobals">
+      </transformation>
+      <transformation file="src/main/qvt/NIEMmpdartifact2model.qvto" id="org.ijis.gra.uml.qvt.NIEMmpdartifact2model">
+      </transformation>
+      <transformation file="src/main/qvt/NIEMmpdmodel2artifact.qvto" id="org.ijis.gra.uml.qvt.NIEMmpdmodel2artifact">
+      </transformation>
+      <transformation file="src/main/qvt/NIEMpim2psm.qvto" id="org.ijis.gra.uml.qvt.NIEMpim2psm">
+      </transformation>
+      <transformation file="src/main/qvt/NIEMplatformBinding.qvto" id="org.ijis.gra.uml.qvt.NIEMplatformBinding">
+      </transformation>
+      <transformation file="src/main/qvt/NIEMpsm2xsd.qvto" id="org.ijis.gra.uml.qvt.NIEMpsm2xsd">
+      </transformation>
+      -->
+      <transformation file="src/main/qvt/GraSspArtifact2model.qvto" id="org.ijis.gra.uml.qvt.GraSspArtifact2model">
+      </transformation>
+   </extension>
+</plugin>

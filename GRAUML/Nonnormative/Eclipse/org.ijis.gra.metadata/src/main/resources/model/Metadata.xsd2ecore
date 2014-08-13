@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="Metadata.xsd#/" outputs="gra.metadata.ecore#/"
+    topToBottom="true">
+  <nested inputs="bundleentry://778.fwk400916985/cache/www.w3.org/2001/XMLSchema.xsd#//string;XSDSimpleTypeDefinition=9"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  <nested inputs="Metadata.xsd#//ActionName;XSDElementDeclaration" outputs="gra.metadata.ecore#//DocumentRoot/actionName"/>
+  <nested inputs="Metadata.xsd#//ActionPurpose;XSDElementDeclaration=1" outputs="gra.metadata.ecore#//DocumentRoot/actionPurpose"/>
+  <nested inputs="bundleentry://778.fwk400916985/cache/www.w3.org/2001/XMLSchema.xsd#//date;XSDSimpleTypeDefinition=17"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//Date"/>
+  <nested inputs="Metadata.xsd#//ActivationDate;XSDElementDeclaration=2" outputs="gra.metadata.ecore#//DocumentRoot/activationDate"/>
+  <nested inputs="bundleentry://778.fwk400916985/cache/www.w3.org/2001/XMLSchema.xsd#//anyURI;XSDSimpleTypeDefinition=25"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//AnyURI"/>
+  <nested inputs="Metadata.xsd#//AgreementType;XSDComplexTypeDefinition" outputs="gra.metadata.ecore#//AgreementType">
+    <nested inputs="Metadata.xsd#//AgreementType;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//AgreementType/agreementDescriptionText"/>
+    <nested inputs="Metadata.xsd#//AgreementType;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="gra.metadata.ecore#//AgreementType/agreementURI"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//Agreement;XSDElementDeclaration=3" outputs="gra.metadata.ecore#//DocumentRoot/agreement"/>
+  <nested inputs="Metadata.xsd#//AgreementDescriptionText;XSDElementDeclaration=4"
+      outputs="gra.metadata.ecore#//DocumentRoot/agreementDescriptionText"/>
+  <nested inputs="Metadata.xsd#//AgreementURI;XSDElementDeclaration=5" outputs="gra.metadata.ecore#//DocumentRoot/agreementURI"/>
+  <nested inputs="Metadata.xsd#//AlertsAndNotifications;XSDElementDeclaration=6" outputs="gra.metadata.ecore#//DocumentRoot/alertsAndNotifications"/>
+  <nested inputs="Metadata.xsd#//ApplicableAgreements;XSDElementDeclaration=7/XSDComplexTypeDefinition"
+      outputs="gra.metadata.ecore#//ApplicableAgreementsType">
+    <nested inputs="Metadata.xsd#//ApplicableAgreements;XSDElementDeclaration=7/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ApplicableAgreementsType/agreement"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ApplicableAgreements;XSDElementDeclaration=7" outputs="gra.metadata.ecore#//DocumentRoot/applicableAgreements"/>
+  <nested inputs="bundleentry://778.fwk400916985/cache/www.w3.org/2001/XMLSchema.xsd#//boolean;XSDSimpleTypeDefinition=10"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
+  <nested inputs="Metadata.xsd#//ApplicableAgreementsIndicator;XSDElementDeclaration=8"
+      outputs="gra.metadata.ecore#//DocumentRoot/applicableAgreementsIndicator"/>
+  <nested inputs="Metadata.xsd#//ApplicableContracts;XSDElementDeclaration=9/XSDComplexTypeDefinition"
+      outputs="gra.metadata.ecore#//ApplicableContractsType">
+    <nested inputs="Metadata.xsd#//ApplicableContracts;XSDElementDeclaration=9/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ApplicableContractsType/contract"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ApplicableContracts;XSDElementDeclaration=9" outputs="gra.metadata.ecore#//DocumentRoot/applicableContracts"/>
+  <nested inputs="Metadata.xsd#//ApplicableContractsIndicator;XSDElementDeclaration=10"
+      outputs="gra.metadata.ecore#//DocumentRoot/applicableContractsIndicator"/>
+  <nested inputs="Metadata.xsd#//ApplicablePolicies;XSDElementDeclaration=11/XSDComplexTypeDefinition"
+      outputs="gra.metadata.ecore#//ApplicablePoliciesType">
+    <nested inputs="Metadata.xsd#//ApplicablePolicies;XSDElementDeclaration=11/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ApplicablePoliciesType/policyText"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ApplicablePolicies;XSDElementDeclaration=11" outputs="gra.metadata.ecore#//DocumentRoot/applicablePolicies"/>
+  <nested inputs="Metadata.xsd#//ApplicablePoliciesIndicator;XSDElementDeclaration=12"
+      outputs="gra.metadata.ecore#//DocumentRoot/applicablePoliciesIndicator"/>
+  <nested inputs="Metadata.xsd#//ApplicableUmbrellaAgreements;XSDElementDeclaration=13/XSDComplexTypeDefinition"
+      outputs="gra.metadata.ecore#//ApplicableUmbrellaAgreementsType">
+    <nested inputs="Metadata.xsd#//ApplicableUmbrellaAgreements;XSDElementDeclaration=13/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ApplicableUmbrellaAgreementsType/umbrellaAgreement"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ApplicableUmbrellaAgreements;XSDElementDeclaration=13"
+      outputs="gra.metadata.ecore#//DocumentRoot/applicableUmbrellaAgreements"/>
+  <nested inputs="Metadata.xsd#//ApplicableUmbrellaAgreementsIndicator;XSDElementDeclaration=14"
+      outputs="gra.metadata.ecore#//DocumentRoot/applicableUmbrellaAgreementsIndicator"/>
+  <nested inputs="Metadata.xsd#//ApprovalRequiredIndicator;XSDElementDeclaration=15"
+      outputs="gra.metadata.ecore#//DocumentRoot/approvalRequiredIndicator"/>
+  <nested inputs="Metadata.xsd#//DomainDescriptionType;XSDComplexTypeDefinition=4"
+      outputs="gra.metadata.ecore#//DomainDescriptionType">
+    <nested inputs="Metadata.xsd#//DomainDescriptionType;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//DomainDescriptionType/domainNameText"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//Classifications;XSDElementDeclaration=19/XSDComplexTypeDefinition"
+      outputs="gra.metadata.ecore#//ClassificationsType">
+    <nested inputs="Metadata.xsd#//Classifications;XSDElementDeclaration=19/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ClassificationsType/classification"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ExchangePartnerTypes;XSDElementDeclaration=31/XSDComplexTypeDefinition"
+      outputs="gra.metadata.ecore#//ExchangePartnerTypesType">
+    <nested inputs="Metadata.xsd#//ExchangePartnerTypes;XSDElementDeclaration=31/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ExchangePartnerTypesType/exchangePartnerTypeDescriptionText"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//Endorsements;XSDElementDeclaration=29/XSDComplexTypeDefinition"
+      outputs="gra.metadata.ecore#//EndorsementsType">
+    <nested inputs="Metadata.xsd#//Endorsements;XSDElementDeclaration=29/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//EndorsementsType/endorser"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//Sponsors;XSDElementDeclaration=94/XSDComplexTypeDefinition"
+      outputs="gra.metadata.ecore#//SponsorsType">
+    <nested inputs="Metadata.xsd#//Sponsors;XSDElementDeclaration=94/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//SponsorsType/sponsor"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//BusinessContextType;XSDComplexTypeDefinition=2" outputs="gra.metadata.ecore#//BusinessContextType">
+    <nested inputs="Metadata.xsd#//BusinessContextType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//BusinessContextType/domainDescription"/>
+    <nested inputs="Metadata.xsd#//BusinessContextType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="gra.metadata.ecore#//BusinessContextType/classifications"/>
+    <nested inputs="Metadata.xsd#//BusinessContextType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="gra.metadata.ecore#//BusinessContextType/exchangePartnerTypes"/>
+    <nested inputs="Metadata.xsd#//BusinessContextType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="gra.metadata.ecore#//BusinessContextType/endorsements"/>
+    <nested inputs="Metadata.xsd#//BusinessContextType;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="gra.metadata.ecore#//BusinessContextType/sponsors"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//BusinessContext;XSDElementDeclaration=16" outputs="gra.metadata.ecore#//DocumentRoot/businessContext"/>
+  <nested inputs="Metadata.xsd#//CapabilityDescriptionText;XSDElementDeclaration=17"
+      outputs="gra.metadata.ecore#//DocumentRoot/capabilityDescriptionText"/>
+  <nested inputs="Metadata.xsd#//Classification;XSDElementDeclaration=18" outputs="gra.metadata.ecore#//DocumentRoot/classification"/>
+  <nested inputs="Metadata.xsd#//Classifications;XSDElementDeclaration=19" outputs="gra.metadata.ecore#//DocumentRoot/classifications"/>
+  <nested inputs="Metadata.xsd#//ContactPersonAddress;XSDElementDeclaration=20" outputs="gra.metadata.ecore#//DocumentRoot/contactPersonAddress"/>
+  <nested inputs="Metadata.xsd#//ContactPersonEmailID;XSDElementDeclaration=21" outputs="gra.metadata.ecore#//DocumentRoot/contactPersonEmailID"/>
+  <nested inputs="Metadata.xsd#//ContactPersonName;XSDElementDeclaration=22" outputs="gra.metadata.ecore#//DocumentRoot/contactPersonName"/>
+  <nested inputs="Metadata.xsd#//ContactPersonPhoneNumberID;XSDElementDeclaration=23"
+      outputs="gra.metadata.ecore#//DocumentRoot/contactPersonPhoneNumberID"/>
+  <nested inputs="Metadata.xsd#//Contract;XSDElementDeclaration=24" outputs="gra.metadata.ecore#//DocumentRoot/contract"/>
+  <nested inputs="bundleentry://778.fwk400916985/cache/www.w3.org/2001/XMLSchema.xsd#//decimal;XSDSimpleTypeDefinition=13"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//Decimal"/>
+  <nested inputs="Metadata.xsd#//AmountType;XSDComplexTypeDefinition=1" outputs="gra.metadata.ecore#//AmountType">
+    <nested inputs="Metadata.xsd#//AmountType;XSDComplexTypeDefinition=1/XSDAttributeUse"
+        outputs="gra.metadata.ecore#//AmountType/currencyText"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//CreationCostAmount;XSDElementDeclaration=25" outputs="gra.metadata.ecore#//DocumentRoot/creationCostAmount"/>
+  <nested inputs="Metadata.xsd#//CreationDate;XSDElementDeclaration=26" outputs="gra.metadata.ecore#//DocumentRoot/creationDate"/>
+  <nested inputs="Metadata.xsd#//DomainDescription;XSDElementDeclaration=27" outputs="gra.metadata.ecore#//DocumentRoot/domainDescription"/>
+  <nested inputs="Metadata.xsd#//DomainNameText;XSDElementDeclaration=28" outputs="gra.metadata.ecore#//DocumentRoot/domainNameText"/>
+  <nested inputs="Metadata.xsd#//Endorsements;XSDElementDeclaration=29" outputs="gra.metadata.ecore#//DocumentRoot/endorsements"/>
+  <nested inputs="Metadata.xsd#//Endorser;XSDElementDeclaration=30" outputs="gra.metadata.ecore#//DocumentRoot/endorser"/>
+  <nested inputs="Metadata.xsd#//ExchangePartnerTypeDescriptionText;XSDElementDeclaration=32"
+      outputs="gra.metadata.ecore#//DocumentRoot/exchangePartnerTypeDescriptionText"/>
+  <nested inputs="Metadata.xsd#//ExchangePartnerTypes;XSDElementDeclaration=31" outputs="gra.metadata.ecore#//DocumentRoot/exchangePartnerTypes"/>
+  <nested inputs="Metadata.xsd#//ExpirationDate;XSDElementDeclaration=33" outputs="gra.metadata.ecore#//DocumentRoot/expirationDate"/>
+  <nested inputs="Metadata.xsd#//IEPDName;XSDElementDeclaration=34" outputs="gra.metadata.ecore#//DocumentRoot/iEPDName"/>
+  <nested inputs="Metadata.xsd#//IEPDReferenceType;XSDComplexTypeDefinition=6" outputs="gra.metadata.ecore#//IEPDReferenceType">
+    <nested inputs="Metadata.xsd#//IEPDReferenceType;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//IEPDReferenceType/iEPDName"/>
+    <nested inputs="Metadata.xsd#//IEPDReferenceType;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="gra.metadata.ecore#//IEPDReferenceType/iEPDURL"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//IEPDReference;XSDElementDeclaration=35" outputs="gra.metadata.ecore#//DocumentRoot/iEPDReference"/>
+  <nested inputs="Metadata.xsd#//IEPDReferences;XSDElementDeclaration=36/XSDComplexTypeDefinition"
+      outputs="gra.metadata.ecore#//IEPDReferencesType">
+    <nested inputs="Metadata.xsd#//IEPDReferences;XSDElementDeclaration=36/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//IEPDReferencesType/iEPDReference"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//IEPDReferences;XSDElementDeclaration=36" outputs="gra.metadata.ecore#//DocumentRoot/iEPDReferences"/>
+  <nested inputs="Metadata.xsd#//IEPDURL;XSDElementDeclaration=37" outputs="gra.metadata.ecore#//DocumentRoot/iEPDURL"/>
+  <nested inputs="Metadata.xsd#//LastRevisionDate;XSDElementDeclaration=38" outputs="gra.metadata.ecore#//DocumentRoot/lastRevisionDate"/>
+  <nested inputs="Metadata.xsd#//LicensingAgreement;XSDElementDeclaration=39" outputs="gra.metadata.ecore#//DocumentRoot/licensingAgreement"/>
+  <nested inputs="Metadata.xsd#//LicensingRequiredIndicator;XSDElementDeclaration=40"
+      outputs="gra.metadata.ecore#//DocumentRoot/licensingRequiredIndicator"/>
+  <nested inputs="Metadata.xsd#//LifecycleStatus;XSDElementDeclaration=41" outputs="gra.metadata.ecore#//DocumentRoot/lifecycleStatus"/>
+  <nested inputs="bundleentry://778.fwk400916985/cache/www.w3.org/2001/XMLSchema.xsd#//integer;XSDSimpleTypeDefinition=40"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//Integer"/>
+  <nested inputs="Metadata.xsd#//MajorVersion;XSDElementDeclaration=42" outputs="gra.metadata.ecore#//DocumentRoot/majorVersion"/>
+  <nested inputs="Metadata.xsd#//MessageExchangePattern;XSDElementDeclaration=43"
+      outputs="gra.metadata.ecore#//DocumentRoot/messageExchangePattern"/>
+  <nested inputs="Metadata.xsd#//MinorVersion;XSDElementDeclaration=45" outputs="gra.metadata.ecore#//DocumentRoot/minorVersion"/>
+  <nested inputs="Metadata.xsd#//NextRevisionDate;XSDElementDeclaration=46" outputs="gra.metadata.ecore#//DocumentRoot/nextRevisionDate"/>
+  <nested inputs="Metadata.xsd#//PersonContactInformationType;XSDComplexTypeDefinition=9"
+      outputs="gra.metadata.ecore#//PersonContactInformationType">
+    <nested inputs="Metadata.xsd#//PersonContactInformationType;XSDComplexTypeDefinition=9/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//PersonContactInformationType/contactPersonName"/>
+    <nested inputs="Metadata.xsd#//PersonContactInformationType;XSDComplexTypeDefinition=9/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="gra.metadata.ecore#//PersonContactInformationType/contactPersonEmailID"/>
+    <nested inputs="Metadata.xsd#//PersonContactInformationType;XSDComplexTypeDefinition=9/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="gra.metadata.ecore#//PersonContactInformationType/contactPersonPhoneNumberID"/>
+    <nested inputs="Metadata.xsd#//PersonContactInformationType;XSDComplexTypeDefinition=9/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="gra.metadata.ecore#//PersonContactInformationType/contactPersonAddress"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//OrganizationType;XSDComplexTypeDefinition=7" outputs="gra.metadata.ecore#//OrganizationType">
+    <nested inputs="Metadata.xsd#//OrganizationType;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//OrganizationType/organizationName"/>
+    <nested inputs="Metadata.xsd#//OrganizationType;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="gra.metadata.ecore#//OrganizationType/organizationAcronym"/>
+    <nested inputs="Metadata.xsd#//OrganizationType;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="gra.metadata.ecore#//OrganizationType/organizationFullAddressText"/>
+    <nested inputs="Metadata.xsd#//OrganizationType;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="gra.metadata.ecore#//OrganizationType/organizationWebSiteURL"/>
+    <nested inputs="Metadata.xsd#//OrganizationType;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="gra.metadata.ecore#//OrganizationType/organizationRoleDescriptionText"/>
+    <nested inputs="Metadata.xsd#//OrganizationType;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="gra.metadata.ecore#//OrganizationType/organizationRoleDetailedDescriptionText"/>
+    <nested inputs="Metadata.xsd#//OrganizationType;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle=6"
+        outputs="gra.metadata.ecore#//OrganizationType/organizationPointOfContact"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//Organization;XSDElementDeclaration=47" outputs="gra.metadata.ecore#//DocumentRoot/organization"/>
+  <nested inputs="Metadata.xsd#//OrganizationAcronym;XSDElementDeclaration=48" outputs="gra.metadata.ecore#//DocumentRoot/organizationAcronym"/>
+  <nested inputs="Metadata.xsd#//OrganizationFullAddressText;XSDElementDeclaration=49"
+      outputs="gra.metadata.ecore#//DocumentRoot/organizationFullAddressText"/>
+  <nested inputs="Metadata.xsd#//OrganizationName;XSDElementDeclaration=50" outputs="gra.metadata.ecore#//DocumentRoot/organizationName"/>
+  <nested inputs="Metadata.xsd#//OrganizationPointOfContact;XSDElementDeclaration=51"
+      outputs="gra.metadata.ecore#//DocumentRoot/organizationPointOfContact"/>
+  <nested inputs="Metadata.xsd#//OrganizationRoleDescriptionText;XSDElementDeclaration=52"
+      outputs="gra.metadata.ecore#//DocumentRoot/organizationRoleDescriptionText"/>
+  <nested inputs="Metadata.xsd#//OrganizationRoleDetailedDescriptionText;XSDElementDeclaration=53"
+      outputs="gra.metadata.ecore#//DocumentRoot/organizationRoleDetailedDescriptionText"/>
+  <nested inputs="Metadata.xsd#//OrganizationWebSiteURL;XSDElementDeclaration=54"
+      outputs="gra.metadata.ecore#//DocumentRoot/organizationWebSiteURL"/>
+  <nested inputs="bundleentry://778.fwk400916985/cache/www.w3.org/2001/XMLSchema.xsd#//duration;XSDSimpleTypeDefinition=14"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//Duration"/>
+  <nested inputs="Metadata.xsd#//PerformanceMetricsType;XSDComplexTypeDefinition=8"
+      outputs="gra.metadata.ecore#//PerformanceMetricsType">
+    <nested inputs="Metadata.xsd#//PerformanceMetricsType;XSDComplexTypeDefinition=8/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//PerformanceMetricsType/serviceResponseTime"/>
+    <nested inputs="Metadata.xsd#//PerformanceMetricsType;XSDComplexTypeDefinition=8/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="gra.metadata.ecore#//PerformanceMetricsType/serviceAverageThroughput"/>
+    <nested inputs="Metadata.xsd#//PerformanceMetricsType;XSDComplexTypeDefinition=8/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="gra.metadata.ecore#//PerformanceMetricsType/serviceMaximumThroughput"/>
+    <nested inputs="Metadata.xsd#//PerformanceMetricsType;XSDComplexTypeDefinition=8/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="gra.metadata.ecore#//PerformanceMetricsType/serviceAvailability"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//PerformanceMetrics;XSDElementDeclaration=44" outputs="gra.metadata.ecore#//DocumentRoot/performanceMetrics"/>
+  <nested inputs="Metadata.xsd#//PolicyText;XSDElementDeclaration=56" outputs="gra.metadata.ecore#//DocumentRoot/policyText"/>
+  <nested inputs="Metadata.xsd#//RealWorldEffectDescriptionText;XSDElementDeclaration=57"
+      outputs="gra.metadata.ecore#//DocumentRoot/realWorldEffectDescriptionText"/>
+  <nested inputs="Metadata.xsd#//RelatedOrganizationInformation;XSDElementDeclaration=58/XSDComplexTypeDefinition"
+      outputs="gra.metadata.ecore#//RelatedOrganizationInformationType">
+    <nested inputs="Metadata.xsd#//RelatedOrganizationInformation;XSDElementDeclaration=58/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//RelatedOrganizationInformationType/organization"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//RelatedOrganizationInformation;XSDElementDeclaration=58"
+      outputs="gra.metadata.ecore#//DocumentRoot/relatedOrganizationInformation"/>
+  <nested inputs="Metadata.xsd#//RevisionVersion;XSDElementDeclaration=59" outputs="gra.metadata.ecore#//DocumentRoot/revisionVersion"/>
+  <nested inputs="Metadata.xsd#//SecurityClassificationText;XSDElementDeclaration=60"
+      outputs="gra.metadata.ecore#//DocumentRoot/securityClassificationText"/>
+  <nested inputs="Metadata.xsd#//SecurityDescriptionText;XSDElementDeclaration=61"
+      outputs="gra.metadata.ecore#//DocumentRoot/securityDescriptionText"/>
+  <nested inputs="Metadata.xsd#//SecurityImplementedIndicator;XSDElementDeclaration=62"
+      outputs="gra.metadata.ecore#//DocumentRoot/securityImplementedIndicator"/>
+  <nested inputs="Metadata.xsd#//ServiceActionType;XSDComplexTypeDefinition=10" outputs="gra.metadata.ecore#//ServiceActionType">
+    <nested inputs="Metadata.xsd#//ServiceActionType;XSDComplexTypeDefinition=10/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ServiceActionType/actionName"/>
+    <nested inputs="Metadata.xsd#//ServiceActionType;XSDComplexTypeDefinition=10/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="gra.metadata.ecore#//ServiceActionType/actionPurpose"/>
+    <nested inputs="Metadata.xsd#//ServiceActionType;XSDComplexTypeDefinition=10/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="gra.metadata.ecore#//ServiceActionType/messageExchangePattern"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ServiceAction;XSDElementDeclaration=63" outputs="gra.metadata.ecore#//DocumentRoot/serviceAction"/>
+  <nested inputs="Metadata.xsd#//ServiceActions;XSDElementDeclaration=64/XSDComplexTypeDefinition"
+      outputs="gra.metadata.ecore#//ServiceActionsType">
+    <nested inputs="Metadata.xsd#//ServiceActions;XSDElementDeclaration=64/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ServiceActionsType/serviceAction"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ServiceActions;XSDElementDeclaration=64" outputs="gra.metadata.ecore#//DocumentRoot/serviceActions"/>
+  <nested inputs="Metadata.xsd#//ServiceAvailability;XSDElementDeclaration=65" outputs="gra.metadata.ecore#//DocumentRoot/serviceAvailability"/>
+  <nested inputs="Metadata.xsd#//ServiceAverageThroughput;XSDElementDeclaration=66"
+      outputs="gra.metadata.ecore#//DocumentRoot/serviceAverageThroughput"/>
+  <nested inputs="Metadata.xsd#//ServiceCapabilities;XSDElementDeclaration=67/XSDComplexTypeDefinition"
+      outputs="gra.metadata.ecore#//ServiceCapabilitiesType">
+    <nested inputs="Metadata.xsd#//ServiceCapabilities;XSDElementDeclaration=67/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ServiceCapabilitiesType/capabilityDescriptionText"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ServiceCapabilities;XSDElementDeclaration=67" outputs="gra.metadata.ecore#//DocumentRoot/serviceCapabilities"/>
+  <nested inputs="Metadata.xsd#//ServiceIdentificationType;XSDComplexTypeDefinition=12"
+      outputs="gra.metadata.ecore#//ServiceIdentificationType">
+    <nested inputs="Metadata.xsd#//ServiceIdentificationType;XSDComplexTypeDefinition=12/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ServiceIdentificationType/serviceFullNameText"/>
+    <nested inputs="Metadata.xsd#//ServiceIdentificationType;XSDComplexTypeDefinition=12/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="gra.metadata.ecore#//ServiceIdentificationType/serviceID"/>
+    <nested inputs="Metadata.xsd#//ServiceIdentificationType;XSDComplexTypeDefinition=12/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="gra.metadata.ecore#//ServiceIdentificationType/serviceURI"/>
+    <nested inputs="Metadata.xsd#//ServiceIdentificationType;XSDComplexTypeDefinition=12/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="gra.metadata.ecore#//ServiceIdentificationType/serviceNameAbbreviationText"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ServiceDependencies;XSDElementDeclaration=68/XSDComplexTypeDefinition"
+      outputs="gra.metadata.ecore#//ServiceDependenciesType">
+    <nested inputs="Metadata.xsd#//ServiceDependencies;XSDElementDeclaration=68/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ServiceDependenciesType/serviceDependency"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ServiceDependencies;XSDElementDeclaration=68" outputs="gra.metadata.ecore#//DocumentRoot/serviceDependencies"/>
+  <nested inputs="Metadata.xsd#//ServiceDependency;XSDElementDeclaration=69" outputs="gra.metadata.ecore#//DocumentRoot/serviceDependency"/>
+  <nested inputs="Metadata.xsd#//SummaryTextType;XSDSimpleTypeDefinition" outputs="gra.metadata.ecore#//SummaryTextType"/>
+  <nested inputs="Metadata.xsd#//ServiceRealWorldEffects;XSDElementDeclaration=87/XSDComplexTypeDefinition"
+      outputs="gra.metadata.ecore#//ServiceRealWorldEffectsType">
+    <nested inputs="Metadata.xsd#//ServiceRealWorldEffects;XSDElementDeclaration=87/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ServiceRealWorldEffectsType/realWorldEffectDescriptionText"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ServiceDescriptionType;XSDComplexTypeDefinition=11"
+      outputs="gra.metadata.ecore#//ServiceDescriptionType">
+    <nested inputs="Metadata.xsd#//ServiceDescriptionType;XSDComplexTypeDefinition=11/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ServiceDescriptionType/servicePurposeText"/>
+    <nested inputs="Metadata.xsd#//ServiceDescriptionType;XSDComplexTypeDefinition=11/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="gra.metadata.ecore#//ServiceDescriptionType/serviceScopeDescriptionText"/>
+    <nested inputs="Metadata.xsd#//ServiceDescriptionType;XSDComplexTypeDefinition=11/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="gra.metadata.ecore#//ServiceDescriptionType/serviceDescriptionSummaryText"/>
+    <nested inputs="Metadata.xsd#//ServiceDescriptionType;XSDComplexTypeDefinition=11/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="gra.metadata.ecore#//ServiceDescriptionType/serviceDescriptionText"/>
+    <nested inputs="Metadata.xsd#//ServiceDescriptionType;XSDComplexTypeDefinition=11/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="gra.metadata.ecore#//ServiceDescriptionType/serviceDescriptionKeywordText"/>
+    <nested inputs="Metadata.xsd#//ServiceDescriptionType;XSDComplexTypeDefinition=11/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="gra.metadata.ecore#//ServiceDescriptionType/serviceCapabilities"/>
+    <nested inputs="Metadata.xsd#//ServiceDescriptionType;XSDComplexTypeDefinition=11/XSDParticle/XSDModelGroup/XSDParticle=6"
+        outputs="gra.metadata.ecore#//ServiceDescriptionType/serviceRealWorldEffects"/>
+    <nested inputs="Metadata.xsd#//ServiceDescriptionType;XSDComplexTypeDefinition=11/XSDParticle/XSDModelGroup/XSDParticle=7/XSDModelGroup/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ServiceDescriptionType/securityClassificationText"/>
+    <nested inputs="Metadata.xsd#//ServiceDescriptionType;XSDComplexTypeDefinition=11/XSDParticle/XSDModelGroup/XSDParticle=7/XSDModelGroup/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="gra.metadata.ecore#//ServiceDescriptionType/any"/>
+    <nested inputs="Metadata.xsd#//ServiceDescriptionType;XSDComplexTypeDefinition=11/XSDParticle/XSDModelGroup/XSDParticle=8"
+        outputs="gra.metadata.ecore#//ServiceDescriptionType/serviceDependencies"/>
+    <nested inputs="Metadata.xsd#//ServiceDescriptionType;XSDComplexTypeDefinition=11/XSDParticle/XSDModelGroup/XSDParticle=9"
+        outputs="gra.metadata.ecore#//ServiceDescriptionType/iEPDReferences"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ServiceDescription;XSDElementDeclaration=70" outputs="gra.metadata.ecore#//DocumentRoot/serviceDescription"/>
+  <nested inputs="Metadata.xsd#//ServiceDescriptionKeywords;XSDElementDeclaration=71/XSDComplexTypeDefinition"
+      outputs="gra.metadata.ecore#//ServiceDescriptionKeywordsType">
+    <nested inputs="Metadata.xsd#//ServiceDescriptionKeywords;XSDElementDeclaration=71/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ServiceDescriptionKeywordsType/serviceDependency"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ServiceDescriptionKeywords;XSDElementDeclaration=71"
+      outputs="gra.metadata.ecore#//DocumentRoot/serviceDescriptionKeywords"/>
+  <nested inputs="Metadata.xsd#//ServiceDescriptionKeywordText;XSDElementDeclaration=72"
+      outputs="gra.metadata.ecore#//DocumentRoot/serviceDescriptionKeywordText"/>
+  <nested inputs="Metadata.xsd#//ServiceDescriptionSummaryText;XSDElementDeclaration=73"
+      outputs="gra.metadata.ecore#//DocumentRoot/serviceDescriptionSummaryText"/>
+  <nested inputs="Metadata.xsd#//ServiceDescriptionText;XSDElementDeclaration=74"
+      outputs="gra.metadata.ecore#//DocumentRoot/serviceDescriptionText"/>
+  <nested inputs="Metadata.xsd#//ServiceFullNameText;XSDElementDeclaration=75" outputs="gra.metadata.ecore#//DocumentRoot/serviceFullNameText"/>
+  <nested inputs="Metadata.xsd#//ServiceID;XSDElementDeclaration=76" outputs="gra.metadata.ecore#//DocumentRoot/serviceID"/>
+  <nested inputs="Metadata.xsd#//ServiceIdentification;XSDElementDeclaration=77" outputs="gra.metadata.ecore#//DocumentRoot/serviceIdentification"/>
+  <nested inputs="Metadata.xsd#//ServiceInteractionProfileType;XSDComplexTypeDefinition=13"
+      outputs="gra.metadata.ecore#//ServiceInteractionProfileType">
+    <nested inputs="Metadata.xsd#//ServiceInteractionProfileType;XSDComplexTypeDefinition=13/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ServiceInteractionProfileType/sIPName"/>
+    <nested inputs="Metadata.xsd#//ServiceInteractionProfileType;XSDComplexTypeDefinition=13/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="gra.metadata.ecore#//ServiceInteractionProfileType/sIPVersion"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ServiceInteractionProfile;XSDElementDeclaration=78"
+      outputs="gra.metadata.ecore#//DocumentRoot/serviceInteractionProfile"/>
+  <nested inputs="Metadata.xsd#//ServiceInteractionProfiles;XSDElementDeclaration=79/XSDComplexTypeDefinition"
+      outputs="gra.metadata.ecore#//ServiceInteractionProfilesType">
+    <nested inputs="Metadata.xsd#//ServiceInteractionProfiles;XSDElementDeclaration=79/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ServiceInteractionProfilesType/serviceInteractionProfile"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ServiceInteractionProfiles;XSDElementDeclaration=79"
+      outputs="gra.metadata.ecore#//DocumentRoot/serviceInteractionProfiles"/>
+  <nested inputs="Metadata.xsd#//URIDetailType;XSDComplexTypeDefinition=19" outputs="gra.metadata.ecore#//URIDetailType">
+    <nested inputs="Metadata.xsd#//URIDetailType;XSDComplexTypeDefinition=19/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//URIDetailType/uRIAddress"/>
+    <nested inputs="Metadata.xsd#//URIDetailType;XSDComplexTypeDefinition=19/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="gra.metadata.ecore#//URIDetailType/uRIDescription"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//URIDetails;XSDElementDeclaration=97/XSDComplexTypeDefinition"
+      outputs="gra.metadata.ecore#//URIDetailsType">
+    <nested inputs="Metadata.xsd#//URIDetails;XSDElementDeclaration=97/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//URIDetailsType/uRIDetail"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ServiceInterfaceSpecificationType;XSDComplexTypeDefinition=14"
+      outputs="gra.metadata.ecore#//ServiceInterfaceSpecificationType">
+    <nested inputs="Metadata.xsd#//ServiceInterfaceSpecificationType;XSDComplexTypeDefinition=14/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ServiceInterfaceSpecificationType/uRIDetails"/>
+    <nested inputs="Metadata.xsd#//ServiceInterfaceSpecificationType;XSDComplexTypeDefinition=14/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="gra.metadata.ecore#//ServiceInterfaceSpecificationType/serviceActions"/>
+    <nested inputs="Metadata.xsd#//ServiceInterfaceSpecificationType;XSDComplexTypeDefinition=14/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="gra.metadata.ecore#//ServiceInterfaceSpecificationType/serviceInteractionProfiles"/>
+    <nested inputs="Metadata.xsd#//ServiceInterfaceSpecificationType;XSDComplexTypeDefinition=14/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="gra.metadata.ecore#//ServiceInterfaceSpecificationType/securityImplementedIndicator"/>
+    <nested inputs="Metadata.xsd#//ServiceInterfaceSpecificationType;XSDComplexTypeDefinition=14/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="gra.metadata.ecore#//ServiceInterfaceSpecificationType/securityDescriptionText"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ServiceInterface;XSDElementDeclaration=80" outputs="gra.metadata.ecore#//DocumentRoot/serviceInterface"/>
+  <nested inputs="Metadata.xsd#//ServicePolicyAndContractsType;XSDComplexTypeDefinition=17"
+      outputs="gra.metadata.ecore#//ServicePolicyAndContractsType">
+    <nested inputs="Metadata.xsd#//ServicePolicyAndContractsType;XSDComplexTypeDefinition=17/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ServicePolicyAndContractsType/applicablePoliciesIndicator"/>
+    <nested inputs="Metadata.xsd#//ServicePolicyAndContractsType;XSDComplexTypeDefinition=17/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="gra.metadata.ecore#//ServicePolicyAndContractsType/applicablePolicies"/>
+    <nested inputs="Metadata.xsd#//ServicePolicyAndContractsType;XSDComplexTypeDefinition=17/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="gra.metadata.ecore#//ServicePolicyAndContractsType/applicableContractsIndicator"/>
+    <nested inputs="Metadata.xsd#//ServicePolicyAndContractsType;XSDComplexTypeDefinition=17/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="gra.metadata.ecore#//ServicePolicyAndContractsType/applicableContracts"/>
+    <nested inputs="Metadata.xsd#//ServicePolicyAndContractsType;XSDComplexTypeDefinition=17/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="gra.metadata.ecore#//ServicePolicyAndContractsType/applicableAgreementsIndicator"/>
+    <nested inputs="Metadata.xsd#//ServicePolicyAndContractsType;XSDComplexTypeDefinition=17/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="gra.metadata.ecore#//ServicePolicyAndContractsType/applicableAgreements"/>
+    <nested inputs="Metadata.xsd#//ServicePolicyAndContractsType;XSDComplexTypeDefinition=17/XSDParticle/XSDModelGroup/XSDParticle=6"
+        outputs="gra.metadata.ecore#//ServicePolicyAndContractsType/applicableUmbrellaAgreementsIndicator"/>
+    <nested inputs="Metadata.xsd#//ServicePolicyAndContractsType;XSDComplexTypeDefinition=17/XSDParticle/XSDModelGroup/XSDParticle=7"
+        outputs="gra.metadata.ecore#//ServicePolicyAndContractsType/applicableUmbrellaAgreements"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//CostType;XSDComplexTypeDefinition=3" outputs="gra.metadata.ecore#//CostType">
+    <nested inputs="Metadata.xsd#//CostType;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//CostType/usageCostAmount"/>
+    <nested inputs="Metadata.xsd#//CostType;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="gra.metadata.ecore#//CostType/usageUnitCostAmount"/>
+    <nested inputs="Metadata.xsd#//CostType;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="gra.metadata.ecore#//CostType/creationCostAmount"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ServiceUsageType;XSDComplexTypeDefinition=18" outputs="gra.metadata.ecore#//ServiceUsageType">
+    <nested inputs="Metadata.xsd#//ServiceUsageType;XSDComplexTypeDefinition=18/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ServiceUsageType/approvalRequiredIndicator"/>
+    <nested inputs="Metadata.xsd#//ServiceUsageType;XSDComplexTypeDefinition=18/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="gra.metadata.ecore#//ServiceUsageType/licensingRequiredIndicator"/>
+    <nested inputs="Metadata.xsd#//ServiceUsageType;XSDComplexTypeDefinition=18/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="gra.metadata.ecore#//ServiceUsageType/licensingAgreement"/>
+    <nested inputs="Metadata.xsd#//ServiceUsageType;XSDComplexTypeDefinition=18/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="gra.metadata.ecore#//ServiceUsageType/serviceCost"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ServiceLevelAgreementsType;XSDComplexTypeDefinition=15"
+      outputs="gra.metadata.ecore#//ServiceLevelAgreementsType">
+    <nested inputs="Metadata.xsd#//ServiceLevelAgreementsType;XSDComplexTypeDefinition=15/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ServiceLevelAgreementsType/servicePolicyAndContracts"/>
+    <nested inputs="Metadata.xsd#//ServiceLevelAgreementsType;XSDComplexTypeDefinition=15/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="gra.metadata.ecore#//ServiceLevelAgreementsType/performanceMetrics"/>
+    <nested inputs="Metadata.xsd#//ServiceLevelAgreementsType;XSDComplexTypeDefinition=15/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="gra.metadata.ecore#//ServiceLevelAgreementsType/serviceUsageDetails"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ServiceLevelAgreements;XSDElementDeclaration=81"
+      outputs="gra.metadata.ecore#//DocumentRoot/serviceLevelAgreements"/>
+  <nested inputs="Metadata.xsd#//ServiceMaximumThroughput;XSDElementDeclaration=82"
+      outputs="gra.metadata.ecore#//DocumentRoot/serviceMaximumThroughput"/>
+  <nested inputs="Metadata.xsd#//VersionInformationType;XSDComplexTypeDefinition=21"
+      outputs="gra.metadata.ecore#//VersionInformationType">
+    <nested inputs="Metadata.xsd#//VersionInformationType;XSDComplexTypeDefinition=21/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//VersionInformationType/majorVersion"/>
+    <nested inputs="Metadata.xsd#//VersionInformationType;XSDComplexTypeDefinition=21/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="gra.metadata.ecore#//VersionInformationType/minorVersion"/>
+    <nested inputs="Metadata.xsd#//VersionInformationType;XSDComplexTypeDefinition=21/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="gra.metadata.ecore#//VersionInformationType/revisionVersion"/>
+    <nested inputs="Metadata.xsd#//VersionInformationType;XSDComplexTypeDefinition=21/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="gra.metadata.ecore#//VersionInformationType/creationDate"/>
+    <nested inputs="Metadata.xsd#//VersionInformationType;XSDComplexTypeDefinition=21/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="gra.metadata.ecore#//VersionInformationType/activationDate"/>
+    <nested inputs="Metadata.xsd#//VersionInformationType;XSDComplexTypeDefinition=21/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="gra.metadata.ecore#//VersionInformationType/lastRevisionDate"/>
+    <nested inputs="Metadata.xsd#//VersionInformationType;XSDComplexTypeDefinition=21/XSDParticle/XSDModelGroup/XSDParticle=6"
+        outputs="gra.metadata.ecore#//VersionInformationType/nextRevisionDate"/>
+    <nested inputs="Metadata.xsd#//VersionInformationType;XSDComplexTypeDefinition=21/XSDParticle/XSDModelGroup/XSDParticle=7"
+        outputs="gra.metadata.ecore#//VersionInformationType/expirationDate"/>
+    <nested inputs="Metadata.xsd#//VersionInformationType;XSDComplexTypeDefinition=21/XSDParticle/XSDModelGroup/XSDParticle=8"
+        outputs="gra.metadata.ecore#//VersionInformationType/lifecycleStatus"/>
+    <nested inputs="Metadata.xsd#//VersionInformationType;XSDComplexTypeDefinition=21/XSDParticle/XSDModelGroup/XSDParticle=9"
+        outputs="gra.metadata.ecore#//VersionInformationType/alertsAndNotifications"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ServiceMetadataType;XSDComplexTypeDefinition=16"
+      outputs="gra.metadata.ecore#//ServiceMetadataType">
+    <nested inputs="Metadata.xsd#//ServiceMetadataType;XSDComplexTypeDefinition=16/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//ServiceMetadataType/serviceIdentification"/>
+    <nested inputs="Metadata.xsd#//ServiceMetadataType;XSDComplexTypeDefinition=16/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="gra.metadata.ecore#//ServiceMetadataType/serviceDescription"/>
+    <nested inputs="Metadata.xsd#//ServiceMetadataType;XSDComplexTypeDefinition=16/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="gra.metadata.ecore#//ServiceMetadataType/versionInformation"/>
+    <nested inputs="Metadata.xsd#//ServiceMetadataType;XSDComplexTypeDefinition=16/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="gra.metadata.ecore#//ServiceMetadataType/relatedOrganizationInformation"/>
+    <nested inputs="Metadata.xsd#//ServiceMetadataType;XSDComplexTypeDefinition=16/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="gra.metadata.ecore#//ServiceMetadataType/businessContext"/>
+    <nested inputs="Metadata.xsd#//ServiceMetadataType;XSDComplexTypeDefinition=16/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="gra.metadata.ecore#//ServiceMetadataType/serviceInterface"/>
+    <nested inputs="Metadata.xsd#//ServiceMetadataType;XSDComplexTypeDefinition=16/XSDParticle/XSDModelGroup/XSDParticle=6"
+        outputs="gra.metadata.ecore#//ServiceMetadataType/serviceLevelAgreements"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//ServiceMetadata;XSDElementDeclaration=83" outputs="gra.metadata.ecore#//DocumentRoot/serviceMetadata"/>
+  <nested inputs="Metadata.xsd#//ServiceNameAbbreviationText;XSDElementDeclaration=84"
+      outputs="gra.metadata.ecore#//DocumentRoot/serviceNameAbbreviationText"/>
+  <nested inputs="Metadata.xsd#//ServicePolicyAndContracts;XSDElementDeclaration=85"
+      outputs="gra.metadata.ecore#//DocumentRoot/servicePolicyAndContracts"/>
+  <nested inputs="Metadata.xsd#//ServicePurposeText;XSDElementDeclaration=86" outputs="gra.metadata.ecore#//DocumentRoot/servicePurposeText"/>
+  <nested inputs="Metadata.xsd#//ServiceRealWorldEffects;XSDElementDeclaration=87"
+      outputs="gra.metadata.ecore#//DocumentRoot/serviceRealWorldEffects"/>
+  <nested inputs="Metadata.xsd#//ServiceResponseTime;XSDElementDeclaration=55" outputs="gra.metadata.ecore#//DocumentRoot/serviceResponseTime"/>
+  <nested inputs="Metadata.xsd#//ServiceScopeDescriptionText;XSDElementDeclaration=88"
+      outputs="gra.metadata.ecore#//DocumentRoot/serviceScopeDescriptionText"/>
+  <nested inputs="Metadata.xsd#//ServiceURI;XSDElementDeclaration=90" outputs="gra.metadata.ecore#//DocumentRoot/serviceURI"/>
+  <nested inputs="Metadata.xsd#//ServiceUsageDetails;XSDElementDeclaration=89" outputs="gra.metadata.ecore#//DocumentRoot/serviceUsageDetails"/>
+  <nested inputs="Metadata.xsd#//SIPName;XSDElementDeclaration=91" outputs="gra.metadata.ecore#//DocumentRoot/sIPName"/>
+  <nested inputs="Metadata.xsd#//SIPVersion;XSDElementDeclaration=92" outputs="gra.metadata.ecore#//DocumentRoot/sIPVersion"/>
+  <nested inputs="Metadata.xsd#//Sponsor;XSDElementDeclaration=93" outputs="gra.metadata.ecore#//DocumentRoot/sponsor"/>
+  <nested inputs="Metadata.xsd#//Sponsors;XSDElementDeclaration=94" outputs="gra.metadata.ecore#//DocumentRoot/sponsors"/>
+  <nested inputs="Metadata.xsd#//UmbrellaAgreement;XSDElementDeclaration=95" outputs="gra.metadata.ecore#//DocumentRoot/umbrellaAgreement"/>
+  <nested inputs="Metadata.xsd#//URIAddress;XSDElementDeclaration=100" outputs="gra.metadata.ecore#//DocumentRoot/uRIAddress"/>
+  <nested inputs="Metadata.xsd#//URIDescription;XSDElementDeclaration=101" outputs="gra.metadata.ecore#//DocumentRoot/uRIDescription"/>
+  <nested inputs="Metadata.xsd#//URIDetail;XSDElementDeclaration=96" outputs="gra.metadata.ecore#//DocumentRoot/uRIDetail"/>
+  <nested inputs="Metadata.xsd#//URIDetails;XSDElementDeclaration=97" outputs="gra.metadata.ecore#//DocumentRoot/uRIDetails"/>
+  <nested inputs="Metadata.xsd#//UsageCostAmount;XSDElementDeclaration=98" outputs="gra.metadata.ecore#//DocumentRoot/usageCostAmount"/>
+  <nested inputs="Metadata.xsd#//UsageUnitCostAmount;XSDElementDeclaration=99" outputs="gra.metadata.ecore#//DocumentRoot/usageUnitCostAmount"/>
+  <nested inputs="Metadata.xsd#//VersionInformation;XSDElementDeclaration=102" outputs="gra.metadata.ecore#//DocumentRoot/versionInformation"/>
+  <nested inputs="Metadata.xsd#//currencyText;XSDAttributeDeclaration" outputs="gra.metadata.ecore#//DocumentRoot/currencyText"/>
+  <nested inputs="Metadata.xsd#//unitMeasureText;XSDAttributeDeclaration=1" outputs="gra.metadata.ecore#//DocumentRoot/unitMeasureText"/>
+  <nested inputs="Metadata.xsd#//EntityType;XSDComplexTypeDefinition=5" outputs="gra.metadata.ecore#//EntityType">
+    <nested inputs="Metadata.xsd#//EntityType;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="gra.metadata.ecore#//EntityType/organization"/>
+    <nested inputs="Metadata.xsd#//EntityType;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="gra.metadata.ecore#//EntityType/person"/>
+  </nested>
+  <nested inputs="Metadata.xsd#//UsageUnitAmountType;XSDComplexTypeDefinition=20"
+      outputs="gra.metadata.ecore#//UsageUnitAmountType">
+    <nested inputs="Metadata.xsd#//UsageUnitAmountType;XSDComplexTypeDefinition=20/XSDAttributeUse"
+        outputs="gra.metadata.ecore#//UsageUnitAmountType/unitMeasureText"/>
+  </nested>
+</xsd2ecore:XSD2EcoreMappingRoot>

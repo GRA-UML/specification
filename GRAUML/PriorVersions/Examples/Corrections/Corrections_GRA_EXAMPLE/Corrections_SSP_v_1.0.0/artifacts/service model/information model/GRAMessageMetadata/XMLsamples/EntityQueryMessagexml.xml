@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CRX:EntityQueryMessage xmlns:CRSUB="http://it.ojp.gov/gist/200/Corrections/SubjectMessageTypes" xmlns:CRX="http://it.ojp.gov/gist/200/Corrections/exchangeTypes" xmlns:ENTITY="http://it.ojp.gov/gist/200/Corrections/entities" xmlns:HOUSE="http://it.ojp.gov/gist/200/Corrections/housing" xmlns:MetaR="http://it.ojp.gov/gist/201/Metadata/MetadataReference" xmlns:PLAN="http://it.ojp.gov/gist/200/Corrections/plan" xmlns:SERVICE="http://it.ojp.gov/gist/200/Corrections/service" xmlns:SUBJ="http://it.ojp.gov/gist/200/Corrections/subject" xmlns:TREAT="http://it.ojp.gov/gist/200/Corrections/treatments" xmlns:ansi_d20="http://niem.gov/niem/ansi_d20/2.0" xmlns:census="http://niem.gov/niem/census/2.0" xmlns:fbi="http://niem.gov/niem/fbi/2.0" xmlns:fips_10-4="http://niem.gov/niem/fips_10-4/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:tns="http://domain.gov/myDomain/" xmlns:ucr="http://niem.gov/niem/ucr/2.0" xmlns:unece="http://niem.gov/niem/unece_rec20-misc/2.0" xmlns:usps="http://niem.gov/niem/usps_states/2.0" xmlns:ut_offender="http://niem.gov/niem/ut_offender-tracking-misc/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://it.ojp.gov/gist/200/Corrections/exchangeTypes ../XMLschemas/exchange/SubjectExchange.xsd http://it.ojp.gov/gist/200/Corrections/SubjectMessageTypes ../../../XMLschemas/exchange/SubjectMessageModel.xsd http://niem.gov/niem/structures/2.0 ../../../XMLschemas/structures/2.0/structures.xsd http://niem.gov/niem/proxy/xsd/2.0 ../../../XMLschemas/proxy/xsd/2.0/xsd.xsd ">
+  <CRSUB:EntityIdentification>
+    <tns:Identification>
+      <nc:IdentificationID>nc:IdentificationID</nc:IdentificationID>
+      <tns:IdentificationCategoryID/>
+      <nc:IdentificationEffectiveDate>
+        <nc:Date>2001-01-01</nc:Date>
+      </nc:IdentificationEffectiveDate>
+      <nc:IdentificationExpirationDate>
+        <nc:Date>2001-01-01</nc:Date>
+      </nc:IdentificationExpirationDate>
+      <nc:IdentificationJurisdictionFIPS10-4Code>KS</nc:IdentificationJurisdictionFIPS10-4Code>
+      <nc:IdentificationSourceText>nc:IdentificationSourceText</nc:IdentificationSourceText>
+      <nc:IdentificationStatus>
+        <nc:StatusDate>
+          <nc:Date>2001-01-01</nc:Date>
+        </nc:StatusDate>
+        <nc:StatusDescriptionText>nc:StatusDescriptionText</nc:StatusDescriptionText>
+      </nc:IdentificationStatus>
+    </tns:Identification>
+    <tns:CategoryID>http://tempuri.org</tns:CategoryID>
+    <tns:ThisRecordLink>
+      <MetaR:LinkURI>http://tempuri.org</MetaR:LinkURI>
+      <MetaR:LinkText>MetaR:LinkText</MetaR:LinkText>
+    </tns:ThisRecordLink>
+    <tns:SeeAlsoLink>
+      <MetaR:LinkURI>http://tempuri.org</MetaR:LinkURI>
+      <MetaR:LinkText>MetaR:LinkText</MetaR:LinkText>
+    </tns:SeeAlsoLink>
+  </CRSUB:EntityIdentification>
+  <CRSUB:DetailLevelCode>Identification</CRSUB:DetailLevelCode>
+</CRX:EntityQueryMessage>

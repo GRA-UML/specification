@@ -1,0 +1,1201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:tns="http://www.iir.com/sorna/NIEM/2.1/juris-codes" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://www.iir.com/sorna/NIEM/2.1/juris-codes" version="1.0">
+  <xsd:import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="../XMLschemas/proxy/xsd/2.0/xsd.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.1" schemaLocation="../XMLschemas/appinfo/2.1/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="../XMLschemas/structures/2.0/structures.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.0" schemaLocation="../XMLschemas/appinfo/2.0/appinfo.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>SORNA Relocation Jurisdiction Codes</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:complexType abstract="false" mixed="false" name="SORNAJurisdictionCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for SORNA jurisdiction codes.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:restriction base="niem-xsd:token">
+        <xsd:enumeration value="ABOM">
+          <xsd:annotation>
+            <xsd:documentation>Aroostook Band of Micmacs</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="ACIC">
+          <xsd:annotation>
+            <xsd:documentation>Ak Chin Indian Community</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="ACTT">
+          <xsd:annotation>
+            <xsd:documentation>Alabama-Coushatta Tribes of Texas</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="AK">
+          <xsd:annotation>
+            <xsd:documentation>Alaska</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="AL">
+          <xsd:annotation>
+            <xsd:documentation>Alabama</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="AR">
+          <xsd:annotation>
+            <xsd:documentation>Arkansas</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="ARAT">
+          <xsd:annotation>
+            <xsd:documentation>Arapaho Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="AS">
+          <xsd:annotation>
+            <xsd:documentation>American Samoa</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="ASTO">
+          <xsd:annotation>
+            <xsd:documentation>Absentee-Shawnee Tribe of Indians of Oklahoma</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="ATOO">
+          <xsd:annotation>
+            <xsd:documentation>Apache Tribe of Oklahoma</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="AZ">
+          <xsd:annotation>
+            <xsd:documentation>Arizona</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="BFBC">
+          <xsd:annotation>
+            <xsd:documentation>Bois Forte Band of Chippewa</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="BLAN">
+          <xsd:annotation>
+            <xsd:documentation>Blackfeet Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="BMIC">
+          <xsd:annotation>
+            <xsd:documentation>Bay Mills Indian Community</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="BUPT">
+          <xsd:annotation>
+            <xsd:documentation>Burns Paiute Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="CA">
+          <xsd:annotation>
+            <xsd:documentation>California</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="CATO">
+          <xsd:annotation>
+            <xsd:documentation>Cheyenne-Arapaho Tribes of Oklahoma</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="CAYN">
+          <xsd:annotation>
+            <xsd:documentation>Cayuga Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="CCST">
+          <xsd:annotation>
+            <xsd:documentation>Crow Creek Sioux Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="CDAT">
+          <xsd:annotation>
+            <xsd:documentation>Coeur d'Alene Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="CHCT">
+          <xsd:annotation>
+            <xsd:documentation>Chippewa Cree Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="CHEN">
+          <xsd:annotation>
+            <xsd:documentation>Cherokee Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="CHIN">
+          <xsd:annotation>
+            <xsd:documentation>Chickasaw Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="CIPN">
+          <xsd:annotation>
+            <xsd:documentation>Citizen Potawatomi Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="CNOO">
+          <xsd:annotation>
+            <xsd:documentation>Caddo Nation of Oklahoma</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="CO">
+          <xsd:annotation>
+            <xsd:documentation>Colorado</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="COCT">
+          <xsd:annotation>
+            <xsd:documentation>Cocopah Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="COMN">
+          <xsd:annotation>
+            <xsd:documentation>Comanche Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="CORT">
+          <xsd:annotation>
+            <xsd:documentation>Colorado River Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="COTC">
+          <xsd:annotation>
+            <xsd:documentation>Confederated Tribes of the Colville Reservation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="CROT">
+          <xsd:annotation>
+            <xsd:documentation>Crow Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="CRST">
+          <xsd:annotation>
+            <xsd:documentation>Cheyenne River Sioux Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="CT">
+          <xsd:annotation>
+            <xsd:documentation>Connecticut</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="CTCR">
+          <xsd:annotation>
+            <xsd:documentation>Confederated Tribes of the Chehalis Reservation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="CTGR">
+          <xsd:annotation>
+            <xsd:documentation>Confederated Tribes of the Goshute Reservation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="CTOL">
+          <xsd:annotation>
+            <xsd:documentation>Chitimacha Tribe of Louisiana</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="CTUIR">
+          <xsd:annotation>
+            <xsd:documentation>Confederated Tribes of the Umatilla Indian Reservation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="CTWS">
+          <xsd:annotation>
+            <xsd:documentation>Confederated Tribes of the Warm Springs Reservation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="DC">
+          <xsd:annotation>
+            <xsd:documentation>District of Columbia</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="DE">
+          <xsd:annotation>
+            <xsd:documentation>Delaware</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="DELN">
+          <xsd:annotation>
+            <xsd:documentation>Delaware Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="EAST">
+          <xsd:annotation>
+            <xsd:documentation>Eastern Shoshone Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="EBCI">
+          <xsd:annotation>
+            <xsd:documentation>Eastern Band of Cherokee Indians</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="ELST">
+          <xsd:annotation>
+            <xsd:documentation>Ely Shoshone Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="ESTO">
+          <xsd:annotation>
+            <xsd:documentation>Eastern Shawnee Tribe of Oklahoma</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="FBIC">
+          <xsd:annotation>
+            <xsd:documentation>Fort Belknap Indian Community</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="FL">
+          <xsd:annotation>
+            <xsd:documentation>Florida</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="FMYT">
+          <xsd:annotation>
+            <xsd:documentation>Fort McDowell Yavapai Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="FOMT">
+          <xsd:annotation>
+            <xsd:documentation>Fort Mojave Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="FPAS">
+          <xsd:annotation>
+            <xsd:documentation>Fort Peck Assiniboine and Sioux Tribes</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="FPST">
+          <xsd:annotation>
+            <xsd:documentation>Fallon Paiute Shoshone Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="FSST">
+          <xsd:annotation>
+            <xsd:documentation>Flandreau Santee Sioux Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="GA">
+          <xsd:annotation>
+            <xsd:documentation>Georgia</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="GRIC">
+          <xsd:annotation>
+            <xsd:documentation>Gila River Indian Community</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="GTBO">
+          <xsd:annotation>
+            <xsd:documentation>Grand Traverse Band of Ottawa and Chippewa Indians</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="GU">
+          <xsd:annotation>
+            <xsd:documentation>Guam</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="HAIC">
+          <xsd:annotation>
+            <xsd:documentation>Hannahville Indian Community</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="HAVT">
+          <xsd:annotation>
+            <xsd:documentation>Havasupai Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="HI">
+          <xsd:annotation>
+            <xsd:documentation>Hawaii</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="HOPT">
+          <xsd:annotation>
+            <xsd:documentation>Hopi Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="HUAT">
+          <xsd:annotation>
+            <xsd:documentation>Hualapai Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="HURP">
+          <xsd:annotation>
+            <xsd:documentation>Huron Potawatomi</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="IA">
+          <xsd:annotation>
+            <xsd:documentation>Iowa</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="ID">
+          <xsd:annotation>
+            <xsd:documentation>Idaho</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="IL">
+          <xsd:annotation>
+            <xsd:documentation>Illinois</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="IN">
+          <xsd:annotation>
+            <xsd:documentation>Indiana</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="ITKN">
+          <xsd:annotation>
+            <xsd:documentation>Iowa Tribe of Kansas and Nebraska</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="ITOO">
+          <xsd:annotation>
+            <xsd:documentation>Iowa Tribe of Oklahoma</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="JIAN">
+          <xsd:annotation>
+            <xsd:documentation>Jicarilla Apache Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="JSKT">
+          <xsd:annotation>
+            <xsd:documentation>Jamestown S'Klallam Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="KALT">
+          <xsd:annotation>
+            <xsd:documentation>Kalispel Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="KAPT">
+          <xsd:annotation>
+            <xsd:documentation>Kaibab Paiute Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="KAWN">
+          <xsd:annotation>
+            <xsd:documentation>Kaw Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="KBIC">
+          <xsd:annotation>
+            <xsd:documentation>Keweenaw Bay Indian Community</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="KITK">
+          <xsd:annotation>
+            <xsd:documentation>Kickapoo Tribe in Kansas</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="KITO">
+          <xsd:annotation>
+            <xsd:documentation>Kiowa Indian Tribe of Oklahoma</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="KOOT">
+          <xsd:annotation>
+            <xsd:documentation>Kootenai Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="KS">
+          <xsd:annotation>
+            <xsd:documentation>Kansas</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="KTOO">
+          <xsd:annotation>
+            <xsd:documentation>Kickapoo Tribe of Oklahoma</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="KY">
+          <xsd:annotation>
+            <xsd:documentation>Kentucky</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="LA">
+          <xsd:annotation>
+            <xsd:documentation>Louisiana</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="LBST">
+          <xsd:annotation>
+            <xsd:documentation>Lower Brule Sioux Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="LOET">
+          <xsd:annotation>
+            <xsd:documentation>Lower Elwha Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="LRBO">
+          <xsd:annotation>
+            <xsd:documentation>Little River Band of Ottawa Indians</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="LTBB">
+          <xsd:annotation>
+            <xsd:documentation>Little Traverse Bay Bands of Odawa Indians</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="LUMN">
+          <xsd:annotation>
+            <xsd:documentation>Lummi Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="LVDB">
+          <xsd:annotation>
+            <xsd:documentation>Lac Vieux Desert Band of Lake Superior Chippewa Indians</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="MA">
+          <xsd:annotation>
+            <xsd:documentation>Massachusetts</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="MAIT">
+          <xsd:annotation>
+            <xsd:documentation>Makah Indian Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="MAPT">
+          <xsd:annotation>
+            <xsd:documentation>Mashantucket Pequot Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="MBCI">
+          <xsd:annotation>
+            <xsd:documentation>Mississippi Band of Choctaw Indians</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="MBPI">
+          <xsd:annotation>
+            <xsd:documentation>Match-e-be-nash-she-wish Band of Pottawatomi Indians of Michigan</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="MD">
+          <xsd:annotation>
+            <xsd:documentation>Maryland</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="ME">
+          <xsd:annotation>
+            <xsd:documentation>Maine</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="MEIC">
+          <xsd:annotation>
+            <xsd:documentation>Metlakatla Indian Community</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="MITW">
+          <xsd:annotation>
+            <xsd:documentation>Menominee Indian Tribe of Wisconsin</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="MSAT">
+          <xsd:annotation>
+            <xsd:documentation>Mescalero Apache Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="MI">
+          <xsd:annotation>
+            <xsd:documentation>Michigan</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="MIIT">
+          <xsd:annotation>
+            <xsd:documentation>Miccosukee Indian Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="MITO">
+          <xsd:annotation>
+            <xsd:documentation>Miami Tribe of Oklahoma</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="MN">
+          <xsd:annotation>
+            <xsd:documentation>Minnesota</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="MO">
+          <xsd:annotation>
+            <xsd:documentation>Missouri</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="MOTO">
+          <xsd:annotation>
+            <xsd:documentation>Modoc Tribe of Oklahoma</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="MP">
+          <xsd:annotation>
+            <xsd:documentation>Northern Mariana Islands</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="MS">
+          <xsd:annotation>
+            <xsd:documentation>Mississippi</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="MT">
+          <xsd:annotation>
+            <xsd:documentation>Montana</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="MUCN">
+          <xsd:annotation>
+            <xsd:documentation>Muscogee (Creek) Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="MUCT">
+          <xsd:annotation>
+            <xsd:documentation>Muckleshoot Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="NAIT">
+          <xsd:annotation>
+            <xsd:documentation>Narragansett Indian Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="NAVN">
+          <xsd:annotation>
+            <xsd:documentation>Navajo Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="NC">
+          <xsd:annotation>
+            <xsd:documentation>North Carolina</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="ND">
+          <xsd:annotation>
+            <xsd:documentation>North Dakota</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="NE">
+          <xsd:annotation>
+            <xsd:documentation>Nebraska</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="NEPT">
+          <xsd:annotation>
+            <xsd:documentation>Nez Perce Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="NH">
+          <xsd:annotation>
+            <xsd:documentation>New Hampshire</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="NIIC">
+          <xsd:annotation>
+            <xsd:documentation>Nisqually Indian Community</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="NJ">
+          <xsd:annotation>
+            <xsd:documentation>New Jersey</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="NM">
+          <xsd:annotation>
+            <xsd:documentation>New Mexico</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="NOCT">
+          <xsd:annotation>
+            <xsd:documentation>Northern Cheyenne Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="NOIT">
+          <xsd:annotation>
+            <xsd:documentation>Nooksack Indian Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="NV">
+          <xsd:annotation>
+            <xsd:documentation>Nevada</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="NY">
+          <xsd:annotation>
+            <xsd:documentation>New York</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="OGST">
+          <xsd:annotation>
+            <xsd:documentation>Oglala Sioux Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="OH">
+          <xsd:annotation>
+            <xsd:documentation>Ohio</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="OHKO">
+          <xsd:annotation>
+            <xsd:documentation>Ohkay Owingeh</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="OK">
+          <xsd:annotation>
+            <xsd:documentation>Oklahoma</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="OMAT">
+          <xsd:annotation>
+            <xsd:documentation>Omaha Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="OMTI">
+          <xsd:annotation>
+            <xsd:documentation>Otoe-Missouria Tribe of Indians</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="ONEN">
+          <xsd:annotation>
+            <xsd:documentation>Oneida Indian Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="ONON">
+          <xsd:annotation>
+            <xsd:documentation>Onondaga Indian Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="OR">
+          <xsd:annotation>
+            <xsd:documentation>Oregon</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="OSAN">
+          <xsd:annotation>
+            <xsd:documentation>Osage Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="OTTO">
+          <xsd:annotation>
+            <xsd:documentation>Ottawa Tribe of Oklahoma</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PA">
+          <xsd:annotation>
+            <xsd:documentation>Pennsylvania</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PANO">
+          <xsd:annotation>
+            <xsd:documentation>Pawnee Nation of Oklahoma</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PAYT">
+          <xsd:annotation>
+            <xsd:documentation>Pascua Yaqui Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PBCI">
+          <xsd:annotation>
+            <xsd:documentation>Poarch Band of Creek Indians</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PBPI">
+          <xsd:annotation>
+            <xsd:documentation>Pokagon Band of Potawatomi Indians</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PBPN">
+          <xsd:annotation>
+            <xsd:documentation>Prairie Band of Potawatomi Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PEIN">
+          <xsd:annotation>
+            <xsd:documentation>Penobscot Indian Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PGST">
+          <xsd:annotation>
+            <xsd:documentation>Port Gamble S'Klallam Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PLPT">
+          <xsd:annotation>
+            <xsd:documentation>Pyramid Lake Paiute Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PR">
+          <xsd:annotation>
+            <xsd:documentation>Puerto Rico</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PTIO">
+          <xsd:annotation>
+            <xsd:documentation>Peoria Tribe of Indians of Oklahoma</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PUEA">
+          <xsd:annotation>
+            <xsd:documentation>Pueblo of Acoma</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PUEC">
+          <xsd:annotation>
+            <xsd:documentation>Pueblo of Cochiti</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PUEI">
+          <xsd:annotation>
+            <xsd:documentation>Pueblo of Isleta</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PUEJ">
+          <xsd:annotation>
+            <xsd:documentation>Pueblo of Jemez</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PUEL">
+          <xsd:annotation>
+            <xsd:documentation>Pueblo of Laguna</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PUEP">
+          <xsd:annotation>
+            <xsd:documentation>Pueblo of Picuris</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PUES">
+          <xsd:annotation>
+            <xsd:documentation>Pueblo of Sandia</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PUSA">
+          <xsd:annotation>
+            <xsd:documentation>Pueblo of Santa Ana</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PUSC">
+          <xsd:annotation>
+            <xsd:documentation>Pueblo of Santa Clara</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PUSD">
+          <xsd:annotation>
+            <xsd:documentation>Pueblo of Santo Domingo</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PUSF">
+          <xsd:annotation>
+            <xsd:documentation>Pueblo of San Felipe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PUSI">
+          <xsd:annotation>
+            <xsd:documentation>Pueblo of San Ildefonso</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PUET">
+          <xsd:annotation>
+            <xsd:documentation>Pueblo of Taos</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PUOT">
+          <xsd:annotation>
+            <xsd:documentation>Pueblo of Tesuque</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PUEZ">
+          <xsd:annotation>
+            <xsd:documentation>Pueblo of Zuni</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="PUYT">
+          <xsd:annotation>
+            <xsd:documentation>Puyallup Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="QUET">
+          <xsd:annotation>
+            <xsd:documentation>Quechan Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="QUIIN">
+          <xsd:annotation>
+            <xsd:documentation>Quinault Indian Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="QUIT">
+          <xsd:annotation>
+            <xsd:documentation>Quileute Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="QUTO">
+          <xsd:annotation>
+            <xsd:documentation>Quapaw Tribe of Oklahoma</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="RENS">
+          <xsd:annotation>
+            <xsd:documentation>Reno-Sparks Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="RI">
+          <xsd:annotation>
+            <xsd:documentation>Rhode Island</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="RLBCI">
+          <xsd:annotation>
+            <xsd:documentation>Red Lake Band of Chippewa Indians of Minnesota</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="ROSS">
+          <xsd:annotation>
+            <xsd:documentation>Rosebud Sioux Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SACT">
+          <xsd:annotation>
+            <xsd:documentation>San Carlos Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SAIN">
+          <xsd:annotation>
+            <xsd:documentation>Samish Indian Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SAIT">
+          <xsd:annotation>
+            <xsd:documentation>Saginaw Chippewa Indian Tribe of Michigan</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SASN">
+          <xsd:annotation>
+            <xsd:documentation>Santee Sioux Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SAST">
+          <xsd:annotation>
+            <xsd:documentation>Sauk-Suiattle Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SC">
+          <xsd:annotation>
+            <xsd:documentation>South Carolina</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SCTO">
+          <xsd:annotation>
+            <xsd:documentation>Seneca-Cayuga Tribe of Oklahoma</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SD">
+          <xsd:annotation>
+            <xsd:documentation>South Dakota</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SEIT">
+          <xsd:annotation>
+            <xsd:documentation>Seminole Indian Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SENI">
+          <xsd:annotation>
+            <xsd:documentation>Seneca Nation of Indians</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SENO">
+          <xsd:annotation>
+            <xsd:documentation>Seminole Nation of Oklahoma</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SFNM">
+          <xsd:annotation>
+            <xsd:documentation>Sac and Fox Nation of Missouri</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SFNO">
+          <xsd:annotation>
+            <xsd:documentation>Sac and Fox Nation of Oklahoma</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SFTM">
+          <xsd:annotation>
+            <xsd:documentation>Sac and Fox Tribe of the Mississippi in Iowa</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SHBT">
+          <xsd:annotation>
+            <xsd:documentation>Shoalwater Bay Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SHOB">
+          <xsd:annotation>
+            <xsd:documentation>Shoshone-Bannock Tribes</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SHPT">
+          <xsd:annotation>
+            <xsd:documentation>Shoshone-Paiute Tribes</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SKOT">
+          <xsd:annotation>
+            <xsd:documentation>Skokomish Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SLPT">
+          <xsd:annotation>
+            <xsd:documentation>Summit Lake Paiute Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SNOQ">
+          <xsd:annotation>
+            <xsd:documentation>Snoqualmie Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SOUT">
+          <xsd:annotation>
+            <xsd:documentation>Southern Ute Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SPLT">
+          <xsd:annotation>
+            <xsd:documentation>Spirit Lake Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SPTI">
+          <xsd:annotation>
+            <xsd:documentation>Spokane Tribe of Indians</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SQIT">
+          <xsd:annotation>
+            <xsd:documentation>Squaxin Island Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SRBM">
+          <xsd:annotation>
+            <xsd:documentation>Saint Regis Band of Mohawk Indians</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SRPM">
+          <xsd:annotation>
+            <xsd:documentation>Salt River Pima-Maricopa Indian Community</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SRST">
+          <xsd:annotation>
+            <xsd:documentation>Standing Rock Sioux Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SSMT">
+          <xsd:annotation>
+            <xsd:documentation>Sault Sainte Marie Tribe of Chippewa Indians of Michigan</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SUQT">
+          <xsd:annotation>
+            <xsd:documentation>Suquamish Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SVBG">
+          <xsd:annotation>
+            <xsd:documentation>Skull Valley Band of Goshute Indians</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SWIT">
+          <xsd:annotation>
+            <xsd:documentation>Swinomish Indian Tribal Community</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="SWOL">
+          <xsd:annotation>
+            <xsd:documentation>Sisseton-Wahpeton Oyate of the Lake Traverse Reservation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="TEMT">
+          <xsd:annotation>
+            <xsd:documentation>Te-Moak Tribe of Western Shoshone Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="THAT">
+          <xsd:annotation>
+            <xsd:documentation>Three Affiliated Tribes</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="TMBC">
+          <xsd:annotation>
+            <xsd:documentation>Turtle Mountain Band of Chippewa</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="TN">
+          <xsd:annotation>
+            <xsd:documentation>Tennessee</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="TOAT">
+          <xsd:annotation>
+            <xsd:documentation>Tonto Apache Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="TOBS">
+          <xsd:annotation>
+            <xsd:documentation>Tonawanda Band of Seneca</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="TOON">
+          <xsd:annotation>
+            <xsd:documentation>Tohono O'odham Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="TTIO">
+          <xsd:annotation>
+            <xsd:documentation>Tonkawa Tribe of Indians of Oklahoma</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="TUBT">
+          <xsd:annotation>
+            <xsd:documentation>Tunica-Biloxi Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="TULT">
+          <xsd:annotation>
+            <xsd:documentation>Tulalip Tribes</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="TUSN">
+          <xsd:annotation>
+            <xsd:documentation>Tuscarora Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="TX">
+          <xsd:annotation>
+            <xsd:documentation>Texas</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="UKBC">
+          <xsd:annotation>
+            <xsd:documentation>United Keetoowah Band of Cherokee Indians</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="UMUT">
+          <xsd:annotation>
+            <xsd:documentation>Ute Mountain Ute Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="UPST">
+          <xsd:annotation>
+            <xsd:documentation>Upper Skagit Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="UT">
+          <xsd:annotation>
+            <xsd:documentation>Utah</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="UTIT">
+          <xsd:annotation>
+            <xsd:documentation>Ute Indian Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="VA">
+          <xsd:annotation>
+            <xsd:documentation>Virginia</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="VT">
+          <xsd:annotation>
+            <xsd:documentation>Vermont</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="WA">
+          <xsd:annotation>
+            <xsd:documentation>Washington</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="WI">
+          <xsd:annotation>
+            <xsd:documentation>Wisconsin</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="WIAT">
+          <xsd:annotation>
+            <xsd:documentation>Wichita and Affiliated Tribes</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="WINT">
+          <xsd:annotation>
+            <xsd:documentation>Winnebago Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="WMAT">
+          <xsd:annotation>
+            <xsd:documentation>White Mountain Apache Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="WRPT">
+          <xsd:annotation>
+            <xsd:documentation>Walker River Paiute Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="WTGH">
+          <xsd:annotation>
+            <xsd:documentation>Wampanoag Tribe of Gay Head</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="WTNC">
+          <xsd:annotation>
+            <xsd:documentation>Washoe Tribe of Nevada and California</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="WV">
+          <xsd:annotation>
+            <xsd:documentation>West Virginia</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="WY">
+          <xsd:annotation>
+            <xsd:documentation>Wyoming</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="WYAN">
+          <xsd:annotation>
+            <xsd:documentation>Wyandotte Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="YAAN">
+          <xsd:annotation>
+            <xsd:documentation>Yavapai-Apache Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="YAKN">
+          <xsd:annotation>
+            <xsd:documentation>Yakama Nation</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="YAST">
+          <xsd:annotation>
+            <xsd:documentation>Yankton Sioux Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="YEPT">
+          <xsd:annotation>
+            <xsd:documentation>Yerington Paiute Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:enumeration value="YPIT">
+          <xsd:annotation>
+            <xsd:documentation>Yavapai-Prescott Indian Tribe</xsd:documentation>
+          </xsd:annotation>
+        </xsd:enumeration>
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:restriction>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="catalog.xsd#/" outputs="Catalog.ecore#/" topToBottom="true">
+  <nested inputs="bundleentry://778.fwk130140814/cache/www.w3.org/2001/XMLSchema.xsd#//string;XSDSimpleTypeDefinition=9"
+      outputs="http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/catalog;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Catalog.ecore#//CatalogType">
+    <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle/catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Catalog.ecore#//CatalogType/href"/>
+  </nested>
+  <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1/metadata;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Catalog.ecore#//MetadataType">
+    <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1/metadata;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Catalog.ecore#//MetadataType/href"/>
+  </nested>
+  <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2/service-description;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Catalog.ecore#//ServiceDescriptionType">
+    <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2/service-description;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Catalog.ecore#//ServiceDescriptionType/href"/>
+  </nested>
+  <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3/service-interface-description;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Catalog.ecore#//ServiceInterfaceDescriptionType">
+    <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3/service-interface-description;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Catalog.ecore#//ServiceInterfaceDescriptionType/href"/>
+  </nested>
+  <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4/wsdl-schema;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Catalog.ecore#//WsdlSchemaType">
+    <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4/wsdl-schema;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Catalog.ecore#//WsdlSchemaType/href"/>
+  </nested>
+  <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5/soap-sample;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Catalog.ecore#//SoapSampleType">
+    <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5/soap-sample;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Catalog.ecore#//SoapSampleType/href"/>
+  </nested>
+  <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=6/iepd-catalog;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Catalog.ecore#//IepdCatalogType">
+    <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=6/iepd-catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDAttributeUse"
+        outputs="Catalog.ecore#//IepdCatalogType/href"/>
+  </nested>
+  <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition"
+      outputs="Catalog.ecore#//CatalogType1">
+    <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"
+        outputs="Catalog.ecore#//CatalogType1/catalog"/>
+    <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"
+        outputs="Catalog.ecore#//CatalogType1/metadata"/>
+    <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"
+        outputs="Catalog.ecore#//CatalogType1/serviceDescription"/>
+    <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=3"
+        outputs="Catalog.ecore#//CatalogType1/serviceInterfaceDescription"/>
+    <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=4"
+        outputs="Catalog.ecore#//CatalogType1/wsdlSchema"/>
+    <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=5"
+        outputs="Catalog.ecore#//CatalogType1/soapSample"/>
+    <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration/XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=6"
+        outputs="Catalog.ecore#//CatalogType1/iepdCatalog"/>
+  </nested>
+  <nested inputs="catalog.xsd#//catalog;XSDElementDeclaration" outputs="Catalog.ecore#//DocumentRoot/catalog"/>
+</xsd2ecore:XSD2EcoreMappingRoot>

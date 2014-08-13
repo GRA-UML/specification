@@ -1,0 +1,608 @@
+// due to excessive QVT compilation time, combine globals, platformbinding, and common query/helper to this single module
+//import GRAplatformBinding;
+import NIEMplatformBinding;
+import org.ijis.gra.GraQvt;
+modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype UML uses 'http://www.eclipse.org/uml2/4.0.0/UML';
+modeltype XSD  uses 'http://www.eclipse.org/xsd/2002/XSD';
+modeltype CAT  uses 'http://reference.niem.gov/niem/resource/mpd/catalog/1.0/';
+modeltype METADATA  uses 'http://it.ojp.gov/gsp/services/1.0.0';
+
+transformation GRAcommon;
+	main() {}	
+
+/*
+	In the context of a top-level Model,
+	find and initialize globals for all NIEM Profiles plus the XML Type Library
+*/
+helper UML::Model::initializeSppProfileGlobals() {
+	var allSourceProfiles:Sequence(UML::Profile)=self.getGRAProfiles();
+	
+    allSourceProfiles
+        ->select(p|p.name=graProfileName)->asSequence()->first().initGraProfileStereotypes();
+    allSourceProfiles
+        ->select(p|p.name=graAnnotationsProfileName)->asSequence()->first().initGraProfileStereotypes();
+    allSourceProfiles
+        ->select(p|p.name=soamlProfileName)->asSequence()->first().initSoamlProfileStereotypes();
+		allSourceProfiles
+			->select(p|p.name=wsdlProfileName)->asSequence()->first().initWsdlProfileStereotypes();
+		allSourceProfiles
+			->select(p|p.name=policyProfileName)->asSequence()->first().initPolicyProfileStereotypes();
+	self.getGRAPolicyExtension().initPolicyExtension();
+    return;
+}
+/*
+	In the context of a GRA Policy Extension, initialize the global variables for its well known artifacts. 
+*/
+helper UML::Model::initPolicyExtension(){
+	graPolicyExtension:=self;
+	/*
+	graWsPolicy:=self.nestedPackage->select(p|p.name='ws-policy')->asSequence()->first();
+	graWsAddrWsdl:=self.nestedPackage->select(p|p.name='ws-addr-wsdl')->asSequence()->first();
+	graWsrmPolicy:=self.nestedPackage->select(p|p.name='wsrm-policy')->asSequence()->first();
+	graWsSecurityPolicy:=self.nestedPackage->select(p|p.name='ws-securitypolicy-1.2')->asSequence()->first();
+	graMssp:=self.nestedPackage->select(p|p.name='mssp')->asSequence()->first();
+	graWsTrust:=self.nestedPackage->select(p|p.name='ws-trust-1.3')->asSequence()->first();
+	graWsam:=self.nestedPackage->select(p|p.name='wsam')->asSequence()->first();
+	graWsAddr:=self.nestedPackage->select(p|p.name='ws-addr')->asSequence()->first();
+	graWsid:=self.nestedPackage->select(p|p.name='wsid')->asSequence()->first();
+	graXmldsigCoreSchema:=self.nestedPackage->select(p|p.name='xmldsig-core-schema')->asSequence()->first();
+	graWsse:=self.nestedPackage->select(p|p.name='wsse')->asSequence()->first();
+	*/
+	return;
+}
+
+/*
+	In the context of a GRA_Profile, initialize the global variables for its stereotypes. 
+*/
+helper UML::Profile::initGraProfileStereotypes(){
+	graProfile:=self;
+		graSppStereotype:=graProfile.getOwnedStereotype(graSppStereotypeName);
+		graOrganizationStereotype:=graProfile.getOwnedStereotype(graOrganizationStereotypeName);
+		graServiceInterfaceSpecificationStereotype:=graProfile.getOwnedStereotype(graServiceInterfaceSpecificationStereotypeName);
+		graServiceIdentificationStereotype:=graProfile.getOwnedStereotype(graServiceIdentificationStereotypeName);
+		graServiceActionStereotype:=graProfile.getOwnedStereotype(graServiceActionStereotypeName);
+		graBusinessContextStereotype:=graProfile.getOwnedStereotype(graBusinessContextStereotypeName);
+		graServiceLevelAgreementsStereotype:=graProfile.getOwnedStereotype(graServiceLevelAgreementsStereotypeName);
+		graServiceCapabilityStereotype:=graProfile.getOwnedStereotype(graServiceCapabilityStereotypeName);
+	return;
+}
+/*
+	In the context of a SoaML Profile, initialize the global variables for its stereotypes. 
+*/
+helper UML::Profile::initSoamlProfileStereotypes(){
+	soamlProfile:=self;
+		soamlServicesArchitectureStereotype:=soamlProfile.getOwnedStereotype(soamlServicesArchitectureStereotypeName);
+		soamlParticipantStereotype:=soamlProfile.getOwnedStereotype(soamlParticipantStereotypeName);
+		soamlAgentStereotype:=soamlProfile.getOwnedStereotype('Agent');
+		soamlAttachmentStereotype:=soamlProfile.getOwnedStereotype('Attachment');
+		soamlCapabilityStereotype:=soamlProfile.getOwnedStereotype('Capability');
+		soamlConsumerStereotype:=soamlProfile.getOwnedStereotype('Consumer');
+		soamlCollaborationStereotype:=soamlProfile.getOwnedStereotype('Collaboration');
+		soamlCollaborationUseStereotype:=soamlProfile.getOwnedStereotype('CollaborationUse');
+		soamlExposeStereotype:=soamlProfile.getOwnedStereotype('Expose');
+		soamlMessageTypeStereotype:=soamlProfile.getOwnedStereotype('MessageType');
+		soamlMilestoneStereotype:=soamlProfile.getOwnedStereotype('Milestone');
+//		soamlPortStereotype:=soamlProfile.getOwnedStereotype('Port');
+//		soamlPropertyStereotype:=soamlProfile.getOwnedStereotype('Property');
+//		soamlProviderStereotype:=soamlProfile.getOwnedStereotype('Provider');
+//		soamlRequestStereotype:=soamlProfile.getOwnedStereotype('Request');
+		soamlServiceChannelStereotype:=soamlProfile.getOwnedStereotype('ServiceChannel');
+		soamlServiceContractStereotype:=soamlProfile.getOwnedStereotype('ServiceContract');
+//		soamlServiceStereotype:=soamlProfile.getOwnedStereotype('Service');
+		soamlServiceInterfaceStereotype:=soamlProfile.getOwnedStereotype('ServiceInterface');
+		//soamlServicePointStereotype:=soamlProfile.getOwnedStereotype('ServicePoint');
+	return;
+}
+helper UML::Profile::initPolicyProfileStereotypes(){
+		policyProfile:=self;
+		policyAuthenticationStereotype:=policyProfile.getOwnedStereotype('Authentication');
+		policyConfidentialityStereotype:=policyProfile.getOwnedStereotype('Confidentiality');
+		policyIntegrityStereotype:=policyProfile.getOwnedStereotype('Integrity');
+		policyPolicyImplementationStereotype:=policyProfile.getOwnedStereotype('Policy Implementation');
+		policyPolicyIntentStereotype:=policyProfile.getOwnedStereotype('Policy Intent');
+		policyPolicyProvisioningStereotype:=policyProfile.getOwnedStereotype('Policy Provisioning');
+		policyReliabilityStereotype:=policyProfile.getOwnedStereotype('Reliability');
+		policySecurityStereotype:=policyProfile.getOwnedStereotype('Security');
+	return;
+	}
+helper UML::Profile::initWsdlProfileStereotypes(){
+		wsdlProfile:=self;
+		wsdlSoapAddressStereotype:=wsdlProfile.getOwnedStereotype('SoapAddress');
+		wsdlSoapBindingStereotype:=wsdlProfile.getOwnedStereotype('SoapBinding');
+		wsdlSoapBodyStereotype:=wsdlProfile.getOwnedStereotype('SoapBody');
+		wsdlSoapFaultStereotype:=wsdlProfile.getOwnedStereotype('SoapFault');
+		wsdlSoapHeaderStereotype:=wsdlProfile.getOwnedStereotype('SoapHeader');
+		wsdlSoapHeaderfaultStereotype:=wsdlProfile.getOwnedStereotype('SoapHeaderfault');
+		wsdlSoapOperationStereotype:=wsdlProfile.getOwnedStereotype('SoapOperation');
+		wsdlWsaActionStereotype:=wsdlProfile.getOwnedStereotype('WsaAction');
+		wsdlWsaAnonymousStereotype:=wsdlProfile.getOwnedStereotype('WsaAnonymous');
+		wsdlWsaEndpointReferenceStereotype:=wsdlProfile.getOwnedStereotype('WsaEndpointReference');
+		wsdlWsaUsingAddressingStereotype:=wsdlProfile.getOwnedStereotype('WsaUsingAddressing');
+		//wsdlWsaBindingStereotype:=wsdlProfile.getOwnedStereotype('WsaBinding');
+		wsdlWsdlDefinitionsStereotype:=wsdlProfile.getOwnedStereotype('WsdlDefinitions');
+		/*
+		wsdlWsdlFaultStereotype:=wsdlProfile.getOwnedStereotype('WsdlFault');
+		wsdlWsdlMessageStereotype:=wsdlProfile.getOwnedStereotype('WsdlMessage');
+		wsdlWsdlOperationStereotype:=wsdlProfile.getOwnedStereotype('WsdlOperation');
+		wsdlWsdlParameterStereotype:=wsdlProfile.getOwnedStereotype('WsdlParameter');
+		wsdlWsdlPartStereotype:=wsdlProfile.getOwnedStereotype('WsdlPart');
+		//wsdlWsdlPartElementStereotype:=wsdlProfile.getOwnedStereotype('WsdlPartElement');
+		wsdlWsdlPortStereotype:=wsdlProfile.getOwnedStereotype('WsdlPort');
+		:=wsdlProfile.getOwnedStereotype('WsdlPortType');
+		wsdlWsdlServiceStereotype:=wsdlProfile.getOwnedStereotype('WsdlService');
+		*/
+//		wsdlWsdlBindingStereotype:=soamlServiceInterfaceStereotype;
+		wsdlWsdlBindingStereotype:=wsdlSoapBindingStereotype;
+		wsdlWsdlFaultStereotype:=wsdlSoapFaultStereotype;
+		wsdlWsdlMessageStereotype:=soamlMessageTypeStereotype;
+		wsdlWsdlOperationStereotype:=wsdlSoapOperationStereotype;
+		wsdlWsdlParameterStereotype:=wsdlSoapBodyStereotype;
+		//wsdlWsdlPartStereotype:=wsdlProfile.getOwnedStereotype('WsdlPart');
+		//wsdlWsdlPartElementStereotype:=wsdlProfile.getOwnedStereotype('WsdlPartElement');
+		wsdlWsdlPortStereotype:=wsdlSoapAddressStereotype;
+		//:=wsdlProfile.getOwnedStereotype('WsdlPortType');
+		wsdlWsdlServiceStereotype:=soamlParticipantStereotype;
+		
+		
+		wsdlWsidIdentityStereotype:=wsdlProfile.getOwnedStereotype('WsidIdentity');
+		wsdlWspAllStereotype:=wsdlProfile.getOwnedStereotype('WspAll');
+		wsdlWspExactlyOneStereotype:=wsdlProfile.getOwnedStereotype('WspExactlyOne');
+		wsdlWspPolicyStereotype:=wsdlProfile.getOwnedStereotype('WspPolicy');
+		wsdlWspPolicyReferenceStereotype:=wsdlProfile.getOwnedStereotype('WspPolicyReference');
+		wsdlSpSignedPartsStereotype:=wsdlProfile.getOwnedStereotype('spSignedParts');
+		wsdlSpTokenAssertionStereotype:=wsdlProfile.getOwnedStereotype('TokenAssertion');
+		
+	return;
+}
+///////////////////////////wsdl
+query UML::Package::isWsdlPackage():Boolean=self.ownedType->select(t|t.isWsdlDefinition())->notEmpty();
+//query UML::Type::isWsdlDefinition():Boolean=self.IsStereotypeApplied(soamlServiceInterfaceStereotype);
+query UML::Type::isServiceInterface():Boolean=self.IsStereotypeApplied(soamlServiceInterfaceStereotype);
+query UML::Type::isWsdlDefinition():Boolean=self.IsStereotypeApplied(soamlServicesArchitectureStereotype);
+query UML::Type::isParticipant():Boolean=self.IsStereotypeApplied(soamlParticipantStereotype);
+/*
+helper  Stdlib::Element::setWsdlPortName(name:String){
+	//self.setTagValueConditionally('name',name);
+	if(not(name.oclIsUndefined()))then{name.setTagValue(self,'name');}endif;
+}
+*/
+helper  Stdlib::Element::setSoapAddressLocation(location:String){
+	//self.setTagValueConditionally('location',location);
+	//location.setTagValue(self,'location');
+	if(not(location.oclIsUndefined()))then{location.setTagValue(self,'location');}endif;
+}
+helper  Stdlib::Element::setSoapAddressWsdlRequired(wsdlRequired:Boolean){
+	wsdlRequired.setTagValue(self,'wsdlRequired');
+}
+helper  Stdlib::Element::setWsawUsingAddressingWsdlRequired(wsdlRequired:Boolean){
+	wsdlRequired.setTagValue(self,'wsdlRequired');
+}
+/*
+query UML::NamedElement::toPathNameFromRoot(mpdRootPackage:UML::Package,artifact:OclAny):String{
+	var umlPackagePath:String=self.toRelativePathName(mpdRootPackage,artifact);
+	if(umlPackagePath.startsWith('./'))then {umlPackagePath:=umlPackagePath.substringAfter('./');}endif;
+	return umlPackagePath;
+}
+*/
+//////////////////////////////////////////////////////////////////////////////////////////was GRAsoaml
+property baseNamespace:String='http://my.org/';
+//property selfPrefix:String='tns';
+//query String::toURI():String{return self.toNCName();}
+//query String::toNCName():String{return self.trim().replace(' ','');}
+//query UML::NamedElement::getTargetNamespaceQualifiedName():String{
+//	if(self.owner.oclIsUndefined())then {return self.getName();}else{}endif;
+//	return self.owner.oclAsType(UML::NamedElement).getTargetNamespaceQualifiedName()+'::'+self.getName();
+//	}
+query UML::NamedElement::getTargetNamespacePath():String{
+	//return self.getTargetNamespaceQualifiedName().replace('::','/').toURI();
+	var catalog:UML::Package:=self.getNearestPackage().getNearesProfileApplication(structureProfile);
+	var relativePath:String='';
+	if(catalog.oclIsUndefined())then{
+		relativePath:=self.qualifiedName;
+	}else{
+//		relativePath:=self.qualifiedName.substringAfter(catalog.qualifiedName);
+		relativePath:=self.qualifiedName.substringAfter(catalog.qualifiedName+'::');
+	}endif;
+	relativePath:=relativePath.replace('::','/');
+//	if(relativePath='')then {relativePath:='./';}else{relativePath:='.'+relativePath;}endif;
+	if(relativePath='')then {relativePath:='./';}endif;
+	return relativePath;
+	}
+query UML::Package::getNearesProfileApplication(profile:UML::Profile):UML::Package {
+	// tjd: it seems that sometimes all profiles are applied at top level, as in a magicdraw export to eclipse;
+	// so changing the test here to exclude top level
+
+	if(self.owner.oclIsUndefined()) then{
+		return null;
+	}endif;
+	if(self.isProfileApplied(profile))then{
+	   return self;
+	}endif;
+	/*
+	if(self.owner.oclIsUndefined()) then{
+		return null;
+	}endif;
+	*/
+	return self.owner.getNearestPackage().getNearesProfileApplication(profile);
+}
+	
+query UML::Namespace::getLocation(extension:String):String=self.getTargetNamespacePath()+extension;
+//query UML::Namespace::getSchemaLocation():String=self.getLocation('.xsd');
+query UML::NamedElement::getTargetNamespace():String{return baseNamespace+self.getTargetNamespacePath();}
+//query UML::Package::isGlobalSchema():Boolean{return self.name='UMLPrimitiveTypes';}
+query UML::Namespace::getRelativeLocation(referencingPackage:UML::Namespace,extension:String):String=
+//	referencingPackage.getRelativeToRoot()+self.getLocation(extension);
+	referencingPackage.namespace.getRelativeToRoot()+self.getLocation(extension);
+query UML::Namespace::getRelativeSchemaLocation(referencingPackage:UML::Namespace):String=
+	self.getRelativeLocation(referencingPackage,'.xsd');
+query UML::Namespace::getRelativeWsdlLocation(referencingPackage:UML::Namespace):String=
+	self.getRelativeLocation(referencingPackage,'.wsdl');
+query UML::Namespace::getRelativeToRoot():String{
+	if(self.namespace.oclIsUndefined())then {return "";}else{}endif;
+	if(self.oclIsKindOf(UML::Package) and self.oclAsType(UML::Package).isProfileApplied(structureProfile))then {return "";}else{}endif;
+	return self.namespace.getRelativeToRoot()+'../';
+}
+query UML::NamedElement::getName():String{
+	if((self.name="")and self.oclIsKindOf(UML::Property))then{
+		return self.oclAsType(UML::Property).type.name.toNCName();
+	}else{
+		if((self.name="")and self.oclIsKindOf(UML::Parameter))then{
+			return self.oclAsType(UML::Parameter).type.name.toNCName();
+		}else{
+		}endif;
+	}endif;
+	return self.name.toNCName();
+}	
+/*
+helper transitiveClosure(inout classifiers:Set(UML::Classifier)):Set(UML::Classifier){
+	var transitive:Set(UML::Classifier)=Set{};
+	transitive+=classifiers;
+	transitive+=transitive.getAllAttributes().type->select(t|t.oclIsKindOf(UML::Classifier)).oclAsType((UML::Classifier))
+		->union(transitive.general)->asSet();
+	log('transitiveClosure '+transitive->size().repr()+', '+classifiers->size().repr());	
+	// following loops
+	if(transitive->size()=classifiers->size())then{}else{transitive+=transitiveClosure(transitive);}endif;
+	return transitive;
+}
+*/	
+query UML::Classifier::allFeatures():Set(UML::Feature){
+	var allParents:Set(UML::Classifier)=Set{};
+	allParents+=self;
+	allParents+=self.getAllParents();
+	return allParents.feature->asSet();
+}	
+/*
+query UML::Classifier::getAllAttributes():Set(UML::Property){
+	var allParents:Set(UML::Classifier)=Set{};
+	allParents+=self;
+	allParents+=self.getAllParents();
+	return allParents.attribute->asSet();
+}
+*/
+query UML::Classifier::getAllUsedInterfaces():Set(UML::Interface){
+	var allUsedInterfaces:Set(UML::Interface)=Set{};
+//	if(self.oclIsKindOf(UML::Component)) then {
+		var allParents:Set(UML::Classifier)=Set{};
+		allParents+=self;
+		allParents+=self.getAllParents();
+		allUsedInterfaces:= allParents->select(p|p.oclIsKindOf(UML::Component)).oclAsType(UML::Component).required->asSet();
+		allUsedInterfaces+= allParents->select(p|p.oclIsKindOf(UML::Classifier)).oclAsType(UML::Classifier).clientDependency
+			->select(u|u.oclIsKindOf(UML::Usage)).oclAsType(UML::Usage).supplier
+			->select(p|p.oclIsKindOf(UML::Interface)).oclAsType(UML::Interface)
+			->asSet();
+			
+//		} endif;
+		return allUsedInterfaces;
+}	
+	
+query UML::Classifier::getAllParents():Set(UML::Classifier){
+	var allParents:Set(UML::Classifier)=Set{};
+	//allParents+=self;
+	//allParents+=self.getAllParents();
+	return self.getAllParentsRecursive(allParents);
+}	
+query UML::Classifier::getAllParentsRecursive(inout allParents:Set(UML::Classifier)):Set(UML::Classifier){
+	if(allParents->includes(self))then {return allParents}endif;
+	var parents:Set(UML::Classifier)=allParents;
+	parents+=self;
+	return self.general.getAllParentsRecursive(parents)->asSet();
+}	
+/*
+query 	UML::BehavioralFeature::returnType():UML::Classifier=if(self.oclIsKindOf(UML::Reception)) then null else self.ownedParameter
+		->select(p|
+			(
+				(p.direction=UML::ParameterDirectionKind::_return)
+				or(p.direction=UML::ParameterDirectionKind::_inout)
+				or(p.direction=UML::ParameterDirectionKind::_out)
+			)	
+			and p.type.oclIsKindOf(UML::Classifier)
+		)
+		->first().type.oclAsType(UML::Classifier)
+		endif;
+*/
+//query UML::Property::isEffectiveComposite():Boolean=self.aggregation<>UML::AggregationKind::none;
+//query UML::Property::isXReference():Boolean=not(self.association.oclIsUndefined())and not(self.isEffectiveComposite());
+//query UML::Classifier::isEntity():Boolean=self.stereotypedBy(informationProfileEntity);// no longer used
+//query UML::MultiplicityElement::cardinality():String='['+self.lower.repr()+'...'+if(self.upper<0)then '*' else self.upper.repr() endif +']';
+//////////////////////////wsdl related queries
+/////////////////////////////////////	
+//query UML::NamedElement::getWsdlPartLocation(part:String):String=self.getTargetNamespacePath()+part+'.wsdl';
+query UML::NamedElement::getWsdlPartLocation(part:String):String='schema/SIP/'+self.name+part+'.wsdl';
+query UML::NamedElement::getWsdlLocation():String=self.getWsdlPartLocation('');
+query UML::Classifier::getRealizedInterfaces():Set(UML::Interface){
+	if(self.oclIsKindOf(UML::Interface))then{return Set{self.oclAsType(UML::Interface)};}else{}endif;
+	return self.oclAsType(UML::Class).getAllImplementedInterfaces();
+}
+query UML::BehavioredClassifier::getAllImplementedInterfaces():Set(UML::Interface){
+	return self.interfaceRealization.contract->asSet();
+}
+query UML::BehavioralFeature::getInputParameter():UML::NamedElement{log('getInputParameter illegal call');return null;}
+query UML::Reception::getInputParameter():UML::NamedElement=self.signal;
+query UML::Operation::getInputParameter():UML::NamedElement{
+	self.ownedParameter
+		->select(p|(p.direction=UML::ParameterDirectionKind::_in)or(p.direction=UML::ParameterDirectionKind::_inout))
+		->forEach(parameter){return parameter;};
+	return null;
+}
+query UML::BehavioralFeature::getOutputParameter():UML::NamedElement{log('getOutputParameter illegal call');return null;}
+query UML::Reception::getOutputParameter():UML::NamedElement=null;
+query UML::Operation::getOutputParameter():UML::NamedElement{
+	var inputParameter:UML::NamedElement=self.getInputParameter();
+	self.ownedParameter
+		->select(p|
+			(p<>inputParameter)and(
+			(p.direction=UML::ParameterDirectionKind::_out)
+			or(p.direction=UML::ParameterDirectionKind::_return)
+			or(p.direction=UML::ParameterDirectionKind::_inout)
+			))
+		->forEach(parameter){return parameter;};
+	return null;
+}
+query UML::NamedElement::getUmlType():UML::Classifier{
+	if(self.oclIsKindOf(UML::Parameter))then{return self.oclAsType(UML::Parameter).type.oclAsType(UML::Classifier);}else{}endif;
+	return self.oclAsType(UML::Classifier);
+}
+query UML::Classifier::allBehavioralFeatures():Sequence(UML::BehavioralFeature)=
+	self.allFeatures()->select(f|f.oclIsKindOf(UML::BehavioralFeature)).oclAsType(UML::BehavioralFeature)->asSequence();
+query UML::NamedElement::isUniqueInputName(owningInterface:UML::Interface):Boolean{
+	var myName:String=self.getName();
+	return owningInterface.allBehavioralFeatures()
+		->select(f|
+			(not(f.getInputParameter().oclIsUndefined())and(f.getInputParameter()<>self) and (f.getInputParameter().getName()=myName))
+			or(not(f.getOutputParameter().oclIsUndefined())and(f.getOutputParameter()<>self) and (f.getOutputParameter().getName()=myName))
+		)
+		->isEmpty();
+}
+query UML::NamedElement::uniqueInputNameSuffix(owningInterface:UML::Interface):String{
+	if(self.isUniqueInputName(owningInterface))then {return "";}else{}endif;
+	if(self.oclIsKindOf(UML::Parameter))then{
+		var parameter:UML::Parameter=self.oclAsType(UML::Parameter);
+		var operation:UML::Operation=parameter.operation;
+		return owningInterface.allBehavioralFeatures()->indexOf(operation).repr();
+	}else{}endif;
+	return "_UNIQUE";
+}
+//query UML::Interface::locationURI():String=self.getWsdlLocation();
+//query UML::NamedElement::locationURI():String=self.getWsdlLocation();
+query UML::NamedElement::locationURI():String=self.getTargetNamespacePath();
+
+//query UML::Interface::transportURI():String='http://schemas.xmlsoap.org/soap/http';
+query UML::Classifier::transportURI():String='http://schemas.xmlsoap.org/soap/http';
+query UML::NamedElement::style():String="document";
+query UML::BehavioralFeature::use():String="literal";
+query UML::BehavioralFeature::soapActionURI():String=self.getTargetNamespace();
+query UML::BehavioralFeature::allBehavioralFeatureTypes():Set(UML::Classifier){
+		var input:UML::NamedElement:=self.getInputParameter();
+		var output:UML::NamedElement:=self.getOutputParameter();
+		var inputs:Set(UML::Classifier):=if(input.oclIsUndefined())then Set{} else Set{input.getUmlType()} endif;
+		var outputs:Set(UML::Classifier):=if(output.oclIsUndefined())then Set{} else Set{output.getUmlType()} endif;
+		return inputs->union(outputs)->union(self.raisedException.oclAsType(UML::Classifier))->asSet();
+}
+// indirection through messageType
+//query UML::BehavioralFeature::allBehavioralFeaturePackages():Set(UML::Package)=self.allBehavioralFeatureTypes().attribute.type.package->asSet();
+query UML::BehavioralFeature::allBehavioralFeaturePackages():Set(UML::Package)=
+	self.allBehavioralFeatureTypes().attribute.usesTopLevelProperty().getNearestPackage()->asSet();
+query UML::Interface::allInterfaceSchemaPackages():Set(UML::Package)=self.allBehavioralFeatures().allBehavioralFeaturePackages()->asSet();
+//query UML::Classifier::allSchemaPackages():Set(UML::Package)=self.getRealizedInterfaces().allInterfaceSchemaPackages()->asSet();
+query 	UML::Property::usesTopLevelProperty():UML::Property=
+	self.clientDependency->select(d|d.oclIsKindOf(UML::Usage))
+	.supplier->select(s|s.oclIsKindOf(UML::Property))
+	.oclAsType(UML::Property)->asSequence()->first();
+///////////////////////////was GRAplatformBinding
+helper  Stdlib::Element::getSiblingClassifier(classifierName:String):Stdlib::Element {
+	return self.oclAsType(ECORE::EObject).eClass().ePackage.getEClassifier(classifierName);
+} 
+helper  Stdlib::Element::create():Stdlib::Element {
+	return self.oclAsType(ECORE::EClass).ePackage.eFactoryInstance.create(self.oclAsType(ECORE::EClass)).oclAsType(Stdlib::Element);
+} 
+
+// in context of an applied stereotype, add value to collection of specified tag
+helper  OclAny::addTagValue(appliedStereotype:Stdlib::Element,tagName:String) {
+	return self.addTagValue(appliedStereotype.oclAsType(ECORE::EObject),tagName);
+} 
+// in context of an applied stereotype, set value of specified tag
+helper  OclAny::setTagValue(appliedStereotype:Stdlib::Element,tagName:String) { 
+//	appliedStereotype.getInstance().setValue(appliedStereotype.getStereotype(),tagName,self);
+	var feature:ECORE::EStructuralFeature=appliedStereotype.structuralFeature(tagName);
+	if(feature.oclIsUndefined())then{
+		log('ERROR- failed to locate tag '+tagName+' on stereotype instance '+appliedStereotype.repr());
+		return;
+	}endif;
+	var type:ECORE::EClassifier=feature.eType;
+	if(type.oclIsKindOf(ECORE::EEnum) and not(self.oclIsKindOf(ECORE::EEnum)))then{
+		type.oclAsType(ECORE::EEnum).eLiterals->select(e|e._literal=self)->forEach(value){
+			appliedStereotype.oclAsType(ECORE::EObject).eSet(feature,value);
+			return;
+		};
+		log('ERROR- failed to locate enumeration literal  '+self.repr()+' for tag '+tagName+' on stereotype instance '+appliedStereotype.repr());
+		return;
+	}endif;
+	appliedStereotype.oclAsType(ECORE::EObject).eSet(feature,self.toUmlType());
+	return;
+} 
+// in context of an applied stereotype, get value of specified tag
+helper  Stdlib::Element::getTagValue(tagName:String):OclAny { 
+	var feature:ECORE::EStructuralFeature=self.structuralFeature(tagName);
+	if(feature.oclIsUndefined())then{
+		log('ERROR- failed to locate tag '+tagName+' on stereotype instance '+self.repr());
+		return null;
+	}endif;
+	return self.oclAsType(ECORE::EObject).eGet(feature);
+} 
+// in context of an applied stereotype, get sequence of values of specified tag
+helper  Stdlib::Element::getTagValues(tagName:String):Sequence(OclAny) { 
+	var feature:ECORE::EStructuralFeature=self.structuralFeature(tagName);
+	if(feature.oclIsUndefined())then{
+		log('ERROR- failed to locate tag '+tagName+' on stereotype instance '+self.repr());
+		return null;
+	}endif;
+	//return self.oclAsType(ECORE::EObject).eGet(feature).oclAsType(Sequence(OclAny));
+	//return Sequence{};
+	return self.oclAsType(ECORE::EObject).getTagValues(tagName);
+} 
+helper  Stdlib::Element::structuralFeature(tagName:String):ECORE::EStructuralFeature { 
+	return self.oclAsType(ECORE::EObject).eClass().eAllStructuralFeatures->select(f|f.name=tagName)->first();
+} 
+// TODO: double check
+//query Stdlib::Element::getInstance():UML::Element=self.oclAsType(ECORE::EObject).get_base();
+//query Stdlib::Element::getStereotype():UML::Stereotype=self.oclAsType(ECORE::EObject).eClass().oclAsType(UML::Stereotype);
+/*
+helper  Stdlib::Element::setTagValue(stereotype:UML::Stereotype,tagName:String,value:String) { 
+	self.oclAsType(UML::setValue(stereotype,tagName,value);
+} 
+*/ 	
+helper  Stdlib::Element::extentParentSegment():String {
+	return self.oclAsType(ECORE::EObject).extentParentSegment();
+} 
+helper  Stdlib::Element::getMetadataAtRelativeURI(uri:String):ECORE::EObject {
+	return self.oclAsType(ECORE::EObject).getMetadataAtRelativeURI(uri);
+} 
+
+helper  Stdlib::Element::getCatalogAtRelativeURI(uri:String):ECORE::EObject {
+	return self.oclAsType(ECORE::EObject).getCatalogAtRelativeURI(uri);
+} 
+helper  Stdlib::Element::getWsdlAtRelativeURI(uri:String):ECORE::EObject {
+	return self.oclAsType(ECORE::EObject).getWsdlAtRelativeURI(uri);
+} 
+
+//abstract helper WSDL::Message::setQName(name:String);
+//abstract helper WSDL::PortType::setQName(name:String);
+//abstract helper WSDL::Service::setQName(name:String);
+//abstract helper WSDL::Binding::setQName(name:String);
+//abstract helper WSDL::Definition::setQName(name:String);
+////////////////////////////////////////////was GRAglobals
+	////////////////////////////Namespaces
+	property WSDL_NAMESPACE:String='http://schemas.xmlsoap.org/wsdl/';
+	property WSU_NAMESPACE:String='http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd';
+	property SP_NAMESPACE:String='http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702';
+////////////////////////GRA profile
+property graProfileName:String='GRA'; // GRA
+property graAnnotationsProfileName:String='GRAProfile'; // GRA
+property graProfile:UML::Profile=null; // GRA_Profile
+property soamlProfileName:String='SoaML'; // SoaML
+//property soamlProfileName:String='SoaML Profile'; // SoaML
+property soamlProfile:UML::Profile=null; // SoaML_Profile
+
+property graSppStereotypeName:String='SPP';
+property graSppStereotype:UML::Stereotype=null;
+property graOrganizationStereotypeName:String='Organization';
+property graOrganizationStereotype:UML::Stereotype=null;
+property graServiceInterfaceSpecificationStereotypeName:String='ServiceInterfaceSpecification';
+property graServiceInterfaceSpecificationStereotype:UML::Stereotype=null;
+
+property graServiceIdentificationStereotypeName:String='ServiceIdentification';
+property graServiceIdentificationStereotype:UML::Stereotype=null;
+property graServiceActionStereotypeName:String='ServiceAction';
+property graServiceActionStereotype:UML::Stereotype=null;
+property graBusinessContextStereotypeName:String='BusinessContext';
+property graBusinessContextStereotype:UML::Stereotype=null;
+property graServiceLevelAgreementsStereotypeName:String='ServiceLevelAgreements';
+property graServiceLevelAgreementsStereotype:UML::Stereotype=null;
+property graServiceCapabilityStereotypeName:String='ServiceCapability';
+property graServiceCapabilityStereotype:UML::Stereotype=null;
+
+
+/////////////////////////////////SoaML profile	
+property soamlServicesArchitectureStereotypeName:String='ServicesArchitecture';
+property soamlServicesArchitectureStereotype:UML::Stereotype=null;	
+property soamlParticipantStereotypeName:String='Participant';
+property soamlParticipantStereotype:UML::Stereotype=null;	
+
+
+property soamlAgentStereotype:UML::Stereotype=null;
+property soamlAttachmentStereotype:UML::Stereotype=null;
+property soamlCapabilityStereotype:UML::Stereotype=null;
+property soamlConsumerStereotype:UML::Stereotype=null;
+property soamlCollaborationStereotype:UML::Stereotype=null;
+property soamlCollaborationUseStereotype:UML::Stereotype=null;
+property soamlExposeStereotype:UML::Stereotype=null;
+property soamlMessageTypeStereotype:UML::Stereotype=null;
+property soamlMilestoneStereotype:UML::Stereotype=null;
+//property soamlParticipantStereotype:UML::Stereotype=null;
+//property soamlPortStereotype:UML::Stereotype=null;
+//property soamlPropertyStereotype:UML::Stereotype=null;
+//property soamlProviderStereotype:UML::Stereotype=null;
+//property soamlRequestStereotype:UML::Stereotype=null;
+property soamlServiceChannelStereotype:UML::Stereotype=null;
+property soamlServiceContractStereotype:UML::Stereotype=null;
+//property soamlServicePointStereotype:UML::Stereotype=null;
+//property soamlServiceStereotype:UML::Stereotype=null;
+property soamlServiceInterfaceStereotype:UML::Stereotype=null;
+
+
+//property soamlProfileName:String='SoaML Profile';
+property soamlServicePointStereotype:UML::Stereotype=null;
+
+
+////////////////////////////////////wsdl profile
+property wsdlProfileName:String='NIEM_SoaML_WSDL_Profile';
+property wsdlProfile:UML::Profile=null;
+property wsdlSoapAddressStereotype:UML::Stereotype=null;
+property wsdlSoapBindingStereotype:UML::Stereotype=null;
+property wsdlSoapBodyStereotype:UML::Stereotype=null;
+property wsdlSoapFaultStereotype:UML::Stereotype=null;
+property wsdlSoapHeaderStereotype:UML::Stereotype=null;
+property wsdlSoapHeaderfaultStereotype:UML::Stereotype=null;
+property wsdlSoapOperationStereotype:UML::Stereotype=null;
+property wsdlWsaActionStereotype:UML::Stereotype=null;
+property wsdlWsaAnonymousStereotype:UML::Stereotype=null;
+property wsdlWsaEndpointReferenceStereotype:UML::Stereotype=null;
+property wsdlWsaUsingAddressingStereotype:UML::Stereotype=null;
+//property wsdlWsaBindingStereotype:UML::Stereotype=null;
+property wsdlWsdlDefinitionsStereotype:UML::Stereotype=null;
+property wsdlWsdlFaultStereotype:UML::Stereotype=null;
+property wsdlWsdlMessageStereotype:UML::Stereotype=null;
+property wsdlWsdlOperationStereotype:UML::Stereotype=null;
+property wsdlWsdlParameterStereotype:UML::Stereotype=null;
+//property wsdlWsdlPartStereotype:UML::Stereotype=null;
+property wsdlWsdlBindingStereotype:UML::Stereotype=null;
+//property wsdlWsdlPartElementStereotype:UML::Stereotype=null;
+property wsdlWsdlPortStereotype:UML::Stereotype=null;
+//property wsdlWsdlPortTypeStereotype:UML::Stereotype=null;
+property wsdlWsdlServiceStereotype:UML::Stereotype=null;
+property wsdlWsidIdentityStereotype:UML::Stereotype=null;
+property wsdlWspAllStereotype:UML::Stereotype=null;
+property wsdlWspExactlyOneStereotype:UML::Stereotype=null;
+property wsdlWspPolicyStereotype:UML::Stereotype=null;
+property wsdlWspPolicyReferenceStereotype:UML::Stereotype=null;
+property wsdlSpTokenAssertionStereotype:UML::Stereotype=null;
+property wsdlSpSignedPartsStereotype:UML::Stereotype=null;
+
+
+///////////////////////////// policy profile
+property policyProfileName:String='Policy Profile';
+property policyProfile:UML::Profile=null;
+property policyAuthenticationStereotype:UML::Stereotype=null;
+property policyConfidentialityStereotype:UML::Stereotype=null;
+property policyIntegrityStereotype:UML::Stereotype=null;
+property policyPolicyImplementationStereotype:UML::Stereotype=null;
+property policyPolicyIntentStereotype:UML::Stereotype=null;
+property policyPolicyProvisioningStereotype:UML::Stereotype=null;
+property policyReliabilityStereotype:UML::Stereotype=null;
+property policySecurityStereotype:UML::Stereotype=null;
+
+///////////////////////Policy Extension
+property graPolicyExtension:UML::Package=null;// root package of policy extensions
+
+	

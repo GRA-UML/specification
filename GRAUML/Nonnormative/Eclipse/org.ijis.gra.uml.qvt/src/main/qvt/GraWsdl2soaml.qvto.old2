@@ -1,0 +1,1703 @@
+//	GitHub ... GRA-UML\Specification\GRAInformation\SSP Examples\PMIX\PMIX_SSP_v_1.1.0
+// https://github.com/ModelDriven/GRA-UML-Project.git
+import NIEMmpdartifact2model;
+import GRAcommon;
+//import org.modeldriven.mda.qvto.web; // java blackbox; contains just a few helpers
+//import soaml2wsdlannotations;
+//modeltype UML "strict" uses 'http://www.eclipse.org/uml2/3.0.0/UML';
+modeltype UML uses 'http://www.eclipse.org/uml2/4.0.0/UML';
+//modeltype UML uses 'http://www.nomagic.com/magicdraw/UML/2.4.1';
+modeltype CMOF  uses 'http://www.eclipse.org/emf/2002/Ecore';
+modeltype XSD  uses 'http://www.eclipse.org/xsd/2002/XSD';
+modeltype WSDL uses 'http://www.eclipse.org/wsdl/2003/WSDL';
+//modeltype SOAP uses 'http://www.ibm.com/wsdl/2003/SOAP';
+modeltype SOAP uses 'http://www.eclipse.org/wsdl/2003/SOAP';
+modeltype CAT  uses 'http://reference.niem.gov/niem/resource/mpd/catalog/1.0/';
+
+// assume uml already is NIEM-UML; we add wsdl and wire it up with existing <<InformationModel>>s
+//transformation wsdl2soaml(in wsdl:WSDL,inout uml:UML)
+transformation GraWsdl2soaml(inout pimUml:UML)
+	extends transformation NIEMmpdartifact2model(inout UML)
+		;
+property sppRootPackage:UML::Package=null;
+property sppArchitecture:UML::Collaboration=null;
+		
+//////////////////////////////////////////////////////////////////////////////////////////wsdl leaf mapping
+/* Service as a Port on a Component (Participant)*/
+/*
+mapping WSDL::Service::ServicePoint(inout pimOwner:UML::Component):UML::Port 
+{
+	pimOwner.ownedAttribute+=result;
+//	name:=self.name;
+	name:=self.getServiceQNameLocalPart();
+	// TODO: SoaML missing stereotype
+	//var soamlParticipantInstance:Stdlib::Element=result.applyStereotype(soamlServicePointStereotype);
+	type:=self.map WsdlService(pimOwner);
+}
+
+mapping WSDL::Service::WsdlService(inout pimOwner:UML::Component):UML::Class 
+{
+	pimOwner.packagedElement+=result;
+//	name:=self.name;
+	name:=self.getServiceQNameLocalPart();
+	self.ePorts.map WsdlPort(result);
+	// TODO: Service specific 
+	// qName
+	// undefined
+	var soamlParticipantInstance:Stdlib::Element=result.applyStereotype(wsdlWsdlServiceStereotype);
+}
+*/
+// service manifestation to a service
+mapping WSDL::Service::ServicePoint(inout pimOwner:UML::Artifact):UML::Manifestation 
+{
+	pimOwner.manifestation+=result;
+//	name:=self.name;
+//	name:=self.getServiceQNameLocalPart();
+//	var soamlParticipantInstance:Stdlib::Element=result.applyStereotype(wsdlWsdlServiceStereotype);
+//	self.ePorts.map WsdlPort(result);
+	self.map Service(result);
+}
+// service as a component (Participant?)
+// if we assume one service per wsdl, then the component is both a wsdl definition, a wsdl service, and a soaml participant
+// but then we would have definition extensions, namespaces, mixed with service extension, names
+//  or we could say a definition is an artifact, manifestation is perhaps many components, each a service
+//  an artifact does not nest classifiers but perhaps those components could be siblings
+/*
+mapping WSDL::Service::ServicePoint(inout pimOwner:UML::Component):UML::Component 
+{
+	pimOwner.packagedElement+=result;
+//	name:=self.name;
+	name:=self.getServiceQNameLocalPart();
+	var soamlParticipantInstance:Stdlib::Element=result.applyStereotype(wsdlWsdlServiceStereotype);
+	self.ePorts.map WsdlPort(result);
+	// TODO: Service specific 
+	// qName
+	// undefined
+}
+*/
+mapping WSDL::WSDLElement::WSDLElement(inout context:UML::Element):UML::Element 
+{
+	init{}
+	self.documentationElement.getDocumentationElementText()->forEach(text){
+		var comment:UML::Comment=new UML::Comment();
+		comment.body:=text;
+		context.ownedComment+=comment;
+	};
+}
+mapping WSDL::ExtensibleElement::ExtensibleElement(inout context:UML::Element):UML::Element 
+	inherits WSDL::WSDLElement::WSDLElement
+{
+	init{}
+	// do extensibiityElements at specific type to apply correct stereotype
+	
+}
+mapping WSDL::Service::Service(inout manifestation:UML::Manifestation):UML::Component 
+	inherits WSDL::ExtensibleElement::ExtensibleElement
+{
+	manifestation.utilizedElement:=result;
+	manifestation.getNearestPackage().packagedElement+=result;
+//	name:=self.name;
+	name:=self.getServiceQNameLocalPart();
+	//var soamlParticipantInstance:Stdlib::Element=result.applyStereotype(wsdlWsdlServiceStereotype);
+	self.ePorts.map WsdlPort(result);
+	// TODO: Service specific 
+	// qName
+	// undefined
+		self.eExtensibilityElements->forEach(ee){
+					log('ERROR: Unsupported WSDL::Service extension '+ee.repr());
+		};		
+	
+}
+/*
+mapping WSDL::Port::WsdlPort(inout pimOwner:UML::Class):UML::InterfaceRealization
+{
+	pimOwner.interfaceRealizations+=result;
+	name:=self.name;
+//	self.eBinding.map AbstractWsdlBinding(pimOwner.owner.oclAsType(UML::Component));
+//log('WsdlPort start '+self.name);
+	type:=self.eBinding.map AbstractWsdlBinding(pimOwner);
+//	var wsdlPortInstance:Stdlib::Element=result.applyStereotype(wsdlWsdlPortStereotype);
+	var wsdlPortInstance:Stdlib::Element=result.applyStereotype(wsdlSoapAddressStereotype);
+	//wsdlPortInstance.setWsdlPortName(self.name);
+	
+//log('WsdlPort start extensibility '+self.name);
+		self.eExtensibilityElements->forEach(ee){
+			switch{
+				case(ee.oclIsKindOf(SOAP::SOAPAddress)){
+					var soapAddress:SOAP::SOAPAddress=ee.oclAsType(SOAP::SOAPAddress);
+					var soapAddressInstance:Stdlib::Element=wsdlPortInstance;
+					soapAddressInstance.setSoapAddressLocation(soapAddress.locationURI);
+					soapAddressInstance.setSoapAddressWsdlRequired(soapAddress.required);
+				};
+				case(ee.getExtensibilityElementQNameLocalPart()='EndpointReference'){
+					var endpointReferenceInstance:Stdlib::Element=result.applyStereotype(wsdlWsaEndpointReferenceStereotype);
+					// TODO
+					//endpointReferenceInstance.setEndpointReferenceAddress(endpointReference.getEndpointReferenceAddress());
+				};
+				else{
+					log('ERROR: Unsupported WSDL::Port extension '+ee.repr());
+				};
+			};
+		};		
+	
+//log('WsdlPort end '+self.name);
+}
+
+/ * back to a port
+mapping WSDL::Port::WsdlPort(inout pimOwner:UML::Class):UML::Generalization
+//inherits WSDL::Port::WsdlPort_common
+{
+	specific:=pimOwner;
+	//pimOwner.ownedAttribute+=result;
+	//name:=self.name;
+	//name:=self.getPortQNameLocalPart();
+	general:=self.eBinding.map AbstractWsdlBinding(pimOwner.owner.oclAsType(UML::Component));
+	/ * TODO: profile allocates wsdlPort to a Port
+	var wsdlPortInstance:Stdlib::Element=result.applyStereotype(wsdlWsdlPortStereotype);
+	wsdlPortInstance.setWsdlPortName(self.name);
+	* /
+		self.eExtensibilityElements
+			->select(e|e.oclIsKindOf(SOAP::SOAPAddress)).oclAsType(SOAP::SOAPAddress)
+			->forEach(soapAddress){
+				/ * TODO: this may be same stereotype as above, plus profile allocates to a Port
+				var soapAddressInstance:Stdlib::Element=result.applyStereotype(wsdlSoapAddressStereotype);
+				soapAddressInstance.setSoapAddressLocation(soapAddress.locationURI);
+				soapAddressInstance.setSoapAddressWsdlRequired(soapAddress.required);
+				* /
+				};
+		self.eExtensibilityElements
+			->select(e|e.getExtensibilityElementQNameLocalPart()='EndpointReference')
+			->forEach(endpointReference){
+				/ * TODO: this is also allocated to a Port
+				var endpointReferenceInstance:Stdlib::Element=result.applyStereotype(wsdlWsaEndpointReferenceStereotype);
+				//endpointReferenceInstance.setEndpointReferenceAddress(endpointReference.getEndpointReferenceAddress());
+				* /
+				};
+	
+}
+*/
+// WSDL Port as a Port
+mapping WSDL::Port::WsdlPort(inout pimOwner:UML::Component):UML::Port
+//inherits WSDL::Port::WsdlPort_common
+{
+	pimOwner.ownedAttribute+=result;
+	name:=self.name;
+//	self.eBinding.map AbstractWsdlBinding(pimOwner.owner.oclAsType(UML::Component));
+//log('WsdlPort start '+self.name);
+	type:=self.eBinding.map AbstractWsdlBinding(pimOwner);
+//	var wsdlPortInstance:Stdlib::Element=result.applyStereotype(wsdlWsdlPortStereotype);
+//	var wsdlPortInstance:Stdlib::Element=result.applyStereotype(wsdlSoapAddressStereotype);
+	//wsdlPortInstance.setWsdlPortName(self.name);
+	
+//log('WsdlPort start extensibility '+self.name);
+		self.eExtensibilityElements->forEach(ee){
+			switch{
+				case(ee.oclIsKindOf(SOAP::SOAPAddress)){
+					var soapAddress:SOAP::SOAPAddress=ee.oclAsType(SOAP::SOAPAddress);
+//					var soapAddressInstance:Stdlib::Element=wsdlPortInstance;
+//					soapAddressInstance.setSoapAddressLocation(soapAddress.locationURI);
+//					soapAddressInstance.setSoapAddressWsdlRequired(soapAddress.required);
+				};
+				case(ee.getExtensibilityElementQNameLocalPart()='EndpointReference'){
+					//var endpointReferenceInstance:Stdlib::Element=result.applyStereotype(wsdlWsaEndpointReferenceStereotype);
+					// TODO
+					//endpointReferenceInstance.setEndpointReferenceAddress(endpointReference.getEndpointReferenceAddress());
+					ee.map EndpointReference(result);
+					
+				};
+				else{
+					log('ERROR: Unsupported WSDL::Port extension '+ee.repr());
+				};
+			};
+		};		
+	
+//log('WsdlPort end '+self.name);
+}
+mapping 	WSDL::ExtensibilityElement::EndpointReference(inout owner:UML::NamedElement):UML::InstanceSpecification@pimUml
+	{
+		owner.getNearestPackage().map DeploymentPackage().packagedElement+=result;
+//		classifier+=self.getExtensionArtifact();
+//		self.required.map Slot(result,'required');
+		var extensionArtifact:UML::Artifact=self.element.getExtensionArtifact();
+		if(extensionArtifact.oclIsUndefined())then{
+			log('Failed to find UML Artifact for EndpointReference '+self.toString());
+		}else{
+			classifier+=extensionArtifact;
+			extensionArtifact.getAllAttributes()->forEach(feature){
+					self.element.map nestedSlot(result,feature);
+			};
+		}endif;
+		// deploy and realize
+		result.map Deployment(deploymentNodeInstance);	
+		result.map Realization(owner);	
+	}
+
+helper  Stdlib::Element::setSoapAddressLocation(location:String){
+	location.setTagValue(self,'location');
+}
+mapping 	WSDL::Binding::AbstractWsdlBinding(umlContainer:UML::Component):UML::Class 
+disjuncts 
+	//WSDL::Binding::SoapBinding, // no longer exists?
+	WSDL::Binding::WsdlBinding
+	{}
+mapping WSDL::Binding::WsdlBinding(inout pimOwner:UML::Component):UML::Class
+//inherits WSDL::Binding::WsdlBinding_common
+{
+	pimOwner.packagedElement+=result;
+	
+	//name:=self.name;
+	name:=self.getBindingQNameLocalPart();// no longer exists?
+	//log('WsdlBinding start '+result.name);
+	
+	self.ePortType.map WsdlPortTypeRealization(result,self.ePortType.map WsdlPortType(pimOwner));
+	self.eBindingOperations.map BindingOperation(result);
+	//var soamlServiceInstance:Stdlib::Element=result.applyStereotype(wsdlWsdlBindingStereotype);// stereotype does not exist
+	//log('WsdlBinding extensibility '+result.name);
+		self.eExtensibilityElements->forEach(ee){
+			switch{
+				
+				case(ee.oclIsKindOf(SOAP::SOAPBinding)){
+					var soapBinding:SOAP::SOAPBinding=ee.oclAsType(SOAP::SOAPBinding);
+					//var soapBindingInstance:Stdlib::Element=soamlServiceInstance;
+					//soapBinding.transportURI.setTagValue(soapBindingInstance,'transport');
+					//soapBinding.style.setTagValue(soapBindingInstance,'style');
+				};
+				case(ee.getExtensibilityElementQNameLocalPart()='UsingAddressing'){
+					// wsaw
+					//var wsawUsingAddressing:Stdlib::Element=result.applyStereotype(wsdlWsaUsingAddressingStereotype);
+					var wsdlRequired:String=ee.element.getAttributeNSValue(WSDL_NAMESPACE,'required');
+					if(not(wsdlRequired.oclIsUndefined()))then{
+						//wsawUsingAddressing.setWsawUsingAddressingWsdlRequired(wsdlRequired.toBoolean());
+					}endif;
+					
+				};
+				case(ee.isPolicyReference()){
+					// wsp
+//					ee.mapPolicyReference(result);
+//					ee.element.mapPolicyReference(ee,result);
+					ee.map AbstractExtensibilityElement(result);
+				};
+	
+				else{
+					log('ERROR: Unsupported WSDL::Binding extension '+ee.repr());
+				};
+			};
+	};		
+	//log('WsdlBinding end '+result.name);
+	
+}
+/*
+helper OclAny::mapPolicyReference(context:WSDL::ExtensibilityElement,inout owner:UML::NamedElement):UML::Usage{
+	var usage:UML::Usage=null;
+//	var policyReferenced:WSDL::ExtensibilityElement=self.getReferencedExtensibilityElement('','URI');
+	//    public static ExtensibilityElement getReferencedExtensibilityElementFromElement(EObject context,org.w3c.dom.Element self,String namespaceURI,String localName) {
+	var policyReferenced:WSDL::ExtensibilityElement=context.oclAsType(CMOF::EObject).getReferencedExtensibilityElementFromElement(self,'','URI');
+	
+	if(not(policyReferenced.oclIsUndefined()))then{
+		var policy:UML::NamedElement=policyReferenced.map AbstractExtensibilityElement().oclAsType(UML::NamedElement);
+		if(not(policy.oclIsUndefined()))then{
+//			usage:=self.map AbstractExtensibilityElement().oclAsType(UML::Usage);
+			usage:=context.map AbstractExtensibilityElement().oclAsType(UML::Usage);
+			owner.getNearestPackage().packagedElement+=usage;
+			usage.client+=owner;
+			usage.supplier+=policy;
+			// 
+			var policyReference:Stdlib::Element=usage.applyStereotype(wsdlWspPolicyReferenceStereotype);
+		}endif;
+	}else{
+		log('Failed to resolve reference from '+context.toString());
+	}endif;
+	return usage;
+}
+*/
+mapping 	WSDL::ExtensibilityElement::AbstractExtensibilityElement(inout owner:UML::NamedElement):UML::NamedElement@pimUml
+	disjuncts 
+		WSDL::ExtensibilityElement::Policy,
+		WSDL::ExtensibilityElement::PolicyReference
+//		WSDL::ExtensibilityElement::PolicyExpression
+	{}
+//mapping 	WSDL::ExtensibilityElement::PolicyReference(inout owner:UML::NamedElement):UML::Usage@pimUml
+mapping 	WSDL::ExtensibilityElement::PolicyReference(inout owner:UML::NamedElement):UML::InstanceSpecification@pimUml
+	inherits WSDL::ExtensibilityElement::ExtensibilityElement
+	when{self.isPolicyReference()}
+	{
+	}
+	
+property deploymentNodeInstance:UML::InstanceSpecification=null;	
+mapping inout UML::Package::DeploymentPackage():UML::Package@pimUml{
+	name:='Deployment';
+	self.packagedElement+=result;
+	// the ExecutableNode instance for deployment 
+	result.map DeploymentInstance();
+}	
+mapping inout UML::Package::DeploymentInstance():UML::InstanceSpecification@pimUml{
+	name:='SSP';
+	self.packagedElement+=result;
+	deploymentNodeInstance:=result;
+	// set classifier and realization
+	classifier+='SSP'.findExtensionArtifact(graPolicyExtension);
+	result.map DeploymentRealization();
+}	
+mapping inout UML::InstanceSpecification::DeploymentRealization():UML::Realization@pimUml{
+	supplier+=sppArchitecture;
+	client+=self;
+	self.getNearestPackage().packagedElement+=result;
+}	
+mapping 	WSDL::ExtensibilityElement::ExtensibilityElement(inout owner:UML::NamedElement):UML::InstanceSpecification@pimUml
+	{
+		owner.getNearestPackage().map DeploymentPackage().packagedElement+=result;
+//		classifier+=self.getExtensionArtifact();
+//		self.required.map Slot(result,'required');
+		var extensionArtifact:UML::Artifact=self.element.getExtensionArtifact();
+		if(extensionArtifact.oclIsUndefined())then{
+			log('Failed to find UML Artifact for extensibility element '+self.toString());
+		}else{
+			classifier+=extensionArtifact;
+			extensionArtifact.getAllAttributes()->forEach(feature){
+				if(feature.name='URI')then{
+					var urislot:UML::Slot=new UML::Slot();
+					slot+=urislot;
+					urislot.definingFeature:=feature;
+					self.element.oclAsType(OclAny).mapPolicyReference(self,urislot);
+				}else{
+					self.element.map nestedSlot(result,feature);
+				}endif;
+			};
+		}endif;
+		// deploy and realize
+		result.map Deployment(deploymentNodeInstance);	
+		result.map Realization(owner);	
+	}
+helper OclAny::mapPolicyReference(context:WSDL::ExtensibilityElement,inout owner:UML::Slot):UML::InstanceValue{
+	var usage:UML::InstanceValue=null;
+//	var policyReferenced:WSDL::ExtensibilityElement=self.getReferencedExtensibilityElement('','URI');
+	//    public static ExtensibilityElement getReferencedExtensibilityElementFromElement(EObject context,org.w3c.dom.Element self,String namespaceURI,String localName) {
+	var policyReferenced:WSDL::ExtensibilityElement=context.oclAsType(CMOF::EObject).getReferencedExtensibilityElementFromElement(self,'','URI');
+	
+	if(not(policyReferenced.oclIsUndefined()))then{
+//		var policy:UML::NamedElement=policyReferenced.map AbstractExtensibilityElement().oclAsType(UML::NamedElement);
+//		var policy:UML::NamedElement=policyReferenced.map AbstractExtensibilityElement().oclAsType(UML::NamedElement);
+//							ee.map AbstractExtensibilityElement(result);
+//		var policyContainer:UML::Artifact=policyReferenced.oclAsType(CMOF::EObject).eContainer().invresolveone(UML::Artifact);
+//		var policyContainer:UML::Artifact=policyReferenced.oclAsType(CMOF::EObject).invresolveone(UML::Artifact);
+//		var policy:UML::InstanceSpecification=policyReferenced.oclAsType(CMOF::EObject).invresolveone(UML::InstanceSpecification);
+		var policy:UML::InstanceSpecification=policyReferenced.resolveone(UML::InstanceSpecification);
+	
+//		if(policyContainer.oclIsUndefined())then{
+		if(policy.oclIsUndefined())then{
+			log('ERROR: failed to resolve Artifact reference to '+policyReferenced.repr());		
+		}else{
+//			var policy:UML::InstanceSpecification=policyReferenced.mapPolicy(policyContainer);
+			
+//			if(not(policy.oclIsUndefined()))then{
+	//			usage:=self.map AbstractExtensibilityElement().oclAsType(UML::Usage);
+	//			usage:=context.map AbstractExtensibilityElement().oclAsType(UML::Usage);
+	//			usage:=new UML::Usage();
+	//			owner.getNearestPackage().packagedElement+=usage;
+	//			usage.client+=owner;
+	//			usage.supplier+=policy;
+				// 
+	//			var policyReference:Stdlib::Element=usage.applyStereotype(wsdlWspPolicyReferenceStereotype);
+				usage:=new UML::InstanceValue();
+				owner.value+=usage;
+				usage.instance:=policy;
+	
+//			}endif;
+		}endif;
+	}else{
+		log('Failed to resolve reference from '+context.toString());
+	}endif;
+	return usage;
+}
+mapping 	UML::InstanceSpecification::Realization(owner:UML::NamedElement):UML::Realization@pimUml
+	{
+		client+=self;
+		supplier+=owner;
+		self.getNearestPackage().packagedElement+=result;
+	}
+mapping 	UML::InstanceSpecification::Deployment(deploymentNodeInstance:UML::InstanceSpecification):UML::Deployment@pimUml
+	{
+		deployedArtifact:=self;
+		location:=deploymentNodeInstance;
+	}
+mapping 	WSDL::ExtensibilityElement::Policy(inout owner:UML::NamedElement):UML::InstanceSpecification@pimUml
+	inherits WSDL::ExtensibilityElement::ExtensibilityElement
+	when{self.isPolicy() and not(self.oclAsType(CMOF::EObject).eContainer().oclIsKindOf(WSDL::UnknownExtensibilityElement))}
+	{
+		var wsuId:String=self.element.getAttributeNSValue(WSU_NAMESPACE,'Id');
+		if(not(wsuId.oclIsUndefined()))then{
+	//		wsuId.setTagValue(policy,'Id');
+			name:=wsuId;
+		}endif;
+//		self.element.getElementElements().expressionSpecification(self,result);
+		
+	}
+	/*
+mapping 	Boolean::Slot(instance:UML::InstanceSpecification,featureName:String):UML::Slot@pimUml
+	{
+		owningInstance:=instance;
+		definingFeature:=instance.classifier.getAllAttributes()
+			->select(a|featureName=a.name)->asSequence()->first();
+		self.map LiteralBoolean(result);	
+	}
+	*/
+mapping 	Boolean::LiteralBoolean(inout slot:UML::Slot):UML::LiteralBoolean@pimUml
+	{
+		value:=self;
+		slot.value+=result;
+	}
+mapping 	Integer::LiteralInteger(inout slot:UML::Slot):UML::LiteralInteger@pimUml
+	{
+		value:=self;
+		slot.value+=result;
+	}
+mapping 	String::LiteralString(inout slot:UML::Slot):UML::LiteralString@pimUml
+	{
+		value:=self;
+		slot.value+=result;
+	}
+mapping 	InstanceSpecification::InstanceValue(inout slot:UML::Slot):UML::InstanceValue@pimUml
+	{
+		instance:=self;
+		slot.value+=result;
+	}
+query 	WSDL::ExtensibilityElement::getExtensionArtifact():UML::Artifact{
+	var localName:String=self.getExtensibilityElementQNameLocalPart();
+	return localName.findExtensionArtifact(self.getExtensibilityElementQNameNamespaceURI().findExtensionPackage());
+	}
+query 	OclAny::getExtensionArtifact():UML::Artifact{
+	var localName:String=self.getElementLocalName();
+	//if((localName='Body')or(localName='Attachments'))then{localName:='EmptyType';}endif;
+	if(localName='AsymmetricBinding')then{
+		var hasInitiatorToken:Boolean=self.hasInitiatorToken();
+		var hasRecipientToken:Boolean=self.hasRecipientToken();
+			switch{
+				case(hasInitiatorToken and hasRecipientToken){
+					localName:='AsymmetricBindingInitiatorRecipient';
+				};
+				case(hasInitiatorToken and not(hasRecipientToken)){
+					localName:='AsymmetricBindingInitiatorRecipientSignature';
+				};
+				case(hasRecipientToken){
+					localName:='AsymmetricBindingInitiatorSignatureRecipient';
+				};
+				else{
+					localName:='AsymmetricBindingInitiatorSignatureRecipientSignature';
+				};
+			};
+	}endif;
+	if(localName='SymmetricBinding')then{
+		var hasProtectionToken:Boolean=self.hasProtectionToken();
+		if(hasProtectionToken)then{
+					localName:='SymmetricBindingProtection';
+			
+		}else{
+			localName:='SymmetricBindingEncryption';
+		}endif;
+	}endif;
+	return localName.findExtensionArtifact(self.getElementNamespaceURI().findExtensionPackage());
+	}
+query 	OclAny::hasProtectionToken():Boolean=
+	self.getPolicyContent()->select(e|e.getElementLocalName()='ProtectionToken')->notEmpty();
+query 	OclAny::hasInitiatorToken():Boolean=
+	self.getPolicyContent()->select(e|e.getElementLocalName()='InitiatorToken')->notEmpty();
+query 	OclAny::hasRecipientToken():Boolean=
+	self.getPolicyContent()->select(e|e.getElementLocalName()='RecipientToken')->notEmpty();
+query 	OclAny::getPolicyContent():Sequence(OclAny){
+		var policy:Sequence(OclAny)=self.getElementElements()->select(e|e.getElementLocalName()='Policy')->asSequence();
+		var exactlyOne:Sequence(OclAny)=policy.getElementElements()->select(e|e.getElementLocalName()='ExactlyOne')->asSequence();
+		var all:Sequence(OclAny)=policy.getElementElements()->select(e|e.getElementLocalName()='All')
+			->union(exactlyOne.getElementElements()->select(e|e.getElementLocalName()='All'))->asSequence();
+		return 	policy.getElementElements()
+			->union(exactlyOne.getElementElements())
+			->union(all.getElementElements())->asSequence();
+	}
+
+query 	String::findExtensionArtifact(namespacePackage:UML::Package):UML::Artifact=
+	namespacePackage.ownedType->select(t|t.oclIsKindOf(UML::Artifact) and (self=t.name)).oclAsType(UML::Artifact)
+		->asSequence()->first();
+query 	String::findExtensionPackage():UML::Package=
+	graPolicyExtension.nestedPackage->select(t|self=t.URI)
+		->asSequence()->first();
+/*
+mapping 	WSDL::ExtensibilityElement::PolicyExpression(inout owner:UML::Namespace):UML::Expression@pimUml
+	when{self.isPolicy()}
+	{
+	}
+*/
+mapping WSDL::PortType::WsdlPortTypeRealization(inout serviceInterface:UML::Class,in ifc:UML::Interface):UML::InterfaceRealization
+{
+	serviceInterface.interfaceRealization+=result;
+	contract:=ifc;
+}
+mapping WSDL::PortType::WsdlPortType(inout participant:UML::Component):UML::Interface
+{
+//	name:=self.name;
+	name:=self.getPortTypeQNameLocalPart();// no longer exists?
+	participant.packagedElement+=result;
+	// TODO: missing stereotype?
+	//var soamlServiceInstance:Stdlib::Element=result.applyStereotype(wsdlWsdlPortTypeStereotype);
+	self.eOperations.map Operation(result);
+}
+
+
+mapping WSDL::Operation::Operation(inout serviceInterface:UML::Interface):UML::Operation
+{
+
+	name:=self.name;
+	serviceInterface.ownedOperation+=result;
+	//var soamlServiceInterfaceInstance:Stdlib::Element=result.applyStereotype(wsdlWsdlOperationStereotype);
+	if(not(self.eInput.oclIsUndefined()))then{
+		self.eInput.map ParameterInput(result);
+	}endif;
+	if(not(self.eOutput.oclIsUndefined()))then{
+		self.eOutput.map ParameterOutput(result);
+	}endif;
+	self.eFaults->forEach(wsdlFault){
+		wsdlFault.map ParameterFault(result);
+			
+		};
+//	binding.eBindingOperations->select(bo|bo.name=self.name).map BindingOperation(self,serviceInterfaceComponent);
+	// TODO: Operation specific stuff
+	// TODO: Input specific stuff
+	// TODO: Output specific stuff
+	// TODO: Fault specific stuff
+	// TODO: Message specific stuff
+}
+mapping WSDL::BindingOperation::BindingOperation(inout serviceInterface:UML::Class):UML::Operation
+{
+	
+	name:=self.name;
+	//log('BindingOperation start '+result.name);
+	serviceInterface.ownedOperation+=result;
+	if(not(self.eBindingInput.oclIsUndefined()))then{
+//		portTypeOperation.eInput.map ParameterInput(result);
+		self.eBindingInput.map ParameterBindingInput(result);
+	}endif;
+	if(not(self.eBindingOutput.oclIsUndefined()))then{
+//		portTypeOperation.eOutput.map ParameterOutput(result);
+		self.eBindingOutput.map ParameterBindingOutput(result);
+	}endif;
+//	portTypeOperation.eFaults->forEach(wsdlFault){
+	self.eBindingFaults->forEach(wsdlFault){
+		wsdlFault.map ParameterBindingFault(result);
+			
+		};
+		/*
+	var portTypeOperation:WSDL::Operation=self.eOperation;
+	if(not(portTypeOperation.eInput.oclIsUndefined()))then{
+//		portTypeOperation.eInput.map ParameterInput(result);
+		portTypeOperation.eInput.map ParameterInput(result);
+	}endif;
+	if(not(portTypeOperation.eOutput.oclIsUndefined()))then{
+//		portTypeOperation.eOutput.map ParameterOutput(result);
+		portTypeOperation.eBindingOutput.map ParameterBindingOutput(result);
+	}endif;
+//	portTypeOperation.eFaults->forEach(wsdlFault){
+	portTypeOperation.eBindingFaults->forEach(wsdlFault){
+		wsdlFault.map ParameterBindingFault(result);
+			
+		};
+		*/
+	//var wsdlSoapOperation:Stdlib::Element=result.applyStereotype(wsdlSoapOperationStereotype);// stereotype does not exist
+	//log('BindingOperation extensibility '+result.name);
+		self.eExtensibilityElements->forEach(ee){
+			switch{
+				case(ee.oclIsKindOf(SOAP::SOAPOperation)){
+					var soapOperation:SOAP::SOAPOperation=ee.oclAsType(SOAP::SOAPOperation);
+					//soapOperation.soapActionURI.setTagValue(wsdlSoapOperation,'soapAction');
+					//soapOperation.style.setTagValue(wsdlSoapOperation,'style');
+					//soapOperation.soapActionRequired.setTagValue(soapOperation,'soapActionRequired');
+					//soapOperation.required.setTagValue(wsdlSoapOperation,'wsdlRequired');
+				};
+				else{
+					log('ERROR: Unsupported WSDL::BindingOperation extension '+ee.repr());
+				};
+			};
+	};		
+		
+	// TODO: Operation specific stuff
+	// TODO: Input specific stuff
+	// TODO: Output specific stuff
+	// TODO: Fault specific stuff
+	// TODO: Message specific stuff
+	//log('BindingOperation done '+result.name);
+}
+mapping WSDL::Fault::ParameterFault(inout operation:UML::Operation):UML::Parameter
+{
+	operation.ownedParameter+=result;
+	direction:=ParameterDirectionKind::_out;
+	var message:WSDL::Message=self.eMessage;
+	name:=self.name;
+	type:=message.map Message(operation.owner.owner.oclAsType(UML::Component));
+	// stereotype extension mismatch
+	//var soamlServiceInterfaceInstance:Stdlib::Element=result.applyStereotype(wsdlWsdlFaultStereotype);
+}
+mapping WSDL::Input::ParameterInput(inout operation:UML::Operation):UML::Parameter
+{
+	operation.ownedParameter+=result;
+	direction:=ParameterDirectionKind::_in;
+	var message:WSDL::Message=self.eMessage;
+	name:=self.name;
+	type:=message.map Message(operation.owner.owner.oclAsType(UML::Component));
+	// TODO: stereotype extension mismatch
+	//var wsdlParameter:Stdlib::Element=result.applyStereotype(wsdlSoapOperationStereotype);// stereotype does not exist
+		self.eExtensibilityElements.parameterExtension(result);
+}
+helper WSDL::ExtensibilityElement::parameterExtension(inout parameter:UML::Parameter){
+	var ee:WSDL::ExtensibilityElement=self;
+			switch{
+				case(ee.oclIsKindOf(SOAP::SOAPBody)){
+					var soapBody:SOAP::SOAPBody=ee.oclAsType(SOAP::SOAPBody);
+					//var soapBodyInstance:Stdlib::Element=parameter.applyStereotype(wsdlSoapBodyStereotype);
+					//soapBody.namespaceURI.setTagValue(soapBodyInstance,'namespace');
+					//soapBody.use.setTagValue(soapBodyInstance,'use');
+					//soapBody.eEncodingStyles.addTagValue(soapBodyInstance,'encodingStyle');
+					// parts: produce a Usage for each part
+					//soapBody.parts.setTagValue(soapBody,'parts');
+					
+				};
+				case(ee.oclIsKindOf(SOAP::SOAPHeader)){
+					// Usage from parameter to property within message type
+					var soapHeader:SOAP::SOAPHeader=ee.oclAsType(SOAP::SOAPHeader);
+					var part:WSDL::Part=soapHeader.ePart;
+					var message:WSDL::Message=soapHeader.eMessage;
+					// map the message/part, if it was not already done
+					message.map Message(parameter.owner.owner.owner.oclAsType(UML::Component));
+					//var Message:WSDL::Message=soapHeader.message;
+					var umlPart:UML::Property=part.resolveone(UML::Property);
+					log('wsdl::Part '+part.repr());
+					log('uml::Part '+umlPart.repr());
+					var umlSoapHeader:UML::Usage=new UML::Usage();
+					umlSoapHeader.client+=parameter;
+					umlSoapHeader.supplier+=umlPart;
+					parameter.getNearestPackage().packagedElement+=umlSoapHeader;
+					//var soapHeaderInstance:Stdlib::Element=umlSoapHeader.applyStereotype(wsdlSoapHeaderStereotype);
+					//soapHeader.namespaceURI.setTagValue(soapHeaderInstance,'namespace');
+					//soapHeader.use.setTagValue(soapHeaderInstance,'use');
+					//soapHeader.eEncodingStyles.addTagValue(soapHeaderInstance,'encodingStyle');
+					// parts: produce a Usage for each part
+					//soapBody.parts.setTagValue(soapBody,'parts');
+					
+				};
+	
+				case(ee.isPolicyReference()){
+					// wsp
+//					ee.mapPolicyReference(parameter);
+//					ee.element.mapPolicyReference(ee,parameter);
+					ee.map AbstractExtensibilityElement(parameter);
+					
+				};
+	
+				else{
+					log('ERROR: Unsupported WSDL::Parameter extension '+ee.repr());
+				};
+			};
+}
+mapping WSDL::Output::ParameterOutput(inout operation:UML::Operation):UML::Parameter
+{
+	operation.ownedParameter+=result;
+	direction:=ParameterDirectionKind::_out;
+	name:=self.name;
+	var message:WSDL::Message=self.eMessage;
+	type:=message.map Message(operation.owner.owner.oclAsType(UML::Component));
+	// TODO: stereotype extension mismatch
+	//var soamlServiceInterfaceInstance:Stdlib::Element=result.applyStereotype(wsdlWsdlParameterStereotype);
+		self.eExtensibilityElements.parameterExtension(result);
+}
+mapping WSDL::BindingFault::ParameterBindingFault(inout operation:UML::Operation):UML::Parameter
+{
+	operation.ownedParameter+=result;
+	direction:=ParameterDirectionKind::_out;
+	var message:WSDL::Message=self.eFault.eMessage;
+	name:=self.name;
+	type:=message.map Message(operation.owner.owner.oclAsType(UML::Component));
+	// stereotype extension mismatch
+	//var soamlServiceInterfaceInstance:Stdlib::Element=result.applyStereotype(wsdlWsdlFaultStereotype);
+}
+mapping WSDL::BindingInput::ParameterBindingInput(inout operation:UML::Operation):UML::Parameter
+{
+	operation.ownedParameter+=result;
+	direction:=ParameterDirectionKind::_in;
+	var message:WSDL::Message=self.eInput.eMessage;
+	name:=self.name;
+	type:=message.map Message(operation.owner.owner.oclAsType(UML::Component));
+	// TODO: stereotype extension mismatch
+	//var wsdlParameter:Stdlib::Element=result.applyStereotype(wsdlSoapOperationStereotype);// stereotype does not exist
+		self.eExtensibilityElements.parameterExtension(result);
+}
+mapping WSDL::BindingOutput::ParameterBindingOutput(inout operation:UML::Operation):UML::Parameter
+{
+	operation.ownedParameter+=result;
+	direction:=ParameterDirectionKind::_out;
+	name:=self.name;
+	var message:WSDL::Message=self.eOutput.eMessage;
+	type:=message.map Message(operation.owner.owner.oclAsType(UML::Component));
+	// TODO: stereotype extension mismatch
+	//var soamlServiceInterfaceInstance:Stdlib::Element=result.applyStereotype(wsdlWsdlParameterStereotype);
+		self.eExtensibilityElements.parameterExtension(result);
+}
+
+mapping WSDL::Message::Message(inout owner:UML::Component):UML::Class
+{
+//	name:=self.name;
+	name:=self.getMessageQNameLocalPart();
+	owner.packagedElement+=result;
+	self.eParts.map Part(result);
+	//var soamlServiceInterfaceInstance:Stdlib::Element=result.applyStereotype(wsdlWsdlMessageStereotype);
+}
+mapping WSDL::Part::Part(inout owner:UML::Class):UML::Property
+{
+	name:=self.name;
+	owner.ownedAttribute+=result;
+	var umlType:UML::NamedElement=null;
+	if(self.typeDefinition.oclIsUndefined())then{
+		var partElementDeclaration:XSD::XSDElementDeclaration=self.elementDeclaration;
+		if(partElementDeclaration.oclIsUndefined())then{
+			log('failed to resolve element declaration for message part '+self.name);
+		}else{
+			var partElementDeclarationResolved:UML::StructuralFeature=partElementDeclaration.resolveSchemaContentReference().oclAsType(UML::StructuralFeature);
+			if(partElementDeclarationResolved.oclIsUndefined())then{
+				log('failed to resolve element declaration for message part element '+partElementDeclaration.name);
+			}else{
+				umlType:=partElementDeclarationResolved.type;
+				//var partTypeDefinition:XSD::XSDTypeDefinition=partElementDeclarationResolved.type;
+				//if(partTypeDefinition.oclIsUndefined())then{
+				//	log('failed to resolve declaration type for message part element '+partElementDeclaration.name);
+				//}else{
+				//	umlType:=partTypeDefinition.resolveSchemaContentReference();
+					if(umlType.oclIsUndefined())then{
+						log('failed to resolve schema content reference for message part element type '+partElementDeclarationResolved.name);
+					}endif;
+				//}endif;
+				// make a usage from the part property to the partElementDeclarationResolved
+				var usage:UML::Usage=new UML::Usage();
+				result.getNearestPackage().packagedElement+=usage;
+				usage.client+=result;
+				usage.supplier+=partElementDeclarationResolved;
+			}endif;
+		}endif;
+	}else{
+		umlType:=self.typeDefinition.resolveSchemaContentReference();
+	}endif;
+	if(not(umlType.oclIsUndefined()))then{
+		type:=umlType.oclAsType(UML::Classifier);
+	}endif;
+	// TODO: stereotype defined?
+	//var soamlServiceInterfaceInstance:Stdlib::Element=result.applyStereotype(wsdlWsdlPartStereotype);
+}
+// change to Definition as an Artifact
+//mapping 	WSDL::Definition::Definition(inout ownerPackage:UML::Package):UML::Component@pimUml
+mapping 	WSDL::Definition::Definition(inout ownerPackage:UML::Package):UML::Artifact@pimUml
+	
+{
+			ownerPackage.packagedElement+=result;
+	//var umlPackagePath:String=self.relativePathName.toRelativeMdpLocation();
+	//result.name:=umlPackagePath.toBaseName();
+	// if this is wsdl, then expand wsdl plus schemas, add mpdFileTypes for directly referenced schemas
+	// wsdl definition becomes participant in this package
+//		var wsdlDefinition:WSDL::Definition=self.oclAsType(CMOF::EObject).getWsdlAtRelativeURI(self.relativePathName).oclAsType(WSDL::Definition);
+		var wsdlDefinition:WSDL::Definition=self;
+//		if(not(wsdlDefinition.oclIsUndefined()))then{
+			// and map it as wsdl
+//			wsdlDefinition.map WsdlDefinitions(result);// should result in schemas as required
+			
+//	pimOwner.packagedElement+=result;
+	name:=wsdlDefinition.oclAsType(CMOF::EObject).contextURI();
+	fileName:=wsdlDefinition.targetNamespace;
+	//var soamlParticipantInstance:Stdlib::Element=result.applyStereotype(wsdlWsdlDefinitionsStereotype);
+	// make sure imports are resolved first so that we can handle possible id references
+	wsdlDefinition.eImports->forEach(wsdlImport){
+//		var importedWsdl:WSDL::Definition=wsdlImport.oclAsType(Stdlib::Element).getWsdlAtRelativeURI(self.locationURI).oclAsType(WSDL::Definition);
+		var importedWsdl:WSDL::Definition=wsdlImport.eDefinition;
+		var importedOwnerPackage:UML::Package=importedWsdl.oclAsType(CMOF::EObject).relativeFilePath().getOwnerPackage(sppRootPackage);
+		var elementImport:UML::ElementImport=new UML::ElementImport();
+		elementImport.importingNamespace:=result;
+		elementImport.importedElement:=importedWsdl.map Definition(importedOwnerPackage);
+	};		
+			
+			// TODO: hook up schemas to mpd component
+			if(not(wsdlDefinition.eTypes.oclIsUndefined()))then{
+				wsdlDefinition.eTypes.getSchemas().oclAsType(XSD::XSDSchema)->forEach(schema){
+					// this will be schema embedded in wsdl; need to go one more level
+					schema.contents->select(content|content.oclIsKindOf(XSD::XSDImport)).oclAsType(XSD::XSDImport)->forEach(xsdImport){
+						if(xsdImport.resolvedSchema.oclIsUndefined())then{
+							var wsdlschema:XSD::XSDSchema=self.oclAsType(CMOF::EObject).getWsdlSchemaAtRelativeURI(xsdImport.schemaLocation).oclAsType(XSD::XSDSchema);
+							if(wsdlschema.oclIsUndefined())then{
+								log('wsdl schema resolved '+wsdlschema.targetNamespace);
+								xsdImport.resolvedSchema:=wsdlschema;
+							}else{
+								log('wsdl schema not found at '+xsdImport.schemaLocation);
+							}endif;
+						}endif;
+					
+						// force resolution of imported schema, if necessary;  
+						//if(xsdImport.resolvedSchema.oclIsUndefined())then{xsdImport.importSchema();}endif;
+					
+						//xsdImport.importSchema();
+						assert error (not(xsdImport.resolvedSchema.oclIsUndefined())) with log('failed to resolve schema at '+xsdImport.schemaLocation+' from schema '+xsdImport.schema.targetNamespace+' at '+xsdImport.schema.schemaLocation);
+					
+						var importedSchema:XSD::XSDSchema=xsdImport.resolvedSchema;
+						//var importedSchema:XSD::XSDSchema=xsdImport.getResolvedSchema();
+						//var fileTypePackage:UML::Package=importedSchema.XSDSchema();
+						var fileTypePackage:UML::Package=importedSchema.mapAbstractXSDSchema();
+						
+					};
+				};
+			}endif;
+//		}endif;
+	// TODO: Definition specific 
+	//encoding
+	//location
+	//qName?
+	//import?
+	// resolve extensibilityElements so they can be subsequently referenced 
+		self.eExtensibilityElements->forEach(ee){
+			switch{
+				case(ee.isPolicy()){
+					// wsp
+					// should be applied to a Constraint
+					ee.mapPolicy(result);
+				};
+				else{
+					log('ERROR: Unsupported WSDL::Definition extension '+ee.repr());
+				};
+			};
+	};		
+	// transitive closure of references from services should encompass entire wsdl
+	wsdlDefinition.eServices.map ServicePoint(result);
+	
+}
+helper WSDL::ExtensibilityElement::mapPolicy(inout owner:UML::Namespace):UML::InstanceSpecification{
+	var policyInstance:UML::InstanceSpecification=self.map AbstractExtensibilityElement(owner).oclAsType(UML::InstanceSpecification);
+//	owner.getNearestPackage().packagedElement+=policyInstance;
+//	var policy:Stdlib::Element=policyInstance.applyStereotype(wsdlWspPolicyStereotype);
+	// wsu:Id="addressing-policy"
+//	policyInstance.name:='Policy';
+	//var wsuId:String=self.element.getAttributeNSValue(WSU_NAMESPACE,'Id');
+	//if(not(wsuId.oclIsUndefined()))then{
+//		wsuId.setTagValue(policy,'Id');
+	//	policyInstance.name:=wsuId;
+	//}endif;
+	//  expand contained elements into a specification
+//	self.element.getElementElements().expressionSpecification(self,policyInstance);
+	return policyInstance;
+}
+/*
+helper OclAny::expressionSpecification(context:WSDL::ExtensibilityElement,inout owner:UML::InstanceSpecification):UML::Element{
+//helper WSDL::ExtensibilityElement::mapPolicyReference(inout owner:UML::NamedElement):UML::Usage{
+	if(self.isWspPolicyReference())then{
+		return self.mapPolicyReference(context,owner);
+	}endif;
+	switch{
+		case(self.isWspExactlyOne()){
+//			var expression:UML::Expression=new UML::Expression@pimUml();
+//			owner.specification:=expression;
+//			self.wspExactlyOne(expression);			
+			return self.map wspExactlyOneSlot(owner);			
+//			return expression;
+		};
+		//case(self.isWspPolicyReference()){
+		//	self.wspPolicyReference(expression);			
+		//};
+		else{
+			log('ERROR: unsupported wsp::Policy choice '+self.repr());
+		};
+	};
+	return null;
+}
+
+mapping OclAny::wspExactlyOneSlot(inout instance:UML::InstanceSpecification):UML::Slot@pimUml{
+	// get the feature, add wspAll InstanceSpecification and  InstanceValue
+		owningInstance:=instance;
+		definingFeature:=instance.classifier.getAllAttributes()
+			->select(a|'ExactlyOne'=a.name)->asSequence()->first();
+	self.getElementElements().map wspExactlyOneValue(result);
+	
+	//owner.symbol:='ExactlyOne';
+	//var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlWspExactlyOneStereotype);
+	//self.getElementElements().expressionOperand(owner);
+	//return owner;
+}
+
+mapping OclAny::wspExactlyOneValue(inout slot:UML::Slot):UML::InstanceValue@pimUml{
+	slot.value+=result;
+	result.map wspAll(self);
+}
+*/
+mapping inout UML::InstanceValue::nestedInstanceSpecification(element:OclAny):UML::InstanceSpecification@pimUml{
+	self.instance:=result;
+	self.getNearestPackage().packagedElement+=result;
+	var extensionArtifact:UML::Artifact=element.getExtensionArtifact();
+	if(extensionArtifact.oclIsUndefined())then{
+		log('Failed to obtain UML artifact for '+element.toString());
+	}else{
+	classifier+=extensionArtifact;
+	/*
+	extensionArtifact.getAllAttributes()->forEach(feature){
+		element.map nestedSlot(result,feature);
+	};
+	*/
+	extensionArtifact.getAllAttributes()->select(f|f.name<>'Policy')->forEach(feature){
+		element.map nestedSlot(result,feature);
+	};
+	extensionArtifact.getAllAttributes()->select(f|f.name='Policy')->forEach(feature){
+		element.map nestedSlot(result,feature);
+	};
+	
+	}endif;
+}
+mapping inout UML::Slot::nestedInstanceValue(element:OclAny):UML::InstanceValue@pimUml{
+	self.value+=result;
+	result.map nestedInstanceSpecification(element);
+}
+	
+mapping OclAny::nestedSlot(inout instance:UML::InstanceSpecification,inout feature:UML::Property):UML::Slot@pimUml{
+		owningInstance:=instance;
+		definingFeature:=feature;
+		var policyElement:OclAny=self.getElementElements()->select(e|e.getElementLocalName()='Policy')->asSequence()->first();
+		var allElements:Sequence(OclAny)=self.getElementElements()->select(e|e.getElementLocalName()='All')->asSequence();	
+		
+	self.getElementElements().mapInstance(result,policyElement,allElements);
+	self.getAttributes().mapAttrInstance(result);
+	
+}
+helper OclAny::mapAttrInstance(slot:UML::Slot):UML::ValueSpecification{
+	
+	var definingFeature:UML::StructuralFeature=slot.definingFeature;
+	var definingFeatureType:UML::Type=definingFeature.type;
+	var definingFeatureName:String=definingFeature.name;
+	var definingFeatureTypeName:String=definingFeatureType.name;
+	var attr:OclAny=self;	
+		var attrLocalName:String=attr.getAttrLocalName().toString();
+			var attrTextValue:String=self.getAttrValue();
+	// check enumerations
+	if(definingFeatureType.oclIsKindOf(UML::Enumeration))then{
+		definingFeatureType.oclAsType(UML::Enumeration).ownedLiteral->forEach(enumerationLiteral){
+			if((enumerationLiteral.name=attrLocalName)or(enumerationLiteral.name=attrTextValue))then{
+				return enumerationLiteral.map InstanceValue(slot);
+			}endif;
+		};
+	}endif;
+	if((definingFeatureName='URI')and(definingFeatureTypeName='Policy'))then{
+		return 	null;// handled by PolicyReference
+	}endif;
+	
+//			log('check attr '+attrLocalName+' vs '+definingFeatureName);
+		if(attrLocalName=definingFeatureName)then{
+//			log('found attr '+attrLocalName);
+//			log('found attr value '+attrTextValue);
+			// convert primitive to a target ValueSpecification
+			if(definingFeatureType.isBoolean())then{
+				return attrTextValue.toBoolean().map LiteralBoolean(slot);
+			}else{ 
+				if(definingFeatureType.isInteger())then{
+					return attrTextValue.toInteger().map LiteralInteger(slot);
+				}else{
+					// default back to string	
+					return attrTextValue.toString().map LiteralString(slot);
+				}endif 
+			}endif
+		}endif;	
+	return null;
+}
+
+property hasBeenMappedSet:Set(OclAny)=Set{};
+query OclAny::hasBeenMapped():Boolean=hasBeenMappedSet->includes(self);
+helper OclAny::setHasBeenMapped(){
+	hasBeenMappedSet+=self;
+	return;
+}
+// in context of DOM element optionally create ValueSpecification if slot matches element
+// in many cases, this could be nested or an enumerated value
+helper OclAny::mapInstance(slot:UML::Slot,policyElement:OclAny,allElement:Sequence(OclAny)):UML::ValueSpecification{
+	if(self.hasBeenMapped())then{return null;}endif;
+	var elementLocalName:String=self.getElementLocalName();
+	var definingFeature:UML::StructuralFeature=slot.definingFeature;
+	var definingFeatureType:UML::Type=definingFeature.type;
+	var definingFeatureName:String=definingFeature.name;
+	var definingFeatureTypeName:String=definingFeatureType.name;
+	var textValue:String=self.getDocumentationElementText();
+	
+	// check enumerations
+	if(definingFeatureType.oclIsKindOf(UML::Enumeration))then{
+		definingFeatureType.oclAsType(UML::Enumeration).ownedLiteral->forEach(enumerationLiteral){
+			if(enumerationLiteral.name=elementLocalName)then{
+				return enumerationLiteral.map InstanceValue(slot);
+			}endif;
+		};
+	}endif;
+	
+	var isMatch:Boolean=(elementLocalName=definingFeatureName);
+	
+	if(not(isMatch))then{
+		isMatch:=(elementLocalName=definingFeatureTypeName);
+		if(not(isMatch)and definingFeatureType.oclIsKindOf(UML::Classifier) and not(definingFeatureType.isBoolean()))then{
+			// check all subtypes of definingFeatureType
+			var extensionArtifact:UML::Artifact=self.getExtensionArtifact();
+			if(extensionArtifact.oclIsUndefined())then{
+				if(elementLocalName<>'ExactlyOne')then{
+				//log('Failed to resolve UML Artifact for '+self.toString());
+				}endif;
+			}else{
+				// if the feature is Assertion, then do not include Undefined Policy Subject 
+				// since they should be covered by the flattened model
+				// well, that won't work either because X509Token may not be in flattened model
+				// note that there are some features which could be top-level or nested Assertions, which may cause duplicates
+				// so how to avoid duplicates?
+				// maintain table on what elements have been already processed 
+				isMatch:=extensionArtifact.allParents()->includes(definingFeatureType.oclAsType(UML::Classifier));
+			}endif;
+		}endif;
+	}endif;
+//if(true)then{return null;}endif;	
+	if(isMatch)then{
+		// convert primitive to a target ValueSpecification
+		self.setHasBeenMapped();
+		
+		if(definingFeatureType.isBoolean())then{
+			// this could also be an existence check
+			if(textValue.oclIsUndefined() or (textValue='') or not((textValue.toUpper()='FALSE')or(textValue.toUpper()='TRUE')))then{
+				return true.map LiteralBoolean(slot);
+			}else{
+				return textValue.toBoolean().map LiteralBoolean(slot);
+			}endif;
+		}else{ 
+			if(definingFeatureType.isInteger())then{
+				return textValue.toInteger().map LiteralInteger(slot);
+			}else{
+				if(definingFeatureType.isString())then{
+					return textValue.toString().map LiteralString(slot);
+				}else{
+					// special cases for folding 	
+					// Policy, ExactlyOne, All and their degenerate forms 
+					// plus propagation of mapInstance through those elements; perhaps need to do this at caller level
+					// need to instantiate an InstanceSpecification
+					if(definingFeatureName='ExactlyOne')then{
+						var lastInstanceValue:UML::InstanceValue=null;
+						self.getElementElements()->forEach(element){
+							lastInstanceValue:=slot.map nestedInstanceValue(element);
+						};
+						return lastInstanceValue;
+					}else{
+						return slot.map nestedInstanceValue(self);
+					}endif;
+				}endif; 
+			}endif; 
+		}endif;	
+	}endif;	
+	if(definingFeatureName='ExactlyOne')then{
+		// this is an abbreviated Policy with no ExactlyOne; 
+		// if there is an All, use it otherwise artificially create one
+		if(elementLocalName='All')then{
+			return slot.map nestedInstanceValue(self);
+		}else{
+			if(slot.value->isEmpty())then{
+				return slot.map nestedAllInstanceValue(self);
+			}else{
+				var allInstance:UML::InstanceSpecification=slot.value
+					->select(v|v.oclIsKindOf(UML::InstanceValue)).oclAsType(UML::InstanceValue).instance
+					->asSequence()->first();
+				allInstance.slot->forEach(allslot){
+					var policyElementNull:OclAny=null;
+					var allElements:Sequence(OclAny)=Sequence{};	
+					
+					self.mapInstance(allslot,policyElementNull,allElements);
+					self.getAttributes().mapAttrInstance(allslot);
+					
+				};
+			}endif;
+			
+		}endif;
+		/*
+		if(allElement->isEmpty())then{
+			return slot.map nestedAllInstanceValue(self);
+		}else{
+			var lastInstanceValue:UML::InstanceValue=null;
+			allElement->forEach(element){
+				lastInstanceValue:=slot.map nestedInstanceValue(element);
+			};
+			return lastInstanceValue;
+			
+		}endif;
+		*/
+	}endif;
+	
+	// check nested elements if appropriate
+	if(not(policyElement.oclIsUndefined()))then{
+		var policyElements:Sequence(OclAny)=policyElement.getElementElements()->asSequence();
+		policyElements+=policyElements->select(p|p.getElementLocalName()='ExactlyOne').getElementElements();
+		policyElements+=policyElements->select(p|p.getElementLocalName()='All').getElementElements();
+//		var policyElementCheck:OclAny=policyElements->select(p|p.getElementLocalName()='Policy')->asSequence()->first();
+		var policyElementCheck:OclAny=null;
+		var allElements:Sequence(OclAny)=policyElements->select(e|e.getElementLocalName()='All')->asSequence();	
+		policyElements
+			->select(p|(p.getElementLocalName()<>'Policy')and(p.getElementLocalName()<>'ExactlyOne')and(p.getElementLocalName()<>'All'))
+			.mapInstance(slot,policyElementCheck,allElements);
+		/*
+		var policyElementCheck:OclAny=self.getElementElements()
+			->select(e|(e.getElementLocalName()='ExactlyOne')or (e.getElementLocalName()='All'))->asSequence()->first();
+		var allElements:Sequence(OclAny)=self.getElementElements()->select(e|e.getElementLocalName()='All')->asSequence();	
+		self.getElementElements().mapInstance(slot,policyElementCheck,allElements);
+		*/
+	}endif;
+	return null;
+}
+mapping inout UML::InstanceValue::nestedAllInstanceSpecification(element:OclAny):UML::InstanceSpecification@pimUml{
+	self.instance:=result;
+	self.getNearestPackage().packagedElement+=result;
+	var extensionArtifact:UML::Artifact='All'.findExtensionArtifact('http://schemas.xmlsoap.org/ws/2004/09/policy'.findExtensionPackage());
+	if(extensionArtifact.oclIsUndefined())then{
+		log('Failed to obtain UML artifact for '+element.toString());
+	}else{
+	classifier+=extensionArtifact;
+	extensionArtifact.getAllAttributes()->select(f|f.name<>'Policy')->forEach(feature){
+		element.map nestedAllSlot(result,feature);
+	};
+	extensionArtifact.getAllAttributes()->select(f|f.name='Policy')->forEach(feature){
+		element.map nestedAllSlot(result,feature);
+	};
+	}endif;
+}
+mapping OclAny::nestedAllSlot(inout instance:UML::InstanceSpecification,inout feature:UML::Property):UML::Slot@pimUml{
+		owningInstance:=instance;
+		definingFeature:=feature;
+		var policyElement:OclAny=self->select(e|e.getElementLocalName()='Policy')->asSequence()->first();
+		var allElements:Sequence(OclAny)=self->select(e|e.getElementLocalName()='All')->asSequence();	
+		
+	self.mapInstance(result,policyElement,allElements);
+	self.getAttributes().mapAttrInstance(result);
+	
+}
+
+mapping inout UML::Slot::nestedAllInstanceValue(element:OclAny):UML::InstanceValue@pimUml{
+	self.value+=result;
+	result.map nestedAllInstanceSpecification(element);
+}
+
+query UML::Type::isBoolean():Boolean=self.name='Boolean';
+query UML::Type::isInteger():Boolean=self.name='Integer';
+query UML::Type::isString():Boolean=self.name='String';
+/*	
+mapping inout UML::InstanceValue::wspAll(element:OclAny):UML::InstanceSpecification@pimUml
+	inherits UML::InstanceValue::nestedInstanceSpecification	
+{
+	element.map assertionSlot(result);
+}
+mapping OclAny::assertionSlot(inout allInstance:UML::InstanceSpecification):UML::Slot@pimUml{
+		owningInstance:=allInstance;
+		definingFeature:=allInstance.classifier.getAllAttributes()
+			->select(a|'assertion'=a.name)->asSequence()->first();
+	self.getElementElements().map assertionInstance(result);
+}
+mapping OclAny::assertionInstance(inout allSlot:UML::Slot):UML::InstanceValue@pimUml{
+	allSlot.value+=result;
+	result.map AbstractAssertion(self);
+}
+mapping inout UML::InstanceValue::AbstractAssertion(element:OclAny):UML::InstanceSpecification
+disjuncts 
+	UML::InstanceValue::Anonymous,
+	UML::InstanceValue::HttpsToken,
+		UML::InstanceValue::IssuedToken,
+		UML::InstanceValue::KeyValueToken,
+		UML::InstanceValue::NestedPolicyType,
+		UML::InstanceValue::PolicyReference,
+		UML::InstanceValue::PolicyReference,
+		UML::InstanceValue::QNameAssertionType,
+		UML::InstanceValue::RMAssertion,
+		UML::InstanceValue::RelToken,
+		UML::InstanceValue::SePartsType,
+		UML::InstanceValue::SerElementsType,
+		UML::InstanceValue::SslContextToken,
+		UML::InstanceValue::TokenAssertion,
+		UML::InstanceValue::UsingAddressing
+	
+{
+	
+}
+mapping inout UML::InstanceValue::Assertion(element:OclAny):UML::InstanceSpecification@pimUml
+	inherits UML::InstanceValue::nestedInstanceSpecification	
+{
+	element.map policySlot(result);
+	element.map optionalSlot(result);
+}
+mapping inout UML::InstanceValue::IssuedToken(element:OclAny):UML::InstanceSpecification@pimUml
+	inherits UML::InstanceValue::Assertion	
+{
+	element.map IncludeTokenSlot(result);
+	element.map requestSecurityTokenTemplateSlot(result);
+	element.map Issuer(result);
+	element.map IssuerName(result);
+	element.map RequireDerivedKeys(result);
+	element.map RequireInternalReference(result);
+	element.map RequireExternalReference(result);
+}
+mapping inout UML::InstanceValue::HttpsToken(element:OclAny):UML::InstanceSpecification@pimUml
+	inherits UML::InstanceValue::Assertion	
+{
+	element.map HttpsSlot(result);
+}
+
+
+mapping inout UML::InstanceValue::Anonymous(element:OclAny):UML::InstanceSpecification@pimUml
+	inherits UML::InstanceValue::Assertion	
+{
+	element.map anonymousTypeValueSlot(result);
+}
+*/	
+
+/*
+helper OclAny::expressionOperand(inout owner:UML::Expression):UML::Expression{
+	var expression:UML::Expression=new UML::Expression@pimUml();
+	owner.operand+=expression;
+	switch{
+		case(self.isSpX509Token()){
+			self.spX509Token(expression);			
+		};
+		case(self.isSpWssX509V3Token10()){
+			self.spWssX509V3Token10(expression);			
+		};
+		case(self.isSpRequireIssuerSerialReference()){
+			self.spRequireIssuerSerialReference(expression);			
+		};
+		case(self.isSpStrict()){
+			self.spStrict(expression);			
+		};
+		case(self.isSpBasic256Sha256()){
+			self.spBasic256Sha256(expression);			
+		};
+		case(self.isSpEndorsingSupportingTokens()){
+			self.spEndorsingSupportingTokens(expression);			
+		};
+		case(self.isSpIssuedToken()){
+			self.spIssuedToken(expression);			
+		};
+		case(self.isSpRequestSecurityTokenTemplate()){
+			self.spRequestSecurityTokenTemplate(expression);			
+		};
+		case(self.isSpRequireDerivedKeys()){
+			self.spRequireDerivedKeys(expression);			
+		};
+		case(self.isSpRequireInternalReference()){
+			self.spRequireInternalReference(expression);			
+		};
+		case(self.isTKeyType()){
+			self.tKeyType(expression);			
+		};
+		case(self.isTKeySize()){
+			self.tKeySize(expression);			
+		};
+		case(self.isTEncryptWith()){
+			self.tEncryptWith(expression);			
+		};
+		case(self.isTSignWith()){
+			self.tSignWith(expression);			
+		};
+		case(self.isTCanonicalizationAlgorithm()){
+			self.tCanonicalizationAlgorithm(expression);			
+		};
+		case(self.isTEncryptionAlgorithm()){
+			self.tEncryptionAlgorithm(expression);			
+		};
+		
+		
+		
+		case(self.isSpBody()){
+			self.spBody(expression);			
+		};
+		case(self.isSpHeader()){
+			self.spHeader(expression);			
+		};
+		case(self.isSpMustSupportRefIssuerSerial()){
+			self.SsMustSupportRefIssuerSerial(expression);			
+		};
+	
+	case(self.isWspExactlyOne()){
+			self.wspExactlyOne(expression);			
+		};
+		case(self.isWspAll()){
+			self.wspAll(expression);			
+		};
+		case(self.isWsawUsingAddressing()){
+			self.wsawUsingAddressing(expression);			
+		};
+		case(self.isWsrmRMAssertion()){
+			self.wsrmRMAssertion(expression);			
+		};
+		case(self.isWsrmInactivityTimeout()){
+			self.wsrmInactivityTimeout(expression);			
+		};
+		case(self.isWsrmAcknowledgementInterval()){
+			self.wsrmAcknowledgementInterval(expression);			
+		};
+		case(self.isWspPolicy()){
+			self.wspPolicy(expression);			
+		};
+		case(self.isSpAsymmetricBinding()){
+			self.spAsymmetricBinding(expression);			
+		};
+		case(self.isWspPolicyReference()){
+			self.wspPolicyReference(expression);			
+		};
+		////////////////////
+		case(self.isSpInitiatorToken()){
+			self.spInitiatorToken(expression);			
+		};
+		case(self.isSpRecipientToken()){
+			self.spRecipientToken(expression);			
+		};
+		case(self.isSpLayout()){
+			self.spLayout(expression);			
+		};
+		case(self.isSpIncludeTimestamp()){
+			self.spIncludeTimestamp(expression);			
+		};
+		case(self.isSpOnlySignEntireHeadersAndBody()){
+			self.spOnlySignEntireHeadersAndBody(expression);			
+		};
+		case(self.isSpAlgorithmSuite()){
+			self.spAlgorithmSuite(expression);			
+		};
+		case(self.isSpWss10()){
+			self.spWss10(expression);			
+		};
+		case(self.isWssX509V3Token10()){
+			self.WssX509V3Token10(expression);			
+		};
+		
+		case(self.isSpEncryptedParts()){
+			self.spEncryptedParts(expression);			
+		};
+		case(self.isSpSignedParts()){
+			self.spSignedParts(expression);			
+		};
+		
+		else{
+			log('ERROR: unsupported wsp::Expression choice '+self.repr());
+		};
+	};
+	return expression;
+}
+*/
+query WSDL::ExtensibilityElement::isPolicy():Boolean=self.getExtensibilityElementQNameLocalPart()='Policy';	
+query WSDL::ExtensibilityElement::isPolicyReference():Boolean=self.getExtensibilityElementQNameLocalPart()='PolicyReference';	
+
+query OclAny::isSpX509Token():Boolean=self.getElementLocalName()='X509Token';	
+query OclAny::isSpWssX509V3Token10():Boolean=self.getElementLocalName()='X509V3Token10';	
+query OclAny::isSpRequireIssuerSerialReference():Boolean=self.getElementLocalName()='RequireIssuerSerialReference';	
+query OclAny::isSpStrict():Boolean=self.getElementLocalName()='Strict';	
+query OclAny::isSpBasic256Sha256():Boolean=self.getElementLocalName()='Basic256Sha256';	
+query OclAny::isSpEndorsingSupportingTokens():Boolean=self.getElementLocalName()='EndorsingSupportingTokens';	
+query OclAny::isSpIssuedToken():Boolean=self.getElementLocalName()='IssuedToken';	
+query OclAny::isSpRequestSecurityTokenTemplate():Boolean=self.getElementLocalName()='RequestSecurityTokenTemplate';	
+query OclAny::isSpRequireDerivedKeys():Boolean=self.getElementLocalName()='RequireDerivedKeys';	
+	
+		
+query OclAny::isSpRequireInternalReference():Boolean=self.getElementLocalName()='RequireInternalReference';	
+query OclAny::isTKeyType():Boolean=self.getElementLocalName()='KeyType';	
+query OclAny::isTKeySize():Boolean=self.getElementLocalName()='KeySize';	
+query OclAny::isTEncryptWith():Boolean=self.getElementLocalName()='EncryptWith';	
+query OclAny::isTSignWith():Boolean=self.getElementLocalName()='SignWith';	
+query OclAny::isTCanonicalizationAlgorithm():Boolean=self.getElementLocalName()='CanonicalizationAlgorithm';	
+query OclAny::isTEncryptionAlgorithm():Boolean=self.getElementLocalName()='EncryptionAlgorithm';	
+	
+
+
+query OclAny::isSpBody():Boolean=self.getElementLocalName()='Body';	
+query OclAny::isSpAttachments():Boolean=self.getElementLocalName()='Attachments';	
+
+query OclAny::isSpHeader():Boolean=self.getElementLocalName()='Header';	
+query OclAny::isSpMustSupportRefIssuerSerial():Boolean=self.getElementLocalName()='MustSupportRefIssuerSerial';	
+query OclAny::isWspExactlyOne():Boolean=self.getElementLocalName()='ExactlyOne';	
+query OclAny::isWspAll():Boolean=self.getElementLocalName()='All';	
+query OclAny::isWsawUsingAddressing():Boolean=self.getElementLocalName()='UsingAddressing';	
+	query OclAny::isWsrmRMAssertion():Boolean=self.getElementLocalName()='RMAssertion';	
+	query OclAny::isWsrmInactivityTimeout():Boolean=self.getElementLocalName()='WsrmInactivityTimeout';	
+	query OclAny::isWsrmAcknowledgementInterval():Boolean=self.getElementLocalName()='AcknowledgementInterval';	
+	query OclAny::isWspPolicy():Boolean=self.getElementLocalName()='Policy';	
+	query OclAny::isSpAsymmetricBinding():Boolean=self.getElementLocalName()='AsymmetricBinding';	
+	query OclAny::isWspPolicyReference():Boolean=self.getElementLocalName()='PolicyReference';	
+query OclAny::isSpInitiatorToken():Boolean=self.getElementLocalName()='InitiatorToken';	
+query OclAny::isSpRecipientToken():Boolean=self.getElementLocalName()='RecipientToken';	
+query OclAny::isSpLayout():Boolean=self.getElementLocalName()='Layout';	
+query OclAny::isSpIncludeTimestamp():Boolean=self.getElementLocalName()='IncludeTimestamp';	
+query OclAny::isSpOnlySignEntireHeadersAndBody():Boolean=self.getElementLocalName()='OnlySignEntireHeadersAndBody';	
+query OclAny::isSpAlgorithmSuite():Boolean=self.getElementLocalName()='AlgorithmSuite';	
+query OclAny::isSpWss10():Boolean=self.getElementLocalName()='Wss10';	
+query OclAny::isWssX509V3Token10():Boolean=self.getElementLocalName()='WssX509V3Token10';	
+	
+
+query OclAny::isSpEncryptedParts():Boolean=self.getElementLocalName()='EncryptedParts';	
+query OclAny::isSpSignedParts():Boolean=self.getElementLocalName()='SignedParts';	
+/*
+helper OclAny::spX509Token(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='X509Token';
+	var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlSpTokenAssertionStereotype);
+	self.getElementElements().expressionOperand(owner);
+	var IncludeToken:String=self.getAttributeNSValue(SP_NAMESPACE,'IncludeToken');
+	if(not(IncludeToken.oclIsUndefined()))then{IncludeToken.setTagValue(stereotypeInstance,'IncludeToken');}endif;
+	
+	return owner;
+}
+	helper OclAny::spWssX509V3Token10(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='WssX509V3Token10';
+	//TODO var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlSpBodyStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+	helper OclAny::spRequireIssuerSerialReference(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='RequireIssuerSerialReference';
+	//TODO var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlSpBodyStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+	helper OclAny::spStrict(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='Strict';
+	//TODO var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlSpBodyStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+	helper OclAny::spBasic256Sha256(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='Basic256Sha256';
+	//TODO var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlSpBodyStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+	helper OclAny::spEndorsingSupportingTokens(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='EndorsingSupportingTokens';
+	//TODO var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlSpBodyStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+	helper OclAny::spIssuedToken(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='IssuedToken';
+	//TODO var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlSpBodyStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+	helper OclAny::spRequestSecurityTokenTemplate(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='RequestSecurityTokenTemplate';
+	//TODO var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlSpBodyStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+	helper OclAny::spRequireDerivedKeys(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='RequireDerivedKeys';
+	//TODO var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlSpBodyStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+	helper OclAny::spRequireInternalReference(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='RequireInternalReference';
+	//TODO var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlSpBodyStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+	helper OclAny::tKeyType(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='KeyType';
+	//TODO var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlSpBodyStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+	helper OclAny::tKeySize(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='KeySize';
+	//TODO var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlSpBodyStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+	helper OclAny::tEncryptWith(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='EncryptWith';
+	//TODO var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlSpBodyStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+	helper OclAny::tSignWith(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='SignWith';
+	//TODO var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlSpBodyStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+	helper OclAny::tCanonicalizationAlgorithm(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='CanonicalizationAlgorithm';
+	//TODO var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlSpBodyStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+	helper OclAny::tEncryptionAlgorithm(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='EncryptionAlgorithm';
+	//TODO var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlSpBodyStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+	
+
+
+helper OclAny::spBody(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='Body';
+	//TODO var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlSpBodyStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+helper OclAny::spHeader(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='Header';
+	//TODO var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlSpHeaderStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+helper OclAny::SsMustSupportRefIssuerSerial(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='MustSupportRefIssuerSerial';
+	//TODO var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlSsMustSupportRefIssuerSerialStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+helper OclAny::wspAll(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='All';
+	var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlWspAllStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+helper OclAny::wsawUsingAddressing(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='UsingAddressing';
+	var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlWsaUsingAddressingStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+helper OclAny::wsrmRMAssertion(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='RMAssertion';
+	//var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsrmRMAssertionStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+helper OclAny::wsrmInactivityTimeout(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='InactivityTimeout';
+	//var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsrmInactivityTimeoutStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+helper OclAny::wsrmAcknowledgementInterval(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='AcknowledgementInterval';
+	//var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsrmAcknowledgementIntervalStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+helper OclAny::wspPolicy(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='Policy';
+	var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlWspPolicyStereotype);
+	self.getElementElements().expressionOperand(owner);
+	
+	
+	return owner;
+}
+helper OclAny::spAsymmetricBinding(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='AsymmetricBinding';
+	//var stereotypeInstance:Stdlib::Element=owner.applyStereotype(spAsymmetricBindingStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+helper OclAny::wspPolicyReference(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='PolicyReference';
+	// need to allow this stereotype on Expression
+	//var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlWspPolicyReferenceStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+//////////////////////////////////////////////
+helper OclAny::spInitiatorToken(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='InitiatorToken';
+	// TODO:no stereotype yet
+	//var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlWspPolicyReferenceStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+helper OclAny::spRecipientToken(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='RecipientToken';
+	// TODO:no stereotype yet
+	//var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlWspPolicyReferenceStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+helper OclAny::spLayout(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='Layout';
+	// TODO:no stereotype yet
+	//var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlWspPolicyReferenceStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+helper OclAny::spIncludeTimestamp(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='IncludeTimestamp';
+	// TODO:no stereotype yet
+	//var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlWspPolicyReferenceStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+helper OclAny::spOnlySignEntireHeadersAndBody(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='OnlySignEntireHeadersAndBody';
+	// TODO:no stereotype yet
+	//var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlWspPolicyReferenceStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+helper OclAny::spAlgorithmSuite(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='AlgorithmSuite';
+	// TODO:no stereotype yet
+	//var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlWspPolicyReferenceStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+helper OclAny::spWss10(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='Wss10';
+	// TODO:no stereotype yet
+	//var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlWspPolicyReferenceStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+helper OclAny::WssX509V3Token10(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='WssX509V3Token10';
+	// TODO:no stereotype yet
+	//var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlWspPolicyReferenceStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+
+	
+
+
+helper OclAny::spEncryptedParts(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='EncryptedParts';
+	// TODO:no stereotype yet
+	//var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlWspPolicyReferenceStereotype);
+	self.getElementElements().expressionOperand(owner);
+	return owner;
+}
+helper OclAny::spSignedParts(inout owner:UML::Expression):UML::Expression{
+	owner.symbol:='SignedParts';
+	var stereotypeInstance:Stdlib::Element=owner.applyStereotype(wsdlSpSignedPartsStereotype);
+	self.getElementElements()->forEach(element){
+			switch{
+				case(element.isSpBody()){
+					true.setTagValue(stereotypeInstance,'body');		
+				};
+				case(element.isSpHeader()){
+					var name:String=element.getAttributeNSValue(null,'Name');
+					var namespace:String=element.getAttributeNSValue(null,'Namespace');
+					var spHeaderClass:Stdlib::Element=stereotypeInstance.getSiblingClassifier('SpHeader');
+					var spHeaderInstance:Stdlib::Element=spHeaderClass.create();
+					log('spSignedParts '+name+', '+namespace);
+					name.setTagValue(spHeaderInstance,'name');
+					namespace.setTagValue(spHeaderInstance,'namespace');
+					spHeaderInstance.addTagValue(stereotypeInstance,'header');
+				};
+				else{
+					element.expressionOperand(owner);
+				};
+		};
+		
+	};	
+	
+	return owner;
+}
+*/
+
+
+query XSD::XSDSchema::relativeRootLocation():String=self.relativeSppLocation().replaceAll('\\\\','/');
+query CMOF::EObject::relativeFilePath():String=self.relativeSppFilePath().replaceAll('\\\\','/');

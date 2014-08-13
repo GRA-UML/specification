@@ -1,0 +1,41 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:gra-sirs="http://www.iir.com/SIRS/1.0.0" xmlns:ope="http://www.iir.com/sorna/NIEM/2.1/OP/extension/1.0" targetNamespace="http://www.iir.com/SIRS/1.0.0">
+	<wsdl:documentation>SIRS provides offender information and notices between stakeholders to track the offender's compliance with SORNA registration requirements</wsdl:documentation>
+	<wsp:Policy wsu:Id="wsa_policy">
+	<wsp:ExactlyOne>
+		<wsp:All>
+			<wsaw:UsingAddressing/>	
+		</wsp:All>
+	</wsp:ExactlyOne>
+</wsp:Policy>
+	<wsdl:types>
+		<xsd:schema>
+			<xsd:import namespace="http://www.iir.com/sorna/NIEM/2.1/OP/extension/1.0" schemaLocation="artifacts/service model/information model/SORNA Relocation IEPD/external/OffPackage-ext.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="RelocationPackage">
+		<wsdl:part name="RegisteredSexOffenderPackageType" element="ope:RegisteredSexOffenderPackageType">
+			<wsdl:documentation>A data type for sex offender relocation package.</wsdl:documentation>
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="RelocationPackageInterface">
+		<wsdl:operation name="SubmitRelocationPackage">
+			<wsdl:documentation>The Intermediary Host invokes this action to receive the RelocationPackage message from the Sending Jurisdiction</wsdl:documentation>
+			<wsdl:input name="RelocationPackage" message="gra-sirs:RelocationPackage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="RelocationPackageInterfaceBinding" type="gra-sirs:RelocationPackageInterface">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsp:PolicyReference URI="#wsa_policy"/>
+		<wsdl:operation name="SubmitRelocationPackage">
+			<soap:operation soapAction="SubmitRelocationPackage" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="RelocationServiceSIPService ">
+		<wsdl:port name="RelocationPackageInterface" binding="gra-sirs:RelocationPackageInterfaceBinding">
+			<soap:address location="http://RelocationPackageInterface"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

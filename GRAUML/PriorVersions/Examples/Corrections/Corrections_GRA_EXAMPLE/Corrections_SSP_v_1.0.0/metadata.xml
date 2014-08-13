@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gra:ServiceMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gra="http://it.ojp.gov/gsp/services/1.0.0" xsi:schemaLocation="http://it.ojp.gov/gsp/services/1.0.0 Metadata.xsd">
+  <gra:ServiceDescription>
+    <gra:ServiceDescriptionSummaryText>The service provides access to and updates for a correction's subject case file for the purposes of supporting reentry</gra:ServiceDescriptionSummaryText>
+    <gra:ServiceDescriptionKeywordText>corrections, reentry</gra:ServiceDescriptionKeywordText>
+    <gra:ServiceCapabilities/>
+    <gra:ServiceRealWorldEffects>
+      <gra:RealWorldEffectDescriptionText>Service for Medicaid Entitlements so that he individual has appropriate coverage, and help minimize costs for the correctional facilities.</gra:RealWorldEffectDescriptionText>
+      <gra:RealWorldEffectDescriptionText>Service for Risk Assessment information so that the community based service providers better understand the risks associated with an individual.</gra:RealWorldEffectDescriptionText>
+      <gra:RealWorldEffectDescriptionText>Service for Treatment Information about the individual with community based providers so they are able to provide adequate treatment while the individual is released.</gra:RealWorldEffectDescriptionText>
+      <gra:RealWorldEffectDescriptionText>Service for accessing information about a corrections subject with respect to release.</gra:RealWorldEffectDescriptionText>
+      <gra:RealWorldEffectDescriptionText>Service for Share Notifications about the individual with a broad array of stakeholders based as the individual proceeds through the corrections process.</gra:RealWorldEffectDescriptionText>
+      <gra:RealWorldEffectDescriptionText>Service for Treatment Status to be shared between the community based service providers and the supervisory authorities.</gra:RealWorldEffectDescriptionText>
+      <gra:RealWorldEffectDescriptionText>Service to obtain Criminal History information.</gra:RealWorldEffectDescriptionText>
+      <gra:RealWorldEffectDescriptionText>Service for Inquiries about an individual to obtain demographic, release and risk information.</gra:RealWorldEffectDescriptionText>
+      <gra:RealWorldEffectDescriptionText>Service for Housing Information so that the individual is housed appropriately based on their specific housing needs and risk profiles</gra:RealWorldEffectDescriptionText>
+    </gra:ServiceRealWorldEffects>
+    <gra:SecurityClassificationText>SBU</gra:SecurityClassificationText>
+    <gra:ServiceDependencies/>
+    <gra:IEPDReferences>
+      <gra:IEPDReference>
+        <gra:IEPDName>Corrections</gra:IEPDName>
+        <gra:IEPDURL>http://it.ojp.gov/gist/200/Corrections/</gra:IEPDURL>
+      </gra:IEPDReference>
+      <gra:IEPDReference>
+        <gra:IEPDName>Metadata</gra:IEPDName>
+        <gra:IEPDURL>http://it.ojp.gov/gist/201/Metadata</gra:IEPDURL>
+      </gra:IEPDReference>
+    </gra:IEPDReferences>
+  </gra:ServiceDescription>
+  <gra:VersionInformation>
+    <gra:MajorVersion>1</gra:MajorVersion>
+    <gra:MinorVersion>0</gra:MinorVersion>
+    <gra:RevisionVersion>0</gra:RevisionVersion>
+  </gra:VersionInformation>
+  <gra:BusinessContext>
+    <gra:DomainDescription/>
+    <gra:Classifications>
+      <gra:Classification>Corrections reentry</gra:Classification>
+    </gra:Classifications>
+    <gra:ExchangePartnerTypes/>
+    <gra:Endorsements/>
+    <gra:Sponsors/>
+  </gra:BusinessContext>
+</gra:ServiceMetadata>

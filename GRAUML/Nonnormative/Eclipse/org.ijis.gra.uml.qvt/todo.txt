@@ -1,0 +1,11 @@
+replace with GRA transforms
+perhaps extended NIEM transforms for reverse engineering
+GRA transforms 
+i.	SSP Metadata
+ii.	SSP Catalog ?????no schema
+iii.	SSP Service Model ?????????? may include UML, BPM
+vi.	SSP Schemas ????????????????? already covered?
+vii.	WSDL (Added per questions)
+viii.	BPM XMI (Added per questions)
+ix.	Service Change Log (Added per questions) ????????
+x.	ebXML XSD (Added per questions)

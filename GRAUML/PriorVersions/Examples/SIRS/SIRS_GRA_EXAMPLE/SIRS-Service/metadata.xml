@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gra:ServiceMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gra="http://it.ojp.gov/gsp/services/1.0.0" xsi:schemaLocation="http://it.ojp.gov/gsp/services/1.0.0 Metadata.xsd">
+  <gra:ServiceIdentification>
+    <gra:ServiceFullNameText>SIRS Community</gra:ServiceFullNameText>
+    <gra:ServiceURI>http://www.iir.com/SIRS/1.0.0</gra:ServiceURI>
+    <gra:ServiceNameAbbreviationText>SIRS</gra:ServiceNameAbbreviationText>
+  </gra:ServiceIdentification>
+  <gra:ServiceDescription>
+    <gra:ServiceDescriptionSummaryText>SIRS provides offender information and notices between stakeholders to track the offender's compliance with SORNA registration requirements</gra:ServiceDescriptionSummaryText>
+    <gra:ServiceDescriptionKeywordText>SORNA, SIRS, Sex Offender, Registration Relocation</gra:ServiceDescriptionKeywordText>
+    <gra:ServiceCapabilities/>
+    <gra:ServiceRealWorldEffects>
+      <gra:RealWorldEffectDescriptionText>Successful tracking of an offender through the SORNA inter-jurisdiction relocation process.</gra:RealWorldEffectDescriptionText>
+      <gra:RealWorldEffectDescriptionText>System automation of manual, time-consuming, and non-standardized processes.</gra:RealWorldEffectDescriptionText>
+    </gra:ServiceRealWorldEffects>
+    <gra:SecurityClassificationText>SBU</gra:SecurityClassificationText>
+    <gra:ServiceDependencies>
+      <gra:ServiceDependency/>
+    </gra:ServiceDependencies>
+    <gra:IEPDReferences>
+      <gra:IEPDReference>
+        <gra:IEPDName>SORNA Relocation IEPD</gra:IEPDName>
+        <gra:IEPDURL>http://myiepd.org/SORNA Relocation IEPD/</gra:IEPDURL>
+      </gra:IEPDReference>
+    </gra:IEPDReferences>
+  </gra:ServiceDescription>
+  <gra:VersionInformation>
+    <gra:MajorVersion>1</gra:MajorVersion>
+    <gra:MinorVersion>0</gra:MinorVersion>
+    <gra:RevisionVersion>0</gra:RevisionVersion>
+  </gra:VersionInformation>
+  <gra:RelatedOrganizationInformation>
+    <gra:Organization>
+      <gra:OrganizationAcronym>SMART_OJP</gra:OrganizationAcronym>
+      <gra:OrganizationFullAddressText>81- Seventh Street NW, Washington DC 20531</gra:OrganizationFullAddressText>
+      <gra:OrganizationWebSiteURL>http://www.ojp.us.doj.gov/smart/</gra:OrganizationWebSiteURL>
+      <gra:OrganizationRoleDescriptionText>Owner</gra:OrganizationRoleDescriptionText>
+      <gra:OrganizationRoleDetailedDescriptionText>Owner</gra:OrganizationRoleDetailedDescriptionText>
+      <gra:OrganizationPointOfContact>
+        <gra:ContactPersonEmailID>getsmart@us.doj.gov</gra:ContactPersonEmailID>
+        <gra:ContactPersonPhoneNumberID>202-514-468</gra:ContactPersonPhoneNumberID>
+        <gra:ContactPersonAddress>810 Seventh Street NW Washington DC 20531</gra:ContactPersonAddress>
+      </gra:OrganizationPointOfContact>
+    </gra:Organization>
+  </gra:RelatedOrganizationInformation>
+  <gra:BusinessContext>
+    <gra:DomainDescription>
+      <gra:DomainNameText>Stakeholders</gra:DomainNameText>
+    </gra:DomainDescription>
+    <gra:Classifications/>
+    <gra:ExchangePartnerTypes/>
+    <gra:Endorsements>
+      <gra:Endorser>Endorsements</gra:Endorser>
+    </gra:Endorsements>
+    <gra:Sponsors/>
+  </gra:BusinessContext>
+  <gra:ServiceInterface>
+    <gra:URIDetails/>
+    <gra:ServiceActions>
+      <gra:ServiceAction>
+        <gra:ActionName>RelocationNotice</gra:ActionName>
+      </gra:ServiceAction>
+    </gra:ServiceActions>
+    <gra:ServiceInteractionProfiles/>
+  </gra:ServiceInterface>
+  <gra:ServiceInterface>
+    <gra:URIDetails/>
+    <gra:ServiceActions>
+      <gra:ServiceAction>
+        <gra:ActionName>SubmitRelocationPackage</gra:ActionName>
+        <gra:ActionPurpose>The Intermediary Host invokes this action to receive the RelocationPackage message from the Sending Jurisdiction</gra:ActionPurpose>
+        <gra:MessageExchangePattern>notification</gra:MessageExchangePattern>
+      </gra:ServiceAction>
+    </gra:ServiceActions>
+    <gra:ServiceInteractionProfiles/>
+  </gra:ServiceInterface>
+  <gra:ServiceLevelAgreements>
+    <gra:ServicePolicyAndContracts>
+      <gra:ApplicablePoliciesIndicator>true</gra:ApplicablePoliciesIndicator>
+      <gra:ApplicablePolicies/>
+      <gra:ApplicableContractsIndicator>false</gra:ApplicableContractsIndicator>
+      <gra:ApplicableContracts/>
+      <gra:ApplicableAgreementsIndicator>false</gra:ApplicableAgreementsIndicator>
+      <gra:ApplicableAgreements>
+        <gra:Agreement>
+          <gra:AgreementDescriptionText>Although no agreements have yet been developed for this service specification, it is assumed that these will be developed as part of the actual reference implementations.</gra:AgreementDescriptionText>
+        </gra:Agreement>
+      </gra:ApplicableAgreements>
+      <gra:ApplicableUmbrellaAgreementsIndicator>false</gra:ApplicableUmbrellaAgreementsIndicator>
+      <gra:ApplicableUmbrellaAgreements/>
+    </gra:ServicePolicyAndContracts>
+    <gra:PerformanceMetrics>
+      <gra:ServiceResponseTime>P1Y2M3DT10H30M</gra:ServiceResponseTime>
+    </gra:PerformanceMetrics>
+    <gra:ServiceUsageDetails>
+      <gra:ApprovalRequiredIndicator>false</gra:ApprovalRequiredIndicator>
+      <gra:LicensingRequiredIndicator>false</gra:LicensingRequiredIndicator>
+      <gra:LicensingAgreement/>
+      <gra:ServiceCost>
+        <gra:UsageCostAmount/>
+        <gra:UsageUnitCostAmount/>
+        <gra:CreationCostAmount/>
+      </gra:ServiceCost>
+    </gra:ServiceUsageDetails>
+  </gra:ServiceLevelAgreements>
+</gra:ServiceMetadata>

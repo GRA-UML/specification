@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:CRSUB="http://it.ojp.gov/gist/200/Corrections/SubjectMessageTypes" xmlns:CRX="http://it.ojp.gov/gist/200/Corrections/exchangeTypes" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://it.ojp.gov/gist/200/Corrections/exchangeTypes" version="&quot;1&quot;">
+  <xsd:annotation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+    <xsd:documentation source="">Corrections subject related exchanges</xsd:documentation>
+  </xsd:annotation>
+  <xsd:import namespace="http://it.ojp.gov/gist/200/Corrections/SubjectMessageTypes" schemaLocation="../.././XMLschemas/exchange/SubjectMessageModel.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.0" schemaLocation="../../XMLschemas/subset/niem/appinfo/2.0/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.1" schemaLocation="../../XMLschemas/subset/niem/appinfo/2.1/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="../../XMLschemas/subset/niem/proxy/xsd/2.0/xsd.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="../../XMLschemas/subset/niem/structures/2.0/structures.xsd"/>
+  <xsd:element abstract="false" name="EntityQueryMessage" nillable="false" type="CRSUB:EntityQueryMessageType">
+    <xsd:annotation>
+      <xsd:documentation source="">A message to query a case file for information about any entity related to any subject.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="OperationResult" nillable="false" type="CRSUB:OperationResultType">
+    <xsd:annotation>
+      <xsd:documentation source="">A Result message from an operation</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SubjectInformationMessage" nillable="false" type="CRSUB:SubjectInformationMessageType">
+    <xsd:annotation>
+      <xsd:documentation source="">A Subject's case records</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SubjectQueryMessage" nillable="false" type="CRSUB:SubjectQueryMessageType">
+    <xsd:annotation>
+      <xsd:documentation source="">A Message to query a case file about a subject</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SubscriptionID" nillable="false" type="CRSUB:SubscriptionIDTextType">
+    <xsd:annotation>
+      <xsd:documentation source="">A ID of a subscription for cancellation.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SubscriptionMessage" nillable="false" type="CRSUB:SubscriptionMessageType">
+    <xsd:annotation>
+      <xsd:documentation source="">A Message to subscribe to a subject</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

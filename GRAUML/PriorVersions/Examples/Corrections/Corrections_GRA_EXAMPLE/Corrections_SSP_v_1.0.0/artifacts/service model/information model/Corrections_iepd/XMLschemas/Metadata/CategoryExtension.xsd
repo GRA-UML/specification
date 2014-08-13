@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:CAT="http://it.ojp.gov/gist/201/Metadata/category" xmlns:MetaR="http://it.ojp.gov/gist/201/Metadata/MetadataReference" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://it.ojp.gov/gist/201/Metadata/category" version="&quot;1&quot;">
+  <xsd:import namespace="http://it.ojp.gov/gist/201/Metadata/MetadataReference" schemaLocation="../../XMLschemas/Metadata/MetadataReference.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.0" schemaLocation="../../XMLschemas/appinfo/2.0/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="../../XMLschemas/structures/2.0/structures.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.1" schemaLocation="../../XMLschemas/appinfo/2.1/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="../../XMLschemas/proxy/xsd/2.0/xsd.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Schema model describing a general concept of categories.</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:complexType abstract="false" mixed="false" name="CategoryType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a category of a an entity.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="CAT:CategoryName"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="CAT:CategoryID"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="CAT:CategoryDescriptionText"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="CAT:CategoryAuthorityURI"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="CAT:ReferenceDocument"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="CAT:MetadataURI"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="CAT:SuperCategory"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="CAT:SubCategory"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="CategoryName" nillable="false" type="niem-xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>A Name of category</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="CategoryID" nillable="false" type="MetaR:CategoryURIType">
+    <xsd:annotation>
+      <xsd:documentation>An identifier URI Identity of category and link to category description document and element. The category ID should be unique.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="CategoryDescriptionText" nillable="false" type="niem-xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>A description of the category</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="CategoryAuthorityURI" nillable="false" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:documentation>An authority for this category, such as an organization or standard.</xsd:documentation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="InformationRecordLinkType" i:namespace="http://it.ojp.gov/gist/201/Metadata/MetadataReference"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="ReferenceDocument" nillable="false" type="MetaR:InformationRecordLinkType">
+    <xsd:annotation>
+      <xsd:documentation>A document that define the category in a user meaningful way.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="MetadataURI" nillable="false" type="MetaR:MetadataRepositoryURIType">
+    <xsd:annotation>
+      <xsd:documentation>A normative URI for this category. If this element is set the exchange agreement is defined at the specified address and may be dereferenced using "GetMetadata" at the referenced URI. The exchange agreement should be obtained from the referenced URI, any local detail is a "cache" of the external URI.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SuperCategory" nillable="false" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:documentation>A Super (more general)set of  categories of this category</xsd:documentation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="CategoryType" i:namespace="http://it.ojp.gov/gist/201/Metadata/category"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SubCategory" nillable="false" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:documentation>A set of Categories that derive from this category</xsd:documentation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="CategoryType" i:namespace="http://it.ojp.gov/gist/201/Metadata/category"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="ScoreBasisType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a score basis. A scope basis is a category specifying the minimum, maximum and typical scores as well as if a true/false score is applicable. As a category each score basis can have an id, super and sub categories, a name, description, an authoritative organization and reference document.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="CategoryType" i:namespace="http://it.ojp.gov/gist/201/Metadata/category"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="CAT:CategoryType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="CAT:MinimumScoreValue"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="CAT:TypicalScoreValue"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="CAT:MaximumScoreValue"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="CAT:TrueFalseScoreIndicator"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="CAT:ScoreTermsText"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="MinimumScoreValue" nillable="false" type="niem-xsd:decimal">
+    <xsd:annotation>
+      <xsd:documentation>A minimum score valid for this score basis</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="TypicalScoreValue" nillable="false" type="niem-xsd:decimal">
+    <xsd:annotation>
+      <xsd:documentation>A typical or average score value</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="MaximumScoreValue" nillable="false" type="niem-xsd:decimal">
+    <xsd:annotation>
+      <xsd:documentation>A Maximum value for this score basis</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="TrueFalseScoreIndicator" nillable="false" type="niem-xsd:boolean">
+    <xsd:annotation>
+      <xsd:documentation>True if a score  must be true or false; False if it is a number.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="ScoreTermsText" nillable="false" type="niem-xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>A set of terms corresponding to integer score values starting with the minimum score value. E.g. {High, Medium, Low} corresponding to {0,1,2}</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
+   
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.eclipse.core.runtime.xml"
+            file-extensions="xml"
+            id="org.ijis.gra.spp.catalog"
+            name="%_UI_SPP_content_type"
+            priority="normal">
+         <describer class="org.eclipse.core.runtime.content.XMLRootElementContentDescriber2">
+            <parameter name="element" value="catalog"/>
+         </describer>
+      </content-type>
+   </extension>
+   
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated catalog -->
+      <package
+            uri="http://gra.ijis.org/catalog/1.0.0"
+            class="org.ijis.gra.catalog.Catalog.CatalogPackage"
+            genModel="src/main/resources/model/catalog.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated catalog -->
+      <parser
+            type="catalog"
+            class="org.ijis.gra.catalog.Catalog.util.CatalogResourceFactoryImpl"/>
+   </extension>
+</plugin>

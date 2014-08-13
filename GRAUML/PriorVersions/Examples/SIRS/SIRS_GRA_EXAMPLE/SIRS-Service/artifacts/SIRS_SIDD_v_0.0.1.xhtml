@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ex="http://default.com/my/exchange" xmlns:ext="http://default.com/my/extension" xmlns:SAN="http://ijis.org/GRA/Annotations" xmlns:SANWSDL="http:/ijis.org/GRA/WSDLAnnotations" xmlns:foo="http://whatever" xmlns:data.grauml.graAnnotationModel="http://ijis.org/GRA/Annotations">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><style>
+                    .FontType { font-family:"Calibri","sans-serif";line-height:115%; }
+                    .TitleMain { font-size:26.0pt; color:#1F497D; }
+                    .TitleSub { font-size:18.0pt; color:#1F497D; }
+                    .Heading1 { font-size:18.0pt;  margin-left:0.5in; }
+                    .Heading2 { font-size:16.0pt;  margin-left:0.5in; }
+                    .Heading3 { font-size:14.0pt;  margin-left:1.0in; font-weight:900; }
+                    .NormalText { font-size:11.0pt; }
+                    .Bullet { margin-left:0.5in; }
+                    .TableOfContents { font-size:12.0pt; font-weight:900; margin-left:0.75in;}
+                    .CoverPageLeft { margin-left:1.8in; text-align:left; }
+                    .CoverPageRight { margin-right:.05in; margin-left:11.15pt; text-align:left; }
+                    .tDataTable { border-top:solid #5B9BD5 1.0pt;padding:0in 5.4pt 0in 5.4pt; }
+                    .tDataTableHeader { border-bottom:solid #5B9BD5 1.0pt; }
+                    .tDataTableRowAlt { background:#DEEAF6; }
+                    .tDataTableText{ color:#2E74B5; }
+                    .tDataTableTextTitle{ color:#2E74B5;font-weight:900; }
+                    .MsoNormal { width:7.0in;margin-top:6.0pt; margin-left:0.25in; margin-bottom:6.0pt; text-align:center; }
+                    .MsoNormalTable { margin-left:auto; margin-right:auto; border-collapse:collapse; }
+                    .MsoNormalTableColLeft { width:220pt;border-right:solid #0051BA 3.0pt; padding:0in 5.4pt 0in 5.4pt }
+                    .MsoNormalTableColRight { width:220pt;padding:0in 5.4pt 0in 5.4pt }
+                    .MsoNormalText { width:6.0in; margin-left:1.0in; text-align:justify; }
+                    .tDataTableCaption { padding:0.25in 0in 0in 0in;font-weight:900; text-align:center; }
+                </style></head>
+   <body lang="EN-US" style="float:none;">
+      <div class="CoverPageSection" style="float:none;overflow:visible;">
+         <p class="MsoNormal"><b><span class="FontType TitleSub">SIRS Service Description</span></b></p><br /><p class="MsoNormal"><b><span class="FontType TitleSub">SIRS</span></b></p><br /><p class="MsoNormal"><b><span class="FontType TitleSub">1.3</span></b></p><br /><p class="MsoNormal"><b><span class="FontType TitleMain"> <br /> </span></b></p><br /><p class="MsoNormal"><b><span class="FontType TitleMain">GRA</span></b></p><br /><p class="MsoNormal"><b><span class="FontType TitleMain">Service Interface Description</span></b></p><br /><p class="MsoNormal"><b><span class="FontType TitleMain">Document Version 1.0</span></b></p><br /><p class="MsoNormal"><b><span class="FontType TitleMain"> <br /> <br /> </span></b></p><br /><div class="MsoNormal">
+            <table class="MsoNormalTable">
+               <tr>
+                  <td class="MsoNormalTableColLeft">
+                     <p class="FontType CoverPageLeft">Delivery On:</p>
+                  </td>
+                  <td class="MsoNormalTableColRight">
+                     <p class="FontType CoverPageRight"><b>
+                           [Not Defined]
+                           </b></p>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="MsoNormalTableColLeft">
+                     <p class="FontType CoverPageLeft">Prepared For:</p>
+                     <p class="FontType CoverPageLeft">Prepared By:</p>
+                     <p class="FontType CoverPageLeft">Sponsored By:</p>
+                  </td>
+                  <td class="MsoNormalTableColRight">
+                     <p class="FontType CoverPageRight"><b>Related Organization Name</b></p>
+                     <p class="FontType CoverPageRight"><b>Related Organization Name</b></p>
+                     <p class="FontType CoverPageRight"><b>Sponsor name</b></p>
+                  </td>
+               </tr>
+            </table>
+         </div>
+      </div><br /><br /><br /><div class="ContentSection">
+         <h1><span class="FontType Heading1">Table of Contents</span></h1>
+         <p><a href="#_Toc387846682"><span class="FontType TableOfContents">1.      Introduction</span></a></p>
+         <p><a href="#_Toc387846683"><span class="FontType TableOfContents">2.      Physical Model</span></a></p>
+         <p><a href="#_Toc387846692"><span class="FontType TableOfContents">3.      Service Interaction Requirements</span></a></p>
+         <p><a href="#_Toc387846693"><span class="FontType TableOfContents">4.      Interface Description Requirements</span></a></p>
+         <p><a href="#_Toc387846702"><span class="FontType TableOfContents">5.      Message Exchange Patterns</span></a></p>
+         <p><a href="#_Toc387846703"><span class="FontType TableOfContents">6.      Message Definition Mechanisms</span></a></p>
+         <p><a href="#_Toc387846704"><span class="FontType TableOfContents">7.      Policy and Contracts</span></a></p>
+         <p><a href="#_Toc387846705"><span class="FontType TableOfContents">7.1     Policies</span></a></p>
+         <p><a href="#_Toc387846706"><span class="FontType TableOfContents">7.2     Automated Service Contracts</span></a></p>
+         <p><a href="#_Toc387846707"><span class="FontType TableOfContents">7.3     Non-automated Service Contracts</span></a></p>
+         <p><a href="#_Toc387846708"><span class="FontType TableOfContents">8.      Umbrella Agreements</span></a></p>
+         <p><a href="#_Toc387846709"><span class="FontType TableOfContents">9.      Security</span></a></p>
+         <p><a href="#_Toc387846710"><span class="FontType TableOfContents">10.     Privacy</span></a></p>
+         <p><a href="#_Toc387846711"><span class="FontType TableOfContents">11.     Service Testing</span></a></p>
+         <p><a href="#_Toc387846712"><span class="FontType TableOfContents">Appendix A     References</span></a></p>
+         <p><a href="#_Toc387846713"><span class="FontType TableOfContents">Appendix B     Glossary</span></a></p>
+         <p><a href="#_Toc387846714"><span class="FontType TableOfContents">Appendix C     Document History</span></a></p><br /><br /><br style="page-break-before:always" /><h1><a id="_Toc387846682"><span class="FontType FontType Heading1">1.     Introduction</span></a></h1>
+         <p class="MsoNormalText"><span class="FontType NormalText">
+               A Service Interface Description describes the physical implementation or service 
+               interface used in a specific implementation of a service. This document is a Service
+               
+               Interface Description for the SIRS Service Description (SIRS) Interface. </span></p>
+         <p class="MsoNormalText"><span class="FontType NormalText">
+               In the context of the GRA and Service-Oriented Architecture $soa in general, a
+               service is the means by which one partner gains access to one or more
+               capabilities offered by another partner.  Capabilities generate real-world
+               effects that can be as simple as sharing information or can involve performing a
+               function as part of a complex process or changing the state of other related
+               processes.  Government organizations have numerous capabilities and a multitude
+               of partner organizations, both inside and outside of their traditional
+               communities.  There are significant benefits for these organizations to share
+               information and have access to each other's capabilities.  Achieving
+               interoperability among these organizations requires alignment of business and
+               technical requirements and capabilities.  In addition, it is critical to have a
+               consistent way of specifying these requirements and capabilities and sharing
+               them across organizational boundaries.  The GRA was developed to facilitate
+               interoperability and to assist in meeting other key requirements common in a
+               complex government information sharing environment.  In order to achieve
+               interoperability, a consistent approach must be defined to identify, describe,
+               and package services and their interactions in many different technical
+               environments, across multiple government lines of business, at all levels of
+               government, and with partner organizations. </span></p>
+         <p class="MsoNormalText"><span class="FontType NormalText">
+               The GRA defines a service interface as
+               “the means for interacting with a service.”  It includes specific protocols,
+               commands, and information exchange by which actions are initiated on the
+               service.  A service interface is what a system designer or implementer
+               (programmer) uses to design or build executable software that interacts with the
+               service.  That is, the service interface represents the “how” of the
+               interaction.  Since the service interface is the physical manifestation of the
+               service, best practices call for service interfaces which can be described in an
+               open-standard, machine-referenceable format (that is, a format which could be
+               automatically processed by a computer).</span></p>
+         <p class="MsoNormalText"><span class="FontType NormalText">
+               A Service Specification is a formal document describing the capabilities made
+               available through the service; the service model that defines the semantics of
+               the service by representing its behavioral model, information model, and
+               interactions; the policies that constrain the use of the service; and the
+               service interfaces which provide a means to interacting with the service.  A
+               Service Specification is analogous to the software documentation of an
+               Application Programming Interface $api.  It provides stakeholders with an
+               understanding of the structure of the service and the rules applicable to its
+               implementation.  It gives service consumers the information necessary for
+               consuming a particular service and service providers the information necessary
+               for implementing the service in a consistent and interoperable way. </span></p>
+         <p class="MsoNormalText"><span class="FontType NormalText">
+               The main components of a Service Specification are the Service Description, one or
+               more Service Interface Descriptions, and the schemas and the samples used to
+               implement and test the service. </span></p>
+         <p class="MsoNormalText"><span class="FontType NormalText">
+               A Service Description contains information about all aspects of the service which
+               are not directly tied to the physical implementation of the service; in other
+               words, the service interface.  A Service Interface Description is a description
+               of the physical implementation; specifically, the service interface used in a
+               specific implementation of the service.  Since a service can leverage multiple
+               Service Interfaces, the Service Specification might contain more than one
+               Service Interface Description.</span></p><br /><br style="page-break-before:always" /><h1><a id="_Toc387846683"><span class="FontType Heading1">2.     Physical Model</span></a></h1>
+         <p class="MsoNormalText"><span class="FontType NormalText">The Physical Model section describes the technical implementation (physical model)
+               of the service implemented via the described service interface (e.g., Web Services
+               definition, schema, electronic policies, and performance/quality of service metrics
+               or other similar structures).  The physical model should sufficiently describe the
+               set of actions implemented by the service interface and the physical endpoint(s) for
+               accessing these actions.  This section will also include any relevant details of the
+               Service Interaction Profile (SIP) that will govern how the service interaction requirements
+               of the service will be met.  The physical model described in this document will also
+               provide details regarding the message schema(s) for the information model of the service.
+               <br/> <br/> Additional artifacts related to this sections content can be provided
+               in the artifacts folder of the service package or the schema folder of the service
+               package.  <br/> <br/>        [Service Abbreviation] SSP [Service Version]\artifacts
+               <br/>           or  <br/>        [Service Abbreviation] SSP [Service Version]\schema</span></p><br /><br style="page-break-before:always" /><h1><a id="_Toc387846692"><span class="FontType Heading1">3.     Service Interaction Requirements</span></a></h1>
+         <p class="MsoNormalText"><span class="FontType NormalText">
+               The table below outlines the service interaction requirements and the associated
+               standards that are being used to support this service interface.</span></p><br /><span class="FontType Heading3">Relocation Service SIP</span><br /><br /><table class="MsoNormalTable" style="margin-left:70pt; border-collapse:collapse;border:none">
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableHeader" style="width:125pt;"><span class="FontType tDataTableTextTitle">Requirements</span></td>
+               <td class="tDataTable tDataTableHeader" style="width:45pt;"><span class="FontType tDataTableTextTitle">Mandatory</span></td>
+               <td class="tDataTable tDataTableHeader" style="width:150pt;"><span class="FontType tDataTableTextTitle">Specification</span></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle">Service Consumer Authentication</span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">
+                        false
+                        </span></i></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">
+                        N/A
+                        </span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable"><span class="FontType tDataTableTextTitle">Service Consumer Authorization</span></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">
+                        false
+                        </span></i></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">
+                        N/A
+                        </span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle">Identity and Attribute Assertion Transmission</span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">
+                        false
+                        </span></i></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">
+                        N/A
+                        </span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable"><span class="FontType tDataTableTextTitle">Service Authentication</span></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">
+                        false
+                        </span></i></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">
+                        N/A
+                        </span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle">Message Nonrepudiation</span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">
+                        false
+                        </span></i></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">
+                        N/A
+                        </span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable"><span class="FontType tDataTableTextTitle">Message Integrity</span></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">
+                        false
+                        </span></i></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">
+                        N/A
+                        </span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle">Message Confidentiality</span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">
+                        false
+                        </span></i></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">
+                        N/A
+                        </span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable"><span class="FontType tDataTableTextTitle">Message Addressing</span></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">
+                        false
+                        </span></i></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">
+                        N/A
+                        </span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle">Reliability</span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">
+                        false
+                        </span></i></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">
+                        N/A
+                        </span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable"><span class="FontType tDataTableTextTitle">Transaction Support</span></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">
+                        false
+                        </span></i></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">
+                        N/A
+                        </span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle">Service Metadata Availability</span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">
+                        false
+                        </span></i></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">
+                        N/A
+                        </span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable"><span class="FontType tDataTableTextTitle">Interface Description Requirements</span></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">
+                        false
+                        </span></i></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">
+                        N/A
+                        </span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle">Service Responsiveness</span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">
+                        false
+                        </span></i></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">
+                        N/A
+                        </span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="FontType tDataTableCaption" colspan="3">Table 1 : Service Interaction Requirements</td>
+            </tr>
+         </table><br /><span class="FontType Heading3">Notification Service SIP</span><br /><br /><table class="MsoNormalTable" style="margin-left:70pt; border-collapse:collapse;border:none">
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableHeader" style="width:125pt;"><span class="FontType tDataTableTextTitle">Requirements</span></td>
+               <td class="tDataTable tDataTableHeader" style="width:45pt;"><span class="FontType tDataTableTextTitle">Mandatory</span></td>
+               <td class="tDataTable tDataTableHeader" style="width:150pt;"><span class="FontType tDataTableTextTitle">Specification</span></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle">Service Consumer Authentication</span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">true</span></i></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">Static IP Address</span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable"><span class="FontType tDataTableTextTitle">Service Consumer Authorization</span></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">
+                        false
+                        </span></i></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">
+                        N/A
+                        </span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle">Identity and Attribute Assertion Transmission</span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">true</span></i></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">GFIPM</span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable"><span class="FontType tDataTableTextTitle">Service Authentication</span></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">
+                        false
+                        </span></i></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">
+                        N/A
+                        </span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle">Message Nonrepudiation</span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">true</span></i></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">W3C XML Signature</span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable"><span class="FontType tDataTableTextTitle">Message Integrity</span></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">true</span></i></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">W3C XML Signature</span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle">Message Confidentiality</span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">true</span></i></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">OASIS Security Profile 1.1</span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable"><span class="FontType tDataTableTextTitle">Message Addressing</span></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">true</span></i></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">WS-Addressing</span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle">Reliability</span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">true</span></i></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">Implicitly provide by response</span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable"><span class="FontType tDataTableTextTitle">Transaction Support</span></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">
+                        false
+                        </span></i></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">
+                        N/A
+                        </span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle">Service Metadata Availability</span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">true</span></i></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">WS-Metadataexchange</span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable"><span class="FontType tDataTableTextTitle">Interface Description Requirements</span></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">true</span></i></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">WSDL 1.1</span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle">Service Responsiveness</span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">
+                        false
+                        </span></i></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">
+                        N/A
+                        </span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="FontType tDataTableCaption" colspan="3">Table 2 : Service Interaction Requirements</td>
+            </tr>
+         </table><br style="page-break-before:always" /><h1><a id="_Toc387846693"><span class="FontType Heading1">4.     Service Interoperability Requirements</span></a></h1>
+         <p class="MsoNormalText"><span class="FontType NormalText">The service will comply with GRA Reliable Secure Web Services, Service Interaction
+               Profile v1.2 (GRA RS WS-SIP 1.2). <br/> <br/> Additional artifacts related to the
+               Service Interoperability Requirements are provided in the service interface description
+               artifacts folder of the service package. <br/> <br/>    [Service Abbreviation] SSP
+               [Service Version]\service interface description\[n]\artifacts</span></p><br style="page-break-before:always" /><h1><a id="_Toc387846702"><span class="FontType Heading1">5.     Message Exchange Patterns</span></a></h1><br /><table class="MsoNormalTable" style="margin-left:70pt; border-collapse:collapse;border:none">
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableHeader" style="width:175.0pt;"><span class="FontType tDataTableTextTitle">Interface</span></td>
+               <td class="tDataTable tDataTableHeader" style="width:67.5pt;"><span class="FontType tDataTableTextTitle">Operation</span></td>
+               <td class="tDataTable tDataTableHeader" style="width:67.5pt;"><span class="FontType tDataTableTextTitle">Pattern</span></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable"><span class="FontType tDataTableTextTitle">RelocationPackageInterface</span></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">SubmitRelocationPackage</span></i></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">notification</span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable"><span class="FontType tDataTableTextTitle">RelocationNoticeInterface</span></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">RelocationNotification</span></i></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText"></span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="FontType tDataTableCaption" colspan="3">Table 3 : Action Model</td>
+            </tr>
+         </table><br style="page-break-before:always" /><h1><a id="_Toc387846703"><span class="FontType Heading1">6.     Message Definition Mechanisms</span></a></h1>
+         <p class="MsoNormalText"><span class="FontType NormalText">The service will comply with the message definition mechanisms identified in the GRA
+               Reliable Secure Web Services Service Interaction Profile, Version 1.2 (GRA RS WS-SIP
+               1.2). <br/> <br/> Additional artifacts related to the message definition mechanism
+               is provided in the artifacts folder of the service package. <br/> <br/>    [Service
+               Abbreviation] SSP [Service Version]\artifacts</span></p><br style="page-break-before:always" /><h1><a id="_Toc387846704"><span class="FontType Heading1">7     Policy and Contracts</span></a></h1>
+         <h1><a id="_Toc387846705"><span class="FontType Heading2">7.1     Automated Service Policies</span></a></h1>
+         <p class="MsoNormalText"><span class="FontType NormalText">No automated polices have been identified at this time.</span></p>
+         <h1><a id="_Toc387846706"><span class="FontType Heading2">7.2     Automated Service Contracts</span></a></h1>
+         <p class="MsoNormalText"><span class="FontType NormalText">Web Services Description Language (WSDL) defines an automated service contract. No
+               automated service contracts exist beyond those specified in the WSDLs.</span></p>
+         <h1><a id="_Toc387846707"><span class="FontType Heading2">7.3     Non-automated Service Plicies and Contracts</span></a></h1>
+         <p class="MsoNormalText"><span class="FontType NormalText">No non-automated service contracts have been identified at this time.</span></p>
+         <h1><a id="_Toc387846708"><span class="FontType Heading1">8.     Umbrella Agreements</span></a></h1>
+         <p class="MsoNormalText"><span class="FontType NormalText">No umbrella agreements have been identified at this time.</span></p><br style="page-break-before:always" /><h1><a id="_Toc387846709"><span class="FontType Heading1">9.     Security</span></a></h1>
+         <p class="MsoNormalText"><span class="FontType NormalText">The service implementation must follow the Service Interface Description Document
+               (SIDD) to meet the Security Requirements.
+               The service must adhere to the rules of the CJIS Security Policies regarding the Advanced
+               Encryption Standard (AES) level of encryption.
+               
+               _       Security Requirements:
+               o       Message Nonrepudiation
+               o       Message Integrity 
+               o       Message Confidentiality
+               
+               
+               Note: The use of Virtual Private Networks (VPNs) or Secure Sockets Layer (SSL) for
+               transport-level security in addition to these requirements is optional.
+               </span></p><br style="page-break-before:always" /><h1><a id="_Toc387846710"><span class="FontType Heading1">10.     Privacy</span></a></h1>
+         <p class="MsoNormalText"><span class="FontType NormalText">Privacy requirements are currently under review regarding specific information model
+               elements and/or groups of elements.</span></p><br style="page-break-before:always" /><h1><a id="_Toc387846711"><span class="FontType Heading1">11.     Service Testing</span></a></h1>
+         <p class="MsoNormalText"><span class="FontType NormalText">The service validation and testing will leverage the Springboard specification to
+               validate the interoperable aspects of the service interface specification in order
+               to assert that a participating system conforms to the underlying specification. The
+               conformance specification and the associated test cases define a series of tests designed
+               to exercise each interoperability aspect of the specification at least once. The validation
+               testing is not intended to address functional aspects of the systems/services nor
+               is the test suite designed to verify the robustness or performance of the interface
+               software.</span></p><br style="page-break-before:always" /><h1><a id="_Toc387846712"><span class="FontType Heading1">Appendix A     References</span></a></h1>
+         <table style="margin-left:70pt; ">
+            <tr style="height:.5in">
+               <td><span class="FontType" style="width:100px"><b>GRA</b></span></td>
+               <td style="width:50px"></td>
+               <td><a href="https://it.ojp.gov/gra"><span class="FontType">Global Reference Architecture (GRA) Specification, Version 1.9.1</span></a></td>
+            </tr>
+            <tr style="height:.5in">
+               <td><span class="FontType" style="width:100px"><b>GRA SSG</b></span></td>
+               <td style="width:50px"></td>
+               <td><a href="https://it.ojp.gov/gist/43/The-Global-Reference-Architecture--GRA--Service-Specification-Guideline-V-1-0-0"><span class="FontType">GRA Service Specification Guideline, Version 1.0.0</span></a></td>
+            </tr>
+            <tr style="height:.5in">
+               <td><span class="FontType" style="width:100px"><b>WS-SIP</b></span></td>
+               <td style="width:50px"></td>
+               <td><a href="https://it.ojp.gov/gist/56/Global-Reference-Architecture--GRA--Web-Services-Service-Interaction-Profile-Version-1-3"><span class="FontType">GRA Web Services Service Interaction Profile, Version 1.3</span></a></td>
+            </tr>
+            <tr style="height:.5in">
+               <td><span class="FontType" style="width:100px"><b>RS WS-SIP</b></span></td>
+               <td style="width:50px"></td>
+               <td><a href="https://it.ojp.gov/gist/85/Global-Reference-Architecture--GRA--Reliable-Secure-Web-Services-Service-Interaction-Profile"><span class="FontType">GRA Reliable Secure Web Services Service Interaction Profile, Version 1.2</span></a></td>
+            </tr>
+            <tr style="height:.5in">
+               <td><span class="FontType" style="width:100px"><b>WS-I BP</b></span></td>
+               <td style="width:50px"></td>
+               <td><a href="http://ws-i.org/profiles/basicprofile-1.2-2010-11-09.html"><span class="FontType">WS-I Basic Profile, Version 1.2, 2010-11-09</span></a></td>
+            </tr>
+            <tr style="height:.5in">
+               <td><span class="FontType" style="width:100px"><b>WS-I BSP</b></span></td>
+               <td style="width:50px"></td>
+               <td><a href="http://www.ws-i.org/Profiles/BasicSecurityProfile-1.0.html"><span class="FontType">WS-I Basic Security Profile, Working Group Draft, March 30, 2007</span></a></td>
+            </tr>
+            <tr style="height:.5in">
+               <td><span class="FontType" style="width:100px"><b>WS-I RSP</b></span></td>
+               <td style="width:50px"></td>
+               <td><a href="http://www.ws-i.org/Profiles/ReliableSecureProfile-1.0-2010-11-09.html"><span class="FontType">Reliable Secure Profile Version 1.0, 2010-11-09</span></a></td>
+            </tr>
+         </table><br style="page-break-before:always" /><h2><a id="_Toc387846713"><span class="FontType Heading1">Appendix B     Glossary</span></a></h2>
+         <table class="MsoNormalTable" style="margin-left:70pt; border-collapse:collapse;">
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableHeader" style="width:55pt;"><span class="FontType tDataTableTextTitle">Acronym</span></td>
+               <td class="tDataTable tDataTableHeader" style="width:275pt;"><span class="FontType tDataTableTextTitle">Description</span></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle">GRA</span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">Global Reference Architecture</span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTable"><span class="FontType tDataTableTextTitle">GRA SSG</span></td>
+               <td class="tDataTable tDataTable"><i><span class="FontType tDataTableText">GRA Service Specification Guideline</span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle">NIEM</span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">National Information Exchange Model</span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable"><span class="FontType tDataTableTextTitle">OASIS</span></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">OASIS	Organization for the Advancement of Structured Information Standards</span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle">RS WS SIP</span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">GRA Reliable Secure Web Services Service Interaction Profile</span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable"><span class="FontType tDataTableTextTitle">SOAP</span></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">Simple Object Access Protocol</span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle">W3C</span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">World Wide Web Consortium</span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable"><span class="FontType tDataTableTextTitle">WS</span></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">Web Services</span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle">WS-SIP</span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">GRA Web Services Service Interaction Profile</span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable"><span class="FontType tDataTableTextTitle">WSDL</span></td>
+               <td class="tDataTable"><i><span class="FontType tDataTableText">Web Services Description Language</span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle">XML</span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText">eXtensible Markup Language</span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="FontType tDataTableCaption" colspan="2">Table 4: Acronym Descriptions</td>
+            </tr>
+         </table><br style="page-break-before:always" /><h2><a id="_Toc387846714"><span class="FontType Heading1">Appendix C     Document History</span></a></h2>
+         <table class="MsoNormalTable" style="margin-left:70pt; ">
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableHeader" style="width:75pt;"><span class="FontType tDataTableTextTitle">Date</span></td>
+               <td class="tDataTable tDataTableHeader" style="width:50pt;"><span class="FontType tDataTableTextTitle">Version</span></td>
+               <td class="tDataTable tDataTableHeader" style="width:125pt;"><span class="FontType tDataTableTextTitle">Editor</span></td>
+               <td class="tDataTable tDataTableHeader" style="width:150pt;"><span class="FontType tDataTableTextTitle">Change</span></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle"></span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText"></span></i></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText"></span></i></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText"></span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTable"><span class="FontType tDataTableTextTitle"></span></td>
+               <td class="tDataTable tDataTable"><i><span class="FontType tDataTableText"></span></i></td>
+               <td class="tDataTable tDataTable"><span class="FontType tDataTableTextTitle"></span></td>
+               <td class="tDataTable tDataTable"><i><span class="FontType tDataTableText"></span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="tDataTable tDataTableRowAlt"><span class="FontType tDataTableTextTitle"></span></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText"></span></i></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText"></span></i></td>
+               <td class="tDataTable tDataTableRowAlt"><i><span class="FontType tDataTableText"></span></i></td>
+            </tr>
+            <tr style="height:.3in">
+               <td class="FontType tDataTableCaption" colspan="4">Table 5: Document Revision History</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>
