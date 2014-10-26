@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ASCII"?>
+<cat:Catalog xmlns:cat="http://reference.niem.gov/niem/resource/mpd/catalog/1.0/" cat:descriptionText="" cat:mpdClassCode="iepd" cat:mpdName="http://myiepd.org/SORNA Relocation IEPD/" cat:mpdURI="http://myiepd.org/SORNA Relocation IEPD/" cat:mpdVersionID="1">
+  <cat:FileSet cat:files="fs_1_1 fs_1_2 fs_1_3 fs_1_4" cat:id="fs_1" cat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/nature#file-set" cat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/purpose#extension-schema-set">
+    <cat:File cat:id="fs_1_1" cat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/nature#niem-extension-schema" cat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/purpose#set-member" cat:relativePathName="./external/NoticeDescrList.xsd"/>
+    <cat:File cat:id="fs_1_2" cat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/nature#niem-extension-schema" cat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/purpose#set-member" cat:relativePathName="./external/juris-codes.xsd"/>
+    <cat:File cat:id="fs_1_3" cat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/nature#niem-extension-schema" cat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/purpose#set-member" cat:relativePathName="./external/OffPackage-ext.xsd"/>
+    <cat:File cat:id="fs_1_4" cat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/nature#niem-extension-schema" cat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/purpose#set-member" cat:relativePathName="./external/RelNotice-ext.xsd"/>
+  </cat:FileSet>
+  <cat:FileSet cat:files="fs_2_1 fs_2_2 fs_2_3" cat:id="fs_2" cat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/nature#file-set" cat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/purpose#subset-schema-set">
+    <cat:File cat:id="fs_2_1" cat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/nature#niem-subset-schema" cat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/purpose#set-member" cat:relativePathName="./external/jxdm.xsd"/>
+    <cat:File cat:id="fs_2_2" cat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/nature#niem-subset-schema" cat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/purpose#set-member" cat:relativePathName="./external/niem-core.xsd"/>
+    <cat:File cat:id="fs_2_3" cat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/nature#niem-subset-schema" cat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/purpose#set-member" cat:relativePathName="./external/fbi.xsd"/>
+  </cat:FileSet>
+  <cat:File cat:descriptionText="Exchange schema" cat:id="file_3" cat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/nature#xsd" cat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/purpose#exchange-schema" cat:relativePathName="./XMLschemas/exchange/RelNotice.xsd"/>
+  <cat:File cat:descriptionText="Exchange schema" cat:id="file_4" cat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/nature#xsd" cat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/purpose#exchange-schema" cat:relativePathName="./XMLschemas/exchange/OffPackage.xsd"/>
+  <cat:File cat:id="changelog1" cat:natureURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/nature#text" cat:purposeURI="http://reference.niem.gov/niem/resource/mpd/lexicon/1.1/purpose#changelog" cat:relativePathName="./changelog.xml"/>
+  <cat:Metadata>
+    <cat:SecurityMarkingText>Unclassified/public</cat:SecurityMarkingText>
+    <cat:CreationDate>2014-07-20</cat:CreationDate>
+    <cat:KeywordText>SORNA Relocation IEPD</cat:KeywordText>
+    <cat:DomainText>SORNA Relocation IEPD</cat:DomainText>
+    <cat:AuthoritativeSource>
+      <cat:ASName>SORNA Relocation IEPD</cat:ASName>
+    </cat:AuthoritativeSource>
+  </cat:Metadata>
+</cat:Catalog>

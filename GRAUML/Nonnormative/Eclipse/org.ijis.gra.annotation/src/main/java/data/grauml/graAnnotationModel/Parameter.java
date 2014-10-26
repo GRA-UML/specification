@@ -66,7 +66,7 @@ public interface Parameter extends GraServiceAnnotationBase {
 	 * @return the value of the '<em>Message</em>' containment reference.
 	 * @see #setMessage(Message)
 	 * @see data.grauml.graAnnotationModel.GraAnnotationModelPackage#getParameter_Message()
-	 * @model containment="true" required="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	Message getMessage();

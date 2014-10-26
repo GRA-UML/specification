@@ -123,6 +123,15 @@ public interface GraWsdlPackage extends EPackage {
 	int WSDL_SERVICE_INTERFACE__FLAG = GraAnnotationModelPackage.SERVICE_INTERFACE_SPECIFICATION__FLAG;
 
 	/**
+	 * The feature id for the '<em><b>Diagnostics</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WSDL_SERVICE_INTERFACE__DIAGNOSTICS = GraAnnotationModelPackage.SERVICE_INTERFACE_SPECIFICATION__DIAGNOSTICS;
+
+	/**
 	 * The feature id for the '<em><b>Security Implemented Indicator</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -231,6 +240,15 @@ public interface GraWsdlPackage extends EPackage {
 	int WSDL_SERVICE_INTERFACE__SERVICE_INTERFACE_NAME_ABBREVIATION_TEXT = GraAnnotationModelPackage.SERVICE_INTERFACE_SPECIFICATION__SERVICE_INTERFACE_NAME_ABBREVIATION_TEXT;
 
 	/**
+	 * The feature id for the '<em><b>Physical Model</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WSDL_SERVICE_INTERFACE__PHYSICAL_MODEL = GraAnnotationModelPackage.SERVICE_INTERFACE_SPECIFICATION__PHYSICAL_MODEL;
+
+	/**
 	 * The number of structural features of the '<em>Wsdl Service Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -286,7 +304,7 @@ public interface GraWsdlPackage extends EPackage {
 	int WSDL_SERVICE__PORT = GraAnnotationModelPackage.SERVICE__PORT;
 
 	/**
-	 * The feature id for the '<em><b>Service Provider</b></em>' reference.
+	 * The feature id for the '<em><b>Service Provider</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -393,6 +411,15 @@ public interface GraWsdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int WSDL_PORT__FLAG = GraAnnotationModelPackage.PORT__FLAG;
+
+	/**
+	 * The feature id for the '<em><b>Diagnostics</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WSDL_PORT__DIAGNOSTICS = GraAnnotationModelPackage.PORT__DIAGNOSTICS;
 
 	/**
 	 * The feature id for the '<em><b>Interface</b></em>' containment reference list.
@@ -531,6 +558,15 @@ public interface GraWsdlPackage extends EPackage {
 	int WSDL_INTERFACE__FLAG = GraAnnotationModelPackage.INTERFACE__FLAG;
 
 	/**
+	 * The feature id for the '<em><b>Diagnostics</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WSDL_INTERFACE__DIAGNOSTICS = GraAnnotationModelPackage.INTERFACE__DIAGNOSTICS;
+
+	/**
 	 * The feature id for the '<em><b>Operation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -647,6 +683,15 @@ public interface GraWsdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int WSDL_OPERATION__FLAG = GraAnnotationModelPackage.OPERATION__FLAG;
+
+	/**
+	 * The feature id for the '<em><b>Diagnostics</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WSDL_OPERATION__DIAGNOSTICS = GraAnnotationModelPackage.OPERATION__DIAGNOSTICS;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' containment reference list.
@@ -830,6 +875,15 @@ public interface GraWsdlPackage extends EPackage {
 	int WSDL_MESSAGE__FLAG = GraAnnotationModelPackage.MESSAGE__FLAG;
 
 	/**
+	 * The feature id for the '<em><b>Diagnostics</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WSDL_MESSAGE__DIAGNOSTICS = GraAnnotationModelPackage.MESSAGE__DIAGNOSTICS;
+
+	/**
 	 * The feature id for the '<em><b>Prefix</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -837,6 +891,33 @@ public interface GraWsdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int WSDL_MESSAGE__PREFIX = GraAnnotationModelPackage.MESSAGE__PREFIX;
+
+	/**
+	 * The feature id for the '<em><b>Element Prefix</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WSDL_MESSAGE__ELEMENT_PREFIX = GraAnnotationModelPackage.MESSAGE__ELEMENT_PREFIX;
+
+	/**
+	 * The feature id for the '<em><b>Element Model Reference</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WSDL_MESSAGE__ELEMENT_MODEL_REFERENCE = GraAnnotationModelPackage.MESSAGE__ELEMENT_MODEL_REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Element Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WSDL_MESSAGE__ELEMENT_NAME = GraAnnotationModelPackage.MESSAGE__ELEMENT_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Message Location Code</b></em>' attribute.
@@ -964,6 +1045,15 @@ public interface GraWsdlPackage extends EPackage {
 	 * @ordered
 	 */
 	int WSDL_PARAMETER__FLAG = GraAnnotationModelPackage.PARAMETER__FLAG;
+
+	/**
+	 * The feature id for the '<em><b>Diagnostics</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WSDL_PARAMETER__DIAGNOSTICS = GraAnnotationModelPackage.PARAMETER__DIAGNOSTICS;
 
 	/**
 	 * The feature id for the '<em><b>Use</b></em>' attribute.

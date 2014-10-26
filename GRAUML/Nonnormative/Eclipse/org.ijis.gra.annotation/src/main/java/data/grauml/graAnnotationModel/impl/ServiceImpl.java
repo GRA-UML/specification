@@ -53,7 +53,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	protected EList<Port> port;
 
 	/**
-	 * The cached value of the '{@link #getServiceProvider() <em>Service Provider</em>}' reference.
+	 * The cached value of the '{@link #getServiceProvider() <em>Service Provider</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getServiceProvider()
@@ -109,14 +109,6 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * @generated
 	 */
 	public Participant getServiceProvider() {
-		if (serviceProvider != null && serviceProvider.eIsProxy()) {
-			InternalEObject oldServiceProvider = (InternalEObject)serviceProvider;
-			serviceProvider = (Participant)eResolveProxy(oldServiceProvider);
-			if (serviceProvider != oldServiceProvider) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GraAnnotationModelPackage.SERVICE__SERVICE_PROVIDER, oldServiceProvider, serviceProvider));
-			}
-		}
 		return serviceProvider;
 	}
 
@@ -125,8 +117,14 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Participant basicGetServiceProvider() {
-		return serviceProvider;
+	public NotificationChain basicSetServiceProvider(Participant newServiceProvider, NotificationChain msgs) {
+		Participant oldServiceProvider = serviceProvider;
+		serviceProvider = newServiceProvider;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraAnnotationModelPackage.SERVICE__SERVICE_PROVIDER, oldServiceProvider, newServiceProvider);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -135,10 +133,17 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * @generated
 	 */
 	public void setServiceProvider(Participant newServiceProvider) {
-		Participant oldServiceProvider = serviceProvider;
-		serviceProvider = newServiceProvider;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GraAnnotationModelPackage.SERVICE__SERVICE_PROVIDER, oldServiceProvider, serviceProvider));
+		if (newServiceProvider != serviceProvider) {
+			NotificationChain msgs = null;
+			if (serviceProvider != null)
+				msgs = ((InternalEObject)serviceProvider).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraAnnotationModelPackage.SERVICE__SERVICE_PROVIDER, null, msgs);
+			if (newServiceProvider != null)
+				msgs = ((InternalEObject)newServiceProvider).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GraAnnotationModelPackage.SERVICE__SERVICE_PROVIDER, null, msgs);
+			msgs = basicSetServiceProvider(newServiceProvider, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GraAnnotationModelPackage.SERVICE__SERVICE_PROVIDER, newServiceProvider, newServiceProvider));
 	}
 
 	/**
@@ -188,6 +193,8 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 		switch (featureID) {
 			case GraAnnotationModelPackage.SERVICE__PORT:
 				return ((InternalEList<?>)getPort()).basicRemove(otherEnd, msgs);
+			case GraAnnotationModelPackage.SERVICE__SERVICE_PROVIDER:
+				return basicSetServiceProvider(null, msgs);
 			case GraAnnotationModelPackage.SERVICE__SAMPLE_DATA:
 				return ((InternalEList<?>)getSampleData()).basicRemove(otherEnd, msgs);
 		}
@@ -205,8 +212,7 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 			case GraAnnotationModelPackage.SERVICE__PORT:
 				return getPort();
 			case GraAnnotationModelPackage.SERVICE__SERVICE_PROVIDER:
-				if (resolve) return getServiceProvider();
-				return basicGetServiceProvider();
+				return getServiceProvider();
 			case GraAnnotationModelPackage.SERVICE__SAMPLE_DATA:
 				return getSampleData();
 		}

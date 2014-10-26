@@ -13,6 +13,9 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Message Location</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * Location of message content as the body, header or URL
+ * <!-- end-model-doc -->
  * @see data.grauml.graWsdl.GraWsdlPackage#getMessageLocation()
  * @model
  * @generated
@@ -84,6 +87,9 @@ public enum MessageLocation implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * For a soap binding, indicates that the part is in the URL of the message request.
+	 * <!-- end-model-doc -->
 	 * @see #URL
 	 * @model name="url"
 	 * @generated

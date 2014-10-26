@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A data structure describing the name and location of an IEPD. An annotation element may be related to an IEPD  by means of a Usage dependency, in which case the properties of this structure are derived from the used IEPD.
+ * A data structure describing the name and location of an IEPD. An annotation element may be related to an IEPD by means of a Usage dependency, in which case the properties of this structure are derived from the used IEPD.
  * <!-- end-model-doc -->
  *
  * <p>

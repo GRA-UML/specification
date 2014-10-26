@@ -149,7 +149,7 @@ public interface ServiceLevelAgreement extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Applicable Policy</b></em>' containment reference list.
-	 * The list contents are of type {@link data.grauml.graAnnotationModel.Description}.
+	 * The list contents are of type {@link data.grauml.graAnnotationModel.Agreement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -160,7 +160,7 @@ public interface ServiceLevelAgreement extends EObject {
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<Description> getApplicablePolicy();
+	EList<Agreement> getApplicablePolicy();
 
 	/**
 	 * Returns the value of the '<em><b>Umbrella Agreement</b></em>' containment reference list.
@@ -168,7 +168,7 @@ public interface ServiceLevelAgreement extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A set of umbrella agreements that in some way constrain, govern, or control the usage of a service, application, process. etc.
+	 * A set of umbrella agreements that in some way constrain, govern, or control the usage of a service, application, process etc.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Umbrella Agreement</em>' containment reference list.
 	 * @see data.grauml.graAnnotationModel.GraAnnotationModelPackage#getServiceLevelAgreement_UmbrellaAgreement()
@@ -262,7 +262,7 @@ public interface ServiceLevelAgreement extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Agreement licensing a service or application. Descriptive values could be In House, No License,  Open Source, Purchase License, etc.
+	 * Agreement licensing a service or application. Descriptive values could be In House, No License, Open Source, Purchase License, etc.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Licensing Agreement</em>' containment reference.
 	 * @see #setLicensingAgreement(Agreement)
@@ -362,7 +362,7 @@ public interface ServiceLevelAgreement extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A description or measurement of the expected availbility that a service is usable.
+	 * A description or measurement of the expected availability that a service is usable.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Service Availability</em>' attribute.
 	 * @see #setServiceAvailability(String)
@@ -412,7 +412,7 @@ public interface ServiceLevelAgreement extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A cost associated with a service(e.g. transaction, unlimited transactions, minutes of use). Currency text may precede or follow amount.
+	 * A cost associated with a service (e.g. transaction, unlimited transactions, minutes of use). Currency text may precede or follow amount.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Usage Unit Cost Amount</em>' attribute.
 	 * @see #setUsageUnitCostAmount(String)
@@ -437,7 +437,7 @@ public interface ServiceLevelAgreement extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A cost create a thing, such as an application or service  This includes the full cost to design, manage, develop, test, implement and maintain. Currency text may precede or follow amount.
+	 * Cost to create a thing, such as an application or service. This includes the full cost to design, manage, develop, test, implement and maintain. Currency text may precede or follow amount.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Creation Cost Amount</em>' attribute.
 	 * @see #setCreationCostAmount(String)

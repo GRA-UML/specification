@@ -35,7 +35,7 @@ public interface Interface extends GraServiceAnnotationBase {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Operation</em>' containment reference list.
 	 * @see data.grauml.graAnnotationModel.GraAnnotationModelPackage#getInterface_Operation()
-	 * @model containment="true" required="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<Operation> getOperation();

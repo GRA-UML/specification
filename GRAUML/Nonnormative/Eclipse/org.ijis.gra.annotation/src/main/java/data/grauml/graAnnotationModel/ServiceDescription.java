@@ -57,6 +57,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link data.grauml.graAnnotationModel.ServiceDescription#getServiceAssumption <em>Service Assumption</em>}</li>
  *   <li>{@link data.grauml.graAnnotationModel.ServiceDescription#getOtherRequirement <em>Other Requirement</em>}</li>
  *   <li>{@link data.grauml.graAnnotationModel.ServiceDescription#getDataProvenance <em>Data Provenance</em>}</li>
+ *   <li>{@link data.grauml.graAnnotationModel.ServiceDescription#getProcessModel <em>Process Model</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,7 +72,7 @@ public interface ServiceDescription extends ServiceIdentification {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The participants in a service.In the case of a package, each contained actor shall produce a use Participant element in Phase-1.
+	 * The Participants in a service. May be derived in Phase-1 - see Participant. 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Exchange Partner</em>' containment reference list.
 	 * @see data.grauml.graAnnotationModel.GraAnnotationModelPackage#getServiceDescription_ExchangePartner()
@@ -236,8 +237,8 @@ public interface ServiceDescription extends ServiceIdentification {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Reference information identifying an Information Exchange Package Document which the service uses in its data model
-	 * [Derived from] <Uses> relation to IEPD
+	 * Reference information identifying an Information Exchange Package Document which the service uses in its data model.
+	 * [Derived from] Usage dependencies to IEPD.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Iepd Reference</em>' containment reference list.
 	 * @see data.grauml.graAnnotationModel.GraAnnotationModelPackage#getServiceDescription_IepdReference()
@@ -377,7 +378,7 @@ public interface ServiceDescription extends ServiceIdentification {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A Documented Component
+	 * The exchanges between participants described by the service. Maps to the GRA business scenarios. 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Service Interaction</em>' containment reference list.
 	 * @see data.grauml.graAnnotationModel.GraAnnotationModelPackage#getServiceDescription_ServiceInteraction()
@@ -673,7 +674,7 @@ public interface ServiceDescription extends ServiceIdentification {
 	 *   
 	 * [Service Abbreviation] SSP [Service Version]\artifacts
 	 * 
-	 * If such artifacts are provided,  they should be referenced here.  A description of the artifact and a link to it should be provided as part of the reference.
+	 * If such artifacts are provided, they should be referenced here.  A description of the artifact and a link to it should be provided as part of the reference.
 	 * 
 	 * This property is used to populate the Additional Information section of the SDD document.
 	 * 
@@ -695,7 +696,7 @@ public interface ServiceDescription extends ServiceIdentification {
 	 * @return the value of the '<em>Service Description Uri</em>' attribute.
 	 * @see #setServiceDescriptionUri(String)
 	 * @see data.grauml.graAnnotationModel.GraAnnotationModelPackage#getServiceDescription_ServiceDescriptionUri()
-	 * @model dataType="types.String" required="true" ordered="false"
+	 * @model dataType="types.String" ordered="false"
 	 * @generated
 	 */
 	String getServiceDescriptionUri();
@@ -822,9 +823,9 @@ public interface ServiceDescription extends ServiceIdentification {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * [This section lists any other requirements which have to be met and on which the service depends to deliver its capabilities.]
+	 * This section lists any other requirements which have to be met and on which the service depends to deliver its capabilities.
 	 * 
-	 * [Additional artifacts related to specific subsections of this section's content can be provided under the artifacts folder of the service package. It is suggested there be a large number of artifacts related to this section.  These artifacts are included as documents or folders under the various artifacts subfolder of the artifacts folder.
+	 * Additional artifacts related to specific subsections of this section's content can be provided under the artifacts folder of the service package.These artifacts are included as documents or folders under the various subfolders of the artifacts folder.
 	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Other Requirement</em>' containment reference.
@@ -853,6 +854,9 @@ public interface ServiceDescription extends ServiceIdentification {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Provenance is defined as the agency, office, or person of origin of records, i.e., the entity that created, received, or accumulated and used the records in the conduct of their business activities.  Any applicable provenance information or restrictions should be provided in this section.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Data Provenance</em>' containment reference.
 	 * @see #setDataProvenance(Description)
 	 * @see data.grauml.graAnnotationModel.GraAnnotationModelPackage#getServiceDescription_DataProvenance()
@@ -870,6 +874,34 @@ public interface ServiceDescription extends ServiceIdentification {
 	 * @generated
 	 */
 	void setDataProvenance(Description value);
+
+	/**
+	 * Returns the value of the '<em><b>Process Model</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Process models describe processing rules and fault handling and should provide a step-by-step description of the logic carried out by the service actions including any pre- or post-conditions.  This should be supplemented with algorithms, workflow diagrams, or even entire business process definitions.  
+	 * 
+	 * The process model could be described utilizing a variety of business process modeling notations and languages which are further described in business process modeling profiles.  
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Process Model</em>' containment reference.
+	 * @see #setProcessModel(Description)
+	 * @see data.grauml.graAnnotationModel.GraAnnotationModelPackage#getServiceDescription_ProcessModel()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	Description getProcessModel();
+
+	/**
+	 * Sets the value of the '{@link data.grauml.graAnnotationModel.ServiceDescription#getProcessModel <em>Process Model</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Process Model</em>' containment reference.
+	 * @see #getProcessModel()
+	 * @generated
+	 */
+	void setProcessModel(Description value);
 
 	/**
 	 * <!-- begin-user-doc -->

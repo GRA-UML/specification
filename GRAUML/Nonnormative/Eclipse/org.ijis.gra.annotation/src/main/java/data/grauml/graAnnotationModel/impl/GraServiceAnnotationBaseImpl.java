@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.util.EObjectValidator;
  *   <li>{@link data.grauml.graAnnotationModel.impl.GraServiceAnnotationBaseImpl#getRequirement <em>Requirement</em>}</li>
  *   <li>{@link data.grauml.graAnnotationModel.impl.GraServiceAnnotationBaseImpl#getModelReference <em>Model Reference</em>}</li>
  *   <li>{@link data.grauml.graAnnotationModel.impl.GraServiceAnnotationBaseImpl#getFlag <em>Flag</em>}</li>
+ *   <li>{@link data.grauml.graAnnotationModel.impl.GraServiceAnnotationBaseImpl#getDiagnostics <em>Diagnostics</em>}</li>
  * </ul>
  * </p>
  *
@@ -132,6 +133,16 @@ public abstract class GraServiceAnnotationBaseImpl extends MinimalEObjectImpl.Co
 	 * @ordered
 	 */
 	protected EList<String> flag;
+
+	/**
+	 * The cached value of the '{@link #getDiagnostics() <em>Diagnostics</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDiagnostics()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> diagnostics;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -318,6 +329,18 @@ public abstract class GraServiceAnnotationBaseImpl extends MinimalEObjectImpl.Co
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<String> getDiagnostics() {
+		if (diagnostics == null) {
+			diagnostics = new EDataTypeUniqueEList<String>(String.class, this, GraAnnotationModelPackage.GRA_SERVICE_ANNOTATION_BASE__DIAGNOSTICS);
+		}
+		return diagnostics;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean nameDerivation(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
@@ -399,6 +422,8 @@ public abstract class GraServiceAnnotationBaseImpl extends MinimalEObjectImpl.Co
 				return getModelReference();
 			case GraAnnotationModelPackage.GRA_SERVICE_ANNOTATION_BASE__FLAG:
 				return getFlag();
+			case GraAnnotationModelPackage.GRA_SERVICE_ANNOTATION_BASE__DIAGNOSTICS:
+				return getDiagnostics();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -431,6 +456,10 @@ public abstract class GraServiceAnnotationBaseImpl extends MinimalEObjectImpl.Co
 				getFlag().clear();
 				getFlag().addAll((Collection<? extends String>)newValue);
 				return;
+			case GraAnnotationModelPackage.GRA_SERVICE_ANNOTATION_BASE__DIAGNOSTICS:
+				getDiagnostics().clear();
+				getDiagnostics().addAll((Collection<? extends String>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -461,6 +490,9 @@ public abstract class GraServiceAnnotationBaseImpl extends MinimalEObjectImpl.Co
 			case GraAnnotationModelPackage.GRA_SERVICE_ANNOTATION_BASE__FLAG:
 				getFlag().clear();
 				return;
+			case GraAnnotationModelPackage.GRA_SERVICE_ANNOTATION_BASE__DIAGNOSTICS:
+				getDiagnostics().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -485,6 +517,8 @@ public abstract class GraServiceAnnotationBaseImpl extends MinimalEObjectImpl.Co
 				return modelReference != null;
 			case GraAnnotationModelPackage.GRA_SERVICE_ANNOTATION_BASE__FLAG:
 				return flag != null && !flag.isEmpty();
+			case GraAnnotationModelPackage.GRA_SERVICE_ANNOTATION_BASE__DIAGNOSTICS:
+				return diagnostics != null && !diagnostics.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -524,6 +558,8 @@ public abstract class GraServiceAnnotationBaseImpl extends MinimalEObjectImpl.Co
 		result.append(template);
 		result.append(", flag: ");
 		result.append(flag);
+		result.append(", diagnostics: ");
+		result.append(diagnostics);
 		result.append(')');
 		return result.toString();
 	}

@@ -38,7 +38,7 @@ public interface Port extends GraServiceAnnotationBase {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Interface</em>' containment reference list.
 	 * @see data.grauml.graAnnotationModel.GraAnnotationModelPackage#getPort_Interface()
-	 * @model containment="true" required="true" ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<Interface> getInterface();
@@ -53,7 +53,7 @@ public interface Port extends GraServiceAnnotationBase {
 	 * @return the value of the '<em>Address Uri</em>' attribute.
 	 * @see #setAddressUri(String)
 	 * @see data.grauml.graAnnotationModel.GraAnnotationModelPackage#getPort_AddressUri()
-	 * @model dataType="types.String" required="true" ordered="false"
+	 * @model dataType="types.String" ordered="false"
 	 * @generated
 	 */
 	String getAddressUri();

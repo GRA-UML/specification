@@ -10,7 +10,7 @@ import data.grauml.graAnnotationModel.Service;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Represents a <wsdl:service>.
+ * WSDL Extension of the technology-independent element. Represents a <wsdl:service>.
  * <!-- end-model-doc -->
  *
  *

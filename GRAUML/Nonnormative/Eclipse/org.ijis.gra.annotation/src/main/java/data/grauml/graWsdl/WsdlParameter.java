@@ -9,6 +9,10 @@ import data.grauml.graAnnotationModel.Parameter;
  * A representation of the model object '<em><b>Wsdl Parameter</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * WSDL Extension of the technology-independent element. 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * <ul>

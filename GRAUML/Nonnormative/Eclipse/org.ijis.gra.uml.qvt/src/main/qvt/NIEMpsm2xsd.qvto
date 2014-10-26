@@ -2728,7 +2728,14 @@ query UML::Classifier::isComplexTypeSimpleContent():Boolean{
 	if(self.getNearestNIEMSchemaPackage().oclIsUndefined())then{return false;}endif;
 	if(self.isLeaf)then{return true;}endif;
 	if(self.isProxyRestriction())then{return true;}endif;
-	if(self.general->notEmpty())then {return true;}endif;
+	 
+//	if(self.isProxyRestriction() and self.getRestrictedClassifiers()->select(r|r.isXmlPrimitive())->notEmpty())then{return true;}endif;
+	
+//	if(self.general->notEmpty())then {return true;}endif; 
+	// tjd inheriting primitive should not be complex; at PSM level it is
+	// tjd: adhoc test : check if inheriting xml primitive (this should have become a restriction at psm level?)
+	// tjd: problem with eclipse implementation, work around is to not include generalization to an xml primitive as a complex type 
+	if(self.general->select(g|not(g.isXmlPrimitive()))->notEmpty())then {return true;}endif;
 	if(self.oclIsKindOf(UML::Class))then {return true;}endif;
 	self.getRestrictions()
 		.supplier->select(s|s.oclIsKindOf(UML::Classifier))

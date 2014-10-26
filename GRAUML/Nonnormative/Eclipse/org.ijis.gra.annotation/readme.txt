@@ -19,18 +19,21 @@ In generator model editor, set ModelDirectory to src/main/java
 In generator model editor, export to schema for xmi
 	fixup schemaLocation of http://www.omg.org/XMI to  	http://www.omg.org/spec/XMI/20110701/XMI.xsd
 	change http://www.omg.org/XMI to http://www.omg.org/spec/XMI/20110701
-For domain model, export via eclipse xmi 2.4
-/////////////////////////////////////////////////////////
-Magic draw export to MOF XMI Model
+	
+	
+test
+	For domain model, export via eclipse xmi 2.4
+	provision
+	double-check schemas, annotations.xmi, wsdl, catalog, metadata
+	
+site:  gra-update-site
+	remove 	artifacts.jar, content.jar
+	in site, delete the org.ijis.gra feature, then add it back
+	build all
+	
+svn: update gra-update-site, examples, 	org.ijis.gra.annotation, Standard Template, 
+	org.ijis.gra.uml.qvt
+	maybe Magicdraw
 
-Open data.ecore model, save as GRAAnnotationModel.emof
-Open types.ecore, save as GRAAnnotationModelTypes.emof
-Select GRAAnnotationModel.emof, context menu==>new==>EMF Generator Model	
-*********	Select package 'data', not 'types', plus types from uml model
-	Select package 'data',  'types'
-In generator model editor, set ModelDirectory to src/main/java generate model code	
-**************In generated Code, fixup EntityType_Choice1
-In generator model editor, export to schema for xmi
-	fixup schemaLocation of http://www.omg.org/XMI to  	http://www.omg.org/spec/XMI/20110701/XMI.xsd
-	change http://www.omg.org/XMI to http://www.omg.org/spec/XMI/20110701
+/////////////////////////////////////////////////////////
 For domain model, export via eclipse xmi 2.4

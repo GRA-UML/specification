@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:tns="http://www.iir.com/sorna/NIEM/2.1/notification-list/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://www.iir.com/sorna/NIEM/2.1/notification-list/1.0" version="1">
+  <xsd:import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="../XMLschemas/proxy/xsd/2.0/xsd.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.1" schemaLocation="../XMLschemas/appinfo/2.1/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.0" schemaLocation="../XMLschemas/appinfo/2.0/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="../XMLschemas/structures/2.0/structures.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>SORNA Relocation Notice Description List</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:simpleType name="NotificationMessageCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for Enumeration of Notification Description</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="DNRN">
+        <xsd:annotation>
+          <xsd:documentation>DNRN-Did Not Report Notice: Offender Did Not Report By Date Expected </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="RCN">
+        <xsd:annotation>
+          <xsd:documentation>RCN-Relocation Compliance Notice: Offender Complied with Relocation Registration Requirements</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="RCANN">
+        <xsd:annotation>
+          <xsd:documentation>RCANN-Relocation Cancelled Notice: Offender changed relocation plans, died, was deported, or otherwise left the country.  Please contact the sending agency for details.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="RCONFN">
+        <xsd:annotation>
+          <xsd:documentation>RCONFN: Relocation Confirmation Notice:Confirmation of receipt of the relocation package</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType abstract="false" mixed="false" name="NotificationMessageCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for the SORNA Relocation Notice</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="tns:NotificationMessageCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:schema>

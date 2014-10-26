@@ -557,8 +557,8 @@ mapping UML::Classifier::ObjectType(inout psmOwner:UML::Element,domainContext:UM
 	inherits UML::Classifier::NIEMComplexType
 {
 	init{}
+	//log('ObjectType applying '+NIEMObjectTypeStereotype.qualifiedName)	;
 	result.ApplyStereotype(NIEMObjectTypeStereotype);
-	//log('ObjectType applied '+NIEMObjectTypeStereotype.qualifiedName)	;
 }
 mapping UML::Class::RoleType_class(inout psmOwner:UML::Element,domainContext:UML::Package):UML::Class@niemUml 
 	inherits UML::Classifier::RoleType

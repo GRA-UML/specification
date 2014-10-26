@@ -47,7 +47,7 @@ public interface Service extends EObject {
 	EList<Port> getPort();
 
 	/**
-	 * Returns the value of the '<em><b>Service Provider</b></em>' reference.
+	 * Returns the value of the '<em><b>Service Provider</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Service Provider</em>' reference isn't clear,
@@ -55,21 +55,21 @@ public interface Service extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The provider of the service.
+	 * The provider of the service. Derived from a Realization between the service's realized Component and the participant's realized Actor.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Service Provider</em>' reference.
+	 * @return the value of the '<em>Service Provider</em>' containment reference.
 	 * @see #setServiceProvider(Participant)
 	 * @see data.grauml.graAnnotationModel.GraAnnotationModelPackage#getService_ServiceProvider()
-	 * @model ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	Participant getServiceProvider();
 
 	/**
-	 * Sets the value of the '{@link data.grauml.graAnnotationModel.Service#getServiceProvider <em>Service Provider</em>}' reference.
+	 * Sets the value of the '{@link data.grauml.graAnnotationModel.Service#getServiceProvider <em>Service Provider</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Service Provider</em>' reference.
+	 * @param value the new value of the '<em>Service Provider</em>' containment reference.
 	 * @see #getServiceProvider()
 	 * @generated
 	 */

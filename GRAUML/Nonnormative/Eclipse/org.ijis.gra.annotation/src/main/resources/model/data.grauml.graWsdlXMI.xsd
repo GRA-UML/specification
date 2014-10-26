@@ -2,6 +2,9 @@
 <xsd:schema xmlns:graa="http://ijis.org/GRA/Annotations" xmlns:graw="http:/ijis.org/GRA/WSDLAnnotations" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http:/ijis.org/GRA/WSDLAnnotations">
   <xsd:import namespace="http://ijis.org/GRA/Annotations" schemaLocation="data.grauml.graAnnotationModelXMI.xsd"/>
   <xsd:simpleType name="BindingType">
+    <xsd:annotation>
+      <xsd:documentation>Binding type as per WSD specification.</xsd:documentation>
+    </xsd:annotation>
     <xsd:restriction base="xsd:NCName">
       <xsd:enumeration value="soap">
         <xsd:annotation>
@@ -26,6 +29,9 @@
     </xsd:restriction>
   </xsd:simpleType>
   <xsd:simpleType name="OperationKind">
+    <xsd:annotation>
+      <xsd:documentation>WSDL DOC or RPC Biding. Note for GRA "doc" should always be used.</xsd:documentation>
+    </xsd:annotation>
     <xsd:restriction base="xsd:NCName">
       <xsd:enumeration value="doc">
         <xsd:annotation>
@@ -40,6 +46,9 @@
     </xsd:restriction>
   </xsd:simpleType>
   <xsd:simpleType name="MessageLocation">
+    <xsd:annotation>
+      <xsd:documentation>Location of message content as the body, header or URL</xsd:documentation>
+    </xsd:annotation>
     <xsd:restriction base="xsd:NCName">
       <xsd:enumeration value="body">
         <xsd:annotation>
@@ -51,12 +60,16 @@
           <xsd:documentation>For a soap binding, indicates that the part is in the header of the message.</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
-      <xsd:enumeration value="url"/>
+      <xsd:enumeration value="url">
+        <xsd:annotation>
+          <xsd:documentation>For a soap binding, indicates that the part is in the URL of the message request.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>
   <xsd:complexType name="WsdlServiceInterface">
     <xsd:annotation>
-      <xsd:documentation>Represents a &lt;wsdl:definitions&gt;.</xsd:documentation>
+      <xsd:documentation>WSDL Extension of the technology-independent element. Represents a &lt;wsdl:definitions&gt;.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="graa:ServiceInterfaceSpecification"/>
@@ -64,12 +77,12 @@
   </xsd:complexType>
   <xsd:element name="WsdlServiceInterface" type="graw:WsdlServiceInterface">
     <xsd:annotation>
-      <xsd:documentation>Represents a &lt;wsdl:definitions&gt;.</xsd:documentation>
+      <xsd:documentation>WSDL Extension of the technology-independent element. Represents a &lt;wsdl:definitions&gt;.</xsd:documentation>
     </xsd:annotation>
   </xsd:element>
   <xsd:complexType name="WsdlService">
     <xsd:annotation>
-      <xsd:documentation>Represents a &lt;wsdl:service&gt;.</xsd:documentation>
+      <xsd:documentation>WSDL Extension of the technology-independent element. Represents a &lt;wsdl:service&gt;.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="graa:Service"/>
@@ -77,12 +90,12 @@
   </xsd:complexType>
   <xsd:element name="WsdlService" type="graw:WsdlService">
     <xsd:annotation>
-      <xsd:documentation>Represents a &lt;wsdl:service&gt;.</xsd:documentation>
+      <xsd:documentation>WSDL Extension of the technology-independent element. Represents a &lt;wsdl:service&gt;.</xsd:documentation>
     </xsd:annotation>
   </xsd:element>
   <xsd:complexType name="WsdlPort">
     <xsd:annotation>
-      <xsd:documentation>Represents a &lt;wsdl:port&gt; and &lt;wsdl:binding&gt;.</xsd:documentation>
+      <xsd:documentation>WSDL Extension of the technology-independent element. Represents a &lt;wsdl:port&gt; and &lt;wsdl:binding&gt;.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="graa:Port">
@@ -96,12 +109,12 @@
   </xsd:complexType>
   <xsd:element name="WsdlPort" type="graw:WsdlPort">
     <xsd:annotation>
-      <xsd:documentation>Represents a &lt;wsdl:port&gt; and &lt;wsdl:binding&gt;.</xsd:documentation>
+      <xsd:documentation>WSDL Extension of the technology-independent element. Represents a &lt;wsdl:port&gt; and &lt;wsdl:binding&gt;.</xsd:documentation>
     </xsd:annotation>
   </xsd:element>
   <xsd:complexType name="WsdlInterface">
     <xsd:annotation>
-      <xsd:documentation>Represents a &lt;wsdl:portType&gt;. </xsd:documentation>
+      <xsd:documentation>WSDL Extension of the technology-independent element. Represents a &lt;wsdl:portType&gt;. </xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="graa:Interface">
@@ -115,12 +128,12 @@
   </xsd:complexType>
   <xsd:element name="WsdlInterface" type="graw:WsdlInterface">
     <xsd:annotation>
-      <xsd:documentation>Represents a &lt;wsdl:portType&gt;. </xsd:documentation>
+      <xsd:documentation>WSDL Extension of the technology-independent element. Represents a &lt;wsdl:portType&gt;. </xsd:documentation>
     </xsd:annotation>
   </xsd:element>
   <xsd:complexType name="WsdlOperation">
     <xsd:annotation>
-      <xsd:documentation>Represents a &lt;wsdl:Operation&gt; within a &lt;wsdl:binding&gt; or &lt;wsdl:portType&gt;.</xsd:documentation>
+      <xsd:documentation>WSDL Extension of the technology-independent element. Represents a &lt;wsdl:Operation&gt; within a &lt;wsdl:binding&gt; or &lt;wsdl:portType&gt;.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="graa:Operation">
@@ -134,12 +147,12 @@
   </xsd:complexType>
   <xsd:element name="WsdlOperation" type="graw:WsdlOperation">
     <xsd:annotation>
-      <xsd:documentation>Represents a &lt;wsdl:Operation&gt; within a &lt;wsdl:binding&gt; or &lt;wsdl:portType&gt;.</xsd:documentation>
+      <xsd:documentation>WSDL Extension of the technology-independent element. Represents a &lt;wsdl:Operation&gt; within a &lt;wsdl:binding&gt; or &lt;wsdl:portType&gt;.</xsd:documentation>
     </xsd:annotation>
   </xsd:element>
   <xsd:complexType name="WsdlMessage">
     <xsd:annotation>
-      <xsd:documentation>Represents a &lt;wsdl:message&gt;, its contained &lt;part&gt;, and its usage from a &lt;wsdl:input&gt;, &lt;wsdl:output&gt;, or a &lt;wsdl:fault&gt; within a &lt;wsdl:portType&gt; &lt;wsdl:operation&gt; .</xsd:documentation>
+      <xsd:documentation>WSDL Extension of the technology-independent element. Represents a &lt;wsdl:message&gt;, its contained &lt;part&gt;, and its usage from a &lt;wsdl:input&gt;, &lt;wsdl:output&gt;, or a &lt;wsdl:fault&gt; within a &lt;wsdl:portType&gt; &lt;wsdl:operation&gt; .</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="graa:Message">
@@ -163,10 +176,13 @@
   </xsd:complexType>
   <xsd:element name="WsdlMessage" type="graw:WsdlMessage">
     <xsd:annotation>
-      <xsd:documentation>Represents a &lt;wsdl:message&gt;, its contained &lt;part&gt;, and its usage from a &lt;wsdl:input&gt;, &lt;wsdl:output&gt;, or a &lt;wsdl:fault&gt; within a &lt;wsdl:portType&gt; &lt;wsdl:operation&gt; .</xsd:documentation>
+      <xsd:documentation>WSDL Extension of the technology-independent element. Represents a &lt;wsdl:message&gt;, its contained &lt;part&gt;, and its usage from a &lt;wsdl:input&gt;, &lt;wsdl:output&gt;, or a &lt;wsdl:fault&gt; within a &lt;wsdl:portType&gt; &lt;wsdl:operation&gt; .</xsd:documentation>
     </xsd:annotation>
   </xsd:element>
   <xsd:complexType name="WsdlParameter">
+    <xsd:annotation>
+      <xsd:documentation>WSDL Extension of the technology-independent element. </xsd:documentation>
+    </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="graa:Parameter">
         <xsd:attribute name="mimeType" type="xsd:string">
@@ -177,5 +193,9 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
-  <xsd:element name="WsdlParameter" type="graw:WsdlParameter"/>
+  <xsd:element name="WsdlParameter" type="graw:WsdlParameter">
+    <xsd:annotation>
+      <xsd:documentation>WSDL Extension of the technology-independent element. </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
 </xsd:schema>

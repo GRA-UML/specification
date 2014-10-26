@@ -12,8 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * The Service Interaction Requirements.
- * This may be specified at multiple levels and it assumed to default to the level above. If not specified in a ServiceDescription it defaults to GRA values (or false if not specified).
+ * The Service Interaction Requirements.  This may be specified at multiple levels and it assumed to default to the level above. If not specified in a ServiceDescription it defaults to GRA values (or false if not specified).
  * <!-- end-model-doc -->
  *
  * <p>
@@ -398,7 +397,7 @@ public interface InteractionRequirements extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * ExtendedRequirement provides an arbitrary extension mechanism whereby InteractionRequirement may be notated on the containing element. The intent is that the phase-2 transform may then respect these flags and produce the desired result. Unknown extensions  are ignored.
+	 * ExtendedRequirement provides an arbitrary extension mechanism whereby InteractionRequirement may be notated on the containing element. The intent is that the phase-2 transform may then respect these flags and produce the desired result. Unknown extensions are ignored.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Extended Requirement</em>' attribute list.
 	 * @see data.grauml.graAnnotationModel.GraAnnotationModelPackage#getInteractionRequirements_ExtendedRequirement()

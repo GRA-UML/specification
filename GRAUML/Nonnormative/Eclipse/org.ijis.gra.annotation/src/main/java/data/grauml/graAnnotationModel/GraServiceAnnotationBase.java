@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link data.grauml.graAnnotationModel.GraServiceAnnotationBase#getRequirement <em>Requirement</em>}</li>
  *   <li>{@link data.grauml.graAnnotationModel.GraServiceAnnotationBase#getModelReference <em>Model Reference</em>}</li>
  *   <li>{@link data.grauml.graAnnotationModel.GraServiceAnnotationBase#getFlag <em>Flag</em>}</li>
+ *   <li>{@link data.grauml.graAnnotationModel.GraServiceAnnotationBase#getDiagnostics <em>Diagnostics</em>}</li>
  * </ul>
  * </p>
  *
@@ -165,7 +166,7 @@ public interface GraServiceAnnotationBase extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Flag provides an arbitrary extension mechanism whereby any business or technology choice may be notated on the containing element. The intent is that the phase-2 transform will then respect these flags and produce the desired result. Unknown flags are ignored.
+	 * Flag provides an arbitrary extension mechanism whereby any business or technology choice may be notated on the containing element. The intent is that a user-supplied phase-2 template will then respect these flags and produce the desired result. Unknown flags are ignored.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Flag</em>' attribute list.
 	 * @see data.grauml.graAnnotationModel.GraAnnotationModelPackage#getGraServiceAnnotationBase_Flag()
@@ -173,6 +174,21 @@ public interface GraServiceAnnotationBase extends EObject {
 	 * @generated
 	 */
 	EList<String> getFlag();
+
+	/**
+	 * Returns the value of the '<em><b>Diagnostics</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Diagnostic information for this element.  Derived during phase 1 provisioning.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Diagnostics</em>' attribute list.
+	 * @see data.grauml.graAnnotationModel.GraAnnotationModelPackage#getGraServiceAnnotationBase_Diagnostics()
+	 * @model dataType="types.String" ordered="false"
+	 * @generated
+	 */
+	EList<String> getDiagnostics();
 
 	/**
 	 * <!-- begin-user-doc -->

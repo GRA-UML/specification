@@ -28,6 +28,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link data.grauml.graAnnotationModel.ServiceInterfaceSpecification#getServiceTesting <em>Service Testing</em>}</li>
  *   <li>{@link data.grauml.graAnnotationModel.ServiceInterfaceSpecification#getSchemaReference <em>Schema Reference</em>}</li>
  *   <li>{@link data.grauml.graAnnotationModel.ServiceInterfaceSpecification#getServiceInterfaceNameAbbreviationText <em>Service Interface Name Abbreviation Text</em>}</li>
+ *   <li>{@link data.grauml.graAnnotationModel.ServiceInterfaceSpecification#getPhysicalModel <em>Physical Model</em>}</li>
  * </ul>
  * </p>
  *
@@ -117,7 +118,7 @@ public interface ServiceInterfaceSpecification extends GraServiceAnnotationBase 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * The services of the service interface. note that in GRA it is best practice to have exactly one service per service interface specification.
+	 * The services of the service interface. Note that in GRA it is best practice to have exactly one service per service interface specification.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Service</em>' containment reference list.
 	 * @see data.grauml.graAnnotationModel.GraAnnotationModelPackage#getServiceInterfaceSpecification_Service()
@@ -139,7 +140,7 @@ public interface ServiceInterfaceSpecification extends GraServiceAnnotationBase 
 	 * @return the value of the '<em>Uri Address</em>' attribute.
 	 * @see #setUriAddress(String)
 	 * @see data.grauml.graAnnotationModel.GraAnnotationModelPackage#getServiceInterfaceSpecification_UriAddress()
-	 * @model dataType="types.String" required="true" ordered="false"
+	 * @model dataType="types.String" ordered="false"
 	 * @generated
 	 */
 	String getUriAddress();
@@ -168,7 +169,7 @@ public interface ServiceInterfaceSpecification extends GraServiceAnnotationBase 
 	 *   
 	 * [Service Abbreviation] SSP [Service Version]\artifacts
 	 * 
-	 * If such artifacts are provided,  they should be referenced here. A description of the artifact and a link to it should be provided as part of the reference.
+	 * If such artifacts are provided, they should be referenced here. A description of the artifact and a link to it should be provided as part of the reference.
 	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Message Definition Mechanism</em>' containment reference list.
@@ -191,7 +192,7 @@ public interface ServiceInterfaceSpecification extends GraServiceAnnotationBase 
 	 * @return the value of the '<em>Service Interface Description Uri</em>' attribute.
 	 * @see #setServiceInterfaceDescriptionUri(String)
 	 * @see data.grauml.graAnnotationModel.GraAnnotationModelPackage#getServiceInterfaceSpecification_ServiceInterfaceDescriptionUri()
-	 * @model dataType="types.String" required="true" ordered="false"
+	 * @model dataType="types.String" ordered="false"
 	 * @generated
 	 */
 	String getServiceInterfaceDescriptionUri();
@@ -265,7 +266,7 @@ public interface ServiceInterfaceSpecification extends GraServiceAnnotationBase 
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * TODO: Missing documentation
+	 * Service Providers may deploy testing facilities and specific testing environments for their services.  Use of these testing facilities and environments may be required or optional.  As consumers implement service interfaces, there will be a need to test those implementations.  Service providers should document in this section testing options, testing prerequisites, test endpoints, environmental requirements, test schedules, and control procedures and sample data (inputs and expected outputs) for each supported action.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Service Testing</em>' containment reference.
 	 * @see #setServiceTesting(Description)
@@ -291,8 +292,7 @@ public interface ServiceInterfaceSpecification extends GraServiceAnnotationBase 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Schema used
-	 * TODO: ** Question - do we need to allow entry of schema not in model?
+	 * Reference to used Schema
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Schema Reference</em>' containment reference list.
 	 * @see data.grauml.graAnnotationModel.GraAnnotationModelPackage#getServiceInterfaceSpecification_SchemaReference()
@@ -325,5 +325,32 @@ public interface ServiceInterfaceSpecification extends GraServiceAnnotationBase 
 	 * @generated
 	 */
 	void setServiceInterfaceNameAbbreviationText(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Physical Model</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The physical model should sufficiently describe the set of actions implemented by the service interface and the physical endpoint(s) for accessing these actions.  This section will also include any relevant details of the Service Interaction Profile (SIP) that will govern how the service interaction requirements of the service will be met.  The physical model described in this document will also provide details regarding the message schema(s) for the information model of the service.
+	 * 
+	 * The above information can be made part of this document or included by reference 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Physical Model</em>' containment reference.
+	 * @see #setPhysicalModel(Description)
+	 * @see data.grauml.graAnnotationModel.GraAnnotationModelPackage#getServiceInterfaceSpecification_PhysicalModel()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	Description getPhysicalModel();
+
+	/**
+	 * Sets the value of the '{@link data.grauml.graAnnotationModel.ServiceInterfaceSpecification#getPhysicalModel <em>Physical Model</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Physical Model</em>' containment reference.
+	 * @see #getPhysicalModel()
+	 * @generated
+	 */
+	void setPhysicalModel(Description value);
 
 } // ServiceInterfaceSpecification

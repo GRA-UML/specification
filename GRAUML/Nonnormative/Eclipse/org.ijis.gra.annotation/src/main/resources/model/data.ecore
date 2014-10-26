@@ -13,15 +13,35 @@
             <details key="documentation" value="This is a temporary workaround for some EMF issues."/>
           </eAnnotations>
         </eLiterals>
-        <eLiterals name="enquiry" value="1"/>
-        <eLiterals name="subscription" value="2"/>
-        <eLiterals name="notification" value="3"/>
-        <eLiterals name="update" value="4"/>
-        <eLiterals name="message" value="5"/>
+        <eLiterals name="enquiry" value="1">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A request for information with the subsequent return of that information, if available and authorized. A request-reply."/>
+          </eAnnotations>
+        </eLiterals>
+        <eLiterals name="subscription" value="2">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A request for changes in information with the later notification of such changes, if available and authorized. A request-reply."/>
+          </eAnnotations>
+        </eLiterals>
+        <eLiterals name="notification" value="3">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Notification of an event of change or information. A fire-and-forget."/>
+          </eAnnotations>
+        </eLiterals>
+        <eLiterals name="update" value="4">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A request to change some information with a subsequent return of success of failure. Related information may also be returned. A request-reply."/>
+          </eAnnotations>
+        </eLiterals>
+        <eLiterals name="message" value="5">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="A message as a result of a subscription. A fire-and-forget."/>
+          </eAnnotations>
+        </eLiterals>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="InteractionRequirements">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The Service Interaction Requirements.&#xA;This may be specified at multiple levels and it assumed to default to the level above. If not specified in a ServiceDescription it defaults to GRA values (or false if not specified)."/>
+          <details key="documentation" value="The Service Interaction Requirements.  This may be specified at multiple levels and it assumed to default to the level above. If not specified in a ServiceDescription it defaults to GRA values (or false if not specified)."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceConsumerAuthentication"
             ordered="false" eType="ecore:EDataType types.ecore#//Boolean">
@@ -110,7 +130,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="extendedRequirement"
             ordered="false" lowerBound="1" upperBound="-1" eType="ecore:EDataType types.ecore#//String">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="ExtendedRequirement provides an arbitrary extension mechanism whereby InteractionRequirement may be notated on the containing element. The intent is that the phase-2 transform may then respect these flags and produce the desired result. Unknown extensions  are ignored."/>
+            <details key="documentation" value="ExtendedRequirement provides an arbitrary extension mechanism whereby InteractionRequirement may be notated on the containing element. The intent is that the phase-2 transform may then respect these flags and produce the desired result. Unknown extensions are ignored."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -189,7 +209,13 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="flag" ordered="false"
             upperBound="-1" eType="ecore:EDataType types.ecore#//String">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Flag provides an arbitrary extension mechanism whereby any business or technology choice may be notated on the containing element. The intent is that the phase-2 transform will then respect these flags and produce the desired result. Unknown flags are ignored."/>
+            <details key="documentation" value="Flag provides an arbitrary extension mechanism whereby any business or technology choice may be notated on the containing element. The intent is that a user-supplied phase-2 template will then respect these flags and produce the desired result. Unknown flags are ignored."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="diagnostics" ordered="false"
+            upperBound="-1" eType="ecore:EDataType types.ecore#//String">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Diagnostic information for this element.  Derived during phase 1 provisioning."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -266,7 +292,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Participant" eSuperTypes="#//grauml/graAnnotationModel/GraServiceAnnotationBase">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="A participant in a service interaction."/>
+          <details key="documentation" value="&lt;html>&#xA;  &lt;head>&#xA;&#x9;&#x9;&lt;style>&#xA;&#x9;&#x9;&#x9;p {padding:0px; margin:0px;}&#xA;&#x9;&#x9;&lt;/style>&#xA;&#x9;&lt;/head>&#xA;  &lt;body>&#xA;    &lt;p>&#xA;Each Participant represents an ExchangePartner of the ServiceDescription. &amp;#160;Participant annotations are generated by Phase-1 processing. &amp;#160;A Participant may be modeled directly realizing an Actor in the logical model, in which case a single Participant corresponding to that Actor is generated. A Participant may be modeled realizing a Package in the logical model, in which case a Participant is generated corresponding to every Actor in the package. &amp;#160;A Participant is also generated for every Actor that plays a role in any Interaction owned by the Collaboration realized by the ServiceDescription. &amp;#160;If Actors are related in the logical model by inheritance, then a Participant generated from a specializing Actor will contain a generalization element that identifies the Participant corresponding to the generalizing Actor.&#xA;&#xA;    &lt;/p>&#xA;&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
         </eAnnotations>
         <eOperations name="realizesActor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -288,11 +314,13 @@
           </eParameters>
         </eOperations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="participatingOrganization"
-            ordered="false" eType="#//grauml/graAnnotationModel/Organization">
+            ordered="false" eType="#//grauml/graAnnotationModel/Organization" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="An organization acting as a participant."/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="generalization" ordered="false"
+            upperBound="-1" eType="#//grauml/graAnnotationModel/Participant" containment="true"/>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Organization" eSuperTypes="#//grauml/graAnnotationModel/GraServiceAnnotationBase">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -363,8 +391,7 @@
           <details key="documentation" value="Represents an abstract service interface."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="operation" ordered="false"
-            lowerBound="1" upperBound="-1" eType="#//grauml/graAnnotationModel/Operation"
-            containment="true">
+            upperBound="-1" eType="#//grauml/graAnnotationModel/Operation" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The operations contained by the interface."/>
           </eAnnotations>
@@ -434,8 +461,8 @@
             </eGenericType>
           </eParameters>
         </eOperations>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
-            upperBound="-1" eType="#//grauml/graAnnotationModel/Parameter" containment="true">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
+            eType="#//grauml/graAnnotationModel/Parameter" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The parameters of an operation"/>
           </eAnnotations>
@@ -467,7 +494,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionProvenance" ordered="false"
             eType="ecore:EDataType types.ecore#//String">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="A description of provenance information for this action. &#xA;Used to populate Action Model section of SDD document."/>
+            <details key="documentation" value="A description of provenance information for this action. Used to populate the Action Model section of SDD document."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -520,7 +547,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="message" ordered="false"
-            lowerBound="1" eType="#//grauml/graAnnotationModel/Message" containment="true">
+            eType="#//grauml/graAnnotationModel/Message" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The information transfered in an operation "/>
           </eAnnotations>
@@ -566,6 +593,24 @@
             <details key="documentation" value="Prefix used to reference Schema Namespace."/>
           </eAnnotations>
         </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementPrefix" ordered="false"
+            lowerBound="1" eType="ecore:EDataType types.ecore#//String">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Prefix used to reference Schema Namespace of an element reference."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="elementModelReference"
+            ordered="false" eType="#//grauml/graAnnotationModel/ModelReference" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Reference to a model element annotated by this element.  More specifically, it is the ModelReference associated with a message part element.  This may be derived from the NIEM type by selecting a NIEM property (i.e., xml element) whose type is the message part type."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementName" ordered="false"
+            lowerBound="1" eType="ecore:EDataType types.ecore#//String">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The NIEM name used to reference Schema Name of an element reference."/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="Service">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -597,9 +642,9 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="serviceProvider" ordered="false"
-            eType="#//grauml/graAnnotationModel/Participant">
+            eType="#//grauml/graAnnotationModel/Participant" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The provider of the service."/>
+            <details key="documentation" value="The provider of the service. Derived from a Realization between the service's realized Component and the participant's realized Actor."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="sampleData" ordered="false"
@@ -633,14 +678,13 @@
           </eParameters>
         </eOperations>
         <eStructuralFeatures xsi:type="ecore:EReference" name="interface" ordered="false"
-            lowerBound="1" upperBound="-1" eType="#//grauml/graAnnotationModel/Interface"
-            containment="true">
+            upperBound="-1" eType="#//grauml/graAnnotationModel/Interface" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Interfaces provided by the Port."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="addressUri" ordered="false"
-            lowerBound="1" eType="ecore:EDataType types.ecore#//String">
+            eType="ecore:EDataType types.ecore#//String">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="The &lt;soap:address> location of a &lt;wsdl:port>. Derived by default in phase-2 from ServiceInterfaceURI+&quot;/&quot;+&quot;Name&quot; but MAY be changed in the model"/>
           </eAnnotations>
@@ -665,7 +709,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ServiceInteraction" eSuperTypes="#//grauml/graAnnotationModel/GraServiceAnnotationBase">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Represents exchanges between parties. Realizes an Interaction."/>
+          <details key="documentation" value="&lt;html>&#xA;  &lt;head>&#xA;&#x9;&#x9;&lt;style>&#xA;&#x9;&#x9;&#x9;p {padding:0px; margin:0px;}&#xA;&#x9;&#x9;&lt;/style>&#xA;&#x9;&lt;/head>&#xA;  &lt;body>&#xA;    &lt;p>&#xA;A ServiceInteraction represents an exchange between participants. ServiceInteractions are generated by Phase-1 processing for each Interaction owned by the Collaboration realized by the ServiceDescription, with the Participants property derived from the Actors that play a role in the Interaction.&#xA;&#xA;    &lt;/p>&#xA;&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
         </eAnnotations>
         <eOperations name="realizesInteraction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -695,7 +739,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="UseCase" eSuperTypes="#//grauml/graAnnotationModel/GraServiceAnnotationBase">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="[Derived from] Use case or package with use cases. In the case of a package, each contained use case shall produce a use case element in Phase-1."/>
+          <details key="documentation" value="&lt;html>&#xA;  &lt;head>&#xA;&#x9;&#x9;&lt;style>&#xA;&#x9;&#x9;&#x9;p {padding:0px; margin:0px;}&#xA;&#x9;&#x9;&lt;/style>&#xA;&#x9;&lt;/head>&#xA;  &lt;body>&#xA;    &lt;p>&#xA;A UseCase annotation represents one or more &amp;quot;real world effects&amp;quot; of a ServiceDescription. &amp;#160;In the annotation model, a UseCase instance may realize a UseCase or a Package in the logical model. &amp;#160;In the former case, Phase-1 will generate a single UseCase instance&lt;span lang=&quot;EN-US&quot;>. In the latter case, Phase-1 will generate a UseCase instance for each UML&amp;#160;UseCase contained in the realized Package. &amp;#160;In all cases the generated UseCases' &lt;/span>Provider and Consumer properties are derived from Associations stereotyped &lt;span lang=&quot;EN-US&quot;>«Provider» and «Consumer» between the logical UseCases and the logical Actors that correspond to Participants in the generated annotation model.&lt;/span>&#xA;    &lt;/p>&#xA;&#xA;    &lt;p>&#xA;&amp;#160;&#xA;    &lt;/p>&#xA;&#xA;    &lt;p>&#xA;&amp;#160;&#xA;&#xA;    &lt;/p>&#xA;&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
         </eAnnotations>
         <eOperations name="derivation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -775,7 +819,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="IepdReference">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="A data structure describing the name and location of an IEPD. An annotation element may be related to an IEPD  by means of a Usage dependency, in which case the properties of this structure are derived from the used IEPD."/>
+          <details key="documentation" value="A data structure describing the name and location of an IEPD. An annotation element may be related to an IEPD by means of a Usage dependency, in which case the properties of this structure are derived from the used IEPD."/>
         </eAnnotations>
         <eOperations name="derivation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -841,7 +885,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ServiceCapability">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="A free text format description of the capability provided by a service."/>
+          <details key="documentation" value="A free text format description of the capability provided by a service. Per GRA, a capability represents the provider's view of a service."/>
         </eAnnotations>
         <eOperations name="docDerivation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
           <eAnnotations source="http://www.eclipse.org/uml2/1.1.0/GenModel">
@@ -914,7 +958,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="exchangePartner" ordered="false"
             upperBound="-1" eType="#//grauml/graAnnotationModel/Participant" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The participants in a service.In the case of a package, each contained actor shall produce a use Participant element in Phase-1."/>
+            <details key="documentation" value="The Participants in a service. May be derived in Phase-1 - see Participant. "/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="classification" lowerBound="1"
@@ -972,7 +1016,7 @@
             lowerBound="1" upperBound="-1" eType="#//grauml/graAnnotationModel/IepdReference"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Reference information identifying an Information Exchange Package Document which the service uses in its data model&#xA;[Derived from] &lt;Uses> relation to IEPD"/>
+            <details key="documentation" value="Reference information identifying an Information Exchange Package Document which the service uses in its data model.&#xA;[Derived from] Usage dependencies to IEPD."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="serviceSecurityClassification"
@@ -1026,7 +1070,7 @@
             ordered="false" lowerBound="1" upperBound="-1" eType="#//grauml/graAnnotationModel/ServiceInteraction"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="A Documented Component"/>
+            <details key="documentation" value="The exchanges between participants described by the service. Maps to the GRA business scenarios. "/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="transformationUri"
@@ -1098,11 +1142,11 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="additionalInformation"
             upperBound="-1" eType="#//grauml/graAnnotationModel/Description" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This property contains any additional information pertinent to the service which should be included in this description but does not belong elsewhere.  This could be information about future capabilities the service could provide, information regarding specific conditions which govern the use of the service, information regarding specific domain capabilities the service fulfills, etc.  If required, subsections can be created to further structure the information provided in this section.&#xA;&#xA;Additional artifacts related to this section's content can be provided in the artifacts folder of the service package.&#xA;  &#xA;[Service Abbreviation] SSP [Service Version]\artifacts&#xA;&#xA;If such artifacts are provided,  they should be referenced here.  A description of the artifact and a link to it should be provided as part of the reference.&#xA;&#xA;This property is used to populate the Additional Information section of the SDD document.&#xA;"/>
+            <details key="documentation" value="This property contains any additional information pertinent to the service which should be included in this description but does not belong elsewhere.  This could be information about future capabilities the service could provide, information regarding specific conditions which govern the use of the service, information regarding specific domain capabilities the service fulfills, etc.  If required, subsections can be created to further structure the information provided in this section.&#xA;&#xA;Additional artifacts related to this section's content can be provided in the artifacts folder of the service package.&#xA;  &#xA;[Service Abbreviation] SSP [Service Version]\artifacts&#xA;&#xA;If such artifacts are provided, they should be referenced here.  A description of the artifact and a link to it should be provided as part of the reference.&#xA;&#xA;This property is used to populate the Additional Information section of the SDD document.&#xA;"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceDescriptionUri"
-            ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String">
+            ordered="false" eType="ecore:EDataType types.ecore#//String">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="URI of the Service Description Document, relative to the SSP Catalog."/>
           </eAnnotations>
@@ -1134,11 +1178,21 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="otherRequirement" ordered="false"
             eType="#//grauml/graAnnotationModel/Description" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="[This section lists any other requirements which have to be met and on which the service depends to deliver its capabilities.]&#xA;&#xA;[Additional artifacts related to specific subsections of this section's content can be provided under the artifacts folder of the service package. It is suggested there be a large number of artifacts related to this section.  These artifacts are included as documents or folders under the various artifacts subfolder of the artifacts folder.&#xA;"/>
+            <details key="documentation" value="This section lists any other requirements which have to be met and on which the service depends to deliver its capabilities.&#xA;&#xA;Additional artifacts related to specific subsections of this section's content can be provided under the artifacts folder of the service package.These artifacts are included as documents or folders under the various subfolders of the artifacts folder.&#xA;"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="dataProvenance" ordered="false"
-            eType="#//grauml/graAnnotationModel/Description" containment="true"/>
+            eType="#//grauml/graAnnotationModel/Description" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Provenance is defined as the agency, office, or person of origin of records, i.e., the entity that created, received, or accumulated and used the records in the conduct of their business activities.  Any applicable provenance information or restrictions should be provided in this section."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="processModel" ordered="false"
+            eType="#//grauml/graAnnotationModel/Description" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="Process models describe processing rules and fault handling and should provide a step-by-step description of the logic carried out by the service actions including any pre- or post-conditions.  This should be supplemented with algorithms, workflow diagrams, or even entire business process definitions.  &#xA;&#xA;The process model could be described utilizing a variety of business process modeling notations and languages which are further described in business process modeling profiles.  &#xA;"/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="ServiceIdentification" eSuperTypes="#//grauml/graAnnotationModel/GraServiceAnnotationBase">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -1189,7 +1243,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="documentation" ordered="false"
             eType="ecore:EDataType types.ecore#//String">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The documentation for the element."/>
+            <details key="documentation" value="The documentation for the element. Derived from the UML element's comment."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="externalDocumentation"
@@ -1285,7 +1339,7 @@
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="applicablePolicy" ordered="false"
-            upperBound="-1" eType="#//grauml/graAnnotationModel/Description" containment="true">
+            upperBound="-1" eType="#//grauml/graAnnotationModel/Agreement" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="A collection of all policies that in some way constrain, govern, or control the usage of a service, application, process. etc."/>
           </eAnnotations>
@@ -1294,7 +1348,7 @@
             ordered="false" upperBound="-1" eType="#//grauml/graAnnotationModel/Agreement"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="A set of umbrella agreements that in some way constrain, govern, or control the usage of a service, application, process. etc."/>
+            <details key="documentation" value="A set of umbrella agreements that in some way constrain, govern, or control the usage of a service, application, process etc."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="agreement" ordered="false"
@@ -1325,7 +1379,7 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="licensingAgreement"
             ordered="false" eType="#//grauml/graAnnotationModel/Agreement" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Agreement licensing a service or application. Descriptive values could be In House, No License,  Open Source, Purchase License, etc."/>
+            <details key="documentation" value="Agreement licensing a service or application. Descriptive values could be In House, No License, Open Source, Purchase License, etc."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceResponseTime"
@@ -1349,7 +1403,7 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceAvailability"
             ordered="false" eType="ecore:EDataType types.ecore#//String">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="A description or measurement of the expected availbility that a service is usable."/>
+            <details key="documentation" value="A description or measurement of the expected availability that a service is usable."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="usageCostAmount" ordered="false"
@@ -1361,13 +1415,13 @@
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="usageUnitCostAmount"
             ordered="false" eType="ecore:EDataType types.ecore#//String">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="A cost associated with a service(e.g. transaction, unlimited transactions, minutes of use). Currency text may precede or follow amount."/>
+            <details key="documentation" value="A cost associated with a service (e.g. transaction, unlimited transactions, minutes of use). Currency text may precede or follow amount."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="creationCostAmount"
             ordered="false" eType="ecore:EDataType types.ecore#//String">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="A cost create a thing, such as an application or service  This includes the full cost to design, manage, develop, test, implement and maintain. Currency text may precede or follow amount."/>
+            <details key="documentation" value="Cost to create a thing, such as an application or service. This includes the full cost to design, manage, develop, test, implement and maintain. Currency text may precede or follow amount."/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -1398,11 +1452,11 @@
             lowerBound="1" upperBound="-1" eType="#//grauml/graAnnotationModel/Service"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The services of the service interface. note that in GRA it is best practice to have exactly one service per service interface specification."/>
+            <details key="documentation" value="The services of the service interface. Note that in GRA it is best practice to have exactly one service per service interface specification."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="uriAddress" ordered="false"
-            lowerBound="1" eType="ecore:EDataType types.ecore#//String">
+            eType="ecore:EDataType types.ecore#//String">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="URI of the (WSDL) service interface potentially including version and environment.  The URI is relative to the SSP Catalog.&#xA;&#xA;TODO: really? -> [derived from] Element name.&#xA;"/>
           </eAnnotations>
@@ -1410,11 +1464,11 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="messageDefinitionMechanism"
             upperBound="-1" eType="#//grauml/graAnnotationModel/Description" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="This property includes information about the message definition mechanism utilized by the service actions.&#xA;&#xA;Per the GRA, message definition mechanisms are closely related to the interface description requirements.  Unlike interface description requirements, message definition mechanisms establish a standard way of defining the structure and contents of a message.&#xA;&#xA;Additional artifacts related to this section's content can be provided in the artifacts folder of the service package.&#xA;  &#xA;[Service Abbreviation] SSP [Service Version]\artifacts&#xA;&#xA;If such artifacts are provided,  they should be referenced here. A description of the artifact and a link to it should be provided as part of the reference.&#xA;"/>
+            <details key="documentation" value="This property includes information about the message definition mechanism utilized by the service actions.&#xA;&#xA;Per the GRA, message definition mechanisms are closely related to the interface description requirements.  Unlike interface description requirements, message definition mechanisms establish a standard way of defining the structure and contents of a message.&#xA;&#xA;Additional artifacts related to this section's content can be provided in the artifacts folder of the service package.&#xA;  &#xA;[Service Abbreviation] SSP [Service Version]\artifacts&#xA;&#xA;If such artifacts are provided, they should be referenced here. A description of the artifact and a link to it should be provided as part of the reference.&#xA;"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceInterfaceDescriptionUri"
-            ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String">
+            ordered="false" eType="ecore:EDataType types.ecore#//String">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="URI of the Service Interface Description document, potentially including version and environment.  The URI is relative to the SSP Catalog.&#xA;&#xA;TODO: Really? ->[derived from] Element name.&#xA;"/>
           </eAnnotations>
@@ -1434,20 +1488,26 @@
         <eStructuralFeatures xsi:type="ecore:EReference" name="serviceTesting" ordered="false"
             eType="#//grauml/graAnnotationModel/Description" containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="TODO: Missing documentation"/>
+            <details key="documentation" value="Service Providers may deploy testing facilities and specific testing environments for their services.  Use of these testing facilities and environments may be required or optional.  As consumers implement service interfaces, there will be a need to test those implementations.  Service providers should document in this section testing options, testing prerequisites, test endpoints, environmental requirements, test schedules, and control procedures and sample data (inputs and expected outputs) for each supported action."/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EReference" name="schemaReference" ordered="false"
             lowerBound="1" upperBound="-1" eType="#//grauml/graAnnotationModel/SchemaReference"
             containment="true">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Schema used&#xA;TODO: ** Question - do we need to allow entry of schema not in model?"/>
+            <details key="documentation" value="Reference to used Schema"/>
           </eAnnotations>
         </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="serviceInterfaceNameAbbreviationText"
             ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="A human readable abbreviation of the Service Name that is also appropriate as a WSDL prefix."/>
+          </eAnnotations>
+        </eStructuralFeatures>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="physicalModel" ordered="false"
+            eType="#//grauml/graAnnotationModel/Description" containment="true">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The physical model should sufficiently describe the set of actions implemented by the service interface and the physical endpoint(s) for accessing these actions.  This section will also include any relevant details of the Service Interaction Profile (SIP) that will govern how the service interaction requirements of the service will be met.  The physical model described in this document will also provide details regarding the message schema(s) for the information model of the service.&#xA;&#xA;The above information can be made part of this document or included by reference "/>
           </eAnnotations>
         </eStructuralFeatures>
       </eClassifiers>
@@ -1533,17 +1593,17 @@
     <eSubpackages name="graWsdl" nsURI="http:/ijis.org/GRA/WSDLAnnotations" nsPrefix="data.grauml.graWsdl">
       <eClassifiers xsi:type="ecore:EClass" name="WsdlServiceInterface" eSuperTypes="#//grauml/graAnnotationModel/ServiceInterfaceSpecification">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Represents a &lt;wsdl:definitions>."/>
+          <details key="documentation" value="WSDL Extension of the technology-independent element. Represents a &lt;wsdl:definitions>."/>
         </eAnnotations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="WsdlService" eSuperTypes="#//grauml/graAnnotationModel/Service">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Represents a &lt;wsdl:service>."/>
+          <details key="documentation" value="WSDL Extension of the technology-independent element. Represents a &lt;wsdl:service>."/>
         </eAnnotations>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="WsdlPort" eSuperTypes="#//grauml/graAnnotationModel/Port">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Represents a &lt;wsdl:port> and &lt;wsdl:binding>."/>
+          <details key="documentation" value="WSDL Extension of the technology-independent element. Represents a &lt;wsdl:port> and &lt;wsdl:binding>."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="certificate" ordered="false"
             eType="ecore:EDataType types.ecore#//String">
@@ -1554,7 +1614,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="WsdlInterface" eSuperTypes="#//grauml/graAnnotationModel/Interface">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Represents a &lt;wsdl:portType>. "/>
+          <details key="documentation" value="WSDL Extension of the technology-independent element. Represents a &lt;wsdl:portType>. "/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingCode" ordered="false"
             eType="#//grauml/graWsdl/BindingType">
@@ -1564,6 +1624,9 @@
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="BindingType">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Binding type as per WSD specification."/>
+        </eAnnotations>
         <eLiterals name="soap">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Represents a soap binding."/>
@@ -1587,7 +1650,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="WsdlOperation" eSuperTypes="#//grauml/graAnnotationModel/Operation">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Represents a &lt;wsdl:Operation> within a &lt;wsdl:binding> or &lt;wsdl:portType>."/>
+          <details key="documentation" value="WSDL Extension of the technology-independent element. Represents a &lt;wsdl:Operation> within a &lt;wsdl:binding> or &lt;wsdl:portType>."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationKindCode"
             ordered="false" eType="#//grauml/graWsdl/OperationKind">
@@ -1597,6 +1660,9 @@
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="OperationKind">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="WSDL DOC or RPC Biding. Note for GRA &quot;doc&quot; should always be used."/>
+        </eAnnotations>
         <eLiterals name="doc">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="Represents a soap:operation style of &quot;document&quot;."/>
@@ -1610,7 +1676,7 @@
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="WsdlMessage" eSuperTypes="#//grauml/graAnnotationModel/Message">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Represents a &lt;wsdl:message>, its contained &lt;part>, and its usage from a &lt;wsdl:input>, &lt;wsdl:output>, or a &lt;wsdl:fault> within a &lt;wsdl:portType> &lt;wsdl:operation> ."/>
+          <details key="documentation" value="WSDL Extension of the technology-independent element. Represents a &lt;wsdl:message>, its contained &lt;part>, and its usage from a &lt;wsdl:input>, &lt;wsdl:output>, or a &lt;wsdl:fault> within a &lt;wsdl:portType> &lt;wsdl:operation> ."/>
         </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageLocationCode"
             ordered="false" eType="#//grauml/graWsdl/MessageLocation">
@@ -1632,6 +1698,9 @@
         </eStructuralFeatures>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EEnum" name="MessageLocation">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Location of message content as the body, header or URL"/>
+        </eAnnotations>
         <eLiterals name="body">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
             <details key="documentation" value="For a soap binding, indicates that the part is in the body of the message."/>
@@ -1642,9 +1711,16 @@
             <details key="documentation" value="For a soap binding, indicates that the part is in the header of the message."/>
           </eAnnotations>
         </eLiterals>
-        <eLiterals name="url" value="2"/>
+        <eLiterals name="url" value="2">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="For a soap binding, indicates that the part is in the URL of the message request."/>
+          </eAnnotations>
+        </eLiterals>
       </eClassifiers>
       <eClassifiers xsi:type="ecore:EClass" name="WsdlParameter" eSuperTypes="#//grauml/graAnnotationModel/Parameter">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="WSDL Extension of the technology-independent element. "/>
+        </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="mimeType" ordered="false"
             eType="ecore:EDataType types.ecore#//String">
           <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

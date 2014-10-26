@@ -17,11 +17,31 @@ Within the service interface description, the behavioral model should describe m
           <xsd:documentation>This is a temporary workaround for some EMF issues.</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
-      <xsd:enumeration value="enquiry"/>
-      <xsd:enumeration value="subscription"/>
-      <xsd:enumeration value="notification"/>
-      <xsd:enumeration value="update"/>
-      <xsd:enumeration value="message"/>
+      <xsd:enumeration value="enquiry">
+        <xsd:annotation>
+          <xsd:documentation>A request for information with the subsequent return of that information, if available and authorized. A request-reply.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="subscription">
+        <xsd:annotation>
+          <xsd:documentation>A request for changes in information with the later notification of such changes, if available and authorized. A request-reply.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="notification">
+        <xsd:annotation>
+          <xsd:documentation>Notification of an event of change or information. A fire-and-forget.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="update">
+        <xsd:annotation>
+          <xsd:documentation>A request to change some information with a subsequent return of success of failure. Related information may also be returned. A request-reply.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="message">
+        <xsd:annotation>
+          <xsd:documentation>A message as a result of a subscription. A fire-and-forget.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>
   <xsd:simpleType name="ParameterUse">
@@ -58,13 +78,12 @@ Within the service interface description, the behavioral model should describe m
   </xsd:simpleType>
   <xsd:complexType name="InteractionRequirements">
     <xsd:annotation>
-      <xsd:documentation>The Service Interaction Requirements.
-This may be specified at multiple levels and it assumed to default to the level above. If not specified in a ServiceDescription it defaults to GRA values (or false if not specified).</xsd:documentation>
+      <xsd:documentation>The Service Interaction Requirements.  This may be specified at multiple levels and it assumed to default to the level above. If not specified in a ServiceDescription it defaults to GRA values (or false if not specified).</xsd:documentation>
     </xsd:annotation>
     <xsd:choice maxOccurs="unbounded" minOccurs="0">
       <xsd:element name="extendedRequirement" nillable="true" type="xsd:string">
         <xsd:annotation>
-          <xsd:documentation>ExtendedRequirement provides an arbitrary extension mechanism whereby InteractionRequirement may be notated on the containing element. The intent is that the phase-2 transform may then respect these flags and produce the desired result. Unknown extensions  are ignored.</xsd:documentation>
+          <xsd:documentation>ExtendedRequirement provides an arbitrary extension mechanism whereby InteractionRequirement may be notated on the containing element. The intent is that the phase-2 transform may then respect these flags and produce the desired result. Unknown extensions are ignored.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element ref="xmi:Extension"/>
@@ -144,8 +163,7 @@ This may be specified at multiple levels and it assumed to default to the level 
   </xsd:complexType>
   <xsd:element name="InteractionRequirements" type="graa:InteractionRequirements">
     <xsd:annotation>
-      <xsd:documentation>The Service Interaction Requirements.
-This may be specified at multiple levels and it assumed to default to the level above. If not specified in a ServiceDescription it defaults to GRA values (or false if not specified).</xsd:documentation>
+      <xsd:documentation>The Service Interaction Requirements.  This may be specified at multiple levels and it assumed to default to the level above. If not specified in a ServiceDescription it defaults to GRA values (or false if not specified).</xsd:documentation>
     </xsd:annotation>
   </xsd:element>
   <xsd:complexType abstract="true" name="GraServiceAnnotationBase">
@@ -155,7 +173,12 @@ This may be specified at multiple levels and it assumed to default to the level 
     <xsd:choice maxOccurs="unbounded" minOccurs="0">
       <xsd:element name="flag" nillable="true" type="xsd:string">
         <xsd:annotation>
-          <xsd:documentation>Flag provides an arbitrary extension mechanism whereby any business or technology choice may be notated on the containing element. The intent is that the phase-2 transform will then respect these flags and produce the desired result. Unknown flags are ignored.</xsd:documentation>
+          <xsd:documentation>Flag provides an arbitrary extension mechanism whereby any business or technology choice may be notated on the containing element. The intent is that a user-supplied phase-2 template will then respect these flags and produce the desired result. Unknown flags are ignored.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="diagnostics" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Diagnostic information for this element.  Derived during phase 1 provisioning.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="requirement" type="graa:InteractionRequirements">
@@ -260,7 +283,21 @@ This may be specified at multiple levels and it assumed to default to the level 
   </xsd:element>
   <xsd:complexType name="Participant">
     <xsd:annotation>
-      <xsd:documentation>A participant in a service interaction.</xsd:documentation>
+      <xsd:documentation>&lt;html&gt;
+  &lt;head&gt;
+		&lt;style&gt;
+			p {padding:0px; margin:0px;}
+		&lt;/style&gt;
+	&lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;
+Each Participant represents an ExchangePartner of the ServiceDescription. &amp;#160;Participant annotations are generated by Phase-1 processing. &amp;#160;A Participant may be modeled directly realizing an Actor in the logical model, in which case a single Participant corresponding to that Actor is generated. A Participant may be modeled realizing a Package in the logical model, in which case a Participant is generated corresponding to every Actor in the package. &amp;#160;A Participant is also generated for every Actor that plays a role in any Interaction owned by the Collaboration realized by the ServiceDescription. &amp;#160;If Actors are related in the logical model by inheritance, then a Participant generated from a specializing Actor will contain a generalization element that identifies the Participant corresponding to the generalizing Actor.
+
+    &lt;/p&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="graa:GraServiceAnnotationBase">
@@ -270,18 +307,28 @@ This may be specified at multiple levels and it assumed to default to the level 
               <xsd:documentation>An organization acting as a participant.</xsd:documentation>
             </xsd:annotation>
           </xsd:element>
+          <xsd:element name="generalization" type="graa:Participant"/>
         </xsd:choice>
-        <xsd:attribute name="participatingOrganization" type="xsd:string">
-          <xsd:annotation>
-            <xsd:documentation>An organization acting as a participant.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
   <xsd:element name="Participant" type="graa:Participant">
     <xsd:annotation>
-      <xsd:documentation>A participant in a service interaction.</xsd:documentation>
+      <xsd:documentation>&lt;html&gt;
+  &lt;head&gt;
+		&lt;style&gt;
+			p {padding:0px; margin:0px;}
+		&lt;/style&gt;
+	&lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;
+Each Participant represents an ExchangePartner of the ServiceDescription. &amp;#160;Participant annotations are generated by Phase-1 processing. &amp;#160;A Participant may be modeled directly realizing an Actor in the logical model, in which case a single Participant corresponding to that Actor is generated. A Participant may be modeled realizing a Package in the logical model, in which case a Participant is generated corresponding to every Actor in the package. &amp;#160;A Participant is also generated for every Actor that plays a role in any Interaction owned by the Collaboration realized by the ServiceDescription. &amp;#160;If Actors are related in the logical model by inheritance, then a Participant generated from a specializing Actor will contain a generalization element that identifies the Participant corresponding to the generalizing Actor.
+
+    &lt;/p&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</xsd:documentation>
     </xsd:annotation>
   </xsd:element>
   <xsd:complexType name="Organization">
@@ -415,8 +462,7 @@ This may be specified at multiple levels and it assumed to default to the level 
         </xsd:attribute>
         <xsd:attribute name="actionProvenance" type="xsd:string">
           <xsd:annotation>
-            <xsd:documentation>A description of provenance information for this action. 
-Used to populate Action Model section of SDD document.</xsd:documentation>
+            <xsd:documentation>A description of provenance information for this action. Used to populate the Action Model section of SDD document.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
       </xsd:extension>
@@ -460,9 +506,26 @@ Used to populate Action Model section of SDD document.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="graa:GraServiceAnnotationBase">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="elementModelReference" type="graa:ModelReference">
+            <xsd:annotation>
+              <xsd:documentation>Reference to a model element annotated by this element.  More specifically, it is the ModelReference associated with a message part element.  This may be derived from the NIEM type by selecting a NIEM property (i.e., xml element) whose type is the message part type.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:choice>
         <xsd:attribute name="prefix" type="xsd:string" use="required">
           <xsd:annotation>
             <xsd:documentation>Prefix used to reference Schema Namespace.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="elementPrefix" type="xsd:string" use="required">
+          <xsd:annotation>
+            <xsd:documentation>Prefix used to reference Schema Namespace of an element reference.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="elementName" type="xsd:string" use="required">
+          <xsd:annotation>
+            <xsd:documentation>The NIEM name used to reference Schema Name of an element reference.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
       </xsd:extension>
@@ -486,7 +549,7 @@ Used to populate Action Model section of SDD document.</xsd:documentation>
       </xsd:element>
       <xsd:element name="serviceProvider" type="graa:Participant">
         <xsd:annotation>
-          <xsd:documentation>The provider of the service.</xsd:documentation>
+          <xsd:documentation>The provider of the service. Derived from a Realization between the service's realized Component and the participant's realized Actor.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="sampleData" type="graa:SampleData">
@@ -498,11 +561,6 @@ Used to populate Action Model section of SDD document.</xsd:documentation>
     </xsd:choice>
     <xsd:attribute ref="xmi:id"/>
     <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
-    <xsd:attribute name="serviceProvider" type="xsd:string">
-      <xsd:annotation>
-        <xsd:documentation>The provider of the service.</xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
   </xsd:complexType>
   <xsd:element name="Service" type="graa:Service">
     <xsd:annotation>
@@ -522,7 +580,7 @@ Used to populate Action Model section of SDD document.</xsd:documentation>
             </xsd:annotation>
           </xsd:element>
         </xsd:choice>
-        <xsd:attribute name="addressUri" type="xsd:string" use="required">
+        <xsd:attribute name="addressUri" type="xsd:string">
           <xsd:annotation>
             <xsd:documentation>The &lt;soap:address&gt; location of a &lt;wsdl:port&gt;. Derived by default in phase-2 from ServiceInterfaceURI+"/"+"Name" but MAY be changed in the model</xsd:documentation>
           </xsd:annotation>
@@ -564,7 +622,21 @@ Used to populate Action Model section of SDD document.</xsd:documentation>
   </xsd:element>
   <xsd:complexType name="ServiceInteraction">
     <xsd:annotation>
-      <xsd:documentation>Represents exchanges between parties. Realizes an Interaction.</xsd:documentation>
+      <xsd:documentation>&lt;html&gt;
+  &lt;head&gt;
+		&lt;style&gt;
+			p {padding:0px; margin:0px;}
+		&lt;/style&gt;
+	&lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;
+A ServiceInteraction represents an exchange between participants. ServiceInteractions are generated by Phase-1 processing for each Interaction owned by the Collaboration realized by the ServiceDescription, with the Participants property derived from the Actors that play a role in the Interaction.
+
+    &lt;/p&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="graa:GraServiceAnnotationBase">
@@ -580,12 +652,48 @@ Used to populate Action Model section of SDD document.</xsd:documentation>
   </xsd:complexType>
   <xsd:element name="ServiceInteraction" type="graa:ServiceInteraction">
     <xsd:annotation>
-      <xsd:documentation>Represents exchanges between parties. Realizes an Interaction.</xsd:documentation>
+      <xsd:documentation>&lt;html&gt;
+  &lt;head&gt;
+		&lt;style&gt;
+			p {padding:0px; margin:0px;}
+		&lt;/style&gt;
+	&lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;
+A ServiceInteraction represents an exchange between participants. ServiceInteractions are generated by Phase-1 processing for each Interaction owned by the Collaboration realized by the ServiceDescription, with the Participants property derived from the Actors that play a role in the Interaction.
+
+    &lt;/p&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</xsd:documentation>
     </xsd:annotation>
   </xsd:element>
   <xsd:complexType name="UseCase">
     <xsd:annotation>
-      <xsd:documentation>[Derived from] Use case or package with use cases. In the case of a package, each contained use case shall produce a use case element in Phase-1.</xsd:documentation>
+      <xsd:documentation>&lt;html&gt;
+  &lt;head&gt;
+		&lt;style&gt;
+			p {padding:0px; margin:0px;}
+		&lt;/style&gt;
+	&lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;
+A UseCase annotation represents one or more &amp;quot;real world effects&amp;quot; of a ServiceDescription. &amp;#160;In the annotation model, a UseCase instance may realize a UseCase or a Package in the logical model. &amp;#160;In the former case, Phase-1 will generate a single UseCase instance&lt;span lang="EN-US"&gt;. In the latter case, Phase-1 will generate a UseCase instance for each UML&amp;#160;UseCase contained in the realized Package. &amp;#160;In all cases the generated UseCases' &lt;/span&gt;Provider and Consumer properties are derived from Associations stereotyped &lt;span lang="EN-US"&gt;«Provider» and «Consumer» between the logical UseCases and the logical Actors that correspond to Participants in the generated annotation model.&lt;/span&gt;
+    &lt;/p&gt;
+
+    &lt;p&gt;
+&amp;#160;
+    &lt;/p&gt;
+
+    &lt;p&gt;
+&amp;#160;
+
+    &lt;/p&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="graa:GraServiceAnnotationBase">
@@ -606,7 +714,29 @@ Used to populate Action Model section of SDD document.</xsd:documentation>
   </xsd:complexType>
   <xsd:element name="UseCase" type="graa:UseCase">
     <xsd:annotation>
-      <xsd:documentation>[Derived from] Use case or package with use cases. In the case of a package, each contained use case shall produce a use case element in Phase-1.</xsd:documentation>
+      <xsd:documentation>&lt;html&gt;
+  &lt;head&gt;
+		&lt;style&gt;
+			p {padding:0px; margin:0px;}
+		&lt;/style&gt;
+	&lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;
+A UseCase annotation represents one or more &amp;quot;real world effects&amp;quot; of a ServiceDescription. &amp;#160;In the annotation model, a UseCase instance may realize a UseCase or a Package in the logical model. &amp;#160;In the former case, Phase-1 will generate a single UseCase instance&lt;span lang="EN-US"&gt;. In the latter case, Phase-1 will generate a UseCase instance for each UML&amp;#160;UseCase contained in the realized Package. &amp;#160;In all cases the generated UseCases' &lt;/span&gt;Provider and Consumer properties are derived from Associations stereotyped &lt;span lang="EN-US"&gt;«Provider» and «Consumer» between the logical UseCases and the logical Actors that correspond to Participants in the generated annotation model.&lt;/span&gt;
+    &lt;/p&gt;
+
+    &lt;p&gt;
+&amp;#160;
+    &lt;/p&gt;
+
+    &lt;p&gt;
+&amp;#160;
+
+    &lt;/p&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</xsd:documentation>
     </xsd:annotation>
   </xsd:element>
   <xsd:complexType name="Agreement">
@@ -641,7 +771,7 @@ Used to populate Action Model section of SDD document.</xsd:documentation>
   </xsd:element>
   <xsd:complexType name="IepdReference">
     <xsd:annotation>
-      <xsd:documentation>A data structure describing the name and location of an IEPD. An annotation element may be related to an IEPD  by means of a Usage dependency, in which case the properties of this structure are derived from the used IEPD.</xsd:documentation>
+      <xsd:documentation>A data structure describing the name and location of an IEPD. An annotation element may be related to an IEPD by means of a Usage dependency, in which case the properties of this structure are derived from the used IEPD.</xsd:documentation>
     </xsd:annotation>
     <xsd:choice maxOccurs="unbounded" minOccurs="0">
       <xsd:element ref="xmi:Extension"/>
@@ -661,7 +791,7 @@ Used to populate Action Model section of SDD document.</xsd:documentation>
   </xsd:complexType>
   <xsd:element name="IepdReference" type="graa:IepdReference">
     <xsd:annotation>
-      <xsd:documentation>A data structure describing the name and location of an IEPD. An annotation element may be related to an IEPD  by means of a Usage dependency, in which case the properties of this structure are derived from the used IEPD.</xsd:documentation>
+      <xsd:documentation>A data structure describing the name and location of an IEPD. An annotation element may be related to an IEPD by means of a Usage dependency, in which case the properties of this structure are derived from the used IEPD.</xsd:documentation>
     </xsd:annotation>
   </xsd:element>
   <xsd:complexType name="SecurityClassification">
@@ -686,7 +816,7 @@ Used to populate Action Model section of SDD document.</xsd:documentation>
   </xsd:element>
   <xsd:complexType name="ServiceCapability">
     <xsd:annotation>
-      <xsd:documentation>A free text format description of the capability provided by a service.</xsd:documentation>
+      <xsd:documentation>A free text format description of the capability provided by a service. Per GRA, a capability represents the provider's view of a service.</xsd:documentation>
     </xsd:annotation>
     <xsd:choice maxOccurs="unbounded" minOccurs="0">
       <xsd:element ref="xmi:Extension"/>
@@ -702,7 +832,7 @@ Used to populate Action Model section of SDD document.</xsd:documentation>
   </xsd:complexType>
   <xsd:element name="ServiceCapability" type="graa:ServiceCapability">
     <xsd:annotation>
-      <xsd:documentation>A free text format description of the capability provided by a service.</xsd:documentation>
+      <xsd:documentation>A free text format description of the capability provided by a service. Per GRA, a capability represents the provider's view of a service.</xsd:documentation>
     </xsd:annotation>
   </xsd:element>
   <xsd:complexType name="ServiceDescription">
@@ -736,7 +866,7 @@ Used to populate Action Model section of SDD document.</xsd:documentation>
           </xsd:element>
           <xsd:element name="exchangePartner" type="graa:Participant">
             <xsd:annotation>
-              <xsd:documentation>The participants in a service.In the case of a package, each contained actor shall produce a use Participant element in Phase-1.</xsd:documentation>
+              <xsd:documentation>The Participants in a service. May be derived in Phase-1 - see Participant. </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
           <xsd:element name="servicePurpose" type="graa:Description">
@@ -761,8 +891,8 @@ Used to populate Action Model section of SDD document.</xsd:documentation>
           </xsd:element>
           <xsd:element name="iepdReference" type="graa:IepdReference">
             <xsd:annotation>
-              <xsd:documentation>Reference information identifying an Information Exchange Package Document which the service uses in its data model
-[Derived from] &lt;Uses&gt; relation to IEPD</xsd:documentation>
+              <xsd:documentation>Reference information identifying an Information Exchange Package Document which the service uses in its data model.
+[Derived from] Usage dependencies to IEPD.</xsd:documentation>
             </xsd:annotation>
           </xsd:element>
           <xsd:element name="serviceSecurityClassification" type="graa:SecurityClassification">
@@ -792,7 +922,7 @@ Used to populate Action Model section of SDD document.</xsd:documentation>
           </xsd:element>
           <xsd:element name="serviceInteraction" type="graa:ServiceInteraction">
             <xsd:annotation>
-              <xsd:documentation>A Documented Component</xsd:documentation>
+              <xsd:documentation>The exchanges between participants described by the service. Maps to the GRA business scenarios. </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
           <xsd:element name="additionalInformation" type="graa:Description">
@@ -803,7 +933,7 @@ Additional artifacts related to this section's content can be provided in the ar
   
 [Service Abbreviation] SSP [Service Version]\artifacts
 
-If such artifacts are provided,  they should be referenced here.  A description of the artifact and a link to it should be provided as part of the reference.
+If such artifacts are provided, they should be referenced here.  A description of the artifact and a link to it should be provided as part of the reference.
 
 This property is used to populate the Additional Information section of the SDD document.
 </xsd:documentation>
@@ -838,13 +968,25 @@ Value is used to populate the Privacy section of the SDD Document.</xsd:document
           </xsd:element>
           <xsd:element name="otherRequirement" type="graa:Description">
             <xsd:annotation>
-              <xsd:documentation>[This section lists any other requirements which have to be met and on which the service depends to deliver its capabilities.]
+              <xsd:documentation>This section lists any other requirements which have to be met and on which the service depends to deliver its capabilities.
 
-[Additional artifacts related to specific subsections of this section's content can be provided under the artifacts folder of the service package. It is suggested there be a large number of artifacts related to this section.  These artifacts are included as documents or folders under the various artifacts subfolder of the artifacts folder.
+Additional artifacts related to specific subsections of this section's content can be provided under the artifacts folder of the service package.These artifacts are included as documents or folders under the various subfolders of the artifacts folder.
 </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
-          <xsd:element name="dataProvenance" type="graa:Description"/>
+          <xsd:element name="dataProvenance" type="graa:Description">
+            <xsd:annotation>
+              <xsd:documentation>Provenance is defined as the agency, office, or person of origin of records, i.e., the entity that created, received, or accumulated and used the records in the conduct of their business activities.  Any applicable provenance information or restrictions should be provided in this section.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="processModel" type="graa:Description">
+            <xsd:annotation>
+              <xsd:documentation>Process models describe processing rules and fault handling and should provide a step-by-step description of the logic carried out by the service actions including any pre- or post-conditions.  This should be supplemented with algorithms, workflow diagrams, or even entire business process definitions.  
+
+The process model could be described utilizing a variety of business process modeling notations and languages which are further described in business process modeling profiles.  
+</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
         </xsd:choice>
         <xsd:attribute name="serviceDescriptionSummaryText" type="xsd:string">
           <xsd:annotation>
@@ -911,7 +1053,7 @@ Value is used to populate the Privacy section of the SDD Document.</xsd:document
             <xsd:documentation>A URL to sign up for alerts and notifications for a specific service.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
-        <xsd:attribute name="serviceDescriptionUri" type="xsd:string" use="required">
+        <xsd:attribute name="serviceDescriptionUri" type="xsd:string">
           <xsd:annotation>
             <xsd:documentation>URI of the Service Description Document, relative to the SSP Catalog.</xsd:documentation>
           </xsd:annotation>
@@ -966,7 +1108,7 @@ Value is used to populate the Privacy section of the SDD Document.</xsd:document
     <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
     <xsd:attribute name="documentation" type="xsd:string">
       <xsd:annotation>
-        <xsd:documentation>The documentation for the element.</xsd:documentation>
+        <xsd:documentation>The documentation for the element. Derived from the UML element's comment.</xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="externalDocumentation" type="xsd:string">
@@ -985,14 +1127,14 @@ Value is used to populate the Privacy section of the SDD Document.</xsd:document
       <xsd:documentation>A collection of policies, agreements, licensing and any other governance or performance documentation specifying constraints and any other details regarding the realization of a service.</xsd:documentation>
     </xsd:annotation>
     <xsd:choice maxOccurs="unbounded" minOccurs="0">
-      <xsd:element name="applicablePolicy" type="graa:Description">
+      <xsd:element name="applicablePolicy" type="graa:Agreement">
         <xsd:annotation>
           <xsd:documentation>A collection of all policies that in some way constrain, govern, or control the usage of a service, application, process. etc.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="umbrellaAgreement" type="graa:Agreement">
         <xsd:annotation>
-          <xsd:documentation>A set of umbrella agreements that in some way constrain, govern, or control the usage of a service, application, process. etc.</xsd:documentation>
+          <xsd:documentation>A set of umbrella agreements that in some way constrain, govern, or control the usage of a service, application, process etc.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="agreement" type="graa:Agreement">
@@ -1007,7 +1149,7 @@ Value is used to populate the Privacy section of the SDD Document.</xsd:document
       </xsd:element>
       <xsd:element name="licensingAgreement" type="graa:Agreement">
         <xsd:annotation>
-          <xsd:documentation>Agreement licensing a service or application. Descriptive values could be In House, No License,  Open Source, Purchase License, etc.</xsd:documentation>
+          <xsd:documentation>Agreement licensing a service or application. Descriptive values could be In House, No License, Open Source, Purchase License, etc.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element ref="xmi:Extension"/>
@@ -1062,7 +1204,7 @@ Value is used to populate the Privacy section of the SDD Document.</xsd:document
     </xsd:attribute>
     <xsd:attribute name="serviceAvailability" type="xsd:string">
       <xsd:annotation>
-        <xsd:documentation>A description or measurement of the expected availbility that a service is usable.</xsd:documentation>
+        <xsd:documentation>A description or measurement of the expected availability that a service is usable.</xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="usageCostAmount" type="xsd:string">
@@ -1072,12 +1214,12 @@ Value is used to populate the Privacy section of the SDD Document.</xsd:document
     </xsd:attribute>
     <xsd:attribute name="usageUnitCostAmount" type="xsd:string">
       <xsd:annotation>
-        <xsd:documentation>A cost associated with a service(e.g. transaction, unlimited transactions, minutes of use). Currency text may precede or follow amount.</xsd:documentation>
+        <xsd:documentation>A cost associated with a service (e.g. transaction, unlimited transactions, minutes of use). Currency text may precede or follow amount.</xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
     <xsd:attribute name="creationCostAmount" type="xsd:string">
       <xsd:annotation>
-        <xsd:documentation>A cost create a thing, such as an application or service  This includes the full cost to design, manage, develop, test, implement and maintain. Currency text may precede or follow amount.</xsd:documentation>
+        <xsd:documentation>Cost to create a thing, such as an application or service. This includes the full cost to design, manage, develop, test, implement and maintain. Currency text may precede or follow amount.</xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
   </xsd:complexType>
@@ -1100,7 +1242,7 @@ Value is used to populate the Privacy section of the SDD Document.</xsd:document
           </xsd:element>
           <xsd:element name="service" type="graa:Service">
             <xsd:annotation>
-              <xsd:documentation>The services of the service interface. note that in GRA it is best practice to have exactly one service per service interface specification.</xsd:documentation>
+              <xsd:documentation>The services of the service interface. Note that in GRA it is best practice to have exactly one service per service interface specification.</xsd:documentation>
             </xsd:annotation>
           </xsd:element>
           <xsd:element name="messageDefinitionMechanism" type="graa:Description">
@@ -1113,19 +1255,25 @@ Additional artifacts related to this section's content can be provided in the ar
   
 [Service Abbreviation] SSP [Service Version]\artifacts
 
-If such artifacts are provided,  they should be referenced here. A description of the artifact and a link to it should be provided as part of the reference.
+If such artifacts are provided, they should be referenced here. A description of the artifact and a link to it should be provided as part of the reference.
 </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
           <xsd:element name="serviceTesting" type="graa:Description">
             <xsd:annotation>
-              <xsd:documentation>TODO: Missing documentation</xsd:documentation>
+              <xsd:documentation>Service Providers may deploy testing facilities and specific testing environments for their services.  Use of these testing facilities and environments may be required or optional.  As consumers implement service interfaces, there will be a need to test those implementations.  Service providers should document in this section testing options, testing prerequisites, test endpoints, environmental requirements, test schedules, and control procedures and sample data (inputs and expected outputs) for each supported action.</xsd:documentation>
             </xsd:annotation>
           </xsd:element>
           <xsd:element name="schemaReference" type="graa:SchemaReference">
             <xsd:annotation>
-              <xsd:documentation>Schema used
-TODO: ** Question - do we need to allow entry of schema not in model?</xsd:documentation>
+              <xsd:documentation>Reference to used Schema</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="physicalModel" type="graa:Description">
+            <xsd:annotation>
+              <xsd:documentation>The physical model should sufficiently describe the set of actions implemented by the service interface and the physical endpoint(s) for accessing these actions.  This section will also include any relevant details of the Service Interaction Profile (SIP) that will govern how the service interaction requirements of the service will be met.  The physical model described in this document will also provide details regarding the message schema(s) for the information model of the service.
+
+The above information can be made part of this document or included by reference </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
         </xsd:choice>
@@ -1139,7 +1287,7 @@ TODO: ** Question - do we need to allow entry of schema not in model?</xsd:docum
             <xsd:documentation>A text description that identifies the security which was implemented to protect this service interface (GFIPM, Trusted Broker, etc)</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
-        <xsd:attribute name="uriAddress" type="xsd:string" use="required">
+        <xsd:attribute name="uriAddress" type="xsd:string">
           <xsd:annotation>
             <xsd:documentation>URI of the (WSDL) service interface potentially including version and environment.  The URI is relative to the SSP Catalog.
 
@@ -1147,7 +1295,7 @@ TODO: really? -&gt; [derived from] Element name.
 </xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
-        <xsd:attribute name="serviceInterfaceDescriptionUri" type="xsd:string" use="required">
+        <xsd:attribute name="serviceInterfaceDescriptionUri" type="xsd:string">
           <xsd:annotation>
             <xsd:documentation>URI of the Service Interface Description document, potentially including version and environment.  The URI is relative to the SSP Catalog.
 

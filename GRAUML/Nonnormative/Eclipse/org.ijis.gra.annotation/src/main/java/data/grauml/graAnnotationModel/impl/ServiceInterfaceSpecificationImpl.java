@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link data.grauml.graAnnotationModel.impl.ServiceInterfaceSpecificationImpl#getServiceTesting <em>Service Testing</em>}</li>
  *   <li>{@link data.grauml.graAnnotationModel.impl.ServiceInterfaceSpecificationImpl#getSchemaReference <em>Schema Reference</em>}</li>
  *   <li>{@link data.grauml.graAnnotationModel.impl.ServiceInterfaceSpecificationImpl#getServiceInterfaceNameAbbreviationText <em>Service Interface Name Abbreviation Text</em>}</li>
+ *   <li>{@link data.grauml.graAnnotationModel.impl.ServiceInterfaceSpecificationImpl#getPhysicalModel <em>Physical Model</em>}</li>
  * </ul>
  * </p>
  *
@@ -232,6 +233,16 @@ public class ServiceInterfaceSpecificationImpl extends GraServiceAnnotationBaseI
 	 * @ordered
 	 */
 	protected String serviceInterfaceNameAbbreviationText = SERVICE_INTERFACE_NAME_ABBREVIATION_TEXT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPhysicalModel() <em>Physical Model</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPhysicalModel()
+	 * @generated
+	 * @ordered
+	 */
+	protected Description physicalModel;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -526,6 +537,49 @@ public class ServiceInterfaceSpecificationImpl extends GraServiceAnnotationBaseI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Description getPhysicalModel() {
+		return physicalModel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPhysicalModel(Description newPhysicalModel, NotificationChain msgs) {
+		Description oldPhysicalModel = physicalModel;
+		physicalModel = newPhysicalModel;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraAnnotationModelPackage.SERVICE_INTERFACE_SPECIFICATION__PHYSICAL_MODEL, oldPhysicalModel, newPhysicalModel);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPhysicalModel(Description newPhysicalModel) {
+		if (newPhysicalModel != physicalModel) {
+			NotificationChain msgs = null;
+			if (physicalModel != null)
+				msgs = ((InternalEObject)physicalModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraAnnotationModelPackage.SERVICE_INTERFACE_SPECIFICATION__PHYSICAL_MODEL, null, msgs);
+			if (newPhysicalModel != null)
+				msgs = ((InternalEObject)newPhysicalModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GraAnnotationModelPackage.SERVICE_INTERFACE_SPECIFICATION__PHYSICAL_MODEL, null, msgs);
+			msgs = basicSetPhysicalModel(newPhysicalModel, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GraAnnotationModelPackage.SERVICE_INTERFACE_SPECIFICATION__PHYSICAL_MODEL, newPhysicalModel, newPhysicalModel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -539,6 +593,8 @@ public class ServiceInterfaceSpecificationImpl extends GraServiceAnnotationBaseI
 				return basicSetServiceTesting(null, msgs);
 			case GraAnnotationModelPackage.SERVICE_INTERFACE_SPECIFICATION__SCHEMA_REFERENCE:
 				return ((InternalEList<?>)getSchemaReference()).basicRemove(otherEnd, msgs);
+			case GraAnnotationModelPackage.SERVICE_INTERFACE_SPECIFICATION__PHYSICAL_MODEL:
+				return basicSetPhysicalModel(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -575,6 +631,8 @@ public class ServiceInterfaceSpecificationImpl extends GraServiceAnnotationBaseI
 				return getSchemaReference();
 			case GraAnnotationModelPackage.SERVICE_INTERFACE_SPECIFICATION__SERVICE_INTERFACE_NAME_ABBREVIATION_TEXT:
 				return getServiceInterfaceNameAbbreviationText();
+			case GraAnnotationModelPackage.SERVICE_INTERFACE_SPECIFICATION__PHYSICAL_MODEL:
+				return getPhysicalModel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -627,6 +685,9 @@ public class ServiceInterfaceSpecificationImpl extends GraServiceAnnotationBaseI
 			case GraAnnotationModelPackage.SERVICE_INTERFACE_SPECIFICATION__SERVICE_INTERFACE_NAME_ABBREVIATION_TEXT:
 				setServiceInterfaceNameAbbreviationText((String)newValue);
 				return;
+			case GraAnnotationModelPackage.SERVICE_INTERFACE_SPECIFICATION__PHYSICAL_MODEL:
+				setPhysicalModel((Description)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -675,6 +736,9 @@ public class ServiceInterfaceSpecificationImpl extends GraServiceAnnotationBaseI
 			case GraAnnotationModelPackage.SERVICE_INTERFACE_SPECIFICATION__SERVICE_INTERFACE_NAME_ABBREVIATION_TEXT:
 				setServiceInterfaceNameAbbreviationText(SERVICE_INTERFACE_NAME_ABBREVIATION_TEXT_EDEFAULT);
 				return;
+			case GraAnnotationModelPackage.SERVICE_INTERFACE_SPECIFICATION__PHYSICAL_MODEL:
+				setPhysicalModel((Description)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -711,6 +775,8 @@ public class ServiceInterfaceSpecificationImpl extends GraServiceAnnotationBaseI
 				return schemaReference != null && !schemaReference.isEmpty();
 			case GraAnnotationModelPackage.SERVICE_INTERFACE_SPECIFICATION__SERVICE_INTERFACE_NAME_ABBREVIATION_TEXT:
 				return SERVICE_INTERFACE_NAME_ABBREVIATION_TEXT_EDEFAULT == null ? serviceInterfaceNameAbbreviationText != null : !SERVICE_INTERFACE_NAME_ABBREVIATION_TEXT_EDEFAULT.equals(serviceInterfaceNameAbbreviationText);
+			case GraAnnotationModelPackage.SERVICE_INTERFACE_SPECIFICATION__PHYSICAL_MODEL:
+				return physicalModel != null;
 		}
 		return super.eIsSet(featureID);
 	}

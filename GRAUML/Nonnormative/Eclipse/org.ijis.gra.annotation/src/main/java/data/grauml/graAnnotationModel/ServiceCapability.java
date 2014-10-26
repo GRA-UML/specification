@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * A free text format description of the capability provided by a service.
+ * A free text format description of the capability provided by a service. Per GRA, a capability represents the provider's view of a service.
  * <!-- end-model-doc -->
  *
  * <p>

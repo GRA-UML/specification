@@ -10,7 +10,7 @@ import data.grauml.graAnnotationModel.Message;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Represents a <wsdl:message>, its contained <part>, and its usage from a <wsdl:input>, <wsdl:output>, or a <wsdl:fault> within a <wsdl:portType> <wsdl:operation> .
+ * WSDL Extension of the technology-independent element. Represents a <wsdl:message>, its contained <part>, and its usage from a <wsdl:input>, <wsdl:output>, or a <wsdl:fault> within a <wsdl:portType> <wsdl:operation> .
  * <!-- end-model-doc -->
  *
  * <p>

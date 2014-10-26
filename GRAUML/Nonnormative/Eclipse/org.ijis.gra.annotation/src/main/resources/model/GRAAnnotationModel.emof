@@ -45,12 +45,30 @@
             name="enquiry">
           <xmi:Extension
               extender="http://www.eclipse.org/emf/2002/Ecore">
+            <eAnnotations
+                source="http://www.eclipse.org/emf/2002/GenModel">
+              <details
+                  key="documentation"
+                  value="A request for information with the subsequent return of that information, if available and authorized. A request-reply."/>
+            </eAnnotations>
+          </xmi:Extension>
+          <xmi:Extension
+              extender="http://www.eclipse.org/emf/2002/Ecore">
             <value>1</value>
           </xmi:Extension>
         </ownedLiteral>
         <ownedLiteral
             xmi:id="data.grauml.graAnnotationModel.ExchangePattern.subscription"
             name="subscription">
+          <xmi:Extension
+              extender="http://www.eclipse.org/emf/2002/Ecore">
+            <eAnnotations
+                source="http://www.eclipse.org/emf/2002/GenModel">
+              <details
+                  key="documentation"
+                  value="A request for changes in information with the later notification of such changes, if available and authorized. A request-reply."/>
+            </eAnnotations>
+          </xmi:Extension>
           <xmi:Extension
               extender="http://www.eclipse.org/emf/2002/Ecore">
             <value>2</value>
@@ -61,6 +79,15 @@
             name="notification">
           <xmi:Extension
               extender="http://www.eclipse.org/emf/2002/Ecore">
+            <eAnnotations
+                source="http://www.eclipse.org/emf/2002/GenModel">
+              <details
+                  key="documentation"
+                  value="Notification of an event of change or information. A fire-and-forget."/>
+            </eAnnotations>
+          </xmi:Extension>
+          <xmi:Extension
+              extender="http://www.eclipse.org/emf/2002/Ecore">
             <value>3</value>
           </xmi:Extension>
         </ownedLiteral>
@@ -69,12 +96,30 @@
             name="update">
           <xmi:Extension
               extender="http://www.eclipse.org/emf/2002/Ecore">
+            <eAnnotations
+                source="http://www.eclipse.org/emf/2002/GenModel">
+              <details
+                  key="documentation"
+                  value="A request to change some information with a subsequent return of success of failure. Related information may also be returned. A request-reply."/>
+            </eAnnotations>
+          </xmi:Extension>
+          <xmi:Extension
+              extender="http://www.eclipse.org/emf/2002/Ecore">
             <value>4</value>
           </xmi:Extension>
         </ownedLiteral>
         <ownedLiteral
             xmi:id="data.grauml.graAnnotationModel.ExchangePattern.message"
             name="message">
+          <xmi:Extension
+              extender="http://www.eclipse.org/emf/2002/Ecore">
+            <eAnnotations
+                source="http://www.eclipse.org/emf/2002/GenModel">
+              <details
+                  key="documentation"
+                  value="A message as a result of a subscription. A fire-and-forget."/>
+            </eAnnotations>
+          </xmi:Extension>
           <xmi:Extension
               extender="http://www.eclipse.org/emf/2002/Ecore">
             <value>5</value>
@@ -91,7 +136,7 @@
               source="http://www.eclipse.org/emf/2002/GenModel">
             <details
                 key="documentation"
-                value="The Service Interaction Requirements.&#xA;This may be specified at multiple levels and it assumed to default to the level above. If not specified in a ServiceDescription it defaults to GRA values (or false if not specified)."/>
+                value="The Service Interaction Requirements.  This may be specified at multiple levels and it assumed to default to the level above. If not specified in a ServiceDescription it defaults to GRA values (or false if not specified)."/>
           </eAnnotations>
         </xmi:Extension>
         <ownedAttribute
@@ -342,7 +387,7 @@
                 source="http://www.eclipse.org/emf/2002/GenModel">
               <details
                   key="documentation"
-                  value="ExtendedRequirement provides an arbitrary extension mechanism whereby InteractionRequirement may be notated on the containing element. The intent is that the phase-2 transform may then respect these flags and produce the desired result. Unknown extensions  are ignored."/>
+                  value="ExtendedRequirement provides an arbitrary extension mechanism whereby InteractionRequirement may be notated on the containing element. The intent is that the phase-2 transform may then respect these flags and produce the desired result. Unknown extensions are ignored."/>
             </eAnnotations>
           </xmi:Extension>
           <type
@@ -608,7 +653,25 @@
                 source="http://www.eclipse.org/emf/2002/GenModel">
               <details
                   key="documentation"
-                  value="Flag provides an arbitrary extension mechanism whereby any business or technology choice may be notated on the containing element. The intent is that the phase-2 transform will then respect these flags and produce the desired result. Unknown flags are ignored."/>
+                  value="Flag provides an arbitrary extension mechanism whereby any business or technology choice may be notated on the containing element. The intent is that a user-supplied phase-2 template will then respect these flags and produce the desired result. Unknown flags are ignored."/>
+            </eAnnotations>
+          </xmi:Extension>
+          <type
+              xmi:type="emof:PrimitiveType"
+              href="GRAAnnotationModelTypes.emof#types.String"/>
+        </ownedAttribute>
+        <ownedAttribute
+            xmi:id="data.grauml.graAnnotationModel.GraServiceAnnotationBase.diagnostics"
+            name="diagnostics"
+            lower="0"
+            upper="*">
+          <xmi:Extension
+              extender="http://www.eclipse.org/emf/2002/Ecore">
+            <eAnnotations
+                source="http://www.eclipse.org/emf/2002/GenModel">
+              <details
+                  key="documentation"
+                  value="Diagnostic information for this element.  Derived during phase 1 provisioning."/>
             </eAnnotations>
           </xmi:Extension>
           <type
@@ -846,7 +909,7 @@
               source="http://www.eclipse.org/emf/2002/GenModel">
             <details
                 key="documentation"
-                value="A participant in a service interaction."/>
+                value="&lt;html>&#xA;  &lt;head>&#xA;&#x9;&#x9;&lt;style>&#xA;&#x9;&#x9;&#x9;p {padding:0px; margin:0px;}&#xA;&#x9;&#x9;&lt;/style>&#xA;&#x9;&lt;/head>&#xA;  &lt;body>&#xA;    &lt;p>&#xA;Each Participant represents an ExchangePartner of the ServiceDescription. &amp;#160;Participant annotations are generated by Phase-1 processing. &amp;#160;A Participant may be modeled directly realizing an Actor in the logical model, in which case a single Participant corresponding to that Actor is generated. A Participant may be modeled realizing a Package in the logical model, in which case a Participant is generated corresponding to every Actor in the package. &amp;#160;A Participant is also generated for every Actor that plays a role in any Interaction owned by the Collaboration realized by the ServiceDescription. &amp;#160;If Actors are related in the logical model by inheritance, then a Participant generated from a specializing Actor will contain a generalization element that identifies the Participant corresponding to the generalizing Actor.&#xA;&#xA;    &lt;/p>&#xA;&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
           </eAnnotations>
         </xmi:Extension>
         <ownedOperation
@@ -928,7 +991,8 @@
             xmi:id="data.grauml.graAnnotationModel.Participant.participatingOrganization"
             name="participatingOrganization"
             lower="0"
-            type="data.grauml.graAnnotationModel.Organization">
+            type="data.grauml.graAnnotationModel.Organization"
+            isComposite="true">
           <xmi:Extension
               extender="http://www.eclipse.org/emf/2002/Ecore">
             <eAnnotations
@@ -939,6 +1003,13 @@
             </eAnnotations>
           </xmi:Extension>
         </ownedAttribute>
+        <ownedAttribute
+            xmi:id="data.grauml.graAnnotationModel.Participant.generalization"
+            name="generalization"
+            lower="0"
+            upper="*"
+            type="data.grauml.graAnnotationModel.Participant"
+            isComposite="true"/>
       </ownedType>
       <ownedType
           xmi:type="emof:Class"
@@ -1137,6 +1208,7 @@
         <ownedAttribute
             xmi:id="data.grauml.graAnnotationModel.Interface.operation"
             name="operation"
+            lower="0"
             upper="*"
             type="data.grauml.graAnnotationModel.Operation"
             isComposite="true">
@@ -1401,6 +1473,7 @@
             xmi:id="data.grauml.graAnnotationModel.Operation.parameter"
             name="parameter"
             isOrdered="true"
+            lower="0"
             upper="*"
             type="data.grauml.graAnnotationModel.Parameter"
             isComposite="true">
@@ -1489,7 +1562,7 @@
                 source="http://www.eclipse.org/emf/2002/GenModel">
               <details
                   key="documentation"
-                  value="A description of provenance information for this action. &#xA;Used to populate Action Model section of SDD document."/>
+                  value="A description of provenance information for this action. Used to populate the Action Model section of SDD document."/>
             </eAnnotations>
           </xmi:Extension>
           <type
@@ -1678,6 +1751,7 @@
         <ownedAttribute
             xmi:id="data.grauml.graAnnotationModel.Parameter.message"
             name="message"
+            lower="0"
             type="data.grauml.graAnnotationModel.Message"
             isComposite="true">
           <xmi:Extension
@@ -1816,6 +1890,54 @@
               xmi:type="emof:PrimitiveType"
               href="GRAAnnotationModelTypes.emof#types.String"/>
         </ownedAttribute>
+        <ownedAttribute
+            xmi:id="data.grauml.graAnnotationModel.Message.elementPrefix"
+            name="elementPrefix">
+          <xmi:Extension
+              extender="http://www.eclipse.org/emf/2002/Ecore">
+            <eAnnotations
+                source="http://www.eclipse.org/emf/2002/GenModel">
+              <details
+                  key="documentation"
+                  value="Prefix used to reference Schema Namespace of an element reference."/>
+            </eAnnotations>
+          </xmi:Extension>
+          <type
+              xmi:type="emof:PrimitiveType"
+              href="GRAAnnotationModelTypes.emof#types.String"/>
+        </ownedAttribute>
+        <ownedAttribute
+            xmi:id="data.grauml.graAnnotationModel.Message.elementModelReference"
+            name="elementModelReference"
+            lower="0"
+            type="data.grauml.graAnnotationModel.ModelReference"
+            isComposite="true">
+          <xmi:Extension
+              extender="http://www.eclipse.org/emf/2002/Ecore">
+            <eAnnotations
+                source="http://www.eclipse.org/emf/2002/GenModel">
+              <details
+                  key="documentation"
+                  value="Reference to a model element annotated by this element.  More specifically, it is the ModelReference associated with a message part element.  This may be derived from the NIEM type by selecting a NIEM property (i.e., xml element) whose type is the message part type."/>
+            </eAnnotations>
+          </xmi:Extension>
+        </ownedAttribute>
+        <ownedAttribute
+            xmi:id="data.grauml.graAnnotationModel.Message.elementName"
+            name="elementName">
+          <xmi:Extension
+              extender="http://www.eclipse.org/emf/2002/Ecore">
+            <eAnnotations
+                source="http://www.eclipse.org/emf/2002/GenModel">
+              <details
+                  key="documentation"
+                  value="The NIEM name used to reference Schema Name of an element reference."/>
+            </eAnnotations>
+          </xmi:Extension>
+          <type
+              xmi:type="emof:PrimitiveType"
+              href="GRAAnnotationModelTypes.emof#types.String"/>
+        </ownedAttribute>
       </ownedType>
       <ownedType
           xmi:type="emof:Class"
@@ -1926,14 +2048,15 @@
             xmi:id="data.grauml.graAnnotationModel.Service.serviceProvider"
             name="serviceProvider"
             lower="0"
-            type="data.grauml.graAnnotationModel.Participant">
+            type="data.grauml.graAnnotationModel.Participant"
+            isComposite="true">
           <xmi:Extension
               extender="http://www.eclipse.org/emf/2002/Ecore">
             <eAnnotations
                 source="http://www.eclipse.org/emf/2002/GenModel">
               <details
                   key="documentation"
-                  value="The provider of the service."/>
+                  value="The provider of the service. Derived from a Realization between the service's realized Component and the participant's realized Actor."/>
             </eAnnotations>
           </xmi:Extension>
         </ownedAttribute>
@@ -2047,6 +2170,7 @@
         <ownedAttribute
             xmi:id="data.grauml.graAnnotationModel.Port.interface"
             name="interface"
+            lower="0"
             upper="*"
             type="data.grauml.graAnnotationModel.Interface"
             isComposite="true">
@@ -2062,7 +2186,8 @@
         </ownedAttribute>
         <ownedAttribute
             xmi:id="data.grauml.graAnnotationModel.Port.addressUri"
-            name="addressUri">
+            name="addressUri"
+            lower="0">
           <xmi:Extension
               extender="http://www.eclipse.org/emf/2002/Ecore">
             <eAnnotations
@@ -2137,7 +2262,7 @@
               source="http://www.eclipse.org/emf/2002/GenModel">
             <details
                 key="documentation"
-                value="Represents exchanges between parties. Realizes an Interaction."/>
+                value="&lt;html>&#xA;  &lt;head>&#xA;&#x9;&#x9;&lt;style>&#xA;&#x9;&#x9;&#x9;p {padding:0px; margin:0px;}&#xA;&#x9;&#x9;&lt;/style>&#xA;&#x9;&lt;/head>&#xA;  &lt;body>&#xA;    &lt;p>&#xA;A ServiceInteraction represents an exchange between participants. ServiceInteractions are generated by Phase-1 processing for each Interaction owned by the Collaboration realized by the ServiceDescription, with the Participants property derived from the Actors that play a role in the Interaction.&#xA;&#xA;    &lt;/p>&#xA;&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
           </eAnnotations>
         </xmi:Extension>
         <ownedOperation
@@ -2244,7 +2369,7 @@
               source="http://www.eclipse.org/emf/2002/GenModel">
             <details
                 key="documentation"
-                value="[Derived from] Use case or package with use cases. In the case of a package, each contained use case shall produce a use case element in Phase-1."/>
+                value="&lt;html>&#xA;  &lt;head>&#xA;&#x9;&#x9;&lt;style>&#xA;&#x9;&#x9;&#x9;p {padding:0px; margin:0px;}&#xA;&#x9;&#x9;&lt;/style>&#xA;&#x9;&lt;/head>&#xA;  &lt;body>&#xA;    &lt;p>&#xA;A UseCase annotation represents one or more &amp;quot;real world effects&amp;quot; of a ServiceDescription. &amp;#160;In the annotation model, a UseCase instance may realize a UseCase or a Package in the logical model. &amp;#160;In the former case, Phase-1 will generate a single UseCase instance&lt;span lang=&quot;EN-US&quot;>. In the latter case, Phase-1 will generate a UseCase instance for each UML&amp;#160;UseCase contained in the realized Package. &amp;#160;In all cases the generated UseCases' &lt;/span>Provider and Consumer properties are derived from Associations stereotyped &lt;span lang=&quot;EN-US&quot;>«Provider» and «Consumer» between the logical UseCases and the logical Actors that correspond to Participants in the generated annotation model.&lt;/span>&#xA;    &lt;/p>&#xA;&#xA;    &lt;p>&#xA;&amp;#160;&#xA;    &lt;/p>&#xA;&#xA;    &lt;p>&#xA;&amp;#160;&#xA;&#xA;    &lt;/p>&#xA;&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
           </eAnnotations>
         </xmi:Extension>
         <ownedOperation
@@ -2505,7 +2630,7 @@
               source="http://www.eclipse.org/emf/2002/GenModel">
             <details
                 key="documentation"
-                value="A data structure describing the name and location of an IEPD. An annotation element may be related to an IEPD  by means of a Usage dependency, in which case the properties of this structure are derived from the used IEPD."/>
+                value="A data structure describing the name and location of an IEPD. An annotation element may be related to an IEPD by means of a Usage dependency, in which case the properties of this structure are derived from the used IEPD."/>
           </eAnnotations>
         </xmi:Extension>
         <ownedOperation
@@ -2734,7 +2859,7 @@
               source="http://www.eclipse.org/emf/2002/GenModel">
             <details
                 key="documentation"
-                value="A free text format description of the capability provided by a service."/>
+                value="A free text format description of the capability provided by a service. Per GRA, a capability represents the provider's view of a service."/>
           </eAnnotations>
         </xmi:Extension>
         <ownedOperation
@@ -3007,7 +3132,7 @@
                 source="http://www.eclipse.org/emf/2002/GenModel">
               <details
                   key="documentation"
-                  value="The participants in a service.In the case of a package, each contained actor shall produce a use Participant element in Phase-1."/>
+                  value="The Participants in a service. May be derived in Phase-1 - see Participant. "/>
             </eAnnotations>
           </xmi:Extension>
         </ownedAttribute>
@@ -3160,7 +3285,7 @@
                 source="http://www.eclipse.org/emf/2002/GenModel">
               <details
                   key="documentation"
-                  value="Reference information identifying an Information Exchange Package Document which the service uses in its data model&#xA;[Derived from] &lt;Uses> relation to IEPD"/>
+                  value="Reference information identifying an Information Exchange Package Document which the service uses in its data model.&#xA;[Derived from] Usage dependencies to IEPD."/>
             </eAnnotations>
           </xmi:Extension>
         </ownedAttribute>
@@ -3296,7 +3421,7 @@
                 source="http://www.eclipse.org/emf/2002/GenModel">
               <details
                   key="documentation"
-                  value="A Documented Component"/>
+                  value="The exchanges between participants described by the service. Maps to the GRA business scenarios. "/>
             </eAnnotations>
           </xmi:Extension>
         </ownedAttribute>
@@ -3501,13 +3626,14 @@
                 source="http://www.eclipse.org/emf/2002/GenModel">
               <details
                   key="documentation"
-                  value="This property contains any additional information pertinent to the service which should be included in this description but does not belong elsewhere.  This could be information about future capabilities the service could provide, information regarding specific conditions which govern the use of the service, information regarding specific domain capabilities the service fulfills, etc.  If required, subsections can be created to further structure the information provided in this section.&#xA;&#xA;Additional artifacts related to this section's content can be provided in the artifacts folder of the service package.&#xA;  &#xA;[Service Abbreviation] SSP [Service Version]\artifacts&#xA;&#xA;If such artifacts are provided,  they should be referenced here.  A description of the artifact and a link to it should be provided as part of the reference.&#xA;&#xA;This property is used to populate the Additional Information section of the SDD document.&#xA;"/>
+                  value="This property contains any additional information pertinent to the service which should be included in this description but does not belong elsewhere.  This could be information about future capabilities the service could provide, information regarding specific conditions which govern the use of the service, information regarding specific domain capabilities the service fulfills, etc.  If required, subsections can be created to further structure the information provided in this section.&#xA;&#xA;Additional artifacts related to this section's content can be provided in the artifacts folder of the service package.&#xA;  &#xA;[Service Abbreviation] SSP [Service Version]\artifacts&#xA;&#xA;If such artifacts are provided, they should be referenced here.  A description of the artifact and a link to it should be provided as part of the reference.&#xA;&#xA;This property is used to populate the Additional Information section of the SDD document.&#xA;"/>
             </eAnnotations>
           </xmi:Extension>
         </ownedAttribute>
         <ownedAttribute
             xmi:id="data.grauml.graAnnotationModel.ServiceDescription.serviceDescriptionUri"
-            name="serviceDescriptionUri">
+            name="serviceDescriptionUri"
+            lower="0">
           <xmi:Extension
               extender="http://www.eclipse.org/emf/2002/Ecore">
             <eAnnotations
@@ -3597,7 +3723,7 @@
                 source="http://www.eclipse.org/emf/2002/GenModel">
               <details
                   key="documentation"
-                  value="[This section lists any other requirements which have to be met and on which the service depends to deliver its capabilities.]&#xA;&#xA;[Additional artifacts related to specific subsections of this section's content can be provided under the artifacts folder of the service package. It is suggested there be a large number of artifacts related to this section.  These artifacts are included as documents or folders under the various artifacts subfolder of the artifacts folder.&#xA;"/>
+                  value="This section lists any other requirements which have to be met and on which the service depends to deliver its capabilities.&#xA;&#xA;Additional artifacts related to specific subsections of this section's content can be provided under the artifacts folder of the service package.These artifacts are included as documents or folders under the various subfolders of the artifacts folder.&#xA;"/>
             </eAnnotations>
           </xmi:Extension>
         </ownedAttribute>
@@ -3606,7 +3732,33 @@
             name="dataProvenance"
             lower="0"
             type="data.grauml.graAnnotationModel.Description"
-            isComposite="true"/>
+            isComposite="true">
+          <xmi:Extension
+              extender="http://www.eclipse.org/emf/2002/Ecore">
+            <eAnnotations
+                source="http://www.eclipse.org/emf/2002/GenModel">
+              <details
+                  key="documentation"
+                  value="Provenance is defined as the agency, office, or person of origin of records, i.e., the entity that created, received, or accumulated and used the records in the conduct of their business activities.  Any applicable provenance information or restrictions should be provided in this section."/>
+            </eAnnotations>
+          </xmi:Extension>
+        </ownedAttribute>
+        <ownedAttribute
+            xmi:id="data.grauml.graAnnotationModel.ServiceDescription.processModel"
+            name="processModel"
+            lower="0"
+            type="data.grauml.graAnnotationModel.Description"
+            isComposite="true">
+          <xmi:Extension
+              extender="http://www.eclipse.org/emf/2002/Ecore">
+            <eAnnotations
+                source="http://www.eclipse.org/emf/2002/GenModel">
+              <details
+                  key="documentation"
+                  value="Process models describe processing rules and fault handling and should provide a step-by-step description of the logic carried out by the service actions including any pre- or post-conditions.  This should be supplemented with algorithms, workflow diagrams, or even entire business process definitions.  &#xA;&#xA;The process model could be described utilizing a variety of business process modeling notations and languages which are further described in business process modeling profiles.  &#xA;"/>
+            </eAnnotations>
+          </xmi:Extension>
+        </ownedAttribute>
       </ownedType>
       <ownedType
           xmi:type="emof:Class"
@@ -3770,7 +3922,7 @@
                 source="http://www.eclipse.org/emf/2002/GenModel">
               <details
                   key="documentation"
-                  value="The documentation for the element."/>
+                  value="The documentation for the element. Derived from the UML element's comment."/>
             </eAnnotations>
           </xmi:Extension>
           <type
@@ -4106,7 +4258,7 @@
             name="applicablePolicy"
             lower="0"
             upper="*"
-            type="data.grauml.graAnnotationModel.Description"
+            type="data.grauml.graAnnotationModel.Agreement"
             isComposite="true">
           <xmi:Extension
               extender="http://www.eclipse.org/emf/2002/Ecore">
@@ -4131,7 +4283,7 @@
                 source="http://www.eclipse.org/emf/2002/GenModel">
               <details
                   key="documentation"
-                  value="A set of umbrella agreements that in some way constrain, govern, or control the usage of a service, application, process. etc."/>
+                  value="A set of umbrella agreements that in some way constrain, govern, or control the usage of a service, application, process etc."/>
             </eAnnotations>
           </xmi:Extension>
         </ownedAttribute>
@@ -4215,7 +4367,7 @@
                 source="http://www.eclipse.org/emf/2002/GenModel">
               <details
                   key="documentation"
-                  value="Agreement licensing a service or application. Descriptive values could be In House, No License,  Open Source, Purchase License, etc."/>
+                  value="Agreement licensing a service or application. Descriptive values could be In House, No License, Open Source, Purchase License, etc."/>
             </eAnnotations>
           </xmi:Extension>
         </ownedAttribute>
@@ -4280,7 +4432,7 @@
                 source="http://www.eclipse.org/emf/2002/GenModel">
               <details
                   key="documentation"
-                  value="A description or measurement of the expected availbility that a service is usable."/>
+                  value="A description or measurement of the expected availability that a service is usable."/>
             </eAnnotations>
           </xmi:Extension>
           <type
@@ -4314,7 +4466,7 @@
                 source="http://www.eclipse.org/emf/2002/GenModel">
               <details
                   key="documentation"
-                  value="A cost associated with a service(e.g. transaction, unlimited transactions, minutes of use). Currency text may precede or follow amount."/>
+                  value="A cost associated with a service (e.g. transaction, unlimited transactions, minutes of use). Currency text may precede or follow amount."/>
             </eAnnotations>
           </xmi:Extension>
           <type
@@ -4331,7 +4483,7 @@
                 source="http://www.eclipse.org/emf/2002/GenModel">
               <details
                   key="documentation"
-                  value="A cost create a thing, such as an application or service  This includes the full cost to design, manage, develop, test, implement and maintain. Currency text may precede or follow amount."/>
+                  value="Cost to create a thing, such as an application or service. This includes the full cost to design, manage, develop, test, implement and maintain. Currency text may precede or follow amount."/>
             </eAnnotations>
           </xmi:Extension>
           <type
@@ -4414,13 +4566,14 @@
                 source="http://www.eclipse.org/emf/2002/GenModel">
               <details
                   key="documentation"
-                  value="The services of the service interface. note that in GRA it is best practice to have exactly one service per service interface specification."/>
+                  value="The services of the service interface. Note that in GRA it is best practice to have exactly one service per service interface specification."/>
             </eAnnotations>
           </xmi:Extension>
         </ownedAttribute>
         <ownedAttribute
             xmi:id="data.grauml.graAnnotationModel.ServiceInterfaceSpecification.uriAddress"
-            name="uriAddress">
+            name="uriAddress"
+            lower="0">
           <xmi:Extension
               extender="http://www.eclipse.org/emf/2002/Ecore">
             <eAnnotations
@@ -4448,13 +4601,14 @@
                 source="http://www.eclipse.org/emf/2002/GenModel">
               <details
                   key="documentation"
-                  value="This property includes information about the message definition mechanism utilized by the service actions.&#xA;&#xA;Per the GRA, message definition mechanisms are closely related to the interface description requirements.  Unlike interface description requirements, message definition mechanisms establish a standard way of defining the structure and contents of a message.&#xA;&#xA;Additional artifacts related to this section's content can be provided in the artifacts folder of the service package.&#xA;  &#xA;[Service Abbreviation] SSP [Service Version]\artifacts&#xA;&#xA;If such artifacts are provided,  they should be referenced here. A description of the artifact and a link to it should be provided as part of the reference.&#xA;"/>
+                  value="This property includes information about the message definition mechanism utilized by the service actions.&#xA;&#xA;Per the GRA, message definition mechanisms are closely related to the interface description requirements.  Unlike interface description requirements, message definition mechanisms establish a standard way of defining the structure and contents of a message.&#xA;&#xA;Additional artifacts related to this section's content can be provided in the artifacts folder of the service package.&#xA;  &#xA;[Service Abbreviation] SSP [Service Version]\artifacts&#xA;&#xA;If such artifacts are provided, they should be referenced here. A description of the artifact and a link to it should be provided as part of the reference.&#xA;"/>
             </eAnnotations>
           </xmi:Extension>
         </ownedAttribute>
         <ownedAttribute
             xmi:id="data.grauml.graAnnotationModel.ServiceInterfaceSpecification.serviceInterfaceDescriptionUri"
-            name="serviceInterfaceDescriptionUri">
+            name="serviceInterfaceDescriptionUri"
+            lower="0">
           <xmi:Extension
               extender="http://www.eclipse.org/emf/2002/Ecore">
             <eAnnotations
@@ -4512,7 +4666,7 @@
                 source="http://www.eclipse.org/emf/2002/GenModel">
               <details
                   key="documentation"
-                  value="TODO: Missing documentation"/>
+                  value="Service Providers may deploy testing facilities and specific testing environments for their services.  Use of these testing facilities and environments may be required or optional.  As consumers implement service interfaces, there will be a need to test those implementations.  Service providers should document in this section testing options, testing prerequisites, test endpoints, environmental requirements, test schedules, and control procedures and sample data (inputs and expected outputs) for each supported action."/>
             </eAnnotations>
           </xmi:Extension>
         </ownedAttribute>
@@ -4528,7 +4682,7 @@
                 source="http://www.eclipse.org/emf/2002/GenModel">
               <details
                   key="documentation"
-                  value="Schema used&#xA;TODO: ** Question - do we need to allow entry of schema not in model?"/>
+                  value="Reference to used Schema"/>
             </eAnnotations>
           </xmi:Extension>
         </ownedAttribute>
@@ -4547,6 +4701,22 @@
           <type
               xmi:type="emof:PrimitiveType"
               href="GRAAnnotationModelTypes.emof#types.String"/>
+        </ownedAttribute>
+        <ownedAttribute
+            xmi:id="data.grauml.graAnnotationModel.ServiceInterfaceSpecification.physicalModel"
+            name="physicalModel"
+            lower="0"
+            type="data.grauml.graAnnotationModel.Description"
+            isComposite="true">
+          <xmi:Extension
+              extender="http://www.eclipse.org/emf/2002/Ecore">
+            <eAnnotations
+                source="http://www.eclipse.org/emf/2002/GenModel">
+              <details
+                  key="documentation"
+                  value="The physical model should sufficiently describe the set of actions implemented by the service interface and the physical endpoint(s) for accessing these actions.  This section will also include any relevant details of the Service Interaction Profile (SIP) that will govern how the service interaction requirements of the service will be met.  The physical model described in this document will also provide details regarding the message schema(s) for the information model of the service.&#xA;&#xA;The above information can be made part of this document or included by reference "/>
+            </eAnnotations>
+          </xmi:Extension>
         </ownedAttribute>
       </ownedType>
       <ownedType
@@ -4827,7 +4997,7 @@
               source="http://www.eclipse.org/emf/2002/GenModel">
             <details
                 key="documentation"
-                value="Represents a &lt;wsdl:definitions>."/>
+                value="WSDL Extension of the technology-independent element. Represents a &lt;wsdl:definitions>."/>
           </eAnnotations>
         </xmi:Extension>
       </ownedType>
@@ -4842,7 +5012,7 @@
               source="http://www.eclipse.org/emf/2002/GenModel">
             <details
                 key="documentation"
-                value="Represents a &lt;wsdl:service>."/>
+                value="WSDL Extension of the technology-independent element. Represents a &lt;wsdl:service>."/>
           </eAnnotations>
         </xmi:Extension>
       </ownedType>
@@ -4857,7 +5027,7 @@
               source="http://www.eclipse.org/emf/2002/GenModel">
             <details
                 key="documentation"
-                value="Represents a &lt;wsdl:port> and &lt;wsdl:binding>."/>
+                value="WSDL Extension of the technology-independent element. Represents a &lt;wsdl:port> and &lt;wsdl:binding>."/>
           </eAnnotations>
         </xmi:Extension>
         <ownedAttribute
@@ -4889,7 +5059,7 @@
               source="http://www.eclipse.org/emf/2002/GenModel">
             <details
                 key="documentation"
-                value="Represents a &lt;wsdl:portType>. "/>
+                value="WSDL Extension of the technology-independent element. Represents a &lt;wsdl:portType>. "/>
           </eAnnotations>
         </xmi:Extension>
         <ownedAttribute
@@ -4912,6 +5082,15 @@
           xmi:type="emof:Enumeration"
           xmi:id="data.grauml.graWsdl.BindingType"
           name="BindingType">
+        <xmi:Extension
+            extender="http://www.eclipse.org/emf/2002/Ecore">
+          <eAnnotations
+              source="http://www.eclipse.org/emf/2002/GenModel">
+            <details
+                key="documentation"
+                value="Binding type as per WSD specification."/>
+          </eAnnotations>
+        </xmi:Extension>
         <ownedLiteral
             xmi:id="data.grauml.graWsdl.BindingType.soap"
             name="soap">
@@ -4988,7 +5167,7 @@
               source="http://www.eclipse.org/emf/2002/GenModel">
             <details
                 key="documentation"
-                value="Represents a &lt;wsdl:Operation> within a &lt;wsdl:binding> or &lt;wsdl:portType>."/>
+                value="WSDL Extension of the technology-independent element. Represents a &lt;wsdl:Operation> within a &lt;wsdl:binding> or &lt;wsdl:portType>."/>
           </eAnnotations>
         </xmi:Extension>
         <ownedAttribute
@@ -5011,6 +5190,15 @@
           xmi:type="emof:Enumeration"
           xmi:id="data.grauml.graWsdl.OperationKind"
           name="OperationKind">
+        <xmi:Extension
+            extender="http://www.eclipse.org/emf/2002/Ecore">
+          <eAnnotations
+              source="http://www.eclipse.org/emf/2002/GenModel">
+            <details
+                key="documentation"
+                value="WSDL DOC or RPC Biding. Note for GRA &quot;doc&quot; should always be used."/>
+          </eAnnotations>
+        </xmi:Extension>
         <ownedLiteral
             xmi:id="data.grauml.graWsdl.OperationKind.doc"
             name="doc">
@@ -5053,7 +5241,7 @@
               source="http://www.eclipse.org/emf/2002/GenModel">
             <details
                 key="documentation"
-                value="Represents a &lt;wsdl:message>, its contained &lt;part>, and its usage from a &lt;wsdl:input>, &lt;wsdl:output>, or a &lt;wsdl:fault> within a &lt;wsdl:portType> &lt;wsdl:operation> ."/>
+                value="WSDL Extension of the technology-independent element. Represents a &lt;wsdl:message>, its contained &lt;part>, and its usage from a &lt;wsdl:input>, &lt;wsdl:output>, or a &lt;wsdl:fault> within a &lt;wsdl:portType> &lt;wsdl:operation> ."/>
           </eAnnotations>
         </xmi:Extension>
         <ownedAttribute
@@ -5110,6 +5298,15 @@
           xmi:type="emof:Enumeration"
           xmi:id="data.grauml.graWsdl.MessageLocation"
           name="MessageLocation">
+        <xmi:Extension
+            extender="http://www.eclipse.org/emf/2002/Ecore">
+          <eAnnotations
+              source="http://www.eclipse.org/emf/2002/GenModel">
+            <details
+                key="documentation"
+                value="Location of message content as the body, header or URL"/>
+          </eAnnotations>
+        </xmi:Extension>
         <ownedLiteral
             xmi:id="data.grauml.graWsdl.MessageLocation.body"
             name="body">
@@ -5145,6 +5342,15 @@
             name="url">
           <xmi:Extension
               extender="http://www.eclipse.org/emf/2002/Ecore">
+            <eAnnotations
+                source="http://www.eclipse.org/emf/2002/GenModel">
+              <details
+                  key="documentation"
+                  value="For a soap binding, indicates that the part is in the URL of the message request."/>
+            </eAnnotations>
+          </xmi:Extension>
+          <xmi:Extension
+              extender="http://www.eclipse.org/emf/2002/Ecore">
             <value>2</value>
           </xmi:Extension>
         </ownedLiteral>
@@ -5154,6 +5360,15 @@
           xmi:id="data.grauml.graWsdl.WsdlParameter"
           name="WsdlParameter"
           superClass="data.grauml.graAnnotationModel.Parameter">
+        <xmi:Extension
+            extender="http://www.eclipse.org/emf/2002/Ecore">
+          <eAnnotations
+              source="http://www.eclipse.org/emf/2002/GenModel">
+            <details
+                key="documentation"
+                value="WSDL Extension of the technology-independent element. "/>
+          </eAnnotations>
+        </xmi:Extension>
         <ownedAttribute
             xmi:id="data.grauml.graWsdl.WsdlParameter.mimeType"
             name="mimeType"

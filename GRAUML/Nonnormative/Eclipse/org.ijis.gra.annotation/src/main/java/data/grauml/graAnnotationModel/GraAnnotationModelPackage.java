@@ -286,13 +286,22 @@ public interface GraAnnotationModelPackage extends EPackage {
 	int GRA_SERVICE_ANNOTATION_BASE__FLAG = 5;
 
 	/**
+	 * The feature id for the '<em><b>Diagnostics</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRA_SERVICE_ANNOTATION_BASE__DIAGNOSTICS = 6;
+
+	/**
 	 * The number of structural features of the '<em>Gra Service Annotation Base</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GRA_SERVICE_ANNOTATION_BASE_FEATURE_COUNT = 6;
+	int GRA_SERVICE_ANNOTATION_BASE_FEATURE_COUNT = 7;
 
 	/**
 	 * The operation id for the '<em>Name Derivation</em>' operation.
@@ -514,7 +523,16 @@ public interface GraAnnotationModelPackage extends EPackage {
 	int PARTICIPANT__FLAG = GRA_SERVICE_ANNOTATION_BASE__FLAG;
 
 	/**
-	 * The feature id for the '<em><b>Participating Organization</b></em>' reference.
+	 * The feature id for the '<em><b>Diagnostics</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTICIPANT__DIAGNOSTICS = GRA_SERVICE_ANNOTATION_BASE__DIAGNOSTICS;
+
+	/**
+	 * The feature id for the '<em><b>Participating Organization</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -523,13 +541,22 @@ public interface GraAnnotationModelPackage extends EPackage {
 	int PARTICIPANT__PARTICIPATING_ORGANIZATION = GRA_SERVICE_ANNOTATION_BASE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Generalization</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTICIPANT__GENERALIZATION = GRA_SERVICE_ANNOTATION_BASE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Participant</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARTICIPANT_FEATURE_COUNT = GRA_SERVICE_ANNOTATION_BASE_FEATURE_COUNT + 1;
+	int PARTICIPANT_FEATURE_COUNT = GRA_SERVICE_ANNOTATION_BASE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Name Derivation</em>' operation.
@@ -630,6 +657,15 @@ public interface GraAnnotationModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int ORGANIZATION__FLAG = GRA_SERVICE_ANNOTATION_BASE__FLAG;
+
+	/**
+	 * The feature id for the '<em><b>Diagnostics</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORGANIZATION__DIAGNOSTICS = GRA_SERVICE_ANNOTATION_BASE__DIAGNOSTICS;
 
 	/**
 	 * The feature id for the '<em><b>Organization Acronym</b></em>' attribute.
@@ -786,6 +822,15 @@ public interface GraAnnotationModelPackage extends EPackage {
 	int PERSON__FLAG = GRA_SERVICE_ANNOTATION_BASE__FLAG;
 
 	/**
+	 * The feature id for the '<em><b>Diagnostics</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON__DIAGNOSTICS = GRA_SERVICE_ANNOTATION_BASE__DIAGNOSTICS;
+
+	/**
 	 * The feature id for the '<em><b>Contact Person Email Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -913,6 +958,15 @@ public interface GraAnnotationModelPackage extends EPackage {
 	int INTERFACE__FLAG = GRA_SERVICE_ANNOTATION_BASE__FLAG;
 
 	/**
+	 * The feature id for the '<em><b>Diagnostics</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE__DIAGNOSTICS = GRA_SERVICE_ANNOTATION_BASE__DIAGNOSTICS;
+
+	/**
 	 * The feature id for the '<em><b>Operation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1020,6 +1074,15 @@ public interface GraAnnotationModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int OPERATION__FLAG = GRA_SERVICE_ANNOTATION_BASE__FLAG;
+
+	/**
+	 * The feature id for the '<em><b>Diagnostics</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION__DIAGNOSTICS = GRA_SERVICE_ANNOTATION_BASE__DIAGNOSTICS;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' containment reference list.
@@ -1194,6 +1257,15 @@ public interface GraAnnotationModelPackage extends EPackage {
 	int PARAMETER__FLAG = GRA_SERVICE_ANNOTATION_BASE__FLAG;
 
 	/**
+	 * The feature id for the '<em><b>Diagnostics</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__DIAGNOSTICS = GRA_SERVICE_ANNOTATION_BASE__DIAGNOSTICS;
+
+	/**
 	 * The feature id for the '<em><b>Use</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1330,6 +1402,15 @@ public interface GraAnnotationModelPackage extends EPackage {
 	int MESSAGE__FLAG = GRA_SERVICE_ANNOTATION_BASE__FLAG;
 
 	/**
+	 * The feature id for the '<em><b>Diagnostics</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__DIAGNOSTICS = GRA_SERVICE_ANNOTATION_BASE__DIAGNOSTICS;
+
+	/**
 	 * The feature id for the '<em><b>Prefix</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1339,13 +1420,40 @@ public interface GraAnnotationModelPackage extends EPackage {
 	int MESSAGE__PREFIX = GRA_SERVICE_ANNOTATION_BASE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Element Prefix</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__ELEMENT_PREFIX = GRA_SERVICE_ANNOTATION_BASE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Element Model Reference</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__ELEMENT_MODEL_REFERENCE = GRA_SERVICE_ANNOTATION_BASE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Element Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__ELEMENT_NAME = GRA_SERVICE_ANNOTATION_BASE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Message</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_FEATURE_COUNT = GRA_SERVICE_ANNOTATION_BASE_FEATURE_COUNT + 1;
+	int MESSAGE_FEATURE_COUNT = GRA_SERVICE_ANNOTATION_BASE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Name Derivation</em>' operation.
@@ -1394,7 +1502,7 @@ public interface GraAnnotationModelPackage extends EPackage {
 	int SERVICE__PORT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Service Provider</b></em>' reference.
+	 * The feature id for the '<em><b>Service Provider</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1501,6 +1609,15 @@ public interface GraAnnotationModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int PORT__FLAG = GRA_SERVICE_ANNOTATION_BASE__FLAG;
+
+	/**
+	 * The feature id for the '<em><b>Diagnostics</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__DIAGNOSTICS = GRA_SERVICE_ANNOTATION_BASE__DIAGNOSTICS;
 
 	/**
 	 * The feature id for the '<em><b>Interface</b></em>' containment reference list.
@@ -1676,6 +1793,15 @@ public interface GraAnnotationModelPackage extends EPackage {
 	int SERVICE_INTERACTION__FLAG = GRA_SERVICE_ANNOTATION_BASE__FLAG;
 
 	/**
+	 * The feature id for the '<em><b>Diagnostics</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_INTERACTION__DIAGNOSTICS = GRA_SERVICE_ANNOTATION_BASE__DIAGNOSTICS;
+
+	/**
 	 * The feature id for the '<em><b>Participant</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1792,6 +1918,15 @@ public interface GraAnnotationModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int USE_CASE__FLAG = GRA_SERVICE_ANNOTATION_BASE__FLAG;
+
+	/**
+	 * The feature id for the '<em><b>Diagnostics</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USE_CASE__DIAGNOSTICS = GRA_SERVICE_ANNOTATION_BASE__DIAGNOSTICS;
 
 	/**
 	 * The feature id for the '<em><b>Provider</b></em>' containment reference list.
@@ -2132,6 +2267,15 @@ public interface GraAnnotationModelPackage extends EPackage {
 	int SERVICE_IDENTIFICATION__FLAG = GRA_SERVICE_ANNOTATION_BASE__FLAG;
 
 	/**
+	 * The feature id for the '<em><b>Diagnostics</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_IDENTIFICATION__DIAGNOSTICS = GRA_SERVICE_ANNOTATION_BASE__DIAGNOSTICS;
+
+	/**
 	 * The feature id for the '<em><b>Service Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2257,6 +2401,15 @@ public interface GraAnnotationModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int SERVICE_DESCRIPTION__FLAG = SERVICE_IDENTIFICATION__FLAG;
+
+	/**
+	 * The feature id for the '<em><b>Diagnostics</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_DESCRIPTION__DIAGNOSTICS = SERVICE_IDENTIFICATION__DIAGNOSTICS;
 
 	/**
 	 * The feature id for the '<em><b>Service Id</b></em>' attribute.
@@ -2619,13 +2772,22 @@ public interface GraAnnotationModelPackage extends EPackage {
 	int SERVICE_DESCRIPTION__DATA_PROVENANCE = SERVICE_IDENTIFICATION_FEATURE_COUNT + 36;
 
 	/**
+	 * The feature id for the '<em><b>Process Model</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_DESCRIPTION__PROCESS_MODEL = SERVICE_IDENTIFICATION_FEATURE_COUNT + 37;
+
+	/**
 	 * The number of structural features of the '<em>Service Description</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_DESCRIPTION_FEATURE_COUNT = SERVICE_IDENTIFICATION_FEATURE_COUNT + 37;
+	int SERVICE_DESCRIPTION_FEATURE_COUNT = SERVICE_IDENTIFICATION_FEATURE_COUNT + 38;
 
 	/**
 	 * The operation id for the '<em>Name Derivation</em>' operation.
@@ -3009,6 +3171,15 @@ public interface GraAnnotationModelPackage extends EPackage {
 	int SERVICE_INTERFACE_SPECIFICATION__FLAG = GRA_SERVICE_ANNOTATION_BASE__FLAG;
 
 	/**
+	 * The feature id for the '<em><b>Diagnostics</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_INTERFACE_SPECIFICATION__DIAGNOSTICS = GRA_SERVICE_ANNOTATION_BASE__DIAGNOSTICS;
+
+	/**
 	 * The feature id for the '<em><b>Security Implemented Indicator</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3117,13 +3288,22 @@ public interface GraAnnotationModelPackage extends EPackage {
 	int SERVICE_INTERFACE_SPECIFICATION__SERVICE_INTERFACE_NAME_ABBREVIATION_TEXT = GRA_SERVICE_ANNOTATION_BASE_FEATURE_COUNT + 11;
 
 	/**
+	 * The feature id for the '<em><b>Physical Model</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE_INTERFACE_SPECIFICATION__PHYSICAL_MODEL = GRA_SERVICE_ANNOTATION_BASE_FEATURE_COUNT + 12;
+
+	/**
 	 * The number of structural features of the '<em>Service Interface Specification</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_INTERFACE_SPECIFICATION_FEATURE_COUNT = GRA_SERVICE_ANNOTATION_BASE_FEATURE_COUNT + 12;
+	int SERVICE_INTERFACE_SPECIFICATION_FEATURE_COUNT = GRA_SERVICE_ANNOTATION_BASE_FEATURE_COUNT + 13;
 
 	/**
 	 * The operation id for the '<em>Name Derivation</em>' operation.
@@ -3544,6 +3724,17 @@ public interface GraAnnotationModelPackage extends EPackage {
 	EAttribute getGraServiceAnnotationBase_Flag();
 
 	/**
+	 * Returns the meta object for the attribute list '{@link data.grauml.graAnnotationModel.GraServiceAnnotationBase#getDiagnostics <em>Diagnostics</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Diagnostics</em>'.
+	 * @see data.grauml.graAnnotationModel.GraServiceAnnotationBase#getDiagnostics()
+	 * @see #getGraServiceAnnotationBase()
+	 * @generated
+	 */
+	EAttribute getGraServiceAnnotationBase_Diagnostics();
+
+	/**
 	 * Returns the meta object for the '{@link data.grauml.graAnnotationModel.GraServiceAnnotationBase#nameDerivation(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Name Derivation</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3681,15 +3872,26 @@ public interface GraAnnotationModelPackage extends EPackage {
 	EClass getParticipant();
 
 	/**
-	 * Returns the meta object for the reference '{@link data.grauml.graAnnotationModel.Participant#getParticipatingOrganization <em>Participating Organization</em>}'.
+	 * Returns the meta object for the containment reference '{@link data.grauml.graAnnotationModel.Participant#getParticipatingOrganization <em>Participating Organization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Participating Organization</em>'.
+	 * @return the meta object for the containment reference '<em>Participating Organization</em>'.
 	 * @see data.grauml.graAnnotationModel.Participant#getParticipatingOrganization()
 	 * @see #getParticipant()
 	 * @generated
 	 */
 	EReference getParticipant_ParticipatingOrganization();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link data.grauml.graAnnotationModel.Participant#getGeneralization <em>Generalization</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Generalization</em>'.
+	 * @see data.grauml.graAnnotationModel.Participant#getGeneralization()
+	 * @see #getParticipant()
+	 * @generated
+	 */
+	EReference getParticipant_Generalization();
 
 	/**
 	 * Returns the meta object for the '{@link data.grauml.graAnnotationModel.Participant#realizesActor(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Realizes Actor</em>}' operation.
@@ -4011,6 +4213,39 @@ public interface GraAnnotationModelPackage extends EPackage {
 	EAttribute getMessage_Prefix();
 
 	/**
+	 * Returns the meta object for the attribute '{@link data.grauml.graAnnotationModel.Message#getElementPrefix <em>Element Prefix</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Element Prefix</em>'.
+	 * @see data.grauml.graAnnotationModel.Message#getElementPrefix()
+	 * @see #getMessage()
+	 * @generated
+	 */
+	EAttribute getMessage_ElementPrefix();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link data.grauml.graAnnotationModel.Message#getElementModelReference <em>Element Model Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Element Model Reference</em>'.
+	 * @see data.grauml.graAnnotationModel.Message#getElementModelReference()
+	 * @see #getMessage()
+	 * @generated
+	 */
+	EReference getMessage_ElementModelReference();
+
+	/**
+	 * Returns the meta object for the attribute '{@link data.grauml.graAnnotationModel.Message#getElementName <em>Element Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Element Name</em>'.
+	 * @see data.grauml.graAnnotationModel.Message#getElementName()
+	 * @see #getMessage()
+	 * @generated
+	 */
+	EAttribute getMessage_ElementName();
+
+	/**
 	 * Returns the meta object for class '{@link data.grauml.graAnnotationModel.Service <em>Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4032,10 +4267,10 @@ public interface GraAnnotationModelPackage extends EPackage {
 	EReference getService_Port();
 
 	/**
-	 * Returns the meta object for the reference '{@link data.grauml.graAnnotationModel.Service#getServiceProvider <em>Service Provider</em>}'.
+	 * Returns the meta object for the containment reference '{@link data.grauml.graAnnotationModel.Service#getServiceProvider <em>Service Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Service Provider</em>'.
+	 * @return the meta object for the containment reference '<em>Service Provider</em>'.
 	 * @see data.grauml.graAnnotationModel.Service#getServiceProvider()
 	 * @see #getService()
 	 * @generated
@@ -4785,6 +5020,17 @@ public interface GraAnnotationModelPackage extends EPackage {
 	EReference getServiceDescription_DataProvenance();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link data.grauml.graAnnotationModel.ServiceDescription#getProcessModel <em>Process Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Process Model</em>'.
+	 * @see data.grauml.graAnnotationModel.ServiceDescription#getProcessModel()
+	 * @see #getServiceDescription()
+	 * @generated
+	 */
+	EReference getServiceDescription_ProcessModel();
+
+	/**
 	 * Returns the meta object for the '{@link data.grauml.graAnnotationModel.ServiceDescription#realizesCollaborationAndUsesIepd(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Realizes Collaboration And Uses Iepd</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5270,6 +5516,17 @@ public interface GraAnnotationModelPackage extends EPackage {
 	EAttribute getServiceInterfaceSpecification_ServiceInterfaceNameAbbreviationText();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link data.grauml.graAnnotationModel.ServiceInterfaceSpecification#getPhysicalModel <em>Physical Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Physical Model</em>'.
+	 * @see data.grauml.graAnnotationModel.ServiceInterfaceSpecification#getPhysicalModel()
+	 * @see #getServiceInterfaceSpecification()
+	 * @generated
+	 */
+	EReference getServiceInterfaceSpecification_PhysicalModel();
+
+	/**
 	 * Returns the meta object for class '{@link data.grauml.graAnnotationModel.ServiceInteractionProfile <em>Service Interaction Profile</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5596,6 +5853,14 @@ public interface GraAnnotationModelPackage extends EPackage {
 		EAttribute GRA_SERVICE_ANNOTATION_BASE__FLAG = eINSTANCE.getGraServiceAnnotationBase_Flag();
 
 		/**
+		 * The meta object literal for the '<em><b>Diagnostics</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GRA_SERVICE_ANNOTATION_BASE__DIAGNOSTICS = eINSTANCE.getGraServiceAnnotationBase_Diagnostics();
+
+		/**
 		 * The meta object literal for the '<em><b>Name Derivation</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5706,12 +5971,20 @@ public interface GraAnnotationModelPackage extends EPackage {
 		EClass PARTICIPANT = eINSTANCE.getParticipant();
 
 		/**
-		 * The meta object literal for the '<em><b>Participating Organization</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Participating Organization</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference PARTICIPANT__PARTICIPATING_ORGANIZATION = eINSTANCE.getParticipant_ParticipatingOrganization();
+
+		/**
+		 * The meta object literal for the '<em><b>Generalization</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARTICIPANT__GENERALIZATION = eINSTANCE.getParticipant_Generalization();
 
 		/**
 		 * The meta object literal for the '<em><b>Realizes Actor</b></em>' operation.
@@ -5966,6 +6239,30 @@ public interface GraAnnotationModelPackage extends EPackage {
 		EAttribute MESSAGE__PREFIX = eINSTANCE.getMessage_Prefix();
 
 		/**
+		 * The meta object literal for the '<em><b>Element Prefix</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MESSAGE__ELEMENT_PREFIX = eINSTANCE.getMessage_ElementPrefix();
+
+		/**
+		 * The meta object literal for the '<em><b>Element Model Reference</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE__ELEMENT_MODEL_REFERENCE = eINSTANCE.getMessage_ElementModelReference();
+
+		/**
+		 * The meta object literal for the '<em><b>Element Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MESSAGE__ELEMENT_NAME = eINSTANCE.getMessage_ElementName();
+
+		/**
 		 * The meta object literal for the '{@link data.grauml.graAnnotationModel.impl.ServiceImpl <em>Service</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5984,7 +6281,7 @@ public interface GraAnnotationModelPackage extends EPackage {
 		EReference SERVICE__PORT = eINSTANCE.getService_Port();
 
 		/**
-		 * The meta object literal for the '<em><b>Service Provider</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Service Provider</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -6562,6 +6859,14 @@ public interface GraAnnotationModelPackage extends EPackage {
 		EReference SERVICE_DESCRIPTION__DATA_PROVENANCE = eINSTANCE.getServiceDescription_DataProvenance();
 
 		/**
+		 * The meta object literal for the '<em><b>Process Model</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE_DESCRIPTION__PROCESS_MODEL = eINSTANCE.getServiceDescription_ProcessModel();
+
+		/**
 		 * The meta object literal for the '<em><b>Realizes Collaboration And Uses Iepd</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6928,6 +7233,14 @@ public interface GraAnnotationModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SERVICE_INTERFACE_SPECIFICATION__SERVICE_INTERFACE_NAME_ABBREVIATION_TEXT = eINSTANCE.getServiceInterfaceSpecification_ServiceInterfaceNameAbbreviationText();
+
+		/**
+		 * The meta object literal for the '<em><b>Physical Model</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SERVICE_INTERFACE_SPECIFICATION__PHYSICAL_MODEL = eINSTANCE.getServiceInterfaceSpecification_PhysicalModel();
 
 		/**
 		 * The meta object literal for the '{@link data.grauml.graAnnotationModel.impl.ServiceInteractionProfileImpl <em>Service Interaction Profile</em>}' class.

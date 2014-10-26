@@ -7,8 +7,10 @@ import data.grauml.graAnnotationModel.Organization;
 import data.grauml.graAnnotationModel.Participant;
 import data.grauml.graAnnotationModel.util.GraAnnotationModelValidator;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
 import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
@@ -17,7 +19,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +31,7 @@ import org.eclipse.emf.ecore.util.EObjectValidator;
  * The following features are implemented:
  * <ul>
  *   <li>{@link data.grauml.graAnnotationModel.impl.ParticipantImpl#getParticipatingOrganization <em>Participating Organization</em>}</li>
+ *   <li>{@link data.grauml.graAnnotationModel.impl.ParticipantImpl#getGeneralization <em>Generalization</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,7 +39,7 @@ import org.eclipse.emf.ecore.util.EObjectValidator;
  */
 public class ParticipantImpl extends GraServiceAnnotationBaseImpl implements Participant {
 	/**
-	 * The cached value of the '{@link #getParticipatingOrganization() <em>Participating Organization</em>}' reference.
+	 * The cached value of the '{@link #getParticipatingOrganization() <em>Participating Organization</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParticipatingOrganization()
@@ -42,6 +47,16 @@ public class ParticipantImpl extends GraServiceAnnotationBaseImpl implements Par
 	 * @ordered
 	 */
 	protected Organization participatingOrganization;
+
+	/**
+	 * The cached value of the '{@link #getGeneralization() <em>Generalization</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGeneralization()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Participant> generalization;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,14 +83,6 @@ public class ParticipantImpl extends GraServiceAnnotationBaseImpl implements Par
 	 * @generated
 	 */
 	public Organization getParticipatingOrganization() {
-		if (participatingOrganization != null && participatingOrganization.eIsProxy()) {
-			InternalEObject oldParticipatingOrganization = (InternalEObject)participatingOrganization;
-			participatingOrganization = (Organization)eResolveProxy(oldParticipatingOrganization);
-			if (participatingOrganization != oldParticipatingOrganization) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GraAnnotationModelPackage.PARTICIPANT__PARTICIPATING_ORGANIZATION, oldParticipatingOrganization, participatingOrganization));
-			}
-		}
 		return participatingOrganization;
 	}
 
@@ -84,8 +91,14 @@ public class ParticipantImpl extends GraServiceAnnotationBaseImpl implements Par
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Organization basicGetParticipatingOrganization() {
-		return participatingOrganization;
+	public NotificationChain basicSetParticipatingOrganization(Organization newParticipatingOrganization, NotificationChain msgs) {
+		Organization oldParticipatingOrganization = participatingOrganization;
+		participatingOrganization = newParticipatingOrganization;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraAnnotationModelPackage.PARTICIPANT__PARTICIPATING_ORGANIZATION, oldParticipatingOrganization, newParticipatingOrganization);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -94,10 +107,29 @@ public class ParticipantImpl extends GraServiceAnnotationBaseImpl implements Par
 	 * @generated
 	 */
 	public void setParticipatingOrganization(Organization newParticipatingOrganization) {
-		Organization oldParticipatingOrganization = participatingOrganization;
-		participatingOrganization = newParticipatingOrganization;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GraAnnotationModelPackage.PARTICIPANT__PARTICIPATING_ORGANIZATION, oldParticipatingOrganization, participatingOrganization));
+		if (newParticipatingOrganization != participatingOrganization) {
+			NotificationChain msgs = null;
+			if (participatingOrganization != null)
+				msgs = ((InternalEObject)participatingOrganization).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraAnnotationModelPackage.PARTICIPANT__PARTICIPATING_ORGANIZATION, null, msgs);
+			if (newParticipatingOrganization != null)
+				msgs = ((InternalEObject)newParticipatingOrganization).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GraAnnotationModelPackage.PARTICIPANT__PARTICIPATING_ORGANIZATION, null, msgs);
+			msgs = basicSetParticipatingOrganization(newParticipatingOrganization, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GraAnnotationModelPackage.PARTICIPANT__PARTICIPATING_ORGANIZATION, newParticipatingOrganization, newParticipatingOrganization));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Participant> getGeneralization() {
+		if (generalization == null) {
+			generalization = new EObjectContainmentEList<Participant>(Participant.class, this, GraAnnotationModelPackage.PARTICIPANT__GENERALIZATION);
+		}
+		return generalization;
 	}
 
 	/**
@@ -131,11 +163,28 @@ public class ParticipantImpl extends GraServiceAnnotationBaseImpl implements Par
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case GraAnnotationModelPackage.PARTICIPANT__PARTICIPATING_ORGANIZATION:
+				return basicSetParticipatingOrganization(null, msgs);
+			case GraAnnotationModelPackage.PARTICIPANT__GENERALIZATION:
+				return ((InternalEList<?>)getGeneralization()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case GraAnnotationModelPackage.PARTICIPANT__PARTICIPATING_ORGANIZATION:
-				if (resolve) return getParticipatingOrganization();
-				return basicGetParticipatingOrganization();
+				return getParticipatingOrganization();
+			case GraAnnotationModelPackage.PARTICIPANT__GENERALIZATION:
+				return getGeneralization();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -145,11 +194,16 @@ public class ParticipantImpl extends GraServiceAnnotationBaseImpl implements Par
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case GraAnnotationModelPackage.PARTICIPANT__PARTICIPATING_ORGANIZATION:
 				setParticipatingOrganization((Organization)newValue);
+				return;
+			case GraAnnotationModelPackage.PARTICIPANT__GENERALIZATION:
+				getGeneralization().clear();
+				getGeneralization().addAll((Collection<? extends Participant>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -166,6 +220,9 @@ public class ParticipantImpl extends GraServiceAnnotationBaseImpl implements Par
 			case GraAnnotationModelPackage.PARTICIPANT__PARTICIPATING_ORGANIZATION:
 				setParticipatingOrganization((Organization)null);
 				return;
+			case GraAnnotationModelPackage.PARTICIPANT__GENERALIZATION:
+				getGeneralization().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -180,6 +237,8 @@ public class ParticipantImpl extends GraServiceAnnotationBaseImpl implements Par
 		switch (featureID) {
 			case GraAnnotationModelPackage.PARTICIPANT__PARTICIPATING_ORGANIZATION:
 				return participatingOrganization != null;
+			case GraAnnotationModelPackage.PARTICIPANT__GENERALIZATION:
+				return generalization != null && !generalization.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

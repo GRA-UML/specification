@@ -13,6 +13,9 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Binding Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * Binding type as per WSD specification.
+ * <!-- end-model-doc -->
  * @see data.grauml.graWsdl.GraWsdlPackage#getBindingType()
  * @model
  * @generated

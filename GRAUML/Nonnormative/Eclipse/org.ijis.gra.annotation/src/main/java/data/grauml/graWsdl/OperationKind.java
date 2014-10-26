@@ -13,6 +13,9 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Operation Kind</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * WSDL DOC or RPC Biding. Note for GRA "doc" should always be used.
+ * <!-- end-model-doc -->
  * @see data.grauml.graWsdl.GraWsdlPackage#getOperationKind()
  * @model
  * @generated

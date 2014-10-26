@@ -42,7 +42,7 @@ public interface Operation extends GraServiceAnnotationBase {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Parameter</em>' containment reference list.
 	 * @see data.grauml.graAnnotationModel.GraAnnotationModelPackage#getOperation_Parameter()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Parameter> getParameter();
@@ -155,8 +155,7 @@ public interface Operation extends GraServiceAnnotationBase {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * A description of provenance information for this action. 
-	 * Used to populate Action Model section of SDD document.
+	 * A description of provenance information for this action. Used to populate the Action Model section of SDD document.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Action Provenance</em>' attribute.
 	 * @see #setActionProvenance(String)

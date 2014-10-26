@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><uml:Profile xmlns:uml="http://www.omg.org/spec/UML/20110701" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="20110701" xmi:id="_17_0_1_2_12e503d9_1335908557030_455080_2399" name="NIEM_UML_Profile" URI="http://www.omg.org/spec/NIEM-UML/20120501" metamodelReference="NIEM_UML_Profile-NIEM_UML_Profile-packageImport-1">
+  
+  <ownedComment xmi:id="NIEM_UML_Profile-NIEM_UML_Profile-ownedComment" body="The NIEM UML Profile imports the NIEM PIM Profile, the NIEM PSM Profile and the Model&#xA;          Package Description Profile, so all three of these profiles can effectively be imported&#xA;          just by importing the single NIEM UML Profile."/>
+  <packageImport xmi:id="NIEM_UML_Profile-NIEM_UML_Profile-packageImport-1">
+    <importedPackage xmi:type="uml:Model" href="http://www.omg.org/spec/UML/20110701/UML.xmi#_0"/>
+  </packageImport>
+  <packageImport xmi:id="NIEM_UML_Profile-NIEM_UML_Profile-packageImport-2">
+    <importedPackage xmi:type="uml:Profile" href="NIEM_UML_Profile.Model_Package_Description_Profile.profile.xmi#NIEM_UML_Profile-Model_Package_Description_Profile"/>
+  </packageImport>
+  <packageImport xmi:id="NIEM_UML_Profile-NIEM_UML_Profile-packageImport-3">
+    <importedPackage xmi:type="uml:Profile" href="NIEM_UML_Profile.NIEM_PSM_Profile.profile.xmi#NIEM_UML_Profile-NIEM_PSM_Profile"/>
+  </packageImport>
+  <packageImport xmi:id="NIEM_UML_Profile-NIEM_UML_Profile-packageImport-4">
+    <importedPackage xmi:type="uml:Profile" href="NIEM_UML_Profile.NIEM_PIM_Profile.profile.xmi#NIEM_UML_Profile-NIEM_PIM_Profile"/>
+  </packageImport>
+  
+  
+</uml:Profile>

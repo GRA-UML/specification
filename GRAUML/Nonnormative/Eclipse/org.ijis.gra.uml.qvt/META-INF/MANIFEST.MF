@@ -17,8 +17,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.ijis.gra.catalog;bundle-version="1.0.0";visibility:=reexport,
  org.search.niem.uml.qvt;bundle-version="1.0.0";visibility:=reexport,
  org.ijis.gra.uml.qvt.blackbox;bundle-version="1.0.0";visibility:=reexport,
- org.ijis.gra.metadata;bundle-version="1.0.0";visibility:=reexport,
- org.eclipse.bpmn2;bundle-version="0.7.0";visibility:=reexport
+ org.ijis.gra.metadata;bundle-version="1.0.0";visibility:=reexport
 Bundle-Localization: plugin
 Bundle-ActivationPolicy: lazy
 Export-Package: org.ijis.gra.uml.qvt,

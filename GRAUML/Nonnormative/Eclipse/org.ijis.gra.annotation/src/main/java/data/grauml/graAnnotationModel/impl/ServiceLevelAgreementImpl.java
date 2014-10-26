@@ -3,7 +3,6 @@
 package data.grauml.graAnnotationModel.impl;
 
 import data.grauml.graAnnotationModel.Agreement;
-import data.grauml.graAnnotationModel.Description;
 import data.grauml.graAnnotationModel.GraAnnotationModelPackage;
 import data.grauml.graAnnotationModel.ServiceLevelAgreement;
 import data.grauml.graAnnotationModel.util.GraAnnotationModelValidator;
@@ -144,7 +143,7 @@ public class ServiceLevelAgreementImpl extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Description> applicablePolicy;
+	protected EList<Agreement> applicablePolicy;
 
 	/**
 	 * The cached value of the '{@link #getUmbrellaAgreement() <em>Umbrella Agreement</em>}' containment reference list.
@@ -474,9 +473,9 @@ public class ServiceLevelAgreementImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Description> getApplicablePolicy() {
+	public EList<Agreement> getApplicablePolicy() {
 		if (applicablePolicy == null) {
-			applicablePolicy = new EObjectContainmentEList<Description>(Description.class, this, GraAnnotationModelPackage.SERVICE_LEVEL_AGREEMENT__APPLICABLE_POLICY);
+			applicablePolicy = new EObjectContainmentEList<Agreement>(Agreement.class, this, GraAnnotationModelPackage.SERVICE_LEVEL_AGREEMENT__APPLICABLE_POLICY);
 		}
 		return applicablePolicy;
 	}
@@ -917,7 +916,7 @@ public class ServiceLevelAgreementImpl extends MinimalEObjectImpl.Container impl
 				return;
 			case GraAnnotationModelPackage.SERVICE_LEVEL_AGREEMENT__APPLICABLE_POLICY:
 				getApplicablePolicy().clear();
-				getApplicablePolicy().addAll((Collection<? extends Description>)newValue);
+				getApplicablePolicy().addAll((Collection<? extends Agreement>)newValue);
 				return;
 			case GraAnnotationModelPackage.SERVICE_LEVEL_AGREEMENT__UMBRELLA_AGREEMENT:
 				getUmbrellaAgreement().clear();

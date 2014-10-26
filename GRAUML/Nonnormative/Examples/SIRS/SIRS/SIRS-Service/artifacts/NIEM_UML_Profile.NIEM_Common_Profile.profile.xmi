@@ -1,0 +1,956 @@
+<?xml version="1.0" encoding="UTF-8"?><uml:Profile xmlns:uml="http://www.omg.org/spec/UML/20110701" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="20110701" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile" name="NIEM_Common_Profile" URI="http://www.omg.org/spec/NIEM-UML/20120501/NIEM_Common_Profile" metamodelReference="NIEM_UML_Profile-NIEM_Common_Profile-packageImport">
+  
+  <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile" body="The NIEM Common Profile comprises stereotypes that are used in both the NIEM PIM&#xA;          Profile and the NIEM PSM Profile. In addition, the UML metamodel subset covered by the&#xA;          NIEM Common Profile also includes the metaclasses PrimitiveType, Enumeration,&#xA;          EnumerationLiteral, Property and Generalization, even though they are not specifically&#xA;          extended by any stereotypes in the profile."/>
+  <packageImport xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packageImport">
+    <importedPackage xmi:type="uml:Model" href="http://www.omg.org/spec/UML/20110701/UML.xmi#_0"/>
+  </packageImport>
+  
+  
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Documentation" name="Documentation">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Documentation-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Documentation" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;            margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;            &lt;p&gt; A Documentation Comment is the data definition of the Element that&#xA;            owns it.  For an Element owning only one Comment, that Comment will be inferred to be a&#xA;            Documentation Comment. &lt;/p&gt; &lt;p&gt; A Documentation Comment&#xA;            owned by an Element representing a NIEM type or property is implemented as a&#xA;            documentation element of the annotation for the corresponding type definition or&#xA;            property declaration. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; ng&#xA;            type definition or property declaration. &lt;/p&gt; &lt;/body&gt;&#xA;            &lt;/html&gt; &lt;/html&gt; "/>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Documentation-Max_One___Documentation___per_Element" name="Max One &lt;&lt;Documentation&gt;&gt; per Element" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-Documentation">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Documentation-Max_One___Documentation___per_Element-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Documentation-Max_One___Documentation___per_Element" body="The owner of a Documentation Comment must have no other Documentation Comments."/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Documentation-Max_One___Documentation___per_Element-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Comment.annotatedElement-&gt;notEmpty() and
+              self.base_Comment.annotatedElement-&gt;forAll(e|e=self.base_Comment.owner) and
+              (self.base_Comment.owner.ownedComment-&gt;select(c|c.stereotypedBy('Documentation'))-&gt;size()=1)
+            </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Documentation-NDR__Rule_7-14_" name="NDR [Rule 7-14]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Documentation-NDR__Rule_7-14_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Documentation-NDR__Rule_7-14_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-14] (REF, EXT)&lt;/b&gt; A&#xA;              component definition SHALL begin with a standard opening phrase that depends on the&#xA;              class of the component per Table 7-1 in NDR: Standard Opening Phrases:&#xA;              &lt;/p&gt; &lt;p&gt; &lt;b&gt;Rationale&lt;/b&gt; A&#xA;              standard opening phrase based on component class helps to ensure consistent&#xA;              definitions that appropriate for the type of component item being defined. These&#xA;              opening phrases also provide a cue that facilitates recognition of the particular kind&#xA;              of component. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; s&#xA;              recognition of the particular kind of component. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Documentation-NDR__Rule_7-14_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Comment.profiledBy('NIEM_PSM_Profile') implies ( (
+              self.base_Comment.owner.stereotypedBy('AssociationType') implies
+              self.base_Comment.body.startsWith('A relationship ') ) and (
+              self.base_Comment.owner.stereotypedBy('AugmentationType') implies
+              self.base_Comment.body.startsWith('Supplements ') ) and (
+              self.base_Comment.owner.oclAsType(NamedElement).name.match('.*Indicator.*') implies
+              self.base_Comment.body.startsWith('True if ') ) and (
+              self.base_Comment.owner.oclIsKindOf(DataType) implies
+              self.base_Comment.body.startsWith('A data type for ') ) ) ) if(
+              (self.oclIsKindOf(ndr::ndrComplexTypeDefinition)and self.abstract) or
+              (self.stereotypedBy('niem::ndr::ndrElementDeclaration')and self.abstract)
+              )then(self.componentDefinition.startsWith('A data concept for a ') )else(
+              if(self.stereotypedBy('niem::ndr::ndrRoleType'))
+              then(self.componentDefinition.startsWith('Acts as ') )else( )else(
+              if(self.stereotypedBy('niem::ndr::ndrSimpleTypeDefinition'))
+              then(self.componentDefinition.startsWith('A data type for ') )else(
+              self.componentDefinition.startsWith('A ') or self.componentDefinition.startsWith('An
+              ') )endif )endif )endif )endif )endif )endif</body>
+      </specification>
+    </ownedRule>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Documentation-base_Comment" name="base_Comment" visibility="public" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-16">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#Comment"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_2_1_2aa0151_1363979878344_541947_2274" name="" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878344_457999_2275" name="" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType" name="MetadataType">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;            margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;            &lt;p&gt; A MetadataType is a NIEMType Class that represents a NIEM metadata&#xA;            type. A NIEM metadata type describes data about data, that is, information that is not&#xA;            descriptive of objects and their relationships, but is descriptive of the data itself.&#xA;            Metadata is specified as an instance of a metadata type and may include information such&#xA;            as the security of a piece of data or the source of the data. The applicability of such&#xA;            metadata may be modeled using MetadataApplication dependencies to one or more classes&#xA;            representing the applicable types. &lt;/p&gt; &lt;p&gt; MetadataType is&#xA;            implemented in XML Schema as a complex type definition with complex content. Section 3.4&#xA;            of &lt;a href=&#34;http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/&#34;&gt;XML&#xA;            Schema Structures&lt;/a&gt; addresses complex type definitions in XML Schema;&#xA;            Section 7.4.4 of &lt;a&#xA;            href=&#34;http://reference.niem.gov/niem/specification/naming-and-design-rules/1.3/&#34;&gt;NIEM&#xA;            NDR v1.3&lt;/a&gt; addresses metadata types in NIEM-conformant XML Schema.&#xA;            &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; rules/1.3/&#34;&gt;NIEM&#xA;            NDR v1.3&lt;/a&gt; addresses metadata types in NIEM-conformant XML Schema.&#xA;            &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; body&gt;&#xA;            &lt;/html&gt; "/>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType-NDR__Rule_7-44_" name="NDR [Rule 7-44]" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType-NDR__Rule_7-44_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType-NDR__Rule_7-44_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-44] (REF, SUB, EXT)&lt;/b&gt;&#xA;              Within the schema, a metadata type and only a metadata type SHALL be derived directly&#xA;              from structures:MetadataType. &lt;/p&gt; &lt;p&gt;&#xA;              &lt;b&gt;Rationale&lt;/b&gt; A metadata type establishes a specific,&#xA;              named aggregation of data about data. Any type derived from structures:MetadataType is&#xA;              a metadata type. Metadata types should not be derived from other metadata types. Such&#xA;              metadata types should be used as is and additional metadata types defined for&#xA;              additional content. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;&#xA;              additional metadata types defined for additional content. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType-NDR__Rule_7-44_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.general-&gt;select(g|g.stereotypedBy('MetadataType'))-&gt;isEmpty()</body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType-NDR__Rule_7-14_" name="NDR [Rule 7-14]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType-NDR__Rule_7-14_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType-NDR__Rule_7-14_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-14] (REF, EXT)&lt;/b&gt; A&#xA;              component definition SHALL begin with a standard opening phrase that depends on the&#xA;              class of the component per Table 7-1 in NDR: Standard Opening Phrases:&#xA;              &lt;/p&gt; &lt;p&gt; &lt;b&gt;Rationale&lt;/b&gt; A&#xA;              standard opening phrase based on component class helps to ensure consistent&#xA;              definitions that appropriate for the type of component item being defined. These&#xA;              opening phrases also provide a cue that facilitates recognition of the particular kind&#xA;              of component. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; s&#xA;              recognition of the particular kind of component. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType-NDR__Rule_7-14_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Class.ownedComment -&gt;exists(documentation|
+              documentation.stereotypedBy('Documentation') and ( documentation.body.startsWith('A
+              data type for metadata about ') or documentation.body.startsWith('A data type for
+              information that further qualifies ') ) ) </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType-NDR__Rule_9-29_" name="NDR [Rule 9-29]" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType-NDR__Rule_9-29_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType-NDR__Rule_9-29_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 9-29] (REF, SUB, EXT)&lt;/b&gt;&#xA;              Within the schema, any metadata type SHALL have a name that uses the representation&#xA;              term qualifier Metadata. Types other than metadata types SHALL NOT use the&#xA;              representation term qualifier Metadata. &lt;/p&gt; &lt;p&gt;&#xA;              &lt;b&gt;Rationale&lt;/b&gt; Using the qualifier Metadata immediately&#xA;              identifies a type as representing metadata. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; ies a type as representing metadata. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; body&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType-NDR__Rule_9-29_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Class.name.match('.*MetadataType')) --For PIM Profile, the naming constraint
+              is enforced by PIM/PSM transformations. </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType-NDR__Rule_7-43_" name="NDR [Rule 7-43]" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType-NDR__Rule_7-43_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType-NDR__Rule_7-43_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;b&gt;[Rule 7-43] (REF, SUB, EXT)&lt;/b&gt; Within the schema, a&#xA;              metadata type SHALL contain elements appropriate for a specific class of data about&#xA;              data. &lt;/body&gt; &lt;/html&gt; ata. &lt;/body&gt;&#xA;              &lt;/html&gt; l&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType-NDR__Rule_7-43_-specification" name="">
+        <language>English</language>
+        <body>Containing Elements appropriate for a specific class of data about data is a
+              Non-computational constraint. </body>
+      </specification>
+    </ownedRule>
+    <generalization xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType-generalization" general="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType"/>
+    <ownedAttribute xmi:id="_17_0_5_1_2aa0151_1410701930077_436805_3953" name="base_Class" visibility="private" association="_17_0_5_1_2aa0151_1410701930077_79529_3952">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#Class"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ObjectType" name="ObjectType">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ObjectType-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-ObjectType" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;            margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;            &lt;p&gt; ObjectType is a NIEMType Class that represents a NIEM object type. A&#xA;            NIEM object type represents some kind of object: a thing with its own lifespan that has&#xA;            some existence. The object may or may not be a physical object. It may be a conceptual&#xA;            object. &lt;/p&gt; &lt;p&gt; ObjectType is implemented in XML Schema as&#xA;            a complex type definition. Section 3.4 of &lt;a&#xA;            href=&#34;http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/&#34;&gt;XML Schema&#xA;            Structures&lt;/a&gt; addresses complex type definitions in XML Schema; Section&#xA;            7.4.1 of &lt;a&#xA;            href=&#34;http://reference.niem.gov/niem/specification/naming-and-design-rules/1.3/&#34;&gt;NIEM&#xA;            NDR v1.3&lt;/a&gt; addresses object types in NIEM-conformant XML Schema.&#xA;            &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; R v1.3&lt;/a&gt;&#xA;            addresses object types in NIEM-conformant XML Schema. &lt;/p&gt;&#xA;            &lt;/body&gt; &lt;/html&gt; &lt;/html&gt; "/>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ObjectType-NDR__Rule_7-39___REF,_EXT_" name="NDR [Rule 7-39] (REF, EXT)">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ObjectType-NDR__Rule_7-39___REF,_EXT_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-ObjectType-NDR__Rule_7-39___REF,_EXT_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; Within the schema, an object type SHALL be a complex type definition&#xA;              that either constitutes a NIEM-conformant component or for which there exists a&#xA;              NIEM-conformant component of one of the following forms: &lt;/p&gt;&#xA;              &lt;ol&gt; &lt;li&gt; Has simple content, is based on a simple type,&#xA;              and contains the attribute group structures:SimpleObjectAttributeGroup, and has&#xA;              application information appinfo:Base of structures:Object. &lt;/li&gt;&#xA;              &lt;li&gt; Has complex content, and is based on complex type&#xA;              structures:ComplexObjectType, and has application information appinfo:Base of&#xA;              structures:Object. &lt;/li&gt; &lt;li&gt; Is a complex type that is&#xA;              derived from an object type, which is defined according to this rule.&#xA;              &lt;/li&gt; &lt;/ol&gt; &lt;/body&gt; &lt;/html&gt;&#xA;              &lt;li&gt; Is a complex type that is derived from an object type, which is&#xA;              defined according to this rule. &lt;/li&gt; &lt;/ol&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; &lt;/ol&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ObjectType-NDR__Rule_7-39___REF,_EXT_-specification" name=""/>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ObjectType-NDR__Rule_7-14_" name="NDR [Rule 7-14]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ObjectType-NDR__Rule_7-14_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-ObjectType-NDR__Rule_7-14_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-14] (REF, EXT)&lt;/b&gt; A&#xA;              component definition SHALL begin with a standard opening phrase that depends on the&#xA;              class of the component per Table 7-1 in NDR: Standard Opening Phrases:&#xA;              &lt;/p&gt; &lt;p&gt; &lt;b&gt;Rationale&lt;/b&gt; A&#xA;              standard opening phrase based on component class helps to ensure consistent&#xA;              definitions that appropriate for the type of component item being defined. These&#xA;              opening phrases also provide a cue that facilitates recognition of the particular kind&#xA;              of component. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; s&#xA;              recognition of the particular kind of component. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ObjectType-NDR__Rule_7-14_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Class.ownedComment -&gt;exists(documentation|
+              documentation.stereotypedBy('Documentation') and ( documentation.body.startsWith('A
+              data type for a ') or documentation.body.startsWith('A data type for an ') ) ) </body>
+      </specification>
+    </ownedRule>
+    <generalization xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ObjectType-generalization" general="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType"/>
+    <ownedAttribute xmi:id="_17_0_5_1_2aa0151_1410701936556_803575_3978" name="base_Class" visibility="private" association="_17_0_5_1_2aa0151_1410701936555_621313_3977">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#Class"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-5" name="" memberEnd="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-5-ownedEnd NIEM_UML_Profile-NIEM_Common_Profile-Namespace-base_Package" navigableOwnedEnd="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-5-ownedEnd">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-5-ownedEnd" name="extension_NIEMNamespace" visibility="public" type="NIEM_UML_Profile-NIEM_Common_Profile-Namespace" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-5">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-5-ownedEnd-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878325_376445_2196" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-MetadataApplication" name="MetadataApplication">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-MetadataApplication-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-MetadataApplication" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;            margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;            &lt;p&gt; The MetadataApplication stereotype is a specialization of Application&#xA;            that is always between a MetadataType Class and another Class. It represents a&#xA;            constraint on a NIEM metadata type that limits the application of the NIEM metadata type&#xA;            to specific types. If a MetadataType Class is the client of a MetadataApplication Usage,&#xA;            then any Property with the MetadataType Class as its type must be for a Class that is a&#xA;            (direct or indirect) subclass of the supplier Class of the MetadataApplication. A&#xA;            MetadataType Class may be the client of multiple MetadataApplication Usages, in which&#xA;            case a Property for it may be in a Class that is a subclass of a supplier Class of any&#xA;            of the MetadataApplications. If a MetadataType is not a client of any&#xA;            MetadataApplication, then it applies to any type. &lt;/p&gt; &lt;p&gt; A&#xA;            MetadataApplication Usage is implemented in XML schema as a NIEM AppliesTo element in&#xA;            the annotation element of the complex type definition represented by the client of the&#xA;            Usage, referencing the complex type represented by the supplier class of the Usage.&#xA;            &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; d by the client of the&#xA;            Usage, referencing the complex type represented by the supplier class of the Usage.&#xA;            &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; body&gt;&#xA;            &lt;/html&gt; "/>
+    <generalization xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-MetadataApplication-generalization" general="NIEM_UML_Profile-NIEM_Common_Profile-Application"/>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-MetadataApplicationUsageExtensionMemberEndProperty" name="base_Usage" association="NIEM_UML_Profile-NIEM_Common_Profile-MetadataApplicationUsageExtension">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#Usage"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Restriction" name="Restriction">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Restriction" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;            margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;            &lt;p&gt; A Restriction Realization represents a relationship between two type&#xA;            definitions: the first is derived by restriction from the second. The two types must&#xA;            either both be NIEMType Classes or both be DataTypes. If the two types are Classes, then&#xA;            the attributes of the client class must be a subset of the attributes of the supplier&#xA;            class and omitted attributes must have a multiplicity lower bound of zero. if the two&#xA;            classes are DataTypes, then the client type is considered to have a value space that is&#xA;            a subset of that of the supplier, as may be further specified using a ValueRestriction&#xA;            stereotype on the client. &lt;/p&gt; &lt;p&gt; This relationship is&#xA;            implemented in XML Schema through the base attribute on the xsd:restriction element of&#xA;            the first type definition, the actual value of which resolves to the second type&#xA;            definition. If a type is a ValueRestriction the generalization owned by that type is&#xA;            implicitly an XSDRestriction. Sections 3.4 and 3.14 of &lt;a&#xA;            href=&#34;http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/&#34;&gt;XML Schema&#xA;            Structures&lt;/a&gt; address the use of restriction in XML Schema; Sections&#xA;            6.5.2 and 6.5.3 of &lt;a&#xA;            href=&#34;http://reference.niem.gov/niem/specification/naming-and-design-rules/1.3/&#34;&gt;NIEM&#xA;            NDR v1.3&lt;/a&gt; address the use of restriction in NIEM-conformant XML Schema.&#xA;            &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;&#xA;            ion/naming-and-design-rules/1.3/&#34;&gt;NIEM NDR v1.3&lt;/a&gt; address the use&#xA;            of restriction in NIEM-conformant XML Schema. &lt;/p&gt; &lt;/body&gt;&#xA;            &lt;/html&gt; &gt; &lt;/body&gt; &lt;/html&gt; "/>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-XSDRestrictionComplexTypeComplexContent" name="XSDRestrictionComplexTypeComplexContent" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-Restriction">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-XSDRestrictionComplexTypeComplexContent-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-XSDRestrictionComplexTypeComplexContent" body="If the general Classifier is a NIEMType that is not the client of a&#xA;              NIEMSimpleContent Realization, the specific Classifier must be a NIEMType that is not&#xA;              the client of a NIEMSimpleContent Realization."/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-XSDRestrictionComplexTypeComplexContent-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Generalization.general.stereotypedBy('NIEMType') and
+              self.base_Generalization.general.clientDependency-&gt;select(d|d.stereotypedBy('NIEMSimpleContent'))-&gt;isEmpty()
+              implies
+              self.base_Generalization.specificl.clientDependency-&gt;select(d|d.stereotypedBy('NIEMSimpleContent'))-&gt;isEmpty()</body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-NDR__Rule_6-53_" name="NDR [Rule 6-53]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-NDR__Rule_6-53_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-NDR__Rule_6-53_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 6-53] (REF) &lt;/b&gt;Within the&#xA;              schema, the element xsd:simpleContent MUST have as an immediate child the element&#xA;              xsd:extension. &lt;/p&gt; &lt;p&gt;&#xA;              &lt;b&gt;Rationale&lt;/b&gt; This rule ensures that the definition of&#xA;              a CSC will use the XML Schema extension facility. This allows for the above cases&#xA;              while disallowing much more complicated syntactic options available in XML Schema.&#xA;              &lt;/p&gt; &lt;p&gt; Note that the applicability of the above rule&#xA;              allows for use of xsd:restriction within xsd:simpleContent in subset schemas,&#xA;              extension schemas, and exchange schemas. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; impleContent in subset schemas, extension schemas, and exchange&#xA;              schemas. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; body&gt;&#xA;              &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-NDR__Rule_6-53_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Generalization.specific.owner.getStereotypeApplication('Namespace').purposeURI&lt;&gt;'http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#reference-schema'</body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-XSDRestrictionSimpleType" name="XSDRestrictionSimpleType" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-Restriction">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-XSDRestrictionSimpleType-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-XSDRestrictionSimpleType" body="If the general Classifier is a DataType, the specific Classifier must be a&#xA;              DataType."/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-XSDRestrictionSimpleType-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Generalization.general.oclIsKindOf(DataType) implies
+              self.base_Generalization.specific.oclIsKindOf(DataType) </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-NDR__Rule_6-55_" name="NDR [Rule 6-55]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-NDR__Rule_6-55_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-NDR__Rule_6-55_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 6-55] (REF)&lt;/b&gt; Within the&#xA;              schema, the element xsd:complexContent MUST have as an immediate child the element&#xA;              xsd:extension. &lt;/p&gt; &lt;p&gt;&#xA;              &lt;b&gt;Rationale&lt;/b&gt; NIEM does not support, as conformant, the&#xA;              use of complex type restriction. NIEM defines a language, in which specific content is&#xA;              allowed. It does not specify messages that forbid content. Such restrictions may be&#xA;              performed in nonconformant schemas or within constraint schemas or other artifacts of&#xA;              constraint. &lt;/p&gt; &lt;p&gt; Note that XML Schema requires use of&#xA;              the attribute base on xsd:extension. &lt;/p&gt; &lt;p&gt; Note also&#xA;              that the applicability allows for the use of restriction in subset schemas, extension&#xA;              schemas, exchange schemas, and constraint schemas. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; riction in subset schemas, extension&#xA;              schemas, exchange schemas, and constraint schemas. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; &gt; &lt;/body&gt;&#xA;              &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-NDR__Rule_6-55_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Generalization.specific.owner.getStereotypeApplication('Namespace').purposeURI&lt;&gt;'http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#reference-schema'</body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-NDR__Rule_6-57_" name="NDR [Rule 6-57]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-NDR__Rule_6-57_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-NDR__Rule_6-57_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 6-57] (EXT) &lt;/b&gt;Within the&#xA;              schema, given an element xsd:complexContent with a child xsd:restriction owning an&#xA;              attribute base, the attribute base MUST have a value that resolves to the name of a&#xA;              complex type that is a NIEM-conformant component. &lt;/p&gt; &lt;p&gt;&#xA;              &lt;b&gt;[Rationale] &lt;/b&gt;This ensures that a CCC defined through&#xA;              restriction has well-defined semantics. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; triction has well-defined semantics. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; body&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-NDR__Rule_6-57_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Generalization.general.stereotypedBy('NIEMType')</body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-XSDRestrictionComplexTypeSimpleContent" name="XSDRestrictionComplexTypeSimpleContent" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-Restriction">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-XSDRestrictionComplexTypeSimpleContent-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-XSDRestrictionComplexTypeSimpleContent" body="If the general Classifier is a NIEMType that is the client of a NIEMSimpleContent&#xA;              Realization, the specific Classifier must be NIEMType that is the client of a&#xA;              NIEMSimpleContent Realization."/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-XSDRestrictionComplexTypeSimpleContent-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Generalization.general.stereotypedBy('NIEMType') and
+              self.base_Generalization.general.clientDependency-&gt;select(d|d.stereotypedBy('NIEMSimpleContent'))-&gt;notEmpty()
+              implies self.base_Generalization.specific.stereotypedBy('NIEMType') and
+              self.base_Generalization.specificl.clientDependency-&gt;select(d|d.stereotypedBy('NIEMSimpleContent'))-&gt;notEmpty()
+            </body>
+      </specification>
+    </ownedRule>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-base_Realization" name="base_Realization" visibility="private" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-21">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#Realization"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_2_1_2aa0151_1363979878342_29600_2269" name="" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878342_475424_2270" name="" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-References" name="References">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-References-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-References" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;            margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;            &lt;p&gt; The References Stereotype applies to a Realization between Properties,&#xA;            Classes or Packages. It allows for Properties in one Class to be defined by reference to&#xA;            Properties in another class. A References Realization between two classes is defined to&#xA;            be equivalent to having References Realizations between matching Properties of the&#xA;            Classes where matching is determined by identical NIEM names. A References Realization&#xA;            between two packages is defined to be equivalent to having References Realizations&#xA;            between matching Classes contained in the Packages where matching is determined by&#xA;            having identical NIEM names. Matching is based on the NIEMName of the elements, either&#xA;            as derived implicitly or as set explicitly using the ReferenceName stereotype.&#xA;            &lt;/p&gt; &lt;p&gt; If a Property is the client of a References&#xA;            Realization, then it represents a NIEM property defined by reference to the NIEM&#xA;            property declaration represented by the supplier of the Realization. It is implemented&#xA;            in XSD schema as an attribute use or element particle that references the attribute or&#xA;            element declaration that implements the supplier of the Realization. Note that the&#xA;            supplier Property may be in a different Namespace than the client property, in which&#xA;            case the attribute or element declaration represented by the supplier will be in a&#xA;            different target namespace than the use represented by the client. &lt;/p&gt;&#xA;            &lt;/body&gt; &lt;/html&gt; ute or element declaration represented by&#xA;            the supplier will be in a different target namespace than the use represented by the&#xA;            client. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; body&gt;&#xA;            &lt;/html&gt; "/>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-References-References_must_be_between_like_metaclasses" name="References must be between like metaclasses">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-References-References_must_be_between_like_metaclasses-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-References-References_must_be_between_like_metaclasses" body="References may only be between packages, classifiers or properties and the&#xA;              metatype of the client must be the same as the metatype of the supplier."/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-References-References_must_be_between_like_metaclasses-specification" name=""/>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-References-MDR__Rule_3-02_" name="MDR [Rule 3-02]" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-References">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-References-MDR__Rule_3-02_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-References-MDR__Rule_3-02_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;b&gt;[Rule 3-2]&lt;/b&gt; NIEM subsets may omit elements with zero&#xA;              cardinality and adjust the cardinality of elements in reference schemas from which&#xA;              they are derived, as long as the subset property is maintained. &lt;/body&gt;&#xA;              &lt;/html&gt; intained. &lt;/body&gt; &lt;/html&gt; l&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-References-MDR__Rule_3-02_-specification" name="">
+        <language>OCL2.0</language>
+        <body>( self.base_Realization.client-&gt;size()=1) and (
+              self.base_Realization.supplier-&gt;size()=1) and
+              self.base_Realization.client-&gt;forAll(client|client.oclIsKindOf(Classifier)) and
+              self.base_Realization.supplier-&gt;forAll(supplier|supplier.oclIsKindOf(Classifier)
+              and not(supplier.stereotypedBy('PropertyHolder')) ) ) implies ( (
+              self.base_Realization.client.oclAsType(Classifier).attribute
+              -&gt;forAll(clientAttribute|
+              self.base_Realization.supplier.oclAsType(Classifier).attribute
+              -&gt;forAll(supplierAttribute| (clientAttribute.name=supplierAttribute.name)
+              implies ( (clientAttribute.lower&gt;=supplierAttribute.lower) and (
+              (supplierAttribute.upper=-1) or
+              (clientAttribute.upper&lt;=supplierAttribute.upper) ) and (
+              (clientAttribute.upper=-1) or (clientAttribute.lower&lt;=clientAttribute.upper) )
+              ) ) ) ) and( self.base_Realization.supplier.oclAsType(Classifier).attribute
+              -&gt;select(a|a.lower&gt;0) -&gt;forAll(supplierAttribute|
+              self.base_Realization.client.oclAsType(Classifier).attribute-&gt;exists(clientAttribute|clientAttribute.name=supplierName)
+              ) ) )</body>
+      </specification>
+    </ownedRule>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-References-base_Realization" name="base_Realization" visibility="private" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-31">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#Realization"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_2_1_2aa0151_1363979878320_952368_2178" name="" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878320_443166_2179" name="" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction" name="ValueRestriction">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;            margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;            &lt;p&gt; The ValueRestriction stereotype applies to a DataType (Enumeration or&#xA;            Primitive type) that is a specialization of a general DataType. It defines restrictions&#xA;            on which values of the general DataType that are allowed as values of the specialized&#xA;            DataType. A ValueRestriction DataType is implemented in XML Schema as a simple type&#xA;            definition that is a restriction of the simple type that implements the general&#xA;            DataType. The attributes of the ValueRestriction are implemented as restriction facets.&#xA;            &lt;/p&gt; &lt;p&gt; ValueRestriction represents a NIEM type which is&#xA;            implemented in XML Schema as a simple type definition. Section 3.14 of &lt;a&#xA;            href=&#34;http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/&#34;&gt;XML Schema&#xA;            Structures&lt;/a&gt; addresses simple type definitions in XML Schema; Sections&#xA;            6.1.6.1, 7.2.1, 7.3, and 9.12.2 of &lt;a&#xA;            href=&#34;http://reference.niem.gov/niem/specification/naming-and-design-rules/1.3/&#34;&gt;NIEM&#xA;            NDR v1.3&lt;/a&gt; address simple type definitions in NIEM-conformant XML&#xA;            Schema. The variety of the simple type definition may be union, list, or atomic. As the&#xA;            ValueRestriction stereotype is a specialization of DataType, it may be applied to&#xA;            Enumeration. In this case, the ValueRestriction represents a NIEM code type, which is&#xA;            implemented in XML Schema as a simple type definition that contains multiple&#xA;            xsd:enumeration facets. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;&#xA;            code type, which is implemented in XML Schema as a simple type definition that contains&#xA;            multiple xsd:enumeration facets. &lt;/p&gt; &lt;/body&gt;&#xA;            &lt;/html&gt; &gt; &lt;/body&gt; &lt;/html&gt; "/>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-NDR__Rule_7-14_" name="NDR [Rule 7-14]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-NDR__Rule_7-14_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-NDR__Rule_7-14_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-14] (REF, EXT)&lt;/b&gt; A&#xA;              component definition SHALL begin with a standard opening phrase that depends on the&#xA;              class of the component per Table 7-1 in NDR: Standard Opening Phrases:&#xA;              &lt;/p&gt; &lt;p&gt; &lt;b&gt;Rationale&lt;/b&gt; A&#xA;              standard opening phrase based on component class helps to ensure consistent&#xA;              definitions that appropriate for the type of component item being defined. These&#xA;              opening phrases also provide a cue that facilitates recognition of the particular kind&#xA;              of component. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; s&#xA;              recognition of the particular kind of component. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-NDR__Rule_7-14_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Class.ownedComment -&gt;exists(documentation|
+              documentation.stereotypedBy('Documentation') and ( documentation.body.startsWith('A
+              data type for a ') or documentation.body.startsWith('A data type for an ') ) ) </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-ValueRestriction_Generalization" name="ValueRestriction Generalization">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-ValueRestriction_Generalization-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-ValueRestriction_Generalization" body="A valuerestriction that is not an enumeration or list may only generalize the same&#xA;              metatype. A valuerestriction that is an enumeration may not generalize a list. A&#xA;              valuerestriction that is a list may not generalize an enumeration.."/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-ValueRestriction_Generalization-specification" name=""/>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-ValueRestrictionGeneralization" name="ValueRestrictionGeneralization" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-ValueRestrictionGeneralization-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-ValueRestrictionGeneralization" body="A ValueRestriction DataType must be the special classifier in a single&#xA;              Generalization whose general classifier is also a DataType."/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-ValueRestrictionGeneralization-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_DataType.generalization.general-&gt;size()=1 </body>
+      </specification>
+    </ownedRule>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-fractionDigits" name="fractionDigits" visibility="public">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-fractionDigits-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-fractionDigits" body="A restriction on the value space of a numeric data type that places an upper limit&#xA;              on the arithmetic precision of decimal values. The value space is restricted to those&#xA;              values that can be represented lexically in decimal notation using at most&#xA;              fractionDigits to the right of the decimal point. fractionDigits is implemented in XML&#xA;              Schema as the value of the value attribute on the xsd:fractionDigits element, the&#xA;              child of the xsd:restriction element which is the immediate child of the&#xA;              xsd:simpleType element.."/>
+      <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-fractionDigits-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878343_517619_2273" name="" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-length" name="length" visibility="public">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-length-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-length" body="A restriction on the value space of a data type to values with a specific length,&#xA;              where the units of length depends on the base type being restricted. For String and&#xA;              URI values, the units are characters. For Binary values, the units are octets. For&#xA;              lists, the length is the number of items in the list. length is implemented in XML&#xA;              Schema as the value of the value attribute on the xsd:length element, the child of the&#xA;              xsd:restriction element which is the immediate child of the xsd:simpleType element.."/>
+      <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-length-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878340_12208_2262" name="" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-maxExclusive" name="maxExclusive" visibility="public">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-maxExclusive-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-maxExclusive" body="The exclusive upper bound of the value space for a data type with ordered values.&#xA;              The value of maxExclusive must be equal to some value in the value space of the base&#xA;              data type or to the maxExclusive restriction of the base type (if it has one).&#xA;              maxExclusive is implemented in XML Schema as the value of the value attribute on the&#xA;              xsd:maxExclusive element, the child of the xsd:restriction element which is the&#xA;              immediate child of the xsd:simpleType element.."/>
+      <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-maxExclusive-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878331_504286_2221" name="" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-maxInclusive" name="maxInclusive" visibility="public">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-maxInclusive-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-maxInclusive" body="The inclusive upper bound of the value space for a data type with ordered values.&#xA;              The value of maxInclusive must be equal to some value in the value space of the base&#xA;              data type. maxInclusive is implemented in XML Schema as the value of the value&#xA;              attribute on the xsd:maxInclusive element, the child of the xsd:restriction element&#xA;              which is the immediate child of the xsd:simpleType element.."/>
+      <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-maxInclusive-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878320_301188_2181" name="" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-maxLength" name="maxLength" visibility="public">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-maxLength-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-maxLength" body="A restriction on the value space of a data type to values with a specific maximum&#xA;              length, where the units of length depends on the base type being restricted. For&#xA;              String and URI values, the units are characters. For Binary values, the units are&#xA;              octets. For lists, the length is the number of items in the list. maxLength is&#xA;              implemented in XML Schema as the value of the value attribute on the xsd:maxLength&#xA;              element, the child of the xsd:restriction element which is the immediate child of the&#xA;              xsd:simpleType element."/>
+      <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-maxLength-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878317_155713_2168" name="" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-minExclusive" name="minExclusive" visibility="public">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-minExclusive-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-minExclusive" body="The exclusive lower bound of the value space for a data type with ordered values.&#xA;              The value of minExclusive must be equal to some value in the value space of the base&#xA;              data type or to the minExclusive restriction of the base type (if it has one).&#xA;              minExclusive is implemented in XML Schema as the value of the value attribute on the&#xA;              xsd:minExclusive element, the child of the xsd:restriction element which is the&#xA;              immediate child of the xsd:simpleType element.."/>
+      <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-minExclusive-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878348_168951_2293" name="" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-minInclusive" name="minInclusive" visibility="public">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-minInclusive-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-minInclusive" body="The inclusive lower bound of the value space for a data type with ordered values.&#xA;              The value of minInclusive must be equal to some value in the value space of the base&#xA;              data type. minInclusive is implemented in XML Schema as the value of the value&#xA;              attribute on the xsd:minInclusive element, the child of the xsd:restriction element&#xA;              which is the immediate child of the xsd:simpleType element.."/>
+      <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-minInclusive-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878349_122506_2298" name="" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-minLength" name="minLength" visibility="public">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-minLength-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-minLength" body="A restriction on the value space of a data type to values with a specific minimum&#xA;              length, where the units of length depends on the base type being restricted. For&#xA;              String and URI values, the units are characters. For Binary values, the units are&#xA;              octets. For lists, the length is the number of items in the list. minLength is&#xA;              implemented in XML Schema as the value of the value attribute on the xsd:minLength&#xA;              element, the child of the xsd:restriction element which is the immediate child of the&#xA;              xsd:simpleType element."/>
+      <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-minLength-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878323_862668_2190" name="" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-pattern" name="pattern" visibility="public">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-pattern-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-pattern" body="A constraint on the value space of a data type achieved by constraining the value&#xA;              space to those values represented by literals that match each member of a set of&#xA;              regular expressions. Each pattern must be a valid regular expression. pattern is&#xA;              implemented in XML Schema as the value of the value attribute on the xsd:pattern&#xA;              element, the child of the xsd:restriction element which is the immediate child of the&#xA;              xsd:simpleType element."/>
+      <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-pattern-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-pattern-upperValue" name="" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-totalDigits" name="totalDigits" visibility="public">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-totalDigits-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-totalDigits" body="Restricts the magnitude and arithmetic precision of values in the value space of a&#xA;              numeric data type. The value space is restricted to those values that can be&#xA;              represented lexically using at most totalDigits digits in decimal notation or at most&#xA;              totalDigits digits for the coefficient, in scientific notation. totalDigits is&#xA;              implemented in XML Schema as the value of the value attribute on the xsd:totalDigits&#xA;              element, the child of the xsd:restriction element which is the immediate child of the&#xA;              xsd:simpleType element."/>
+      <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-totalDigits-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878326_388248_2200" name="" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-base_DataType" name="base_DataType" visibility="private" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-23">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#DataType"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_2_1_2aa0151_1363979878349_765490_2296" name="" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878349_122675_2297" name="" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationApplication" name="AugmentationApplication">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationApplication-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationApplication" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;            margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;            &lt;p&gt; The AugmentationApplication stereotype is a specialization of&#xA;            Application that is always between a Property whose type is an AugmentationType Class&#xA;            and a Class. It represents a constraint on a NEIM augmentation property that limits the&#xA;            application of the property to specific types. When an augmentation property is the&#xA;            client of an AugmentationApplication Usage, this serves to constrain the NIEM types to&#xA;            which the augmentation property may apply. If the client augmentation Property is not in&#xA;            a PropertyHolder, then its Class must be a (direct or indirect) subclass of the supplier&#xA;            Class of the AugmentationApplication. If the augmentation Property is in a&#xA;            PropertyHolder, then any Property defined by reference to the augmentation Property must&#xA;            be for a Class that is a subclass of the supplier Class. &lt;/p&gt;&#xA;            &lt;p&gt; An AugmentationApplication Usage is implemented in a NIEM XML schema&#xA;            as an AppliesTo element in the annotation element of the property declaration&#xA;            represented by the client of the Usage, referencing the complex type represented by the&#xA;            supplier class of the Usage. &lt;/p&gt; &lt;/body&gt;&#xA;            &lt;/html&gt; d by the client of the Usage, referencing the complex type&#xA;            represented by the supplier class of the Usage. &lt;/p&gt; &lt;/body&gt;&#xA;            &lt;/html&gt; body&gt; &lt;/html&gt; "/>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationApplication-NDR__Rule_7-50_" name="NDR [Rule 7-50]" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-Application">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationApplication-NDR__Rule_7-50_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationApplication-NDR__Rule_7-50_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-50] (REF, EXT) &lt;/b&gt;Within the&#xA;              schema, an element definition for an augmentation element that does not contain any&#xA;              instances of the element structures:AppliesTo MAY be applied to any object or&#xA;              association type. &lt;/p&gt; &lt;p&gt;&#xA;              &lt;b&gt;Rationale&lt;/b&gt; These rules allow schema builders to&#xA;              establish applicability for augmentations. An augmentation may be applicable to&#xA;              specific types. Users who wish to apply an augmentation type to a given object type&#xA;              may do so by creating a new augmentation element, applicable to the object type.&#xA;              &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; new augmentation&#xA;              element, applicable to the object type. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; /body&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationApplication-NDR__Rule_7-50_-specification" name="">
+        <language>English</language>
+        <body>Implemented as part of PIM/PSM transformations. This constraint is definitional,
+              the absence of an &lt;&lt;AugmentationApplication&gt;&gt; on an
+              augmentation element will result in applicability of the element to any
+              Object/Association at runtime.</body>
+      </specification>
+    </ownedRule>
+    <generalization xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationApplication-generalization" general="NIEM_UML_Profile-NIEM_Common_Profile-Application"/>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationApplicationUsageExtensionMemberEndProperty" name="base_Usage" association="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationApplicationUsageExtension">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#Usage"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Choice" name="Choice">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Choice-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Choice" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;            margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;            &lt;p&gt; A Choice Class groups a set of attributes whose values are mutually&#xA;            exclusive. That is, in any instance of a Choice Class, at most one of its attributes may&#xA;            be non-empty. &lt;/p&gt; &lt;p&gt; Choice represents the use of a choice&#xA;            model group in XML Schema. Section 3.8 of &lt;a&#xA;            href=&#34;http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/&#34;&gt;XML Schema&#xA;            Structures&lt;/a&gt; addresses choice model groups in XML Schema. Sections&#xA;            6.1.8.1 and 6.1.8.2 of &lt;a&#xA;            href=&#34;http://reference.niem.gov/niem/specification/naming-and-design-rules/1.3/&#34;&gt;NIEM&#xA;            NDR v1.3 &lt;/a&gt;address choice model groups in NIEM-conformant XML Schema.&#xA;            &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; ddress choice model&#xA;            groups in NIEM-conformant XML Schema. &lt;/p&gt; &lt;/body&gt;&#xA;            &lt;/html&gt; &lt;/html&gt; "/>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Choice-ownedAttributes_have_multiplicity_0..1._" name="ownedAttributes have multiplicity 0..1. " constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-Choice">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Choice-ownedAttributes_have_multiplicity_0..1._-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Choice-ownedAttributes_have_multiplicity_0..1._" body="The ownedAttributes of a Choice class shall have multiplicity 0..1. "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Choice-ownedAttributes_have_multiplicity_0..1._-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.ownedAttributes-&gt;forAll(a|(a.lower=0) and
+            (a.upper=1))</body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Choice-NDR__Rule_6-18_" name="NDR [Rule 6-18]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Choice-NDR__Rule_6-18_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Choice-NDR__Rule_6-18_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 6-18] (REF) &lt;/b&gt;The schema&#xA;              SHALL NOT contain the element xsd:choice. &lt;/p&gt; &lt;p&gt;&#xA;              &lt;b&gt;Rationale&lt;/b&gt; The element xsd:choice provides an&#xA;              exclusive set of particles, one of which may appear in an instance. This can greatly&#xA;              complicate processing and may be difficult to comprehend, satisfy, and reuse. The&#xA;              element xsd:choice may be used in extension and exchange schemas, as it presents a&#xA;              simple way for a schema writer to represent a set of optional content. It may also be&#xA;              used in subset schemas and constraint schemas to represent syntactic alternatives.&#xA;              &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; d constraint schemas to&#xA;              represent syntactic alternatives. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; body&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Choice-NDR__Rule_6-18_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Class.owner.getTargetDirectedRelationships()
+              -&gt;select(r|r.stereotypedBy('ModelPackageDescriptionFile'))
+              -&gt;forAll(mpdf|mpdf.getStereotypeApplication('ModelPackageDescriptionFile').natureURI&lt;&gt;'http://reference.niem.gov/niem/resource/mpd/lexicon/1.0/purpose#reference-schema')</body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Choice-No_Generalizations_or_subtypes" name="No Generalizations or subtypes" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-Choice">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Choice-No_Generalizations_or_subtypes-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Choice-No_Generalizations_or_subtypes" body="A Choice Class shall not participate in any Generalizations, either as the general&#xA;              or the special Classifier."/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Choice-No_Generalizations_or_subtypes-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.generalization-&gt;isEmpty() and
+              self.base_Class.getTargetDirectedRelationships()-&gt;select(d|d.oclIsKindOf(Generalization))-&gt;isEmpty()
+            </body>
+      </specification>
+    </ownedRule>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Choice-base_Class" name="base_Class" visibility="private" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-18">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#Class"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_2_1_2aa0151_1363979878322_141955_2188" name="" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878322_672968_2189" name="" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-12" name="" memberEnd="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-12-ownedEnd NIEM_UML_Profile-NIEM_Common_Profile-Union-base_DataType" navigableOwnedEnd="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-12-ownedEnd">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-12-ownedEnd" name="extension_UnionType" visibility="private" type="NIEM_UML_Profile-NIEM_Common_Profile-Union" aggregation="composite" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-12">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-12-ownedEnd-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878347_145472_2290" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Union" name="Union">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Union-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Union" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;            margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;            &lt;p&gt; A Union is a DataType whose value space is the union of one or more&#xA;            other DataTypes, which are the member types of the Union. The member types are specified&#xA;            using UnionOf Usage dependencies. &lt;/p&gt; &lt;p&gt; A Union DataType&#xA;            is implemented in XML Schema as a union simple type definition. Each UnionOf dependency&#xA;            of which the Union is the client represents a relationship between two type definitions:&#xA;            the first is a union simple type definition whose member type definition is the second.&#xA;            This relationship is implemented in XML Schema through the memberTypes attribute on the&#xA;            xsd:union element of the union simple type definition, the actual value of which&#xA;            resolves to the second type definition. Section 3.14 of &lt;a&#xA;            href=&#34;http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/&#34;&gt;XML Schema&#xA;            Structures&lt;/a&gt; addresses union simple type definitions in XML Schema.&#xA;            &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; implemented in XML Schema&#xA;            through the memberTypes attribute on the xsd:union element of the union simple type&#xA;            definition, the actual value of which resolves to the second type definition. Section&#xA;            3.14 of &lt;a href=&#34;http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/&#34;&gt;XML&#xA;            Schema Structures&lt;/a&gt; addresses union simple type definitions in XML&#xA;            Schema. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; "/>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Union-no_owned_attributes" name="no owned attributes" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-Union">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Union-no_owned_attributes-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Union-no_owned_attributes" body="A Union shall not have any ownedAttributes."/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Union-no_owned_attributes-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_DataType.ownedAttribute-&gt;isEmpty() </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Union-no_generalizations" name="no generalizations" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-Union">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Union-no_generalizations-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Union-no_generalizations" body="A Union shall not have any generalizations."/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Union-no_generalizations-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_DataType.generalization-&gt;isEmpty() </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Union-NDR__Rule_7-14_" name="NDR [Rule 7-14]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Union-NDR__Rule_7-14_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Union-NDR__Rule_7-14_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-14] (REF, EXT)&lt;/b&gt; A&#xA;              component definition SHALL begin with a standard opening phrase that depends on the&#xA;              class of the component per Table 7-1 in NDR: Standard Opening Phrases:&#xA;              &lt;/p&gt; &lt;p&gt; &lt;b&gt;Rationale&lt;/b&gt; A&#xA;              standard opening phrase based on component class helps to ensure consistent&#xA;              definitions that appropriate for the type of component item being defined. These&#xA;              opening phrases also provide a cue that facilitates recognition of the particular kind&#xA;              of component. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; s&#xA;              recognition of the particular kind of component. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Union-NDR__Rule_7-14_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Class.ownedComment -&gt;exists(documentation|
+              documentation.stereotypedBy('Documentation') and ( documentation.body.startsWith('A
+              data type for a ') or documentation.body.startsWith('A data type for an ') ) ) </body>
+      </specification>
+    </ownedRule>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Union-base_DataType" name="base_DataType" visibility="private" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-12">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#DataType"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_2_1_2aa0151_1363979878330_266378_2217" name="" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878330_130890_2218" name="" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace" name="Namespace">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Namespace" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;            margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;            &lt;p&gt; A Namespace Package represents a NIEM namespace identified by a target&#xA;            namespace URI. All UML model elements contained, directly or indirectly within the&#xA;            Package, that represents NIEM types and properties, are considered to be in this target&#xA;            namespace. &lt;/p&gt; &lt;p&gt; A Namespace Package is implemented in&#xA;            XML Schema as an XML schema document. &lt;/p&gt; &lt;/body&gt;&#xA;            &lt;/html&gt; ML Schema as an XML schema document. &lt;/p&gt;&#xA;            &lt;/body&gt; &lt;/html&gt; body&gt; &lt;/html&gt; "/>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_6-37_" name="NDR [Rule 6-37]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_6-37_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_6-37_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;b&gt;[Rule 6-37] (REF, SUB, EXT, CON) &lt;/b&gt;Within the schema,&#xA;              the document element xsd:schema MUST carry the attribute version.&#xA;              &lt;/body&gt; &lt;/html&gt; ion. &lt;/body&gt;&#xA;              &lt;/html&gt; l&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_6-37_-specification" name="">
+        <language>OCL2.0</language>
+        <body>not(self.version.oclIsUndefined()) -- Constraint also resolved by the requirement
+              that tag "version" is required.</body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_6-38_" name="NDR [Rule 6-38]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_6-38_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_6-38_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 6-38] (REF, SUB, EXT, CON)&#xA;              &lt;/b&gt;Within the schema, the value of the required attribute version on&#xA;              the document element xsd:schema MUST NOT be an empty string. &lt;/p&gt;&#xA;              &lt;p&gt; &lt;b&gt;Rationale&lt;/b&gt; It is very useful to be&#xA;              able to tell one version of a schema from another. Apart from the use of namespaces&#xA;              for versioning, it is sometimes necessary to release multiple versions of schema&#xA;              documents. Such use might include: &lt;/p&gt; &lt;p&gt; � Subset&#xA;              schemas and constraint schemas &lt;/p&gt; &lt;p&gt; � Error&#xA;              corrections or bug fixes &lt;/p&gt; &lt;p&gt; � Documentation changes&#xA;              &lt;/p&gt; &lt;p&gt; � Contact information updates &lt;/p&gt;&#xA;              &lt;p&gt; In such cases, a different value for the version attribute implies a&#xA;              different version of the schema. No specific meaning is assigned to specific version&#xA;              identifiers. &lt;/p&gt; &lt;p&gt; Note that some of the above uses for&#xA;              the version attribute are not employed in management of NIEM Core and domain schemas.&#xA;              An author of an application schema or exchange may use the version attribute for these&#xA;              purposes within their schemas. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; management of NIEM Core and domain schemas. An author of an&#xA;              application schema or exchange may use the version attribute for these purposes within&#xA;              their schemas. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; &gt;&#xA;              &lt;/body&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_6-38_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.version&lt;&gt;''</body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_7-37_" name="NDR [Rule 7-37]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_7-37_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_7-37_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-37] (REF, SUB, EXT)&lt;/b&gt;&#xA;              Within the schema, a complex type definition SHALL be one of the following classes of&#xA;              types: &lt;/p&gt; &lt;p&gt; 1. An object type. &lt;/p&gt;&#xA;              &lt;p&gt; 2. A role type. &lt;/p&gt; &lt;p&gt; 3. An&#xA;              association type. &lt;/p&gt; &lt;p&gt; 4. A metadata type.&#xA;              &lt;/p&gt; &lt;p&gt; 5. An augmentation type. &lt;/p&gt;&#xA;              &lt;p&gt; 6. An adapter type. &lt;/p&gt; &lt;p&gt;&#xA;              &lt;b&gt;Rationale&lt;/b&gt; This rule establishes the classes of NIEM&#xA;              complex types. It is a limited set, each class with distinct semantics.&#xA;              &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; his rule establishes&#xA;              the classes of NIEM complex types. It is a limited set, each class with distinct&#xA;              semantics. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; body&gt;&#xA;              &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_7-37_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Package.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Package.ownedType -&gt;select(t|t.oclIsKindOf(Class) and
+              not(t.stereotypedBy('PropertyHolder')))
+              -&gt;forAll(type|type.stereotypedBy('NIEMType')) -- PIM Profile Classes default to
+              &lt;&lt;ObjectType&gt;&gt; if not otherwise specified </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_9-6_" name="NDR [Rule 9-6]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_9-6_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_9-6_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;b&gt;[Rule 9-6] (REF, SUB, EXT) &lt;/b&gt;Within the schema, any&#xA;              XML Schema component other than an attribute declaration SHALL have a name that begins&#xA;              with an upper-case letter ('A'-'Z'). &lt;/body&gt; &lt;/html&gt;&#xA;              'A'-'Z'). &lt;/body&gt; &lt;/html&gt; l&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_9-6_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Package.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Package.ownedType -&gt;select(t|not(t.stereotypedBy('PropertyHolder'))
+              -&gt;forAll(schemaComponent|schemaComponent.name.firstToUpper()=schemaComponent.name)
+            </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_6-35_" name="NDR [Rule 6-35]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_6-35_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_6-35_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 6-35] (REF, SUB, EXT, CON)&#xA;              &lt;/b&gt;Within the schema, the document element xsd:schema MUST carry the&#xA;              attribute targetNamespace. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; espace. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_6-35_-specification" name="">
+        <language>OCL2.0</language>
+        <body>not(self.targetNamespace.oclIsUndefined()) and
+              (self.targetNamespace&lt;&gt;'') -- also partially satisfied by multiplicity
+              constraint on targetNamespace </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_9-24_" name="NDR [Rule 9-24]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_9-24_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_9-24_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 9-24] (REF, SUB, EXT)&lt;/b&gt;&#xA;              Within the schema, the name of any simple type definition SHALL use the representation&#xA;              term qualifier Simple. This qualifier SHALL appear after any other representation term&#xA;              qualifiers. &lt;/p&gt; &lt;p&gt;&#xA;              &lt;b&gt;Rationale&lt;/b&gt; Specific uses of type definitions have&#xA;              similar syntax but very different effects on data definitions. Schemas that clearly&#xA;              identify complex and simple type definitions are easier to understand without tool&#xA;              support. This rule ensures that names of simple types end in SimpleType.&#xA;              &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; ule ensures that names&#xA;              of simple types end in SimpleType. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; body&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_9-24_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.profiledBy('NIEM_PSM_Profile') implies self.base_Package.ownedType
+              -&gt;select(t|t.oclIsKindOf(DataType))
+              -&gt;forAll(simpleType|simpleType.name.matches('.*SimpleType')) </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_7-14_" name="NDR [Rule 7-14]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_7-14_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_7-14_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-14] (REF, EXT)&lt;/b&gt; A&#xA;              component definition SHALL begin with a standard opening phrase that depends on the&#xA;              class of the component per Table 7-1 in NDR: Standard Opening Phrases:&#xA;              &lt;/p&gt; &lt;p&gt; &lt;b&gt;Rationale&lt;/b&gt; A&#xA;              standard opening phrase based on component class helps to ensure consistent&#xA;              definitions that appropriate for the type of component item being defined. These&#xA;              opening phrases also provide a cue that facilitates recognition of the particular kind&#xA;              of component. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; s&#xA;              recognition of the particular kind of component. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_7-14_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Package.ownedType-&gt;select(t|t.oclIsKindOf(Enumeration))
+              -&gt;forAll(otherType|otherType.ownedComment -&gt;exists(documentation|
+              documentation.stereotypedBy('Documentation') and ( documentation.body.startsWith('A
+              data type for a ') or documentation.body.startsWith('A data type for an ') ) ) )
+            </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_9-25_" name="NDR [Rule 9-25]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_9-25_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_9-25_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 9-25] (REF, SUB, EXT)&lt;/b&gt;&#xA;              Within the schema, the name of any code type SHALL use the representation term&#xA;              qualifier Code. &lt;/p&gt; &lt;p&gt;&#xA;              &lt;b&gt;Rationale&lt;/b&gt; Using the qualifier Code (e.g. CodeType,&#xA;              CodeSimpleType) immediately identifies a type as representing a fixed list of codes.&#xA;              These types may be handled in specific ways, as lists of codes are expected to have&#xA;              their own lifecycles, including versions and periodic updates. Codes may also have&#xA;              responsible authorities behind them who provide concrete semantic bindings for the&#xA;              code values. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; o provide&#xA;              concrete semantic bindings for the code values. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_9-25_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Package.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Package.ownedType -&gt;select(t|t.oclIsKindOf(Enumeration))
+              -&gt;forAll(enumerationDerivedType|enumerationDerivedType.name.matches('.*Code.*'))</body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_6-36_" name="NDR [Rule 6-36]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_6-36_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_6-36_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 6-36] (REF, SUB, EXT, CON)&#xA;              &lt;/b&gt;Within the schema, the value of the required attribute&#xA;              targetNamespace on the document element xsd:schema MUST match the production&#xA;              &lt;absolute-URI&gt; as defined by&#xA;              &lt;b&gt;[RFC3986]&lt;/b&gt;. &lt;/p&gt; &lt;p&gt;&#xA;              &lt;b&gt;Rationale&lt;/b&gt; Schemas without defined namespaces&#xA;              provide definitions that are ambiguous, in that they are not universally identifiable.&#xA;              Absolute URIs are the only universally meaningful URIs. URIs include both URLs and&#xA;              URNs. Finding the target namespace using standard XML Base technology is complicated&#xA;              and not specified by XML Schema. Relative URIs are not universally identifiable, as&#xA;              they are context-specific. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; are not universally identifiable, as they are context-specific.&#xA;              &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_6-36_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.targetNamespace.isAbsoluteURI()</body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_9-26_" name="NDR [Rule 9-26]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_9-26_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_9-26_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 9-26] (REF, SUB, EXT)&lt;/b&gt;&#xA;              Within the schema, any type definition which has a base type definition of a code type&#xA;              or which is transitively based on a code type SHALL have a name that uses the&#xA;              representation term qualifier Code. &lt;/p&gt; &lt;p&gt;&#xA;              &lt;b&gt;Rationale&lt;/b&gt; This expands the use of the&#xA;              representation term qualifier Code to any type based on a code list.&#xA;              &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; fier Code to any type&#xA;              based on a code list. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;&#xA;              &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_9-26_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Package.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Package.ownedType -&gt;select(t|
+              t.clientDependency-&gt;select(d|d.stereotypedBy('XSDSimpleContent')).supplier-&gt;exists(s|s.oclIsKindOf(Enumeration))
+              or ( t.oclIsKindOf(Classifier) and
+              t.oclAsType(Classifier).allParents().clientDependency-&gt;select(d|d.stereotypedBy('XSDSimpleContent')).supplier-&gt;exists(s|s.oclIsKindOf(Enumeration))
+              ) )
+              -&gt;forAll(enumerationDerivedType|enumerationDerivedType.name.matches('.*Code.*'))
+            </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_7-07_" name="NDR [Rule 7-07]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_7-07_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_7-07_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;b&gt;[Rule 7-7] (REF, EXT)&lt;/b&gt; Within the schema, any&#xA;              element xsd:attribute that is an immediate child of an element xsd:schema MUST be a&#xA;              documented component. &lt;/body&gt; &lt;/html&gt; omponent.&#xA;              &lt;/body&gt; &lt;/html&gt; l&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_7-07_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Package.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Package.ownedComment-&gt;exists(documentation|documentation.stereotypedBy('Documentation'))
+            </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_9-3_" name="NDR [Rule 9-3]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_9-3_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_9-3_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 9-3] (REF, SUB, EXT) &lt;/b&gt;The&#xA;              name of any XML Schema component defined by the schema SHALL contain only the&#xA;              following characters: &lt;/p&gt; &lt;p&gt; � Upper-case letters&#xA;              ('A'-'Z'). &lt;/p&gt; &lt;p&gt; � Lower-case letters ('a'-'z').&#xA;              &lt;/p&gt; &lt;p&gt; � Digits ('0'-'9'). &lt;/p&gt;&#xA;              &lt;p&gt; � Hyphen ('-'). &lt;/p&gt; &lt;p&gt; Other&#xA;              characters, such as the underscore ('_') character and the period ('.') character&#xA;              SHALL NOT appear in component names in NIEM-conformant schemas. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; od ('.') character SHALL NOT appear in&#xA;              component names in NIEM-conformant schemas. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; &gt; &lt;/body&gt; &lt;/html&gt; ml&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_9-3_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Package.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Package.ownedType -&gt;select(t|not(t.stereotypedBy('PropertyHolder'))
+              -&gt;forAll(schemaComponent|schemaComponent.name.match('[\\w|\\-]*')) </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_7-09_" name="NDR [Rule 7-09]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_7-09_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_7-09_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;b&gt;[Rule 7-9] (REF, EXT) &lt;/b&gt;Within the schema, the&#xA;              document element xsd:schema MUST be a documented component. &lt;/body&gt;&#xA;              &lt;/html&gt; ent. &lt;/body&gt; &lt;/html&gt; l&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-NDR__Rule_7-09_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Package.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Package.ownedComment-&gt;exists(documentation|documentation.stereotypedBy('Documentation'))
+            </body>
+      </specification>
+    </ownedRule>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-base_Package" name="base_Package" visibility="public" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-5">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#Package"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_2_1_2aa0151_1363979878343_719206_2271" name="" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878343_831762_2272" name="" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-targetNamespace" name="targetNamespace" visibility="public">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-targetNamespace-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-targetNamespace" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; The target namespace URI for this NIEM namespace. &lt;/p&gt;&#xA;              &lt;p&gt; It is implemented in XML Schema as the value of the targetNamespace&#xA;              attribute on the xsd:schema document element. Per Rules 6-35 and 6-36 of &lt;a&#xA;              href=&#34;http://reference.niem.gov/niem/specification/naming-and-design-rules/1.3/&#34;&gt;NIEM&#xA;              NDR v1.3&lt;/a&gt;, the value of the targetNamespace attribute must be present&#xA;              and must be an absolute URI. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; and must be an absolute URI. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; /body&gt; &lt;/html&gt; "/>
+      <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_2_1_2aa0151_1363979878308_336247_2143" name="" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878309_993933_2144" name="" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-targetNamespace-defaultValue" name="" value="http://domain.gov/myDomain/"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-isConformant" name="isConformant" visibility="public">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-isConformant-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-isConformant" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; Indicates whether the namespace is NIEM-conformant.&#xA;              &lt;/p&gt; &lt;p&gt; If the namespace is NIEM-conformant, it is&#xA;              implemented in XML Schema as the content of the i:ConformantIndicator application&#xA;              information on the xsd:schema document element. Per Rule 7-1 of NIEM NDR v1.3, the&#xA;              content must be &#34;true&#34;. If the namespace is not NIEM-conformant, it is implemented in&#xA;              XML Schema as the content of the i:ConformantIndicator application information on the&#xA;              xsd:import element. Per Rule 7-61 of &lt;a&#xA;              href=&#34;http://reference.niem.gov/niem/specification/naming-and-design-rules/1.3/&#34;&gt;NIEM&#xA;              NDR v1.3&lt;/a&gt;, the content must be &#34;false&#34;. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; NDR v1.3&lt;/a&gt;, the content&#xA;              must be &#34;false&#34;. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;&#xA;              dy&gt; &lt;/html&gt; "/>
+      <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_2_1_2aa0151_1363979878314_713316_2160" name="" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878314_799986_2161" name="" value="1"/>
+      <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-isConformant-defaultValue" name="" value="true"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-version" name="version" visibility="public">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-version-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-version" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; The version of the NIEM namespace. &lt;/p&gt;&#xA;              &lt;p&gt; It is implemented in XML Schema as the value of the version&#xA;              attribute on the xsd:schema document element. Per Rules 6-37 and 6-38 of &lt;a&#xA;              href=&#34;http://reference.niem.gov/niem/specification/naming-and-design-rules/1.3/&#34;&gt;NIEM&#xA;              NDR v1.3&lt;/a&gt;, the value of the version attribute must be present and&#xA;              must not be the empty string. Default is &#34;1&#34;. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; ty string. Default is &#34;1&#34;. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; &lt;/html&gt; "/>
+      <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_2_1_2aa0151_1363979878348_984139_2291" name="" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878348_878788_2292" name="" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-version-defaultValue" name="" value="&#34;1&#34;"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-defaultPrefix" name="defaultPrefix" visibility="public" aggregation="composite">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-defaultPrefix-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-defaultPrefix" body="The recommended prefix to be associated with this targetNamespace.  Provisioned schemas referencing this targetNamespace will use this value unless there is a conflict.  The published NIEM prefix/namespace mapping takes precedence over this  value. If this value is unset or is empty, a prefix will be generated."/>
+      <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Namespace-defaultPrefix-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878347_550525_2289" name="" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-15" name="" memberEnd="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-15-ownedEnd NIEM_UML_Profile-NIEM_Common_Profile-UnionOf-base_Usage" navigableOwnedEnd="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-15-ownedEnd">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-15-ownedEnd" name="extension_UnionOf" visibility="private" type="NIEM_UML_Profile-NIEM_Common_Profile-UnionOf" aggregation="composite" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-15">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-15-ownedEnd-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878337_175331_2247" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-16" name="" memberEnd="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-16-ownedEnd NIEM_UML_Profile-NIEM_Common_Profile-Documentation-base_Comment" navigableOwnedEnd="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-16-ownedEnd">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-16-ownedEnd" name="extension_NIEMDocumentation" visibility="public" type="NIEM_UML_Profile-NIEM_Common_Profile-Documentation" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-16">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-16-ownedEnd-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878317_442283_2169" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType" name="NIEMType" isAbstract="true">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;            margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;            &lt;p&gt; A NIEMType is a Class that represents one of the specific semantic&#xA;            kinds of NIEM complex types (i.e., types that may have attributive structure). NIEMType&#xA;            is abstract. &lt;/p&gt; &lt;p&gt; A NIEMType Class is implemented in XML&#xA;            Schema as a complex type definition with complex content. &lt;/p&gt;&#xA;            &lt;/body&gt; &lt;/html&gt; definition with complex content.&#xA;            &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; y&gt;&#xA;            &lt;/html&gt; "/>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_9-33_" name="NDR [Rule 9-33]" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_9-33_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_9-33_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 9-33] (REF, SUB, EXT)&lt;/b&gt;&#xA;              Within the schema, the name of an augmentation element SHALL use the representation&#xA;              term Augmentation. &lt;/p&gt; &lt;p&gt;&#xA;              &lt;b&gt;Rationale&lt;/b&gt; Using the qualifier Augmentation&#xA;              immediately identifies an element as representing an augmentation. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; representing an augmentation.&#xA;              &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_9-33_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Class.ownedAttribute
+              -&gt;forAll(a|a.type.stereotypedBy('AugmentationType') implies
+              a.name.match('.*Augmentation.*')) --For PIM Profile, the naming constraint is enforced
+              by PIM/PSM transformations. --An augmentation element corresponds to a UML
+              &lt;Property&gt; whose type is an
+              &lt;&lt;AugmentationType&gt;&gt;. </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_9-32_" name="NDR [Rule 9-32]" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_9-32_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_9-32_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 9-32] (REF, SUB, EXT)&#xA;              &lt;/b&gt;Within the schema, the name of an association element SHALL use the&#xA;              representation term qualifier Association. &lt;/p&gt; &lt;p&gt;&#xA;              &lt;b&gt;Rationale&lt;/b&gt; Using the qualifier Association&#xA;              immediately identifies an element as representing an association. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; ment as representing an association.&#xA;              &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_9-32_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Class.ownedAttribute
+              -&gt;forAll(a|a.type.stereotypedBy('AssociationType') implies
+              a.name.match('.*Association.*')) --For PIM Profile, the naming constraint is enforced
+              by PIM/PSM transformations. --An association element corresponds to a UML
+              &lt;Property&gt; whose type is an
+              &lt;&lt;AssociationType&gt;&gt;. </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_7-49_" name="NDR [Rule 7-49]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_7-49_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_7-49_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-49] (REF, EXT)&lt;/b&gt; Within the&#xA;              schema, an element definition for an augmentation element MAY contain one or more&#xA;              instances of the element structures:AppliesTo as application information to specify&#xA;              types to which the augmentation element applies. &lt;/p&gt; &lt;p&gt;&#xA;              &lt;/p&gt; &lt;p&gt; In UML, this represents a constraint on&#xA;              augmentations, i.e., those UML &lt;Property&gt;s whose type is an&#xA;              &lt;&lt;&lt;a&#xA;              href=&#34;mdel://_17_0_2_7b3022e_1312665991957_183350_2567y&#34;&gt;Augmentation&lt;/a&gt;&gt;&gt;.&#xA;                 &lt;/p&gt; &lt;p&gt; A &lt;Property&gt; which is a client&#xA;              of any &lt;&lt;AppliesTo&gt;&gt; must be owned by a&#xA;              &lt;Classifier&gt; which is conformant with one of the&#xA;              &lt;&lt;AppliesTo&gt;&gt; supplier &lt;Classifier&gt;s.&#xA;              &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; ch is conformant with&#xA;              one of the &lt;&lt;AppliesTo&gt;&gt; supplier&#xA;              &lt;Classifier&gt;s. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; body&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_7-49_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.ownedAttribute -&gt;forAll(a|
+              a.type.stereotypedBy('AugmentationType') implies a.clientDependency
+              -&gt;union(a.clientDependency-&gt;select(d|d.stereotypedBy('References')).target.clientDependency)
+              -&gt;select(d|d.stereotypedBy('AugmentationApplication')).target.oclAsType(Class)
+              -&gt;exists(appliedTo|self.base_Class.isConsistentWith(appliedTo)) ) </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_7-45_" name="NDR [Rule 7-45]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_7-45_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_7-45_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-45] (REF, EXT)&lt;/b&gt; Within the&#xA;              schema, a metadata type MAY have application information appinfo:AppliesTo, indicating&#xA;              the NIEM-conformant object, association, or external adapter types to which the&#xA;              metadata applies. &lt;/p&gt; &lt;p&gt; &lt;/p&gt;&#xA;              &lt;p&gt; In UML, this represents a constraint on metadata elements, i.e.,&#xA;              those UML &lt;Property&gt;s whose type is a &lt;&lt;&lt;a&#xA;              href=&#34;mdel://_17_0_2_7b3022e_1312665991957_183350_2567z&#34;&gt;MetadataType&lt;/a&gt;&gt;&gt;.&#xA;                 &lt;/p&gt; &lt;p&gt; If the &lt;&lt;&lt;a&#xA;              href=&#34;mdel://_17_0_2_7b3022e_1312665991957_183350_2567z&#34;&gt;MetadataType&lt;/a&gt;&gt;&gt;&#xA;              has an &lt;&lt;AppliesTo&gt;&gt;, then the &lt;Property&gt;&#xA;              must be owned by a &lt;Classifier&gt; which is conformant with one of the&#xA;              &lt;Classifier&gt;s referenced by one of the&#xA;              &lt;&lt;AppliesTo&gt;&gt;. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; formant with one of the &lt;Classifier&gt;s referenced&#xA;              by one of the &lt;&lt;AppliesTo&gt;&gt;. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; body&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_7-45_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.ownedAttribute -&gt;forAll(a|
+              a.type.stereotypedBy('MetadataType') implies a.type.clientDependency
+              -&gt;select(d|d.stereotypedBy('MetadataApplication')).target.oclAsType(Class)
+              -&gt;exists(appliedTo|self.base_Class.isConsistentWith(appliedTo)) ) </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_9-23_" name="NDR [Rule 9-23]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_9-23_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_9-23_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 9-23] (REF, SUB, EXT)&#xA;              &lt;/b&gt;Within the schema, the name of any type definition MUST use the&#xA;              representation term Type. &lt;/p&gt; &lt;p&gt;&#xA;              &lt;b&gt;Rationale&lt;/b&gt; Using the representation term Type&#xA;              immediately identifies XML types in a NIEM-conformant schema and prevents naming&#xA;              collisions with corresponding XML elements and attributes. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; ponding XML elements and attributes.&#xA;              &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_9-23_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Class.name.endsWith('Type')</body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_9-34_" name="NDR [Rule 9-34]" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_9-34_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_9-34_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 9-34] (REF, SUB, EXT)&lt;/b&gt;&#xA;              Within the schema, the name of a metadata element SHALL use the representation term&#xA;              Metadata. &lt;/p&gt; &lt;p&gt;&#xA;              &lt;b&gt;Rationale&lt;/b&gt; Using the qualifier Metadata immediately&#xA;              identifies an element as representing metadata. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; ent as representing metadata.&#xA;              &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType-NDR__Rule_9-34_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Class.ownedAttribute -&gt;forAll(a|a.type.stereotypedBy('MetadataType')
+              implies a.name.match('.*Metadata.*')) --For PIM Profile, the naming constraint is
+              enforced by PIM/PSM transformations. --A metadata element corresponds to a UML
+              &lt;Property&gt; whose type is a
+            &lt;&lt;Metadata&gt;&gt;.</body>
+      </specification>
+    </ownedRule>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-18" name="" memberEnd="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-18-ownedEnd NIEM_UML_Profile-NIEM_Common_Profile-Choice-base_Class" navigableOwnedEnd="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-18-ownedEnd">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-18-ownedEnd" name="extension_Choice" visibility="private" type="NIEM_UML_Profile-NIEM_Common_Profile-Choice" aggregation="composite" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-18">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-18-ownedEnd-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878319_914235_2176" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-UnionOf" name="UnionOf">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-UnionOf-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-UnionOf" body="The UnionOf stereotype is applied to a Usage dependency, the client of which must be&#xA;            a Union DataType and the supplier of which must be a DataType that represents a legal&#xA;            union member type. A UnionOf dependency specifies that the supplier DataType is a member&#xA;            type of the client Union."/>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-UnionOf-supplier_must_be_data_type" name="supplier must be data type" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-UnionOf">
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-UnionOf-supplier_must_be_data_type-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Usage.supplier.oclKindOf(DataType)</body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-UnionOf-client_must_be_union" name="client must be union" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-UnionOf">
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-UnionOf-client_must_be_union-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Usage.client.stereotypedBy('Union')</body>
+      </specification>
+    </ownedRule>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-UnionOf-base_Usage" name="base_Usage" visibility="private" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-15">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#Usage"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_2_1_2aa0151_1363979878332_1100_2224" name="" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878332_755605_2225" name="" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-20" name="" memberEnd="NIEM_UML_Profile-NIEM_Common_Profile-Application-base_Usage NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-20-ownedEnd" navigableOwnedEnd="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-20-ownedEnd">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-20-ownedEnd" name="extension_" visibility="private" type="NIEM_UML_Profile-NIEM_Common_Profile-Application" aggregation="composite" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-20">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-20-ownedEnd-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878346_850199_2285" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-21" name="" memberEnd="NIEM_UML_Profile-NIEM_Common_Profile-Restriction-base_Realization NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-21-ownedEnd" navigableOwnedEnd="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-21-ownedEnd">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-21-ownedEnd" name="extension_Restriction" visibility="private" type="NIEM_UML_Profile-NIEM_Common_Profile-Restriction" aggregation="composite" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-21">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-21-ownedEnd-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878328_158360_2210" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType" name="AugmentationType">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;            margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;            &lt;p&gt; AugmentationType is a NIEMType Class that represents a&#xA;            NIEM augmentation type. A NIEM augmentation type is a complex type that provides a&#xA;            reusable block of data that may be added to object types or association types. An&#xA;            augmentation of an object type is a block of additional data that is an&#xA;            instance of an augmentation type, added to an object type to carry additional data&#xA;            beyond that of the original object definition. The applicability of an augmentation may&#xA;            be restricted using an AugmentationApplication Dependency or an Augments Generalization.&#xA;             A Class that is the specific Classifier of an Augments Generalization shall be inferred&#xA;            to be an AugmentationType. &lt;/p&gt; &lt;p&gt; AugmentationType is&#xA;            implemented in XML Schema as a complex type definition with complex content. Section 3.4&#xA;            of &lt;a href=&#34;http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/&#34;&gt;XML&#xA;            Schema Structures&lt;/a&gt; addresses complex type definitions in XML Schema;&#xA;            Section 7.4.5 of &lt;a&#xA;            href=&#34;http://reference.niem.gov/niem/specification/naming-and-design-rules/1.3/&#34;&gt;NIEM&#xA;            NDR v1.3&lt;/a&gt; addresses augmentation types in NIEM-conformant XML Schema.&#xA;            &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;&#xA;            nd-design-rules/1.3/&#34;&gt;NIEM NDR v1.3&lt;/a&gt; addresses augmentation&#xA;            types in NIEM-conformant XML Schema. &lt;/p&gt; &lt;/body&gt;&#xA;            &lt;/html&gt; body&gt; &lt;/html&gt; "/>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType-NDR__Rule_7-48_" name="NDR [Rule 7-48]" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType-NDR__Rule_7-48_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType-NDR__Rule_7-48_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-48] (REF, SUB, EXT)&#xA;              &lt;/b&gt;Within the schema, an augmentation element definition:&#xA;              &lt;/p&gt; &lt;p&gt; 1. SHALL have a type that is an augmentation&#xA;              type. &lt;/p&gt; &lt;p&gt; 2. SHALL use the substitutionGroup&#xA;              attribute such that it is transitively substitutable for the element&#xA;              structures:Augmentation. &lt;/p&gt; &lt;p&gt; An element that is not&#xA;              an augmentation element SHALL NOT meet either of the above criteria.&#xA;              &lt;/p&gt; &lt;p&gt; &lt;b&gt;Rationale&lt;/b&gt; An&#xA;              augmentation is trivially identifiable as such. The use of the common&#xA;              structures:Augmentation element allows message builders to optionally delay specifying&#xA;              augmentations to be applied to a type until runtime. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; builders to optionally delay specifying&#xA;              augmentations to be applied to a type until runtime. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType-NDR__Rule_7-48_-specification" name="">
+        <language>English</language>
+        <body>The constraint is enforced by the transformation from PSM to XSD Schema artifact.
+              A property whose type is an &lt;&lt;AugmentationType&gt;&gt; is an
+              augmentation element. The property may directly or indirectly use the UML
+              subsettedProperty mechanism to identify a substitutionGroup, which will be
+              transitively substitutable for the element structures:Augmentation. </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType-NDR__Rule_7-47_" name="NDR [Rule 7-47]" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType-NDR__Rule_7-47_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType-NDR__Rule_7-47_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;NDR [Rule 7-47] (REF, EXT)&lt;/b&gt;&#xA;              Essentially states that the general of the&#xA;              &lt;&lt;Augmentation&gt;&gt;, if it exists, must be an&#xA;              &lt;&lt;Augmentation&gt;&gt;. &lt;/p&gt; &lt;p&gt; Due&#xA;              to schema and other NDR rules, this also requires &lt;/p&gt;&#xA;              &lt;ul&gt; &lt;li&gt; a maximum of one general for the given&#xA;              &lt;&lt;Augmentation&gt;&gt; &lt;/li&gt; &lt;li&gt;&#xA;              any subtypes of the given &lt;&lt;Augmentation&gt;&gt; must also be&#xA;              &lt;&lt;Augmentation&gt;&gt; &lt;/li&gt; &lt;/ul&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; mentation&gt;&gt; must also be&#xA;              &lt;&lt;Augmentation&gt;&gt; &lt;/li&gt; &lt;/ul&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; ul&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType-NDR__Rule_7-47_-specification" name="">
+        <language>OCL2.0</language>
+        <body>(self.base_Class.general()-&gt;size()&lt;=1) and
+              self.base_Class.general()-&gt;forAll(g|g.stereotypedBy('AugmentationType')) and
+              self.base_Class.getTargetDirectedRelationships()
+              -&gt;forAll(r|r.oclIsKindOf(Gneralization) implies
+              r.oclAsType(Generalization).specific.stereotypedBy('AugmentationType')) </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType-NDR__Rule_7-14_" name="NDR [Rule 7-14]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType-NDR__Rule_7-14_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType-NDR__Rule_7-14_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-14] (REF, EXT)&lt;/b&gt; A&#xA;              component definition SHALL begin with a standard opening phrase that depends on the&#xA;              class of the component per Table 7-1 in NDR: Standard Opening Phrases:&#xA;              &lt;/p&gt; &lt;p&gt; &lt;b&gt;Rationale&lt;/b&gt; A&#xA;              standard opening phrase based on component class helps to ensure consistent&#xA;              definitions that appropriate for the type of component item being defined. These&#xA;              opening phrases also provide a cue that facilitates recognition of the particular kind&#xA;              of component. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; s&#xA;              recognition of the particular kind of component. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType-NDR__Rule_7-14_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Class.ownedComment -&gt;exists(documentation|
+              documentation.stereotypedBy('Documentation') and documentation.body.startsWith('A data
+              type that supplements ') ) </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType-NDR__Rule_9-28_" name="NDR [Rule 9-28]" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType-NDR__Rule_9-28_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType-NDR__Rule_9-28_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 9-28] (REF, SUB, EXT)&lt;/b&gt;&#xA;              Within the schema, any augmentation type SHALL have a name that uses the&#xA;              representation term qualifier Augmentation. Types other than augmentation types SHALL&#xA;              NOT use the representation term qualifier Augmentation. &lt;/p&gt;&#xA;              &lt;p&gt; &lt;b&gt;Rationale&lt;/b&gt; Using the qualifier&#xA;              Augmentation immediately identifies a type as representing an augmentation.&#xA;              &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; a type as representing&#xA;              an augmentation. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;&#xA;              y&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType-NDR__Rule_9-28_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Class.name.match('.*AugmentationType')) --For PIM Profile, the naming
+              constraint is enforced by PIM/PSM transformations. </body>
+      </specification>
+    </ownedRule>
+    <generalization xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType-generalization" general="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType"/>
+    <ownedAttribute xmi:id="_17_0_5_1_2aa0151_1410701922363_447387_3928" name="base_Class" visibility="private" association="_17_0_5_1_2aa0151_1410701922363_474597_3927">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#Class"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-23" name="" memberEnd="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-23-ownedEnd NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction-base_DataType" navigableOwnedEnd="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-23-ownedEnd">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-23-ownedEnd" name="extension_ValueRestriction" visibility="private" type="NIEM_UML_Profile-NIEM_Common_Profile-ValueRestriction" aggregation="composite" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-23">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-23-ownedEnd-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878347_58175_2286" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-24" name="" memberEnd="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-24-ownedEnd NIEM_UML_Profile-NIEM_Common_Profile-List-base_DataType" navigableOwnedEnd="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-24-ownedEnd">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-24-ownedEnd" name="extension_ListType" visibility="private" type="NIEM_UML_Profile-NIEM_Common_Profile-List" aggregation="composite" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-24">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-24-ownedEnd-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878313_837645_2159" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-25" name="" memberEnd="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-25-ownedEnd NIEM_UML_Profile-NIEM_Common_Profile-PropertyHolder-base_Class" navigableOwnedEnd="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-25-ownedEnd">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-25-ownedEnd" name="extension_" visibility="private" type="NIEM_UML_Profile-NIEM_Common_Profile-PropertyHolder" aggregation="composite" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-25">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-25-ownedEnd-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878342_670887_2267" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType" name="AssociationType">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;            margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;            &lt;p&gt; AssociationType is a NIEMType class that represents a NIEM association&#xA;            type. A NIEM association type establishes a relationship between objects, along with the&#xA;            properties of that relationship. A NIEM association is an instance of an association&#xA;            type. Associations are used when a simple NIEM property is insufficient to model the&#xA;            relationship clearly and when properties of a UML Association or AssociationClass may&#xA;            not necessarily be sufficient to reflect the variability of a NIEM association.&#xA;            Consequently, the AssociationType Stereotype is applied to a UML Class. Since an&#xA;            AssociationClass is also a Class, the AssociationType Stereotype may be applied to a UML&#xA;            AssociationClass where appropriate.   &lt;/p&gt; &lt;p&gt; Note that a&#xA;            UML AssociationClass specializing another AssociationClass must have the same number of&#xA;            ends as the other AssociationClass and must have at least two ends. This UML constraint&#xA;            prevents the usage of AssociationClass to model abstract NIEM association types that are&#xA;            intended to be extended by subtypes with additional ends.  A UML AssociationClass can&#xA;            specialize an abstract UML Class. &lt;/p&gt; &lt;p&gt; AssociationType&#xA;            is implemented in XML Schema as a complex type definition with complex content. Section&#xA;            3.4 of &lt;a href=&#34;http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/&#34;&gt;XML&#xA;            Schema Structures&lt;/a&gt; addresses complex type definitions in XML Schema;&#xA;            Section 7.4.3 of &lt;a&#xA;            href=&#34;http://reference.niem.gov/niem/specification/naming-and-design-rules/1.3/&#34;&gt;NIEM&#xA;            NDR v1.3&lt;/a&gt; addresses association types in NIEM-conformant XML Schema.&#xA;            &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;&#xA;            ref=&#34;http://reference.niem.gov/niem/specification/naming-and-design-rules/1.3/&#34;&gt;NIEM&#xA;            NDR v1.3&lt;/a&gt; addresses association types in NIEM-conformant XML Schema.&#xA;            &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; body&gt;&#xA;            &lt;/html&gt; "/>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType-NDR__Rule_7-42_" name="NDR [Rule 7-42]" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType-NDR__Rule_7-42_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType-NDR__Rule_7-42_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-42] (REF, SUB, EXT) &lt;/b&gt;&#xA;              &lt;/p&gt; &lt;p&gt; Given that an association type defines a&#xA;              relationship between a set of participants, within an association type definition, any&#xA;              element that represents a participant SHALL be a reference element. &lt;/p&gt;&#xA;              &lt;p&gt; &lt;b&gt;Rationale&lt;/b&gt; &lt;/p&gt;&#xA;              &lt;p&gt; Associations are intended to relate objects defined elsewhere. They&#xA;              are not intended to carry content of participant objects. &lt;/p&gt;&#xA;              &lt;p&gt; &lt;/p&gt; &lt;p&gt; In UML, any property owned by&#xA;              the &lt;&lt;AssociationType&gt;&gt; which represents a NIEM reference&#xA;              must not be an aggregation. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; the &lt;&lt;AssociationType&gt;&gt; which&#xA;              represents a NIEM reference must not be an aggregation. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; body&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType-NDR__Rule_7-42_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Class.ownedAttribute -&gt;forAll(a|a.name.endsWith('Reference') implies
+              (a.aggregation=AggregationKind::none))</body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType-NDR__Rule_7-14_" name="NDR [Rule 7-14]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType-NDR__Rule_7-14_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType-NDR__Rule_7-14_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-14] (REF, EXT)&lt;/b&gt; A&#xA;              component definition SHALL begin with a standard opening phrase that depends on the&#xA;              class of the component per Table 7-1 in NDR: Standard Opening Phrases:&#xA;              &lt;/p&gt; &lt;p&gt; &lt;b&gt;Rationale&lt;/b&gt; A&#xA;              standard opening phrase based on component class helps to ensure consistent&#xA;              definitions that appropriate for the type of component item being defined. These&#xA;              opening phrases also provide a cue that facilitates recognition of the particular kind&#xA;              of component. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; s&#xA;              recognition of the particular kind of component. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType-NDR__Rule_7-14_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Class.ownedComment -&gt;exists(documentation|
+              documentation.stereotypedBy('Documentation') and documentation.body.startsWith('A data
+              type for a relationship ') ) </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType-NDR__Rule_7-41_" name="NDR [Rule 7-41]" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType-NDR__Rule_7-41_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType-NDR__Rule_7-41_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;NDR [Rule 7-41] (REF, EXT)&lt;/b&gt;&#xA;              Essentially states that the general of the&#xA;              &lt;&lt;Association&gt;&gt;, if it exists, must be an&#xA;              &lt;&lt;Association&gt;&gt;. &lt;/p&gt; &lt;p&gt; Due&#xA;              to schema and other NDR rules, this also requires &lt;/p&gt;&#xA;              &lt;ul&gt; &lt;li&gt; a maximum of one general for the given&#xA;              &lt;&lt;Association&gt;&gt; &lt;/li&gt; &lt;li&gt; any&#xA;              subtypes of the given &lt;&lt;Association&gt;&gt; must also be&#xA;              &lt;&lt;Association&gt;&gt; &lt;/li&gt; &lt;/ul&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; ssociation&gt;&gt; must also be&#xA;              &lt;&lt;Association&gt;&gt; &lt;/li&gt; &lt;/ul&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; body&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType-NDR__Rule_7-41_-specification" name="">
+        <language>OCL2.0</language>
+        <body>(self.base_Class.generalization-&gt;size()&lt;=1) and
+              self.base_Class.generalization.general-&gt;forAll(g|g.stereotypedBy('Association'))
+              and self.base_Class.getTargetDirectedRelationships()
+              -&gt;select(r|r.oclIsKindOf(Generalization)).oclAsType(Generalization).specific
+              -&gt;forAll(s|s.stereotypedBy('Association'))</body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType-NDR__Rule_9-27_" name="NDR [Rule 9-27]" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType-NDR__Rule_9-27_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType-NDR__Rule_9-27_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 9-27] (REF, SUB, EXT)&lt;/b&gt;&#xA;              Within the schema, any association type SHALL have a name that uses the representation&#xA;              term qualifier Association. Types other than association types SHALL NOT use the&#xA;              representation term qualifier Association. &lt;/p&gt; &lt;p&gt;&#xA;              &lt;b&gt;Rationale&lt;/b&gt; Using the qualifier Association&#xA;              immediately identifies a type as representing an association. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; a type as representing an association.&#xA;              &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; dy&gt;&#xA;              &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType-NDR__Rule_9-27_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Class.name.match('.*AssociationType')) --For PIM Profile, the naming
+              constraint is enforced by PIM/PSM transformations. </body>
+      </specification>
+    </ownedRule>
+    <generalization xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType-generalization" general="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType"/>
+    <ownedAttribute xmi:id="_17_0_5_1_2aa0151_1410701944645_193933_4003" name="base_Class" visibility="private" association="_17_0_5_1_2aa0151_1410701944644_964231_4002">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#Class"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-PropertyHolder" name="PropertyHolder">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-PropertyHolder-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-PropertyHolder" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;            margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;            &lt;p&gt; PropertyHolder is a Class holding global Properties that are not the&#xA;            subject of any specific NIEM type. A Property of a NIEM type may then be defined by&#xA;            reference to a Property of a PropertyHolder by using a References realization with the&#xA;            Property in the PropertyHolder as the supplier. Note that the multiplicity of Properties&#xA;            in a PropertyHolder is immaterial -- the multiplicities are established by Properties in&#xA;            the corresponding References client. The target namespace of Properties in a&#xA;            PropertyHolder is the target namespace of the Namespace Package that contains the&#xA;            PropertyHolder (which may be different than the target namespace of NIEM types that use&#xA;            the Properties in the PropertyHolder). &lt;/p&gt; &lt;p&gt;&#xA;            PropertyHolder does not represent any NIEM concept; it exists to permit the user to&#xA;            define a NIEM property that is not the subject of any NIEM type. There are significant&#xA;            differences between the UML representation and XML Schema implementation of a NIEM&#xA;            property. Sections 6.1.6.2 and 6.1.6.3 of &lt;a&#xA;            href=&#34;http://reference.niem.gov/niem/specification/naming-and-design-rules/1.3/&#34;&gt;NIEM&#xA;            NDR v1.3&lt;/a&gt;, Rule 6-14 and Rule 6-15, require that an attribute or&#xA;            element declaration be a top-level declaration, but NIEM NDR v1.3 does not require a&#xA;            corresponding attribute use or element particle; however, Section 7.3.44 of [UML]&#xA;            requires that a Property be the ownedAttribute of a Classifier. Thus in the UML&#xA;            representation, the declaration and use of a Property are not distinct, and the&#xA;            declaration of a Property requires its use. In the XML Schema implementation, the&#xA;            declaration and use are distinct, and the declaration does not require a corresponding&#xA;            use. To resolve this difference, any Property within a PropertyHolder shall represent an&#xA;            attribute or element declaration without a corresponding attribute use or element&#xA;            particle. &lt;/p&gt; &lt;p&gt; PropertyHolders may be used to hold the&#xA;            properties of a substitution group.  Where a PropertyHolder is used to define a&#xA;            substitution group an extension of that substitution group shall be a subclass of the&#xA;            substitution group PropertyHolder. &lt;/p&gt; &lt;/body&gt;&#xA;            &lt;/html&gt; ies of a substitution group.  Where a PropertyHolder is used to&#xA;            define a substitution group an extension of that substitution group shall be a subclass&#xA;            of the substitution group PropertyHolder. &lt;/p&gt; &lt;/body&gt;&#xA;            &lt;/html&gt; &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; "/>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-PropertyHolder-base_Class" name="base_Class" visibility="private" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-25">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#Class"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_2_1_2aa0151_1363979878333_862491_2231" name="" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878333_771185_2232" name="" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-List" name="List">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-List-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-List" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;            margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;            &lt;p&gt; A List is a DataType whose values consist of a finite length (possibly&#xA;            empty) sequence of values of another DataType, which is the item type of the List. A&#xA;            List DataType must have a single Property with multiplicity 0..* whose type is the item&#xA;            type. The name of this element is not material.   &lt;/p&gt; &lt;p&gt; A&#xA;            List DataType is implemented in XML schema as a list simple type definition. List&#xA;            represents a relationship between two simple type definitions: the first is a list&#xA;            simple type definition whose item type definition is the second. This relationship is&#xA;            implemented in XML Schema through the itemType attribute on the xsd:list element of the&#xA;            list simple type definition, the actual value of which resolves to the second type&#xA;            definition. Section 3.14 of &lt;a&#xA;            href=&#34;http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/&#34;&gt;XML Schema&#xA;            Structures&lt;/a&gt; addresses list simple type definitions in XML Schema;&#xA;            Section 7.3 of &lt;a&#xA;            href=&#34;http://reference.niem.gov/niem/specification/naming-and-design-rules/1.3/&#34;&gt;NIEM&#xA;            NDR v1.3&lt;/a&gt; addresses list simple type definitions in NIEM-conformant XML&#xA;            Schema. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;&#xA;            rules/1.3/&#34;&gt;NIEM NDR v1.3&lt;/a&gt; addresses list simple type&#xA;            definitions in NIEM-conformant XML Schema. &lt;/p&gt; &lt;/body&gt;&#xA;            &lt;/html&gt; &gt; &lt;/body&gt; &lt;/html&gt; "/>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-List-NDR__Rule_7-14_" name="NDR [Rule 7-14]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-List-NDR__Rule_7-14_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-List-NDR__Rule_7-14_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-14] (REF, EXT)&lt;/b&gt; A&#xA;              component definition SHALL begin with a standard opening phrase that depends on the&#xA;              class of the component per Table 7-1 in NDR: Standard Opening Phrases:&#xA;              &lt;/p&gt; &lt;p&gt; &lt;b&gt;Rationale&lt;/b&gt; A&#xA;              standard opening phrase based on component class helps to ensure consistent&#xA;              definitions that appropriate for the type of component item being defined. These&#xA;              opening phrases also provide a cue that facilitates recognition of the particular kind&#xA;              of component. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; s&#xA;              recognition of the particular kind of component. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-List-NDR__Rule_7-14_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Class.ownedComment -&gt;exists(documentation|
+              documentation.stereotypedBy('Documentation') and ( documentation.body.startsWith('A
+              data type for a ') or documentation.body.startsWith('A data type for an ') ) ) </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-List-no_generalizations" name="no generalizations" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-List">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-List-no_generalizations-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-List-no_generalizations" body="A List shall not have any generalizations."/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-List-no_generalizations-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_DataType.generalization-&gt;isEmpty()</body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-List-_single_ownedAttribute_with_multiplicity_0..__typed____________DataType__" name=" single ownedAttribute with multiplicity 0..* typed&#xA;          &lt;DataType&gt;&gt;" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-List">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-List-_single_ownedAttribute_with_multiplicity_0..__typed____________DataType__-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-List-_single_ownedAttribute_with_multiplicity_0..__typed____________DataType__" body="A List DataType shall have a single ownedAttribute with multiplicity 0..* whose&#xA;              type is also a DataType."/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-List-_single_ownedAttribute_with_multiplicity_0..__typed____________DataType__-specification" name="">
+        <language>OCL2.0</language>
+        <body>(self.base_DataType.ownedAttribute-&gt;size()=1) and
+              self.base_DataType.ownedAttribute -&gt;forAll(a|(a.lower=0) and (a.upper=-1)) </body>
+      </specification>
+    </ownedRule>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-List-base_DataType" name="base_DataType" visibility="private" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-24">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#DataType"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_2_1_2aa0151_1363979878334_739221_2233" name="" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878334_253652_2234" name="" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application" name="Application" isAbstract="true">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Application" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;            margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;            &lt;p&gt; An Application stereotype is applied to a Usage dependency between a&#xA;            client Property or Class and a supplier Class. It corresponds to the NIEM concept of&#xA;            &#34;AppliesTo&#34;, which constrains the applicability of the client as being to the NIEM type&#xA;            represented by the supplier class. The Application Stereotype is abstract, its two&#xA;            concrete stereotypes being AugmentationApplication and MetadataApplication, representing&#xA;            the use of &#34;AppliesTo&#34; in the context of augmentation and metadata, respectively.&#xA;            &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; ion Stereotype is&#xA;            abstract, its two concrete stereotypes being AugmentationApplication and&#xA;            MetadataApplication, representing the use of &#34;AppliesTo&#34; in the context of augmentation&#xA;            and metadata, respectively. &lt;/p&gt; &lt;/body&gt;&#xA;            &lt;/html&gt; "/>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-24_" name="NDR [Rule 7-24]" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-Application">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-24_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-24_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-24] (REF, EXT)&lt;/b&gt; Within the&#xA;              schema, the element appinfo:AppliesTo MAY be used in any of the following ways:&#xA;              &lt;/p&gt; &lt;p&gt; 1. To indicate a base type to which an&#xA;              augmentation may be applied. &lt;/p&gt; &lt;p&gt; 2. To indicate a&#xA;              base type to which a metadata type may be applied. &lt;/p&gt;&#xA;              &lt;p&gt; The element appinfo:AppliesTo SHALL NOT be used for any other&#xA;              purpose. &lt;/p&gt; &lt;p&gt; &lt;/p&gt; &lt;p&gt;&#xA;              &lt;b&gt;Rationale&lt;/b&gt; The appinfo:AppliesTo element is required&#xA;              to express constraints beyond those available within XML Schema. Use of this element&#xA;              allows advanced processing of instances and schemas for type safety.&#xA;              &lt;/p&gt; &lt;p&gt; &lt;/p&gt; &lt;p&gt; In UML&#xA;              terms, the &lt;Usage&gt; client must be either an augmentation element (i.e.,&#xA;              a &lt;Property&gt; whose type is an &lt;&lt;&lt;a&#xA;              href=&#34;mdel://_17_0_2_7b3022e_1312665991957_183350_2567y&#34;&gt;Augmentation&lt;/a&gt;&gt;&gt;)&#xA;              or a &lt;&lt;&lt;a&#xA;              href=&#34;mdel://_17_0_2_7b3022e_1312665991957_183350_2567z&#34;&gt;Metadata&lt;/a&gt;&gt;&gt;&#xA;              &lt;Classifier&gt;.   The &lt;Usage&gt; supplier must be a&#xA;              &lt;Classifier&gt;. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt;&#xA;              0_2_7b3022e_1312665991957_183350_2567z&#34;&gt;Metadata&lt;/a&gt;&gt;&gt;&#xA;              &lt;Classifier&gt;.   The &lt;Usage&gt; supplier must be a&#xA;              &lt;Classifier&gt;. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; body&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-24_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Usage.supplier-&gt;forAll(s|s.oclIsKindOf(Classifier)) and
+              self.base_Usage.client -&gt;forAll(client| client.stereotypedBy('MetadataType') or
+              ( client.oclIsKindOf(Property) and
+              client.oclAsType(Property).type.stereotypedBy('AugmentationType') ) )</body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-25_" name="NDR [Rule 7-25]" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-Application">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-25_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-25_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-25] (REF, EXT)&lt;/b&gt; Within the&#xA;              schema, the element appinfo:AppliesTo SHALL indicate a schema component by namespace&#xA;              and name. &lt;/p&gt; &lt;p&gt; &lt;/p&gt; &lt;p&gt; In&#xA;              UML, the &lt;&lt;AppliesTo&gt;&gt; must have a supplier which is a&#xA;              &lt;Class&gt; or &lt;Datatype&gt; whose nearestPackage is imported via&#xA;              &lt;&lt;&lt;a&#xA;              href=&#34;mdel://_17_0_3_24a0131_1319232695341_898926_1534&#34;&gt;NDRSchema&lt;/a&gt;&gt;&gt;.&#xA;              &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;&#xA;              31_1319232695341_898926_1534&#34;&gt;NDRSchema&lt;/a&gt;&gt;&gt;.&#xA;              &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-25_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Usage.supplier -&gt;forAll(supplier| (supplier.oclIsKindOf(Class) or
+              supplier.oclIsKindOf(DataType)) and
+              supplier.getNearestPackage().stereotypedBy('Namespace') )</body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-27_" name="NDR [Rule 7-27]" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-Application">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-27_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-27_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-27] (REF, EXT) &lt;/b&gt;Given that&#xA;              the element appinfo:AppliesTo refers to a type, the applicability described by the&#xA;              element SHALL be understood to be the indicated type or a type transitively derived&#xA;              from the indicated type. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; the indicated type. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-27_-specification" name="">
+        <language>English</language>
+        <body>This constraint is decomposed into two specific cases. NDR [Rule 7-49] defines
+              constraints related to applying Augmentation and NDR [Rule 7-45] defines constraints
+              related to applying Metadata. </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-26_" name="NDR [Rule 7-26]" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-Application">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-26_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-26_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-26] (REF, EXT) &lt;/b&gt;Within the&#xA;              schema, an attribute appinfo:namespace owned by an element appinfo:AppliesTo SHALL&#xA;              indicate the namespace of the type to which appinfo:AppliesTo refers. The indicated&#xA;              namespace SHALL be defined by a NIEM-conformant schema. &lt;/p&gt;&#xA;              &lt;p&gt; &lt;/p&gt; &lt;p&gt; In UML, the&#xA;              &lt;&lt;AppliesTo&gt;&gt; must have a supplier which is a&#xA;              &lt;Class&gt; or &lt;Datatype&gt; whose nearestPackage is imported via&#xA;              &lt;&lt;&lt;a&#xA;              href=&#34;mdel://_17_0_3_24a0131_1319232695341_898926_1534&#34;&gt;NDRSchema&lt;/a&gt;&gt;&gt;.&#xA;              &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;&#xA;              3_24a0131_1319232695341_898926_1534&#34;&gt;NDRSchema&lt;/a&gt;&gt;&gt;.&#xA;              &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-26_-specification" name="">
+        <language>English</language>
+        <body>This constraint, at the UML level, is identical to NDR [Rule 7-25]. </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-46_" name="NDR [Rule 7-46]" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-Application">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-46_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-46_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-46] (REF, EXT) &lt;/b&gt;Within the&#xA;              schema, a &lt;&lt;&lt;a&#xA;              href=&#34;mdel://_17_0_2_7b3022e_1312665991957_183350_2567z&#34;&gt;Metadata&lt;/a&gt;&gt;&gt;&#xA;              type that does not have application information appinfo:AppliesTo MAY be applied to&#xA;              any object type, association type, or external adapter type. &lt;/p&gt;&#xA;              &lt;p&gt; &lt;b&gt;Rationale&lt;/b&gt; Metadata may be&#xA;              constrained to be applicable to only specific types, or it may be defined to be&#xA;              applicable to any type. The source of a piece of data and the security classification&#xA;              of a piece of data are examples of metadata that may be considered globally&#xA;              applicable. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; tadata that&#xA;              may be considered globally applicable. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-46_-specification" name="">
+        <language>English</language>
+        <body>Definitional constraint. Application of &lt;&lt;AppliesTo&gt;&gt;
+              is optional. </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-28_" name="NDR [Rule 7-28]" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-Application">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-28_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-28_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;b&gt;[Rule 7-28] (REF, EXT)&lt;/b&gt; Within the schema, an&#xA;              element appinfo:AppliesTo that does not carry an attribute appinfo:namespace SHALL&#xA;              refer to the target namespace of the schema in which it is used. &lt;/body&gt;&#xA;              &lt;/html&gt; is used. &lt;/body&gt; &lt;/html&gt; ml&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-28_-specification" name="">
+        <language>English</language>
+        <body>This constraint is resolved by the combination of other constraints and the
+              PSM-XSD transformations. </body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-29_" name="NDR [Rule 7-29]" constrainedElement="NIEM_UML_Profile-NIEM_Common_Profile-Application">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-29_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-29_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-29] (REF, EXT)&lt;/b&gt; Within the&#xA;              schema, an element appinfo:AppliesTo SHALL carry an attribute appinfo:name. The value&#xA;              of this attribute SHALL indicate the local name of a schema component within the&#xA;              namespace specified by the element. &lt;/p&gt; &lt;p&gt;&#xA;              &lt;b&gt;Rationale&lt;/b&gt; Together, this set of rules establishes&#xA;              the element appinfo:AppliesTo as a reference to a NIEM-conformant schema component to&#xA;              which a NIEM construct may be applied. &lt;/p&gt; &lt;/body&gt;&#xA;              &lt;/html&gt; t to which a NIEM construct may be applied. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; body&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-NDR__Rule_7-29_-specification" name="">
+        <language>English</language>
+        <body>This constraint is resolved by other constraints in combination with the PSM - XSD
+              transformations.</body>
+      </specification>
+    </ownedRule>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-Application-base_Usage" name="base_Usage" visibility="private" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-20">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#Usage"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_2_1_2aa0151_1363979878339_946339_2256" name="" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878339_331533_2257" name="" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AdapterType" name="AdapterType">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AdapterType-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-AdapterType" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;            margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;            &lt;p&gt; An AdapterType is a NIEMType Class that represents a NIEM adapter&#xA;            type. A NIEM adapter type is a NIEM object type that adapts external components for use&#xA;            within NIEM. External components are not NIEM-conforming (e.g., data components from&#xA;            other standards, e.g. GML, ISO, etc.). An adapter type creates a new class of object&#xA;            that embodies a single concept composed of external components. &lt;/p&gt;&#xA;            &lt;p&gt; AdapterType is implemented in XML Schema as a complex type definition&#xA;            with complex content. Section 3.4 of &lt;a&#xA;            href=&#34;http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/&#34;&gt;XML Schema&#xA;            Structures&lt;/a&gt; addresses complex type definitions in XML Schema; Section&#xA;            7.7 of &lt;a&#xA;            href=&#34;http://reference.niem.gov/niem/specification/naming-and-design-rules/1.3/&#34;&gt;NIEM&#xA;            NDR v1.3&lt;/a&gt; addresses adapter types in NIEM-conformant XML Schema.&#xA;            &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; NIEM NDR&#xA;            v1.3&lt;/a&gt; addresses adapter types in NIEM-conformant XML Schema.&#xA;            &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; body&gt;&#xA;            &lt;/html&gt; "/>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AdapterType-NDR__Rule_7-14_" name="NDR [Rule 7-14]">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AdapterType-NDR__Rule_7-14_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_Common_Profile-AdapterType-NDR__Rule_7-14_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-14] (REF, EXT)&lt;/b&gt; A&#xA;              component definition SHALL begin with a standard opening phrase that depends on the&#xA;              class of the component per Table 7-1 in NDR: Standard Opening Phrases:&#xA;              &lt;/p&gt; &lt;p&gt; &lt;b&gt;Rationale&lt;/b&gt; A&#xA;              standard opening phrase based on component class helps to ensure consistent&#xA;              definitions that appropriate for the type of component item being defined. These&#xA;              opening phrases also provide a cue that facilitates recognition of the particular kind&#xA;              of component. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; s&#xA;              recognition of the particular kind of component. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AdapterType-NDR__Rule_7-14_-specification" name="">
+        <language>OCL2.0</language>
+        <body>self.base_Class.profiledBy('NIEM_PSM_Profile') implies
+              self.base_Class.ownedComment -&gt;exists(documentation|
+              documentation.stereotypedBy('Documentation') and ( documentation.body.startsWith('A
+              data type for a ') or documentation.body.startsWith('A data type for an ') ) ) </body>
+      </specification>
+    </ownedRule>
+    <generalization xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AdapterType-generalization" general="NIEM_UML_Profile-NIEM_Common_Profile-NIEMType"/>
+    <ownedAttribute xmi:id="_17_0_5_1_2aa0151_1410701918134_876341_3903" name="base_Class" visibility="private" association="_17_0_5_1_2aa0151_1410701918134_997959_3902">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#Class"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-31" name="" memberEnd="NIEM_UML_Profile-NIEM_Common_Profile-References-base_Realization NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-31-ownedEnd" navigableOwnedEnd="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-31-ownedEnd">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-31-ownedEnd" name="extension_Subsets" visibility="private" type="NIEM_UML_Profile-NIEM_Common_Profile-References" aggregation="composite" association="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-31">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-packagedElement-31-ownedEnd-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878319_356416_2177" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_17_0_5_1_2aa0151_1410701918134_997959_3902" name="" memberEnd="_17_0_5_1_2aa0151_1410701918134_876341_3903 _17_0_5_1_2aa0151_1410701918134_171182_3904" navigableOwnedEnd="_17_0_5_1_2aa0151_1410701918134_171182_3904">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_17_0_5_1_2aa0151_1410701918134_171182_3904" name="extension_AdapterType" visibility="private" type="NIEM_UML_Profile-NIEM_Common_Profile-AdapterType" aggregation="composite" association="_17_0_5_1_2aa0151_1410701918134_997959_3902">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_5_1_2aa0151_1410701918134_281644_3905" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_5_1_2aa0151_1410701918134_544226_3906" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_17_0_5_1_2aa0151_1410701922363_474597_3927" name="" memberEnd="_17_0_5_1_2aa0151_1410701922363_447387_3928 _17_0_5_1_2aa0151_1410701922363_306649_3929" navigableOwnedEnd="_17_0_5_1_2aa0151_1410701922363_306649_3929">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_17_0_5_1_2aa0151_1410701922363_306649_3929" name="extension_AugmentationType" visibility="private" type="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationType" aggregation="composite" association="_17_0_5_1_2aa0151_1410701922363_474597_3927">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_5_1_2aa0151_1410701922363_951649_3930" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_5_1_2aa0151_1410701922363_120036_3931" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_17_0_5_1_2aa0151_1410701930077_79529_3952" name="" memberEnd="_17_0_5_1_2aa0151_1410701930077_436805_3953 _17_0_5_1_2aa0151_1410701930078_43011_3954" navigableOwnedEnd="_17_0_5_1_2aa0151_1410701930078_43011_3954">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_17_0_5_1_2aa0151_1410701930078_43011_3954" name="extension_MetadataType" visibility="private" type="NIEM_UML_Profile-NIEM_Common_Profile-MetadataType" aggregation="composite" association="_17_0_5_1_2aa0151_1410701930077_79529_3952">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_5_1_2aa0151_1410701930078_42655_3955" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_5_1_2aa0151_1410701930078_877747_3956" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_17_0_5_1_2aa0151_1410701936555_621313_3977" name="" memberEnd="_17_0_5_1_2aa0151_1410701936556_803575_3978 _17_0_5_1_2aa0151_1410701936556_282074_3979" navigableOwnedEnd="_17_0_5_1_2aa0151_1410701936556_282074_3979">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_17_0_5_1_2aa0151_1410701936556_282074_3979" name="extension_ObjectType" visibility="private" type="NIEM_UML_Profile-NIEM_Common_Profile-ObjectType" aggregation="composite" association="_17_0_5_1_2aa0151_1410701936555_621313_3977">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_5_1_2aa0151_1410701936556_910181_3980" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_5_1_2aa0151_1410701936556_703711_3981" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_17_0_5_1_2aa0151_1410701944644_964231_4002" name="" memberEnd="_17_0_5_1_2aa0151_1410701944645_193933_4003 _17_0_5_1_2aa0151_1410701944645_845728_4004" navigableOwnedEnd="_17_0_5_1_2aa0151_1410701944645_845728_4004">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_17_0_5_1_2aa0151_1410701944645_845728_4004" name="extension_AssociationType" visibility="private" type="NIEM_UML_Profile-NIEM_Common_Profile-AssociationType" aggregation="composite" association="_17_0_5_1_2aa0151_1410701944644_964231_4002">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_5_1_2aa0151_1410701944645_320540_4005" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_5_1_2aa0151_1410701944645_401848_4006" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-MetadataApplicationUsageExtension" name="Usage_MetadataApplication" memberEnd="NIEM_UML_Profile-NIEM_Common_Profile-MetadataApplicationUsageExtensionMemberEndExtensionEnd NIEM_UML_Profile-NIEM_Common_Profile-MetadataApplicationUsageExtensionMemberEndProperty">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-MetadataApplicationUsageExtensionMemberEndExtensionEnd" name="extension_MetadataApplication" type="NIEM_UML_Profile-NIEM_Common_Profile-MetadataApplication" aggregation="composite" association="NIEM_UML_Profile-NIEM_Common_Profile-MetadataApplicationUsageExtension"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationApplicationUsageExtension" name="Usage_AugmentationApplication" memberEnd="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationApplicationUsageExtensionMemberEndExtensionEnd NIEM_UML_Profile-NIEM_Common_Profile-AugmentationApplicationUsageExtensionMemberEndProperty">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationApplicationUsageExtensionMemberEndExtensionEnd" name="extension_AugmentationApplication" type="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationApplication" aggregation="composite" association="NIEM_UML_Profile-NIEM_Common_Profile-AugmentationApplicationUsageExtension"/>
+  </packagedElement>
+</uml:Profile>

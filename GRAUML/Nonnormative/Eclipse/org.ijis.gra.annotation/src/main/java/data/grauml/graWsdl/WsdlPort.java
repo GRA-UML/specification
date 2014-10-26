@@ -10,7 +10,7 @@ import data.grauml.graAnnotationModel.Port;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Represents a <wsdl:port> and <wsdl:binding>.
+ * WSDL Extension of the technology-independent element. Represents a <wsdl:port> and <wsdl:binding>.
  * <!-- end-model-doc -->
  *
  * <p>

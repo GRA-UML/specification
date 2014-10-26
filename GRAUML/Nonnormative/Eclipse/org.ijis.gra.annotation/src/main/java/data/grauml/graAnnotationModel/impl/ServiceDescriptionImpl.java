@@ -78,6 +78,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link data.grauml.graAnnotationModel.impl.ServiceDescriptionImpl#getServiceAssumption <em>Service Assumption</em>}</li>
  *   <li>{@link data.grauml.graAnnotationModel.impl.ServiceDescriptionImpl#getOtherRequirement <em>Other Requirement</em>}</li>
  *   <li>{@link data.grauml.graAnnotationModel.impl.ServiceDescriptionImpl#getDataProvenance <em>Data Provenance</em>}</li>
+ *   <li>{@link data.grauml.graAnnotationModel.impl.ServiceDescriptionImpl#getProcessModel <em>Process Model</em>}</li>
  * </ul>
  * </p>
  *
@@ -593,6 +594,16 @@ public class ServiceDescriptionImpl extends ServiceIdentificationImpl implements
 	 * @ordered
 	 */
 	protected Description dataProvenance;
+
+	/**
+	 * The cached value of the '{@link #getProcessModel() <em>Process Model</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProcessModel()
+	 * @generated
+	 * @ordered
+	 */
+	protected Description processModel;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1467,6 +1478,49 @@ public class ServiceDescriptionImpl extends ServiceIdentificationImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Description getProcessModel() {
+		return processModel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetProcessModel(Description newProcessModel, NotificationChain msgs) {
+		Description oldProcessModel = processModel;
+		processModel = newProcessModel;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraAnnotationModelPackage.SERVICE_DESCRIPTION__PROCESS_MODEL, oldProcessModel, newProcessModel);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setProcessModel(Description newProcessModel) {
+		if (newProcessModel != processModel) {
+			NotificationChain msgs = null;
+			if (processModel != null)
+				msgs = ((InternalEObject)processModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraAnnotationModelPackage.SERVICE_DESCRIPTION__PROCESS_MODEL, null, msgs);
+			if (newProcessModel != null)
+				msgs = ((InternalEObject)newProcessModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GraAnnotationModelPackage.SERVICE_DESCRIPTION__PROCESS_MODEL, null, msgs);
+			msgs = basicSetProcessModel(newProcessModel, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GraAnnotationModelPackage.SERVICE_DESCRIPTION__PROCESS_MODEL, newProcessModel, newProcessModel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean realizesCollaborationAndUsesIepd(DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// TODO: implement this method
 		// -> specify the condition that violates the invariant
@@ -1558,6 +1612,8 @@ public class ServiceDescriptionImpl extends ServiceIdentificationImpl implements
 				return basicSetOtherRequirement(null, msgs);
 			case GraAnnotationModelPackage.SERVICE_DESCRIPTION__DATA_PROVENANCE:
 				return basicSetDataProvenance(null, msgs);
+			case GraAnnotationModelPackage.SERVICE_DESCRIPTION__PROCESS_MODEL:
+				return basicSetProcessModel(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1644,6 +1700,8 @@ public class ServiceDescriptionImpl extends ServiceIdentificationImpl implements
 				return getOtherRequirement();
 			case GraAnnotationModelPackage.SERVICE_DESCRIPTION__DATA_PROVENANCE:
 				return getDataProvenance();
+			case GraAnnotationModelPackage.SERVICE_DESCRIPTION__PROCESS_MODEL:
+				return getProcessModel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1782,6 +1840,9 @@ public class ServiceDescriptionImpl extends ServiceIdentificationImpl implements
 			case GraAnnotationModelPackage.SERVICE_DESCRIPTION__DATA_PROVENANCE:
 				setDataProvenance((Description)newValue);
 				return;
+			case GraAnnotationModelPackage.SERVICE_DESCRIPTION__PROCESS_MODEL:
+				setProcessModel((Description)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1905,6 +1966,9 @@ public class ServiceDescriptionImpl extends ServiceIdentificationImpl implements
 			case GraAnnotationModelPackage.SERVICE_DESCRIPTION__DATA_PROVENANCE:
 				setDataProvenance((Description)null);
 				return;
+			case GraAnnotationModelPackage.SERVICE_DESCRIPTION__PROCESS_MODEL:
+				setProcessModel((Description)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1991,6 +2055,8 @@ public class ServiceDescriptionImpl extends ServiceIdentificationImpl implements
 				return otherRequirement != null;
 			case GraAnnotationModelPackage.SERVICE_DESCRIPTION__DATA_PROVENANCE:
 				return dataProvenance != null;
+			case GraAnnotationModelPackage.SERVICE_DESCRIPTION__PROCESS_MODEL:
+				return processModel != null;
 		}
 		return super.eIsSet(featureID);
 	}

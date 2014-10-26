@@ -12,7 +12,29 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * [Derived from] Use case or package with use cases. In the case of a package, each contained use case shall produce a use case element in Phase-1.
+ * <html>
+ *   <head>
+ * 		<style>
+ * 			p {padding:0px; margin:0px;}
+ * 		</style>
+ * 	</head>
+ *   <body>
+ *     <p>
+ * A UseCase annotation represents one or more &quot;real world effects&quot; of a ServiceDescription. &#160;In the annotation model, a UseCase instance may realize a UseCase or a Package in the logical model. &#160;In the former case, Phase-1 will generate a single UseCase instance<span lang="EN-US">. In the latter case, Phase-1 will generate a UseCase instance for each UML&#160;UseCase contained in the realized Package. &#160;In all cases the generated UseCases' </span>Provider and Consumer properties are derived from Associations stereotyped <span lang="EN-US">«Provider» and «Consumer» between the logical UseCases and the logical Actors that correspond to Participants in the generated annotation model.</span>
+ *     </p>
+ * 
+ *     <p>
+ * &#160;
+ *     </p>
+ * 
+ *     <p>
+ * &#160;
+ * 
+ *     </p>
+ * 
+ *   </body>
+ * </html>
+ * 
  * <!-- end-model-doc -->
  *
  * <p>

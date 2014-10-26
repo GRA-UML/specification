@@ -107,6 +107,9 @@ public enum ExchangePattern implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A request for information with the subsequent return of that information, if available and authorized. A request-reply.
+	 * <!-- end-model-doc -->
 	 * @see #ENQUIRY
 	 * @model name="enquiry"
 	 * @generated
@@ -122,6 +125,9 @@ public enum ExchangePattern implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A request for changes in information with the later notification of such changes, if available and authorized. A request-reply.
+	 * <!-- end-model-doc -->
 	 * @see #SUBSCRIPTION
 	 * @model name="subscription"
 	 * @generated
@@ -137,6 +143,9 @@ public enum ExchangePattern implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Notification of an event of change or information. A fire-and-forget.
+	 * <!-- end-model-doc -->
 	 * @see #NOTIFICATION
 	 * @model name="notification"
 	 * @generated
@@ -152,6 +161,9 @@ public enum ExchangePattern implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A request to change some information with a subsequent return of success of failure. Related information may also be returned. A request-reply.
+	 * <!-- end-model-doc -->
 	 * @see #UPDATE
 	 * @model name="update"
 	 * @generated
@@ -167,6 +179,9 @@ public enum ExchangePattern implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A message as a result of a subscription. A fire-and-forget.
+	 * <!-- end-model-doc -->
 	 * @see #MESSAGE
 	 * @model name="message"
 	 * @generated
