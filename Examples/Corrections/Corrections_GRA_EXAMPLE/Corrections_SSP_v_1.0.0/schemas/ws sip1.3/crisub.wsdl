@@ -1,0 +1,167 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+                  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+                  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                  xmlns:gra-cri="http://corrections.modeldriven.org"
+                  xmlns:MetaEX="http://it.ojp.gov/gist/201/Metadata/MetaExchange"
+                  xmlns:CRSUB="http://it.ojp.gov/gist/200/Corrections/SubjectMessageTypes"
+                  xmlns:CRX="http://it.ojp.gov/gist/200/Corrections/exchangeTypes"
+                  xmlns:MetaR="http://it.ojp.gov/gist/201/Metadata/MetadataReference"
+                  targetNamespace="http://corrections.modeldriven.org">
+   <wsdl:documentation>The service provides access to and updates for a correction's subject case file for the purposes of supporting reentry</wsdl:documentation>
+   <wsp:Policy wsu:Id="wsa_policy">
+	     <wsp:ExactlyOne>
+		       <wsp:All>
+			         <wsaw:UsingAddressing/>	
+		       </wsp:All>
+	     </wsp:ExactlyOne>
+   </wsp:Policy>
+   <wsp:Policy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               wsu:Id="wsrm_policy"
+               xsi:schemaLocation="http://schemas.xmlsoap.org/ws/2004/09/policy http://schemas.xmlsoap.org/ws/2004/09/policy/ws-policy.xsd">
+      <wsp:ExactlyOne>
+        <wsp:All>
+            <wsrmp:RMAssertion xmlns:wsrmp="http://docs.oasis-open.org/ws-rx/wsrmp/200702">
+                <wsp:Policy>
+                    <wsrmp:DeliveryAssurance>
+                        <wsp:Policy>
+                            <wsrmp:ExactlyOnce/>
+                            <wsrmp:InOrder/>
+                        </wsp:Policy>
+                    </wsrmp:DeliveryAssurance>
+                </wsp:Policy>
+                <netrmp:InactivityTimeout xmlns:netrmp="http://schemas.microsoft.com/ws-rx/wsrmp/200702"
+                                         Milliseconds="600000"/>
+                <netrmp:AcknowledgementInterval xmlns:netrmp="http://schemas.microsoft.com/ws-rx/wsrmp/200702"
+                                               Milliseconds="200"/>
+            </wsrmp:RMAssertion>
+        </wsp:All>
+      </wsp:ExactlyOne>
+   </wsp:Policy>
+   <wsp:Policy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" wsu:Id="wss_policy">
+	     <wsp:ExactlyOne>
+		       <wsp:All>
+			         <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+				           <wsp:Policy>
+					             <sp:TransportToken>
+						               <wsp:Policy>
+							                 <sp:HttpsToken/>
+						               </wsp:Policy>
+					             </sp:TransportToken>
+					             <sp:AlgorithmSuite>
+						               <wsp:Policy>
+							                 <sp:Basic256/>
+						               </wsp:Policy>
+					             </sp:AlgorithmSuite>
+					             <sp:Layout>
+						               <wsp:Policy>
+							                 <sp:Strict/>
+						               </wsp:Policy>
+					             </sp:Layout>
+					             <sp:IncludeTimestamp/>
+				           </wsp:Policy>
+			         </sp:TransportBinding>
+			         <sp:EndorsingSupportingTokens xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+				           <wsp:Policy>
+					             <sp:X509Token sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+						               <wsp:Policy>
+							                 <sp:RequireThumbprintReference/>
+							                 <sp:WssX509V3Token10/>
+						               </wsp:Policy>
+					             </sp:X509Token>
+					             <sp:SignedParts/>
+					             <sp:EncryptedParts/>
+				           </wsp:Policy>
+			         </sp:EndorsingSupportingTokens>
+			         <sp:Wss11 xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+				           <wsp:Policy>
+					             <sp:MustSupportRefThumbprint/>
+				           </wsp:Policy>
+			         </sp:Wss11>
+			         <sp:Trust13 xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+				           <wsp:Policy>
+					             <sp:MustSupportIssuedTokens/>
+					             <sp:RequireClientEntropy/>
+					             <sp:RequireServerEntropy/>
+				           </wsp:Policy>
+			         </sp:Trust13>
+			         <wsaw:UsingAddressing/>
+		       </wsp:All>
+	     </wsp:ExactlyOne>
+   </wsp:Policy>
+   <wsp:Policy xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"
+               wsu:Id="wss-wsa-arg-se_policy">
+	     <wsp:ExactlyOne>
+		       <wsp:All>
+			         <sp:SignedParts>
+					          <sp:Body/>
+					          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+					          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+					          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+					          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+				        </sp:SignedParts>
+				        <sp:EncryptedParts>
+					          <sp:Body/>
+				        </sp:EncryptedParts>
+			      </wsp:All>
+		    </wsp:ExactlyOne>
+	  </wsp:Policy>
+   <wsdl:types>
+      <xsd:schema>
+         <xsd:import namespace="http://it.ojp.gov/gist/201/Metadata/MetaExchange"
+                     schemaLocation="../../artifacts/service model/information model/Corrections_iepd/XMLschemas/Metadata/MetadataExchange.xsd"/>
+         <xsd:import namespace="http://it.ojp.gov/gist/200/Corrections/SubjectMessageTypes"
+                     schemaLocation="../../artifacts/service model/information model/Corrections_iepd/XMLschemas/exchange/SubjectMessageModel.xsd"/>
+         <xsd:import namespace="http://it.ojp.gov/gist/200/Corrections/exchangeTypes"
+                     schemaLocation="../../artifacts/service model/information model/Corrections_iepd/XMLschemas/exchange/SubjectExchange.xsd"/>
+         <xsd:import namespace="http://it.ojp.gov/gist/201/Metadata/MetadataReference"
+                     schemaLocation="../../artifacts/service model/information model/Corrections_iepd/XMLschemas/Metadata/MetadataReference.xsd"/>
+      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="Notify.SubjectNotification">
+      <wsdl:part name="Notify.SubjectNotification.SubjectInformationMessage"
+                 element="CRX:SubjectInformationMessage">
+         <wsdl:documentation>A data type for a message about one or more subjects</wsdl:documentation>
+      </wsdl:part>
+      <wsdl:part name="Notify.SubjectNotification.ExchangeAgreementReferenceMetadata"
+                 element="MetaEX:ExchangeAgreementReferenceMetadata">
+         <wsdl:documentation>A data type for metadata about messages and their supporting the exchange agreement</wsdl:documentation>
+      </wsdl:part>
+   </wsdl:message>
+   <wsdl:portType name="Subscriber">
+      <wsdl:operation name="Notify">
+         <wsdl:input name="Notify.SubjectNotification"
+                     message="gra-cri:Notify.SubjectNotification"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="SubscriberBinding" type="gra-cri:Subscriber">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsp:PolicyReference URI="#wsa_policy"/>
+      <wsp:PolicyReference URI="#wsrm_policy"/>
+      <wsp:PolicyReference URI="#wss_policy"/>
+      <wsdl:operation name="Notify">
+         <soap:operation soapAction="http://www.correction.modeldriven.org/CaseFileService/NotificationInterface/Notify"
+                         style="document"/>
+         <wsdl:input>
+            <wsp:PolicyReference URI="#wss-wsa-arg-se_policy"/>
+            <soap:header use="literal"
+                         message="gra-cri:Notify.SubjectNotification"
+                         part="Notify.SubjectNotification.ExchangeAgreementReferenceMetadata"/>
+            <soap:body use="literal"
+                       parts="Notify.SubjectNotification.SubjectInformationMessage"/>
+         </wsdl:input>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="CorrectionsSubscriberWSSIPService">
+      <wsdl:port name="Subscriber" binding="gra-cri:SubscriberBinding">
+         <soap:address location="http://www.correction.modeldriven.org/CaseFileService/Subscriber"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

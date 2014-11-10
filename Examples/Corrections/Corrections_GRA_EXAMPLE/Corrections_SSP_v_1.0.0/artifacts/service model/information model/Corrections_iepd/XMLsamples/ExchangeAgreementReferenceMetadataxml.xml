@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaEX:ExchangeAgreementReferenceMetadata xmlns:AGREE="http://it.ojp.gov/gist/201/Metadata/exchangeAgreement" xmlns:CAT="http://it.ojp.gov/gist/201/Metadata/category" xmlns:MetaEX="http://it.ojp.gov/gist/201/Metadata/MetaExchange" xmlns:MetaMSG="http://it.ojp.gov/gist/201/Metadata/MetaMessages" xmlns:MetaR="http://it.ojp.gov/gist/201/Metadata/MetadataReference" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://it.ojp.gov/gist/201/Metadata/MetaExchange ../XMLschemas/Metadata/MetadataExchange.xsd http://it.ojp.gov/gist/201/Metadata/MetaMessages ../../../XMLschemas/Metadata/MetadataMessageModel.xsd http://it.ojp.gov/gist/201/Metadata/MetadataReference ../../../XMLschemas/Metadata/MetadataReference.xsd http://niem.gov/niem/proxy/xsd/2.0 ../../../XMLschemas/proxy/xsd/2.0/xsd.xsd http://niem.gov/niem/structures/2.0 ../../../XMLschemas/structures/2.0/structures.xsd ">
+  <MetaR:ExchangeAgreementID>http://tempuri.org</MetaR:ExchangeAgreementID>
+  <MetaR:MetadataRepositoryID>http://tempuri.org</MetaR:MetadataRepositoryID>
+  <MetaR:MetadataUsedDateTime>2001-12-31T12:00:00</MetaR:MetadataUsedDateTime>
+</MetaEX:ExchangeAgreementReferenceMetadata>

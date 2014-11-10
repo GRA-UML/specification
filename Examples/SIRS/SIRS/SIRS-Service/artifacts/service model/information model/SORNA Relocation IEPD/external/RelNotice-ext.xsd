@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:Q1="http://www.iir.com/sorna/NIEM/2.1/juris-codes" xmlns:Q2="http://www.iir.com/sorna/NIEM/2.1/notification-list/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:j="http://niem.gov/niem/domains/jxdm/4.1" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:rne="http://www.iir.com/sorna/NIEM/2.1/notification/extension/1.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://www.iir.com/sorna/NIEM/2.1/notification/extension/1.0" version="1">
+  <xsd:import namespace="http://www.iir.com/sorna/NIEM/2.1/juris-codes" schemaLocation=".././external/juris-codes.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/domains/jxdm/4.1" schemaLocation=".././external/jxdm.xsd"/>
+  <xsd:import namespace="http://www.iir.com/sorna/NIEM/2.1/notification-list/1.0" schemaLocation=".././external/NoticeDescrList.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation=".././external/niem-core.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="../XMLschemas/structures/2.0/structures.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="../XMLschemas/proxy/xsd/2.0/xsd.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.0" schemaLocation="../XMLschemas/appinfo/2.0/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.1" schemaLocation="../XMLschemas/appinfo/2.1/appinfo.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>SORNA Relocation Notice Extension Schema</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:complexType abstract="false" mixed="false" name="JurisdictionType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for A data type representing the jurisdiction.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="OrganizationType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:OrganizationType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="rne:SORNAJurisdictionCode"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="rne:JurisdictionDepartureDate"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="rne:JurisdictionArrivalDate"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="rne:JurisdictionRegistrationDeadlineDate"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="SORNAJurisdictionCode" nillable="false" type="Q1:SORNAJurisdictionCodeType">
+    <xsd:annotation>
+      <xsd:documentation>SORNA Jurisdiction code.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="JurisdictionDepartureDate" nillable="false" type="nc:DateType">
+    <xsd:annotation>
+      <xsd:documentation>A date a person leaves a jurisdiction.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="JurisdictionArrivalDate" nillable="false" type="nc:DateType">
+    <xsd:annotation>
+      <xsd:documentation>A date a person arrives at a jurisdiction.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="JurisdictionRegistrationDeadlineDate" nillable="false" type="nc:DateType">
+    <xsd:annotation>
+      <xsd:documentation>A deadline date for alerting only used for the Relocation Confirmation Notice (RCONFN): Confirmation of receipt of the relocation package</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="SORNAExchangePortalCaseLinkType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for the case URL link in the SORNA Portal</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="nc:ContactWebsiteURI"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="false" mixed="false" name="SORNARelocationNoticeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for sex offender relocation notice information</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="DocumentType" i:namespace="http://niem.gov/niem/niem-core/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:DocumentType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="5" minOccurs="1" ref="rne:NotificationMessageCode"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="j:RegisteredOffender"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="rne:SendingJurisdiction"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="rne:ReceivingJurisdiction"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="rne:SORNAExchangePortalCaseLink"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="j:RegisteredOffenderStartDate"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="nc:Person"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="NotificationMessageCode" nillable="false" type="Q2:NotificationMessageCodeType">
+    <xsd:annotation>
+      <xsd:documentation>Notice Codes for the SORNA Relocation Notice.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SendingJurisdiction" nillable="false" type="rne:JurisdictionType">
+    <xsd:annotation>
+      <xsd:documentation>An organization on the sending side of an offender relocation</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="ReceivingJurisdiction" nillable="false" type="rne:JurisdictionType">
+    <xsd:annotation>
+      <xsd:documentation>An organization on the receiving side of an offender relocation</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="SORNAExchangePortalCaseLink" nillable="false" type="rne:SORNAExchangePortalCaseLinkType">
+    <xsd:annotation>
+      <xsd:documentation>A case URL link in the SORNA Portal.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

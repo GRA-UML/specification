@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://it.ojp.gov/gsp/services/1.0.0">
+
+<!--Catalog Files Section-->
+<catalog href="catalog.html">Catalog</catalog>
+   <metadata href="metadata.xml">Metadata</metadata>
+
+   <!--Corrections SSP SDD Section-->
+<service-description href="./artifacts/CRI_SDD_v_1.0.0.xhtml">Service Description Document</service-description>
+
+   <!--Corrections SSP SIDD Section-->
+<service-interface-description href="./artifacts/CRISUB_SIDD_v_1.0.0.xhtml">Service Interface Description Document</service-interface-description>
+   <service-interface-description href="./artifacts/CRP_SIDD_v_1.0.0.xhtml">Service Interface Description Document</service-interface-description>
+
+   <!--Corrections SSP WSDL and Schema Section-->
+<wsdl-schema href="./schemas/ws sip1.3/crisub.wsdl">Corrections Subscriber WS SIP WSDL</wsdl-schema>
+   <wsdl-schema href="./schemas/rs ws-sip1.2/crp.wsdl">Corrections Case File Provider RS WS-SIP WSDL</wsdl-schema>
+
+   <!--Corrections Reference Section-->
+<iepd-catalog href="./artifacts/service model/information model/Corrections/catalog.xml">IEPD Catalog</iepd-catalog>
+</catalog>

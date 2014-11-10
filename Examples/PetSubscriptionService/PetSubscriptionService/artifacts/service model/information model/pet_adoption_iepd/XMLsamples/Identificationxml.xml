@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PetExchange:Identification xmlns:PetExchange="http://www.modeldriven.org/niem/examples/PetAdoptionExchange" xmlns:PetExtension="http://www.modeldriven.org/niem/examples/PetAdoptionExtension" xmlns:fips_10-4="http://niem.gov/niem/fips_10-4/2.0" xmlns:iso_3166="http://niem.gov/niem/iso_3166/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.modeldriven.org/niem/examples/PetAdoptionExchange ../XMLschemas/constraint/XMLschemas/exchange/PetAdoptionExchange.xsd http://niem.gov/niem/niem-core/2.0 ../../../../../XMLschemas/constraint/XMLschemas/subset/niem/niem-core/2.0/PetAdoptionNIEMCoreSubset.xsd http://niem.gov/niem/proxy/xsd/2.0 ../../../../../XMLschemas/proxy/xsd/2.0/xsd.xsd http://niem.gov/niem/structures/2.0 ../../../../../XMLschemas/structures/2.0/structures.xsd http://www.modeldriven.org/niem/examples/PetAdoptionExtension ../../../../../XMLschemas/constraint/XMLschemas/extension/PetAdoptionExtension.xsd ">
+  <nc:IdentificationID>nc:IdentificationID</nc:IdentificationID>
+  <nc:IdentificationCategoryText>nc:IdentificationCategoryText</nc:IdentificationCategoryText>
+  <nc:IdentificationCategoryDescriptionText>nc:IdentificationCategoryDescriptionText</nc:IdentificationCategoryDescriptionText>
+  <nc:IdentificationEffectiveDate>
+    <nc:Date>2001-01-01</nc:Date>
+  </nc:IdentificationEffectiveDate>
+  <nc:IdentificationExpirationDate>
+    <nc:Date>2001-01-01</nc:Date>
+  </nc:IdentificationExpirationDate>
+  <nc:IdentificationJurisdictionText>nc:IdentificationJurisdictionText</nc:IdentificationJurisdictionText>
+  <nc:IdentificationSourceText>nc:IdentificationSourceText</nc:IdentificationSourceText>
+</PetExchange:Identification>

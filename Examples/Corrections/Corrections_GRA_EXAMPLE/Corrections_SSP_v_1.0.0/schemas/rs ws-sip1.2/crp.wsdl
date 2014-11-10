@@ -1,0 +1,377 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+                  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+                  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                  xmlns:gra-cri="http://corrections.modeldriven.org"
+                  xmlns:MetaEX="http://it.ojp.gov/gist/201/Metadata/MetaExchange"
+                  xmlns:MetaMSG="http://it.ojp.gov/gist/201/Metadata/MetaMessages"
+                  xmlns:CRSUB="http://it.ojp.gov/gist/200/Corrections/SubjectMessageTypes"
+                  xmlns:CRX="http://it.ojp.gov/gist/200/Corrections/exchangeTypes"
+                  xmlns:MetaR="http://it.ojp.gov/gist/201/Metadata/MetadataReference"
+                  targetNamespace="http://corrections.modeldriven.org">
+   <wsdl:documentation>The service provides access to and updates for a correction's subject case file for the purposes of supporting reentry</wsdl:documentation>
+   <wsp:Policy wsu:Id="wsa_policy">
+	     <wsp:ExactlyOne>
+		       <wsp:All>
+			         <wsaw:UsingAddressing/>	
+		       </wsp:All>
+	     </wsp:ExactlyOne>
+   </wsp:Policy>
+   <wsp:Policy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               wsu:Id="wsrm_policy"
+               xsi:schemaLocation="http://schemas.xmlsoap.org/ws/2004/09/policy http://schemas.xmlsoap.org/ws/2004/09/policy/ws-policy.xsd">
+      <wsp:ExactlyOne>
+        <wsp:All>
+            <wsrmp:RMAssertion xmlns:wsrmp="http://docs.oasis-open.org/ws-rx/wsrmp/200702">
+                <wsp:Policy>
+                    <wsrmp:DeliveryAssurance>
+                        <wsp:Policy>
+                            <wsrmp:ExactlyOnce/>
+                            <wsrmp:InOrder/>
+                        </wsp:Policy>
+                    </wsrmp:DeliveryAssurance>
+                </wsp:Policy>
+                <netrmp:InactivityTimeout xmlns:netrmp="http://schemas.microsoft.com/ws-rx/wsrmp/200702"
+                                         Milliseconds="600000"/>
+                <netrmp:AcknowledgementInterval xmlns:netrmp="http://schemas.microsoft.com/ws-rx/wsrmp/200702"
+                                               Milliseconds="200"/>
+            </wsrmp:RMAssertion>
+        </wsp:All>
+      </wsp:ExactlyOne>
+   </wsp:Policy>
+   <wsp:Policy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" wsu:Id="wss_policy">
+	     <wsp:ExactlyOne>
+		       <wsp:All>
+			         <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+				           <wsp:Policy>
+					             <sp:TransportToken>
+						               <wsp:Policy>
+							                 <sp:HttpsToken/>
+						               </wsp:Policy>
+					             </sp:TransportToken>
+					             <sp:AlgorithmSuite>
+						               <wsp:Policy>
+							                 <sp:Basic256/>
+						               </wsp:Policy>
+					             </sp:AlgorithmSuite>
+					             <sp:Layout>
+						               <wsp:Policy>
+							                 <sp:Strict/>
+						               </wsp:Policy>
+					             </sp:Layout>
+					             <sp:IncludeTimestamp/>
+				           </wsp:Policy>
+			         </sp:TransportBinding>
+			         <sp:EndorsingSupportingTokens xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+				           <wsp:Policy>
+					             <sp:X509Token sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+						               <wsp:Policy>
+							                 <sp:RequireThumbprintReference/>
+							                 <sp:WssX509V3Token10/>
+						               </wsp:Policy>
+					             </sp:X509Token>
+					             <sp:SignedParts/>
+					             <sp:EncryptedParts/>
+				           </wsp:Policy>
+			         </sp:EndorsingSupportingTokens>
+			         <sp:Wss11 xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+				           <wsp:Policy>
+					             <sp:MustSupportRefThumbprint/>
+				           </wsp:Policy>
+			         </sp:Wss11>
+			         <sp:Trust13 xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+				           <wsp:Policy>
+					             <sp:MustSupportIssuedTokens/>
+					             <sp:RequireClientEntropy/>
+					             <sp:RequireServerEntropy/>
+				           </wsp:Policy>
+			         </sp:Trust13>
+			         <wsaw:UsingAddressing/>
+		       </wsp:All>
+	     </wsp:ExactlyOne>
+   </wsp:Policy>
+   <wsp:Policy xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"
+               wsu:Id="wss-wsa-arg-se_policy">
+	     <wsp:ExactlyOne>
+		       <wsp:All>
+			         <sp:SignedParts>
+					          <sp:Body/>
+					          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing"/>
+					          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing"/>
+					          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing"/>
+					          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing"/>
+					          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing"/>
+				        </sp:SignedParts>
+				        <sp:EncryptedParts>
+					          <sp:Body/>
+				        </sp:EncryptedParts>
+			      </wsp:All>
+		    </wsp:ExactlyOne>
+	  </wsp:Policy>
+   <wsdl:types>
+      <xsd:schema>
+         <xsd:import namespace="http://it.ojp.gov/gist/201/Metadata/MetaExchange"
+                     schemaLocation="../../artifacts/service model/information model/Corrections_iepd/XMLschemas/Metadata/MetadataExchange.xsd"/>
+         <xsd:import namespace="http://it.ojp.gov/gist/201/Metadata/MetaMessages"
+                     schemaLocation="../../artifacts/service model/information model/Corrections_iepd/XMLschemas/Metadata/MetadataMessageModel.xsd"/>
+         <xsd:import namespace="http://it.ojp.gov/gist/200/Corrections/SubjectMessageTypes"
+                     schemaLocation="../../artifacts/service model/information model/Corrections_iepd/XMLschemas/exchange/SubjectMessageModel.xsd"/>
+         <xsd:import namespace="http://it.ojp.gov/gist/200/Corrections/exchangeTypes"
+                     schemaLocation="../../artifacts/service model/information model/Corrections_iepd/XMLschemas/exchange/SubjectExchange.xsd"/>
+         <xsd:import namespace="http://it.ojp.gov/gist/201/Metadata/MetadataReference"
+                     schemaLocation="../../artifacts/service model/information model/Corrections_iepd/XMLschemas/Metadata/MetadataReference.xsd"/>
+      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="GetMetadata.result">
+      <wsdl:part name="GetMetadata.result.RepositoryMetadata"
+                 element="MetaEX:RepositoryMetadata">
+         <wsdl:documentation>A data type for a repository containing  category and exchange agreement metadata. The IDs of the elements in this metadata are referenced from messages</wsdl:documentation>
+      </wsdl:part>
+   </wsdl:message>
+   <wsdl:message name="EntityQuery.EntityQueryMessage">
+      <wsdl:part name="EntityQuery.EntityQueryMessage.EntityQueryMessage"
+                 element="CRX:EntityQueryMessage">
+         <wsdl:documentation>A data type for a message to get information about any entity in a data resource</wsdl:documentation>
+      </wsdl:part>
+      <wsdl:part name="EntityQuery.EntityQueryMessage.ExchangeAgreementReferenceMetadata"
+                 element="MetaEX:ExchangeAgreementReferenceMetadata">
+         <wsdl:documentation>A data type for metadata about messages and their supporting the exchange agreement</wsdl:documentation>
+      </wsdl:part>
+   </wsdl:message>
+   <wsdl:message name="EntityQuery.result">
+      <wsdl:part name="EntityQuery.result.SubjectInformationMessage"
+                 element="CRX:SubjectInformationMessage">
+         <wsdl:documentation>A data type for a message about one or more subjects</wsdl:documentation>
+      </wsdl:part>
+   </wsdl:message>
+   <wsdl:message name="SubjectQuery.SubjectQueryMessage">
+      <wsdl:part name="SubjectQuery.SubjectQueryMessage.SubjectQueryMessage"
+                 element="CRX:SubjectQueryMessage">
+         <wsdl:documentation>A data type for a query about an individual</wsdl:documentation>
+      </wsdl:part>
+      <wsdl:part name="SubjectQuery.SubjectQueryMessage.ExchangeAgreementReferenceMetadata"
+                 element="MetaEX:ExchangeAgreementReferenceMetadata">
+         <wsdl:documentation>A data type for metadata about messages and their supporting the exchange agreement</wsdl:documentation>
+      </wsdl:part>
+   </wsdl:message>
+   <wsdl:message name="SubjectQuery.result">
+      <wsdl:part name="SubjectQuery.result.SubjectInformationMessage"
+                 element="CRX:SubjectInformationMessage">
+         <wsdl:documentation>A data type for a message about one or more subjects</wsdl:documentation>
+      </wsdl:part>
+   </wsdl:message>
+   <wsdl:message name="SubjectUpdate.SubjectInformationMessage">
+      <wsdl:part name="SubjectUpdate.SubjectInformationMessage.SubjectInformationMessage"
+                 element="CRX:SubjectInformationMessage">
+         <wsdl:documentation>A data type for a message about one or more subjects</wsdl:documentation>
+      </wsdl:part>
+      <wsdl:part name="SubjectUpdate.SubjectInformationMessage.ExchangeAgreementReferenceMetadata"
+                 element="MetaEX:ExchangeAgreementReferenceMetadata">
+         <wsdl:documentation>A data type for metadata about messages and their supporting the exchange agreement</wsdl:documentation>
+      </wsdl:part>
+   </wsdl:message>
+   <wsdl:message name="SubjectUpdate.unNamed">
+      <wsdl:part name="SubjectUpdate.unNamed.OperationResult"
+                 element="CRSUB:OperationResult">
+         <wsdl:documentation>A data type for the result of an operation</wsdl:documentation>
+      </wsdl:part>
+   </wsdl:message>
+   <wsdl:message name="SubscribeToSubject.SubscriptonMessage">
+      <wsdl:part name="SubscribeToSubject.SubscriptonMessage.SubscriptionMessage"
+                 element="CRX:SubscriptionMessage">
+         <wsdl:documentation>A data type for a message to establish a subscription.</wsdl:documentation>
+      </wsdl:part>
+      <wsdl:part name="SubscribeToSubject.SubscriptonMessage.ExchangeAgreementReferenceMetadata"
+                 element="MetaEX:ExchangeAgreementReferenceMetadata">
+         <wsdl:documentation>A data type for metadata about messages and their supporting the exchange agreement</wsdl:documentation>
+      </wsdl:part>
+   </wsdl:message>
+   <wsdl:message name="SubscribeToSubject.result">
+      <wsdl:part name="SubscribeToSubject.result.SubjectInformationMessage"
+                 element="CRX:SubjectInformationMessage">
+         <wsdl:documentation>A data type for a message about one or more subjects</wsdl:documentation>
+      </wsdl:part>
+   </wsdl:message>
+   <wsdl:message name="CancelSubscription.SubscriptionIDText">
+      <wsdl:part name="CancelSubscription.SubscriptionIDText.SubscriptionID"
+                 element="CRX:SubscriptionID">
+         <wsdl:documentation>An identity for a subscription</wsdl:documentation>
+      </wsdl:part>
+      <wsdl:part name="CancelSubscription.SubscriptionIDText.ExchangeAgreementReferenceMetadata"
+                 element="MetaEX:ExchangeAgreementReferenceMetadata">
+         <wsdl:documentation>A data type for metadata about messages and their supporting the exchange agreement</wsdl:documentation>
+      </wsdl:part>
+   </wsdl:message>
+   <wsdl:message name="CancelSubscription.result">
+      <wsdl:part name="CancelSubscription.result.SubscriptionMessage"
+                 element="CRX:SubscriptionMessage">
+         <wsdl:documentation>A data type for a message to establish a subscription.</wsdl:documentation>
+      </wsdl:part>
+   </wsdl:message>
+   <wsdl:portType name="MetadataPort">
+      <wsdl:operation name="GetMetadata">
+         <wsdl:output name="GetMetadata.result" message="gra-cri:GetMetadata.result"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:portType name="SubjectQueryPoint">
+      <wsdl:operation name="EntityQuery">
+         <wsdl:documentation>An operation to get all or part of information about an entity related to a subject case file. This is used to get more information about a related entity.</wsdl:documentation>
+         <wsdl:input name="EntityQuery.EntityQueryMessage"
+                     message="gra-cri:EntityQuery.EntityQueryMessage"/>
+         <wsdl:output name="EntityQuery.result" message="gra-cri:EntityQuery.result"/>
+      </wsdl:operation>
+      <wsdl:operation name="SubjectQuery">
+         <wsdl:documentation>An operation to get all or part of a subjects case file</wsdl:documentation>
+         <wsdl:input name="SubjectQuery.SubjectQueryMessage"
+                     message="gra-cri:SubjectQuery.SubjectQueryMessage"/>
+         <wsdl:output name="SubjectQuery.result" message="gra-cri:SubjectQuery.result"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:portType name="SubjectUpdatePoint">
+      <wsdl:operation name="SubjectUpdate">
+         <wsdl:input name="SubjectUpdate.SubjectInformationMessage"
+                     message="gra-cri:SubjectUpdate.SubjectInformationMessage"/>
+         <wsdl:output name="SubjectUpdate.unNamed" message="gra-cri:SubjectUpdate.unNamed"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:portType name="SubscriptionPoint">
+      <wsdl:operation name="SubscribeToSubject">
+         <wsdl:input name="SubscribeToSubject.SubscriptonMessage"
+                     message="gra-cri:SubscribeToSubject.SubscriptonMessage"/>
+         <wsdl:output name="SubscribeToSubject.result"
+                      message="gra-cri:SubscribeToSubject.result"/>
+      </wsdl:operation>
+      <wsdl:operation name="CancelSubscription">
+         <wsdl:input name="CancelSubscription.SubscriptionIDText"
+                     message="gra-cri:CancelSubscription.SubscriptionIDText"/>
+         <wsdl:output name="CancelSubscription.result"
+                      message="gra-cri:CancelSubscription.result"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="MetadataPortBinding" type="gra-cri:MetadataPort">
+      <http:binding verb="GET"/>
+      <wsdl:operation name="GetMetadata">
+         <http:operation location="GetMetadata"/>
+         <wsdl:output>
+            <mime:content type="application/xml"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="SubjectQueryPointBinding" type="gra-cri:SubjectQueryPoint">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsp:PolicyReference URI="#wsa_policy"/>
+      <wsp:PolicyReference URI="#wsrm_policy"/>
+      <wsp:PolicyReference URI="#wss_policy"/>
+      <wsdl:operation name="EntityQuery">
+         <soap:operation soapAction="http://www.correction.modeldriven.org/CaseFileService/SubjectQueryInterface/EntityQuery"
+                         style="document"/>
+         <wsdl:input>
+            <wsp:PolicyReference URI="#wss-wsa-arg-se_policy"/>
+            <soap:header use="literal"
+                         message="gra-cri:EntityQuery.EntityQueryMessage"
+                         part="EntityQuery.EntityQueryMessage.ExchangeAgreementReferenceMetadata"/>
+            <soap:body use="literal" parts="EntityQuery.EntityQueryMessage.EntityQueryMessage"/>
+         </wsdl:input>
+         <wsdl:output>
+            <wsp:PolicyReference URI="#wss-wsa-arg-se_policy"/>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="SubjectQuery">
+         <soap:operation soapAction="http://www.correction.modeldriven.org/CaseFileService/SubjectQueryInterface/SubjectQuery"
+                         style="document"/>
+         <wsdl:input>
+            <wsp:PolicyReference URI="#wss-wsa-arg-se_policy"/>
+            <soap:header use="literal"
+                         message="gra-cri:SubjectQuery.SubjectQueryMessage"
+                         part="SubjectQuery.SubjectQueryMessage.ExchangeAgreementReferenceMetadata"/>
+            <soap:body use="literal"
+                       parts="SubjectQuery.SubjectQueryMessage.SubjectQueryMessage"/>
+         </wsdl:input>
+         <wsdl:output>
+            <wsp:PolicyReference URI="#wss-wsa-arg-se_policy"/>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="SubjectUpdatePointBinding" type="gra-cri:SubjectUpdatePoint">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsp:PolicyReference URI="#wsa_policy"/>
+      <wsp:PolicyReference URI="#wsrm_policy"/>
+      <wsp:PolicyReference URI="#wss_policy"/>
+      <wsdl:operation name="SubjectUpdate">
+         <soap:operation soapAction="http://www.correction.modeldriven.org/CaseFileService/SubjectUpdateInterface/SubjectUpdate"
+                         style="document"/>
+         <wsdl:input>
+            <wsp:PolicyReference URI="#wss-wsa-arg-se_policy"/>
+            <soap:header use="literal"
+                         message="gra-cri:SubjectUpdate.SubjectInformationMessage"
+                         part="SubjectUpdate.SubjectInformationMessage.ExchangeAgreementReferenceMetadata"/>
+            <soap:body use="literal"
+                       parts="SubjectUpdate.SubjectInformationMessage.SubjectInformationMessage"/>
+         </wsdl:input>
+         <wsdl:output>
+            <wsp:PolicyReference URI="#wss-wsa-arg-se_policy"/>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="SubscriptionPointBinding" type="gra-cri:SubscriptionPoint">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsp:PolicyReference URI="#wsa_policy"/>
+      <wsp:PolicyReference URI="#wsrm_policy"/>
+      <wsp:PolicyReference URI="#wss_policy"/>
+      <wsdl:operation name="SubscribeToSubject">
+         <soap:operation soapAction="http://www.correction.modeldriven.org/CaseFileService/SubjectSubscriptionInterface/SubscribeToSubject"
+                         style="document"/>
+         <wsdl:input>
+            <wsp:PolicyReference URI="#wss-wsa-arg-se_policy"/>
+            <soap:header use="literal"
+                         message="gra-cri:SubscribeToSubject.SubscriptonMessage"
+                         part="SubscribeToSubject.SubscriptonMessage.ExchangeAgreementReferenceMetadata"/>
+            <soap:body use="literal"
+                       parts="SubscribeToSubject.SubscriptonMessage.SubscriptionMessage"/>
+         </wsdl:input>
+         <wsdl:output>
+            <wsp:PolicyReference URI="#wss-wsa-arg-se_policy"/>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="CancelSubscription">
+         <soap:operation soapAction="http://www.correction.modeldriven.org/CaseFileService/SubjectSubscriptionInterface/CancelSubscription"
+                         style="document"/>
+         <wsdl:input>
+            <wsp:PolicyReference URI="#wss-wsa-arg-se_policy"/>
+            <soap:header use="literal"
+                         message="gra-cri:CancelSubscription.SubscriptionIDText"
+                         part="CancelSubscription.SubscriptionIDText.ExchangeAgreementReferenceMetadata"/>
+            <soap:body use="literal"
+                       parts="CancelSubscription.SubscriptionIDText.SubscriptionID"/>
+         </wsdl:input>
+         <wsdl:output>
+            <wsp:PolicyReference URI="#wss-wsa-arg-se_policy"/>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="CorrectionsCaseFileProviderRSWS-SIPService">
+      <wsdl:port name="MetadataPort" binding="gra-cri:MetadataPortBinding">
+         <http:address location="/MetadataPort"/>
+      </wsdl:port>
+      <wsdl:port name="SubjectQueryPoint" binding="gra-cri:SubjectQueryPointBinding">
+         <soap:address location="http://www.correction.modeldriven.org/CaseFileService/SubjectQueryPoint"/>
+      </wsdl:port>
+      <wsdl:port name="SubjectUpdatePoint" binding="gra-cri:SubjectUpdatePointBinding">
+         <soap:address location="http://www.correction.modeldriven.org/CaseFileService/SubjectUpdatePoint"/>
+      </wsdl:port>
+      <wsdl:port name="SubscriptionPoint" binding="gra-cri:SubscriptionPointBinding">
+         <soap:address location="http://www.correction.modeldriven.org/CaseFileService/SubscriptionPoint"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

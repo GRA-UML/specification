@@ -1,0 +1,9 @@
+isAsynchronous cardinality change to 0..1
+minorVersion cardinality change to 0..1
+majorVersion cardinality change to 0..1
+
+xml doc: replace '@', ''
+replace 'xmi:version="2.0"',''
+replace 'xmlns:xmi="http://www.omg.org/XMI"', 'xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://ijis.org/GRA/Annotations data.grauml.graAnnotationModelXMI.xsd
+	http:/ijis.org/GRA/WSDLAnnotations data.grauml.graWsdlXMI.xsd"'

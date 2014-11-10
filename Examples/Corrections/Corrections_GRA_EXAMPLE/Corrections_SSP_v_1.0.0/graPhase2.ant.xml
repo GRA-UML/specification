@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="graphase2.build" default="build" basedir=".">
+	<property name="workspace" location="${basedir}"/>
+	<property name="xmlProcessor" value="${workspace}/saxon9he.jar"/>
+	<property name="inputFile" value="${workspace}/artifacts/annotations.xmi"/>
+
+	<property name="baseURL" value="http://repository.ijis.org/GRAUML/template/SSP/"/>
+
+	<target name="build" description="GRA SSP Annotation Processing" 
+		depends="downloadTemplateFiles,buildStructure,transformArtifacts,removeTemporaryFiles"/>
+	
+	<target name="downloadTemplateFiles" description="Download Template Files: Saxon 9 HE XML Processor, Metadata.xsd">
+		<get src="${baseURL}saxon9he.jar" dest="${workspace}/saxon9he.jar" verbose="true"/>
+		<get src="${baseURL}Metadata.xsd" dest="${workspace}/metadata.xsd" verbose="true"/>
+	</target>
+	<target name="buildStructure" description="Build GRA SSP Standard Directory Structure">
+		<mkdir dir="${workspace}/artifacts"/>
+		<mkdir dir="${workspace}/artifacts/service model"/>
+		<mkdir dir="${workspace}/artifacts/service model/OMG"/>
+		<mkdir dir="${workspace}/artifacts/service model/Eclipse"/>
+		<mkdir dir="${workspace}/artifacts/service model/Magicdraw"/>
+		<mkdir dir="${workspace}/artifacts/service model/information model"/>
+		<mkdir dir="${workspace}/artifacts/various artifacts"/>
+		<mkdir dir="${workspace}/artifacts/various artifacts/other"/>		
+		<mkdir dir="${workspace}/samples"/>
+		<mkdir dir="${workspace}/schemas"/>
+	</target>
+	<target name="transformArtifacts" description="make artifacts">
+		<xslt destdir="${workspace}/artifacts/service model/OMG" basedir="${workspace}/.." extension=".xmi" includes="*.uml" classpath="${xmlProcessor}">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+			<style>
+				<url url="${baseURL}artifacts/gra_eclipse_uml_2_omg.xslt"/>
+			</style>
+		</xslt>		
+		 <copy todir="${workspace}/artifacts/service model/Eclipse">
+		    <fileset dir="${workspace}/..">
+		 		<include name="*.uml"/>
+			</fileset>
+		  </copy>
+		 <copy todir="${workspace}/artifacts/service model/Magicdraw">
+		    <fileset dir="${workspace}/../..">
+		 		<include name="*.mdzip"/>
+			</fileset>
+		  </copy>
+		<xslt in="${inputFile}" out="${workspace}/catalog.xml" classpath="${xmlProcessor}">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+			<style>
+				<url url="${baseURL}/gra_ssp_catalog_xml.xslt"/>
+			</style>
+		</xslt>
+		<xslt in="${inputFile}" out="${workspace}/catalog.html" classpath="${xmlProcessor}">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+			<style>
+				<url url="${baseURL}/gra_ssp_catalog_html.xslt"/>
+			</style>
+		</xslt>
+		<xslt in="${inputFile}" out="${workspace}/metadata.xml" classpath="${xmlProcessor}">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+			<style>
+				<url url="${baseURL}/gra_ssp_metadata.xslt"/>
+			</style>
+		</xslt>
+		<xslt in="${inputFile}" out="${workspace}/artifacts/tempSDD.xhtml" classpath="${xmlProcessor}">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+			<style>
+				<url url="${baseURL}artifacts/gra_ssp_sdd.xslt"/>
+			</style>
+		</xslt>
+		<xslt in="${inputFile}" out="${workspace}/artifacts/tempSIDD.xhtml" classpath="${xmlProcessor}">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+			<style>
+				<url url="${baseURL}artifacts/gra_ssp_sidd.xslt"/>
+			</style>
+		</xslt>
+		<xslt in="${inputFile}" out="${workspace}/schemas/Temp.wsdl" classpath="${xmlProcessor}">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+			<style>
+				<url url="${baseURL}schemas/sip/gra_ssp_wsdl.xslt"/>
+			</style>
+		</xslt>
+	</target>	
+		
+	<target name="removeTemporaryFiles" description="remove temporary files">
+		<delete file="${workspace}/artifacts/tempSDD.xhtml"></delete>
+		<delete file="${workspace}/artifacts/tempSIDD.xhtml"></delete>
+		<delete file="${workspace}/schemas/Temp.wsdl"></delete>
+		<delete file="${workspace}/saxon9he.jar"></delete>
+	</target>
+</project>

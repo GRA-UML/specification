@@ -1,0 +1,79 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+                  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+                  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                  xmlns:gra-pet="http://petadoption.com"
+                  xmlns:PetExtension="http://www.modeldriven.org/niem/examples/PetAdoptionExtension"
+                  xmlns:NC="http://niem.gov/niem/niem-core/2.0"
+                  xmlns:PetExchange="http://www.modeldriven.org/niem/examples/PetAdoptionExchange"
+                  targetNamespace="http://petadoption.com">
+   <wsdl:documentation>This service provides pet adoption information</wsdl:documentation>
+   <wsp:Policy wsu:Id="wsa_policy">
+	     <wsp:ExactlyOne>
+		       <wsp:All>
+			         <wsaw:UsingAddressing/>	
+		       </wsp:All>
+	     </wsp:ExactlyOne>
+   </wsp:Policy>
+   <wsdl:types>
+      <xsd:schema>
+         <xsd:import namespace="http://www.modeldriven.org/niem/examples/PetAdoptionExtension"
+                     schemaLocation="../../artifacts/service model/information model/pet_adoption_iepd/XMLschemas/extension/PetAdoptionExtension.xsd"/>
+         <xsd:import namespace="http://niem.gov/niem/niem-core/2.0"
+                     schemaLocation="../../artifacts/service model/information model/pet_adoption_iepd/XMLschemas/subset/niem/niem-core/2.0/PetAdoptionNIEMCoreSubset.xsd"/>
+         <xsd:import namespace="http://www.modeldriven.org/niem/examples/PetAdoptionExchange"
+                     schemaLocation="../../artifacts/service model/information model/pet_adoption_iepd/XMLschemas/exchange/PetAdoptionExchange.xsd"/>
+      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="GetAdoptionInformation.Input">
+      <wsdl:part name="GetAdoptionInformation.Input.PetIdentification"
+                 element="PetExtension:PetIdentification">
+         <wsdl:documentation>A data type for a representation of an identity.</wsdl:documentation>
+      </wsdl:part>
+   </wsdl:message>
+   <wsdl:message name="GetAdoptionInformation.Return">
+      <wsdl:part name="GetAdoptionInformation.Return.PetAdoptionExchange"
+                 element="PetExchange:PetAdoptionExchange">
+         <wsdl:documentation>A data type for a instance referenced by the top level exchange element.</wsdl:documentation>
+      </wsdl:part>
+   </wsdl:message>
+   <wsdl:message name="GetAdoptionInformation.Exception">
+      <wsdl:part name="GetAdoptionInformation.Exception.Exception"
+                 element="PetExchange:Exception"/>
+   </wsdl:message>
+   <wsdl:portType name="ServicePort">
+      <wsdl:operation name="GetAdoptionInformation">
+         <wsdl:input name="GetAdoptionInformation.Input"
+                     message="gra-pet:GetAdoptionInformation.Input"/>
+         <wsdl:output name="GetAdoptionInformation.Return"
+                      message="gra-pet:GetAdoptionInformation.Return"/>
+         <wsdl:fault name="GetAdoptionInformation.Exception"
+                     message="gra-pet:GetAdoptionInformation.Exception"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="ServicePortBinding" type="gra-pet:ServicePort">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsp:PolicyReference URI="#wsa_policy"/>
+      <wsdl:operation name="GetAdoptionInformation">
+         <soap:operation soapAction="http://petadoption.com/PetAdoptionService/PetAdoptionInterface/GetAdoptionInformation"
+                         style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+         <wsdl:fault name="GetAdoptionInformation.Exception"/>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="PetAdoptionServiceSpecificationService">
+      <wsdl:documentation>This service interface specification  provides for automated access to pet adoption centers via web services</wsdl:documentation>
+      <wsdl:port name="ServicePort" binding="gra-pet:ServicePortBinding">
+         <soap:address location="http://petadoption.com/PetAdoptionService/ServicePort"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,22 @@
+Magic draw model at
+https://dev.enterprisecomponent.com/repository/MDLibrary/trunk/Specifications/GRA/GRA-UML-Modeling-Tool/Examples/Corrections/Corrections_GRA_EXAMPLE/Corrections_SSP_v_1.0.0.uml
+
+changed min cardinality of attributes to 0 at
+CorrectionsInformation::XMLschemas::Content::extension::SubjectServicesAndAssessments::Person::Supervises
+and
+CorrectionsInformation::XMLschemas::Content::extension::SubjectServicesAndAssessments::Person::AliasReference
+
+changed xslt for extra space in Service
+
+Changed model at
+https://dev.enterprisecomponent.com/repository/MDLibrary/trunk/Specifications/GRA/GRA-UML-Modeling-Tool/Examples/SIRS/SIRS-Service.mdzip
+
+removed transformationURI, which was pointing to non-existent location
+(value was http://it.ojp.gov/gsp/BaseSSPTransform)
+
+added explicit extensions to common niem profile (i.e., ObjectType instead of inheriting from NiemType)
+
+for PetAdoption:
+https://dev.enterprisecomponent.com/repository/MDLibrary/trunk/Specifications/GRA/GRA-UML-Modeling-Tool/Examples/PetSimpleService/PetIEPD.mdzip
+element ActivityDateRange substitutionGroup changed to align with Reference model
+  <xsd:element abstract="false" name="ActivityDateRange" nillable="true" substitutionGroup="nc:ActivityDate" type="nc:DateRangeType">

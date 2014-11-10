@@ -1,0 +1,1470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graa:ServiceDescription  xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ijis.org/GRA/Annotations  http://repository.ijis.org/GRAUML/schema/graAnnotationModelXMI.xsd http://ijis.org/GRA/WSDLAnnotations http://repository.ijis.org/GRAUML/schema/graWsdlXMI.xsd" 
+    xmlns:graa="http://ijis.org/GRA/Annotations" xmlns:graw="http://ijis.org/GRA/WSDLAnnotations"
+    xmi:id="_0" name="Corrections SSP" documentation="Law Enforcement, Public Safety, Prosecution, Corrections, Probation, Parole,USMS"
+    serviceUri="http://corrections.modeldriven.org" serviceNameAbbreviationText="CRI"
+    serviceDescriptionSummaryText="The service provides access to and updates for a correction's subject case file for the purposes of supporting reentry"
+    majorVersion="1" creationDate="2014-01-01" lastRevisionDate="2014-07-18" lifecycleStatus="Operational/Production">
+  <requirement xmi:id="_0.requirement" serviceConsumerAuthentication="true" serviceAuthentication="true"
+      messageIntegrity="true" messageConfidentiality="true" messageAddressing="true"
+      reliability="true" serviceMetadataAvailability="true" interfaceDescriptionRequirements="true"
+      logging="true" serviceResponsiveness="true"/>
+  <modelReference xmi:id="_0.modelReference" name="Law enforcement and corrections community"
+      documentation="Law Enforcement, Public Safety, Prosecution, Corrections, Probation, Parole,USMS"
+      elementId="_17_0_5_1_7b3022e_1402347522026_592819_42076">
+    <model xmi:id="_0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+        label="Corrections_SSP_v_1.0.0"/>
+  </modelReference>
+  <exchangePartner xmi:id="_0.exchangePartner.0" name="Community Corrections">
+    <modelReference xmi:id="_0.exchangePartner.0.modelReference" name="Community Corrections"
+        elementId="_17_0_5_1_7b3022e_1402347530280_405132_42282">
+      <model xmi:id="_0.exchangePartner.0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <generalization xmi:id="_0.exchangePartner.0.generalization.0" name="Corrections Community Actor">
+      <modelReference xmi:id="_0.exchangePartner.0.generalization.0.modelReference"
+          name="Corrections Community Actor" elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+        <model xmi:id="_0.exchangePartner.0.generalization.0.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.exchangePartner.0.generalization.0.generalization.0"
+          name="Interested Party">
+        <modelReference xmi:id="_0.exchangePartner.0.generalization.0.generalization.0.modelReference"
+            name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+          <model xmi:id="_0.exchangePartner.0.generalization.0.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+      </generalization>
+    </generalization>
+  </exchangePartner>
+  <exchangePartner xmi:id="_0.exchangePartner.1" name="Corrections Community Actor">
+    <modelReference xmi:id="_0.exchangePartner.1.modelReference" name="Corrections Community Actor"
+        elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+      <model xmi:id="_0.exchangePartner.1.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <generalization xmi:id="_0.exchangePartner.1.generalization.0" name="Interested Party">
+      <modelReference xmi:id="_0.exchangePartner.1.generalization.0.modelReference"
+          name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+        <model xmi:id="_0.exchangePartner.1.generalization.0.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+    </generalization>
+  </exchangePartner>
+  <exchangePartner xmi:id="_0.exchangePartner.2" name="Probations">
+    <modelReference xmi:id="_0.exchangePartner.2.modelReference" name="Probations"
+        elementId="_17_0_5_1_7b3022e_1402347530282_949966_42288">
+      <model xmi:id="_0.exchangePartner.2.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <generalization xmi:id="_0.exchangePartner.2.generalization.0" name="Supervision Authority">
+      <modelReference xmi:id="_0.exchangePartner.2.generalization.0.modelReference"
+          name="Supervision Authority" elementId="_17_0_5_1_7b3022e_1402347530284_586703_42290">
+        <model xmi:id="_0.exchangePartner.2.generalization.0.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.exchangePartner.2.generalization.0.generalization.0"
+          name="Corrections Community Actor">
+        <modelReference xmi:id="_0.exchangePartner.2.generalization.0.generalization.0.modelReference"
+            name="Corrections Community Actor" elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+          <model xmi:id="_0.exchangePartner.2.generalization.0.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+        <generalization xmi:id="_0.exchangePartner.2.generalization.0.generalization.0.generalization.0"
+            name="Interested Party">
+          <modelReference xmi:id="_0.exchangePartner.2.generalization.0.generalization.0.generalization.0.modelReference"
+              name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+            <model xmi:id="_0.exchangePartner.2.generalization.0.generalization.0.generalization.0.modelReference.model"
+                modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+          </modelReference>
+        </generalization>
+      </generalization>
+    </generalization>
+  </exchangePartner>
+  <exchangePartner xmi:id="_0.exchangePartner.3" name="Health Care Provider">
+    <modelReference xmi:id="_0.exchangePartner.3.modelReference" name="Health Care Provider"
+        elementId="_17_0_5_1_7b3022e_1402347530277_495789_42278">
+      <model xmi:id="_0.exchangePartner.3.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <generalization xmi:id="_0.exchangePartner.3.generalization.0" name="Service Provider">
+      <modelReference xmi:id="_0.exchangePartner.3.generalization.0.modelReference"
+          name="Service Provider" elementId="_17_0_5_1_7b3022e_1402347530279_930464_42280">
+        <model xmi:id="_0.exchangePartner.3.generalization.0.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.exchangePartner.3.generalization.0.generalization.0"
+          name="Corrections Community Actor">
+        <modelReference xmi:id="_0.exchangePartner.3.generalization.0.generalization.0.modelReference"
+            name="Corrections Community Actor" elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+          <model xmi:id="_0.exchangePartner.3.generalization.0.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+        <generalization xmi:id="_0.exchangePartner.3.generalization.0.generalization.0.generalization.0"
+            name="Interested Party">
+          <modelReference xmi:id="_0.exchangePartner.3.generalization.0.generalization.0.generalization.0.modelReference"
+              name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+            <model xmi:id="_0.exchangePartner.3.generalization.0.generalization.0.generalization.0.modelReference.model"
+                modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+          </modelReference>
+        </generalization>
+      </generalization>
+      <generalization xmi:id="_0.exchangePartner.3.generalization.0.generalization.1"
+          name="Interested Party">
+        <modelReference xmi:id="_0.exchangePartner.3.generalization.0.generalization.1.modelReference"
+            name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+          <model xmi:id="_0.exchangePartner.3.generalization.0.generalization.1.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+      </generalization>
+    </generalization>
+    <generalization xmi:id="_0.exchangePartner.3.generalization.1" name="Interested Party">
+      <modelReference xmi:id="_0.exchangePartner.3.generalization.1.modelReference"
+          name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+        <model xmi:id="_0.exchangePartner.3.generalization.1.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+    </generalization>
+  </exchangePartner>
+  <exchangePartner xmi:id="_0.exchangePartner.4" name="Courts">
+    <modelReference xmi:id="_0.exchangePartner.4.modelReference" name="Courts" elementId="_17_0_5_1_7b3022e_1402347530283_569468_42289">
+      <model xmi:id="_0.exchangePartner.4.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <generalization xmi:id="_0.exchangePartner.4.generalization.0" name="Interested Party">
+      <modelReference xmi:id="_0.exchangePartner.4.generalization.0.modelReference"
+          name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+        <model xmi:id="_0.exchangePartner.4.generalization.0.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+    </generalization>
+    <generalization xmi:id="_0.exchangePartner.4.generalization.1" name="Corrections Community Actor">
+      <modelReference xmi:id="_0.exchangePartner.4.generalization.1.modelReference"
+          name="Corrections Community Actor" elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+        <model xmi:id="_0.exchangePartner.4.generalization.1.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.exchangePartner.4.generalization.1.generalization.0"
+          name="Interested Party">
+        <modelReference xmi:id="_0.exchangePartner.4.generalization.1.generalization.0.modelReference"
+            name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+          <model xmi:id="_0.exchangePartner.4.generalization.1.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+      </generalization>
+    </generalization>
+  </exchangePartner>
+  <exchangePartner xmi:id="_0.exchangePartner.5" name="Offender">
+    <modelReference xmi:id="_0.exchangePartner.5.modelReference" name="Offender"
+        elementId="_17_0_5_1_7b3022e_1402347530281_327460_42284">
+      <model xmi:id="_0.exchangePartner.5.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+  </exchangePartner>
+  <exchangePartner xmi:id="_0.exchangePartner.6" name="Corrections Case File Provider">
+    <modelReference xmi:id="_0.exchangePartner.6.modelReference" name="Corrections Case File Provider"
+        elementId="_17_0_5_1_7b3022e_1402347530281_950760_42285">
+      <model xmi:id="_0.exchangePartner.6.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+  </exchangePartner>
+  <exchangePartner xmi:id="_0.exchangePartner.7" name="Interested Party">
+    <modelReference xmi:id="_0.exchangePartner.7.modelReference" name="Interested Party"
+        elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+      <model xmi:id="_0.exchangePartner.7.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+  </exchangePartner>
+  <exchangePartner xmi:id="_0.exchangePartner.8" name="Public">
+    <modelReference xmi:id="_0.exchangePartner.8.modelReference" name="Public" elementId="_17_0_5_1_7b3022e_1402347530282_342707_42286">
+      <model xmi:id="_0.exchangePartner.8.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <generalization xmi:id="_0.exchangePartner.8.generalization.0" name="Interested Party">
+      <modelReference xmi:id="_0.exchangePartner.8.generalization.0.modelReference"
+          name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+        <model xmi:id="_0.exchangePartner.8.generalization.0.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+    </generalization>
+  </exchangePartner>
+  <exchangePartner xmi:id="_0.exchangePartner.9" name="Supervision Authority">
+    <modelReference xmi:id="_0.exchangePartner.9.modelReference" name="Supervision Authority"
+        elementId="_17_0_5_1_7b3022e_1402347530284_586703_42290">
+      <model xmi:id="_0.exchangePartner.9.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <generalization xmi:id="_0.exchangePartner.9.generalization.0" name="Corrections Community Actor">
+      <modelReference xmi:id="_0.exchangePartner.9.generalization.0.modelReference"
+          name="Corrections Community Actor" elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+        <model xmi:id="_0.exchangePartner.9.generalization.0.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.exchangePartner.9.generalization.0.generalization.0"
+          name="Interested Party">
+        <modelReference xmi:id="_0.exchangePartner.9.generalization.0.generalization.0.modelReference"
+            name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+          <model xmi:id="_0.exchangePartner.9.generalization.0.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+      </generalization>
+    </generalization>
+  </exchangePartner>
+  <exchangePartner xmi:id="_0.exchangePartner.10" name="Parole">
+    <modelReference xmi:id="_0.exchangePartner.10.modelReference" name="Parole"
+        elementId="_17_0_5_1_7b3022e_1402347530285_576551_42291">
+      <model xmi:id="_0.exchangePartner.10.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <generalization xmi:id="_0.exchangePartner.10.generalization.0" name="Supervision Authority">
+      <modelReference xmi:id="_0.exchangePartner.10.generalization.0.modelReference"
+          name="Supervision Authority" elementId="_17_0_5_1_7b3022e_1402347530284_586703_42290">
+        <model xmi:id="_0.exchangePartner.10.generalization.0.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.exchangePartner.10.generalization.0.generalization.0"
+          name="Corrections Community Actor">
+        <modelReference xmi:id="_0.exchangePartner.10.generalization.0.generalization.0.modelReference"
+            name="Corrections Community Actor" elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+          <model xmi:id="_0.exchangePartner.10.generalization.0.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+        <generalization xmi:id="_0.exchangePartner.10.generalization.0.generalization.0.generalization.0"
+            name="Interested Party">
+          <modelReference xmi:id="_0.exchangePartner.10.generalization.0.generalization.0.generalization.0.modelReference"
+              name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+            <model xmi:id="_0.exchangePartner.10.generalization.0.generalization.0.generalization.0.modelReference.model"
+                modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+          </modelReference>
+        </generalization>
+      </generalization>
+    </generalization>
+  </exchangePartner>
+  <exchangePartner xmi:id="_0.exchangePartner.11" name="Service Provider">
+    <modelReference xmi:id="_0.exchangePartner.11.modelReference" name="Service Provider"
+        elementId="_17_0_5_1_7b3022e_1402347530279_930464_42280">
+      <model xmi:id="_0.exchangePartner.11.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <generalization xmi:id="_0.exchangePartner.11.generalization.0" name="Interested Party">
+      <modelReference xmi:id="_0.exchangePartner.11.generalization.0.modelReference"
+          name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+        <model xmi:id="_0.exchangePartner.11.generalization.0.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+    </generalization>
+    <generalization xmi:id="_0.exchangePartner.11.generalization.1" name="Corrections Community Actor">
+      <modelReference xmi:id="_0.exchangePartner.11.generalization.1.modelReference"
+          name="Corrections Community Actor" elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+        <model xmi:id="_0.exchangePartner.11.generalization.1.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.exchangePartner.11.generalization.1.generalization.0"
+          name="Interested Party">
+        <modelReference xmi:id="_0.exchangePartner.11.generalization.1.generalization.0.modelReference"
+            name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+          <model xmi:id="_0.exchangePartner.11.generalization.1.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+      </generalization>
+    </generalization>
+  </exchangePartner>
+  <exchangePartner xmi:id="_0.exchangePartner.12" name="Institutional Corrections">
+    <modelReference xmi:id="_0.exchangePartner.12.modelReference" name="Institutional Corrections"
+        elementId="_17_0_5_1_7b3022e_1402347530280_227027_42283">
+      <model xmi:id="_0.exchangePartner.12.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <generalization xmi:id="_0.exchangePartner.12.generalization.0" name="Corrections Community Actor">
+      <modelReference xmi:id="_0.exchangePartner.12.generalization.0.modelReference"
+          name="Corrections Community Actor" elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+        <model xmi:id="_0.exchangePartner.12.generalization.0.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.exchangePartner.12.generalization.0.generalization.0"
+          name="Interested Party">
+        <modelReference xmi:id="_0.exchangePartner.12.generalization.0.generalization.0.modelReference"
+            name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+          <model xmi:id="_0.exchangePartner.12.generalization.0.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+      </generalization>
+    </generalization>
+  </exchangePartner>
+  <exchangePartner xmi:id="_0.exchangePartner.13" name="Law Enforcement">
+    <modelReference xmi:id="_0.exchangePartner.13.modelReference" name="Law Enforcement"
+        elementId="_17_0_5_1_7b3022e_1402347530279_238698_42281">
+      <model xmi:id="_0.exchangePartner.13.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <generalization xmi:id="_0.exchangePartner.13.generalization.0" name="Interested Party">
+      <modelReference xmi:id="_0.exchangePartner.13.generalization.0.modelReference"
+          name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+        <model xmi:id="_0.exchangePartner.13.generalization.0.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+    </generalization>
+    <generalization xmi:id="_0.exchangePartner.13.generalization.1" name="Corrections Community Actor">
+      <modelReference xmi:id="_0.exchangePartner.13.generalization.1.modelReference"
+          name="Corrections Community Actor" elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+        <model xmi:id="_0.exchangePartner.13.generalization.1.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.exchangePartner.13.generalization.1.generalization.0"
+          name="Interested Party">
+        <modelReference xmi:id="_0.exchangePartner.13.generalization.1.generalization.0.modelReference"
+            name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+          <model xmi:id="_0.exchangePartner.13.generalization.1.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+      </generalization>
+    </generalization>
+  </exchangePartner>
+  <exchangePartner xmi:id="_0.exchangePartner.14" name="Housing Provider">
+    <modelReference xmi:id="_0.exchangePartner.14.modelReference" name="Housing Provider"
+        elementId="_17_0_5_1_7b3022e_1402347530293_405556_42310">
+      <model xmi:id="_0.exchangePartner.14.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <generalization xmi:id="_0.exchangePartner.14.generalization.0" name="Service Provider">
+      <modelReference xmi:id="_0.exchangePartner.14.generalization.0.modelReference"
+          name="Service Provider" elementId="_17_0_5_1_7b3022e_1402347530279_930464_42280">
+        <model xmi:id="_0.exchangePartner.14.generalization.0.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.exchangePartner.14.generalization.0.generalization.0"
+          name="Corrections Community Actor">
+        <modelReference xmi:id="_0.exchangePartner.14.generalization.0.generalization.0.modelReference"
+            name="Corrections Community Actor" elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+          <model xmi:id="_0.exchangePartner.14.generalization.0.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+        <generalization xmi:id="_0.exchangePartner.14.generalization.0.generalization.0.generalization.0"
+            name="Interested Party">
+          <modelReference xmi:id="_0.exchangePartner.14.generalization.0.generalization.0.generalization.0.modelReference"
+              name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+            <model xmi:id="_0.exchangePartner.14.generalization.0.generalization.0.generalization.0.modelReference.model"
+                modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+          </modelReference>
+        </generalization>
+      </generalization>
+      <generalization xmi:id="_0.exchangePartner.14.generalization.0.generalization.1"
+          name="Interested Party">
+        <modelReference xmi:id="_0.exchangePartner.14.generalization.0.generalization.1.modelReference"
+            name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+          <model xmi:id="_0.exchangePartner.14.generalization.0.generalization.1.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+      </generalization>
+    </generalization>
+  </exchangePartner>
+  <classification>Corrections reentry</classification>
+  <sponsor>BJA and ISE</sponsor>
+  <servicePurpose xmi:id="_0.servicePurpose" documentation="This service takes a holistic look at the information sharing requirement and needs for release and re-entry from the perspective of corrections, other justice partners and community based service providers.  The release and re-entry processes vary according to the respective business operations, processes and policies observed by the participating stakeholders including corrections, law enforcement, courts and community service providers."/>
+  <serviceScopeDescription xmi:id="_0.serviceScopeDescription" documentation="The IJIS Institute invited key practitioners from corrections, law enforcement, courts and national leaders in corrections and re-entry community of interest to help articulate the requirements for information sharing.  This group helped develop an overall Corrections Process Narrative (available as a separate document), and identified a number of exchanges that are critical for effective information sharing leading to an effective re-entry experience for an individual.  These exchanges were then further refined/prioritized to identify the top 10 exchanges that needed to be addressed as a group.  These exchanges are detailed in the Corrections SDD document"/>
+  <serviceDescriptionKeywordText>corrections, reentry</serviceDescriptionKeywordText>
+  <iepdReference xmi:id="_0.iepdReference.0" name="Corrections" iepdurl="http://it.ojp.gov/gist/200/Corrections/"/>
+  <iepdReference xmi:id="_0.iepdReference.1" name="Metadata" iepdurl="http://it.ojp.gov/gist/201/Metadata"/>
+  <serviceSecurityClassification xmi:id="_0.serviceSecurityClassification" name="SBU"/>
+  <relatedOrganization xmi:id="_0.relatedOrganization.0" name="Office of Justice Programs"
+      organizationRoleDescriptionText="Office of justice programs">
+    <organizationPointOfContact xmi:id="_0.relatedOrganization.0.organizationPointOfContact"
+        name="TBD" contactPersonPhoneNumberId="202-514-4689"/>
+  </relatedOrganization>
+  <serviceInterface xmi:id="_0.serviceInterface.0" name="Corrections Subscriber WS SIP"
+      targetNamespace="http://www.correction.modeldriven.org/CaseFileService" prefix="CRISub"
+      serviceInterfaceNameAbbreviationText="CRISub">
+    <requirement xmi:id="_0.serviceInterface.0.requirement" messageNonrepudiation="true"
+        messageConfidentiality="true" messageAddressing="true" reliability="true"/>
+    <serviceInteractionProfile xmi:id="_0.serviceInterface.0.serviceInteractionProfile"
+        sipName="WS SIP" sipVersion="1.3"/>
+    <service xmi:id="_0.serviceInterface.0.service.0">
+      <port xmi:id="_0.serviceInterface.0.service.0.port.0" name="Subscriber">
+        <modelReference xmi:id="_0.serviceInterface.0.service.0.port.0.modelReference"
+            name="Subscriber" elementId="_17_0_5_1_7b3022e_1402347537881_256941_42426">
+          <model xmi:id="_0.serviceInterface.0.service.0.port.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+        <interface xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0"
+            name="NotificationInterface">
+          <modelReference xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0.modelReference"
+              name="NotificationInterface" elementId="_17_0_5_1_7b3022e_1402347524135_632143_42108">
+            <model xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0.modelReference.model"
+                modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+          </modelReference>
+          <operation xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0.operation.0"
+              name="Notify" actionName="Notify">
+            <modelReference xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0.operation.0.modelReference"
+                name="Notify" elementId="_17_0_5_1_7b3022e_1402347536093_145387_42394">
+              <model xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0.operation.0.modelReference.model"
+                  modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+            </modelReference>
+            <parameter xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0.operation.0.parameter.0"
+                name="SubjectNotification" use="in">
+              <modelReference xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0.operation.0.parameter.0.modelReference"
+                  name="SubjectNotification" elementId="_17_0_5_1_7b3022e_1402347541505_104260_42773">
+                <model xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0.operation.0.parameter.0.modelReference.model"
+                    modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+              </modelReference>
+              <message xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0.operation.0.parameter.0.message"
+                  name="SubjectInformationMessageType" documentation="A data type for a message about one or more subjects"
+                  prefix="CRSUB" elementPrefix="CRX" elementName="SubjectInformationMessage">
+                <modelReference xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0.operation.0.parameter.0.message.modelReference"
+                    name="SubjectInformationMessage" documentation="A data type for a message about one or more subjects"
+                    elementId="_17_0_2_3_7b3022e_1394743304173_370469_51784">
+                  <model xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0.operation.0.parameter.0.message.modelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </modelReference>
+                <elementModelReference xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0.operation.0.parameter.0.message.elementModelReference"
+                    name="SubjectInformationMessage" documentation="A Subject's case records"
+                    elementId="_17_0_2_3_7b3022e_1396125501092_602789_51327">
+                  <model xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0.operation.0.parameter.0.message.elementModelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </elementModelReference>
+              </message>
+            </parameter>
+            <parameter xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0.operation.0.parameter.1"
+                name="ExchangeAgreement" use="in">
+              <modelReference xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0.operation.0.parameter.1.modelReference"
+                  name="ExchangeAgreement" elementId="_17_0_5_1_3ba019e_1405741993387_311077_42932">
+                <model xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0.operation.0.parameter.1.modelReference.model"
+                    modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+              </modelReference>
+              <message xsi:type="graw:WsdlMessage" xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0.operation.0.parameter.1.message"
+                  name="ExchangeAgreementReferenceMetadataType" documentation="A data type for metadata about messages and their supporting the exchange agreement"
+                  prefix="MetaR" elementPrefix="MetaEX" elementName="ExchangeAgreementReferenceMetadata"
+                  messageLocationCode="header">
+                <modelReference xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0.operation.0.parameter.1.message.modelReference"
+                    name="ExchangeAgreementReference" documentation="A data type for metadata about messages and their supporting the exchange agreement"
+                    elementId="_17_0_2_4_7b3022e_1396974086801_38959_44721">
+                  <model xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0.operation.0.parameter.1.message.modelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </modelReference>
+                <elementModelReference xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0.operation.0.parameter.1.message.elementModelReference"
+                    name="ExchangeAgreementReferenceMetadata" documentation="A Documented Component"
+                    elementId="_17_0_5_1_2aa0151_1411412570454_811216_18718">
+                  <model xmi:id="_0.serviceInterface.0.service.0.port.0.interface.0.operation.0.parameter.1.message.elementModelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </elementModelReference>
+              </message>
+            </parameter>
+          </operation>
+        </interface>
+      </port>
+      <serviceProvider xmi:id="_0.serviceInterface.0.service.0.serviceProvider"
+          name="Corrections Community Actor">
+        <modelReference xmi:id="_0.serviceInterface.0.service.0.serviceProvider.modelReference"
+            name="Corrections Community Actor" elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+          <model xmi:id="_0.serviceInterface.0.service.0.serviceProvider.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+        <generalization xmi:id="_0.serviceInterface.0.service.0.serviceProvider.generalization.0"
+            name="Interested Party">
+          <modelReference xmi:id="_0.serviceInterface.0.service.0.serviceProvider.generalization.0.modelReference"
+              name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+            <model xmi:id="_0.serviceInterface.0.service.0.serviceProvider.generalization.0.modelReference.model"
+                modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+          </modelReference>
+        </generalization>
+      </serviceProvider>
+    </service>
+    <serviceTesting xmi:id="_0.serviceInterface.0.serviceTesting" documentation="Service to be tested vie IJIS Springboard"/>
+    <schemaReference xmi:id="_0.serviceInterface.0.schemaReference.0" namespace="http://it.ojp.gov/gist/201/Metadata/MetaExchange"
+        prefix="MetaEX" schemaLocation="artifacts/service model/information model/Corrections_iepd/XMLschemas/Metadata/MetadataExchange.xsd"/>
+    <schemaReference xmi:id="_0.serviceInterface.0.schemaReference.1" namespace="http://it.ojp.gov/gist/200/Corrections/SubjectMessageTypes"
+        prefix="CRSUB" schemaLocation="artifacts/service model/information model/Corrections_iepd/XMLschemas/exchange/SubjectMessageModel.xsd"/>
+    <schemaReference xmi:id="_0.serviceInterface.0.schemaReference.2" namespace="http://it.ojp.gov/gist/200/Corrections/exchangeTypes"
+        prefix="CRX" schemaLocation="artifacts/service model/information model/Corrections_iepd/XMLschemas/exchange/SubjectExchange.xsd"/>
+    <schemaReference xmi:id="_0.serviceInterface.0.schemaReference.3" namespace="http://it.ojp.gov/gist/201/Metadata/MetadataReference"
+        prefix="MetaR" schemaLocation="artifacts/service model/information model/Corrections_iepd/XMLschemas/Metadata/MetadataReference.xsd"/>
+  </serviceInterface>
+  <serviceInterface xmi:id="_0.serviceInterface.1" name="Corrections Case File Provider RS WS-SIP"
+      securityImplementedIndicator="true" targetNamespace="http://www.correction.modeldriven.org/CaseFileService"
+      prefix="CRP" serviceInterfaceNameAbbreviationText="CRP">
+    <serviceInteractionProfile xmi:id="_0.serviceInterface.1.serviceInteractionProfile"
+        sipName="RS WS-SIP" sipVersion="1.2"/>
+    <service xmi:id="_0.serviceInterface.1.service.0">
+      <port xmi:id="_0.serviceInterface.1.service.0.port.0" name="MetadataPort">
+        <modelReference xmi:id="_0.serviceInterface.1.service.0.port.0.modelReference"
+            name="MetadataPort" elementId="_17_0_5_1_7b3022e_1402347536097_455967_42400">
+          <model xmi:id="_0.serviceInterface.1.service.0.port.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+        <interface xsi:type="graw:WsdlInterface" xmi:id="_0.serviceInterface.1.service.0.port.0.interface.0"
+            name="MetadataInterface" bindingCode="httpGet">
+          <requirement xmi:id="_0.serviceInterface.1.service.0.port.0.interface.0.requirement"
+              messageAddressing="true" serviceMetadataAvailability="true" interfaceDescriptionRequirements="true"
+              serviceResponsiveness="true"/>
+          <modelReference xmi:id="_0.serviceInterface.1.service.0.port.0.interface.0.modelReference"
+              name="MetadataInterface" elementId="_17_0_5_1_7b3022e_1402347524135_281584_42107">
+            <model xmi:id="_0.serviceInterface.1.service.0.port.0.interface.0.modelReference.model"
+                modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+          </modelReference>
+          <operation xmi:id="_0.serviceInterface.1.service.0.port.0.interface.0.operation.0"
+              name="GetMetadata" actionName="GetMetadata">
+            <modelReference xmi:id="_0.serviceInterface.1.service.0.port.0.interface.0.operation.0.modelReference"
+                name="GetMetadata" elementId="_17_0_5_1_7b3022e_1402347536092_823674_42392">
+              <model xmi:id="_0.serviceInterface.1.service.0.port.0.interface.0.operation.0.modelReference.model"
+                  modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+            </modelReference>
+            <parameter xmi:id="_0.serviceInterface.1.service.0.port.0.interface.0.operation.0.parameter.0"
+                name="result" use="out">
+              <modelReference xmi:id="_0.serviceInterface.1.service.0.port.0.interface.0.operation.0.parameter.0.modelReference"
+                  name="result" elementId="_17_0_5_1_7b3022e_1402347541505_630529_42772">
+                <model xmi:id="_0.serviceInterface.1.service.0.port.0.interface.0.operation.0.parameter.0.modelReference.model"
+                    modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+              </modelReference>
+              <message xmi:id="_0.serviceInterface.1.service.0.port.0.interface.0.operation.0.parameter.0.message"
+                  name="RepositoryMetadataMessageType" documentation="A data type for a repository containing  category and exchange agreement metadata. The IDs of the elements in this metadata are referenced from messages"
+                  prefix="MetaMSG" elementPrefix="MetaEX" elementName="RepositoryMetadata">
+                <modelReference xmi:id="_0.serviceInterface.1.service.0.port.0.interface.0.operation.0.parameter.0.message.modelReference"
+                    name="RepositoryMetadataMessage" documentation="A data type for a repository containing  category and exchange agreement metadata. The IDs of the elements in this metadata are referenced from messages"
+                    elementId="_17_0_2_3_7b3022e_1396132318779_258796_52411">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.0.interface.0.operation.0.parameter.0.message.modelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </modelReference>
+                <elementModelReference xmi:id="_0.serviceInterface.1.service.0.port.0.interface.0.operation.0.parameter.0.message.elementModelReference"
+                    name="RepositoryMetadata" documentation="A Metadata repository contents"
+                    elementId="_17_0_2_4_7b3022e_1397071126979_117952_57039">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.0.interface.0.operation.0.parameter.0.message.elementModelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </elementModelReference>
+              </message>
+            </parameter>
+          </operation>
+        </interface>
+      </port>
+      <port xmi:id="_0.serviceInterface.1.service.0.port.1" name="SubjectQueryPoint">
+        <modelReference xmi:id="_0.serviceInterface.1.service.0.port.1.modelReference"
+            name="SubjectQueryPoint" elementId="_17_0_5_1_7b3022e_1402347536095_737463_42397">
+          <model xmi:id="_0.serviceInterface.1.service.0.port.1.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+        <interface xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0"
+            name="SubjectQueryInterface">
+          <modelReference xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.modelReference"
+              name="SubjectQueryInterface" elementId="_17_0_5_1_7b3022e_1402347524133_488782_42103">
+            <model xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.modelReference.model"
+                modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+          </modelReference>
+          <operation xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0"
+              name="EntityQuery" documentation="An operation to get all or part of information about an entity related to a subject case file. This is used to get more information about a related entity."
+              actionName="EntityQuery" actionPurpose="An operation to get all or part of information about an entity related to a subject case file. This is used to get more information about a related entity.">
+            <modelReference xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.modelReference"
+                name="EntityQuery" documentation="An operation to get all or part of information about an entity related to a subject case file. This is used to get more information about a related entity."
+                elementId="_17_0_5_1_7b3022e_1402347536090_383330_42388">
+              <model xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.modelReference.model"
+                  modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+            </modelReference>
+            <parameter xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.0"
+                name="EntityQueryMessage" use="in">
+              <modelReference xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.0.modelReference"
+                  name="EntityQueryMessage" elementId="_17_0_5_1_7b3022e_1402347541502_983653_42763">
+                <model xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.0.modelReference.model"
+                    modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+              </modelReference>
+              <message xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.0.message"
+                  name="EntityQueryMessageType" documentation="A data type for a message to get information about any entity in a data resource"
+                  prefix="CRSUB" elementPrefix="CRX" elementName="EntityQueryMessage">
+                <modelReference xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.0.message.modelReference"
+                    name="EntityQueryMessage" documentation="A data type for a message to get information about any entity in a data resource"
+                    elementId="_17_0_2_3_7b3022e_1396130919802_983923_52255">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.0.message.modelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </modelReference>
+                <elementModelReference xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.0.message.elementModelReference"
+                    name="EntityQueryMessage" documentation="A message to query a case file for information about any entity related to any subject."
+                    elementId="_17_0_2_3_7b3022e_1396132979177_114723_52543">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.0.message.elementModelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </elementModelReference>
+              </message>
+            </parameter>
+            <parameter xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.1"
+                name="result" use="out">
+              <modelReference xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.1.modelReference"
+                  name="result" elementId="_17_0_5_1_7b3022e_1402347541502_495833_42764">
+                <model xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.1.modelReference.model"
+                    modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+              </modelReference>
+              <message xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.1.message"
+                  name="SubjectInformationMessageType" documentation="A data type for a message about one or more subjects"
+                  prefix="CRSUB" elementPrefix="CRX" elementName="SubjectInformationMessage">
+                <modelReference xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.1.message.modelReference"
+                    name="SubjectInformationMessage" documentation="A data type for a message about one or more subjects"
+                    elementId="_17_0_2_3_7b3022e_1394743304173_370469_51784">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.1.message.modelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </modelReference>
+                <elementModelReference xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.1.message.elementModelReference"
+                    name="SubjectInformationMessage" documentation="A Subject's case records"
+                    elementId="_17_0_2_3_7b3022e_1396125501092_602789_51327">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.1.message.elementModelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </elementModelReference>
+              </message>
+            </parameter>
+            <parameter xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.2"
+                name="ExchangeAgreement" use="in">
+              <modelReference xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.2.modelReference"
+                  name="ExchangeAgreement" elementId="_17_0_5_1_3ba019e_1405741880084_148034_42921">
+                <model xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.2.modelReference.model"
+                    modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+              </modelReference>
+              <message xsi:type="graw:WsdlMessage" xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.2.message"
+                  name="ExchangeAgreementReferenceMetadataType" documentation="A data type for metadata about messages and their supporting the exchange agreement"
+                  prefix="MetaR" elementPrefix="MetaEX" elementName="ExchangeAgreementReferenceMetadata"
+                  messageLocationCode="header">
+                <modelReference xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.2.message.modelReference"
+                    name="ExchangeAgreementReference" documentation="A data type for metadata about messages and their supporting the exchange agreement"
+                    elementId="_17_0_2_4_7b3022e_1396974086801_38959_44721">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.2.message.modelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </modelReference>
+                <elementModelReference xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.2.message.elementModelReference"
+                    name="ExchangeAgreementReferenceMetadata" documentation="A Documented Component"
+                    elementId="_17_0_5_1_2aa0151_1411412570454_811216_18718">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.0.parameter.2.message.elementModelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </elementModelReference>
+              </message>
+            </parameter>
+          </operation>
+          <operation xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1"
+              name="SubjectQuery" documentation="An operation to get all or part of a subjects case file"
+              actionName="SubjectQuery" actionPurpose="An operation to get all or part of a subjects case file">
+            <modelReference xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.modelReference"
+                name="SubjectQuery" documentation="An operation to get all or part of a subjects case file"
+                elementId="_17_0_5_1_7b3022e_1402347536089_571393_42387">
+              <model xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.modelReference.model"
+                  modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+            </modelReference>
+            <parameter xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.0"
+                name="SubjectQueryMessage" use="in">
+              <modelReference xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.0.modelReference"
+                  name="SubjectQueryMessage" elementId="_17_0_5_1_7b3022e_1402347541501_952424_42760">
+                <model xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.0.modelReference.model"
+                    modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+              </modelReference>
+              <message xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.0.message"
+                  name="SubjectQueryMessageType" documentation="A data type for a query about an individual"
+                  prefix="CRSUB" elementPrefix="CRX" elementName="SubjectQueryMessage">
+                <modelReference xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.0.message.modelReference"
+                    name="SubjectQueryMessage" documentation="A data type for a query about an individual"
+                    elementId="_17_0_2_3_7b3022e_1395090748116_487045_44317">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.0.message.modelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </modelReference>
+                <elementModelReference xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.0.message.elementModelReference"
+                    name="SubjectQueryMessage" documentation="A Message to query a case file about a subject"
+                    elementId="_17_0_2_3_7b3022e_1396125506095_549038_51333">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.0.message.elementModelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </elementModelReference>
+              </message>
+            </parameter>
+            <parameter xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.1"
+                name="ExchangeAgreement" use="in">
+              <modelReference xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.1.modelReference"
+                  name="ExchangeAgreement" elementId="_17_0_5_1_3ba019e_1405741822548_113493_42911">
+                <model xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.1.modelReference.model"
+                    modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+              </modelReference>
+              <message xsi:type="graw:WsdlMessage" xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.1.message"
+                  name="ExchangeAgreementReferenceMetadataType" documentation="A data type for metadata about messages and their supporting the exchange agreement"
+                  prefix="MetaR" elementPrefix="MetaEX" elementName="ExchangeAgreementReferenceMetadata"
+                  messageLocationCode="header">
+                <modelReference xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.1.message.modelReference"
+                    name="ExchangeAgreementReference" documentation="A data type for metadata about messages and their supporting the exchange agreement"
+                    elementId="_17_0_2_4_7b3022e_1396974086801_38959_44721">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.1.message.modelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </modelReference>
+                <elementModelReference xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.1.message.elementModelReference"
+                    name="ExchangeAgreementReferenceMetadata" documentation="A Documented Component"
+                    elementId="_17_0_5_1_2aa0151_1411412570454_811216_18718">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.1.message.elementModelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </elementModelReference>
+              </message>
+            </parameter>
+            <parameter xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.2"
+                name="result" use="out">
+              <modelReference xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.2.modelReference"
+                  name="result" elementId="_17_0_5_1_3ba019e_1405741865703_471199_42917">
+                <model xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.2.modelReference.model"
+                    modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+              </modelReference>
+              <message xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.2.message"
+                  name="SubjectInformationMessageType" documentation="A data type for a message about one or more subjects"
+                  prefix="CRSUB" elementPrefix="CRX" elementName="SubjectInformationMessage">
+                <modelReference xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.2.message.modelReference"
+                    name="SubjectInformationMessage" documentation="A data type for a message about one or more subjects"
+                    elementId="_17_0_2_3_7b3022e_1394743304173_370469_51784">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.2.message.modelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </modelReference>
+                <elementModelReference xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.2.message.elementModelReference"
+                    name="SubjectInformationMessage" documentation="A Subject's case records"
+                    elementId="_17_0_2_3_7b3022e_1396125501092_602789_51327">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.1.interface.0.operation.1.parameter.2.message.elementModelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </elementModelReference>
+              </message>
+            </parameter>
+          </operation>
+        </interface>
+      </port>
+      <port xmi:id="_0.serviceInterface.1.service.0.port.2" name="SubjectUpdatePoint">
+        <modelReference xmi:id="_0.serviceInterface.1.service.0.port.2.modelReference"
+            name="SubjectUpdatePoint" elementId="_17_0_5_1_7b3022e_1402347536096_549471_42398">
+          <model xmi:id="_0.serviceInterface.1.service.0.port.2.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+        <interface xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0"
+            name="SubjectUpdateInterface">
+          <modelReference xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.modelReference"
+              name="SubjectUpdateInterface" elementId="_17_0_5_1_7b3022e_1402347524134_199559_42104">
+            <model xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.modelReference.model"
+                modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+          </modelReference>
+          <operation xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0"
+              name="SubjectUpdate" actionName="SubjectUpdate">
+            <modelReference xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.modelReference"
+                name="SubjectUpdate" elementId="_17_0_5_1_7b3022e_1402347536091_146191_42389">
+              <model xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.modelReference.model"
+                  modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+            </modelReference>
+            <parameter xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.0"
+                name="unNamed" use="out">
+              <modelReference xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.0.modelReference"
+                  name="" elementId="_17_0_5_1_7b3022e_1402347541503_771430_42766">
+                <model xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.0.modelReference.model"
+                    modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+              </modelReference>
+              <diagnostics>ERROR: No name</diagnostics>
+              <message xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.0.message"
+                  name="OperationResultType" documentation="A data type for the result of an operation"
+                  prefix="CRSUB" elementPrefix="CRSUB" elementName="OperationResult">
+                <modelReference xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.0.message.modelReference"
+                    name="OperationResult" documentation="A data type for the result of an operation"
+                    elementId="_17_0_2_3_7b3022e_1396127497155_917667_51519">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.0.message.modelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </modelReference>
+                <elementModelReference xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.0.message.elementModelReference"
+                    name="OperationResult" documentation="A result of an operation to get subject information"
+                    elementId="_17_0_2_3_7b3022e_1396127576468_552431_51546">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.0.message.elementModelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </elementModelReference>
+              </message>
+            </parameter>
+            <parameter xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.1"
+                name="SubjectInformationMessage" use="in">
+              <modelReference xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.1.modelReference"
+                  name="SubjectInformationMessage" elementId="_17_0_5_1_7b3022e_1402347541503_77618_42767">
+                <model xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.1.modelReference.model"
+                    modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+              </modelReference>
+              <message xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.1.message"
+                  name="SubjectInformationMessageType" documentation="A data type for a message about one or more subjects"
+                  prefix="CRSUB" elementPrefix="CRX" elementName="SubjectInformationMessage">
+                <modelReference xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.1.message.modelReference"
+                    name="SubjectInformationMessage" documentation="A data type for a message about one or more subjects"
+                    elementId="_17_0_2_3_7b3022e_1394743304173_370469_51784">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.1.message.modelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </modelReference>
+                <elementModelReference xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.1.message.elementModelReference"
+                    name="SubjectInformationMessage" documentation="A Subject's case records"
+                    elementId="_17_0_2_3_7b3022e_1396125501092_602789_51327">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.1.message.elementModelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </elementModelReference>
+              </message>
+            </parameter>
+            <parameter xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.2"
+                name="ExchangeAgreement" use="in">
+              <modelReference xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.2.modelReference"
+                  name="ExchangeAgreement" elementId="_17_0_5_1_3ba019e_1405741977931_758335_42930">
+                <model xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.2.modelReference.model"
+                    modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+              </modelReference>
+              <message xsi:type="graw:WsdlMessage" xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.2.message"
+                  name="ExchangeAgreementReferenceMetadataType" documentation="A data type for metadata about messages and their supporting the exchange agreement"
+                  prefix="MetaR" elementPrefix="MetaEX" elementName="ExchangeAgreementReferenceMetadata"
+                  messageLocationCode="header">
+                <modelReference xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.2.message.modelReference"
+                    name="ExchangeAgreementReference" documentation="A data type for metadata about messages and their supporting the exchange agreement"
+                    elementId="_17_0_2_4_7b3022e_1396974086801_38959_44721">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.2.message.modelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </modelReference>
+                <elementModelReference xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.2.message.elementModelReference"
+                    name="ExchangeAgreementReferenceMetadata" documentation="A Documented Component"
+                    elementId="_17_0_5_1_2aa0151_1411412570454_811216_18718">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.2.interface.0.operation.0.parameter.2.message.elementModelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </elementModelReference>
+              </message>
+            </parameter>
+          </operation>
+        </interface>
+      </port>
+      <port xmi:id="_0.serviceInterface.1.service.0.port.3" name="SubscriptionPoint">
+        <modelReference xmi:id="_0.serviceInterface.1.service.0.port.3.modelReference"
+            name="SubscriptionPoint" elementId="_17_0_5_1_7b3022e_1402347536097_850166_42399">
+          <model xmi:id="_0.serviceInterface.1.service.0.port.3.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+        <interface xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0"
+            name="SubjectSubscriptionInterface">
+          <modelReference xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.modelReference"
+              name="SubjectSubscriptionInterface" elementId="_17_0_5_1_7b3022e_1402347524134_882067_42105">
+            <model xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.modelReference.model"
+                modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+          </modelReference>
+          <operation xsi:type="graw:WsdlOperation" xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0"
+              name="SubscribeToSubject" messageExchangePattern="subscription" actionName="SubscribeToSubject">
+            <modelReference xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.modelReference"
+                name="SubscribeToSubject" elementId="_17_0_5_1_7b3022e_1402347536091_21665_42390">
+              <model xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.modelReference.model"
+                  modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+            </modelReference>
+            <parameter xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.0"
+                name="SubscriptonMessage" use="in">
+              <modelReference xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.0.modelReference"
+                  name="SubscriptonMessage" elementId="_17_0_5_1_7b3022e_1402347541503_155543_42768">
+                <model xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.0.modelReference.model"
+                    modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+              </modelReference>
+              <message xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.0.message"
+                  name="SubscriptionMessageType" documentation="A data type for a message to establish a subscription."
+                  prefix="CRSUB" elementPrefix="CRX" elementName="SubscriptionMessage">
+                <modelReference xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.0.message.modelReference"
+                    name="SubscriptionMessage" documentation="A data type for a message to establish a subscription."
+                    elementId="_17_0_2_3_7b3022e_1396127867419_650116_51828">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.0.message.modelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </modelReference>
+                <elementModelReference xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.0.message.elementModelReference"
+                    name="SubscriptionMessage" documentation="A Message to subscribe to a subject"
+                    elementId="_17_0_2_3_7b3022e_1396133032405_893571_52561">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.0.message.elementModelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </elementModelReference>
+              </message>
+            </parameter>
+            <parameter xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.1"
+                name="result" use="out">
+              <modelReference xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.1.modelReference"
+                  name="result" elementId="_17_0_5_1_7b3022e_1402347541504_488020_42769">
+                <model xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.1.modelReference.model"
+                    modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+              </modelReference>
+              <message xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.1.message"
+                  name="SubjectInformationMessageType" documentation="A data type for a message about one or more subjects"
+                  prefix="CRSUB" elementPrefix="CRX" elementName="SubjectInformationMessage">
+                <modelReference xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.1.message.modelReference"
+                    name="SubjectInformationMessage" documentation="A data type for a message about one or more subjects"
+                    elementId="_17_0_2_3_7b3022e_1394743304173_370469_51784">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.1.message.modelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </modelReference>
+                <elementModelReference xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.1.message.elementModelReference"
+                    name="SubjectInformationMessage" documentation="A Subject's case records"
+                    elementId="_17_0_2_3_7b3022e_1396125501092_602789_51327">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.1.message.elementModelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </elementModelReference>
+              </message>
+            </parameter>
+            <parameter xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.2"
+                name="ExchangeAgreement" use="in">
+              <modelReference xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.2.modelReference"
+                  name="ExchangeAgreement" elementId="_17_0_5_1_3ba019e_1405741942379_681841_42926">
+                <model xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.2.modelReference.model"
+                    modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+              </modelReference>
+              <message xsi:type="graw:WsdlMessage" xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.2.message"
+                  name="ExchangeAgreementReferenceMetadataType" documentation="A data type for metadata about messages and their supporting the exchange agreement"
+                  prefix="MetaR" elementPrefix="MetaEX" elementName="ExchangeAgreementReferenceMetadata"
+                  messageLocationCode="header">
+                <modelReference xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.2.message.modelReference"
+                    name="ExchangeAgreementReference" documentation="A data type for metadata about messages and their supporting the exchange agreement"
+                    elementId="_17_0_2_4_7b3022e_1396974086801_38959_44721">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.2.message.modelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </modelReference>
+                <elementModelReference xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.2.message.elementModelReference"
+                    name="ExchangeAgreementReferenceMetadata" documentation="A Documented Component"
+                    elementId="_17_0_5_1_2aa0151_1411412570454_811216_18718">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.0.parameter.2.message.elementModelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </elementModelReference>
+              </message>
+            </parameter>
+          </operation>
+          <operation xsi:type="graw:WsdlOperation" xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1"
+              name="CancelSubscription" messageExchangePattern="subscription" actionName="CancelSubscription">
+            <modelReference xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.modelReference"
+                name="CancelSubscription" elementId="_17_0_5_1_7b3022e_1402347536091_828144_42391">
+              <model xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.modelReference.model"
+                  modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+            </modelReference>
+            <parameter xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.0"
+                name="result" use="out">
+              <modelReference xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.0.modelReference"
+                  name="result" elementId="_17_0_5_1_7b3022e_1402347541505_893378_42770">
+                <model xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.0.modelReference.model"
+                    modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+              </modelReference>
+              <message xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.0.message"
+                  name="SubscriptionMessageType" documentation="A data type for a message to establish a subscription."
+                  prefix="CRSUB" elementPrefix="CRX" elementName="SubscriptionMessage">
+                <modelReference xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.0.message.modelReference"
+                    name="SubscriptionMessage" documentation="A data type for a message to establish a subscription."
+                    elementId="_17_0_2_3_7b3022e_1396127867419_650116_51828">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.0.message.modelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </modelReference>
+                <elementModelReference xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.0.message.elementModelReference"
+                    name="SubscriptionMessage" documentation="A Message to subscribe to a subject"
+                    elementId="_17_0_2_3_7b3022e_1396133032405_893571_52561">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.0.message.elementModelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </elementModelReference>
+              </message>
+            </parameter>
+            <parameter xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.1"
+                name="SubscriptionIDText" use="in">
+              <modelReference xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.1.modelReference"
+                  name="SubscriptionIDText" elementId="_17_0_5_1_7b3022e_1402347541505_949824_42771">
+                <model xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.1.modelReference.model"
+                    modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+              </modelReference>
+              <message xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.1.message"
+                  name="SubscriptionIDTextType" documentation="An identity for a subscription"
+                  prefix="CRSUB" elementPrefix="CRX" elementName="SubscriptionID">
+                <modelReference xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.1.message.modelReference"
+                    name="SubscriptionIDTextType" documentation="An identity for a subscription"
+                    elementId="_17_0_5_1_3ba019e_1406133631254_532087_30139">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.1.message.modelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </modelReference>
+                <elementModelReference xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.1.message.elementModelReference"
+                    name="SubscriptionID" documentation="A Documented Component" elementId="_17_0_5_1_3ba019e_1406133802322_606006_30215">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.1.message.elementModelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </elementModelReference>
+              </message>
+            </parameter>
+            <parameter xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.2"
+                name="ExchangeAgreement" use="in">
+              <modelReference xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.2.modelReference"
+                  name="ExchangeAgreement" elementId="_17_0_5_1_3ba019e_1405741962420_755191_42929">
+                <model xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.2.modelReference.model"
+                    modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+              </modelReference>
+              <message xsi:type="graw:WsdlMessage" xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.2.message"
+                  name="ExchangeAgreementReferenceMetadataType" documentation="A data type for metadata about messages and their supporting the exchange agreement"
+                  prefix="MetaR" elementPrefix="MetaEX" elementName="ExchangeAgreementReferenceMetadata"
+                  messageLocationCode="header">
+                <modelReference xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.2.message.modelReference"
+                    name="ExchangeAgreementReference" documentation="A data type for metadata about messages and their supporting the exchange agreement"
+                    elementId="_17_0_2_4_7b3022e_1396974086801_38959_44721">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.2.message.modelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </modelReference>
+                <elementModelReference xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.2.message.elementModelReference"
+                    name="ExchangeAgreementReferenceMetadata" documentation="A Documented Component"
+                    elementId="_17_0_5_1_2aa0151_1411412570454_811216_18718">
+                  <model xmi:id="_0.serviceInterface.1.service.0.port.3.interface.0.operation.1.parameter.2.message.elementModelReference.model"
+                      modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+                </elementModelReference>
+              </message>
+            </parameter>
+          </operation>
+        </interface>
+      </port>
+      <serviceProvider xmi:id="_0.serviceInterface.1.service.0.serviceProvider"
+          name="Corrections Case File Provider">
+        <modelReference xmi:id="_0.serviceInterface.1.service.0.serviceProvider.modelReference"
+            name="Corrections Case File Provider" elementId="_17_0_5_1_7b3022e_1402347530281_950760_42285">
+          <model xmi:id="_0.serviceInterface.1.service.0.serviceProvider.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+      </serviceProvider>
+    </service>
+    <messageDefinitionMechanism xmi:id="_0.serviceInterface.1.messageDefinitionMechanism.0"
+        documentation="The service shall comply with the message definition mechanisms identified in the GRA RS Web service specification."/>
+    <serviceTesting xmi:id="_0.serviceInterface.1.serviceTesting" documentation="Service to be tested vie IJIS Springboard"/>
+    <schemaReference xmi:id="_0.serviceInterface.1.schemaReference.0" namespace="http://it.ojp.gov/gist/201/Metadata/MetaExchange"
+        prefix="MetaEX" schemaLocation="artifacts/service model/information model/Corrections_iepd/XMLschemas/Metadata/MetadataExchange.xsd"/>
+    <schemaReference xmi:id="_0.serviceInterface.1.schemaReference.1" namespace="http://it.ojp.gov/gist/201/Metadata/MetaMessages"
+        prefix="MetaMSG" schemaLocation="artifacts/service model/information model/Corrections_iepd/XMLschemas/Metadata/MetadataMessageModel.xsd"/>
+    <schemaReference xmi:id="_0.serviceInterface.1.schemaReference.2" namespace="http://it.ojp.gov/gist/200/Corrections/SubjectMessageTypes"
+        prefix="CRSUB" schemaLocation="artifacts/service model/information model/Corrections_iepd/XMLschemas/exchange/SubjectMessageModel.xsd"/>
+    <schemaReference xmi:id="_0.serviceInterface.1.schemaReference.3" namespace="http://it.ojp.gov/gist/200/Corrections/exchangeTypes"
+        prefix="CRX" schemaLocation="artifacts/service model/information model/Corrections_iepd/XMLschemas/exchange/SubjectExchange.xsd"/>
+    <schemaReference xmi:id="_0.serviceInterface.1.schemaReference.4" namespace="http://it.ojp.gov/gist/201/Metadata/MetadataReference"
+        prefix="MetaR" schemaLocation="artifacts/service model/information model/Corrections_iepd/XMLschemas/Metadata/MetadataReference.xsd"/>
+  </serviceInterface>
+  <realWorldEffect xmi:id="_0.realWorldEffect.0" name="Service for Risk Assessment information so that the community based service providers better understand the risks associated with an individual.">
+    <modelReference xmi:id="_0.realWorldEffect.0.modelReference" name="Service for Risk Assessment information so that the community based service providers better understand the risks associated with an individual."
+        elementId="_17_0_5_1_7b3022e_1402347530289_113248_42298">
+      <model xmi:id="_0.realWorldEffect.0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <provider xmi:id="_0.realWorldEffect.0.provider.0" name="Corrections Case File Provider">
+      <modelReference xmi:id="_0.realWorldEffect.0.provider.0.modelReference" name="Corrections Case File Provider"
+          elementId="_17_0_5_1_7b3022e_1402347530281_950760_42285">
+        <model xmi:id="_0.realWorldEffect.0.provider.0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+            label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+    </provider>
+    <consumer xmi:id="_0.realWorldEffect.0.consumer.0" name="Corrections Community Actor">
+      <modelReference xmi:id="_0.realWorldEffect.0.consumer.0.modelReference" name="Corrections Community Actor"
+          elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+        <model xmi:id="_0.realWorldEffect.0.consumer.0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+            label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.realWorldEffect.0.consumer.0.generalization.0"
+          name="Interested Party">
+        <modelReference xmi:id="_0.realWorldEffect.0.consumer.0.generalization.0.modelReference"
+            name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+          <model xmi:id="_0.realWorldEffect.0.consumer.0.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+      </generalization>
+    </consumer>
+  </realWorldEffect>
+  <realWorldEffect xmi:id="_0.realWorldEffect.1" name="Service to obtain Criminal History information.">
+    <modelReference xmi:id="_0.realWorldEffect.1.modelReference" name="Service to obtain Criminal History information."
+        elementId="_17_0_5_1_7b3022e_1402347530288_518331_42297">
+      <model xmi:id="_0.realWorldEffect.1.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <provider xmi:id="_0.realWorldEffect.1.provider.0" name="Corrections Case File Provider">
+      <modelReference xmi:id="_0.realWorldEffect.1.provider.0.modelReference" name="Corrections Case File Provider"
+          elementId="_17_0_5_1_7b3022e_1402347530281_950760_42285">
+        <model xmi:id="_0.realWorldEffect.1.provider.0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+            label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+    </provider>
+    <consumer xmi:id="_0.realWorldEffect.1.consumer.0" name="Corrections Community Actor">
+      <modelReference xmi:id="_0.realWorldEffect.1.consumer.0.modelReference" name="Corrections Community Actor"
+          elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+        <model xmi:id="_0.realWorldEffect.1.consumer.0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+            label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.realWorldEffect.1.consumer.0.generalization.0"
+          name="Interested Party">
+        <modelReference xmi:id="_0.realWorldEffect.1.consumer.0.generalization.0.modelReference"
+            name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+          <model xmi:id="_0.realWorldEffect.1.consumer.0.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+      </generalization>
+    </consumer>
+  </realWorldEffect>
+  <realWorldEffect xmi:id="_0.realWorldEffect.2" name="Service for Share Notifications about the individual with a broad array of stakeholders based as the individual proceeds through the corrections process.">
+    <modelReference xmi:id="_0.realWorldEffect.2.modelReference" name="Service for Share Notifications about the individual with a broad array of stakeholders based as the individual proceeds through the corrections process."
+        elementId="_17_0_5_1_7b3022e_1402347530287_837638_42295">
+      <model xmi:id="_0.realWorldEffect.2.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <provider xmi:id="_0.realWorldEffect.2.provider.0" name="Corrections Case File Provider">
+      <modelReference xmi:id="_0.realWorldEffect.2.provider.0.modelReference" name="Corrections Case File Provider"
+          elementId="_17_0_5_1_7b3022e_1402347530281_950760_42285">
+        <model xmi:id="_0.realWorldEffect.2.provider.0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+            label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+    </provider>
+    <consumer xmi:id="_0.realWorldEffect.2.consumer.0" name="Corrections Community Actor">
+      <modelReference xmi:id="_0.realWorldEffect.2.consumer.0.modelReference" name="Corrections Community Actor"
+          elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+        <model xmi:id="_0.realWorldEffect.2.consumer.0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+            label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.realWorldEffect.2.consumer.0.generalization.0"
+          name="Interested Party">
+        <modelReference xmi:id="_0.realWorldEffect.2.consumer.0.generalization.0.modelReference"
+            name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+          <model xmi:id="_0.realWorldEffect.2.consumer.0.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+      </generalization>
+    </consumer>
+  </realWorldEffect>
+  <realWorldEffect xmi:id="_0.realWorldEffect.3" name="Service for Housing Information so that the individual is housed appropriately based on their specific housing needs and risk profiles">
+    <modelReference xmi:id="_0.realWorldEffect.3.modelReference" name="Service for Housing Information so that the individual is housed appropriately based on their specific housing needs and risk profiles"
+        elementId="_17_0_5_1_7b3022e_1402347530294_359584_42311">
+      <model xmi:id="_0.realWorldEffect.3.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <provider xmi:id="_0.realWorldEffect.3.provider.0" name="Corrections Case File Provider">
+      <modelReference xmi:id="_0.realWorldEffect.3.provider.0.modelReference" name="Corrections Case File Provider"
+          elementId="_17_0_5_1_7b3022e_1402347530281_950760_42285">
+        <model xmi:id="_0.realWorldEffect.3.provider.0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+            label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+    </provider>
+    <consumer xmi:id="_0.realWorldEffect.3.consumer.0" name="Housing Provider">
+      <modelReference xmi:id="_0.realWorldEffect.3.consumer.0.modelReference" name="Housing Provider"
+          elementId="_17_0_5_1_7b3022e_1402347530293_405556_42310">
+        <model xmi:id="_0.realWorldEffect.3.consumer.0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+            label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.realWorldEffect.3.consumer.0.generalization.0"
+          name="Service Provider">
+        <modelReference xmi:id="_0.realWorldEffect.3.consumer.0.generalization.0.modelReference"
+            name="Service Provider" elementId="_17_0_5_1_7b3022e_1402347530279_930464_42280">
+          <model xmi:id="_0.realWorldEffect.3.consumer.0.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+        <generalization xmi:id="_0.realWorldEffect.3.consumer.0.generalization.0.generalization.0"
+            name="Corrections Community Actor">
+          <modelReference xmi:id="_0.realWorldEffect.3.consumer.0.generalization.0.generalization.0.modelReference"
+              name="Corrections Community Actor" elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+            <model xmi:id="_0.realWorldEffect.3.consumer.0.generalization.0.generalization.0.modelReference.model"
+                modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+          </modelReference>
+          <generalization xmi:id="_0.realWorldEffect.3.consumer.0.generalization.0.generalization.0.generalization.0"
+              name="Interested Party">
+            <modelReference xmi:id="_0.realWorldEffect.3.consumer.0.generalization.0.generalization.0.generalization.0.modelReference"
+                name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+              <model xmi:id="_0.realWorldEffect.3.consumer.0.generalization.0.generalization.0.generalization.0.modelReference.model"
+                  modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+            </modelReference>
+          </generalization>
+        </generalization>
+        <generalization xmi:id="_0.realWorldEffect.3.consumer.0.generalization.0.generalization.1"
+            name="Interested Party">
+          <modelReference xmi:id="_0.realWorldEffect.3.consumer.0.generalization.0.generalization.1.modelReference"
+              name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+            <model xmi:id="_0.realWorldEffect.3.consumer.0.generalization.0.generalization.1.modelReference.model"
+                modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+          </modelReference>
+        </generalization>
+      </generalization>
+    </consumer>
+  </realWorldEffect>
+  <realWorldEffect xmi:id="_0.realWorldEffect.4" name="Service for Medicaid Entitlements so that the individual has appropriate coverage, and help minimize costs for the correctional facilities.">
+    <modelReference xmi:id="_0.realWorldEffect.4.modelReference" name="Service for Medicaid Entitlements so that the individual has appropriate coverage, and help minimize costs for the correctional facilities."
+        elementId="_17_0_5_1_7b3022e_1402347530295_577559_42314">
+      <model xmi:id="_0.realWorldEffect.4.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <provider xmi:id="_0.realWorldEffect.4.provider.0" name="Corrections Case File Provider">
+      <modelReference xmi:id="_0.realWorldEffect.4.provider.0.modelReference" name="Corrections Case File Provider"
+          elementId="_17_0_5_1_7b3022e_1402347530281_950760_42285">
+        <model xmi:id="_0.realWorldEffect.4.provider.0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+            label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+    </provider>
+    <consumer xmi:id="_0.realWorldEffect.4.consumer.0" name="Health Care Provider">
+      <modelReference xmi:id="_0.realWorldEffect.4.consumer.0.modelReference" name="Health Care Provider"
+          elementId="_17_0_5_1_7b3022e_1402347530277_495789_42278">
+        <model xmi:id="_0.realWorldEffect.4.consumer.0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+            label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.realWorldEffect.4.consumer.0.generalization.0"
+          name="Service Provider">
+        <modelReference xmi:id="_0.realWorldEffect.4.consumer.0.generalization.0.modelReference"
+            name="Service Provider" elementId="_17_0_5_1_7b3022e_1402347530279_930464_42280">
+          <model xmi:id="_0.realWorldEffect.4.consumer.0.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+        <generalization xmi:id="_0.realWorldEffect.4.consumer.0.generalization.0.generalization.0"
+            name="Corrections Community Actor">
+          <modelReference xmi:id="_0.realWorldEffect.4.consumer.0.generalization.0.generalization.0.modelReference"
+              name="Corrections Community Actor" elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+            <model xmi:id="_0.realWorldEffect.4.consumer.0.generalization.0.generalization.0.modelReference.model"
+                modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+          </modelReference>
+          <generalization xmi:id="_0.realWorldEffect.4.consumer.0.generalization.0.generalization.0.generalization.0"
+              name="Interested Party">
+            <modelReference xmi:id="_0.realWorldEffect.4.consumer.0.generalization.0.generalization.0.generalization.0.modelReference"
+                name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+              <model xmi:id="_0.realWorldEffect.4.consumer.0.generalization.0.generalization.0.generalization.0.modelReference.model"
+                  modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+            </modelReference>
+          </generalization>
+        </generalization>
+        <generalization xmi:id="_0.realWorldEffect.4.consumer.0.generalization.0.generalization.1"
+            name="Interested Party">
+          <modelReference xmi:id="_0.realWorldEffect.4.consumer.0.generalization.0.generalization.1.modelReference"
+              name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+            <model xmi:id="_0.realWorldEffect.4.consumer.0.generalization.0.generalization.1.modelReference.model"
+                modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+          </modelReference>
+        </generalization>
+      </generalization>
+      <generalization xmi:id="_0.realWorldEffect.4.consumer.0.generalization.1"
+          name="Interested Party">
+        <modelReference xmi:id="_0.realWorldEffect.4.consumer.0.generalization.1.modelReference"
+            name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+          <model xmi:id="_0.realWorldEffect.4.consumer.0.generalization.1.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+      </generalization>
+    </consumer>
+  </realWorldEffect>
+  <realWorldEffect xmi:id="_0.realWorldEffect.5" name="Service for Treatment Status to be shared between the community based service providers and the supervisory authorities.">
+    <modelReference xmi:id="_0.realWorldEffect.5.modelReference" name="Service for Treatment Status to be shared between the community based service providers and the supervisory authorities."
+        elementId="_17_0_5_1_7b3022e_1402347530292_106206_42307">
+      <model xmi:id="_0.realWorldEffect.5.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <provider xmi:id="_0.realWorldEffect.5.provider.0" name="Supervision Authority">
+      <modelReference xmi:id="_0.realWorldEffect.5.provider.0.modelReference" name="Supervision Authority"
+          elementId="_17_0_5_1_7b3022e_1402347530284_586703_42290">
+        <model xmi:id="_0.realWorldEffect.5.provider.0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+            label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.realWorldEffect.5.provider.0.generalization.0"
+          name="Corrections Community Actor">
+        <modelReference xmi:id="_0.realWorldEffect.5.provider.0.generalization.0.modelReference"
+            name="Corrections Community Actor" elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+          <model xmi:id="_0.realWorldEffect.5.provider.0.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+        <generalization xmi:id="_0.realWorldEffect.5.provider.0.generalization.0.generalization.0"
+            name="Interested Party">
+          <modelReference xmi:id="_0.realWorldEffect.5.provider.0.generalization.0.generalization.0.modelReference"
+              name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+            <model xmi:id="_0.realWorldEffect.5.provider.0.generalization.0.generalization.0.modelReference.model"
+                modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+          </modelReference>
+        </generalization>
+      </generalization>
+    </provider>
+    <consumer xmi:id="_0.realWorldEffect.5.consumer.0" name="Service Provider">
+      <modelReference xmi:id="_0.realWorldEffect.5.consumer.0.modelReference" name="Service Provider"
+          elementId="_17_0_5_1_7b3022e_1402347530279_930464_42280">
+        <model xmi:id="_0.realWorldEffect.5.consumer.0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+            label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.realWorldEffect.5.consumer.0.generalization.0"
+          name="Corrections Community Actor">
+        <modelReference xmi:id="_0.realWorldEffect.5.consumer.0.generalization.0.modelReference"
+            name="Corrections Community Actor" elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+          <model xmi:id="_0.realWorldEffect.5.consumer.0.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+        <generalization xmi:id="_0.realWorldEffect.5.consumer.0.generalization.0.generalization.0"
+            name="Interested Party">
+          <modelReference xmi:id="_0.realWorldEffect.5.consumer.0.generalization.0.generalization.0.modelReference"
+              name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+            <model xmi:id="_0.realWorldEffect.5.consumer.0.generalization.0.generalization.0.modelReference.model"
+                modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+          </modelReference>
+        </generalization>
+      </generalization>
+      <generalization xmi:id="_0.realWorldEffect.5.consumer.0.generalization.1"
+          name="Interested Party">
+        <modelReference xmi:id="_0.realWorldEffect.5.consumer.0.generalization.1.modelReference"
+            name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+          <model xmi:id="_0.realWorldEffect.5.consumer.0.generalization.1.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+      </generalization>
+    </consumer>
+  </realWorldEffect>
+  <realWorldEffect xmi:id="_0.realWorldEffect.6" name="Service for Inquiries about an individual to obtain demographic, release and risk information.">
+    <modelReference xmi:id="_0.realWorldEffect.6.modelReference" name="Service for Inquiries about an individual to obtain demographic, release and risk information."
+        elementId="_17_0_5_1_7b3022e_1402347530285_335359_42292">
+      <model xmi:id="_0.realWorldEffect.6.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <provider xmi:id="_0.realWorldEffect.6.provider.0" name="Corrections Case File Provider">
+      <modelReference xmi:id="_0.realWorldEffect.6.provider.0.modelReference" name="Corrections Case File Provider"
+          elementId="_17_0_5_1_7b3022e_1402347530281_950760_42285">
+        <model xmi:id="_0.realWorldEffect.6.provider.0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+            label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+    </provider>
+    <consumer xmi:id="_0.realWorldEffect.6.consumer.0" name="Corrections Community Actor">
+      <modelReference xmi:id="_0.realWorldEffect.6.consumer.0.modelReference" name="Corrections Community Actor"
+          elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+        <model xmi:id="_0.realWorldEffect.6.consumer.0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+            label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.realWorldEffect.6.consumer.0.generalization.0"
+          name="Interested Party">
+        <modelReference xmi:id="_0.realWorldEffect.6.consumer.0.generalization.0.modelReference"
+            name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+          <model xmi:id="_0.realWorldEffect.6.consumer.0.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+      </generalization>
+    </consumer>
+  </realWorldEffect>
+  <realWorldEffect xmi:id="_0.realWorldEffect.7" name="Service for Treatment Information about the individual with community based providers so they are able to provide adequate treatment while the individual is released.">
+    <modelReference xmi:id="_0.realWorldEffect.7.modelReference" name="Service for Treatment Information about the individual with community based providers so they are able to provide adequate treatment while the individual is released."
+        elementId="_17_0_5_1_7b3022e_1402347530288_458689_42296">
+      <model xmi:id="_0.realWorldEffect.7.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <provider xmi:id="_0.realWorldEffect.7.provider.0" name="Corrections Case File Provider">
+      <modelReference xmi:id="_0.realWorldEffect.7.provider.0.modelReference" name="Corrections Case File Provider"
+          elementId="_17_0_5_1_7b3022e_1402347530281_950760_42285">
+        <model xmi:id="_0.realWorldEffect.7.provider.0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+            label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+    </provider>
+    <consumer xmi:id="_0.realWorldEffect.7.consumer.0" name="Corrections Community Actor">
+      <modelReference xmi:id="_0.realWorldEffect.7.consumer.0.modelReference" name="Corrections Community Actor"
+          elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+        <model xmi:id="_0.realWorldEffect.7.consumer.0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+            label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.realWorldEffect.7.consumer.0.generalization.0"
+          name="Interested Party">
+        <modelReference xmi:id="_0.realWorldEffect.7.consumer.0.generalization.0.modelReference"
+            name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+          <model xmi:id="_0.realWorldEffect.7.consumer.0.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+      </generalization>
+    </consumer>
+  </realWorldEffect>
+  <realWorldEffect xmi:id="_0.realWorldEffect.8" name="Service for accessing information about a corrections subject with respect to release.">
+    <modelReference xmi:id="_0.realWorldEffect.8.modelReference" name="Service for accessing information about a corrections subject with respect to release."
+        elementId="_17_0_5_1_7b3022e_1402347530296_390318_42317">
+      <model xmi:id="_0.realWorldEffect.8.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <provider xmi:id="_0.realWorldEffect.8.provider.0" name="Corrections Case File Provider">
+      <modelReference xmi:id="_0.realWorldEffect.8.provider.0.modelReference" name="Corrections Case File Provider"
+          elementId="_17_0_5_1_7b3022e_1402347530281_950760_42285">
+        <model xmi:id="_0.realWorldEffect.8.provider.0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+            label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+    </provider>
+    <consumer xmi:id="_0.realWorldEffect.8.consumer.0" name="Corrections Community Actor">
+      <modelReference xmi:id="_0.realWorldEffect.8.consumer.0.modelReference" name="Corrections Community Actor"
+          elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+        <model xmi:id="_0.realWorldEffect.8.consumer.0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+            label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.realWorldEffect.8.consumer.0.generalization.0"
+          name="Interested Party">
+        <modelReference xmi:id="_0.realWorldEffect.8.consumer.0.generalization.0.modelReference"
+            name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+          <model xmi:id="_0.realWorldEffect.8.consumer.0.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+      </generalization>
+    </consumer>
+  </realWorldEffect>
+  <serviceInteraction xmi:id="_0.serviceInteraction.0" name="Subscription">
+    <modelReference xmi:id="_0.serviceInteraction.0.modelReference" name="Subscription"
+        elementId="_17_0_5_1_3ba019e_1415388785986_673269_42363">
+      <model xmi:id="_0.serviceInteraction.0.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <participant xmi:id="_0.serviceInteraction.0.participant.0" name="Corrections Case File Provider">
+      <modelReference xmi:id="_0.serviceInteraction.0.participant.0.modelReference"
+          name="Corrections Case File Provider" elementId="_17_0_5_1_7b3022e_1402347530281_950760_42285">
+        <model xmi:id="_0.serviceInteraction.0.participant.0.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+    </participant>
+    <participant xmi:id="_0.serviceInteraction.0.participant.1" name="Corrections Community Actor">
+      <modelReference xmi:id="_0.serviceInteraction.0.participant.1.modelReference"
+          name="Corrections Community Actor" elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+        <model xmi:id="_0.serviceInteraction.0.participant.1.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.serviceInteraction.0.participant.1.generalization.0"
+          name="Interested Party">
+        <modelReference xmi:id="_0.serviceInteraction.0.participant.1.generalization.0.modelReference"
+            name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+          <model xmi:id="_0.serviceInteraction.0.participant.1.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+      </generalization>
+    </participant>
+  </serviceInteraction>
+  <serviceInteraction xmi:id="_0.serviceInteraction.1" name="Subject Update Interaction">
+    <modelReference xmi:id="_0.serviceInteraction.1.modelReference" name="Subject Update Interaction"
+        elementId="_17_0_5_1_7b3022e_1402347527749_236319_42160">
+      <model xmi:id="_0.serviceInteraction.1.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <participant xmi:id="_0.serviceInteraction.1.participant.0" name="Corrections Case File Provider">
+      <modelReference xmi:id="_0.serviceInteraction.1.participant.0.modelReference"
+          name="Corrections Case File Provider" elementId="_17_0_5_1_7b3022e_1402347530281_950760_42285">
+        <model xmi:id="_0.serviceInteraction.1.participant.0.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+    </participant>
+    <participant xmi:id="_0.serviceInteraction.1.participant.1" name="Service Provider">
+      <modelReference xmi:id="_0.serviceInteraction.1.participant.1.modelReference"
+          name="Service Provider" elementId="_17_0_5_1_7b3022e_1402347530279_930464_42280">
+        <model xmi:id="_0.serviceInteraction.1.participant.1.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.serviceInteraction.1.participant.1.generalization.0"
+          name="Corrections Community Actor">
+        <modelReference xmi:id="_0.serviceInteraction.1.participant.1.generalization.0.modelReference"
+            name="Corrections Community Actor" elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+          <model xmi:id="_0.serviceInteraction.1.participant.1.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+        <generalization xmi:id="_0.serviceInteraction.1.participant.1.generalization.0.generalization.0"
+            name="Interested Party">
+          <modelReference xmi:id="_0.serviceInteraction.1.participant.1.generalization.0.generalization.0.modelReference"
+              name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+            <model xmi:id="_0.serviceInteraction.1.participant.1.generalization.0.generalization.0.modelReference.model"
+                modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+          </modelReference>
+        </generalization>
+      </generalization>
+      <generalization xmi:id="_0.serviceInteraction.1.participant.1.generalization.1"
+          name="Interested Party">
+        <modelReference xmi:id="_0.serviceInteraction.1.participant.1.generalization.1.modelReference"
+            name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+          <model xmi:id="_0.serviceInteraction.1.participant.1.generalization.1.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+      </generalization>
+    </participant>
+  </serviceInteraction>
+  <serviceInteraction xmi:id="_0.serviceInteraction.2" name="Subject Query Interaction">
+    <modelReference xmi:id="_0.serviceInteraction.2.modelReference" name="Subject Query Interaction"
+        elementId="_17_0_5_1_7b3022e_1402347527748_169868_42159">
+      <model xmi:id="_0.serviceInteraction.2.modelReference.model" modelUri="Corrections_SSP_v_1.0.0.xmi"
+          label="Corrections_SSP_v_1.0.0"/>
+    </modelReference>
+    <participant xmi:id="_0.serviceInteraction.2.participant.0" name="Corrections Case File Provider">
+      <modelReference xmi:id="_0.serviceInteraction.2.participant.0.modelReference"
+          name="Corrections Case File Provider" elementId="_17_0_5_1_7b3022e_1402347530281_950760_42285">
+        <model xmi:id="_0.serviceInteraction.2.participant.0.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+    </participant>
+    <participant xmi:id="_0.serviceInteraction.2.participant.1" name="Corrections Community Actor">
+      <modelReference xmi:id="_0.serviceInteraction.2.participant.1.modelReference"
+          name="Corrections Community Actor" elementId="_17_0_5_1_7b3022e_1402347530278_461432_42279">
+        <model xmi:id="_0.serviceInteraction.2.participant.1.modelReference.model"
+            modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+      </modelReference>
+      <generalization xmi:id="_0.serviceInteraction.2.participant.1.generalization.0"
+          name="Interested Party">
+        <modelReference xmi:id="_0.serviceInteraction.2.participant.1.generalization.0.modelReference"
+            name="Interested Party" elementId="_17_0_5_1_7b3022e_1402347530282_91766_42287">
+          <model xmi:id="_0.serviceInteraction.2.participant.1.generalization.0.modelReference.model"
+              modelUri="Corrections_SSP_v_1.0.0.xmi" label="Corrections_SSP_v_1.0.0"/>
+        </modelReference>
+      </generalization>
+    </participant>
+  </serviceInteraction>
+  <executionContext xmi:id="_0.executionContext"/>
+  <security xmi:id="_0.security" documentation="&lt;html>&#xA;  &lt;head>&#xA;&#x9;&#x9;&lt;style>&#xA;&#x9;&#x9;&#x9;p {padding:0px; margin:0px;}&#xA;&#x9;&#x9;&lt;/style>&#xA;&#x9;&lt;/head>&#xA;  &lt;body>&#xA;    &lt;p>&#xA;The service implementation must follow the Service Interface Description Document (SIDD) to meet the Security Requirements. &#xA;    &lt;/p>&#xA;&#xA;    &lt;p>&#xA;The service must adhere to the rules of the CJIS Security Policies regarding the Advanced Encryption Standard (AES) level of encryption. &#xA;    &lt;/p>&#xA;&#xA;    &lt;p>&#xA;Security Requirements: &#xA;    &lt;/p>&#xA;&#xA;    &lt;ul>&#xA;      &lt;li>&#xA;Message Nonrepudiation &#xA;      &lt;/li>&#xA;      &lt;li>&#xA;Message Integrity Message Confidentiality Note: The use of Virtual Private Networks (VPNs) or Secure Sockets Layer (SSL) for transport-level security in addition to these requirements is optional.&#xA;      &lt;/li>&#xA;    &lt;/ul>&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;"/>
+  <privacy xmi:id="_0.privacy" documentation=" Privacy requirements are currently under review regarding specific information model elements and/or groups of elements. "/>
+  <serviceAssumption xmi:id="_0.serviceAssumption" documentation="All messages exchanged will require a synchronous acknowledgment of receipt or return data.        The acknowledgment of receipt will contain only metadata about the message. The metadata will consist of a timestamp and identifiers that uniquely identify the message. "/>
+</graa:ServiceDescription>

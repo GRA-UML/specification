@@ -1,0 +1,18 @@
+corrections-
+	make sure referenced types have element in exchange schema
+	
+PET problem?	
+element <fault> 'GetAdoptionInformation.Exception' in operation 'GetAdoptionInformation' (portType 'ServicePort') has no match in operation 'GetAdoptionInformation' (binding 'ServicePortBinding')!
+ Error location: wsdl:definitions / wsdl:binding / wsdl:operation
+	
+revisionVersion defaults to current time
+gra:LifecycleStatus	defaults
+and other required attributes
+
+
+AML url
+https://github.com/opencimi/AML
+
+https://github.com/opencimi/AML/tree/master/report
+
+

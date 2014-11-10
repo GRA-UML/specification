@@ -1,0 +1,34 @@
+
+defaults which realize elements: ignore as defaults (change query from getInstanceValues to getDefaultInstanceValues
+
+missing iepd name.  adjusted path construction
+
+schemaLocation.  adjusted fixup for schemaLocation to be a different location, as suggested in issue.  However,
+	that schema location produces validation errors.  The capitalization of schema names was changed, and
+	not clear if schemas at that location are really valid.
+
+operation exceptions:  include raisedException hooks for Operation/Reception;  Need to identify model/interface/operation which has problem
+
+prefixes:  add default prefixes for niem namespaces
+
+2 iepds - ?
+
+missing provider and consumer for realWorldEffects:  changed context, need unique instance for each container
+
+(Missing ServiceInteraction elements).  Actual problem: ServiceDescription Instance realizes CollaborationUse, should realize Collaboration. 
+No apparent need for CollaborationUse.
+
+missing serviceProvider:  actual problem:= "Participant" instance of serviceProvider link (non-containment) from Service is not contained in model.
+
+Non-conformant file-paths:  Note that the OMG syntax for models is not in general produciible from actual tools, nor is it necessarily readable from tools.
+The example files are not normative.  If a normative set of example files is required, it could be produced but would be unusable by any tool.
+
+symptom: ObjectType is not applicable to Class, leading to lots of errors including missing types in target schemas.
+Work-around:  make ObjectType explicitly extend Class in Profile
+
+documentation of pariticipant?  no documentation to be found?
+
+
+
+
+

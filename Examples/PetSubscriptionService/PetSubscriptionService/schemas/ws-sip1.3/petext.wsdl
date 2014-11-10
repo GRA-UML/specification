@@ -1,0 +1,58 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+                  xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+                  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+                  xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                  xmlns:gra-pet="http://petadoption.com"
+                  xmlns:wrs-bf="http://docs.oasis-open.org/wsn/b-2/"
+                  targetNamespace="http://petadoption.com">
+   <wsdl:documentation>This service provides pet adoption information</wsdl:documentation>
+   <wsp:Policy wsu:Id="wsa_policy">
+	     <wsp:ExactlyOne>
+		       <wsp:All>
+			         <wsaw:UsingAddressing/>	
+		       </wsp:All>
+	     </wsp:ExactlyOne>
+   </wsp:Policy>
+   <wsdl:types>
+      <xsd:schema>
+         <xsd:import namespace="http://docs.oasis-open.org/wsn/b-2/"
+                     schemaLocation="../../artifacts/service model/information model/pet_adoption_iepd/Oasis/b-2.xsd"/>
+      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="subscribe.Subscribe">
+      <wsdl:part name="subscribe.Subscribe.unknown" element="unknown:unknown"/>
+   </wsdl:message>
+   <wsdl:message name="subscribe.SubscribeResponse">
+      <wsdl:part name="subscribe.SubscribeResponse.unknown" element="unknown:unknown"/>
+   </wsdl:message>
+   <wsdl:portType name="SubscribePort">
+      <wsdl:operation name="subscribe">
+         <wsdl:input name="subscribe.Subscribe" message="gra-pet:subscribe.Subscribe"/>
+         <wsdl:output name="subscribe.SubscribeResponse"
+                      message="gra-pet:subscribe.SubscribeResponse"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="SubscribePortBinding" type="gra-pet:SubscribePort">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsp:PolicyReference URI="#wsa_policy"/>
+      <wsdl:operation name="subscribe">
+         <soap:operation soapAction="subscribe" style="document"/>
+         <wsdl:input>
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output>
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="PetAdoptionSubscriptionSpecificationService">
+      <wsdl:documentation>This service interface specification  provides for automated access to pet adoption centers via web services</wsdl:documentation>
+      <wsdl:port name="SubscribePort" binding="gra-pet:SubscribePortBinding">
+         <soap:address location="http://SubscribePort"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>

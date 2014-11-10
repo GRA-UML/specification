@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:AGREE="http://it.ojp.gov/gist/201/Metadata/exchangeAgreement" xmlns:CAT="http://it.ojp.gov/gist/201/Metadata/category" xmlns:MetaMSG="http://it.ojp.gov/gist/201/Metadata/MetaMessages" xmlns:MetaR="http://it.ojp.gov/gist/201/Metadata/MetadataReference" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:i2="http://niem.gov/niem/appinfo/2.1" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://it.ojp.gov/gist/201/Metadata/MetaMessages" version="&quot;1&quot;">
+  <xsd:import namespace="http://it.ojp.gov/gist/201/Metadata/exchangeAgreement" schemaLocation="../../XMLschemas/Metadata/ExchangeAgreementExtension.xsd"/>
+  <xsd:import namespace="http://it.ojp.gov/gist/201/Metadata/MetadataReference" schemaLocation="../../XMLschemas/Metadata/MetadataReference.xsd"/>
+  <xsd:import namespace="http://it.ojp.gov/gist/201/Metadata/category" schemaLocation="../../XMLschemas/Metadata/CategoryExtension.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.1" schemaLocation="../../XMLschemas/appinfo/2.1/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="../../XMLschemas/proxy/xsd/2.0/xsd.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/2.0" schemaLocation="../../XMLschemas/appinfo/2.0/appinfo.xsd"/>
+  <xsd:import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="../../XMLschemas/structures/2.0/structures.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Metadata messages</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:complexType abstract="false" mixed="false" name="RepositoryMetadataMessageType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a repository containing category and exchange agreement metadata. The IDs of the elements in this metadata are referenced from messages</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="ExchangeAgreedMessageType" i:namespace="http://it.ojp.gov/gist/201/Metadata/MetadataReference"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="MetaR:ExchangeAgreedMessageType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="MetaMSG:MetadataURI"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="MetaMSG:IncludedMetadataResourceURI"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="MetaMSG:CategoryResource"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="MetaMSG:ExchangeAgreementResource"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="MetaMSG:MetadataUpdateDateTime"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="MetadataURI" nillable="false" type="MetaR:MetadataRepositoryURIType">
+    <xsd:annotation>
+      <xsd:documentation>A normative URI for this metadata which shall respond to a "GetMetadata" message.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="IncludedMetadataResourceURI" nillable="false" type="MetaR:MetadataRepositoryURIType">
+    <xsd:annotation>
+      <xsd:documentation>A link to other category resources to be included by reference based on their URI</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="CategoryResource" nillable="false" type="MetaMSG:CategoryResourceType">
+    <xsd:annotation>
+      <xsd:documentation>A set of categories and related data</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="CategoryResourceType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a category metadata element referenced by the top level exchange element.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="MetaMSG:Category"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="MetaMSG:ScoreBasis"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="Category" nillable="false" type="CAT:CategoryType">
+    <xsd:annotation>
+      <xsd:documentation>A set of categories defines herein</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="ScoreBasis" nillable="false" type="CAT:ScoreBasisType">
+    <xsd:annotation>
+      <xsd:documentation>A  a score basis defined in this resource</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="ExchangeAgreementResource" nillable="false" type="MetaMSG:ExchangeAgreementResourceType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for  metadata referenced by the top level exchange element.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="false" mixed="false" name="ExchangeAgreementResourceType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a category metadata element referenced by the top level exchange element.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Object" i:namespace="http://niem.gov/niem/structures/2.0"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="MetaMSG:ExchangeAgreement"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="MetaMSG:ExchangeParty"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element abstract="false" name="ExchangeAgreement" nillable="false" type="AGREE:ExchangeAgreementType">
+    <xsd:annotation>
+      <xsd:documentation>A Exchange agreement and related data</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="ExchangeParty" nillable="false" type="AGREE:ExchangePartyType">
+    <xsd:annotation>
+      <xsd:documentation>A party to an exchange agreement. The same party may be party to many agreements</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="false" name="MetadataUpdateDateTime" nillable="false" type="niem-xsd:dateTime">
+    <xsd:annotation>
+      <xsd:documentation>A date representing the last update of the metadata. Null indicates a timeless resource that will not change.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

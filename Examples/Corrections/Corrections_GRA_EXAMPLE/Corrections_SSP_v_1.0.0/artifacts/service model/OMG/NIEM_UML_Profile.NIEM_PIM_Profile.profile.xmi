@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><uml:Profile xmlns:uml="http://www.omg.org/spec/UML/20110701" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="20110701" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile" name="NIEM_PIM_Profile" URI="http://www.omg.org/spec/NIEM-UML/20120501/NIEM_PIM_Profile" metamodelReference="NIEM_UML_Profile-NIEM_PIM_Profile-packageImport-2">
+  
+  <ownedComment xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_PIM_Profile" body="The NIEM PIM Profile comprises stereotypes that are used in NIEM PIMs but not NIEM&#xA;          PSMs. Further, the NIEM PIM Profile imports the NIEM Common Profile and, therefore,&#xA;          includes all the stereotypes and metaclasses covered by that profile. In addition, the UML&#xA;          metamodel subset covered by the NIEM PIM Profile also includes the metaclasses Association&#xA;          and AssociationClass, even though they are not specifically extended by any stereotypes in&#xA;          the profile."/>
+  <packageImport xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-packageImport-1">
+    <importedPackage xmi:type="uml:Profile" href="NIEM_UML_Profile.NIEM_Common_Profile.profile.xmi#NIEM_UML_Profile-NIEM_Common_Profile"/>
+  </packageImport>
+  <packageImport xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-packageImport-2">
+    <importedPackage xmi:type="uml:Model" href="http://www.omg.org/spec/UML/20110701/UML.xmi#_0"/>
+  </packageImport>
+  
+  
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-Augments" name="Augments">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-Augments-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_PIM_Profile-Augments" body="An Augments Generalization specifies that the special Class is an augmentation type&#xA;            that is restricted to apply to instances of the general Class. "/>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-Augments-base_Generalization" name="base_Generalization" visibility="private" association="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-5">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#Generalization"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_2_1_2aa0151_1363979878307_496829_2141" name="" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878308_723894_2142" name="" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-2" name="" memberEnd="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-2-ownedEnd NIEM_UML_Profile-NIEM_PIM_Profile-RoleOf-base_Property" navigableOwnedEnd="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-2-ownedEnd">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-2-ownedEnd" name="extension_RoleOf" visibility="private" type="NIEM_UML_Profile-NIEM_PIM_Profile-RoleOf" aggregation="composite" association="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-2">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-2-ownedEnd-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878346_570186_2283" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-InformationModel" name="InformationModel">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-InformationModel-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_PIM_Profile-InformationModel" body="The contents of an InformationModel Package provide a platform-independent&#xA;            perspective on the structure of information to be exchanged in NIEM messages. Such a&#xA;            model is always taken to represent a NIEM namespace, but it may also be given a default&#xA;            purpose as modeled, independent of the implementation of that namespace. This allows a&#xA;            modeler to identify the intended purposes (e.g., reference, subset, exchange, etc.) of&#xA;            various information models within a set, without having to create a complete MPD model&#xA;            for the set."/>
+    <generalization xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-InformationModel-generalization">
+      <general xmi:type="uml:Stereotype" href="NIEM_UML_Profile.NIEM_Common_Profile.profile.xmi#NIEM_UML_Profile-NIEM_Common_Profile-Namespace"/>
+    </generalization>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-InformationModel-base_Package" name="base_Package" visibility="private" association="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-6">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#Package"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_2_1_2aa0151_1363979878312_529456_2155" name="" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878312_660221_2156" name="" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-InformationModel-defaultPurpose" name="defaultPurpose" visibility="public" type="NIEM_UML_Profile-NIEM_PIM_Profile-DefaultPurposeCode">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-InformationModel-defaultPurpose-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_PIM_Profile-InformationModel-defaultPurpose" body="The default purpose for which an information model is intended. If an&#xA;              InformationModel Package is modeled as being included as an artifact in an MPD, then,&#xA;              unless otherwise specified, the purpose of the artifact is by default taken to be the&#xA;              schema purpose code corresponding to the value of the defaultPurpose attribute."/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-InformationModel-defaultPurpose-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878313_310112_2158" name="" value="1"/>
+      <defaultValue xmi:type="uml:InstanceValue" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-InformationModel-defaultPurpose-defaultValue" name="" instance="NIEM_UML_Profile-NIEM_PIM_Profile-DefaultPurposeCode-extension"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-ReferenceName" name="ReferenceName">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-ReferenceName-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_PIM_Profile-ReferenceName" body="The ReferenceName stereotype is used on an Element that has a name that does not&#xA;            conform to the naming conventions required by the NIEM NDR or is otherwise not the&#xA;            desired NIEM name. The NIEMName attribute must provide a name for the Element that&#xA;            conforms to the relevant NDR naming rules for the specific kind of Element to which the&#xA;            stereotype is applied."/>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-ReferenceName-base_Element" name="base_Element" visibility="private" association="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-8">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#Element"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_2_1_2aa0151_1363979878345_620873_2281" name="" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878346_859391_2282" name="" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-ReferenceName-NIEMName" name="NIEMName" visibility="public">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-ReferenceName-NIEMName-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_PIM_Profile-ReferenceName-NIEMName" body="A NIEM NDR-conformant name to be applied to an Element. The NIEMName will override&#xA;              any name generated from the UML name.."/>
+      <type xmi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_2_1_2aa0151_1363979878329_997843_2213" name="" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878329_31879_2214" name="" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-5" name="" memberEnd="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-5-ownedEnd NIEM_UML_Profile-NIEM_PIM_Profile-Augments-base_Generalization" navigableOwnedEnd="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-5-ownedEnd">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-5-ownedEnd" name="extension_Augments" visibility="private" type="NIEM_UML_Profile-NIEM_PIM_Profile-Augments" aggregation="composite" association="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-5">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-5-ownedEnd-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878351_643356_2303" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-6" name="" memberEnd="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-6-ownedEnd NIEM_UML_Profile-NIEM_PIM_Profile-InformationModel-base_Package" navigableOwnedEnd="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-6-ownedEnd">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-6-ownedEnd" name="extension_InformationModel" visibility="private" type="NIEM_UML_Profile-NIEM_PIM_Profile-InformationModel" aggregation="composite" association="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-6">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-6-ownedEnd-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878350_559769_2300" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-DefaultPurposeCode" name="DefaultPurposeCode">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-DefaultPurposeCode-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_PIM_Profile-DefaultPurposeCode" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;            margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt; The&#xA;            possible purposes for an information model. This enumeration provides the allowed values&#xA;            for the defaultPurpose attribute of the InformationModel stereotype. The values&#xA;            correspond to the schema purpose codes for an MPD artifact. &lt;/body&gt;&#xA;            &lt;/html&gt; MPD artifact. &lt;/body&gt; &lt;/html&gt;&#xA;            ml&gt; "/>
+    <ownedLiteral xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-DefaultPurposeCode-subset" name="subset"/>
+    <ownedLiteral xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-DefaultPurposeCode-constraint" name="constraint"/>
+    <ownedLiteral xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-DefaultPurposeCode-exchange" name="exchange"/>
+    <ownedLiteral xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-DefaultPurposeCode-extension" name="extension"/>
+    <ownedLiteral xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-DefaultPurposeCode-incremental" name="incremental"/>
+    <ownedLiteral xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-DefaultPurposeCode-reference" name="reference"/>
+    <ownedLiteral xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-DefaultPurposeCode-replacement" name="replacement"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-8" name="" memberEnd="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-8-ownedEnd NIEM_UML_Profile-NIEM_PIM_Profile-ReferenceName-base_Element" navigableOwnedEnd="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-8-ownedEnd">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-8-ownedEnd" name="extension_" visibility="private" type="NIEM_UML_Profile-NIEM_PIM_Profile-ReferenceName" aggregation="composite" association="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-8">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-8-ownedEnd-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878315_474349_2164" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-RoleOf" name="RoleOf">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-RoleOf-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_PIM_Profile-RoleOf" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;            margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;            &lt;p&gt; The RoleOf stereotype is applied to a Property of a Class representing&#xA;            a NIEM role type, whose type identifies the base type of that role type. A RoleOf&#xA;            Property must be a reference (i.e., have aggregation=none). A NIEM role type is a type&#xA;            that represents a particular function, purpose, usage, or role of an object.&#xA;            &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; usage, or role of an&#xA;            object. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;&#xA;            &lt;/html&gt; "/>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-RoleOf-NDR__Rule_9-35_" name="NDR [Rule 9-35]" constrainedElement="NIEM_UML_Profile-NIEM_PIM_Profile-RoleOf">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-RoleOf-NDR__Rule_9-35_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_PIM_Profile-RoleOf-NDR__Rule_9-35_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 9-35] (REF, SUB, EXT)&lt;/b&gt;&#xA;              Within the schema, the name of a role SHALL use the property term RoleOf.&#xA;              &lt;/p&gt; &lt;p&gt; &lt;b&gt;Rationale&lt;/b&gt;&#xA;              Using the property term RoleOf immediately identifies an element as representing a&#xA;              role. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; ement as&#xA;              representing a role. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;&#xA;              &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-RoleOf-NDR__Rule_9-35_-specification" name="">
+        <language>English</language>
+        <body>This constraint is enforced by the PIM/PSM transformation. The Transformation
+              ensures that the "RoleOf" property term becomes part of the target PSM property name.</body>
+      </specification>
+    </ownedRule>
+    <ownedRule xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-RoleOf-NDR__Rule_7-40_" name="NDR [Rule 7-40]" constrainedElement="NIEM_UML_Profile-NIEM_PIM_Profile-RoleOf">
+      <ownedComment xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-RoleOf-NDR__Rule_7-40_-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_PIM_Profile-RoleOf-NDR__Rule_7-40_" body="&lt;html&gt; &lt;head&gt; &lt;style&gt; p {padding:0px;&#xA;              margin:0px;} &lt;/style&gt; &lt;/head&gt; &lt;body&gt;&#xA;              &lt;p&gt; &lt;b&gt;[Rule 7-40] (REF, SUB, EXT)&lt;/b&gt;&#xA;              Within the schema, any element with a name beginning with the string RoleOf SHALL&#xA;              represent a base type, of which the containing type represents a role.&#xA;              &lt;/p&gt; &lt;p&gt; &lt;b&gt;Rationale&lt;/b&gt; A&#xA;              RoleOf element references its corresponding base element. The RoleOf label on the&#xA;              reference element ensures that a role object is distinguishable from other objects and&#xA;              its link to the associated base is also distinguishable from the additional properties&#xA;              that are characteristic of this role or that add information. &lt;/p&gt;&#xA;              &lt;/body&gt; &lt;/html&gt; are characteristic of this role or that&#xA;              add information. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;&#xA;              &lt;/html&gt; "/>
+      <specification xmi:type="uml:OpaqueExpression" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-RoleOf-NDR__Rule_7-40_-specification" name="">
+        <language>English</language>
+        <body>This constraint is implemented by the PIM/PSM transformation. Identifying a
+              &lt;Property&gt; as a &lt;&lt;RoleOf&gt;&gt; corresponds to
+              the NIEM naming convention used to identify the roleOf...reference and furthermore
+              establishes the owning &lt;Classifier&gt; as a NIEM Role.</body>
+      </specification>
+    </ownedRule>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-RoleOf-base_Property" name="base_Property" visibility="private" association="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-2">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#Property"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_2_1_2aa0151_1363979878309_438234_2145" name="" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878310_92602_2146" name="" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-10" name="" memberEnd="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-10-ownedEnd NIEM_UML_Profile-NIEM_PIM_Profile-RolePlayedBy-base_Generalization" navigableOwnedEnd="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-10-ownedEnd">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-10-ownedEnd" name="extension_" visibility="private" type="NIEM_UML_Profile-NIEM_PIM_Profile-RolePlayedBy" aggregation="composite" association="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-10">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-10-ownedEnd-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878330_400298_2219" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-RolePlayedBy" name="RolePlayedBy">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-RolePlayedBy-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_PIM_Profile-RolePlayedBy" body="RolePlayedBy Generalization specifies that the special class is to be considered the&#xA;            type of a role that is played by instances of the general class. In the PSM this will&#xA;            map to a property with the &#34;RoleOf&#34; prefix.."/>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-RolePlayedBy-base_Generalization" name="base_Generalization" visibility="private" association="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-10">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#Generalization"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_2_1_2aa0151_1363979878336_731725_2244" name="" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878336_485058_2245" name="" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-Subsets" name="Subsets">
+    <ownedComment xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-Subsets-ownedComment" annotatedElement="NIEM_UML_Profile-NIEM_PIM_Profile-Subsets" body="A Realization signifying a NIEM subsetting relationship between a client derived (subset) element and a supplier base (reference) element.  The &lt;&lt;Subsets&gt;&gt; Realization must be between the same meta-types: either Properties, Classifiers, or &lt;&lt;InformationModel&gt;&gt; packages.  The &lt;&lt;Subsets&gt;&gt; Realization must be between elements owned by different &lt;&lt;InformationModel&gt;&gt; packages.  The targetNamespace of the distinct &lt;&lt;InformationModel&gt;&gt; packages must be identical.  The defaultPurpose of client and supplier may be one of the following combinations:  client is subset, supplier is reference; client is reference, supplier is reference; client is extension, supplier is extension; client is constraint, supplier is exchange, subset, extension, or reference.&#xA;"/>
+    <generalization xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-Subsets-generalization">
+      <general xmi:type="uml:Stereotype" href="NIEM_UML_Profile.NIEM_Common_Profile.profile.xmi#NIEM_UML_Profile-NIEM_Common_Profile-References"/>
+    </generalization>
+    <ownedAttribute xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-Subsets-base_Realization" name="base_Realization" visibility="private" association="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-11">
+      <type xmi:type="uml:Class" href="http://www.omg.org/spec/UML/20110701/UML.xmi#Realization"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_17_0_2_1_2aa0151_1363979878347_809994_2287" name="" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878347_178825_2288" name="" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-11" name="" memberEnd="NIEM_UML_Profile-NIEM_PIM_Profile-Subsets-base_Realization NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-11-extension_" navigableOwnedEnd="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-11-extension_">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-11-extension_" name="extension_" visibility="private" type="NIEM_UML_Profile-NIEM_PIM_Profile-Subsets" aggregation="composite" association="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-11">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="NIEM_UML_Profile-NIEM_PIM_Profile-packagedElement-11-extension_-lowerValue" name=""/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_17_0_2_1_2aa0151_1363979878325_796725_2197" name="" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Profile>
