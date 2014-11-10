@@ -1,0 +1,56 @@
+// due to excessive QVT compilation time, combine globals, platformbinding, and common query/helper to this single module
+import NIEMplatformBinding;// NIEM 2.1 UML QVT
+import org.ijis.gra.GraQvt;// Blackbox
+modeltype UML uses 'http://www.omg.org/spec/UML/20110701';
+
+transformation GRAcommon;
+	main() {}	
+
+//////////////////////////////////////////////////////////////////////////////////////////was GRAsoaml
+// get all Features of a Classifiers, including those inherited from Parents	
+query UML::Classifier::allFeatures():Set(UML::Feature){
+	var allParents:Set(UML::Classifier)=Set{};
+	allParents+=self;
+	allParents+=self.getAllParents();
+	return allParents.feature->asSet();
+}	
+// get all used Interfaces, including those inherited from Parents.  
+//	Used interfaces are those required by the components or having a Usage dependency to an Interface
+query UML::Classifier::getAllUsedInterfaces():Set(UML::Interface){
+	var allUsedInterfaces:Set(UML::Interface)=Set{};
+		var allParents:Set(UML::Classifier)=Set{};
+		allParents+=self;
+		allParents+=self.getAllParents();
+		allUsedInterfaces:= allParents->select(p|p.oclIsKindOf(UML::Component)).oclAsType(UML::Component).required->asSet();
+		allUsedInterfaces+= allParents->select(p|p.oclIsKindOf(UML::Classifier)).oclAsType(UML::Classifier).clientDependency
+			->select(u|u.oclIsKindOf(UML::Usage)).oclAsType(UML::Usage).supplier
+			->select(p|p.oclIsKindOf(UML::Interface)).oclAsType(UML::Interface)
+			->asSet();
+		return allUsedInterfaces;
+}	
+// get all parents of given Classifier	
+query UML::Classifier::getAllParents():Set(UML::Classifier){
+	var allParents:Set(UML::Classifier)=Set{};
+	return self.getAllParentsRecursive(allParents);
+}	
+// get all parents of given classifier, accumulating result in allParents Set
+query UML::Classifier::getAllParentsRecursive(inout allParents:Set(UML::Classifier)):Set(UML::Classifier){
+	if(allParents->includes(self))then {return allParents}endif;
+	var parents:Set(UML::Classifier)=allParents;
+	parents+=self;
+	return self.general.getAllParentsRecursive(parents)->asSet();
+}	
+// get realized interfaces of classifier, if this is an Interface then return self, otherwise if this is a Class return all implemented interfaces
+query UML::Classifier::getRealizedInterfaces():Set(UML::Interface){
+	if(self.oclIsKindOf(UML::Interface))then{return Set{self.oclAsType(UML::Interface)};}else{}endif;
+	return self.oclAsType(UML::Class).getAllImplementedInterfaces();
+}
+// all implemented interfaces of a behaviored classifier is the contract of all interface realizations owned by the classifier
+query UML::BehavioredClassifier::getAllImplementedInterfaces():Set(UML::Interface){
+	return self.interfaceRealization.contract->asSet();
+}
+// all behavioral features of a classifier is all features which are behavioral features
+query UML::Classifier::allBehavioralFeatures():Sequence(UML::BehavioralFeature)=
+	self.allFeatures()->select(f|f.oclIsKindOf(UML::BehavioralFeature)).oclAsType(UML::BehavioralFeature)->asSequence();
+
+	

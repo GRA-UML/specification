@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:uml="http://www.omg.org/spec/UML/20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:NIEM_Common_Profile="http://www.omg.org/spec/NIEM-UML/20120501/NIEM_Common_Profile" xmlns:GRAProfile="http://www.omg.org/spec/gra-uml/20141101/GRAProfile" xmlns:StandardProfileL2="http://www.omg.org/spec/UML/20110701/StandardProfileL2" xmlns:NIEM_PSM_Profile="http://www.omg.org/spec/NIEM-UML/20120501/NIEM_PSM_Profile" xmlns:StandardProfileL3="http://www.omg.org/spec/UML/20110701/StandardProfileL3" xmlns:NIEM_PIM_Profile="http://www.omg.org/spec/NIEM-UML/20120501/NIEM_PIM_Profile">
+   
+   <uml:Model xmi:type="uml:Model" xmi:id="_Data" name="Data">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_Data-ownedComment" body="Author:Cory.&#xA;Created:8/4/14 5:25 PM.&#xA;Title:.&#xA;Comment:.&#xA;">
+         <annotatedElement xmi:idref="_Data"/>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Package" xmi:id="_Data-niem" name="niem">
+         <packagedElement xmi:type="uml:Package" xmi:id="_Data-niem-domains" name="domains"/>
+         <packagedElement xmi:type="uml:Package" xmi:id="_Data-niem-external" name="external"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_Data-MyGRAModel" name="MyGRAModel">
+         <packagedElement xmi:type="uml:Package" xmi:id="_Data-MyGRAModel-Interfaces" name="Interfaces">
+            <packagedElement xmi:type="uml:Interface" xmi:id="_Data-MyGRAModel-Interfaces-SampleInterface" name="SampleInterface">
+               <ownedComment xmi:type="uml:Comment" xmi:id="_Data-MyGRAModel-Interfaces-SampleInterface-ownedComment" body="An interface in support of a service">
+                  <annotatedElement xmi:idref="_Data-MyGRAModel-Interfaces-SampleInterface"/>
+               </ownedComment>
+               <ownedOperation xmi:type="uml:Operation" xmi:id="_Data-MyGRAModel-Interfaces-SampleInterface-CompleteMe" name="CompleteMe" visibility="public">
+                  <ownedComment xmi:type="uml:Comment" xmi:id="_Data-MyGRAModel-Interfaces-SampleInterface-CompleteMe-ownedComment" body="An operation in support of a service">
+                     <annotatedElement xmi:idref="_Data-MyGRAModel-Interfaces-SampleInterface-CompleteMe"/>
+                  </ownedComment>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_Data-MyGRAModel-Interfaces-SampleInterface-CompleteMe-Input" name="Input" visibility="public"/>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_Data-MyGRAModel-Interfaces-SampleInterface-CompleteMe-Return" name="Return" visibility="public" direction="return"/>
+               </ownedOperation>
+            </packagedElement>
+         </packagedElement>
+         <packagedElement xmi:type="uml:Package" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications" name="GRAServiceInterfaceSpecifications">
+            <packagedElement xmi:type="uml:Package" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification" name="Service Interface Specification">
+               <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification" name="Template Service Specification">
+                  <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification"/>
+                  <ownedComment xmi:type="uml:Comment" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification-ownedComment" body="The service interface specification defines how the service will be delivered to the client">
+                     <annotatedElement xmi:idref="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification"/>
+                  </ownedComment>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification-slot-1">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-Service"/>
+                     <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification-slot-1-value" instance="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification-slot-2">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-Requirement"/>
+                     <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification-slot-2-value" instance="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification-slot-3">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-ServiceInteractionProfile"/>
+                     <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification-slot-3-value" instance="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-WS-SIP"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification-slot-4">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-ServiceInterfaceNameAbbreviationText"/>
+                     <value xmi:type="uml:LiteralString" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification-slot-4-value" value="TEMP"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification-slot-5">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-TargetNamespace"/>
+                     <value xmi:type="uml:LiteralString" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification-slot-5-value" value="http://sample.com/GRA/Template/Service1"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification-slot-6">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-SecurityDescriptionText"/>
+                     <value xmi:type="uml:LiteralString" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification-slot-6-value" value="GFIPM"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification-slot-7">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-SecurityImplementedIndicator"/>
+                     <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification-slot-7-value" value="true"/>
+                  </slot>
+               </packagedElement>
+               <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-packagedElement-2">
+                  <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-38"/>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-packagedElement-2-slot-1">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-38-ownedEnd"/>
+                     <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-packagedElement-2-slot-1-value" instance="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-packagedElement-2-slot-2">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceInterface"/>
+                     <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-packagedElement-2-slot-2-value" instance="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification"/>
+                  </slot>
+               </packagedElement>
+               <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service" name="Template Service">
+                  <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-Service"/>
+                  <ownedComment xmi:type="uml:Comment" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service-ownedComment" body="The template service provides interfaces via ports as defined by the realized Service Component.">
+                     <annotatedElement xmi:idref="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service"/>
+                  </ownedComment>
+               </packagedElement>
+               <packagedElement xmi:type="uml:Realization" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-packagedElement-4">
+                  <client xmi:idref="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service"/>
+                  <supplier xmi:idref="_Data-MyGRAModel-ServiceComponents-ServiceComponent"/>
+               </packagedElement>
+               <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-packagedElement-5">
+                  <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-25"/>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-packagedElement-5-slot-1">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-Service"/>
+                     <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-packagedElement-5-slot-1-value" instance="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-packagedElement-5-slot-2">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-25-ownedEnd"/>
+                     <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-packagedElement-5-slot-2-value" instance="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification"/>
+                  </slot>
+               </packagedElement>
+               <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements" name="Service Interaction Requirements">
+                  <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements"/>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-1">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-MessageAddressing"/>
+                     <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-1-value" value="true"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-2">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-IdentityAndAttributeAssertionTransmission"/>
+                     <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-2-value"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-3">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-InterfaceDescriptionRequirements"/>
+                     <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-3-value"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-4">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-Logging"/>
+                     <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-4-value"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-5">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-MessageConfidentiality"/>
+                     <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-5-value"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-6">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-MessageIntegrity"/>
+                     <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-6-value"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-7">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-MessageNonrepudiation"/>
+                     <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-7-value"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-8">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-Reliability"/>
+                     <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-8-value"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-9">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-ServiceAuthentication"/>
+                     <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-9-value" value="true"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-10">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-ServiceConsumerAuthentication"/>
+                     <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-10-value"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-11">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-ServiceConsumerAuthorization"/>
+                     <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-11-value"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-12">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-ServiceMetadataAvailability"/>
+                     <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-12-value"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-13">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-ServiceResponsiveness"/>
+                     <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-13-value"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-14">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-TransactionSupport"/>
+                     <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements-slot-14-value"/>
+                  </slot>
+               </packagedElement>
+               <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-packagedElement-7">
+                  <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-21"/>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-packagedElement-7-slot-1">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-Requirement"/>
+                     <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-packagedElement-7-slot-1-value" instance="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Service_Interaction_Requirements"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-packagedElement-7-slot-2">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-21-ownedEnd"/>
+                     <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-packagedElement-7-slot-2-value" instance="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification"/>
+                  </slot>
+               </packagedElement>
+               <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-WS-SIP" name="WS-SIP">
+                  <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceInteractionProfile"/>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-WS-SIP-slot-1">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceInteractionProfile-SIPName"/>
+                     <value xmi:type="uml:LiteralString" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-WS-SIP-slot-1-value" value="WS-SIP"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-WS-SIP-slot-2">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceInteractionProfile-SIPVersion"/>
+                     <value xmi:type="uml:LiteralString" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-WS-SIP-slot-2-value" value="1.3"/>
+                  </slot>
+               </packagedElement>
+               <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-packagedElement-9">
+                  <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-35"/>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-packagedElement-9-slot-1">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-35-ownedEnd"/>
+                     <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-packagedElement-9-slot-1-value" instance="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification"/>
+                  </slot>
+                  <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-packagedElement-9-slot-2">
+                     <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceInterfaceSpecification-ServiceInteractionProfile"/>
+                     <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-packagedElement-9-slot-2-value" instance="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-WS-SIP"/>
+                  </slot>
+               </packagedElement>
+            </packagedElement>
+         </packagedElement>
+         <packagedElement xmi:type="uml:Package" xmi:id="_Data-MyGRAModel-Use_Cases" name="Use Cases">
+            <packagedElement xmi:type="uml:UseCase" xmi:id="_Data-MyGRAModel-Use_Cases-Service_provided_by_service_provider_to_service_consumer" name="Service provided by service provider to service consumer"/>
+            <packagedElement xmi:type="uml:Actor" xmi:id="_Data-MyGRAModel-Use_Cases-ServiceConsumer" name="ServiceConsumer">
+               <ownedComment xmi:type="uml:Comment" xmi:id="_Data-MyGRAModel-Use_Cases-ServiceConsumer-ownedComment" body="The consumer of the service">
+                  <annotatedElement xmi:idref="_Data-MyGRAModel-Use_Cases-ServiceConsumer"/>
+               </ownedComment>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Association" xmi:id="_Data-MyGRAModel-Use_Cases-packagedElement-3">
+               <memberEnd xmi:idref="_Data-MyGRAModel-Use_Cases-packagedElement-3-ownedEnd-1"/>
+               <memberEnd xmi:idref="_Data-MyGRAModel-Use_Cases-packagedElement-3-ownedEnd-2"/>
+               <navigableOwnedEnd xmi:idref="_Data-MyGRAModel-Use_Cases-packagedElement-3-ownedEnd-1"/>
+               <navigableOwnedEnd xmi:idref="_Data-MyGRAModel-Use_Cases-packagedElement-3-ownedEnd-2"/>
+               <ownedEnd xmi:type="uml:Property" xmi:id="_Data-MyGRAModel-Use_Cases-packagedElement-3-ownedEnd-1" visibility="private" type="_Data-MyGRAModel-Use_Cases-Service_provided_by_service_provider_to_service_consumer" association="_Data-MyGRAModel-Use_Cases-packagedElement-3"/>
+               <ownedEnd xmi:type="uml:Property" xmi:id="_Data-MyGRAModel-Use_Cases-packagedElement-3-ownedEnd-2" visibility="private" type="_Data-MyGRAModel-Use_Cases-ServiceConsumer" association="_Data-MyGRAModel-Use_Cases-packagedElement-3"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Actor" xmi:id="_Data-MyGRAModel-Use_Cases-ServiceProvider" name="ServiceProvider">
+               <ownedComment xmi:type="uml:Comment" xmi:id="_Data-MyGRAModel-Use_Cases-ServiceProvider-ownedComment" body="The provider of the service">
+                  <annotatedElement xmi:idref="_Data-MyGRAModel-Use_Cases-ServiceProvider"/>
+               </ownedComment>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Association" xmi:id="_Data-MyGRAModel-Use_Cases-packagedElement-5">
+               <memberEnd xmi:idref="_Data-MyGRAModel-Use_Cases-packagedElement-5-ownedEnd-1"/>
+               <memberEnd xmi:idref="_Data-MyGRAModel-Use_Cases-packagedElement-5-ownedEnd-2"/>
+               <navigableOwnedEnd xmi:idref="_Data-MyGRAModel-Use_Cases-packagedElement-5-ownedEnd-1"/>
+               <navigableOwnedEnd xmi:idref="_Data-MyGRAModel-Use_Cases-packagedElement-5-ownedEnd-2"/>
+               <ownedEnd xmi:type="uml:Property" xmi:id="_Data-MyGRAModel-Use_Cases-packagedElement-5-ownedEnd-1" visibility="private" type="_Data-MyGRAModel-Use_Cases-Service_provided_by_service_provider_to_service_consumer" association="_Data-MyGRAModel-Use_Cases-packagedElement-5"/>
+               <ownedEnd xmi:type="uml:Property" xmi:id="_Data-MyGRAModel-Use_Cases-packagedElement-5-ownedEnd-2" visibility="private" type="_Data-MyGRAModel-Use_Cases-ServiceProvider" association="_Data-MyGRAModel-Use_Cases-packagedElement-5"/>
+            </packagedElement>
+         </packagedElement>
+         <packagedElement xmi:type="uml:Package" xmi:id="_Data-MyGRAModel-GRAServiceSpecification" name="GRAServiceSpecification">
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description" name="TemplateService Description">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription"/>
+               <ownedComment xmi:type="uml:Comment" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-ownedComment" body="This is the GRA service description for the template service.">
+                  <annotatedElement xmi:idref="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description"/>
+               </ownedComment>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-1">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-Classification"/>
+                  <value xmi:type="uml:LiteralString" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-1-value" value="Classification"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-2">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-DomainDescription"/>
+                  <value xmi:type="uml:LiteralString" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-2-value" value="This template is domain independent"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-3">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-MajorVersion"/>
+                  <value xmi:type="uml:LiteralInteger" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-3-value" value="1"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-4">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-MinorVersion"/>
+                  <value xmi:type="uml:LiteralInteger" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-4-value"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-5">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceDescriptionKeywordText"/>
+                  <value xmi:type="uml:LiteralString" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-5-value" value="Template keyword"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-6">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceDescriptionSummaryText"/>
+                  <value xmi:type="uml:LiteralString" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-6-value" value="This is a template service"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-7">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceIdentification-ServiceID"/>
+                  <value xmi:type="uml:LiteralString" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-7-value" value="http://sample.com/GRA/Template"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-8">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceIdentification-ServiceNameAbbreviationText"/>
+                  <value xmi:type="uml:LiteralString" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-8-value" value="TEMP"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-9">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceIdentification-ServiceURI"/>
+                  <value xmi:type="uml:LiteralString" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-9-value" value="http://sample.com/GRA/Template"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-10">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-Sponsor"/>
+                  <value xmi:type="uml:LiteralString" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-10-value" value="Sponsored by IJIS, BJA and ISE"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-11">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-AdditionalInformation"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-11-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Additional_Information"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-12">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServicePurpose"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-12-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Purpose"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-13">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceScopeDescription"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-13-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Scope"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-14">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ExecutionContext"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-14-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Execution_Context"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-15">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-Security"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-15-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Security"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-16">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-Privacy"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-16-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Privacy"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-17">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-DataProvenance"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-17-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Data_Provenance"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-18">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceAssumption"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-18-value" instance="_Data-MyGRAModel-GRAServiceSpecification-ServiceAssumption"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-19">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceCapability"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-19-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Capability"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-20">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-RealWorldEffect"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-20-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Use_Cases"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-21">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-Requirement"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-21-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-22">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceSecurityClassification"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-22-value" instance="_Data-MyGRAModel-GRAServiceSpecification-SBU"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-23">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-RelatedOrganization"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-23-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Organization_TBD"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-24">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-LifecycleStatus"/>
+                  <value xmi:type="uml:LiteralString" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-24-value" value="Pre production"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-25">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceLevelAgreement"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-25-value" instance="_Data-MyGRAModel-GRAServiceSpecification-SLA"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-26">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceInterface"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-26-value" instance="_Data-MyGRAModel-GRAServiceInterfaceSpecifications-Service_Interface_Specification-Template_Service_Specification"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-27">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-Endorsements"/>
+                  <value xmi:type="uml:LiteralString" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-27-value" value="Provide names of endorsing entities"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-28">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ExchangePartner"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-28-value-1" instance="_Data-MyGRAModel-GRAServiceSpecification-Provider"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description-slot-28-value-2" instance="_Data-MyGRAModel-GRAServiceSpecification-Consumer"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Realization" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-2">
+               <client xmi:idref="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description"/>
+               <supplier xmi:idref="_Data-MyGRAModel-Service_Community"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Additional_Information" name="Additional Information">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-Description"/>
+               <ownedComment xmi:type="uml:Comment" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Additional_Information-ownedComment" body="There is no additional information for this service.">
+                  <annotatedElement xmi:idref="_Data-MyGRAModel-GRAServiceSpecification-Additional_Information"/>
+               </ownedComment>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-4">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-66"/>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-4-slot-1">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-AdditionalInformation"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-4-slot-1-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Additional_Information"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-4-slot-2">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-66-ownedEnd"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-4-slot-2-value" instance="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Purpose" name="Purpose">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-Description"/>
+               <ownedComment xmi:type="uml:Comment" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Purpose-ownedComment" body="The purpose of this service template is to provide a foundation for GRA service specifications.">
+                  <annotatedElement xmi:idref="_Data-MyGRAModel-GRAServiceSpecification-Purpose"/>
+               </ownedComment>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Scope" name="Scope">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-Description"/>
+               <ownedComment xmi:type="uml:Comment" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Scope-ownedComment" body="This template has no specific scope">
+                  <annotatedElement xmi:idref="_Data-MyGRAModel-GRAServiceSpecification-Scope"/>
+               </ownedComment>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-7">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-73"/>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-7-slot-1">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServicePurpose"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-7-slot-1-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Purpose"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-7-slot-2">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-73-ownedEnd"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-7-slot-2-value" instance="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-8">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-67"/>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-8-slot-1">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceScopeDescription"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-8-slot-1-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Scope"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-8-slot-2">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-67-ownedEnd"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-8-slot-2-value" instance="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Execution_Context" name="Execution Context">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-Description"/>
+               <ownedComment xmi:type="uml:Comment" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Execution_Context-ownedComment" body="&lt;html&gt;&#xA;  &lt;head&gt;&#xA;&#x9;&#x9;&lt;style&gt;&#xA;&#x9;&#x9;&#x9;p {padding:0px; margin:0px;}&#xA;&#x9;&#x9;&lt;/style&gt;&#xA;&#x9;&lt;/head&gt;&#xA;  &lt;body&gt;&#xA;    &lt;p&gt;&#xA;Service descriptions should include all information pertinent to the production or consumption of the service, including expected infrastructure functions and other dependencies. &#xA;    &lt;/p&gt;&#xA;&#xA;    &lt;p&gt;&#xA;&lt;i&gt;No information directly pertaining to implementation platform or technology should be included in the service description&lt;/i&gt;.&#xA;&#xA;    &lt;/p&gt;&#xA;&#xA;  &lt;/body&gt;&#xA;&lt;/html&gt;&#xA;">
+                  <annotatedElement xmi:idref="_Data-MyGRAModel-GRAServiceSpecification-Execution_Context"/>
+               </ownedComment>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Security" name="Security">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-Description"/>
+               <ownedComment xmi:type="uml:Comment" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Security-ownedComment" body="The service must adhere to the rules of the CJIS Security Policies regarding the Advanced Encryption Standard (AES) level of encryption. The use of Virtual Private Networks (VPNs) or Secure Sockets Layer (SSL) for transport-level security in addition to these requirements is optional.">
+                  <annotatedElement xmi:idref="_Data-MyGRAModel-GRAServiceSpecification-Security"/>
+               </ownedComment>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Privacy" name="Privacy">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-Description"/>
+               <ownedComment xmi:type="uml:Comment" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Privacy-ownedComment" body="The MOUs between participating entities will further define specific privacy requirements.  Global has developed a document,  “Implementing Privacy Policy in Justice Information Sharing: A Technical Framework”   This document is intended to provide guidelines for supporting the electronic expression of privacy policy and how to convert privacy policy so that it is understandable to computers and software.">
+                  <annotatedElement xmi:idref="_Data-MyGRAModel-GRAServiceSpecification-Privacy"/>
+               </ownedComment>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-12">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-62"/>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-12-slot-1">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ExecutionContext"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-12-slot-1-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Execution_Context"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-12-slot-2">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-62-ownedEnd"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-12-slot-2-value" instance="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-13">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-63"/>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-13-slot-1">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-Security"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-13-slot-1-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Security"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-13-slot-2">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-63-ownedEnd"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-13-slot-2-value" instance="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-14">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-64"/>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-14-slot-1">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-Privacy"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-14-slot-1-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Privacy"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-14-slot-2">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-64-ownedEnd"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-14-slot-2-value" instance="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Data_Provenance" name="Data Provenance">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-Description"/>
+               <ownedComment xmi:type="uml:Comment" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Data_Provenance-ownedComment" body="Provenance is defined as the agency, office, or person of origin of records, i.e., the entity that created, received, or accumulated and used the records in the conduct of their business ">
+                  <annotatedElement xmi:idref="_Data-MyGRAModel-GRAServiceSpecification-Data_Provenance"/>
+               </ownedComment>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-16">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-74"/>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-16-slot-1">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-74-ownedEnd"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-16-slot-1-value" instance="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-16-slot-2">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-DataProvenance"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-16-slot-2-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Data_Provenance"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-ServiceAssumption" name="ServiceAssumption">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-Description"/>
+               <ownedComment xmi:type="uml:Comment" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-ServiceAssumption-ownedComment" body="N/A">
+                  <annotatedElement xmi:idref="_Data-MyGRAModel-GRAServiceSpecification-ServiceAssumption"/>
+               </ownedComment>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-18">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-65"/>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-18-slot-1">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceAssumption"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-18-slot-1-value" instance="_Data-MyGRAModel-GRAServiceSpecification-ServiceAssumption"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-18-slot-2">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-65-ownedEnd"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-18-slot-2-value" instance="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Capability" name="Capability">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceCapability"/>
+               <ownedComment xmi:type="uml:Comment" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Capability-ownedComment" body="The provider of this services has the capability to provide all of the services as described under real world effects.">
+                  <annotatedElement xmi:idref="_Data-MyGRAModel-GRAServiceSpecification-Capability"/>
+               </ownedComment>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-20">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-39"/>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-20-slot-1">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-39-ownedEnd"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-20-slot-1-value" instance="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-20-slot-2">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceCapability"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-20-slot-2-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Capability"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Use_Cases" name="Use Cases">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-UseCase"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-22">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-32"/>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-22-slot-1">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-32-ownedEnd"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-22-slot-1-value" instance="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-22-slot-2">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-RealWorldEffect"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-22-slot-2-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Use_Cases"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Realization" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-23">
+               <client xmi:idref="_Data-MyGRAModel-GRAServiceSpecification-Use_Cases"/>
+               <supplier xmi:idref="_Data-MyGRAModel-Use_Cases"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements" name="Service Interaction Requirements">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements"/>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-1">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-MessageAddressing"/>
+                  <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-1-value" value="true"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-2">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-IdentityAndAttributeAssertionTransmission"/>
+                  <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-2-value"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-3">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-InterfaceDescriptionRequirements"/>
+                  <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-3-value"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-4">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-Logging"/>
+                  <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-4-value"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-5">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-MessageConfidentiality"/>
+                  <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-5-value"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-6">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-MessageIntegrity"/>
+                  <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-6-value"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-7">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-MessageNonrepudiation"/>
+                  <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-7-value"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-8">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-Reliability"/>
+                  <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-8-value"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-9">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-ServiceAuthentication"/>
+                  <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-9-value"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-10">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-ServiceConsumerAuthentication"/>
+                  <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-10-value"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-11">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-ServiceConsumerAuthorization"/>
+                  <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-11-value"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-12">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-ServiceMetadataAvailability"/>
+                  <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-12-value"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-13">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-ServiceResponsiveness"/>
+                  <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-13-value"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-14">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-InteractionRequirements-TransactionSupport"/>
+                  <value xmi:type="uml:LiteralBoolean" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements-slot-14-value"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-25">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-21"/>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-25-slot-1">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-GRAServiceAnnotationBase-Requirement"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-25-slot-1-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Service_Interaction_Requirements"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-25-slot-2">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-21-ownedEnd"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-25-slot-2-value" instance="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-SBU" name="SBU">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-SecurityClassification"/>
+               <ownedComment xmi:type="uml:Comment" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-SBU-ownedComment" body="Sensitive but unclassified">
+                  <annotatedElement xmi:idref="_Data-MyGRAModel-GRAServiceSpecification-SBU"/>
+               </ownedComment>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-27">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-27"/>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-27-slot-1">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceSecurityClassification"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-27-slot-1-value" instance="_Data-MyGRAModel-GRAServiceSpecification-SBU"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-27-slot-2">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-27-ownedEnd"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-27-slot-2-value" instance="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Organization_TBD" name="Organization TBD">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-Organization"/>
+               <ownedComment xmi:type="uml:Comment" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Organization_TBD-ownedComment" body="This organization is related to the service.">
+                  <annotatedElement xmi:idref="_Data-MyGRAModel-GRAServiceSpecification-Organization_TBD"/>
+               </ownedComment>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Organization_TBD-slot-1">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationAcronym"/>
+                  <value xmi:type="uml:LiteralString" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Organization_TBD-slot-1-value" value="TBD"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Organization_TBD-slot-2">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationPointOfContact"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Organization_TBD-slot-2-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Person_TBD"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Organization_TBD-slot-3">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationRoleDescriptionText"/>
+                  <value xmi:type="uml:LiteralString" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Organization_TBD-slot-3-value" value="Role description"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Person_TBD" name="Person TBD">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-Person"/>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Person_TBD-slot">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-Person-ContactPersonPhoneNumberID"/>
+                  <value xmi:type="uml:LiteralString" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Person_TBD-slot-value" value="Unknown"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-30">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-26"/>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-30-slot-1">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-26-ownedEnd"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-30-slot-1-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Organization_TBD"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-30-slot-2">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-Organization-OrganizationPointOfContact"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-30-slot-2-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Person_TBD"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-31">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-41"/>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-31-slot-1">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-41-ownedEnd"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-31-slot-1-value" instance="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-31-slot-2">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-RelatedOrganization"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-31-slot-2-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Organization_TBD"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-SLA" name="SLA">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement"/>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-SLA-slot">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceLevelAgreement-ServiceResponseTime"/>
+                  <value xmi:type="uml:LiteralString" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-SLA-slot-value" value="1m"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-33">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-42"/>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-33-slot-1">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-42-ownedEnd"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-33-slot-1-value" instance="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-33-slot-2">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ServiceLevelAgreement"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-33-slot-2-value" instance="_Data-MyGRAModel-GRAServiceSpecification-SLA"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Provider" name="Provider">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-Participant"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-35">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-34"/>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-35-slot-1">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-34-ownedEnd"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-35-slot-1-value" instance="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-35-slot-2">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ExchangePartner"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-35-slot-2-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Provider"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-Consumer" name="Consumer">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-Participant"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-37">
+               <classifier href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-34"/>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-37-slot-1">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-packagedElement-34-ownedEnd"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-37-slot-1-value" instance="_Data-MyGRAModel-GRAServiceSpecification-TemplateService_Description"/>
+               </slot>
+               <slot xmi:type="uml:Slot" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-37-slot-2">
+                  <definingFeature href="http://www.omg.org/spec/gra-uml/20141101/GRAAnnotations.xmi#_Data-GRAUML-GRAAnnotationModel-ServiceDescription-ExchangePartner"/>
+                  <value xmi:type="uml:InstanceValue" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-37-slot-2-value" instance="_Data-MyGRAModel-GRAServiceSpecification-Consumer"/>
+               </slot>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Realization" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-38">
+               <client xmi:idref="_Data-MyGRAModel-GRAServiceSpecification-Provider"/>
+               <supplier xmi:idref="_Data-MyGRAModel-Use_Cases-ServiceProvider"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Realization" xmi:id="_Data-MyGRAModel-GRAServiceSpecification-packagedElement-39">
+               <client xmi:idref="_Data-MyGRAModel-GRAServiceSpecification-Consumer"/>
+               <supplier xmi:idref="_Data-MyGRAModel-Use_Cases-ServiceConsumer"/>
+            </packagedElement>
+         </packagedElement>
+         <packagedElement xmi:type="uml:Collaboration" xmi:id="_Data-MyGRAModel-Service_Community" name="Service Community" classifierBehavior="_Data-MyGRAModel-Service_Community-Service_Interaction">
+            <ownedComment xmi:type="uml:Comment" xmi:id="_Data-MyGRAModel-Service_Community-ownedComment" body="The service community defines the roles of participants in the community as well as how they interact.">
+               <annotatedElement xmi:idref="_Data-MyGRAModel-Service_Community"/>
+            </ownedComment>
+            <ownedBehavior xmi:type="uml:Interaction" xmi:id="_Data-MyGRAModel-Service_Community-Service_Interaction" name="Service Interaction">
+               <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Data-MyGRAModel-Service_Community-Service_Interaction-fragment-1" visibility="public" message="_Data-MyGRAModel-Service_Community-Service_Interaction-CompleteMe">
+                  <covered xmi:idref="_Data-MyGRAModel-Service_Community-Service_Interaction-lifeline-1"/>
+               </fragment>
+               <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Data-MyGRAModel-Service_Community-Service_Interaction-fragment-2" visibility="public" message="_Data-MyGRAModel-Service_Community-Service_Interaction-CompleteMe">
+                  <covered xmi:idref="_Data-MyGRAModel-Service_Community-Service_Interaction-lifeline-2"/>
+               </fragment>
+               <lifeline xmi:type="uml:Lifeline" xmi:id="_Data-MyGRAModel-Service_Community-Service_Interaction-lifeline-1" visibility="public" represents="_Data-MyGRAModel-Service_Community-consumer">
+                  <coveredBy xmi:idref="_Data-MyGRAModel-Service_Community-Service_Interaction-fragment-1"/>
+               </lifeline>
+               <lifeline xmi:type="uml:Lifeline" xmi:id="_Data-MyGRAModel-Service_Community-Service_Interaction-lifeline-2" visibility="public" represents="_Data-MyGRAModel-Service_Community-service">
+                  <coveredBy xmi:idref="_Data-MyGRAModel-Service_Community-Service_Interaction-fragment-2"/>
+               </lifeline>
+               <message xmi:type="uml:Message" xmi:id="_Data-MyGRAModel-Service_Community-Service_Interaction-CompleteMe" name="CompleteMe" visibility="public" receiveEvent="_Data-MyGRAModel-Service_Community-Service_Interaction-fragment-2" sendEvent="_Data-MyGRAModel-Service_Community-Service_Interaction-fragment-1" signature="_Data-MyGRAModel-Interfaces-SampleInterface-CompleteMe">
+                  <argument xmi:type="uml:OpaqueExpression" xmi:id="_Data-MyGRAModel-Service_Community-Service_Interaction-CompleteMe-argument-1">
+                     <body>-</body>
+                  </argument>
+                  <argument xmi:type="uml:OpaqueExpression" xmi:id="_Data-MyGRAModel-Service_Community-Service_Interaction-CompleteMe-argument-2">
+                     <body>-</body>
+                  </argument>
+               </message>
+            </ownedBehavior>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_Data-MyGRAModel-Service_Community-consumer" name="consumer" visibility="public" aggregation="composite" type="_Data-MyGRAModel-Use_Cases-ServiceConsumer"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_Data-MyGRAModel-Service_Community-provider" name="provider" visibility="public" aggregation="composite" type="_Data-MyGRAModel-Use_Cases-ServiceProvider"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_Data-MyGRAModel-Service_Community-service" name="service" visibility="public" aggregation="composite" type="_Data-MyGRAModel-ServiceComponents-ServiceComponent"/>
+         </packagedElement>
+         <packagedElement xmi:type="uml:Package" xmi:id="_Data-MyGRAModel-ServiceComponents" name="ServiceComponents">
+            <packagedElement xmi:type="uml:Component" xmi:id="_Data-MyGRAModel-ServiceComponents-ServiceComponent" name="ServiceComponent">
+               <ownedComment xmi:type="uml:Comment" xmi:id="_Data-MyGRAModel-ServiceComponents-ServiceComponent-ownedComment" body="The service component provides the foundation for a service with multiple ports and interfaces.">
+                  <annotatedElement xmi:idref="_Data-MyGRAModel-ServiceComponents-ServiceComponent"/>
+               </ownedComment>
+               <ownedAttribute xmi:type="uml:Port" xmi:id="_Data-MyGRAModel-ServiceComponents-ServiceComponent-ServicePort" name="ServicePort" visibility="public" aggregation="composite" type="_Data-MyGRAModel-Interfaces-SampleInterface">
+                  <ownedComment xmi:type="uml:Comment" xmi:id="_Data-MyGRAModel-ServiceComponents-ServiceComponent-ServicePort-ownedComment" body="The service port is the point of delivery of a service.">
+                     <annotatedElement xmi:idref="_Data-MyGRAModel-ServiceComponents-ServiceComponent-ServicePort"/>
+                  </ownedComment>
+               </ownedAttribute>
+               <packagedElement xmi:type="uml:Realization" xmi:id="_Data-MyGRAModel-ServiceComponents-ServiceComponent-packagedElement">
+                  <client xmi:idref="_Data-MyGRAModel-ServiceComponents-ServiceComponent"/>
+                  <supplier xmi:idref="_Data-MyGRAModel-Use_Cases-ServiceProvider"/>
+               </packagedElement>
+            </packagedElement>
+         </packagedElement>
+         <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Data-MyGRAModel-profileApplication">
+            <appliedProfile href="http://www.omg.org/spec/gra-uml/20141101/GRAProfile.xmi#_Data-GRAProfile"/>
+         </profileApplication>
+      </packagedElement>
+   </uml:Model>
+   <GRAProfile:Consumer xmi:id="_Data-MyGRAModel-Use_Cases-packagedElement-3-appliedStereotypeInstance" base_Association="_Data-MyGRAModel-Use_Cases-packagedElement-3"/>
+   <GRAProfile:Provider xmi:id="_Data-MyGRAModel-Use_Cases-packagedElement-5-appliedStereotypeInstance" base_Association="_Data-MyGRAModel-Use_Cases-packagedElement-5"/>
+</xmi:XMI>

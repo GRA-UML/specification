@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="UTF-8"?><emof:Package xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:emof="http://schema.omg.org/spec/MOF/2.0/emof.xml" xmi:id="data" name="data" uri="http:///data.ecore">
+  <nestedPackage xmi:type="emof:Package" xmi:id="data.grauml" name="grauml" uri="http:///data/grauml.ecore">
+    <nestedPackage xmi:type="emof:Package" xmi:id="data.grauml.graAnnotationModel" name="graAnnotationModel" uri="http://ijis.org/GRA/Annotations">
+      <ownedType xmi:type="emof:Enumeration" xmi:id="data.grauml.graAnnotationModel.ExchangePattern" name="ExchangePattern">
+        
+        <ownedLiteral xmi:type="emof:EnumerationLiteral" xmi:id="data.grauml.graAnnotationModel.ExchangePattern.unknown" name="unknown">
+          
+        </ownedLiteral>
+        <ownedLiteral xmi:type="emof:EnumerationLiteral" xmi:id="data.grauml.graAnnotationModel.ExchangePattern.enquiry" name="enquiry">
+          
+          
+        </ownedLiteral>
+        <ownedLiteral xmi:type="emof:EnumerationLiteral" xmi:id="data.grauml.graAnnotationModel.ExchangePattern.subscription" name="subscription">
+          
+          
+        </ownedLiteral>
+        <ownedLiteral xmi:type="emof:EnumerationLiteral" xmi:id="data.grauml.graAnnotationModel.ExchangePattern.notification" name="notification">
+          
+          
+        </ownedLiteral>
+        <ownedLiteral xmi:type="emof:EnumerationLiteral" xmi:id="data.grauml.graAnnotationModel.ExchangePattern.update" name="update">
+          
+          
+        </ownedLiteral>
+        <ownedLiteral xmi:type="emof:EnumerationLiteral" xmi:id="data.grauml.graAnnotationModel.ExchangePattern.message" name="message">
+          
+          
+        </ownedLiteral>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.InteractionRequirements" name="InteractionRequirements">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.InteractionRequirements.serviceConsumerAuthentication" name="serviceConsumerAuthentication" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.InteractionRequirements.serviceConsumerAuthorization" name="serviceConsumerAuthorization" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.InteractionRequirements.identityAndAttributeAssertionTransmission" name="identityAndAttributeAssertionTransmission" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.InteractionRequirements.serviceAuthentication" name="serviceAuthentication" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.InteractionRequirements.messageNonrepudiation" name="messageNonrepudiation" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.InteractionRequirements.messageIntegrity" name="messageIntegrity" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.InteractionRequirements.messageConfidentiality" name="messageConfidentiality" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.InteractionRequirements.messageAddressing" name="messageAddressing" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.InteractionRequirements.reliability" name="reliability" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.InteractionRequirements.transactionSupport" name="transactionSupport" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.InteractionRequirements.serviceMetadataAvailability" name="serviceMetadataAvailability" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.InteractionRequirements.interfaceDescriptionRequirements" name="interfaceDescriptionRequirements" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.InteractionRequirements.logging" name="logging" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.InteractionRequirements.serviceResponsiveness" name="serviceResponsiveness" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.InteractionRequirements.extendedRequirement" name="extendedRequirement" upper="*">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.GraServiceAnnotationBase" name="GraServiceAnnotationBase" isAbstract="true">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.GraServiceAnnotationBase.name" name="name" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.GraServiceAnnotationBase.documentation" name="documentation" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.GraServiceAnnotationBase.template" name="template" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.GraServiceAnnotationBase.requirement" name="requirement" lower="0" type="data.grauml.graAnnotationModel.InteractionRequirements" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.GraServiceAnnotationBase.modelReference" name="modelReference" lower="0" type="data.grauml.graAnnotationModel.ModelReference" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.GraServiceAnnotationBase.flag" name="flag" lower="0" upper="*">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.GraServiceAnnotationBase.diagnostics" name="diagnostics" lower="0" upper="*">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.ModelReference" name="ModelReference">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ModelReference.name" name="name" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ModelReference.documentation" name="documentation" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ModelReference.elementId" name="elementId">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ModelReference.diagramLink" name="diagramLink" lower="0" upper="*">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ModelReference.model" name="model" lower="0" type="data.grauml.graAnnotationModel.Model" isComposite="true">
+          
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.Model" name="Model">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Model.modelUri" name="modelUri">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Model.label" name="label">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.Participant" name="Participant" superClass="data.grauml.graAnnotationModel.GraServiceAnnotationBase">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Participant.participatingOrganization" name="participatingOrganization" lower="0" type="data.grauml.graAnnotationModel.Organization" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Participant.generalization" name="generalization" lower="0" upper="*" type="data.grauml.graAnnotationModel.Participant" isComposite="true">
+          
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.Organization" name="Organization" superClass="data.grauml.graAnnotationModel.GraServiceAnnotationBase">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Organization.organizationAcronym" name="organizationAcronym" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Organization.organizationFullAddressText" name="organizationFullAddressText" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Organization.organizationWebSiteUrl" name="organizationWebSiteUrl" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Organization.organizationRoleDescriptionText" name="organizationRoleDescriptionText">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Organization.organizationRoleDetailedDescriptionText" name="organizationRoleDetailedDescriptionText" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Organization.organizationPointOfContact" name="organizationPointOfContact" lower="0" type="data.grauml.graAnnotationModel.Person" isComposite="true">
+          
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.Person" name="Person" superClass="data.grauml.graAnnotationModel.GraServiceAnnotationBase">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Person.contactPersonEmailId" name="contactPersonEmailId" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Person.contactPersonPhoneNumberId" name="contactPersonPhoneNumberId">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Person.contactPersonAddress" name="contactPersonAddress" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.Interface" name="Interface" superClass="data.grauml.graAnnotationModel.GraServiceAnnotationBase">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Interface.operation" name="operation" lower="0" upper="*" type="data.grauml.graAnnotationModel.Operation" isComposite="true">
+          
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.Operation" name="Operation" superClass="data.grauml.graAnnotationModel.GraServiceAnnotationBase">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Operation.parameter" name="parameter" isOrdered="true" lower="0" upper="*" type="data.grauml.graAnnotationModel.Parameter" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Operation.messageExchangePattern" name="messageExchangePattern" lower="0" type="data.grauml.graAnnotationModel.ExchangePattern">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Operation.isAsynchronous" name="isAsynchronous" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Operation.actionName" name="actionName">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Operation.actionPurpose" name="actionPurpose" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Operation.actionProvenance" name="actionProvenance" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.Parameter" name="Parameter" superClass="data.grauml.graAnnotationModel.GraServiceAnnotationBase">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Parameter.use" name="use" type="data.grauml.graAnnotationModel.ParameterUse">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Parameter.message" name="message" lower="0" type="data.grauml.graAnnotationModel.Message" isComposite="true">
+          
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Enumeration" xmi:id="data.grauml.graAnnotationModel.ParameterUse" name="ParameterUse">
+        
+        <ownedLiteral xmi:type="emof:EnumerationLiteral" xmi:id="data.grauml.graAnnotationModel.ParameterUse.unknown" name="unknown">
+          
+        </ownedLiteral>
+        <ownedLiteral xmi:type="emof:EnumerationLiteral" xmi:id="data.grauml.graAnnotationModel.ParameterUse.in" name="in">
+          
+          
+        </ownedLiteral>
+        <ownedLiteral xmi:type="emof:EnumerationLiteral" xmi:id="data.grauml.graAnnotationModel.ParameterUse.out" name="out">
+          
+          
+        </ownedLiteral>
+        <ownedLiteral xmi:type="emof:EnumerationLiteral" xmi:id="data.grauml.graAnnotationModel.ParameterUse.inout" name="inout">
+          
+          
+        </ownedLiteral>
+        <ownedLiteral xmi:type="emof:EnumerationLiteral" xmi:id="data.grauml.graAnnotationModel.ParameterUse.exception" name="exception">
+          
+          
+        </ownedLiteral>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.Message" name="Message" superClass="data.grauml.graAnnotationModel.GraServiceAnnotationBase">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Message.prefix" name="prefix">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Message.elementPrefix" name="elementPrefix">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Message.elementModelReference" name="elementModelReference" lower="0" type="data.grauml.graAnnotationModel.ModelReference" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Message.elementName" name="elementName">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.Service" name="Service">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Service.port" name="port" lower="0" upper="*" type="data.grauml.graAnnotationModel.Port" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Service.serviceProvider" name="serviceProvider" lower="0" type="data.grauml.graAnnotationModel.Participant" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Service.sampleData" name="sampleData" lower="0" upper="*" type="data.grauml.graAnnotationModel.SampleData" isComposite="true">
+          
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.Port" name="Port" superClass="data.grauml.graAnnotationModel.GraServiceAnnotationBase">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Port.interface" name="interface" lower="0" upper="*" type="data.grauml.graAnnotationModel.Interface" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Port.addressUri" name="addressUri" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.SampleData" name="SampleData">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.SampleData.input" name="input" isOrdered="true" isUnique="false" upper="*">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.SampleData.expectedOutput" name="expectedOutput">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.ServiceInteraction" name="ServiceInteraction" superClass="data.grauml.graAnnotationModel.GraServiceAnnotationBase">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceInteraction.participant" name="participant" lower="0" upper="*" type="data.grauml.graAnnotationModel.Participant" isComposite="true">
+          
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.UseCase" name="UseCase" superClass="data.grauml.graAnnotationModel.GraServiceAnnotationBase">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.UseCase.provider" name="provider" upper="*" type="data.grauml.graAnnotationModel.Participant" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.UseCase.consumer" name="consumer" upper="*" type="data.grauml.graAnnotationModel.Participant" isComposite="true">
+          
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.Agreement" name="Agreement">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Agreement.documentation" name="documentation" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Agreement.agreementUri" name="agreementUri" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Agreement.automatedAgreementIndicator" name="automatedAgreementIndicator" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.IepdReference" name="IepdReference">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.IepdReference.name" name="name" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.IepdReference.iepdurl" name="iepdurl" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.SecurityClassification" name="SecurityClassification">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.SecurityClassification.name" name="name" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.ServiceCapability" name="ServiceCapability">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceCapability.documentation" name="documentation" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.ServiceDescription" name="ServiceDescription" superClass="data.grauml.graAnnotationModel.ServiceIdentification">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.exchangePartner" name="exchangePartner" lower="0" upper="*" type="data.grauml.graAnnotationModel.Participant" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.classification" name="classification" isOrdered="true" upper="*">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.sponsor" name="sponsor" isOrdered="true" upper="*">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.servicePurpose" name="servicePurpose" type="data.grauml.graAnnotationModel.Description" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.serviceScopeDescription" name="serviceScopeDescription" type="data.grauml.graAnnotationModel.Description" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.serviceDescriptionSummaryText" name="serviceDescriptionSummaryText" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.serviceDescriptionKeywordText" name="serviceDescriptionKeywordText" isOrdered="true" lower="0" upper="*">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.serviceCapability" name="serviceCapability" isOrdered="true" lower="0" upper="*" type="data.grauml.graAnnotationModel.ServiceCapability" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.serviceDependency" name="serviceDependency" lower="0" upper="*" type="data.grauml.graAnnotationModel.ServiceIdentification" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.iepdReference" name="iepdReference" upper="*" type="data.grauml.graAnnotationModel.IepdReference" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.serviceSecurityClassification" name="serviceSecurityClassification" lower="0" type="data.grauml.graAnnotationModel.SecurityClassification" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.serviceLevelAgreement" name="serviceLevelAgreement" isOrdered="true" lower="0" upper="*" type="data.grauml.graAnnotationModel.ServiceLevelAgreement" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.relatedOrganization" name="relatedOrganization" lower="0" upper="*" type="data.grauml.graAnnotationModel.Organization" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.serviceInterface" name="serviceInterface" lower="0" upper="*" type="data.grauml.graAnnotationModel.ServiceInterfaceSpecification" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.domainDescription" name="domainDescription" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.endorsements" name="endorsements" isOrdered="true" lower="0" upper="*">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.realWorldEffect" name="realWorldEffect" upper="*" type="data.grauml.graAnnotationModel.UseCase" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.serviceInteraction" name="serviceInteraction" upper="*" type="data.grauml.graAnnotationModel.ServiceInteraction" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.transformationUri" name="transformationUri" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.majorVersion" name="majorVersion" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.minorVersion" name="minorVersion" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.revisionVersion" name="revisionVersion" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.creationDate" name="creationDate" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.activationDate" name="activationDate" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.lastRevisionDate" name="lastRevisionDate" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.nextRevisionDate" name="nextRevisionDate" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.expirationDate" name="expirationDate" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.lifecycleStatus" name="lifecycleStatus" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.alertAndNotificationUri" name="alertAndNotificationUri" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.additionalInformation" name="additionalInformation" isOrdered="true" lower="0" upper="*" type="data.grauml.graAnnotationModel.Description" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.executionContext" name="executionContext" lower="0" type="data.grauml.graAnnotationModel.Description" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.security" name="security" lower="0" type="data.grauml.graAnnotationModel.Description" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.privacy" name="privacy" lower="0" type="data.grauml.graAnnotationModel.Description" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.serviceAssumption" name="serviceAssumption" lower="0" type="data.grauml.graAnnotationModel.Description" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.otherRequirement" name="otherRequirement" lower="0" type="data.grauml.graAnnotationModel.Description" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.dataProvenance" name="dataProvenance" lower="0" type="data.grauml.graAnnotationModel.Description" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceDescription.processModel" name="processModel" lower="0" type="data.grauml.graAnnotationModel.Description" isComposite="true">
+          
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.ServiceIdentification" name="ServiceIdentification" superClass="data.grauml.graAnnotationModel.GraServiceAnnotationBase">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceIdentification.serviceId" name="serviceId" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceIdentification.serviceUri" name="serviceUri">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceIdentification.serviceNameAbbreviationText" name="serviceNameAbbreviationText">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.Description" name="Description">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Description.documentation" name="documentation" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.Description.externalDocumentation" name="externalDocumentation" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.ServiceLevelAgreement" name="ServiceLevelAgreement">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceLevelAgreement.applicablePoliciesIndicator" name="applicablePoliciesIndicator" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceLevelAgreement.applicableContractsIndicator" name="applicableContractsIndicator" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceLevelAgreement.applicableAgreementsIndicator" name="applicableAgreementsIndicator" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceLevelAgreement.applicableUmbrellaAgreementsIndicator" name="applicableUmbrellaAgreementsIndicator" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceLevelAgreement.applicablePolicy" name="applicablePolicy" lower="0" upper="*" type="data.grauml.graAnnotationModel.Agreement" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceLevelAgreement.umbrellaAgreement" name="umbrellaAgreement" lower="0" upper="*" type="data.grauml.graAnnotationModel.Agreement" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceLevelAgreement.agreement" name="agreement" lower="0" upper="*" type="data.grauml.graAnnotationModel.Agreement" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceLevelAgreement.applicableContract" name="applicableContract" lower="0" upper="*" type="data.grauml.graAnnotationModel.Agreement" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceLevelAgreement.approvalRequiredIndicator" name="approvalRequiredIndicator" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceLevelAgreement.licensingRequiredIndicator" name="licensingRequiredIndicator" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceLevelAgreement.licensingAgreement" name="licensingAgreement" lower="0" type="data.grauml.graAnnotationModel.Agreement" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceLevelAgreement.serviceResponseTime" name="serviceResponseTime" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceLevelAgreement.serviceAverageThroughput" name="serviceAverageThroughput" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceLevelAgreement.serviceMaximumThroughput" name="serviceMaximumThroughput" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceLevelAgreement.serviceAvailability" name="serviceAvailability" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceLevelAgreement.creationCostAmount" name="creationCostAmount" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceLevelAgreement.usageCostAmount" name="usageCostAmount" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceLevelAgreement.usageUnitCostAmount" name="usageUnitCostAmount" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.ServiceInterfaceSpecification" name="ServiceInterfaceSpecification" superClass="data.grauml.graAnnotationModel.GraServiceAnnotationBase">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceInterfaceSpecification.securityImplementedIndicator" name="securityImplementedIndicator" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceInterfaceSpecification.securityDescriptionText" name="securityDescriptionText" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceInterfaceSpecification.serviceInteractionProfile" name="serviceInteractionProfile" type="data.grauml.graAnnotationModel.ServiceInteractionProfile" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceInterfaceSpecification.service" name="service" upper="*" type="data.grauml.graAnnotationModel.Service" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceInterfaceSpecification.messageDefinitionMechanism" name="messageDefinitionMechanism" isOrdered="true" lower="0" upper="*" type="data.grauml.graAnnotationModel.Description" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceInterfaceSpecification.targetNamespace" name="targetNamespace">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceInterfaceSpecification.prefix" name="prefix">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceInterfaceSpecification.serviceTesting" name="serviceTesting" lower="0" type="data.grauml.graAnnotationModel.Description" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceInterfaceSpecification.schemaReference" name="schemaReference" upper="*" type="data.grauml.graAnnotationModel.SchemaReference" isComposite="true">
+          
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceInterfaceSpecification.serviceInterfaceNameAbbreviationText" name="serviceInterfaceNameAbbreviationText">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceInterfaceSpecification.physicalModel" name="physicalModel" lower="0" type="data.grauml.graAnnotationModel.Description" isComposite="true">
+          
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.ServiceInteractionProfile" name="ServiceInteractionProfile">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceInteractionProfile.sipName" name="sipName">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.ServiceInteractionProfile.sipVersion" name="sipVersion">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graAnnotationModel.SchemaReference" name="SchemaReference">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.SchemaReference.namespace" name="namespace">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.SchemaReference.prefix" name="prefix">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graAnnotationModel.SchemaReference.schemaLocation" name="schemaLocation">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+      </ownedType>
+      
+    </nestedPackage>
+    <nestedPackage xmi:type="emof:Package" xmi:id="data.grauml.graWsdl" name="graWsdl" uri="http://ijis.org/GRA/WSDLAnnotations">
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graWsdl.WsdlInterface" name="WsdlInterface" superClass="data.grauml.graAnnotationModel.Interface">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graWsdl.WsdlInterface.bindingCode" name="bindingCode" lower="0" type="data.grauml.graWsdl.BindingType">
+          
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Enumeration" xmi:id="data.grauml.graWsdl.BindingType" name="BindingType">
+        
+        <ownedLiteral xmi:type="emof:EnumerationLiteral" xmi:id="data.grauml.graWsdl.BindingType.soap" name="soap">
+          
+        </ownedLiteral>
+        <ownedLiteral xmi:type="emof:EnumerationLiteral" xmi:id="data.grauml.graWsdl.BindingType.soap12" name="soap12">
+          
+          
+        </ownedLiteral>
+        <ownedLiteral xmi:type="emof:EnumerationLiteral" xmi:id="data.grauml.graWsdl.BindingType.httpGet" name="httpGet">
+          
+          
+        </ownedLiteral>
+        <ownedLiteral xmi:type="emof:EnumerationLiteral" xmi:id="data.grauml.graWsdl.BindingType.httpPut" name="httpPut">
+          
+          
+        </ownedLiteral>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graWsdl.WsdlOperation" name="WsdlOperation" superClass="data.grauml.graAnnotationModel.Operation">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graWsdl.WsdlOperation.operationKindCode" name="operationKindCode" lower="0" type="data.grauml.graWsdl.OperationKind">
+          
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Enumeration" xmi:id="data.grauml.graWsdl.OperationKind" name="OperationKind">
+        
+        <ownedLiteral xmi:type="emof:EnumerationLiteral" xmi:id="data.grauml.graWsdl.OperationKind.doc" name="doc">
+          
+        </ownedLiteral>
+        <ownedLiteral xmi:type="emof:EnumerationLiteral" xmi:id="data.grauml.graWsdl.OperationKind.rpc" name="rpc">
+          
+          
+        </ownedLiteral>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graWsdl.WsdlMessage" name="WsdlMessage" superClass="data.grauml.graAnnotationModel.Message">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graWsdl.WsdlMessage.messageLocationCode" name="messageLocationCode" lower="0" type="data.grauml.graWsdl.MessageLocation">
+          
+        </ownedAttribute>
+      </ownedType>
+      <ownedType xmi:type="emof:Enumeration" xmi:id="data.grauml.graWsdl.MessageLocation" name="MessageLocation">
+        
+        <ownedLiteral xmi:type="emof:EnumerationLiteral" xmi:id="data.grauml.graWsdl.MessageLocation.body" name="body">
+          
+        </ownedLiteral>
+        <ownedLiteral xmi:type="emof:EnumerationLiteral" xmi:id="data.grauml.graWsdl.MessageLocation.header" name="header">
+          
+          
+        </ownedLiteral>
+        <ownedLiteral xmi:type="emof:EnumerationLiteral" xmi:id="data.grauml.graWsdl.MessageLocation.url" name="url">
+          
+          
+        </ownedLiteral>
+      </ownedType>
+      <ownedType xmi:type="emof:Class" xmi:id="data.grauml.graWsdl.WsdlParameter" name="WsdlParameter" superClass="data.grauml.graAnnotationModel.Parameter">
+        
+        <ownedAttribute xmi:type="emof:Property" xmi:id="data.grauml.graWsdl.WsdlParameter.mimeType" name="mimeType" lower="0">
+          
+          <type href="http://www.omg.org/spec/UML/20110701/PrimitiveTypes.xmi#String"/>
+        </ownedAttribute>
+      </ownedType>
+      
+    </nestedPackage>
+    
+  </nestedPackage>
+  
+</emof:Package>

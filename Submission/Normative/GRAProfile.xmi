@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><xmi:XMI xmlns:uml="http://www.omg.org/spec/UML/20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:StandardProfileL3="http://www.omg.org/spec/UML/20110701/StandardProfileL3">
+   
+   
+   <uml:Model xmi:type="uml:Model" xmi:id="_Data" name="Data">
+      <packagedElement xmi:type="uml:Profile" xmi:id="_Data-GRAProfile" name="GRAProfile" URI="http://www.omg.org/spec/gra-uml/20141101/GRAProfile">
+         <metamodelReference xmi:idref="_Data-GRAProfile-packageImport"/>
+         <packageImport xmi:type="uml:PackageImport" xmi:id="_Data-GRAProfile-packageImport">
+            <importedPackage href="http://www.omg.org/spec/UML/20110701/UML.xmi#_0"/>
+         </packageImport>
+         <packagedElement xmi:type="uml:Stereotype" xmi:id="_Data-GRAProfile-Provider" name="Provider">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_Data-GRAProfile-Provider-base_Association" name="base_Association" visibility="private" association="_Data-GRAProfile-packagedElement-3">
+               <type href="http://www.omg.org/spec/UML/20110701/UML.xmi#Association"/>
+            </ownedAttribute>
+         </packagedElement>
+         <packagedElement xmi:type="uml:Stereotype" xmi:id="_Data-GRAProfile-Consumer" name="Consumer">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_Data-GRAProfile-Consumer-base_Association" name="base_Association" visibility="private" association="_Data-GRAProfile-packagedElement-4">
+               <type href="http://www.omg.org/spec/UML/20110701/UML.xmi#Association"/>
+            </ownedAttribute>
+         </packagedElement>
+         <packagedElement xmi:type="uml:Extension" xmi:id="_Data-GRAProfile-packagedElement-3">
+            <memberEnd xmi:idref="_Data-GRAProfile-Provider-base_Association"/>
+            <memberEnd xmi:idref="_Data-GRAProfile-packagedElement-3-extension_Provider"/>
+            <navigableOwnedEnd xmi:idref="_Data-GRAProfile-packagedElement-3-extension_Provider"/>
+            <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_Data-GRAProfile-packagedElement-3-extension_Provider" name="extension_Provider" visibility="private" aggregation="composite" type="_Data-GRAProfile-Provider" association="_Data-GRAProfile-packagedElement-3">
+               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Data-GRAProfile-packagedElement-3-extension_Provider-lowerValue"/>
+            </ownedEnd>
+         </packagedElement>
+         <packagedElement xmi:type="uml:Extension" xmi:id="_Data-GRAProfile-packagedElement-4">
+            <memberEnd xmi:idref="_Data-GRAProfile-Consumer-base_Association"/>
+            <memberEnd xmi:idref="_Data-GRAProfile-packagedElement-4-extension_Consumer"/>
+            <navigableOwnedEnd xmi:idref="_Data-GRAProfile-packagedElement-4-extension_Consumer"/>
+            <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_Data-GRAProfile-packagedElement-4-extension_Consumer" name="extension_Consumer" visibility="private" aggregation="composite" type="_Data-GRAProfile-Consumer" association="_Data-GRAProfile-packagedElement-4">
+               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Data-GRAProfile-packagedElement-4-extension_Consumer-lowerValue"/>
+            </ownedEnd>
+         </packagedElement>
+      </packagedElement>
+   </uml:Model>
+</xmi:XMI>
